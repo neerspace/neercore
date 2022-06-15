@@ -1,4 +1,4 @@
-# NeerCore 1.0.0-alpha
+# NeerCore 1.0.0-alpha2
 
 ![logo](favicon.png)
 
