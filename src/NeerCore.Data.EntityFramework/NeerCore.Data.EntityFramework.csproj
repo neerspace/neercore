@@ -13,8 +13,6 @@
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.6" />
-		<PackageReference Include="NeerCore" Version="1.0.0-alpha2" />
-		<PackageReference Include="NeerCore.Data" Version="1.0.0-alpha2" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -22,6 +20,11 @@
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\NeerCore.Data\NeerCore.Data.csproj" />
+	  <ProjectReference Include="..\NeerCore\NeerCore.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
