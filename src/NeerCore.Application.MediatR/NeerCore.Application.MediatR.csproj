@@ -19,6 +19,7 @@
 		<PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.0.3" />
 		<PackageReference Include="MediatR.Extensions.FluentValidation.AspNetCore" Version="3.0.0" />
 		<PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
+		<PackageReference Include="NeerCore" Version="1.0.0-alpha2" />
 	</ItemGroup>
 
 	<ItemGroup>
