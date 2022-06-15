@@ -4,7 +4,6 @@
 		<TargetFramework>net6.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
-		<PackageVersion>1.0.0-alpha</PackageVersion>
 		<PackageIcon>favicon.png</PackageIcon>
 		<Authors>jurilents</Authors>
 		<RepositoryUrl>https://github.com/jurilents/neercore</RepositoryUrl>

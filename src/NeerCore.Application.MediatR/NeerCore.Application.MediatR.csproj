@@ -7,7 +7,6 @@
 		<RootNamespace>NeerCore.Application.Extensions</RootNamespace>
 		<AssemblyName>NeerCore.Application.MediatR</AssemblyName>
 		<PackageIcon>favicon.png</PackageIcon>
-		<PackageVersion>1.0.0-alpha</PackageVersion>
 		<Authors>jurilents</Authors>
 		<RepositoryUrl>https://github.com/jurilents/neercore</RepositoryUrl>
 		<RepositoryType>github</RepositoryType>

@@ -14,6 +14,7 @@ jobs:
   deploy-nuget:
     strategy:
       matrix:
+        version: [ "1.0.0-alpha" ]
         project:
           - NeerCore
           - NeerCore.Api
@@ -38,14 +39,13 @@ jobs:
       #   run: dotnet test -c Release --no-build
 
       - name: Pack to NuGet packages
-        run: dotnet pack ./src/${{ matrix.project }}/${{ matrix.project }}.csproj -c Release --no-build --output .
+        run: dotnet pack ./src/${{ matrix.project }}/${{ matrix.project }}.csproj -c Release --no-build -o . /p:${{ matrix.version }}
 
       - name: Push to NuGet
-        run: dotnet nuget push "*.nupkg" --api-key ${{secrets.NUGET_API_KEY}} --source $pkg_source_nuget
+        run: dotnet nuget push "./src/${{ matrix.project }}/${{ matrix.project }}.nupkg" --api-key ${{secrets.NUGET_API_KEY}} --source $pkg_source_nuget
 
       - name: Prepare GitHub packages source
         run: dotnet nuget add source --username jurilents --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github $pkg_source_github
 
       - name: Publish to GitHub packages
-        run: dotnet nuget push "*.nupkg" --api-key ${{ secrets.GITHUB_TOKEN }}  --source "github"
-        
+        run: dotnet nuget push "./src/${{ matrix.project }}/${{ matrix.project }}.nupkg" --api-key ${{ secrets.GITHUB_TOKEN }}  --source "github"
