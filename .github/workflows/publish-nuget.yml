@@ -6,8 +6,22 @@ on:
   pull_request:
     branches: [ master ]
 
+env:
+  pkg_source_nuget: "https://api.nuget.org/v3/index.json"
+  pkg_source_github: "https://nuget.pkg.github.com/jurilents/index.json"
+
 jobs:
-  build:
+  deploy-nuget:
+    strategy:
+      matrix:
+        project:
+          - NeerCore
+          - NeerCore.Api
+          - NeerCore.Data
+          - NeerCore.Data.EntityFramework
+          - NeerCore.Application.MediatR
+          - NeerCore.DependencyInjection
+    
     runs-on: ubuntu-latest
 
     steps:
@@ -18,19 +32,19 @@ jobs:
         uses: actions/setup-dotnet@v1
 
       - name: Build
-        run: dotnet build -c Release
+        run: dotnet build ./src/${{ matrix.project }}/${{ matrix.project }}.csproj -c Release
       
       # - name: Test
       #   run: dotnet test -c Release --no-build
 
       - name: Pack to NuGet packages
-        run: dotnet pack -c Release --no-build --output .
+        run: dotnet pack ./src/${{ matrix.project }}/${{ matrix.project }}.csproj -c Release --no-build --output .
 
       - name: Push to NuGet
-        run: dotnet nuget push "*.nupkg" --api-key ${{secrets.NUGET_API_KEY}} --source https://api.nuget.org/v3/index.json
+        run: dotnet nuget push "*.nupkg" --api-key ${{secrets.NUGET_API_KEY}} --source $pkg_source_nuget
 
       - name: Prepare GitHub packages source
-        run: dotnet nuget add source --username jurilents --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/jurilents/index.json"
+        run: dotnet nuget add source --username jurilents --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github $pkg_source_github
 
       - name: Publish to GitHub packages
         run: dotnet nuget push "*.nupkg" --api-key ${{ secrets.GITHUB_TOKEN }}  --source "github"
