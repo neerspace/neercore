@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<PackageVersion>1.0.0-alpha</PackageVersion>
+		<Authors>jurilents</Authors>
+		<PackageIcon>favicon.png</PackageIcon>
+		<RepositoryUrl>https://github.com/jurilents/neercore</RepositoryUrl>
+		<RepositoryType>github</RepositoryType>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="..\..\favicon.png">
+	    <Pack>True</Pack>
+	    <PackagePath></PackagePath>
+	    <Link>favicon.png</Link>
+	  </None>
+	</ItemGroup>
+
+</Project>

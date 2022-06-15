@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<PackageVersion>1.0.0-alpha</PackageVersion>
+		<PackageIcon>favicon.png</PackageIcon>
+		<Authors>jurilents</Authors>
+		<RepositoryUrl>https://github.com/jurilents/neercore</RepositoryUrl>
+		<RepositoryType>github</RepositoryType>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="FluentValidation" Version="10.4.0" />
+		<PackageReference Include="Mapster" Version="7.3.0" />
+		<PackageReference Include="Microsoft.AspNetCore.JsonPatch" Version="6.0.5" />
+		<PackageReference Include="Sieve" Version="2.5.5" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.0.0" />
+		<PackageReference Include="NLog.Web.AspNetCore" Version="4.14.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\NeerCore.DependencyInjection\NeerCore.DependencyInjection.csproj" />
+		<ProjectReference Include="..\NeerCore\NeerCore.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="..\..\favicon.png">
+	    <Pack>True</Pack>
+	    <PackagePath></PackagePath>
+	    <Link>favicon.png</Link>
+	  </None>
+	</ItemGroup>
+
+</Project>
