@@ -9,6 +9,7 @@
 		<PackageIcon>favicon.png</PackageIcon>
 		<RepositoryUrl>https://github.com/jurilents/neercore</RepositoryUrl>
 		<RepositoryType>github</RepositoryType>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	</PropertyGroup>
 
 	<ItemGroup>

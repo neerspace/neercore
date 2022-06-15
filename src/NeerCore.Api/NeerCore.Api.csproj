@@ -9,16 +9,17 @@
 		<Authors>jurilents</Authors>
 		<RepositoryUrl>https://github.com/jurilents/neercore</RepositoryUrl>
 		<RepositoryType>github</RepositoryType>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="FluentValidation" Version="10.4.0" />
+		<PackageReference Include="FluentValidation" Version="11.0.3" />
 		<PackageReference Include="Mapster" Version="7.3.0" />
-		<PackageReference Include="Microsoft.AspNetCore.JsonPatch" Version="6.0.5" />
+		<PackageReference Include="Microsoft.AspNetCore.JsonPatch" Version="6.0.6" />
 		<PackageReference Include="Sieve" Version="2.5.5" />
-		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.0" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.1" />
 		<PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.0.0" />
-		<PackageReference Include="NLog.Web.AspNetCore" Version="4.14.0" />
+		<PackageReference Include="NLog.Web.AspNetCore" Version="5.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>

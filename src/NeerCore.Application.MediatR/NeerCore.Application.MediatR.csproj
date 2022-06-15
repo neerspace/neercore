@@ -11,13 +11,14 @@
 		<Authors>jurilents</Authors>
 		<RepositoryUrl>https://github.com/jurilents/neercore</RepositoryUrl>
 		<RepositoryType>github</RepositoryType>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
-		<PackageReference Include="FluentValidation.AspNetCore" Version="10.4.0" />
-		<PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="10.4.0" />
-		<PackageReference Include="MediatR.Extensions.FluentValidation.AspNetCore" Version="2.0.0" />
+		<PackageReference Include="FluentValidation.AspNetCore" Version="11.0.3" />
+		<PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.0.3" />
+		<PackageReference Include="MediatR.Extensions.FluentValidation.AspNetCore" Version="3.0.0" />
 		<PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
 	</ItemGroup>
 
