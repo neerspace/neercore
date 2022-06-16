@@ -7,28 +7,30 @@
 	</PropertyGroup>
 
 	<PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-	  <DocumentationFile>bin\Debug\TraineeTemplate.Api.xml</DocumentationFile>
-	  <NoWarn>1701;1702;1591</NoWarn>
+		<DocumentationFile>bin\Debug\TraineeTemplate.Api.xml</DocumentationFile>
+		<NoWarn>1701;1702;1591</NoWarn>
 	</PropertyGroup>
 
 	<PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-	  <DocumentationFile>bin\Release\TraineeTemplate.Api.xml</DocumentationFile>
-	  <NoWarn>1701;1702;1591</NoWarn>
+		<DocumentationFile>bin\Release\TraineeTemplate.Api.xml</DocumentationFile>
+		<NoWarn>1701;1702;1591</NoWarn>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.6" />
+		<!--		<PackageReference Include="NeerCore.Api" Version="1.0.0-alpha3" />-->
+		<!--		<PackageReference Include="NeerCore.Data.EntityFramework" Version="1.0.0-alpha3" />-->
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\..\..\src\NeerCore.Api\NeerCore.Api.csproj" />
-	  <ProjectReference Include="..\..\..\src\NeerCore.Data.EntityFramework\NeerCore.Data.EntityFramework.csproj" />
+		<ProjectReference Include="..\..\..\src\NeerCore.Api\NeerCore.Api.csproj" />
+		<ProjectReference Include="..\..\..\src\NeerCore.Data.EntityFramework\NeerCore.Data.EntityFramework.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Content Update="appsettings.Development.json">
-	    <DependentUpon>appsettings.json</DependentUpon>
-	  </Content>
+		<Content Update="appsettings.Development.json">
+			<DependentUpon>appsettings.json</DependentUpon>
+		</Content>
 	</ItemGroup>
 
 </Project>

@@ -12,6 +12,13 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\..\..\src\NeerCore.Api\NeerCore.Api.csproj" />
+	  <ProjectReference Include="..\JuniorTemplate.Infrastructure\JuniorTemplate.Infrastructure.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Content Update="appsettings.Development.json">
+	    <DependentUpon>appsettings.json</DependentUpon>
+	  </Content>
 	</ItemGroup>
 
 </Project>

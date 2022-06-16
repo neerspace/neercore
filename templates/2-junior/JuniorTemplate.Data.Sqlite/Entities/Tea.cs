@@ -1,15 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using NeerCore.Data.Abstractions;
+﻿using NeerCore.Data.Abstractions;
 using Sieve.Attributes;
 
-namespace TraineeTemplate.Api.Data.Entities;
+namespace JuniorTemplate.Data.Entities;
 
-[Table("Teas")]
 public class Tea : IDatedEntity<Guid>
 {
 	[Sieve(CanFilter = true, CanSort = true)]
-	[Key]
 	public Guid Id { get; init; } = Guid.NewGuid();
 
 	[Sieve(CanFilter = true, CanSort = true)]
@@ -19,10 +15,8 @@ public class Tea : IDatedEntity<Guid>
 	public decimal Price { get; init; }
 
 	[Sieve(CanFilter = true, CanSort = true)]
-	[DatabaseGenerated(DatabaseGeneratedOption.Computed)]
 	public DateTime? Updated { get; init; }
 
 	[Sieve(CanFilter = true, CanSort = true)]
-	[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 	public DateTime Created { get; init; } = DateTime.UtcNow;
 }

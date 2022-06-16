@@ -6,4 +6,8 @@
 		<Nullable>enable</Nullable>
 	</PropertyGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\JuniorTemplate.Data.Sqlite\JuniorTemplate.Data.Sqlite.csproj" />
+	</ItemGroup>
+
 </Project>

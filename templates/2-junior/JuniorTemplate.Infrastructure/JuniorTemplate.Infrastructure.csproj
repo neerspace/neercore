@@ -6,4 +6,13 @@
 		<Nullable>enable</Nullable>
 	</PropertyGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\..\..\src\NeerCore.DependencyInjection\NeerCore.DependencyInjection.csproj" />
+	  <ProjectReference Include="..\JuniorTemplate.Application\JuniorTemplate.Application.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Sieve" Version="2.5.5" />
+	</ItemGroup>
+
 </Project>
