@@ -50,7 +50,7 @@ static void ConfigureWebApp(WebApplication app)
 	app.UseCors(CorsPolicies.AcceptAll);
 	app.UseHttpsRedirection();
 
-	MiddlewareExtensions.UseCustomExceptionHandler(app);
+	app.UseCustomExceptionHandler();
 
 	app.MapControllers();
 }
