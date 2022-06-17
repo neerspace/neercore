@@ -1,10 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using JuniorTemplate.Data.Context;
+using Microsoft.EntityFrameworkCore;
 using NeerCore.Data.EntityFramework.Abstractions;
-using TraineeTemplate.Api.Data.Entities;
 
-namespace TraineeTemplate.Api.Data;
+namespace JuniorTemplate.Data;
 
-public sealed class SqliteDbContext : DbContext, IDatabaseContext
+public class SqliteDbContext : DbContext, IDatabaseContext
 {
 	public SqliteDbContext(DbContextOptions options) : base(options)
 	{
@@ -14,9 +14,6 @@ public sealed class SqliteDbContext : DbContext, IDatabaseContext
 
 	protected override void OnModelCreating(ModelBuilder builder)
 	{
-		// Register all your entities here
-		builder.Entity<Tea>();
-
 		builder.SeedDefaultData();
 	}
 }
