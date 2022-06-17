@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using JuniorTemplate.Data.Context;
+using Microsoft.Extensions.DependencyInjection;
 using NeerCore.Data.EntityFramework.Abstractions;
 
 namespace JuniorTemplate.Data;
@@ -15,9 +16,9 @@ public static class DependencyInjection
 
 	private static void AddDbContext(this IServiceCollection services)
 	{
-		var contextFactory = new SqlServerDbContextFactory();
+		var contextFactory = new SqliteDbContextFactory();
 		services.AddDbContext<SqliteDbContext>(cob => contextFactory.ConfigureContextOptions(cob));
 
-		services.AddScoped<IDatabaseContext, SqlServerDbContext>();
+		services.AddScoped<IDatabaseContext, SqliteDbContext>();
 	}
 }

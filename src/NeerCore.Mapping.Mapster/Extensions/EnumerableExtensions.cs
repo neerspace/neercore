@@ -1,6 +1,6 @@
 ﻿using Mapster;
 
-namespace NeerCore.Application.Extensions;
+namespace NeerCore.Mapping.Extensions;
 
 public static class EnumerableExtensions
 {

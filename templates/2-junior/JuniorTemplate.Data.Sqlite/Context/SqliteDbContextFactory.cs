@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NeerCore.Data.EntityFramework;
 
-namespace JuniorTemplate.Data;
+namespace JuniorTemplate.Data.Context;
 
 public class SqliteDbContextFactory : DbContextFactoryBase<SqliteDbContext>
 {
@@ -9,12 +9,12 @@ public class SqliteDbContextFactory : DbContextFactoryBase<SqliteDbContext>
 	public override string SettingsPath => "../Tacles.Api/appsettings.Secrets.json";
 
 
-	public override SqlServerDbContext CreateDbContext(string[] args) => new(CreateContextOptions());
+	public override SqliteDbContext CreateDbContext(string[] args) => new(CreateContextOptions());
 
 
 	public override void ConfigureContextOptions(DbContextOptionsBuilder optionsBuilder)
 	{
-		optionsBuilder.UseSqlServer(ConnectionString,
+		optionsBuilder.UseSqlite(ConnectionString,
 			options => options.MigrationsAssembly(MigrationsAssembly));
 	}
 }

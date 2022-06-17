@@ -1,7 +1,7 @@
-﻿using JuniorTemplate.Data.Entities;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using MiddleTemplate.Data.Entities;
 
-namespace JuniorTemplate.Data.Context;
+namespace MiddleTemplate.Data.Context;
 
 public static class DataSeed
 {

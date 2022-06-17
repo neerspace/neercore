@@ -1,6 +1,4 @@
-﻿using System.Reflection;
-using Mapster;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using NeerCore.Api.Extensions;
@@ -14,7 +12,10 @@ namespace NeerCore.Api;
 
 public static class DependencyInjection
 {
-	public static void AddNeerApi(this WebApplicationBuilder builder, params string[] assemblyNames)
+	public static void AddNeerApi(this WebApplicationBuilder builder, string assemblyName) =>
+			builder.AddNeerApi(new[] { assemblyName });
+
+	public static void AddNeerApi(this WebApplicationBuilder builder, IEnumerable<string> assemblyNames)
 	{
 		builder.Logging.AddNLog();
 		builder.Services.AddNeerApiServices(assemblyNames);
@@ -31,32 +32,18 @@ public static class DependencyInjection
 		logging.AddNLogWeb(LogManager.Configuration);
 	}
 
-	public static void RegisterMapper<TRegister>(this IServiceCollection services)
-			where TRegister : IRegister
-	{
-		var serviceProvider = services.BuildServiceProvider();
-		var paramTypes = typeof(TRegister).GetConstructors()[0].GetParameters().Select(p => p.ParameterType);
-		var constructorParams = paramTypes.Select(paramType => serviceProvider.GetService(paramType)).ToArray();
-
-		var register = (TRegister) Activator.CreateInstance(typeof(TRegister), constructorParams)!;
-		register.Register(TypeAdapterConfig.GlobalSettings);
-	}
-
-	public static void RegisterMappers(this IServiceCollection services)
-	{
-		var typeAdapterConfig = TypeAdapterConfig.GlobalSettings;
-		typeAdapterConfig.Scan(Assembly.GetExecutingAssembly());
-	}
+	public static void AddNeerApiServices(this IServiceCollection services, string assemblyName) =>
+			services.AddNeerApiServices(new[] { assemblyName });
 
 	/// <summary>
 	/// 
 	/// </summary>
-	public static void AddNeerApiServices(this IServiceCollection services, params string[] assemblyNames)
+	public static void AddNeerApiServices(this IServiceCollection services, IEnumerable<string> assemblyNames)
 	{
 		services.AddScoped<ISieveProcessor, SieveProcessor>();
 		services.AddServicesFromAssemblies(assemblyNames);
 
-		services.AddFactoryMiddleware();
+		services.AddFactoryMiddlewares();
 		services.AddDefaultCorsPolicy();
 		services.AddCustomApiVersioning();
 		services.ConfigureApiBehaviorOptions();

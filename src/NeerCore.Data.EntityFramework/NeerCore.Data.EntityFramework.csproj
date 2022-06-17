@@ -16,23 +16,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.6">
-			<PrivateAssets>all</PrivateAssets>
-			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-		</PackageReference>
+		<ProjectReference Include="..\NeerCore.Data\NeerCore.Data.csproj" />
+		<ProjectReference Include="..\NeerCore\NeerCore.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\NeerCore.Data\NeerCore.Data.csproj" />
-	  <ProjectReference Include="..\NeerCore\NeerCore.csproj" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <None Include="..\..\favicon.png">
-	    <Pack>True</Pack>
-	    <PackagePath></PackagePath>
-	    <Link>favicon.png</Link>
-	  </None>
+		<None Include="..\..\favicon.png">
+			<Pack>True</Pack>
+			<PackagePath></PackagePath>
+			<Link>favicon.png</Link>
+		</None>
 	</ItemGroup>
 
 </Project>

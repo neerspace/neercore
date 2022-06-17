@@ -44,6 +44,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiddleTemplate.Data.Sqlite"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiddleTemplate.Infrastructure", "templates\3-middle\MiddleTemplate.Infrastructure\MiddleTemplate.Infrastructure.csproj", "{938DBBA3-2751-4426-BDAA-E29F2E3AE61F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeerCore.Mapping.Mapster", "src\NeerCore.Mapping.Mapster\NeerCore.Mapping.Mapster.csproj", "{26A30DDA-3129-4966-B339-9177B066C35C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,7 @@ Global
 		{D75C68E8-D138-449F-9675-A23E8C6F5763} = {3F7BE0B7-20D6-4186-89B0-3A6B91F73B44}
 		{184933F2-5B1B-4EB2-B0AC-DAD24215FB68} = {3F7BE0B7-20D6-4186-89B0-3A6B91F73B44}
 		{938DBBA3-2751-4426-BDAA-E29F2E3AE61F} = {3F7BE0B7-20D6-4186-89B0-3A6B91F73B44}
+		{26A30DDA-3129-4966-B339-9177B066C35C} = {9ED58246-C5E5-4C9A-A25E-0B3E200852D3}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{E418F129-562C-43F4-BBE3-487ED4270DFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -131,5 +134,9 @@ Global
 		{938DBBA3-2751-4426-BDAA-E29F2E3AE61F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{938DBBA3-2751-4426-BDAA-E29F2E3AE61F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{938DBBA3-2751-4426-BDAA-E29F2E3AE61F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26A30DDA-3129-4966-B339-9177B066C35C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26A30DDA-3129-4966-B339-9177B066C35C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26A30DDA-3129-4966-B339-9177B066C35C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26A30DDA-3129-4966-B339-9177B066C35C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

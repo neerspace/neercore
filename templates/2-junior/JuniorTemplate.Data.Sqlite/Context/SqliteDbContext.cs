@@ -1,8 +1,7 @@
-﻿using JuniorTemplate.Data.Context;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using NeerCore.Data.EntityFramework.Abstractions;
 
-namespace JuniorTemplate.Data;
+namespace JuniorTemplate.Data.Context;
 
 public class SqliteDbContext : DbContext, IDatabaseContext
 {

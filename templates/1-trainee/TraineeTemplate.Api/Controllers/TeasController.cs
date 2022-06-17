@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using NeerCore.Api;
 using NeerCore.Api.Extensions;
-using NeerCore.Application.Extensions;
+using NeerCore.Mapping.Extensions;
 using TraineeTemplate.Api.Dto;
 using TraineeTemplate.Api.Services;
 

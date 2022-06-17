@@ -4,6 +4,7 @@ using NeerCore.Api;
 using NeerCore.Api.Extensions;
 using NeerCore.Api.Extensions.Swagger;
 using NeerCore.Data.EntityFramework;
+using NeerCore.Mapping;
 using NLog;
 using TraineeTemplate.Api;
 using TraineeTemplate.Api.Data;

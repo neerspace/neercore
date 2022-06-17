@@ -7,7 +7,12 @@ namespace NeerCore.Application.Extensions;
 
 public static class ServiceCollectionExtensions
 {
-	public static void AddMediatRApplication(this IServiceCollection services, params string[] assemblyNames)
+	public static void AddMediatorApplication(this IServiceCollection services, string assemblyName)
+	{
+		services.AddMediatorApplication(new[] { assemblyName });
+	}
+
+	public static void AddMediatorApplication(this IServiceCollection services, IEnumerable<string> assemblyNames)
 	{
 		var assemblies = assemblyNames.Select(asm => AppDomain.CurrentDomain.Load(asm)).ToArray();
 

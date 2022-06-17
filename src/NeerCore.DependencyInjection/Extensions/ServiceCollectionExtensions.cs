@@ -5,7 +5,7 @@ namespace NeerCore.DependencyInjection.Extensions;
 
 public static class ServiceCollectionExtensions
 {
-	public static void AddServicesFromAssemblies(this IServiceCollection services, params string[] assemblyNames)
+	public static void AddServicesFromAssemblies(this IServiceCollection services, IEnumerable<string> assemblyNames)
 	{
 		foreach (string assemblyName in assemblyNames)
 			services.AddServicesFromAssembly(assemblyName);

@@ -7,7 +7,9 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\JuniorTemplate.Data.Sqlite\JuniorTemplate.Data.Sqlite.csproj" />
+	  <ProjectReference Include="..\..\..\src\NeerCore.Application.MediatR\NeerCore.Application.MediatR.csproj" />
+	  <ProjectReference Include="..\..\..\src\NeerCore.Mapping.Mapster\NeerCore.Mapping.Mapster.csproj" />
+	  <ProjectReference Include="..\MiddleTemplate.Data.Sqlite\MiddleTemplate.Data.Sqlite.csproj" />
 	</ItemGroup>
 
 </Project>

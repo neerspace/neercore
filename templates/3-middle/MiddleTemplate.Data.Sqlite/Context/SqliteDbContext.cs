@@ -1,19 +1,15 @@
-﻿using JuniorTemplate.Data.Context;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using NeerCore.Data.EntityFramework.Abstractions;
 
-namespace JuniorTemplate.Data;
+namespace MiddleTemplate.Data.Context;
 
 public class SqliteDbContext : DbContext, IDatabaseContext
 {
-	public SqliteDbContext(DbContextOptions options) : base(options)
-	{
-		// Be careful with it!
-		Database.EnsureCreated();
-	}
+	public SqliteDbContext(DbContextOptions options) : base(options) { }
 
 	protected override void OnModelCreating(ModelBuilder builder)
 	{
+		builder.ApplyConfigurationsFromAssembly(GetType().Assembly);
 		builder.SeedDefaultData();
 	}
 }

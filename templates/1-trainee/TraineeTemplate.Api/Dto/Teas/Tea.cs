@@ -2,8 +2,8 @@
 
 /// <remarks>
 /// Available filters: id, price, updated, created
-/// </remarks>>
-public record Tea
+/// </remarks>
+public class Tea
 {
 	public Guid Id { get; init; }
 

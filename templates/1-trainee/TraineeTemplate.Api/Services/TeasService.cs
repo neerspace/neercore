@@ -53,7 +53,7 @@ public class TeasService
 	public async Task DeleteAsync(Guid id)
 	{
 		var entity = await GetByIdAsync(id);
-		_database.Set<Tea>().Add(entity);
+		_database.Set<Tea>().Remove(entity);
 		await _database.SaveChangesAsync();
 	}
 }

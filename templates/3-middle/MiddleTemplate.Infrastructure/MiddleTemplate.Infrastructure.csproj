@@ -8,7 +8,7 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\..\..\src\NeerCore.DependencyInjection\NeerCore.DependencyInjection.csproj" />
-	  <ProjectReference Include="..\JuniorTemplate.Application\JuniorTemplate.Application.csproj" />
+	  <ProjectReference Include="..\MiddleTemplate.Application\MiddleTemplate.Application.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

@@ -7,7 +7,7 @@ using NeerCore.Exceptions;
 using Sieve.Models;
 using Sieve.Services;
 
-namespace TraineeTemplate.Api.Services;
+namespace JuniorTemplate.Infrastructure.Services;
 
 [Inject]
 public class TeasService : ITeasService
