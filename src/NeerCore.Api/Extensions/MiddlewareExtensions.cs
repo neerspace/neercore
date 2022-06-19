@@ -8,7 +8,7 @@ namespace NeerCore.Api.Extensions;
 
 public static class MiddlewareExtensions
 {
-	public static void AddFactoryMiddleware(this IServiceCollection services)
+	public static void AddFactoryMiddlewares(this IServiceCollection services)
 	{
 		IEnumerable<Type> middlewares = AssemblyProvider.GetImplementations<IMiddleware>();
 		foreach (Type middleware in middlewares)

@@ -5,15 +5,31 @@ namespace NeerCore.DependencyInjection.Extensions;
 
 public static class ServiceCollectionExtensions
 {
-	public static void AddServicesFromAssemblies(this IServiceCollection services, params string[] assemblyNames)
+	public static void AddServicesFromAssemblies(this IServiceCollection services, IEnumerable<string> assemblyNames)
 	{
 		foreach (string assemblyName in assemblyNames)
 			services.AddServicesFromAssembly(assemblyName);
 	}
 
+	public static void AddServicesFromAssemblies(this IServiceCollection services, IEnumerable<Assembly> assemblies)
+	{
+		foreach (Assembly assembly in assemblies)
+			services.AddServicesFromAssembly(assembly);
+	}
+
+	public static void AddServicesFromCurrentAssembly(this IServiceCollection services)
+	{
+		services.AddServicesFromAssembly(StackTraceUtility.GetCallerAssembly());
+	}
+
 	public static void AddServicesFromAssembly(this IServiceCollection services, string assemblyName)
 	{
-		IEnumerable<Type> serviceTypes = Assembly.Load(assemblyName).GetTypes();
+		services.AddServicesFromAssembly(Assembly.Load(assemblyName));
+	}
+
+	public static void AddServicesFromAssembly(this IServiceCollection services, Assembly assembly)
+	{
+		IEnumerable<Type> serviceTypes = assembly.GetTypes();
 
 		foreach (Type implType in serviceTypes)
 		{

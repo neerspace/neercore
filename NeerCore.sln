@@ -12,29 +12,49 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeerCore.DependencyInjectio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeerCore", "src\NeerCore\NeerCore.csproj", "{7C3F14F1-54E7-4CFE-B53B-7DB309F49DE2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeerCore.Api", "src\NeerCore.Api\NeerCore.Api.csproj", "{5987C584-DF21-4890-A011-3D82FB036A66}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeerCore.Data", "src\NeerCore.Data\NeerCore.Data.csproj", "{A19AA27B-BE58-44D3-B36C-6C06F6A61491}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeerCore.Application.MediatR", "src\NeerCore.Application.MediatR\NeerCore.Application.MediatR.csproj", "{D38BED52-2178-4906-ADF8-E096FD8C7B89}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-trainee", "1-trainee", "{9CF17720-3D72-480D-A79F-6AC90F22C9AF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeerCore.Mapping.Mapster", "src\NeerCore.Mapping.Mapster\NeerCore.Mapping.Mapster.csproj", "{26A30DDA-3129-4966-B339-9177B066C35C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-junior", "2-junior", "{7158EE8C-E2D2-45D2-8447-266AC4CB3DBF}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "api-1-trainee", "api-1-trainee", "{9CF17720-3D72-480D-A79F-6AC90F22C9AF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3-middle", "3-middle", "{3F7BE0B7-20D6-4186-89B0-3A6B91F73B44}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "api-2-junior", "api-2-junior", "{7158EE8C-E2D2-45D2-8447-266AC4CB3DBF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4-senior", "4-senior", "{6D3FA0C5-4546-4B9E-8CCF-F2D20BC421D8}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "api-3-middle", "api-3-middle", "{3F7BE0B7-20D6-4186-89B0-3A6B91F73B44}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraineeTemplate.Api", "templates\1-trainee\TraineeTemplate.Api\TraineeTemplate.Api.csproj", "{CCF36B04-846F-4A3E-924C-942789C87A29}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "api-4-senior", "api-4-senior", "{6D3FA0C5-4546-4B9E-8CCF-F2D20BC421D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeerCore.Api", "src\NeerCore.Api\NeerCore.Api.csproj", "{5987C584-DF21-4890-A011-3D82FB036A66}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraineeTemplate.Api", "templates\api-1-trainee\TraineeTemplate.Api\TraineeTemplate.Api.csproj", "{CCF36B04-846F-4A3E-924C-942789C87A29}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JuniorTemplate.Api", "templates\2-junior\JuniorTemplate.Api\JuniorTemplate.Api.csproj", "{44B22A46-B95C-4D19-A0F9-E67D228A987D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JuniorTemplate.Api", "templates\api-2-junior\JuniorTemplate.Api\JuniorTemplate.Api.csproj", "{44B22A46-B95C-4D19-A0F9-E67D228A987D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JuniorTemplate.Application", "templates\2-junior\JuniorTemplate.Application\JuniorTemplate.Application.csproj", "{22BA3842-6828-4B95-A4B0-E003F685DEDA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JuniorTemplate.Application", "templates\api-2-junior\JuniorTemplate.Application\JuniorTemplate.Application.csproj", "{22BA3842-6828-4B95-A4B0-E003F685DEDA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JuniorTemplate.Infrastructure", "templates\2-junior\JuniorTemplate.Infrastructure\JuniorTemplate.Infrastructure.csproj", "{B0D295FC-761D-431F-B91E-8B77B6AD4778}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JuniorTemplate.Infrastructure", "templates\api-2-junior\JuniorTemplate.Infrastructure\JuniorTemplate.Infrastructure.csproj", "{B0D295FC-761D-431F-B91E-8B77B6AD4778}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JuniorTemplate.Data.Sqlite", "templates\2-junior\JuniorTemplate.Data.Sqlite\JuniorTemplate.Data.Sqlite.csproj", "{73B69D26-91A5-4FCD-9A4B-10184EF8EDF7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JuniorTemplate.Data.Sqlite", "templates\api-2-junior\JuniorTemplate.Data.Sqlite\JuniorTemplate.Data.Sqlite.csproj", "{73B69D26-91A5-4FCD-9A4B-10184EF8EDF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiddleTemplate.Api", "templates\api-3-middle\MiddleTemplate.Api\MiddleTemplate.Api.csproj", "{20EA2DD8-7D36-4F4F-A4DA-BD70234E94CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiddleTemplate.Application", "templates\api-3-middle\MiddleTemplate.Application\MiddleTemplate.Application.csproj", "{D75C68E8-D138-449F-9675-A23E8C6F5763}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiddleTemplate.Data.Sqlite", "templates\api-3-middle\MiddleTemplate.Data.Sqlite\MiddleTemplate.Data.Sqlite.csproj", "{184933F2-5B1B-4EB2-B0AC-DAD24215FB68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MiddleTemplate.Infrastructure", "templates\api-3-middle\MiddleTemplate.Infrastructure\MiddleTemplate.Infrastructure.csproj", "{938DBBA3-2751-4426-BDAA-E29F2E3AE61F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeniorTemplate.Api", "templates\api-4-senior\SeniorTemplate.Api\SeniorTemplate.Api.csproj", "{9DA1E888-FB8D-4012-A4F0-05720E775B13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeniorTemplate.Application", "templates\api-4-senior\SeniorTemplate.Application\SeniorTemplate.Application.csproj", "{6234124D-7BC1-45E5-91DE-608B897DB847}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeniorTemplate.Infrastructure", "templates\api-4-senior\SeniorTemplate.Infrastructure\SeniorTemplate.Infrastructure.csproj", "{60AE6641-E34C-4A58-83F9-D74AD5EB8DEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeniorTemplate.Data.Sqlite", "templates\api-4-senior\SeniorTemplate.Data.Sqlite\SeniorTemplate.Data.Sqlite.csproj", "{C28B5D72-5F3A-43EA-A90F-DBE53AF67DCA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeniorTemplate.Core", "templates\api-4-senior\SeniorTemplate.Core\SeniorTemplate.Core.csproj", "{03C37446-34BE-4ECF-9D96-AA892BDC1F13}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +77,16 @@ Global
 		{22BA3842-6828-4B95-A4B0-E003F685DEDA} = {7158EE8C-E2D2-45D2-8447-266AC4CB3DBF}
 		{B0D295FC-761D-431F-B91E-8B77B6AD4778} = {7158EE8C-E2D2-45D2-8447-266AC4CB3DBF}
 		{73B69D26-91A5-4FCD-9A4B-10184EF8EDF7} = {7158EE8C-E2D2-45D2-8447-266AC4CB3DBF}
+		{20EA2DD8-7D36-4F4F-A4DA-BD70234E94CD} = {3F7BE0B7-20D6-4186-89B0-3A6B91F73B44}
+		{D75C68E8-D138-449F-9675-A23E8C6F5763} = {3F7BE0B7-20D6-4186-89B0-3A6B91F73B44}
+		{184933F2-5B1B-4EB2-B0AC-DAD24215FB68} = {3F7BE0B7-20D6-4186-89B0-3A6B91F73B44}
+		{938DBBA3-2751-4426-BDAA-E29F2E3AE61F} = {3F7BE0B7-20D6-4186-89B0-3A6B91F73B44}
+		{26A30DDA-3129-4966-B339-9177B066C35C} = {9ED58246-C5E5-4C9A-A25E-0B3E200852D3}
+		{9DA1E888-FB8D-4012-A4F0-05720E775B13} = {6D3FA0C5-4546-4B9E-8CCF-F2D20BC421D8}
+		{6234124D-7BC1-45E5-91DE-608B897DB847} = {6D3FA0C5-4546-4B9E-8CCF-F2D20BC421D8}
+		{60AE6641-E34C-4A58-83F9-D74AD5EB8DEE} = {6D3FA0C5-4546-4B9E-8CCF-F2D20BC421D8}
+		{C28B5D72-5F3A-43EA-A90F-DBE53AF67DCA} = {6D3FA0C5-4546-4B9E-8CCF-F2D20BC421D8}
+		{03C37446-34BE-4ECF-9D96-AA892BDC1F13} = {6D3FA0C5-4546-4B9E-8CCF-F2D20BC421D8}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{E418F129-562C-43F4-BBE3-487ED4270DFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -103,5 +133,45 @@ Global
 		{73B69D26-91A5-4FCD-9A4B-10184EF8EDF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73B69D26-91A5-4FCD-9A4B-10184EF8EDF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73B69D26-91A5-4FCD-9A4B-10184EF8EDF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20EA2DD8-7D36-4F4F-A4DA-BD70234E94CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20EA2DD8-7D36-4F4F-A4DA-BD70234E94CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20EA2DD8-7D36-4F4F-A4DA-BD70234E94CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20EA2DD8-7D36-4F4F-A4DA-BD70234E94CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D75C68E8-D138-449F-9675-A23E8C6F5763}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D75C68E8-D138-449F-9675-A23E8C6F5763}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D75C68E8-D138-449F-9675-A23E8C6F5763}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D75C68E8-D138-449F-9675-A23E8C6F5763}.Release|Any CPU.Build.0 = Release|Any CPU
+		{184933F2-5B1B-4EB2-B0AC-DAD24215FB68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{184933F2-5B1B-4EB2-B0AC-DAD24215FB68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{184933F2-5B1B-4EB2-B0AC-DAD24215FB68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{184933F2-5B1B-4EB2-B0AC-DAD24215FB68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{938DBBA3-2751-4426-BDAA-E29F2E3AE61F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{938DBBA3-2751-4426-BDAA-E29F2E3AE61F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{938DBBA3-2751-4426-BDAA-E29F2E3AE61F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{938DBBA3-2751-4426-BDAA-E29F2E3AE61F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26A30DDA-3129-4966-B339-9177B066C35C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26A30DDA-3129-4966-B339-9177B066C35C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26A30DDA-3129-4966-B339-9177B066C35C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26A30DDA-3129-4966-B339-9177B066C35C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DA1E888-FB8D-4012-A4F0-05720E775B13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DA1E888-FB8D-4012-A4F0-05720E775B13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DA1E888-FB8D-4012-A4F0-05720E775B13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DA1E888-FB8D-4012-A4F0-05720E775B13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6234124D-7BC1-45E5-91DE-608B897DB847}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6234124D-7BC1-45E5-91DE-608B897DB847}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6234124D-7BC1-45E5-91DE-608B897DB847}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6234124D-7BC1-45E5-91DE-608B897DB847}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60AE6641-E34C-4A58-83F9-D74AD5EB8DEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60AE6641-E34C-4A58-83F9-D74AD5EB8DEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60AE6641-E34C-4A58-83F9-D74AD5EB8DEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60AE6641-E34C-4A58-83F9-D74AD5EB8DEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C28B5D72-5F3A-43EA-A90F-DBE53AF67DCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C28B5D72-5F3A-43EA-A90F-DBE53AF67DCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C28B5D72-5F3A-43EA-A90F-DBE53AF67DCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C28B5D72-5F3A-43EA-A90F-DBE53AF67DCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03C37446-34BE-4ECF-9D96-AA892BDC1F13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03C37446-34BE-4ECF-9D96-AA892BDC1F13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03C37446-34BE-4ECF-9D96-AA892BDC1F13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03C37446-34BE-4ECF-9D96-AA892BDC1F13}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

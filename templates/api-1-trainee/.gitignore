@@ -1,0 +1,29 @@
+# JetBrains Rider cache
+riderModule.iml
+/_ReSharper.Caches/
+.idea/
+
+# Visual Studio cahche
+.vs/
+
+# VS Code cahche
+.vscode/
+
+# Log files
+logs/
+*.log
+
+# .NET Build results
+[Bb]in/
+[Oo]bj/
+/packages/
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+
+# Mac OS cahce
+.DS_Store
