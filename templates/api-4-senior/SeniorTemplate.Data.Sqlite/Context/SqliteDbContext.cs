@@ -7,7 +7,7 @@ using SeniorTemplate.Data.SeedData;
 
 namespace SeniorTemplate.Data.Context;
 
-public class SqliteDbContext : IdentityDbContext<AppUser, AppRole, long,
+public class SqliteDbContext : IdentityDbContext<AppUser, AppRole, int,
 	AppUserClaim, AppUserRole, AppUserLogin, AppRoleClaim, AppUserToken>, IDatabaseContext
 {
 	public SqliteDbContext(DbContextOptions options) : base(options) { }
@@ -15,6 +15,7 @@ public class SqliteDbContext : IdentityDbContext<AppUser, AppRole, long,
 
 	protected override void OnModelCreating(ModelBuilder builder)
 	{
+		base.OnModelCreating(builder);
 		builder.ApplyConfigurationsFromCurrentAssembly();
 
 		builder.SeedDefaultTeas();

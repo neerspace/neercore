@@ -35,8 +35,8 @@ public static class LoggerInstaller
 		}
 	};
 
-	public static Layout FileLayout { get; set; } = "${longdate} |${level:uppercase=true:truncate=4}| — ${logger:padding=22}[${threadid}]\n${message} ${exception:format=ToString}";
-	public static Layout ConsoleLayout { get; set; } = "${time}  |${level:uppercase=true:truncate=4}| ${logger:shortname=true:padding=22}  —  ${message} ${exception:format=ToString}";
+	public static Layout FileLayout { get; set; } = "${longdate} |${level:uppercase=true:truncate=4}| — ${logger:padding=25}[${threadid}]\n${message} ${exception:format=ToString}";
+	public static Layout ConsoleLayout { get; set; } = "${time}  ${logger:shortname=true:padding=25} |${level:uppercase=true:truncate=4}|  —  ${message} ${exception:format=ToString}";
 
 	public static ILogger InitDefault(string? rootLoggerName = null)
 	{
@@ -86,7 +86,7 @@ public static class LoggerInstaller
 
 		foreach (var target in new Target[] { logConsole, logFile })
 		{
-			configuration.LoggingRules.Add(new LoggingRule("Microsoft.*", LogLevel.Info, target));
+			configuration.AddRule(LogLevel.Info, LogLevel.Fatal, target, "Microsoft.*", final: true);
 			configuration.LoggingRules.Add(new LoggingRule(applicationAssembly + ".*", LogLevel.Trace, target));
 			configuration.LoggingRules.Add(new LoggingRule("*", LogLevel.Warn, target));
 		}
