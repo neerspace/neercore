@@ -36,7 +36,7 @@ public static class LoggerInstaller
 	};
 
 	public static Layout FileLayout { get; set; } = "${longdate} |${level:uppercase=true:truncate=4}| — ${logger:padding=25}[${threadid}]\n${message} ${exception:format=ToString}";
-	public static Layout ConsoleLayout { get; set; } = "${time}  ${logger:shortname=true:padding=25} |${level:uppercase=true:truncate=4}|  —  ${message} ${exception:format=ToString}";
+	public static Layout ConsoleLayout { get; set; } = "[${time}] ${logger:shortname=true:padding=25} — |${level:uppercase=true:truncate=4}| — ${message} ${exception:format=ToString}";
 
 	public static ILogger InitDefault(string? rootLoggerName = null)
 	{
@@ -64,7 +64,8 @@ public static class LoggerInstaller
 				ConsoleWordHighlightingRule("ERRO", ConsoleOutputColor.Black, ConsoleOutputColor.Red),
 				ConsoleWordHighlightingRule("FATA", ConsoleOutputColor.White, ConsoleOutputColor.Red),
 				ConsoleWordsSetHighlightingRule(new[] { "true", "false", "yes", "no" }, ConsoleOutputColor.Blue),
-				ConsoleWordsSetHighlightingRule(new[] { "null", "none", "not" }, ConsoleOutputColor.DarkMagenta)
+				ConsoleWordsSetHighlightingRule(new[] { "null", "none", "not" }, ConsoleOutputColor.DarkMagenta),
+				ConsoleWordHighlightingRegexRule(@"\[(2[0-3]|[01]?[0-9]):([0-5]?[0-9]):([0-5]?[0-9])\.\d\d\d\d\]", ConsoleOutputColor.DarkGray)
 			}
 		};
 		var logFile = new FileTarget("logFile")
