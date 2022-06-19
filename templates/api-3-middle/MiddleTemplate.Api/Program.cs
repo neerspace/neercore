@@ -38,7 +38,7 @@ static void ConfigureBuilder(WebApplicationBuilder builder)
 	builder.Services.AddApplication(builder.Configuration);
 	builder.Services.AddInfrastructure();
 
-	builder.AddNeerApi("MiddleTemplate.Api");
+	builder.AddNeerApi();
 }
 
 static void ConfigureWebApp(WebApplication app)

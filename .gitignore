@@ -1,3 +1,8 @@
+##### Custom ignores #####
+*.db
+
+##### Default ignores #####
+
 # JetBrains Rider cache
 riderModule.iml
 /_ReSharper.Caches/

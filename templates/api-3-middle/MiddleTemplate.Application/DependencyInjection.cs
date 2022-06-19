@@ -9,7 +9,7 @@ public static class DependencyInjection
 {
 	public static void AddApplication(this IServiceCollection services, IConfiguration configuration)
 	{
-		services.AddMediatorApplication("MiddleTemplate.Application");
+		services.AddMediatorApplicationFromCurrentAssembly();
 		services.BindConfigurationOptions(configuration);
 		services.RegisterMappings();
 	}

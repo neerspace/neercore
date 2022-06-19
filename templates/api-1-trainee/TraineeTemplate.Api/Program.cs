@@ -4,11 +4,13 @@ using NeerCore.Api;
 using NeerCore.Api.Extensions;
 using NeerCore.Api.Extensions.Swagger;
 using NeerCore.Data.EntityFramework;
+using NeerCore.Globals;
 using NeerCore.Mapping;
 using NLog;
 using TraineeTemplate.Api;
 using TraineeTemplate.Api.Data;
 
+GlobalConfiguration.ApplicationRootAssembly = typeof(Program).Assembly;
 CultureInfo.CurrentCulture = new CultureInfo("en");
 var logger = LoggerInstaller.InitDefault();
 
@@ -39,7 +41,7 @@ static void ConfigureBuilder(WebApplicationBuilder builder)
 	builder.Services.AddDatabase<SqliteDbContext>(db =>
 			db.UseSqlite(builder.Configuration.GetConnectionString("Sqlite")));
 
-	builder.AddNeerApi("TraineeTemplate.Api");
+	builder.AddNeerApi();
 	builder.Services.RegisterMapper<MapperRegister>();
 }
 

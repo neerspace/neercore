@@ -16,10 +16,6 @@ try
 {
 	var builder = WebApplication.CreateBuilder(args);
 	ConfigureBuilder(builder);
-	logger.Trace("TESTSTETESESTSET");
-	logger.Debug("TESTSTETESESTSET true noooo");
-	logger.Warn("TESTSTETESESTSET false yess");
-	logger.Info("TESTSTETESESTSET yes");
 
 	var app = builder.Build();
 	ConfigureWebApp(app);

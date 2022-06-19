@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NeerCore.Data.EntityFramework.Abstractions;
+using NeerCore.Data.EntityFramework.Extensions;
 
 namespace MiddleTemplate.Data.Context;
 
@@ -10,7 +11,7 @@ public class SqliteDbContext : DbContext, IDatabaseContext
 
 	protected override void OnModelCreating(ModelBuilder builder)
 	{
-		builder.ApplyConfigurationsFromAssembly(GetType().Assembly);
+		builder.ApplyConfigurationsFromCurrentAssembly();
 		builder.SeedDefaultData();
 	}
 }

@@ -5,8 +5,10 @@ using JuniorTemplate.Infrastructure;
 using NeerCore.Api;
 using NeerCore.Api.Extensions;
 using NeerCore.Api.Extensions.Swagger;
+using NeerCore.Globals;
 using NLog;
 
+GlobalConfiguration.ApplicationRootAssembly = typeof(Program).Assembly;
 CultureInfo.CurrentCulture = new CultureInfo("en");
 var logger = LoggerInstaller.InitDefault();
 
@@ -38,7 +40,7 @@ static void ConfigureBuilder(WebApplicationBuilder builder)
 	builder.Services.AddApplication(builder.Configuration);
 	builder.Services.AddInfrastructure();
 
-	builder.AddNeerApi("JuniorTemplate.Api");
+	builder.AddNeerApi();
 }
 
 static void ConfigureWebApp(WebApplication app)

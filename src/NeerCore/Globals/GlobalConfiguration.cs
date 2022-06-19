@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using NeerCore.Extensions;
 
 namespace NeerCore.Globals;
 
@@ -13,5 +14,5 @@ public static class GlobalConfiguration
 		set => applicationRootAssembly = value;
 	}
 
-	public static string ApplicationNamespace => applicationNamespace ??= ApplicationRootAssembly.GetName().Name!.Split('.')[0];
+	public static string ApplicationNamespace => applicationNamespace ??= ApplicationRootAssembly.GetBaseNamespace();
 }
