@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using MiddleTemplate.Data.Entities;
+using SeniorTemplate.Data.Entities;
 
-namespace MiddleTemplate.Data.Configuration;
+namespace SeniorTemplate.Data.Configuration;
 
 internal class TeaConfiguration : IEntityTypeConfiguration<Tea>
 {

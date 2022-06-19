@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NeerCore.Data.EntityFramework;
 
-namespace MiddleTemplate.Data.Context;
+namespace SeniorTemplate.Data.Context;
 
 public class SqliteDbContextFactory : DbContextFactoryBase<SqliteDbContext>
 {

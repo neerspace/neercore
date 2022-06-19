@@ -1,7 +1,7 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace NeerCore;
+namespace NeerCore.Globals;
 
 public static class GlobalJsonConventions
 {

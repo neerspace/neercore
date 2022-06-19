@@ -1,24 +1,26 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using System.Reflection;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using NeerCore.Api.Extensions;
-using NeerCore.Api.Extensions.Swagger;
-using NeerCore.DependencyInjection.Extensions;
+using NeerCore.DependencyInjection;
 using NLog;
 using NLog.Web;
-using Sieve.Services;
 
 namespace NeerCore.Api;
 
 public static class DependencyInjection
 {
-	public static void AddNeerApi(this WebApplicationBuilder builder, string assemblyName) =>
-			builder.AddNeerApi(new[] { assemblyName });
+	public static void AddNeerApi(this WebApplicationBuilder builder) =>
+			builder.AddNeerApi(StackTraceUtility.GetCallerAssembly());
 
-	public static void AddNeerApi(this WebApplicationBuilder builder, IEnumerable<string> assemblyNames)
+	public static void AddNeerApi(this WebApplicationBuilder builder, params string[] assemblyNames) =>
+			builder.AddNeerApi(assemblyNames.Select(Assembly.Load).ToArray());
+
+	public static void AddNeerApi(this WebApplicationBuilder builder, params Assembly[] assemblies)
 	{
 		builder.Logging.AddNLog();
-		builder.Services.AddNeerApiServices(assemblyNames);
+		builder.Services.AddNeerApiServices(assemblies);
 
 		builder.Services.AddControllers(KebabCaseNamingConvention.Use);
 	}
@@ -30,23 +32,5 @@ public static class DependencyInjection
 	{
 		logging.ClearProviders();
 		logging.AddNLogWeb(LogManager.Configuration);
-	}
-
-	public static void AddNeerApiServices(this IServiceCollection services, string assemblyName) =>
-			services.AddNeerApiServices(new[] { assemblyName });
-
-	/// <summary>
-	/// 
-	/// </summary>
-	public static void AddNeerApiServices(this IServiceCollection services, IEnumerable<string> assemblyNames)
-	{
-		services.AddScoped<ISieveProcessor, SieveProcessor>();
-		services.AddServicesFromAssemblies(assemblyNames);
-
-		services.AddFactoryMiddlewares();
-		services.AddDefaultCorsPolicy();
-		services.AddCustomApiVersioning();
-		services.ConfigureApiBehaviorOptions();
-		services.AddCustomSwagger();
 	}
 }

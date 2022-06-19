@@ -12,11 +12,11 @@ public class TeaDeleteHandler : IRequestHandler<TeaDeleteCommand>
 	public TeaDeleteHandler(IDatabaseContext database) => _database = database;
 
 
-	public async Task<Unit> Handle(TeaDeleteCommand request, CancellationToken cancellationToken)
+	public async Task<Unit> Handle(TeaDeleteCommand request, CancellationToken cancel)
 	{
-		var entity = await _database.Set<Tea>().GetByIdAsync(request.Id, cancellationToken);
+		var entity = await _database.Set<Tea>().GetByIdAsync(request.Id, cancel);
 		_database.Set<Tea>().Remove(entity);
-		await _database.SaveChangesAsync(cancellationToken);
+		await _database.SaveChangesAsync(cancel);
 		return Unit.Value;
 	}
 }

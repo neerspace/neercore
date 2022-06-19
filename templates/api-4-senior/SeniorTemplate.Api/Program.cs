@@ -1,19 +1,25 @@
 using System.Globalization;
-using MiddleTemplate.Data;
 using NeerCore.Api;
 using NeerCore.Api.Extensions;
 using NeerCore.Api.Extensions.Swagger;
+using NeerCore.Globals;
 using NLog;
 using SeniorTemplate.Application;
+using SeniorTemplate.Data;
 using SeniorTemplate.Infrastructure;
 
 CultureInfo.CurrentCulture = new CultureInfo("en");
+GlobalConfiguration.ApplicationRootAssembly = typeof(Program).Assembly;
 var logger = LoggerInstaller.InitDefault();
 
 try
 {
 	var builder = WebApplication.CreateBuilder(args);
 	ConfigureBuilder(builder);
+	logger.Trace("TESTSTETESESTSET");
+	logger.Debug("TESTSTETESESTSET true noooo");
+	logger.Warn("TESTSTETESESTSET false yess");
+	logger.Info("TESTSTETESESTSET yes");
 
 	var app = builder.Build();
 	ConfigureWebApp(app);
@@ -34,11 +40,11 @@ finally
 
 static void ConfigureBuilder(WebApplicationBuilder builder)
 {
-	builder.Services.AddSqlServerDatabase();
+	builder.Services.AddSqlServerDatabase(builder.Configuration);
 	builder.Services.AddApplication(builder.Configuration);
 	builder.Services.AddInfrastructure();
 
-	builder.AddNeerApi("SeniorTemplate.Api");
+	builder.AddNeerApi();
 }
 
 static void ConfigureWebApp(WebApplication app)

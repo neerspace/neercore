@@ -1,5 +1,5 @@
 ﻿using Mapster;
-using MiddleTemplate.Data.Entities;
+using SeniorTemplate.Data.Entities;
 
 namespace SeniorTemplate.Application;
 

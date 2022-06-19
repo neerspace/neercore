@@ -13,9 +13,9 @@ public class TeaByIdHandler : IRequestHandler<TeaByIdQuery, TeaModel>
 	public TeaByIdHandler(IDatabaseContext database) => _database = database;
 
 
-	public async Task<TeaModel> Handle(TeaByIdQuery request, CancellationToken cancellationToken)
+	public async Task<TeaModel> Handle(TeaByIdQuery request, CancellationToken cancel)
 	{
-		var entity = await _database.Set<Tea>().GetByIdAsync(request.Id, cancellationToken);
+		var entity = await _database.Set<Tea>().GetByIdAsync(request.Id, cancel);
 		return entity.Adapt<TeaModel>();
 	}
 }

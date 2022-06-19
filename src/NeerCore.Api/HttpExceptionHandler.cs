@@ -3,6 +3,7 @@ using System.Text.Json;
 using FluentValidation;
 using Microsoft.AspNetCore.Http;
 using NeerCore.Exceptions;
+using NeerCore.Globals;
 using NLog;
 
 namespace NeerCore.Api;

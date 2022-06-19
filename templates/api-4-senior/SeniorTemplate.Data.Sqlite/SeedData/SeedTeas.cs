@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using MiddleTemplate.Data.Entities;
+using SeniorTemplate.Data.Entities;
 
-namespace MiddleTemplate.Data.Context;
+namespace SeniorTemplate.Data.SeedData;
 
-public static class DataSeed
+public static partial class SeedExtensions
 {
-	public static void SeedDefaultData(this ModelBuilder builder)
+	public static void SeedDefaultTeas(this ModelBuilder builder)
 	{
 		builder.Entity<Tea>().HasData(Products);
 	}

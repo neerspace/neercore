@@ -22,11 +22,11 @@ public class TeaByFilterHandler : IRequestHandler<TeaByFilterQuery, IEnumerable<
 	}
 
 
-	public async Task<IEnumerable<TeaModel>> Handle(TeaByFilterQuery request, CancellationToken cancellationToken)
+	public async Task<IEnumerable<TeaModel>> Handle(TeaByFilterQuery request, CancellationToken cancel)
 	{
 		var sieve = request.Adapt<SieveModel>();
 		var queryable = _sieveProcessor.Apply(sieve, _database.Set<Tea>().AsNoTracking());
-		var entities = await queryable.ToListAsync(cancellationToken);
+		var entities = await queryable.ToListAsync(cancel);
 		return entities.AdaptAll<TeaModel>();
 	}
 }

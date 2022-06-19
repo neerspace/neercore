@@ -11,9 +11,25 @@ public static class ServiceCollectionExtensions
 			services.AddServicesFromAssembly(assemblyName);
 	}
 
+	public static void AddServicesFromAssemblies(this IServiceCollection services, IEnumerable<Assembly> assemblies)
+	{
+		foreach (Assembly assembly in assemblies)
+			services.AddServicesFromAssembly(assembly);
+	}
+
+	public static void AddServicesFromCurrentAssembly(this IServiceCollection services)
+	{
+		services.AddServicesFromAssembly(StackTraceUtility.GetCallerAssembly());
+	}
+
 	public static void AddServicesFromAssembly(this IServiceCollection services, string assemblyName)
 	{
-		IEnumerable<Type> serviceTypes = Assembly.Load(assemblyName).GetTypes();
+		services.AddServicesFromAssembly(Assembly.Load(assemblyName));
+	}
+
+	public static void AddServicesFromAssembly(this IServiceCollection services, Assembly assembly)
+	{
+		IEnumerable<Type> serviceTypes = assembly.GetTypes();
 
 		foreach (Type implType in serviceTypes)
 		{

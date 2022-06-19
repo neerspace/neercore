@@ -12,7 +12,14 @@ public class TeasController : MediatorController
 	public async Task<TeaModel> Get([FromRoute] Guid id) => await Mediator.Send(new TeaByIdQuery(id));
 
 	[HttpGet]
-	public async Task<IEnumerable<TeaModel>> Filter([FromQuery] TeaByFilterQuery filter) => await Mediator.Send(filter);
+	public async Task<IEnumerable<TeaModel>> Filter([FromQuery] TeaByFilterQuery filter)
+	{
+		Logger.Trace("TESTSTETESESTSET");
+		Logger.Debug("TESTSTETESESTSET true noooo");
+		Logger.Warn("TESTSTETESESTSET false yess");
+		Logger.Info("TESTSTETESESTSET yes");
+		return await Mediator.Send(filter);
+	}
 
 	[HttpPost]
 	public async Task<ActionResult<TeaModel>> Post([FromBody] TeaCreateCommand command)

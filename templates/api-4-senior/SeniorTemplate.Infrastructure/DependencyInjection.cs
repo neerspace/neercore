@@ -7,6 +7,6 @@ public static class DependencyInjection
 {
 	public static void AddInfrastructure(this IServiceCollection services)
 	{
-		services.AddServicesFromAssembly("SeniorTemplate.Infrastructure");
+		services.AddServicesFromCurrentAssembly();
 	}
 }

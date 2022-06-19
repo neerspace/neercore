@@ -13,6 +13,16 @@
 
 	<ItemGroup>
 	  <PackageReference Include="Sieve" Version="2.5.5" />
+	  <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.19.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Reference Include="Microsoft.IdentityModel.Tokens">
+	    <HintPath>..\..\..\..\..\..\Users\Jurii\.nuget\packages\microsoft.identitymodel.tokens\6.19.0\lib\netstandard2.0\Microsoft.IdentityModel.Tokens.dll</HintPath>
+	  </Reference>
+	  <Reference Include="System.IdentityModel.Tokens.Jwt">
+	    <HintPath>..\..\..\..\..\..\Users\Jurii\.nuget\packages\system.identitymodel.tokens.jwt\6.19.0\lib\netstandard2.0\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+	  </Reference>
 	</ItemGroup>
 
 </Project>

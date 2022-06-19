@@ -1,7 +1,7 @@
 ﻿using NeerCore.Data.Abstractions;
 using Sieve.Attributes;
 
-namespace MiddleTemplate.Data.Entities;
+namespace SeniorTemplate.Data.Entities;
 
 public class Tea : IDatedEntity<Guid>
 {
