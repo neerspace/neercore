@@ -14,10 +14,6 @@ public class TeasController : MediatorController
 	[HttpGet]
 	public async Task<IEnumerable<TeaModel>> Filter([FromQuery] TeaByFilterQuery filter)
 	{
-		Logger.Trace("TESTSTETESESTSET");
-		Logger.Debug("TESTSTETESESTSET true noooo");
-		Logger.Warn("TESTSTETESESTSET false yess");
-		Logger.Info("TESTSTETESESTSET yes");
 		return await Mediator.Send(filter);
 	}
 

@@ -22,21 +22,21 @@ public static class LoggerInstaller
 
 	public static Layout CsvLayout { get; set; } = new CsvLayout
 	{
-		Delimiter = CsvColumnDelimiterMode.Space,
+		Delimiter = CsvColumnDelimiterMode.Tab,
 		WithHeader = false,
 		Quoting = CsvQuotingMode.Nothing,
 		Columns =
 		{
 			new("Date&Time", "${longdate}"),
-			new("Level", "${level:uppercase=true:padding=5} —"),
-			new("Logger", "[${logger:shortname=true}]"),
+			new("Level", "${level:uppercase=true:truncate=4}"),
+			new("Logger", "[${logger}]"),
 			new("Message", "${message}"),
 			new("Exception", "${exception:format=ToString}"),
 		}
 	};
 
-	public static Layout FileLayout { get; set; } = "[${longdate}]  ${level:uppercase=true:padding=5} — ${logger}\n${message} ${exception:format=ToString}";
-	public static Layout ConsoleLayout { get; set; } = "[${time}] ${level:uppercase=true:padding=5} — ${message} ${exception:format=ToString}";
+	public static Layout FileLayout { get; set; } = "${longdate} |${level:uppercase=true:truncate=4}| — ${logger:padding=22}[${threadid}]\n${message} ${exception:format=ToString}";
+	public static Layout ConsoleLayout { get; set; } = "${time}  |${level:uppercase=true:truncate=4}| ${logger:shortname=true:padding=22}  —  ${message} ${exception:format=ToString}";
 
 	public static ILogger InitDefault(string? rootLoggerName = null)
 	{
@@ -57,14 +57,14 @@ public static class LoggerInstaller
 			},
 			WordHighlightingRules =
 			{
-				ConsoleWordHighlightingRule("TRACE", ConsoleOutputColor.DarkGray),
-				ConsoleWordHighlightingRule("DEBUG", ConsoleOutputColor.Gray),
+				ConsoleWordHighlightingRule("TRAC", ConsoleOutputColor.DarkGray),
+				ConsoleWordHighlightingRule("DEBU", ConsoleOutputColor.Gray),
 				ConsoleWordHighlightingRule("INFO", ConsoleOutputColor.Green),
 				ConsoleWordHighlightingRule("WARN", ConsoleOutputColor.Yellow),
-				ConsoleWordHighlightingRule("ERROR", ConsoleOutputColor.Black, ConsoleOutputColor.Red),
-				ConsoleWordHighlightingRule("FATL", ConsoleOutputColor.White, ConsoleOutputColor.Red),
+				ConsoleWordHighlightingRule("ERRO", ConsoleOutputColor.Black, ConsoleOutputColor.Red),
+				ConsoleWordHighlightingRule("FATA", ConsoleOutputColor.White, ConsoleOutputColor.Red),
 				ConsoleWordsSetHighlightingRule(new[] { "true", "false", "yes", "no" }, ConsoleOutputColor.Blue),
-				ConsoleWordsSetHighlightingRule(new[] { "null", "none" }, ConsoleOutputColor.DarkMagenta)
+				ConsoleWordsSetHighlightingRule(new[] { "null", "none", "not" }, ConsoleOutputColor.DarkMagenta)
 			}
 		};
 		var logFile = new FileTarget("logFile")
