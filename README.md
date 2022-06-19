@@ -24,25 +24,25 @@ You can use one of provided templates for your web application.
 
 ### Trainee Template
 
-[source](https://github.com/jurilents/NeerCore/tree/development/templates/api-1-trainee)
+[source](https://github.com/jurilents/NeerCore/tree/master/templates/api-1-trainee)
 
 > Minimal template for simple projects. I recommend it as your first NeerCore project template 😏
 
 ### Junior Template
 
-[source](https://github.com/jurilents/NeerCore/tree/development/templates/api-2-junior)
+[source](https://github.com/jurilents/NeerCore/tree/master/templates/api-2-junior)
 
 > Clean service-based template.
 
 ### Middle Template
 
-[source](https://github.com/jurilents/NeerCore/tree/development/templates/api-3-middle)
+[source](https://github.com/jurilents/NeerCore/tree/master/templates/api-3-middle)
 
 > Clean CQRS Architecture template. All what your need to get started your new 💡💡 _idea_ 💡💡!
 
 ### Senior Template
 
-[source](https://github.com/jurilents/NeerCore/tree/development/templates/api-4-senior)
+[source](https://github.com/jurilents/NeerCore/tree/master/templates/api-4-senior)
 
 > Clean CQRS Architecture template with more features. Provided features: EF Identity, JWT Auth.
 
