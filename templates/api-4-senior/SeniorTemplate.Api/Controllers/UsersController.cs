@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SeniorTemplate.Api.Controllers.Abstractions;
+using SeniorTemplate.Application.Extensions;
+using SeniorTemplate.Application.Features.Users.Models;
 
 namespace SeniorTemplate.Api.Controllers;
 
