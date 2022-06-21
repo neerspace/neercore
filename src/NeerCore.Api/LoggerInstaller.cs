@@ -87,6 +87,9 @@ public static class LoggerInstaller
 
 		foreach (var target in new Target[] { logConsole, logFile })
 		{
+			configuration.AddRule(LogLevel.Warn, LogLevel.Fatal, target, "Microsoft.EntityFrameworkCore.*", final: true);
+			configuration.AddRule(LogLevel.Warn, LogLevel.Fatal, target, "Microsoft.AspNetCore.Hosting.*", final: true);
+			configuration.AddRule(LogLevel.Info, LogLevel.Fatal, target, "Microsoft.Hosting.Lifetime.*", final: true);
 			configuration.AddRule(LogLevel.Info, LogLevel.Fatal, target, "Microsoft.*", final: true);
 			configuration.LoggingRules.Add(new LoggingRule(applicationAssembly + ".*", LogLevel.Trace, target));
 			configuration.LoggingRules.Add(new LoggingRule("*", LogLevel.Warn, target));

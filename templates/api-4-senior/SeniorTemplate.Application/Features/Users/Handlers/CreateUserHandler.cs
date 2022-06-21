@@ -2,6 +2,7 @@
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using NeerCore.Exceptions;
+using SeniorTemplate.Application.Extensions;
 using SeniorTemplate.Application.Features.Users.Models;
 using SeniorTemplate.Core.Constants;
 using SeniorTemplate.Data.Entities;
@@ -20,7 +21,7 @@ public class CreateUserHandler : IRequestHandler<CreateUserCommand, User>
 
 		IdentityResult? result = await _userManager.CreateAsync(user);
 		if (!result.Succeeded)
-			throw new ValidationFailedException("User not created.", result.ToErrorDetails()); // TODO
+			throw new ValidationFailedException("User not created.", result.ToErrorDetails());
 
 		await _userManager.AddPasswordAsync(user, command.Password);
 		await _userManager.AddToRoleAsync(user, Roles.User);
