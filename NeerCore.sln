@@ -56,6 +56,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeniorTemplate.Data.Sqlite"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeniorTemplate.Core", "templates\api-4-senior\SeniorTemplate.Core\SeniorTemplate.Core.csproj", "{03C37446-34BE-4ECF-9D96-AA892BDC1F13}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeerCore.UnitTests", "tests\NeerCore.UnitTests\NeerCore.UnitTests.csproj", "{92A339E6-63FB-4BE0-9CF5-AB7438A4518E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,7 @@ Global
 		{60AE6641-E34C-4A58-83F9-D74AD5EB8DEE} = {6D3FA0C5-4546-4B9E-8CCF-F2D20BC421D8}
 		{C28B5D72-5F3A-43EA-A90F-DBE53AF67DCA} = {6D3FA0C5-4546-4B9E-8CCF-F2D20BC421D8}
 		{03C37446-34BE-4ECF-9D96-AA892BDC1F13} = {6D3FA0C5-4546-4B9E-8CCF-F2D20BC421D8}
+		{92A339E6-63FB-4BE0-9CF5-AB7438A4518E} = {1716E36C-0915-44B2-9BA5-BF36BC25B3C4}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{E418F129-562C-43F4-BBE3-487ED4270DFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -173,5 +176,9 @@ Global
 		{03C37446-34BE-4ECF-9D96-AA892BDC1F13}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03C37446-34BE-4ECF-9D96-AA892BDC1F13}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03C37446-34BE-4ECF-9D96-AA892BDC1F13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92A339E6-63FB-4BE0-9CF5-AB7438A4518E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92A339E6-63FB-4BE0-9CF5-AB7438A4518E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92A339E6-63FB-4BE0-9CF5-AB7438A4518E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92A339E6-63FB-4BE0-9CF5-AB7438A4518E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
