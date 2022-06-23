@@ -11,7 +11,7 @@ public static class StringExtensions
 	/// <returns>Result 'Camel case string'</returns>
 	public static string CamelCaseToWords(this string value)
 	{
-		if (value is null) throw new ArgumentNullException(nameof(value));
+		if (string.IsNullOrEmpty(value)) throw new ArgumentNullException(nameof(value));
 
 		string result = Regex.Replace(value, "(\\B[A-Z])", " $1");
 		return result[0] + result[1..].ToLower();
