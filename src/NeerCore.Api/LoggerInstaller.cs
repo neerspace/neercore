@@ -2,7 +2,6 @@
 using Microsoft.Extensions.Configuration;
 using NeerCore.DependencyInjection;
 using NeerCore.Extensions;
-using NeerCore.Globals;
 using NLog;
 using NLog.Conditions;
 using NLog.Config;
@@ -83,7 +82,7 @@ public static class LoggerInstaller
 		configuration.AddTarget(logFile);
 		configuration.AddTarget(logErrorsFile);
 
-		string applicationAssembly = GlobalConfiguration.ApplicationNamespace;
+		string applicationAssembly = GlobalConfig.ApplicationNamespace;
 
 		foreach (var target in new Target[] { logConsole, logFile })
 		{

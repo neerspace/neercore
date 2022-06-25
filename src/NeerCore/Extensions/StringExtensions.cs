@@ -4,9 +4,7 @@ namespace NeerCore.Extensions;
 
 public static class StringExtensions
 {
-	/// <summary>
-	/// Converts 'MyExampleString' to 'My example string'.
-	/// </summary>
+	/// <summary> Converts 'MyExampleString' to 'My example string'. </summary>
 	/// <param name="value">Source pascal or camel case 'MyExampleString'.</param>
 	/// <returns>Separate words string 'My example string'.</returns>
 	public static string CamelCaseToWords(this string value)
@@ -17,9 +15,7 @@ public static class StringExtensions
 		return result[0].ToString().ToUpperInvariant() + result[1..].ToLowerInvariant();
 	}
 
-	/// <summary>
-	/// Converts 'MyExampleString' to 'my_example_string'
-	/// </summary>
+	/// <summary> Converts 'MyExampleString' to 'my_example_string'.</summary>
 	/// <param name="value">Source pascal or camel case 'MyExampleString'.</param>
 	/// <returns>Camel case string 'my_example_string'.</returns>
 	public static string ToSnakeCase(this string value)

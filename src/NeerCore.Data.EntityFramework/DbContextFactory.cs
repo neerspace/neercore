@@ -1,7 +1,7 @@
 ﻿using System.Text.Json;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
-using NeerCore.Globals;
+using NeerCore.Json;
 
 namespace NeerCore.Data.EntityFramework;
 
@@ -76,7 +76,7 @@ public abstract class DbContextFactoryBase<TContext> : IDesignTimeDbContextFacto
 			throw new FileNotFoundException($"Config file not found: '{appsettingsPath}'");
 
 		string json = File.ReadAllText(absPath);
-		var settings = JsonSerializer.Deserialize<ConnectionStringOptions>(json, GlobalJsonConventions.ExtendedScheme);
+		var settings = JsonSerializer.Deserialize<ConnectionStringOptions>(json, JsonConventions.ExtendedScheme);
 		if (settings is null || settings.ConnectionStrings.Count == 0)
 			throw new KeyNotFoundException($"Settings file '{appsettingsPath}' successfully found, but no connection string found here.");
 

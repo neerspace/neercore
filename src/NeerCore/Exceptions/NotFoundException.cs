@@ -3,6 +3,10 @@ using NeerCore.Extensions;
 
 namespace NeerCore.Exceptions;
 
+/// <summary>
+/// The exception represents an HTTP error with status <b>404</b>.
+/// <i>Not found (or resource not exists).</i>
+/// </summary>
 public class NotFoundException : HttpException
 {
 	public override HttpStatusCode StatusCode => HttpStatusCode.NotFound;

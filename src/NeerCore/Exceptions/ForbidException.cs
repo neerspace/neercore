@@ -3,7 +3,8 @@
 namespace NeerCore.Exceptions;
 
 /// <summary>
-/// Status Code: 403
+/// The exception represents an HTTP error with status <b>403</b>.
+/// Forbidden <i>(or user has no required permissions to access the resource).</i>
 /// </summary>
 public class ForbidException : HttpException
 {

@@ -1,9 +1,9 @@
 ﻿using System.Reflection;
 using NeerCore.Extensions;
 
-namespace NeerCore.Globals;
+namespace NeerCore;
 
-public static class GlobalConfiguration
+public static class GlobalConfig
 {
 	private static Assembly? applicationRootAssembly;
 	private static string? applicationNamespace;
