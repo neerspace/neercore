@@ -4,7 +4,7 @@
 		<TargetFramework>net6.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
-		<RootNamespace>NeerCore.Application.Extensions</RootNamespace>
+		<RootNamespace>NeerCore.Application</RootNamespace>
 		<AssemblyName>NeerCore.Application.MediatR</AssemblyName>
 		<PackageIcon>favicon.png</PackageIcon>
 		<Authors>jurilents</Authors>
