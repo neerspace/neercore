@@ -7,6 +7,6 @@ public static class ModelBuilderExtensions
 {
 	public static void ApplyConfigurationsFromCurrentAssembly(this ModelBuilder builder)
 	{
-		builder.ApplyConfigurationsFromAssembly(StackTraceUtility.GetCallerAssembly());
+		builder.ApplyConfigurationsFromAssembly(StackTraceUtility.GetRequiredCallerAssembly());
 	}
 }

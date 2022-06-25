@@ -4,7 +4,7 @@ using NLog;
 namespace NeerCore.Api;
 
 /// <summary>
-/// Base API controller
+///		Base API controller.
 /// </summary>
 [ApiController]
 [Route("/v{version:apiVersion}/[controller]")]

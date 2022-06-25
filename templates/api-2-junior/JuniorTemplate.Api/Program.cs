@@ -2,13 +2,14 @@ using System.Globalization;
 using JuniorTemplate.Application;
 using JuniorTemplate.Data;
 using JuniorTemplate.Infrastructure;
+using NeerCore;
 using NeerCore.Api;
 using NeerCore.Api.Extensions;
 using NeerCore.Api.Extensions.Swagger;
-using NeerCore.Globals;
+using NeerCore.DependencyInjection;
 using NLog;
 
-GlobalConfiguration.ApplicationRootAssembly = typeof(Program).Assembly;
+GlobalConfig.ApplicationRootAssembly = typeof(Program).Assembly;
 CultureInfo.CurrentCulture = new CultureInfo("en");
 var logger = LoggerInstaller.InitDefault();
 

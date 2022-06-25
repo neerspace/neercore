@@ -2,7 +2,7 @@
 using System.Text.Json;
 using Microsoft.AspNetCore.Http;
 using NeerCore.Exceptions;
-using NeerCore.Globals;
+using NeerCore.Json;
 
 namespace NeerCore.Api.Extensions;
 
@@ -12,7 +12,7 @@ public static class HttpContextExtensions
 	{
 		context.ContentType = "application/json";
 		context.StatusCode = (int) statusCode;
-		await context.WriteAsync(JsonSerializer.Serialize(response, GlobalJsonConventions.CamelCase));
+		await context.WriteAsync(JsonSerializer.Serialize(response, JsonConventions.CamelCase));
 	}
 
 	public static async Task Write500ErrorAsync(this HttpResponse context, Exception exception)

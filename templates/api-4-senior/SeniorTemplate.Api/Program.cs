@@ -1,15 +1,16 @@
 using System.Globalization;
+using NeerCore;
 using NeerCore.Api;
 using NeerCore.Api.Extensions;
 using NeerCore.Api.Extensions.Swagger;
-using NeerCore.Globals;
+using NeerCore.DependencyInjection;
 using NLog;
 using SeniorTemplate.Application;
 using SeniorTemplate.Data;
 using SeniorTemplate.Infrastructure;
 
 CultureInfo.CurrentCulture = new CultureInfo("en");
-GlobalConfiguration.ApplicationRootAssembly = typeof(Program).Assembly;
+GlobalConfig.ApplicationRootAssembly = typeof(Program).Assembly;
 var logger = LoggerInstaller.InitDefault();
 
 try

@@ -1,16 +1,18 @@
 using System.Globalization;
 using Microsoft.EntityFrameworkCore;
+using NeerCore;
 using NeerCore.Api;
 using NeerCore.Api.Extensions;
 using NeerCore.Api.Extensions.Swagger;
 using NeerCore.Data.EntityFramework;
-using NeerCore.Globals;
+using NeerCore.DependencyInjection;
 using NeerCore.Mapping;
+using NeerCore.Mapping.Extensions;
 using NLog;
 using TraineeTemplate.Api;
 using TraineeTemplate.Api.Data;
 
-GlobalConfiguration.ApplicationRootAssembly = typeof(Program).Assembly;
+GlobalConfig.ApplicationRootAssembly = typeof(Program).Assembly;
 CultureInfo.CurrentCulture = new CultureInfo("en");
 var logger = LoggerInstaller.InitDefault();
 

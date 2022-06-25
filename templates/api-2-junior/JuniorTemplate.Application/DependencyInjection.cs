@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NeerCore.Mapping;
+using NeerCore.Mapping.Extensions;
 
 namespace JuniorTemplate.Application;
 

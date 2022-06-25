@@ -1,8 +1,8 @@
 ﻿using System.Reflection;
 using Microsoft.Extensions.Configuration;
 using NeerCore.DependencyInjection;
+using NeerCore.DependencyInjection.Extensions;
 using NeerCore.Extensions;
-using NeerCore.Globals;
 using NLog;
 using NLog.Conditions;
 using NLog.Config;
@@ -83,7 +83,7 @@ public static class LoggerInstaller
 		configuration.AddTarget(logFile);
 		configuration.AddTarget(logErrorsFile);
 
-		string applicationAssembly = GlobalConfiguration.ApplicationNamespace;
+		string applicationAssembly = GlobalConfig.ApplicationNamespace;
 
 		foreach (var target in new Target[] { logConsole, logFile })
 		{
@@ -102,7 +102,7 @@ public static class LoggerInstaller
 		ConfigurationItemFactory.Default.RegisterItemsFromAssembly(Assembly.Load("NLog.Extensions.Logging"));
 		ConfigurationItemFactory.Default.RegisterItemsFromAssembly(Assembly.Load("NLog.Web.AspNetCore"));
 
-		rootLoggerName ??= StackTraceUtility.GetCallerAssembly()!.GetBaseNamespace() + "." + DefaultLoggerName;
+		rootLoggerName ??= StackTraceUtility.GetRequiredCallerAssembly()!.GetBaseNamespace() + "." + DefaultLoggerName;
 		return NLogBuilder.ConfigureNLog(LogManager.Configuration).GetLogger(rootLoggerName);
 	}
 

@@ -10,7 +10,7 @@ public static class MiddlewareExtensions
 {
 	public static void AddFactoryMiddlewares(this IServiceCollection services)
 	{
-		IEnumerable<Type> middlewares = AssemblyProvider.GetImplementations<IMiddleware>();
+		IEnumerable<Type> middlewares = AssemblyProvider.GetImplementationsOf<IMiddleware>();
 		foreach (Type middleware in middlewares)
 			services.AddScoped(middleware);
 	}

@@ -2,9 +2,11 @@
 using Mapster;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace NeerCore.Mapping;
+namespace NeerCore.Mapping.Extensions;
 
-public static class DependencyInjection
+// TODO: Add documentation
+
+public static class ServiceCollectionExtensions
 {
 	public static void RegisterMapper<TRegister>(this IServiceCollection services)
 			where TRegister : IRegister

@@ -10,9 +10,23 @@ public static class StackTraceUtility
 	private static readonly Assembly systemAssembly = typeof(Debug).Assembly;
 
 
-	public static Assembly? GetCallerAssembly()
+	/// <summary>
+	///		Returns the Assembly from which the method that will call this method was called.
+	///		Or throws an <see cref="NullReferenceException"/> if caller assembly is <see langword="null"/>.
+	/// </summary>
+	/// <exception cref="NullReferenceException">If caller assembly is <see langword="null"/>.</exception>
+	/// <inheritdoc cref="GetCallerAssembly"/>
+	public static Assembly GetRequiredCallerAssembly(int framesToSkip = 2)
 	{
-		const int framesToSkip = 2;
+		return GetCallerAssembly(framesToSkip) ?? throw new NullReferenceException("Caller assembly not found.");
+	}
+
+
+	/// <summary>Returns the Assembly from which the method that will call this method was called.</summary>
+	/// <param name="framesToSkip">Stack trace calls to skip.</param>
+	/// <returns>Assembly from which the method that will call this method was called.</returns>
+	public static Assembly? GetCallerAssembly(int framesToSkip = 2)
+	{
 		var stackFrame = new StackFrame(framesToSkip, false);
 
 		var method = stackFrame.GetMethod();

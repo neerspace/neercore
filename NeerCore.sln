@@ -14,7 +14,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeerCore", "src\NeerCore\Ne
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeerCore.Api", "src\NeerCore.Api\NeerCore.Api.csproj", "{5987C584-DF21-4890-A011-3D82FB036A66}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeerCore.Data", "src\NeerCore.Data\NeerCore.Data.csproj", "{A19AA27B-BE58-44D3-B36C-6C06F6A61491}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeerCore.Data.Abstractions", "src\NeerCore.Data.Abstractions\NeerCore.Data.Abstractions.csproj", "{A19AA27B-BE58-44D3-B36C-6C06F6A61491}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeerCore.Application.MediatR", "src\NeerCore.Application.MediatR\NeerCore.Application.MediatR.csproj", "{D38BED52-2178-4906-ADF8-E096FD8C7B89}"
 EndProject

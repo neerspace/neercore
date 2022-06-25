@@ -3,7 +3,8 @@
 namespace NeerCore.Exceptions;
 
 /// <summary>
-/// Status Code: 500
+/// The exception represents an HTTP error with status <b>500</b>. <br/>
+/// <i>Internal server error (or somethings goes wrong with your server).</i>
 /// </summary>
 public class InternalServerException : HttpException
 {
