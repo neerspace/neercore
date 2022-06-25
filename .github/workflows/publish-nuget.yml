@@ -3,8 +3,8 @@ name: Publish NuGet Packages
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
+#  pull_request:
+#    branches: [ master ]
 
 env:
   pkg_source_nuget: "https://api.nuget.org/v3/index.json"
@@ -18,7 +18,7 @@ jobs:
         project:
           - NeerCore
           - NeerCore.Api
-          - NeerCore.Data
+          - NeerCore.Data.Abstractions
           - NeerCore.Data.EntityFramework
           - NeerCore.Application.MediatR
           - NeerCore.DependencyInjection
