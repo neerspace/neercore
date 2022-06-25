@@ -4,6 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using NeerCore.Application.Extensions;
 using NeerCore.Mapping;
+using NeerCore.Mapping.Extensions;
 using SeniorTemplate.Application.Options;
 
 namespace SeniorTemplate.Application;

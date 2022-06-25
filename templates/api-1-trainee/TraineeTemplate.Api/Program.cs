@@ -7,6 +7,7 @@ using NeerCore.Api.Extensions.Swagger;
 using NeerCore.Data.EntityFramework;
 using NeerCore.DependencyInjection;
 using NeerCore.Mapping;
+using NeerCore.Mapping.Extensions;
 using NLog;
 using TraineeTemplate.Api;
 using TraineeTemplate.Api.Data;

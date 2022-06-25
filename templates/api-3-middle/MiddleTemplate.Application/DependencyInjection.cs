@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using NeerCore.Application.Extensions;
 using NeerCore.Mapping;
+using NeerCore.Mapping.Extensions;
 
 namespace MiddleTemplate.Application;
 
