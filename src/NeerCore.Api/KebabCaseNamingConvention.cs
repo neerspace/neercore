@@ -6,14 +6,10 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace NeerCore.Api;
 
-/// <remarks>
-/// kebab-case-example
-/// </remarks>
+/// <remarks>kebab-case-example</remarks>
 public class KebabCaseNamingConvention : IOutboundParameterTransformer
 {
-	/// <summary>
-	/// To convert ControllerClassNames to kebab-case-style routes
-	/// </summary>
+	/// <summary>To convert ControllerClassNames to kebab-case-style routes.</summary>
 	public static void Use(MvcOptions options)
 	{
 		options.Conventions.Add(new RouteTokenTransformerConvention(new KebabCaseNamingConvention()));

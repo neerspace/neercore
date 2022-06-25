@@ -3,6 +3,7 @@ using NeerCore;
 using NeerCore.Api;
 using NeerCore.Api.Extensions;
 using NeerCore.Api.Extensions.Swagger;
+using NeerCore.DependencyInjection;
 using NLog;
 using SeniorTemplate.Application;
 using SeniorTemplate.Data;

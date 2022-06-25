@@ -7,7 +7,7 @@ namespace NeerCore.Api.Extensions;
 public static class LoggingBuilderExtensions
 {
 	/// <summary>
-	/// Changes default logging provider to NLog
+	///		Changes default logging provider to NLog.
 	/// </summary>
 	public static void AddNLog(this ILoggingBuilder logging)
 	{

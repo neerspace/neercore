@@ -6,6 +6,7 @@ using NeerCore;
 using NeerCore.Api;
 using NeerCore.Api.Extensions;
 using NeerCore.Api.Extensions.Swagger;
+using NeerCore.DependencyInjection;
 using NLog;
 
 GlobalConfig.ApplicationRootAssembly = typeof(Program).Assembly;

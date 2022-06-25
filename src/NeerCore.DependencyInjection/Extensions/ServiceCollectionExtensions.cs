@@ -5,28 +5,37 @@ namespace NeerCore.DependencyInjection.Extensions;
 
 public static class ServiceCollectionExtensions
 {
+	/// <inheritdoc cref="AddServicesFromAssembly(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Reflection.Assembly)"/>
 	public static void AddServicesFromAssemblies(this IServiceCollection services, IEnumerable<string> assemblyNames)
 	{
 		foreach (string assemblyName in assemblyNames)
 			services.AddServicesFromAssembly(assemblyName);
 	}
 
+	/// <inheritdoc cref="AddServicesFromAssembly(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Reflection.Assembly)"/>
 	public static void AddServicesFromAssemblies(this IServiceCollection services, IEnumerable<Assembly> assemblies)
 	{
 		foreach (Assembly assembly in assemblies)
 			services.AddServicesFromAssembly(assembly);
 	}
 
+	/// <inheritdoc cref="AddServicesFromAssembly(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Reflection.Assembly)"/>
 	public static void AddServicesFromCurrentAssembly(this IServiceCollection services)
 	{
-		services.AddServicesFromAssembly(StackTraceUtility.GetCallerAssembly());
+		services.AddServicesFromAssembly(StackTraceUtility.GetRequiredCallerAssembly());
 	}
 
+	/// <inheritdoc cref="AddServicesFromAssembly(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Reflection.Assembly)"/>
 	public static void AddServicesFromAssembly(this IServiceCollection services, string assemblyName)
 	{
 		services.AddServicesFromAssembly(Assembly.Load(assemblyName));
 	}
 
+	/// <summary>Registers all services marked with attribute <see cref="InjectAttribute"/> to DI container.</summary>
+	/// <remarks><b>All services implementations MUST be configured with attribute <see cref="InjectAttribute"/>.</b></remarks>
+	/// <param name="services">DI container.</param>
+	/// <param name="assembly">Services implementations assembly.</param>
+	/// <exception cref="ArgumentOutOfRangeException">If invalid injection type provided.</exception>
 	public static void AddServicesFromAssembly(this IServiceCollection services, Assembly assembly)
 	{
 		IEnumerable<Type> serviceTypes = assembly.GetTypes();
@@ -64,7 +73,7 @@ public static class ServiceCollectionExtensions
 					break;
 				}
 				default:
-					throw new ArgumentOutOfRangeException(nameof(attr.InjectionType), "Invalid injection type");
+					throw new ArgumentOutOfRangeException(nameof(attr.InjectionType), "Invalid injection type.");
 			}
 		}
 	}

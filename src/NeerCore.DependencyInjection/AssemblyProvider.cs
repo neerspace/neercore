@@ -3,23 +3,33 @@
 namespace NeerCore.DependencyInjection;
 
 /// <summary>
-/// DO NOT OPEN THIS CLASS!!!
-/// TOO MUCH REFLECTION HERE!!!
+///		DO NOT OPEN THIS CLASS!!!
+///		TOO MUCH REFLECTION HERE!!!
 /// <br/>
-/// Please use naming style like 'MyApp.Application', 'MyApp.Data.Sqlite',
-/// if you want to work with this class in correct way :) 
+/// <remarks>
+///		Please use naming style like 'MyApp.Application', 'MyApp.Data.Sqlite',
+///		if you want to work with this class in correct way :)
+/// </remarks>
 /// </summary>
 public static class AssemblyProvider
 {
 	private static readonly string ProjectRootName = Assembly.GetExecutingAssembly().GetName().FullName.Split('.')[0];
-
 	private static IEnumerable<Assembly>? applicationAssemblies;
-	public static IEnumerable<Assembly> ApplicationAssemblies => applicationAssemblies ??= LoadAssemblies().Where(IsApplicationAssembly);
+
+	/// <summary>
+	/// 
+	/// </summary>
+	public static IEnumerable<Assembly> ApplicationAssemblies => applicationAssemblies ??= LoadAllAssemblies().Where(IsApplicationAssembly);
 
 	public static readonly Func<Assembly, bool> IsApplicationAssembly = asm =>
 			asm.FullName != null && asm.FullName.StartsWith(ProjectRootName, StringComparison.OrdinalIgnoreCase);
 
-	public static IEnumerable<Type> GetImplementations<TBase>()
+	/// <summary>
+	/// 
+	/// </summary>
+	/// <typeparam name="TBase"></typeparam>
+	/// <returns></returns>
+	public static IEnumerable<Type> GetImplementationsOf<TBase>()
 	{
 		Type baseType = typeof(TBase);
 
@@ -28,7 +38,11 @@ public static class AssemblyProvider
 				.ToList();
 	}
 
-	public static IEnumerable<Assembly> LoadAssemblies()
+	/// <summary>
+	/// 
+	/// </summary>
+	/// <returns></returns>
+	public static IEnumerable<Assembly> LoadAllAssemblies()
 	{
 		var list = new List<string>();
 		var stack = new Stack<Assembly>();

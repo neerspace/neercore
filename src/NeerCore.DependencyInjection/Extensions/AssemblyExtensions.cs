@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace NeerCore.Extensions;
+namespace NeerCore.DependencyInjection.Extensions;
 
 public static class AssemblyExtensions
 {

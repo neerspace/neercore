@@ -21,7 +21,7 @@ public static class ServiceCollectionExtensions
 
 	public static void AddMediatorApplicationFromCurrentAssembly(this IServiceCollection services)
 	{
-		services.AddMediatorApplication(new[] { StackTraceUtility.GetCallerAssembly() });
+		services.AddMediatorApplication(new[] { StackTraceUtility.GetRequiredCallerAssembly() });
 	}
 
 	public static void AddMediatorApplication(this IServiceCollection services, IEnumerable<string> assemblyNames)
