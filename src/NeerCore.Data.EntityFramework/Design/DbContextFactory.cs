@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using NeerCore.Json;
 
-namespace NeerCore.Data.EntityFramework;
+namespace NeerCore.Data.EntityFramework.Design;
 
 /// <summary>A factory for creating derived <see cref="DbContext" /> instances.</summary>
 /// <remarks>

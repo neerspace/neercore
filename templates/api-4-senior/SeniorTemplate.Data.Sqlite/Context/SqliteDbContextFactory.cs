@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NeerCore.Data.EntityFramework;
+using NeerCore.Data.EntityFramework.Design;
 
 namespace SeniorTemplate.Data.Context;
 
