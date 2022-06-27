@@ -2,7 +2,6 @@
 using Microsoft.Extensions.Configuration;
 using NeerCore.DependencyInjection;
 using NeerCore.DependencyInjection.Extensions;
-using NeerCore.Extensions;
 using NLog;
 using NLog.Conditions;
 using NLog.Config;
@@ -102,7 +101,7 @@ public static class LoggerInstaller
 		ConfigurationItemFactory.Default.RegisterItemsFromAssembly(Assembly.Load("NLog.Extensions.Logging"));
 		ConfigurationItemFactory.Default.RegisterItemsFromAssembly(Assembly.Load("NLog.Web.AspNetCore"));
 
-		rootLoggerName ??= StackTraceUtility.GetRequiredCallerAssembly()!.GetBaseNamespace() + "." + DefaultLoggerName;
+		rootLoggerName ??= Assembly.GetCallingAssembly().GetBaseNamespace() + "." + DefaultLoggerName;
 		return NLogBuilder.ConfigureNLog(LogManager.Configuration).GetLogger(rootLoggerName);
 	}
 

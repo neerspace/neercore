@@ -22,7 +22,7 @@ public static class ServiceCollectionExtensions
 	/// <inheritdoc cref="AddServicesFromAssembly(IServiceCollection,Assembly)"/>
 	public static void AddServicesFromCurrentAssembly(this IServiceCollection services)
 	{
-		services.AddServicesFromAssembly(StackTraceUtility.GetRequiredCallerAssembly());
+		services.AddServicesFromAssembly(Assembly.GetCallingAssembly());
 	}
 
 	/// <inheritdoc cref="AddServicesFromAssembly(IServiceCollection,Assembly)"/>

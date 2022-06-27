@@ -3,7 +3,6 @@ using FluentValidation.AspNetCore;
 using MediatR;
 using MediatR.Extensions.FluentValidation.AspNetCore;
 using Microsoft.Extensions.DependencyInjection;
-using NeerCore.DependencyInjection;
 
 namespace NeerCore.Application.Extensions;
 
@@ -24,7 +23,7 @@ public static class ServiceCollectionExtensions
 	/// <inheritdoc cref="AddMediatorApplication(IServiceCollection,IEnumerable{Assembly})"/>
 	public static void AddMediatorApplicationFromCurrentAssembly(this IServiceCollection services)
 	{
-		services.AddMediatorApplication(new[] { StackTraceUtility.GetRequiredCallerAssembly() });
+		services.AddMediatorApplication(new[] { Assembly.GetCallingAssembly() });
 	}
 
 	/// <inheritdoc cref="AddMediatorApplication(IServiceCollection,IEnumerable{Assembly})"/>
@@ -44,6 +43,7 @@ public static class ServiceCollectionExtensions
 		services.AddMediatR(assembliesArray).AddFluentValidation(options =>
 		{
 			options.DisableDataAnnotationsValidation = true;
+			// TODO: Remove deprecated properties and fix them
 			options.ImplicitlyValidateChildProperties = true;
 			options.ImplicitlyValidateRootCollectionElements = true;
 		});
