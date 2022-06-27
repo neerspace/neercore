@@ -13,7 +13,7 @@
 
 	<ItemGroup>
 	  <PackageReference Include="Sieve" Version="2.5.5" />
-	  <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.19.0" />
+	  <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.20.0" />
 	</ItemGroup>
 
 	<ItemGroup>

@@ -8,7 +8,7 @@ namespace NeerCore.Api.Extensions;
 public static class ApplicationBuilderExtensions
 {
 	public static void AddNeerApi(this WebApplicationBuilder builder) =>
-			builder.AddNeerApi(StackTraceUtility.GetRequiredCallerAssembly());
+			builder.AddNeerApi(Assembly.GetCallingAssembly());
 
 	public static void AddNeerApi(this WebApplicationBuilder builder, params string[] assemblyNames) =>
 			builder.AddNeerApi(assemblyNames.Select(Assembly.Load).ToArray());

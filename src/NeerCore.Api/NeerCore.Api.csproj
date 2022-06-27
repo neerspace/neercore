@@ -19,7 +19,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="FluentValidation" Version="11.0.3" />
+		<PackageReference Include="FluentValidation" Version="11.1.0" />
 		<PackageReference Include="Mapster" Version="7.3.0" />
 		<PackageReference Include="Microsoft.AspNetCore.JsonPatch" Version="6.0.6" />
 		<PackageReference Include="Sieve" Version="2.5.5" />
