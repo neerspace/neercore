@@ -4,7 +4,9 @@
 [![NuGet Pre-Release](https://img.shields.io/nuget/vpre/NeerCore?style=for-the-badge)](https://www.nuget.org/packages/NeerCore)
 [![NuGet Pre-Release](https://img.shields.io/endpoint?color=2AABEE&label=TELEGRAM&logo=null&style=for-the-badge&url=https%3A%2F%2Frunkit.io%2Fdamiankrawczyk%2Ftelegram-badge%2Fbranches%2Fmaster%3Furl%3Dhttps%3A%2F%2Ft.me%2Fdotnetme)](https://t.me/dotnetme)
 
-![logo](favicon.png)
+<div style="text-align: center;">
+    <img src="favicon.png" alt="logo" height="200"/>
+</div>
 
 ## About
 
@@ -20,33 +22,31 @@ Thank you for using my developments, I hope they make your life easier! ;)
 
 ## Getting started
 
-You can use one of provided templates for your web application.
+You can use one of provided templates for your web or console application.
 
-### Trainee Template
+### [Console app with DI](https://github.com/jurilents/NeerCore-Examples-ConsoleDependencyInjection)
 
-[source](https://github.com/jurilents/NeerCore/tree/master/templates/api-1-trainee)
+A simple example of a console application using Dependency Injection.
 
-> Minimal template for simple projects. I recommend it as your first NeerCore project template 😏
+### [Simple API](https://github.com/jurilents/NeerCore-Examples-SimpleApi)
 
-### Junior Template
+> I recommend it as your first NeerCore project template 😏.
 
-[source](https://github.com/jurilents/NeerCore/tree/master/templates/api-2-junior)
+All what you need in single project. Minimal template for simple projects.
 
-> Clean service-based template.
+### [Services-based API](https://github.com/jurilents/NeerCore-Examples-ServiceBasedApi)
 
-### Middle Template
+Just a clean API template and nothing more :)
 
-[source](https://github.com/jurilents/NeerCore/tree/master/templates/api-3-middle)
+### [CQRS-based API](https://github.com/jurilents/NeerCore-Examples-MediatorBasedApi)
 
-> Clean CQRS Architecture template. All what your need to get started your new 💡💡 _idea_ 💡💡!
+Clean CQRS Architecture template. All what your need to get started your new  _💡idea💡_!
 
-### Senior Template
+### [CQRS-based API with more features](https://github.com/jurilents/NeerCore-Examples-CompletedApi)
 
-[source](https://github.com/jurilents/NeerCore/tree/master/templates/api-4-senior)
+Clean CQRS Architecture template with more features. Provided features: EF Identity, Localization, JWT Auth.
 
-> Clean CQRS Architecture template with more features. Provided features: EF Identity, JWT Auth.
+## Contributors
 
-## Authors
-
-| @jurilents | author, main contributor, greatest banana 🍌 |
-|------------|----------------------------------------------|
+| `@jurilents` | [telegram](https://t.me/nocitats) | author, greatest banana 🍌 |
+|--------------|-----------------------------------|----------------------------|

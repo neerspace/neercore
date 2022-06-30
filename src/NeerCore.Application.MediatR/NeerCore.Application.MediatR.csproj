@@ -1,4 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk">
+	<Import Project="$(SolutionDir)NeerCore.targets"/>
 
 	<PropertyGroup>
 		<TargetFramework>net6.0</TargetFramework>
@@ -6,18 +7,11 @@
 		<Nullable>enable</Nullable>
 		<RootNamespace>NeerCore.Application</RootNamespace>
 		<AssemblyName>NeerCore.Application.MediatR</AssemblyName>
-		<PackageIcon>favicon.png</PackageIcon>
-		<Authors>jurilents</Authors>
-		<RepositoryUrl>https://github.com/jurilents/neercore</RepositoryUrl>
-		<RepositoryType>github</RepositoryType>
-		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-		<PackageVersion />
+
+		<PackageTags>neer mediator mediatr</PackageTags>
 		<Description>The NeerCore.Application.MediatR package provides classes for simplified application configuration using the MediatR library.
 
-			It is a library for simplified writing of web applications based on ASP.NET 6. It integrates a popular set of core libraries that are required for developing full-fledged apps, but they don't come out of the box in ASP.NET. NeerCore can be used as shown in the examples in the official repository, or separately in parts that you need. You can also use part of the code from the repository if you do not need to include "one more nuget package" or if your project is not support the version of .NET on which NeerCore was created.
-
-			Thank you for using my developments, I hope they make your life easier! ;)</Description>
-		<PackageLicense>https://github.com/jurilents/NeerCore/blob/master/LICENSE</PackageLicense>
+			It is a library for simplified writing of .NET apps. It integrates a popular set of core libraries that are required for developing full-fledged apps, but they don't come out of the box in ASP.NET. NeerCore can be used as shown in the examples in the official repository, or separately in parts that you need. You can also use part of the code from the repository if you do not need to include "one more nuget package" or if your project is not support the version of .NET on which NeerCore was created.</Description>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -32,13 +26,4 @@
 		<ProjectReference Include="..\NeerCore.DependencyInjection\NeerCore.DependencyInjection.csproj" />
 		<ProjectReference Include="..\NeerCore\NeerCore.csproj" />
 	</ItemGroup>
-
-	<ItemGroup>
-	  <None Include="..\..\favicon.png">
-	    <Pack>True</Pack>
-	    <PackagePath></PackagePath>
-	    <Link>favicon.png</Link>
-	  </None>
-	</ItemGroup>
-
 </Project>
