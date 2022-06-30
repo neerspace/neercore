@@ -9,7 +9,7 @@
 		<PackageVersion>1.0.0-beta3</PackageVersion>
 		<PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
 	</PropertyGroup>
-
+	
 	<ItemGroup>
 		<None Include="..\..\favicon.png">
 			<Pack>True</Pack>
