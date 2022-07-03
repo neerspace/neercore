@@ -1,5 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk">
-	<Import Project="..\..\NeerCore.targets"/>
+	<Import Project="..\..\NeerCore.targets" />
 
 	<PropertyGroup>
 		<TargetFramework>net6.0</TargetFramework>
@@ -15,6 +15,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\NeerCore.Data\NeerCore.Data.csproj" />
 		<ProjectReference Include="..\NeerCore\NeerCore.csproj" />
 	</ItemGroup>
 
