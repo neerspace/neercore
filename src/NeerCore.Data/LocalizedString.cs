@@ -5,6 +5,7 @@ using NeerCore.Exceptions;
 
 namespace NeerCore.Data;
 
+/// <summary></summary>
 public readonly struct LocalizedString : IEnumerable<KeyValuePair<string, string>>, IEquatable<LocalizedString>
 {
 	public static readonly LocalizedString Empty = "{}";
@@ -33,10 +34,20 @@ public readonly struct LocalizedString : IEnumerable<KeyValuePair<string, string
 	}
 
 
+	/// <summary></summary>
+	/// <param name="localizedValue"></param>
+	/// <returns></returns>
 	public bool Contains(string localizedValue) => _localizations.Any(loc => loc.Value == localizedValue);
 
+	/// <summary> </summary>
+	/// <param name="languageCode"></param>
+	/// <returns></returns>
 	public bool ContainsLocalization(string languageCode) => _localizations.ContainsKey(languageCode);
 
+	/// <summary></summary>
+	/// <param name="languageCode"></param>
+	/// <returns></returns>
+	/// <exception cref="ValidationFailedException"></exception>
 	public string GetLocalization(string languageCode)
 	{
 		if (_localizations.TryGetValue(languageCode, out string? localizedValue))
@@ -45,16 +56,25 @@ public readonly struct LocalizedString : IEnumerable<KeyValuePair<string, string
 		throw new ValidationFailedException($"Localization '{languageCode}' not provided.");
 	}
 
+	/// <summary></summary>
+	/// <returns></returns>
 	public string GetCurrentLocalization()
 	{
 		return GetLocalization(CultureInfo.CurrentCulture.TwoLetterISOLanguageName);
 	}
 
+	/// <summary></summary>
+	/// <param name="culture"></param>
+	/// <returns></returns>
 	public string GetLocalization(CultureInfo culture)
 	{
 		return GetLocalization(culture.TwoLetterISOLanguageName);
 	}
 
+	/// <summary></summary>
+	/// <param name="languageCode"></param>
+	/// <param name="value"></param>
+	/// <exception cref="InternalServerException"></exception>
 	public void SetLocalization(string languageCode, string value)
 	{
 		if (languageCode is { Length: 2 })
