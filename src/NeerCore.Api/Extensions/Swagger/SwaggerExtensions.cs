@@ -16,23 +16,50 @@ public static class SwaggerExtensions
 
 	public static void UseCustomSwagger(this IApplicationBuilder app)
 	{
-		app.UseSwagger();
-		app.UseSwaggerUI(options =>
+		var swaggerSettings = app.ApplicationServices.GetRequiredService<IConfiguration>().GetSwaggerSettings();
+		var apiProvider = app.ApplicationServices.GetRequiredService<IApiVersionDescriptionProvider>();
+
+		if (swaggerSettings.Enabled)
 		{
-			var swaggerSettings = app.ApplicationServices.GetRequiredService<IConfiguration>().GetSwaggerSettings();
-			var apiProvider = app.ApplicationServices.GetRequiredService<IApiVersionDescriptionProvider>();
-
-			foreach (ApiVersionDescription description in apiProvider.ApiVersionDescriptions)
+			app.UseSwagger();
+			app.UseSwaggerUI(options =>
 			{
-				string name = $"{swaggerSettings.Title} {description.GroupName.ToUpper()}";
-				string url = $"/swagger/{description.GroupName}/swagger.json";
-				options.SwaggerEndpoint(url, name);
-			}
+				foreach (var description in apiProvider.ApiVersionDescriptions)
+				{
+					string name = $"{swaggerSettings.Title} {description.GroupName.ToUpper()}";
+					string url = $"/swagger/{description.GroupName}/swagger.json";
+					options.SwaggerEndpoint(url, name);
+				}
 
-			options.DocumentTitle = swaggerSettings.Title;
-			options.InjectStylesheet("/swagger/custom.css");
-			options.InjectJavascript("/swagger/custom.js");
-		});
+				options.RoutePrefix = swaggerSettings.SwaggerUrl;
+				options.DocumentTitle = swaggerSettings.Title;
+				options.InjectStylesheet("/swagger/custom.css");
+				options.InjectJavascript("/swagger/custom.js");
+			});
+		}
+
+		if (swaggerSettings.ApiDocs)
+		{
+			app.UseReDoc(options =>
+			{
+				var description = apiProvider.ApiVersionDescriptions[0];
+				options.DocumentTitle = $"{swaggerSettings.Title} {description.GroupName.ToUpper()}";
+				options.SpecUrl = $"../swagger/{description.GroupName}/swagger.json";
+				options.RoutePrefix = swaggerSettings.ApiDocsUrl.Replace("{version}", description.GroupName.ToLower());
+				options.HeadContent = swaggerSettings.ApiDocsHeadContent;
+			});
+
+			foreach (var description in apiProvider.ApiVersionDescriptions)
+			{
+				app.UseReDoc(options =>
+				{
+					options.DocumentTitle = $"{swaggerSettings.Title} {description.GroupName.ToUpper()}";
+					options.SpecUrl = $"../swagger/{description.GroupName}/swagger.json";
+					options.RoutePrefix = swaggerSettings.ApiDocsUrl.Replace("{version}", description.GroupName.ToLower());
+					options.HeadContent = swaggerSettings.ApiDocsHeadContent;
+				});
+			}
+		}
 	}
 
 	public static SwaggerConfigurationOptions GetSwaggerSettings(this IConfiguration configuration)

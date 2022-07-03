@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using NLog;
 
-namespace NeerCore.Api;
+namespace NeerCore.Api.Controllers;
 
 /// <summary>Base API controller with NLog logger.</summary>
 [ApiController]
