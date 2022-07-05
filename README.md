@@ -5,8 +5,8 @@
 [![NuGet Pre-Release](https://img.shields.io/nuget/dt/NeerCore.DependencyInjection?color=512bd4&style=for-the-badge)](https://www.nuget.org/packages/NeerCore)
 
 [![GitHub license](https://img.shields.io/github/license/jurilents/NeerCore?color=512bd4&logo=github&style=flat-square)](https://github.com/jurilents/NeerCore/blob/master/LICENSE)
-[![GitHub Actions](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fatrox%2Fsync-dotenv%2Fbadge&style=flat-square)](https://actions-badge.atrox.dev/jurilents/NeerCore/badge)
-[![NuGet Pre-Release](https://img.shields.io/endpoint?color=2AABEE&label=Telegram&style=flat-square&url=https%3A%2F%2Frunkit.io%2Fdamiankrawczyk%2Ftelegram-badge%2Fbranches%2Fmaster%3Furl%3Dhttps%3A%2F%2Ft.me%2Fdotnetme)](https://t.me/dotnetme)
+[![GitHub Actions](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fatrox%2Fsync-dotenv%2Fbadge&label=publish&style=flat-square)](https://actions-badge.atrox.dev/jurilents/NeerCore/badge)
+[![NuGet Pre-Release](https://img.shields.io/endpoint?color=2AABEE&label=telegram&style=flat-square&url=https%3A%2F%2Frunkit.io%2Fdamiankrawczyk%2Ftelegram-badge%2Fbranches%2Fmaster%3Furl%3Dhttps%3A%2F%2Ft.me%2Fdotnetme)](https://t.me/dotnetme)
 
 
 <div style="text-align: center;">
