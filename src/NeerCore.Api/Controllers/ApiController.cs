@@ -8,7 +8,7 @@ namespace NeerCore.Api.Controllers;
 [Route("/v{version:apiVersion}/[controller]")]
 public abstract class ApiController : ControllerBase
 {
-    private ILogger? _logger;
+	private ILogger? _logger;
 
-    protected ILogger Logger => _logger ??= LogManager.GetLogger(GetType().Name);
+	protected ILogger Logger => _logger ??= LogManager.GetLogger(GetType().Name);
 }

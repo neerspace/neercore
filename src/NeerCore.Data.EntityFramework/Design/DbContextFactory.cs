@@ -7,7 +7,7 @@ namespace NeerCore.Data.EntityFramework.Design;
 
 /// <summary>A factory for creating derived <see cref="DbContext" /> instances.</summary>
 /// <remarks>
-///		See Implementation of database providers and extensions
+///	  See Implementation of database providers and extensions
 ///   <a href="https://aka.ms/efcore-docs-providers">official documentation</a>
 ///	  for more information.
 /// </remarks>
@@ -36,9 +36,7 @@ public abstract class DbContextFactoryBase<TContext> : IDesignTimeDbContextFacto
 	/// <summary>Configures DbContext options </summary>
 	public abstract void ConfigureContextOptions(DbContextOptionsBuilder optionsBuilder);
 
-	/// <summary>
-	/// Creates DbContext options
-	/// </summary>
+	/// <summary>Creates DbContext options.</summary>
 	public DbContextOptions CreateContextOptions()
 	{
 		Console.WriteLine("Database connection used: " + SelectedConnectionName);

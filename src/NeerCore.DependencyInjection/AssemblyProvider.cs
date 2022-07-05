@@ -2,13 +2,15 @@
 
 namespace NeerCore.DependencyInjection;
 
+// TODO: documentation
+
 /// <summary>
-///		DO NOT OPEN THIS CLASS!!!
-///		TOO MUCH REFLECTION HERE!!!
+///	  DO NOT OPEN THIS CLASS!!!
+///	  TOO MUCH REFLECTION HERE!!!
 /// <br/>
 /// <remarks>
-///		Please use naming style like 'MyApp.Application', 'MyApp.Data.Sqlite',
-///		if you want to work with this class in correct way :)
+///	  Please use naming style like 'MyApp.Application', 'MyApp.Data.Sqlite',
+///	  if you want to work with this class in correct way :)
 /// </remarks>
 /// </summary>
 public static class AssemblyProvider
@@ -38,10 +40,8 @@ public static class AssemblyProvider
 				.ToList();
 	}
 
-	/// <summary>
-	/// 
-	/// </summary>
-	/// <returns></returns>
+	/// <summary>Returns a list of all available assemblies in app.</summary>
+	/// <returns>Assemblies sequence.</returns>
 	public static IEnumerable<Assembly> LoadAllAssemblies()
 	{
 		var list = new List<string>();

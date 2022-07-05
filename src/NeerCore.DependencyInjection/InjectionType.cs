@@ -1,18 +1,16 @@
 ﻿namespace NeerCore.DependencyInjection;
 
-/// <summary>
-/// Ways to inject a class into a DI container.
-/// </summary>
+/// <summary>Ways to inject a class into a DI container.</summary>
 public enum InjectionType
 {
 	/// <summary>Automatically define injection type.</summary>
 	/// <remarks>
-	///		How it works:
-	///		<list type="number">
-	///			<item>If it implements any interface it will be injected as <see cref="Interface"/>.</item>
-	///			<item>If it extends any class it will be injected as <see cref="BaseClass"/>.</item>
-	///			<item>Otherwise it will be injected as <see cref="Self"/>.</item>
-	///		</list>
+	///	  How it works:
+	///	  <list type="number">
+	///	    <item>If it implements any interface it will be injected as <see cref="Interface"/>.</item>
+	///	    <item>If it extends any class it will be injected as <see cref="BaseClass"/>.</item>
+	///	    <item>Otherwise it will be injected as <see cref="Self"/>.</item>
+	///	  </list>
 	/// </remarks>
 	Auto,
 

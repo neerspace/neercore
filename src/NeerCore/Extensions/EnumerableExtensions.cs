@@ -5,8 +5,8 @@ namespace NeerCore.Extensions;
 public static class EnumerableExtensions
 {
 	/// <summary>
-	///		Returns the first element of a sequence, or throws a
-	///		<see cref="NotFoundException"/> if the sequence contains no elements.
+	///   Returns the first element of a sequence, or throws a
+	///   <see cref="NotFoundException"/> if the sequence contains no elements.
 	/// </summary>
 	/// <param name="source">The <see cref="IEnumerable{T}"/> to return the first element of.</param>
 	/// <typeparam name="TSource">The type of the elements of <paramref name="source"/>.</typeparam>
