@@ -18,6 +18,7 @@ jobs:
         project:
           - NeerCore
           - NeerCore.Api
+          - NeerCore.Data
           - NeerCore.Data.Abstractions
           - NeerCore.Data.EntityFramework
           - NeerCore.Application.MediatR
