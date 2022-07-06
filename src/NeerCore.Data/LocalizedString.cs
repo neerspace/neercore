@@ -3,40 +3,78 @@ using System.Globalization;
 using System.Text.Json;
 using NeerCore.Exceptions;
 
-namespace NeerCore;
+namespace NeerCore.Data;
 
+/// <summary></summary>
 public readonly struct LocalizedString : IEnumerable<KeyValuePair<string, string>>, IEquatable<LocalizedString>
 {
-	private const string Default = "{}";
-	public static readonly LocalizedString Empty = Default;
+	public static readonly LocalizedString Empty = "{}";
 
 	private readonly IDictionary<string, string> _localizations;
 
-	public LocalizedString(string? rawValue)
+	public LocalizedString(string? rawSource)
 	{
-		if (string.IsNullOrEmpty(rawValue)) rawValue = Default;
-		_localizations = JsonSerializer.Deserialize<Dictionary<string, string>>(rawValue)!;
+		if (!string.IsNullOrEmpty(rawSource) && rawSource[0] == '{')
+		{
+			try
+			{
+				_localizations = JsonSerializer.Deserialize<Dictionary<string, string>>(rawSource)!;
+				return;
+			}
+			catch (JsonException)
+			{
+				// ignore
+			}
+		}
+
+		_localizations = new Dictionary<string, string>
+		{
+			[CultureInfo.CurrentCulture.TwoLetterISOLanguageName] = rawSource ?? string.Empty
+		};
 	}
 
+
+	/// <summary></summary>
+	/// <param name="localizedValue"></param>
+	/// <returns></returns>
 	public bool Contains(string localizedValue) => _localizations.Any(loc => loc.Value == localizedValue);
 
+	/// <summary> </summary>
+	/// <param name="languageCode"></param>
+	/// <returns></returns>
 	public bool ContainsLocalization(string languageCode) => _localizations.ContainsKey(languageCode);
 
-	public string GetLocalization(string? languageCode = null)
+	/// <summary></summary>
+	/// <param name="languageCode"></param>
+	/// <returns></returns>
+	/// <exception cref="ValidationFailedException"></exception>
+	public string GetLocalization(string languageCode)
 	{
-		languageCode ??= CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
 		if (_localizations.TryGetValue(languageCode, out string? localizedValue))
 			return localizedValue;
 
 		throw new ValidationFailedException($"Localization '{languageCode}' not provided.");
 	}
 
+	/// <summary></summary>
+	/// <returns></returns>
+	public string GetCurrentLocalization()
+	{
+		return GetLocalization(CultureInfo.CurrentCulture.TwoLetterISOLanguageName);
+	}
+
+	/// <summary></summary>
+	/// <param name="culture"></param>
+	/// <returns></returns>
 	public string GetLocalization(CultureInfo culture)
 	{
 		return GetLocalization(culture.TwoLetterISOLanguageName);
 	}
 
-
+	/// <summary></summary>
+	/// <param name="languageCode"></param>
+	/// <param name="value"></param>
+	/// <exception cref="InternalServerException"></exception>
 	public void SetLocalization(string languageCode, string value)
 	{
 		if (languageCode is { Length: 2 })

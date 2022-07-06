@@ -1,7 +1,7 @@
 using Mapster;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
-using NeerCore.Api;
+using NeerCore.Api.Controllers;
 using NeerCore.Api.Extensions;
 using NeerCore.Mapping.Extensions;
 using NeerCoreTestingSuite.WebApp.Dto.Teas;
@@ -9,7 +9,7 @@ using NeerCoreTestingSuite.WebApp.Services;
 
 namespace NeerCoreTestingSuite.WebApp.Controllers;
 
-public class TeasController : ApiController
+public class TeasController : LocalizedApiController
 {
 	private readonly TeasService _service;
 	public TeasController(TeasService service) => _service = service;

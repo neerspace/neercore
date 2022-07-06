@@ -5,22 +5,16 @@
 		<TargetFramework>net6.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
-		<RootNamespace>NeerCore.Mapping</RootNamespace>
 
-		<PackageTags>neer model-mapping mapster</PackageTags>
-		<Description>The NeerCore.Mapping.Mapster package is a wrapper for the Mapster package and its integration into the NeerCore ecosystem.
+		<PackageTags>neercore localization</PackageTags>
+		<Description>The NeerCore.Data package is a set of data classes used by another NeerCore.Data.* packages.
 
 			It is a library for simplified writing of .NET apps. It integrates a popular set of core libraries that are required for developing full-fledged apps, but they don't come out of the box in ASP.NET. NeerCore can be used as shown in the examples in the official repository, or separately in parts that you need. You can also use part of the code from the repository if you do not need to include "one more nuget package" or if your project is not support the version of .NET on which NeerCore was created.
 		</Description>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\NeerCore.Data\NeerCore.Data.csproj" />
+		<ProjectReference Include="..\NeerCore.Data.Abstractions\NeerCore.Data.Abstractions.csproj" />
 		<ProjectReference Include="..\NeerCore\NeerCore.csproj" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<PackageReference Include="Mapster" Version="7.3.0" />
-		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
 	</ItemGroup>
 </Project>

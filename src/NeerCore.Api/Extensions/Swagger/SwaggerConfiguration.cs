@@ -28,6 +28,7 @@ public class SwaggerConfiguration : IConfigureNamedOptions<SwaggerGenOptions>
 		foreach (ApiVersionDescription description in _provider.ApiVersionDescriptions)
 			options.SwaggerDoc(description.GroupName.ToLower(), CreateVersionInfo(description));
 
+		options.DocumentFilter<XLogoDocumentFilter>();
 		options.DocumentFilter<JsonPatchDocumentFilter>();
 
 		foreach (string xmlPath in GetXmlComments())
@@ -44,6 +45,8 @@ public class SwaggerConfiguration : IConfigureNamedOptions<SwaggerGenOptions>
 		string description = File.Exists(descriptionFilePath)
 				? File.ReadAllText(descriptionFilePath)
 				: _options.Description ?? default!;
+
+		description = description.Replace("{version}", versionDescription.GroupName.ToLower());
 
 		return new OpenApiInfo
 		{

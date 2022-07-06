@@ -43,9 +43,6 @@ public static class ServiceCollectionExtensions
 		services.AddMediatR(assembliesArray).AddFluentValidation(options =>
 		{
 			options.DisableDataAnnotationsValidation = true;
-			// TODO: Remove deprecated properties and fix them
-			options.ImplicitlyValidateChildProperties = true;
-			options.ImplicitlyValidateRootCollectionElements = true;
 		});
 		services.AddFluentValidation(assembliesArray);
 	}

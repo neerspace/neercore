@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using NeerCore.Data;
 using NeerCore.Data.Abstractions;
 using Sieve.Attributes;
 
@@ -13,7 +14,7 @@ public class Tea : IDatedEntity<Guid>
 	public Guid Id { get; init; } = Guid.NewGuid();
 
 	[Sieve(CanFilter = true, CanSort = true)]
-	public string Name { get; init; } = default!;
+	public LocalizedString Name { get; init; }
 
 	[Sieve(CanFilter = true, CanSort = true, Name = "priceUSD")]
 	public decimal Price { get; init; }

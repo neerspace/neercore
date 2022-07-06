@@ -82,7 +82,7 @@ public static class LoggerInstaller
 		configuration.AddTarget(logFile);
 		configuration.AddTarget(logErrorsFile);
 
-		string applicationAssembly = GlobalConfig.ApplicationNamespace;
+		string applicationAssembly = Assembly.GetCallingAssembly().GetBaseNamespace();
 
 		foreach (var target in new Target[] { logConsole, logFile })
 		{
