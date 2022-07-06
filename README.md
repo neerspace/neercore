@@ -31,11 +31,63 @@ is not support the version of .NET on which NeerCore was created.
 
 Thank you for using my developments, I hope they make your life easier! ;)
 
+-----------------------------
+
 ## Provided features
 
-- Smart dependency injection wrapper
-- The most useful extension methods
-- A set of exceptions that represents most common HTTP status codes
+### [NeerCore](https://www.nuget.org/packages/NeerCore)
+
+- Core used by another `NeerCore.*` libs
+- Exceptions that represents most common HTTP errors
+- Extensions for `String`, `Enum`, `IEnumerable` and `ClaimsPrincipal`
+- New JSON policies and conventions
+
+### [NeerCore.DependencyInjection](https://www.nuget.org/packages/NeerCore.DependencyInjection)
+
+- Attribute-based Dependency Injection ToolKit
+- Extensions for `Assembly` and `Type`
+- Some core reflection utilities
+
+### [NeerCore.Data.Abstractions](https://www.nuget.org/packages/NeerCore.Data.Abstractions)
+
+- Shared DB abstractions (used in one bundle with NeerCore.Data.* libs)
+
+### [NeerCore.Data](https://www.nuget.org/packages/NeerCore.Data)
+
+- Shared DB data classes with custom primitives
+- EntityFrameworkCore localized string type
+
+### [NeerCore.Data.EntityFramework](https://www.nuget.org/packages/NeerCore.Data.EntityFramework)
+
+- Simpler way to use EntityFrameworkCore
+- `IDatabaseContext` abstraction to not use `DbContext` class directly
+- The much better `DbContextFactory`
+- Extensions for `ModelBuilder` and `IQueryable`
+
+### [NeerCore.Api](https://www.nuget.org/packages/NeerCore.Api)
+
+- ASP.NET Core WEb API ToolKit
+- `WebApplicationBuilder` extensions to integrate entry API initialization with a single method `AddNeerApi()`
+- Swagger and ReDoc documentation out of the box
+- Native Swagger support for `JsonPatchDocument`
+- _kebab-case-route-naming-by-default_
+- Custom exception handling middleware
+- NLog integration
+- Elegant navigation headers
+- `IFactoryMiddleware` injection by default
+- Extensions for `HttpContext`, `HttpResponse` and `JsonPatchDocument`
+
+### [NeerCore.Application.MediatR](https://www.nuget.org/packages/NeerCore.Application.MediatR)
+
+- CQRS pattern integration
+- MediatrR + FluentValidation
+
+### [NeerCore.Mapping.Mapster](https://www.nuget.org/packages/NeerCore.Mapping.Mapster)
+
+- Mapster `IRegister` DI integration
+- Extensions for `IEnumerable`
+
+-----------------------------
 
 ## Getting started
 
@@ -62,6 +114,8 @@ Clean CQRS Architecture template. All what your need to get started your new  _ð
 ### [CQRS-based API with more features](https://github.com/jurilents/NeerCore-Examples-CompletedApi)
 
 Clean CQRS Architecture template with more features. Provided features: EF Identity, Localization, JWT Auth.
+
+-----------------------------
 
 ## Contributors
 
