@@ -1,4 +1,4 @@
-# NeerCore
+# NeerCore ↗⭐↗
 
 [![NuGet Release](https://img.shields.io/nuget/v/NeerCore?label=Actual&logo=nuget&style=for-the-badge)](https://www.nuget.org/packages?q=NeerCore)
 [![NuGet Pre-Release](https://img.shields.io/nuget/vpre/NeerCore?label=Latest&logo=nuget&style=for-the-badge)](https://www.nuget.org/packages/NeerCore)
