@@ -3,6 +3,8 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace NeerCore.DependencyInjection.Extensions;
 
+// TOOD: review
+
 public static class ServiceCollectionExtensions
 {
 	/// <inheritdoc cref="AddServicesFromAssembly(IServiceCollection,Assembly)"/>
@@ -48,16 +50,16 @@ public static class ServiceCollectionExtensions
 
 			switch (attr.InjectionType)
 			{
-				case InjectionType.Auto:      AutoInject(services, implType, attr);           break;
-				case InjectionType.Interface: InjectAsInterface(services, attr, implType);    break;
-				case InjectionType.Self:      InjectAsCurrentClass(services, implType, attr); break;
-				case InjectionType.BaseClass: InjectAsParentClass(services, implType, attr);  break;
+				case InjectionType.Auto:      services.AutoInject(implType, attr);           break;
+				case InjectionType.Interface: services.InjectAsInterface(implType, attr);    break;
+				case InjectionType.Self:      services.InjectAsCurrentClass(implType, attr); break;
+				case InjectionType.BaseClass: services.InjectAsParentClass(implType, attr);  break;
 				default: throw new ArgumentOutOfRangeException(nameof(attr.InjectionType), "Invalid injection type.");
 			}
 		}
 	}
 
-	private static void AutoInject(IServiceCollection services, Type implType, InjectAttribute attr)
+	private static void AutoInject(this IServiceCollection services, Type implType, InjectAttribute attr)
 	{
 		if (implType.GetInterfaces().Length > 0) 
 			InjectAsInterface(services, attr, implType);
@@ -67,18 +69,18 @@ public static class ServiceCollectionExtensions
 			InjectAsCurrentClass(services, implType, attr);
 	}
 
-	private static void InjectAsInterface(IServiceCollection services, InjectAttribute attr, Type implType)
+	private static void InjectAsInterface(this IServiceCollection services, Type implType, InjectAttribute attr)
 	{
 		attr.ServiceType ??= implType.GetInterfaces().First();
 		services.Add(new ServiceDescriptor(attr.ServiceType, implType, attr.Lifetime));
 	}
 
-	private static void InjectAsCurrentClass(IServiceCollection services, Type implType, InjectAttribute attr)
+	private static void InjectAsCurrentClass(this IServiceCollection services, Type implType, InjectAttribute attr)
 	{
 		services.Add(new ServiceDescriptor(implType, implType, attr.Lifetime));
 	}
 
-	private static void InjectAsParentClass(IServiceCollection services, Type implType, InjectAttribute attr)
+	private static void InjectAsParentClass(this IServiceCollection services, Type implType, InjectAttribute attr)
 	{
 		services.Add(new ServiceDescriptor(implType.BaseType!, implType, attr.Lifetime));
 	}
