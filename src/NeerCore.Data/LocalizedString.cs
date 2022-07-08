@@ -5,7 +5,7 @@ using NeerCore.Exceptions;
 
 namespace NeerCore.Data;
 
-/// <summary></summary>
+/// <summary>Data class that represents a localizable string.</summary>
 public readonly struct LocalizedString : IEnumerable<KeyValuePair<string, string>>, IEquatable<LocalizedString>
 {
 	public static readonly LocalizedString Empty = "{}";
@@ -39,9 +39,9 @@ public readonly struct LocalizedString : IEnumerable<KeyValuePair<string, string
 	/// <returns></returns>
 	public bool Contains(string localizedValue) => _localizations.Any(loc => loc.Value == localizedValue);
 
-	/// <summary> </summary>
-	/// <param name="languageCode"></param>
-	/// <returns></returns>
+	/// <summary>Determines whether the <see cref="LocalizedString"/> includes an localization with the specified <paramref name="languageCode"/>.</summary>
+	/// <param name="languageCode">Two letter ISO language code.</param>
+	/// <returns>True if includes, otherwise false.</returns>
 	public bool ContainsLocalization(string languageCode) => _localizations.ContainsKey(languageCode);
 
 	/// <summary></summary>

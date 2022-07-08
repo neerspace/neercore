@@ -2,6 +2,7 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 
+// ReSharper disable once CheckNamespace
 namespace NeerCore.Api.Controllers;
 
 /// <summary>Base API controller with MediatR.</summary>
