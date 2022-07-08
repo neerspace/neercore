@@ -1,4 +1,8 @@
-# NeerCore
+<h1 align="center">NeerCore</h1>
+
+--------------------------------
+
+<div align="center">
 
 [![NuGet Release](https://img.shields.io/nuget/v/NeerCore?label=Actual&logo=nuget&style=for-the-badge)](https://www.nuget.org/packages?q=NeerCore)
 [![NuGet Pre-Release](https://img.shields.io/nuget/vpre/NeerCore?label=Latest&logo=nuget&style=for-the-badge)](https://www.nuget.org/packages/NeerCore)
@@ -8,8 +12,9 @@
 [![GitHub Actions](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fatrox%2Fsync-dotenv%2Fbadge&label=publish&style=flat-square)](https://actions-badge.atrox.dev/jurilents/NeerCore/badge)
 [![NuGet Pre-Release](https://img.shields.io/endpoint?color=2AABEE&label=telegram&style=flat-square&url=https%3A%2F%2Frunkit.io%2Fdamiankrawczyk%2Ftelegram-badge%2Fbranches%2Fmaster%3Furl%3Dhttps%3A%2F%2Ft.me%2Fdotnetme)](https://t.me/dotnetme)
 
+</div>
 
-<div style="text-align: center;">
+<div align="center">
     <img src="favicon.png" alt="logo" height="200"/>
 </div>
 
