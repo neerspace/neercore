@@ -10,6 +10,7 @@ public static class ClaimsPrincipalExtensions
 	/// <param name="type">Claim type</param>
 	/// <param name="value">Claim value</param>
 	/// <returns>Boolean result of check</returns>
+	[Obsolete("Use default one instead: https://docs.microsoft.com/en-us/dotnet/api/system.security.claims.claimsprincipal.hasclaim?view=net-6.0")]
 	public static bool HasClaim(this ClaimsPrincipal user, string type, string value)
 	{
 		return string.Equals(user.GetClaim(type).Value, value, StringComparison.OrdinalIgnoreCase);
@@ -23,7 +24,6 @@ public static class ClaimsPrincipalExtensions
 	{
 		return user.HasClaim(Claims.Permission, permission);
 	}
-
 
 	/// <summary>Gets value from the claim with the given type.</summary>
 	/// <param name="user">Current user principal</param>
