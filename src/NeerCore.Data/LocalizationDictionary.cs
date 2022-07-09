@@ -4,6 +4,7 @@ using NeerCore.Data.Exceptions;
 
 namespace NeerCore.Data;
 
+/// <summary>Dictionary wrapper for localization system.</summary>
 public class LocalizationDictionary : IDictionary<string, string>
 {
 	private readonly Dictionary<string, string> _dict;
@@ -13,6 +14,9 @@ public class LocalizationDictionary : IDictionary<string, string>
 		_dict = dict;
 	}
 
+	/// <summary>Gets ar sets localization by language code.</summary>
+	/// <param name="languageCode">Two letter language ISO code.</param>
+	/// <exception cref="InvalidLanguageCodeException">If localization for given <paramref name="languageCode"/> not exists in the dictionary.</exception>
 	public string this[string languageCode]
 	{
 		get
@@ -35,6 +39,10 @@ public class LocalizationDictionary : IDictionary<string, string>
 	public int Count => _dict.Count;
 	public bool IsReadOnly => false;
 
+	/// <summary>Adds a new localization to the dictionary.</summary>
+	/// <param name="languageCode">Two letter language ISO code.</param>
+	/// <param name="localizedValue">Localized text.</param>
+	/// <exception cref="InvalidLanguageCodeException">If localization for given <paramref name="languageCode"/> already exists in the dictionary.</exception>
 	public void Add(string languageCode, string localizedValue)
 	{
 		if (IsValidLanguageCode(languageCode))
@@ -43,6 +51,12 @@ public class LocalizationDictionary : IDictionary<string, string>
 			throw new InvalidLanguageCodeException(languageCode);
 	}
 
+	/// <summary>Adds a new localization to the dictionary.</summary>
+	/// <param name="localization">
+	///   Key – Two letter language ISO code.
+	///   Value – Localized text.
+	/// </param>
+	/// <exception cref="InvalidLanguageCodeException">If localization already exists in the dictionary.</exception>
 	public void Add(KeyValuePair<string, string> localization) => Add(localization.Key, localization.Value);
 	public void Clear() => _dict.Clear();
 	public bool Contains(KeyValuePair<string, string> localization) => _dict.Contains(localization);
