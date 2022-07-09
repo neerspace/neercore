@@ -15,7 +15,7 @@ public class MapperRegister : IRegister
         // m -> member
         // s -> source
         config.NewConfig<Tea, Dto.Teas.Tea>()
-                .Map(m => m.PriceUSD, s => s.Price)
-                .Map(m => m.PriceBTC, s => s.Price * BTCRate);
+            .Map(m => m.PriceUSD, s => s.Price)
+            .Map(m => m.PriceBTC, s => s.Price * BTCRate);
     }
 }
