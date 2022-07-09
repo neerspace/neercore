@@ -1,4 +1,4 @@
-<h1 align="center">NeerCore</h1>
+<h1 align="center">NeerCore ↗⭐↗</h1>
 
 --------------------------------
 
