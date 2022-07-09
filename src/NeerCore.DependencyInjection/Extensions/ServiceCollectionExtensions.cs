@@ -62,7 +62,7 @@ public static class ServiceCollectionExtensions
 	private static void AutoInject(this IServiceCollection services, Type implType, InjectAttribute attr)
 	{
 		if (implType.GetInterfaces().Length > 0) 
-			InjectAsInterface(services, attr, implType);
+			InjectAsInterface(services, implType, attr);
 		else if (implType.BaseType is not { }) 
 			InjectAsParentClass(services, implType, attr);
 		else 
