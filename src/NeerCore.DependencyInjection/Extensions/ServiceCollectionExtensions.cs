@@ -44,43 +44,56 @@ public static class ServiceCollectionExtensions
 
 		foreach (Type implType in serviceTypes)
 		{
-			var attr = implType.GetAttribute<InjectAttribute>();
+			var attr = implType.GetAttribute<ServiceAttribute>();
 			if (attr is null)
-				continue;
+			{
+				// TODO: Remove in next version
+				attr = implType.GetAttribute<InjectAttribute>();
+				if (attr is null) continue;
+			}
 
 			switch (attr.InjectionType)
 			{
-				case InjectionType.Auto:      services.AutoInject(implType, attr);           break;
-				case InjectionType.Interface: services.InjectAsInterface(implType, attr);    break;
-				case InjectionType.Self:      services.InjectAsCurrentClass(implType, attr); break;
-				case InjectionType.BaseClass: services.InjectAsParentClass(implType, attr);  break;
-				default: throw new ArgumentOutOfRangeException(nameof(attr.InjectionType), "Invalid injection type.");
+				case InjectionType.Auto:
+					services.AutoInject(implType, attr);
+					break;
+				case InjectionType.Interface:
+					services.InjectAsInterface(implType, attr);
+					break;
+				case InjectionType.Self:
+					services.InjectAsCurrentClass(implType, attr);
+					break;
+				case InjectionType.BaseClass:
+					services.InjectAsParentClass(implType, attr);
+					break;
+				default:
+					throw new ArgumentOutOfRangeException(nameof(attr.InjectionType), "Invalid injection type.");
 			}
 		}
 	}
 
-	private static void AutoInject(this IServiceCollection services, Type implType, InjectAttribute attr)
+	private static void AutoInject(this IServiceCollection services, Type implType, ServiceAttribute attr)
 	{
-		if (implType.GetInterfaces().Length > 0) 
+		if (implType.GetInterfaces().Length > 0)
 			InjectAsInterface(services, implType, attr);
-		else if (implType.BaseType is not { }) 
+		else if (implType.BaseType is not { })
 			InjectAsParentClass(services, implType, attr);
-		else 
+		else
 			InjectAsCurrentClass(services, implType, attr);
 	}
 
-	private static void InjectAsInterface(this IServiceCollection services, Type implType, InjectAttribute attr)
+	private static void InjectAsInterface(this IServiceCollection services, Type implType, ServiceAttribute attr)
 	{
 		attr.ServiceType ??= implType.GetInterfaces().First();
 		services.Add(new ServiceDescriptor(attr.ServiceType, implType, attr.Lifetime));
 	}
 
-	private static void InjectAsCurrentClass(this IServiceCollection services, Type implType, InjectAttribute attr)
+	private static void InjectAsCurrentClass(this IServiceCollection services, Type implType, ServiceAttribute attr)
 	{
 		services.Add(new ServiceDescriptor(implType, implType, attr.Lifetime));
 	}
 
-	private static void InjectAsParentClass(this IServiceCollection services, Type implType, InjectAttribute attr)
+	private static void InjectAsParentClass(this IServiceCollection services, Type implType, ServiceAttribute attr)
 	{
 		services.Add(new ServiceDescriptor(implType.BaseType!, implType, attr.Lifetime));
 	}

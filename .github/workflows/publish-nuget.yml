@@ -14,16 +14,16 @@ jobs:
   deploy-nuget:
     strategy:
       matrix:
-        version: [ "1.0.2" ]
+        version: [ "1.0.3" ]
         project:
-          - NeerCore
-          - NeerCore.Api
-          - NeerCore.Data
-          - NeerCore.Data.Abstractions
-          - NeerCore.Data.EntityFramework
-          - NeerCore.Application.MediatR
+#          - NeerCore
+#          - NeerCore.Api
+#          - NeerCore.Data
+#          - NeerCore.Data.Abstractions
+#          - NeerCore.Data.EntityFramework
+#          - NeerCore.Application.MediatR
           - NeerCore.DependencyInjection
-          - NeerCore.Mapping.Mapster
+#          - NeerCore.Mapping.Mapster
 
     runs-on: ubuntu-latest
 

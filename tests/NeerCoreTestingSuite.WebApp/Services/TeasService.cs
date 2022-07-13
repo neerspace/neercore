@@ -8,7 +8,7 @@ using Sieve.Services;
 
 namespace NeerCoreTestingSuite.WebApp.Services;
 
-[Inject]
+[Service]
 public class TeasService
 {
 	private readonly IDatabaseContext _database;
