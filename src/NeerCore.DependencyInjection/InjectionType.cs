@@ -1,9 +1,18 @@
 ﻿namespace NeerCore.DependencyInjection;
 
-/// <summary>Ways to inject a class into a DI container.</summary>
+/// <summary>
+///   Ways to inject a class into a DI container.
+/// </summary>
 public enum InjectionType
 {
-	/// <summary>Automatically define injection type.</summary>
+	/// <summary>
+	///   Uses the default value defined at configuring injection.
+	/// </summary>
+	Default,
+
+	/// <summary>
+	///   Automatically define prefer injection type.
+	/// </summary>
 	/// <remarks>
 	///	  How it works:
 	///	  <list type="number">
@@ -14,12 +23,18 @@ public enum InjectionType
 	/// </remarks>
 	Auto,
 
-	/// <summary>Inject as implemented interface realisation.</summary>
+	/// <summary>
+	///   Inject as implemented interface realisation.
+	/// </summary>
 	Interface,
 
-	/// <summary>Inject own self.</summary>
+	/// <summary>
+	///   Inject own self.
+	/// </summary>
 	Self,
 
-	/// <summary>Inject as parent class.</summary>
+	/// <summary>
+	///   Inject as parent class.
+	/// </summary>
 	BaseClass
 }
