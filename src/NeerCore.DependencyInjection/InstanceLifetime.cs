@@ -3,8 +3,8 @@ using Microsoft.Extensions.DependencyInjection;
 namespace NeerCore.DependencyInjection;
 
 /// <summary>
-/// Specifies the lifetime of a service in an <see cref="IServiceCollection"/>.
-/// Extended analogue for <see cref="Microsoft.Extensions.DependencyInjection.ServiceLifetime"/>.
+///   Specifies the lifetime of a service in an <see cref="IServiceCollection"/>.
+///   Extended analogue for <see cref="Microsoft.Extensions.DependencyInjection.ServiceLifetime"/>.
 /// </summary>
 public enum InstanceLifetime
 {

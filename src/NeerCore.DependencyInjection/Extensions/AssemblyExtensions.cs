@@ -4,7 +4,9 @@ namespace NeerCore.DependencyInjection.Extensions;
 
 public static class AssemblyExtensions
 {
-	/// <summary>Returns a root namespace part.</summary>
+	/// <summary>
+	///   Returns a root namespace part.
+	/// </summary>
 	/// <param name="assembly">An instance of any assembly.</param>
 	/// <exception cref="ArgumentNullException"><paramref name="assembly" /> is <see langword="null" />.</exception>
 	/// <returns>For assembly with namespace name 'NeerCore.Data.Abstractions' returns a 'NeerCore'.</returns>
