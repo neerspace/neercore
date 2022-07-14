@@ -8,9 +8,9 @@ namespace NeerCore.Exceptions;
 /// </summary>
 public class UnauthorizedException : HttpException
 {
-	public override HttpStatusCode StatusCode => HttpStatusCode.Unauthorized;
-	public override string ErrorType => "Unauthorized";
+    public override HttpStatusCode StatusCode => HttpStatusCode.Unauthorized;
+    public override string ErrorType => "Unauthorized";
 
 
-	public UnauthorizedException(string message) : base(message) { }
+    public UnauthorizedException(string message) : base(message) { }
 }

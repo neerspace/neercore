@@ -12,42 +12,42 @@ var logger = LoggerInstaller.InitDefault();
 
 try
 {
-	var builder = WebApplication.CreateBuilder(args);
-	ConfigureBuilder(builder);
-	ConfigureWebApp(builder.Build()).Run();
+    var builder = WebApplication.CreateBuilder(args);
+    ConfigureBuilder(builder);
+    ConfigureWebApp(builder.Build()).Run();
 }
 catch (Exception e)
 {
-	logger.Fatal(e);
+    logger.Fatal(e);
 }
 finally
 {
-	logger.Info("Application is now stopping");
-	LogManager.Shutdown();
+    logger.Info("Application is now stopping");
+    LogManager.Shutdown();
 }
 
 // ==========================================
 
 static void ConfigureBuilder(WebApplicationBuilder builder)
 {
-	builder.Services.AddDatabase<SqliteDbContext>(db =>
-			db.UseSqlite(builder.Configuration.GetConnectionString("Sqlite")));
+    builder.Services.AddDatabase<SqliteDbContext>(db =>
+            db.UseSqlite(builder.Configuration.GetConnectionString("Sqlite")));
 
-	builder.AddNeerApi();
-	builder.Services.RegisterMapper<MapperRegister>();
+    builder.AddNeerApi();
+    builder.Services.RegisterMapper<MapperRegister>();
 }
 
 static WebApplication ConfigureWebApp(WebApplication app)
 {
-	if (app.Configuration.GetSwaggerSettings().Enabled)
-		app.UseCustomSwagger();
+    if (app.Configuration.GetSwaggerSettings().Enabled)
+        app.UseCustomSwagger();
 
-	app.UseCors(CorsPolicies.AcceptAll);
-	app.UseHttpsRedirection();
+    app.UseCors(CorsPolicies.AcceptAll);
+    app.UseHttpsRedirection();
 
-	app.UseCustomExceptionHandler();
+    app.UseCustomExceptionHandler();
 
-	app.MapControllers();
+    app.MapControllers();
 
-	return app;
+    return app;
 }

@@ -2,5 +2,5 @@
 
 public static class CorsPolicies
 {
-	public const string AcceptAll = nameof(AcceptAll);
+    public const string AcceptAll = nameof(AcceptAll);
 }

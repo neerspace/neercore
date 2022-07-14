@@ -8,9 +8,9 @@ namespace NeerCore.Exceptions;
 /// </summary>
 public class ConflictException : HttpException
 {
-	public override HttpStatusCode StatusCode => HttpStatusCode.Conflict;
-	public override string ErrorType => "Conflict";
+    public override HttpStatusCode StatusCode => HttpStatusCode.Conflict;
+    public override string ErrorType => "Conflict";
 
 
-	public ConflictException(string message) : base(message) { }
+    public ConflictException(string message) : base(message) { }
 }
