@@ -8,9 +8,9 @@ namespace NeerCore.Exceptions;
 /// </summary>
 public class ForbidException : HttpException
 {
-	public override HttpStatusCode StatusCode => HttpStatusCode.Forbidden;
-	public override string ErrorType => "AccessDenied";
+    public override HttpStatusCode StatusCode => HttpStatusCode.Forbidden;
+    public override string ErrorType => "AccessDenied";
 
 
-	public ForbidException(string message) : base(message) { }
+    public ForbidException(string message) : base(message) { }
 }

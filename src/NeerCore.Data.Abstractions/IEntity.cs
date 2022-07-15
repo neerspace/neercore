@@ -7,5 +7,5 @@ public interface IEntity { }
 /// <typeparam name="TKey"><see cref="Id"/> type.</typeparam>
 public interface IEntity<out TKey> : IEntity
 {
-	TKey Id { get; }
+    TKey Id { get; }
 }

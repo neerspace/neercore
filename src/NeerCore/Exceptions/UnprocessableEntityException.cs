@@ -8,9 +8,9 @@ namespace NeerCore.Exceptions;
 /// </summary>
 public class UnprocessableEntityException : HttpException
 {
-	public override HttpStatusCode StatusCode => HttpStatusCode.UnprocessableEntity;
-	public override string ErrorType => "RequestEntityError";
+    public override HttpStatusCode StatusCode => HttpStatusCode.UnprocessableEntity;
+    public override string ErrorType => "RequestEntityError";
 
 
-	public UnprocessableEntityException(string message) : base(message) { }
+    public UnprocessableEntityException(string message) : base(message) { }
 }

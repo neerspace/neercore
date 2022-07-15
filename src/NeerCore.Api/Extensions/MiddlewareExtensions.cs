@@ -8,15 +8,15 @@ namespace NeerCore.Api.Extensions;
 
 public static class MiddlewareExtensions
 {
-	public static void AddFactoryMiddlewares(this IServiceCollection services)
-	{
-		IEnumerable<Type> middlewares = AssemblyProvider.GetImplementationsOf<IMiddleware>();
-		foreach (Type middleware in middlewares)
-			services.AddScoped(middleware);
-	}
+    public static void AddFactoryMiddlewares(this IServiceCollection services)
+    {
+        IEnumerable<Type> middlewares = AssemblyProvider.GetImplementationsOf<IMiddleware>();
+        foreach (Type middleware in middlewares)
+            services.AddScoped(middleware);
+    }
 
-	public static void UseCustomExceptionHandler(this IApplicationBuilder app)
-	{
-		app.UseMiddleware<ExceptionHandlerMiddleware>();
-	}
+    public static void UseCustomExceptionHandler(this IApplicationBuilder app)
+    {
+        app.UseMiddleware<ExceptionHandlerMiddleware>();
+    }
 }

@@ -4,9 +4,9 @@ namespace NeerCore.Data.EntityFramework.Converters;
 
 public class LocalizedStringConverter : ValueConverter<LocalizedString, string>
 {
-	public LocalizedStringConverter()
-			: base(
-				v => v.ToString(),
-				v => new LocalizedString(v)
-			) { }
+    public LocalizedStringConverter()
+            : base(
+                v => v.ToString(),
+                v => new LocalizedString(v)
+            ) { }
 }
