@@ -12,7 +12,7 @@ public static class StringExtensions
     /// <param name="value">Source not null string.</param>
     /// <param name="limit">Max length for the <paramref name="value"/>.</param>
     /// <returns>Limited string.</returns>
-    public static string Limited(this string value, int limit)
+    public static string ToLimited(this string value, int limit)
     {
         if (string.IsNullOrEmpty(value)) throw new ArgumentNullException(nameof(value));
         return value.Length > limit ? value[..limit] : value;
