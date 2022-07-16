@@ -4,6 +4,20 @@ namespace NeerCore.Extensions;
 
 public static class StringExtensions
 {
+    /// <summary>
+    ///   Returns a source string <paramref name="value"/> if it's length
+    ///   is less then <paramref name="limit"/> or substring with length
+    ///   equals the <paramref name="limit"/> and starts at the index 0.
+    /// </summary>
+    /// <param name="value">Source not null string.</param>
+    /// <param name="limit">Max length for the <paramref name="value"/>.</param>
+    /// <returns>Limited string.</returns>
+    public static string Limited(this string value, int limit)
+    {
+        if (string.IsNullOrEmpty(value)) throw new ArgumentNullException(nameof(value));
+        return value.Length > limit ? value[..limit] : value;
+    }
+
     /// <summary>Converts 'MyExampleString' to 'My example string'.</summary>
     /// <param name="value">Source pascal or camel case 'MyExampleString'.</param>
     /// <returns>Separate words string 'My example string'.</returns>
