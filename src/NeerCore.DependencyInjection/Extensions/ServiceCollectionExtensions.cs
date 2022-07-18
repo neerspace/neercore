@@ -1,5 +1,6 @@
 ﻿using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 namespace NeerCore.DependencyInjection.Extensions;
 
@@ -64,6 +65,9 @@ public static partial class ServiceCollectionExtensions
 
     private static void AddServices(this IServiceCollection services, InjectionOptions options)
     {
+        var serviceProvider = services.BuildServiceProvider();
+        var environment = serviceProvider.GetService<IHostEnvironment>();
+
         options.ServiceAssemblies ??= new[] { Assembly.GetCallingAssembly() };
         IEnumerable<Type> serviceTypes = options.ServiceAssemblies.SelectMany(sa => sa.GetTypes());
 
@@ -77,6 +81,11 @@ public static partial class ServiceCollectionExtensions
                 if (attr is not null) services.AddServicesOld(implType, attr2);
                 continue;
             }
+
+            // Ignore service if environment is required and current env IS NOT EQUALS service env
+            if (!string.IsNullOrEmpty(attr.Environment) && environment is not null &&
+                !attr.Environment.Equals(environment.EnvironmentName, StringComparison.OrdinalIgnoreCase))
+                continue;
 
             if (attr.InjectionType is InjectionType.Default)
                 attr.InjectionType = options.DefaultInjectionType;
@@ -97,6 +106,7 @@ public static partial class ServiceCollectionExtensions
                 case InjectionType.BaseClass:
                     services.InjectAsParentClass(implType, attr);
                     break;
+                case InjectionType.Default:
                 default:
                     throw new ArgumentOutOfRangeException(nameof(attr.InjectionType), "Invalid injection type.");
             }

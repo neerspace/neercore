@@ -36,4 +36,25 @@ public class InjectableAttribute : Attribute
     ///   Manually specifies injection type for current implementation.
     /// </summary>
     public Type? ServiceType { get; set; }
+
+    /// <summary>
+    ///   
+    /// </summary>
+    public string? Environment { get; set; }
+
+    /// <summary>
+    ///   
+    /// </summary>
+    public bool ProductionOnly
+    {
+        set => Environment = "Production";
+    }
+
+    /// <summary>
+    ///   
+    /// </summary>
+    public bool DevelopmentOnly
+    {
+        set => Environment = "Development";
+    }
 }
