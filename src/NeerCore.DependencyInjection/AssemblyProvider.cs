@@ -3,21 +3,20 @@
 namespace NeerCore.DependencyInjection;
 
 /// <summary>
-///    <b>DO NOT OPEN THIS CLASS!!!</b>
-///   <br/>
-///    TOO MUCH REFLECTION HERE!!!
-/// <br/>
+///   Wrapper to simplify usage of some reflection features.
+/// </summary>
 /// <remarks>
 ///    Please use naming style like 'MyApp.Application', 'MyApp.Data.Sqlite',
 ///    if you want to work with this class in correct way :)
 /// </remarks>
-/// </summary>
 public static class AssemblyProvider
 {
     private static readonly string ProjectRootName = Assembly.GetExecutingAssembly().GetName().FullName.Split('.')[0];
     private static IEnumerable<Assembly>? applicationAssemblies;
 
-    /// <summary>Returns a list of types only from your assemblies.</summary>
+    /// <summary>
+    ///   Returns a list of types only from your assemblies.
+    /// </summary>
     /// <remarks>
     ///    Please use naming style like 'MyApp.Application', 'MyApp.Data.Sqlite',
     ///    if you want to work with this method in correct way :)
@@ -43,7 +42,9 @@ public static class AssemblyProvider
             .ToList();
     }
 
-    /// <summary>Returns a list of all available assemblies in app.</summary>
+    /// <summary>
+    ///   Returns a list of all available assemblies in app.
+    /// </summary>
     /// <returns>Assemblies sequence.</returns>
     public static IEnumerable<Assembly> LoadAllAssemblies()
     {
