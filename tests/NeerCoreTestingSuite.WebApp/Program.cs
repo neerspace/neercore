@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using NeerCore.Api;
 using NeerCore.Api.Extensions;
 using NeerCore.Api.Extensions.Swagger;
+using NeerCore.Application.Extensions;
 using NeerCore.Data.EntityFramework;
 using NeerCore.Mapping.Extensions;
 using NeerCoreTestingSuite.WebApp;
@@ -33,8 +34,9 @@ static void ConfigureBuilder(WebApplicationBuilder builder)
     builder.Services.AddDatabase<SqliteDbContext>(db =>
             db.UseSqlite(builder.Configuration.GetConnectionString("Sqlite")));
 
+    builder.Services.AddMediatorApplicationFromCurrentAssembly();
+    builder.Services.RegisterMappersFromCurrentAssembly();
     builder.AddNeerApi();
-    builder.Services.RegisterMapper<MapperRegister>();
 }
 
 static WebApplication ConfigureWebApp(WebApplication app)
