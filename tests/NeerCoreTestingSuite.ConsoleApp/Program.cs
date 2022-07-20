@@ -1,3 +1,14 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using Microsoft.Extensions.DependencyInjection;
+using NeerCore.DependencyInjection.Extensions;
+using NeerCoreTestingSuite.ConsoleApp.Services.Abstractions;
 
-Console.WriteLine("Hello, World!");
+var serviceProvider = BuildServiceProvider();
+var greetingService = serviceProvider.GetRequiredService<IGreetingService>();
+greetingService.Greet("Helen");
+
+ServiceProvider BuildServiceProvider()
+{
+	var services = new ServiceCollection();
+	services.AddServicesFromCurrentAssembly();
+	return services.BuildServiceProvider();
+}

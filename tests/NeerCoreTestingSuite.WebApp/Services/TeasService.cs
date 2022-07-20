@@ -46,7 +46,7 @@ public class TeasService
 
     public async Task UpdateAsync(Tea tea)
     {
-        _database.Set<Tea>().Add(tea);
+        _database.Set<Tea>().Update(tea);
         await _database.SaveChangesAsync();
     }
 

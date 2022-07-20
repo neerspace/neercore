@@ -8,6 +8,7 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\..\src\NeerCore.Api\NeerCore.Api.csproj" />
+		<ProjectReference Include="..\..\src\NeerCore.Application.MediatR\NeerCore.Application.MediatR.csproj" />
 		<ProjectReference Include="..\..\src\NeerCore.Data.EntityFramework\NeerCore.Data.EntityFramework.csproj" />
 		<ProjectReference Include="..\..\src\NeerCore.Mapping.Mapster\NeerCore.Mapping.Mapster.csproj" />
 	</ItemGroup>
