@@ -43,7 +43,7 @@ public static class ServiceCollectionExtensions
     public static void RegisterMappersFromAssembly(this IServiceCollection services, Assembly assembly)
     {
         var typeAdapterConfig = TypeAdapterConfig.GlobalSettings;
-        typeAdapterConfig.Scan(Assembly.GetExecutingAssembly());
+        typeAdapterConfig.Scan(assembly);
         services.AddSingleton(typeAdapterConfig);
         services.AddScoped<IMapper, Mapper>();
     }
