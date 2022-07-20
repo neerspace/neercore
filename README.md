@@ -5,8 +5,8 @@
 <div align="center">
 
 [![NuGet Release](https://img.shields.io/nuget/v/NeerCore?label=Actual&logo=nuget&style=for-the-badge)](https://www.nuget.org/packages?q=NeerCore)
-[![NuGet Pre-Release](https://img.shields.io/nuget/vpre/NeerCore?label=Latest&logo=nuget&style=for-the-badge)](https://www.nuget.org/packages/NeerCore)
-[![NuGet Pre-Release](https://img.shields.io/nuget/dt/NeerCore.DependencyInjection?color=512bd4&style=for-the-badge)](https://www.nuget.org/packages/NeerCore)
+[![NuGet Pre-Release](https://img.shields.io/nuget/vpre/NeerCore?label=Latest&logo=nuget&style=for-the-badge)](https://www.nuget.org/packages?q=NeerCore)
+[![NuGet Pre-Release](https://img.shields.io/nuget/dt/NeerCore.DependencyInjection?color=512bd4&style=for-the-badge)](https://www.nuget.org/packages/NeerCore.DependencyInjection)
 
 [![GitHub license](https://img.shields.io/github/license/jurilents/NeerCore?color=512bd4&logo=github&style=flat-square)](https://github.com/jurilents/NeerCore/blob/master/LICENSE)
 [![GitHub Actions](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fatrox%2Fsync-dotenv%2Fbadge&label=publish&style=flat-square)](https://actions-badge.atrox.dev/jurilents/NeerCore/badge)
@@ -86,11 +86,12 @@ Thank you for using my developments, I hope they make your life easier! ;)
 
 - CQRS pattern integration
 - MediatrR + FluentValidation
+- Additional abstractions for better mediator experience
 
 ### [NeerCore.Mapping.Mapster](https://www.nuget.org/packages/NeerCore.Mapping.Mapster)
 
 - Mapster `IRegister` DI integration
-- Extensions for `IEnumerable`
+- Useful mapper extensions for `IEnumerable`
 
 -----------------------------
 
