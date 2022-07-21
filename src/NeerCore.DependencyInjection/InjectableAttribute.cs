@@ -2,7 +2,7 @@
 
 namespace NeerCore.DependencyInjection;
 
-[Obsolete("User NeerCore.DependencyInjection.InjectableAttribute instead of this.")]
+[Obsolete("Use NeerCore.DependencyInjection.InjectableAttribute instead of this.")]
 public class InjectAttribute : InjectableAttribute
 {
     /// <summary>
