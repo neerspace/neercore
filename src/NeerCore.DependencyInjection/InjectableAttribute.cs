@@ -19,7 +19,7 @@ public class InjectAttribute : InjectableAttribute
 /// <summary>
 ///   Attribute to simple reference your service class with DI.
 /// </summary>
-[AttributeUsage(AttributeTargets.Class, Inherited = false)]
+[AttributeUsage(AttributeTargets.Class, Inherited = false, AllowMultiple = true)]
 public class InjectableAttribute : Attribute
 {
     /// <summary>
@@ -38,12 +38,14 @@ public class InjectableAttribute : Attribute
     public Type? ServiceType { get; set; }
 
     /// <summary>
-    ///   
+    ///   <b>If not null</b> - Registers a service ONLY FOR specified environment.
+    ///   In all others, this service will not be available!
     /// </summary>
     public string? Environment { get; set; }
 
     /// <summary>
-    ///   
+    ///   <b>If true</b> - Registers a service ONLY FOR the 'Production' environment.
+    ///   In all others, this service will not be available!
     /// </summary>
     public bool ProductionOnly
     {
@@ -51,7 +53,8 @@ public class InjectableAttribute : Attribute
     }
 
     /// <summary>
-    ///   
+    ///   <b>If true</b> - Registers a service ONLY FOR the 'Development' environment.
+    ///   In all others, this service will not be available!
     /// </summary>
     public bool DevelopmentOnly
     {

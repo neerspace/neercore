@@ -22,4 +22,10 @@ public record InjectionOptions
     ///   The default injection mode for all services where the `InjectionType` is not manually overridden.
     /// </summary>
     public InjectionType DefaultInjectionType { get; set; } = InjectionType.Auto;
+
+    /// <summary>
+    ///   Overrides global application environment with a value you define
+    ///   <b>(only when registering services)</b>.
+    /// </summary>
+    public string? Environment { get; set; }
 }

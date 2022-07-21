@@ -67,51 +67,71 @@ public static partial class ServiceCollectionExtensions
     {
         var serviceProvider = services.BuildServiceProvider();
         var environment = serviceProvider.GetService<IHostEnvironment>();
+        string? env = options.Environment ?? environment?.EnvironmentName;
 
         options.ServiceAssemblies ??= new[] { Assembly.GetCallingAssembly() };
         IEnumerable<Type> serviceTypes = options.ServiceAssemblies.SelectMany(sa => sa.GetTypes());
 
         foreach (Type implType in serviceTypes)
         {
-            var attr = implType.GetAttribute<InjectableAttribute>();
-            if (attr is null)
+            var attributes = implType.GetCustomAttributes<InjectableAttribute>().ToArray();
+
+            if (attributes.Any())
             {
-                // TODO: Remove in next version
-                InjectAttribute attr2 = implType.GetAttribute<InjectAttribute>();
-                if (attr is not null) services.AddServicesOld(implType, attr2);
-                continue;
+                foreach (var attr in attributes)
+                {
+                    if (attr.InjectionType is InjectionType.Default)
+                        attr.InjectionType = options.DefaultInjectionType;
+                    if (attr.Lifetime is InstanceLifetime.Default)
+                        attr.Lifetime = options.DefaultLifetime.ToInstanceLifetime();
+
+                    // Ignore service if environment is required and current env IS NOT EQUALS service env
+                    if (IsCurrentEnvironment(attr.Environment, env))
+                        services.AddServices(attr, implType);
+                }
             }
-
-            // Ignore service if environment is required and current env IS NOT EQUALS service env
-            if (!string.IsNullOrEmpty(attr.Environment) && environment is not null &&
-                !attr.Environment.Equals(environment.EnvironmentName, StringComparison.OrdinalIgnoreCase))
-                continue;
-
-            if (attr.InjectionType is InjectionType.Default)
-                attr.InjectionType = options.DefaultInjectionType;
-            if (attr.Lifetime is InstanceLifetime.Default)
-                attr.Lifetime = options.DefaultLifetime.ToInstanceLifetime();
-
-            switch (attr.InjectionType)
+            else
             {
-                case InjectionType.Auto:
-                    services.AutoInject(implType, attr);
-                    break;
-                case InjectionType.Interface:
-                    services.InjectAsInterface(implType, attr);
-                    break;
-                case InjectionType.Self:
-                    services.InjectAsCurrentClass(implType, attr);
-                    break;
-                case InjectionType.BaseClass:
-                    services.InjectAsParentClass(implType, attr);
-                    break;
-                case InjectionType.Default:
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(attr.InjectionType), "Invalid injection type.");
+                // TODO: Remove obsolete in next version
+                var attributesOld = implType.GetCustomAttributes<InjectAttribute>().ToArray();
+
+                if (attributesOld.Any())
+                {
+                    foreach (var attribute in attributesOld)
+                    {
+                        services.AddServicesOld(implType, attribute);
+                    }
+                }
             }
         }
     }
+
+    private static void AddServices(this IServiceCollection services, InjectableAttribute attr, Type implType)
+    {
+        switch (attr.InjectionType)
+        {
+            case InjectionType.Auto:
+                services.AutoInject(implType, attr);
+                break;
+            case InjectionType.Interface:
+                services.InjectAsInterface(implType, attr);
+                break;
+            case InjectionType.Self:
+                services.InjectAsCurrentClass(implType, attr);
+                break;
+            case InjectionType.BaseClass:
+                services.InjectAsParentClass(implType, attr);
+                break;
+            case InjectionType.Default:
+            default:
+                throw new ArgumentOutOfRangeException(nameof(attr.InjectionType), "Invalid injection type.");
+        }
+    }
+
+    private static bool IsCurrentEnvironment(this string? appEnv, string? attrEnv) =>
+        string.IsNullOrEmpty(attrEnv)
+        || string.IsNullOrEmpty(appEnv)
+        || string.Equals(attrEnv, appEnv, StringComparison.OrdinalIgnoreCase);
 
     private static void AutoInject(this IServiceCollection services, Type implType, InjectableAttribute attr)
     {
