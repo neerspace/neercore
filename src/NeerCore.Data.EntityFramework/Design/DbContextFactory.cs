@@ -7,9 +7,9 @@ namespace NeerCore.Data.EntityFramework.Design;
 
 /// <summary>A factory for creating derived <see cref="DbContext" /> instances.</summary>
 /// <remarks>
-///    See Implementation of database providers and extensions
+///   See Implementation of database providers and extensions
 ///   <a href="https://aka.ms/efcore-docs-providers">official documentation</a>
-///    for more information.
+///   for more information.
 /// </remarks>
 public abstract class DbContextFactoryBase<TContext> : IDesignTimeDbContextFactory<TContext>
         where TContext : DbContext

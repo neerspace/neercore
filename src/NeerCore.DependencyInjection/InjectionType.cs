@@ -14,12 +14,12 @@ public enum InjectionType
     ///   Automatically define prefer injection type.
     /// </summary>
     /// <remarks>
-    ///    How it works:
-    ///    <list type="number">
-    ///      <item>If it implements any interface it will be injected as <see cref="Interface"/>.</item>
-    ///      <item>If it extends any class it will be injected as <see cref="BaseClass"/>.</item>
-    ///      <item>Otherwise it will be injected as <see cref="Self"/>.</item>
-    ///    </list>
+    ///   How it works:
+    ///   <list type="number">
+    ///     <item>If it implements any interface it will be injected as <see cref="Interface"/>.</item>
+    ///     <item>If it extends any class it will be injected as <see cref="BaseClass"/>.</item>
+    ///     <item>Otherwise it will be injected as <see cref="Self"/>.</item>
+    ///   </list>
     /// </remarks>
     Auto,
 

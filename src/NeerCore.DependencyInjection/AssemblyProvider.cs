@@ -6,8 +6,8 @@ namespace NeerCore.DependencyInjection;
 ///   Wrapper to simplify usage of some reflection features.
 /// </summary>
 /// <remarks>
-///    Please use naming style like 'MyApp.Application', 'MyApp.Data.Sqlite',
-///    if you want to work with this class in correct way :)
+///   Please use naming style like 'MyApp.Application', 'MyApp.Data.Sqlite',
+///   if you want to work with this class in correct way :)
 /// </remarks>
 public static class AssemblyProvider
 {
@@ -19,8 +19,8 @@ public static class AssemblyProvider
     ///   Returns a list of types only from your assemblies.
     /// </summary>
     /// <remarks>
-    ///    Please use naming style like 'MyApp.Application', 'MyApp.Data.Sqlite',
-    ///    if you want to work with this method in correct way :)
+    ///   Please use naming style like 'MyApp.Application', 'MyApp.Data.Sqlite',
+    ///   if you want to work with this method in correct way :)
     /// </remarks>
     public static IEnumerable<Assembly> ApplicationAssemblies => applicationAssemblies ??= AllAssemblies.Where(IsApplicationAssembly);
 
