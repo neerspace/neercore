@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using NLog;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
 namespace NeerCore.Api.Controllers;
 
@@ -10,5 +11,8 @@ public abstract class ApiController : ControllerBase
 {
     private ILogger? _logger;
 
-    protected ILogger Logger => _logger ??= LogManager.GetLogger(GetType().Name);
+    /// <summary>
+    ///   Current controller logger instance.
+    /// </summary>
+    protected ILogger Logger => _logger ??= HttpContext.RequestServices.GetRequiredService<ILoggerFactory>().CreateLogger(GetType());
 }
