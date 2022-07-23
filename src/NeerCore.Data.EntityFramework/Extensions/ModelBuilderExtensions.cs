@@ -12,13 +12,13 @@ public static class ModelBuilderExtensions
     ///    instances that are defined in provided <b>calling assembly</b>.
     /// </summary>
     /// <param name="builder">Database model builder.</param>
-    public static void ApplyConfigurationsFromCurrentAssembly(this ModelBuilder builder)
+    public static void ApplyConfigurations(this ModelBuilder builder)
     {
         builder.ApplyConfigurationsFromAssembly(Assembly.GetCallingAssembly());
     }
 
     /// <param name="assemblyName"><see cref="Assembly"/> name where data seeders are providing.</param>
-    /// <inheritdoc cref="ApplyDataSeedersFromCurrentAssembly"/>
+    /// <inheritdoc cref="ApplyDataSeeders"/>
     public static void ApplyDataSeedersFromAssembly(this ModelBuilder builder, string assemblyName)
     {
         var assembly = Assembly.Load(assemblyName);
@@ -27,7 +27,7 @@ public static class ModelBuilderExtensions
     }
 
     /// <param name="assembly"><see cref="Assembly"/> where data seeders are providing.</param>
-    /// <inheritdoc cref="ApplyDataSeedersFromCurrentAssembly"/>
+    /// <inheritdoc cref="ApplyDataSeeders"/>
     public static void ApplyDataSeedersFromAssembly(this ModelBuilder builder, Assembly assembly)
     {
         ApplyEntityDataSeeders(builder, assembly);
@@ -39,7 +39,7 @@ public static class ModelBuilderExtensions
     ///   seeding data from provided assembly or from the calling assembly by default.
     /// </summary>
     /// <param name="builder">Database model builder.</param>
-    public static void ApplyDataSeedersFromCurrentAssembly(this ModelBuilder builder)
+    public static void ApplyDataSeeders(this ModelBuilder builder)
     {
         var assembly = Assembly.GetCallingAssembly();
         ApplyEntityDataSeeders(builder, assembly);

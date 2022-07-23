@@ -47,6 +47,7 @@ static void ConfigureBuilder(WebApplicationBuilder builder)
 
 static WebApplication ConfigureWebApp(WebApplication app)
 {
+    // Test SQL logging
     using (var scope = app.Services.CreateScope())
     {
         var db = scope.ServiceProvider.GetRequiredService<IDatabaseContext>();
