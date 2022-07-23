@@ -10,11 +10,12 @@
 		<ProjectReference Include="..\..\src\NeerCore.Api\NeerCore.Api.csproj" />
 		<ProjectReference Include="..\..\src\NeerCore.Application.MediatR\NeerCore.Application.MediatR.csproj" />
 		<ProjectReference Include="..\..\src\NeerCore.Data.EntityFramework\NeerCore.Data.EntityFramework.csproj" />
+		<ProjectReference Include="..\..\src\NeerCore.Logging.NLog\NeerCore.Logging.NLog.csproj" />
 		<ProjectReference Include="..\..\src\NeerCore.Mapping.Mapster\NeerCore.Mapping.Mapster.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.6" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.7" />
 	</ItemGroup>
 
 	<PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -31,6 +32,14 @@
 		<Content Update="appsettings.Development.json">
 			<DependentUpon>appsettings.json</DependentUpon>
 		</Content>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="bin\Debug\net6.0\logs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <DocFileItem Remove="bin\Debug\NeerCoreTestingSuite.WebApp.xml" />
 	</ItemGroup>
 
 </Project>

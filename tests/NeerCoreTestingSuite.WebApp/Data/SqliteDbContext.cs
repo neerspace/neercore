@@ -2,7 +2,7 @@
 using NeerCore.Data;
 using NeerCore.Data.EntityFramework.Abstractions;
 using NeerCore.Data.EntityFramework.Converters;
-using NeerCoreTestingSuite.WebApp.Data.Entities;
+using NeerCore.Data.EntityFramework.Extensions;
 
 namespace NeerCoreTestingSuite.WebApp.Data;
 
@@ -17,9 +17,8 @@ public sealed class SqliteDbContext : DbContext, IDatabaseContext
     protected override void OnModelCreating(ModelBuilder builder)
     {
         // Register all your entities here
-        builder.Entity<Tea>();
 
-        builder.SeedDefaultData();
+        builder.ApplyDataSeedersFromCurrentAssembly();
     }
 
     protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)

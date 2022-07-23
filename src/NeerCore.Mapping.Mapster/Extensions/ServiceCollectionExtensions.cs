@@ -12,9 +12,15 @@ public static class ServiceCollectionExtensions
     ///   Registers all implementations of <see cref="IRegister"/> interface mappings.
     /// </summary>
     /// <param name="services">The <see cref="IServiceCollection"/> containing service descriptors</param>
+    [Obsolete("Use RegisterMappers overload instead of this.")]
     public static void RegisterMappersFromCurrentAssembly(this IServiceCollection services)
     {
         services.RegisterMappersFromAssembly(Assembly.GetCallingAssembly());
+    }
+
+    public static void RegisterMappers(this IServiceCollection services)
+    {
+        services.RegisterMappersFromCurrentAssembly();
     }
 
     /// <summary>

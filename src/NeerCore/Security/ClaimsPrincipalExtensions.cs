@@ -73,10 +73,25 @@ public static class ClaimsPrincipalExtensions
     /// <returns>User id or throws exception if something goes wrong</returns>
     /// <exception cref="UnauthorizedException">Throws when the user is not authenticated</exception>
     /// <exception cref="ForbidException">Throws when the user is doesn't have a claim with given type</exception>
+    [Obsolete("Use custom overload instead on this.")]
     public static long GetUserId(this ClaimsPrincipal user)
     {
         Claim claim = user.GetClaim(Claims.Id);
         return long.TryParse(claim.Value, out long userId) ? userId : throw InvalidClaimValueException(Claims.Id);
+    }
+
+    /// <summary>
+    ///   Gets user id from claims.
+    /// </summary>
+    /// <param name="user">Current user principal</param>
+    /// <returns>User id or throws exception if something goes wrong</returns>
+    /// <exception cref="UnauthorizedException">Throws when the user is not authenticated</exception>
+    /// <exception cref="ForbidException">Throws when the user is doesn't have a claim with given type</exception>
+    [Obsolete("Use custom overload instead on this.")]
+    public static string GetRawUserId(this ClaimsPrincipal user)
+    {
+        string claimValue = user.GetClaim(Claims.Id).Value;
+        return !string.IsNullOrEmpty(claimValue) ? claimValue : throw InvalidClaimValueException(Claims.Id);
     }
 
     /// <summary>
