@@ -4,12 +4,15 @@ using NeerCore.Api.Extensions;
 using NeerCore.Api.Extensions.Swagger;
 using NeerCore.Application.Extensions;
 using NeerCore.Data.EntityFramework;
+using NeerCore.Data.EntityFramework.Abstractions;
+using NeerCore.Logging;
+using NeerCore.Logging.Extensions;
 using NeerCore.Mapping.Extensions;
-using NeerCoreTestingSuite.WebApp;
 using NeerCoreTestingSuite.WebApp.Data;
+using NeerCoreTestingSuite.WebApp.Data.Entities;
 using NLog;
 
-var logger = LoggerInstaller.InitDefault();
+var logger = LoggerInstaller.InitFromCurrentEnvironment();
 
 try
 {
@@ -31,16 +34,29 @@ finally
 
 static void ConfigureBuilder(WebApplicationBuilder builder)
 {
-    builder.Services.AddDatabase<SqliteDbContext>(db =>
-            db.UseSqlite(builder.Configuration.GetConnectionString("Sqlite")));
+    builder.Logging.AddNLogAsDefault();
 
-    builder.Services.AddMediatorApplicationFromCurrentAssembly();
-    builder.Services.RegisterMappersFromCurrentAssembly();
-    builder.AddNeerApi();
+    builder.Services.AddDatabase<SqliteDbContext>(db =>
+        db.UseSqlite(builder.Configuration.GetConnectionString("Sqlite")));
+
+    builder.Services.AddMediatorApplication();
+    builder.Services.RegisterMappers();
+    builder.Services.AddNeerApiServices();
+    builder.Services.AddNeerControllers();
 }
 
 static WebApplication ConfigureWebApp(WebApplication app)
 {
+    using (var scope = app.Services.CreateScope())
+    {
+        var db = scope.ServiceProvider.GetRequiredService<IDatabaseContext>();
+        var teas = db.Set<Tea>()
+            .AsNoTracking()
+            .Where(e => e.Price > 10)
+            .Select(e => new { e.Id, e.Price, e.Name })
+            .ToList();
+    }
+
     if (app.Configuration.GetSwaggerSettings().Enabled)
         app.UseCustomSwagger();
 

@@ -1,9 +1,9 @@
 ﻿using System.Net;
 using FluentValidation;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Logging;
 using NeerCore.Api.Extensions;
 using NeerCore.Exceptions;
-using NLog;
 
 namespace NeerCore.Api.Defaults.Middleware;
 
@@ -16,9 +16,9 @@ public class ExceptionHandlerMiddleware : IMiddleware
 {
     protected readonly ILogger Logger;
 
-    public ExceptionHandlerMiddleware()
+    public ExceptionHandlerMiddleware(ILoggerFactory loggerFactory)
     {
-        Logger = LogManager.GetCurrentClassLogger();
+        Logger = loggerFactory.CreateLogger(GetType());
     }
 
     public async Task InvokeAsync(HttpContext context, RequestDelegate next)
@@ -35,7 +35,7 @@ public class ExceptionHandlerMiddleware : IMiddleware
         {
             if ((int)e.StatusCode >= 500)
             {
-                Logger.Error(e, "Internal Server Error");
+                Logger.LogError(e, "Internal Server Error");
                 await context.Response.Write500ErrorAsync(e);
             }
             else
@@ -43,7 +43,7 @@ public class ExceptionHandlerMiddleware : IMiddleware
         }
         catch (Exception e)
         {
-            Logger.Error(e, "Unhandled Server Error");
+            Logger.LogError(e, "Unhandled Server Error");
             await context.Response.Write500ErrorAsync(e);
         }
     }

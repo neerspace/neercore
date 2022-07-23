@@ -21,9 +21,15 @@ public static class ServiceCollectionExtensions
     }
 
     /// <inheritdoc cref="AddMediatorApplication(IServiceCollection,IEnumerable{Assembly})"/>
+    [Obsolete("Use AddMediatorApplication overload instead of this.")]
     public static void AddMediatorApplicationFromCurrentAssembly(this IServiceCollection services)
     {
         services.AddMediatorApplication(new[] { Assembly.GetCallingAssembly() });
+    }
+
+    public static void AddMediatorApplication(this IServiceCollection services)
+    {
+        services.AddMediatorApplicationFromCurrentAssembly();
     }
 
     /// <inheritdoc cref="AddMediatorApplication(IServiceCollection,IEnumerable{Assembly})"/>
@@ -40,10 +46,7 @@ public static class ServiceCollectionExtensions
     {
         var assembliesArray = assemblies as Assembly[] ?? assemblies.ToArray();
 
-        services.AddMediatR(assembliesArray).AddFluentValidation(options =>
-        {
-            options.DisableDataAnnotationsValidation = true;
-        });
+        services.AddMediatR(assembliesArray).AddFluentValidation(options => { options.DisableDataAnnotationsValidation = true; });
         services.AddFluentValidation(assembliesArray);
     }
 }

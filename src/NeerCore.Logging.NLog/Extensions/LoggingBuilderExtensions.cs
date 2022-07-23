@@ -1,15 +1,15 @@
-﻿using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Logging;
 using NLog;
 using NLog.Web;
 
-namespace NeerCore.Api.Extensions;
+namespace NeerCore.Logging.Extensions;
 
 public static class LoggingBuilderExtensions
 {
     /// <summary>
-    ///      Changes default logging provider to NLog.
+    ///   Changes default logging provider to NLog.
     /// </summary>
-    public static void AddNLog(this ILoggingBuilder logging)
+    public static void AddNLogAsDefault(this ILoggingBuilder logging)
     {
         logging.ClearProviders();
         logging.AddNLogWeb(LogManager.Configuration);
