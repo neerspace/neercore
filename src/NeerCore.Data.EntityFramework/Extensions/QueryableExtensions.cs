@@ -9,7 +9,7 @@ public static class QueryableExtensions
 {
     /// <summary>
     ///   Returns the first element of a sequence, or throws a
-    ///    <see cref="NotFoundException"/> if the sequence contains no elements.
+    ///   <see cref="NotFoundException"/> if the sequence contains no elements.
     /// </summary>
     /// <param name="source">The source query.</param>
     /// <param name="cancel">Cancellation token</param>

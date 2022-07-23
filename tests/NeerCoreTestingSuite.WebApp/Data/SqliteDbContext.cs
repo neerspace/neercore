@@ -18,7 +18,7 @@ public sealed class SqliteDbContext : DbContext, IDatabaseContext
     {
         // Register all your entities here
 
-        builder.ApplyDataSeedersFromCurrentAssembly();
+        builder.ApplyDataSeeders();
     }
 
     protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
