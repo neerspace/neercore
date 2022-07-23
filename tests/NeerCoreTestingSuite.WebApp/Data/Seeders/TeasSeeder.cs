@@ -1,17 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using NeerCore.Data.EntityFramework.Abstractions;
 using NeerCoreTestingSuite.WebApp.Data.Entities;
 
-namespace NeerCoreTestingSuite.WebApp.Data;
+namespace NeerCoreTestingSuite.WebApp.Data.Seeders;
 
-public static class DataSeed
+public class TeasSeeder : IEntityDataSeeder<Tea>
 {
-    public static void SeedDefaultData(this ModelBuilder builder)
-    {
-        builder.Entity<Tea>().HasData(Products);
-    }
-
-
-    private static readonly Tea[] Products =
+    public IEnumerable<Tea> Data => new Tea[]
     {
         new() { Name = "Earl Gray", Price = 20m },
         new() { Name = "Rose Tea", Price = 20m },
