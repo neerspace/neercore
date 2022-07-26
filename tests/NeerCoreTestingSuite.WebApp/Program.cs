@@ -14,6 +14,9 @@ using NLog;
 
 var logger = LoggerInstaller.InitFromCurrentEnvironment();
 
+var factory = new SqliteDbContextFactory();
+factory.CreateDbContext(null);
+
 try
 {
     var builder = WebApplication.CreateBuilder(args);
