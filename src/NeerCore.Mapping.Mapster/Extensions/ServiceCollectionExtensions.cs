@@ -18,7 +18,7 @@ public static class ServiceCollectionExtensions
         services.RegisterMappersFromAssembly(Assembly.GetCallingAssembly());
     }
 
-    public static void RegisterMappers(this IServiceCollection services)
+    public static void RegisterAllMappers(this IServiceCollection services)
     {
         services.RegisterMappersFromCurrentAssembly();
     }
