@@ -3,6 +3,7 @@ using NeerCore.Data;
 using NeerCore.Data.EntityFramework.Abstractions;
 using NeerCore.Data.EntityFramework.Converters;
 using NeerCore.Data.EntityFramework.Extensions;
+using NeerCoreTestingSuite.WebApp.Data.Entities;
 
 namespace NeerCoreTestingSuite.WebApp.Data;
 
@@ -17,7 +18,8 @@ public sealed class SqliteDbContext : DbContext, IDatabaseContext
     protected override void OnModelCreating(ModelBuilder builder)
     {
         // Register all your entities here
-        builder.ApplyAllConfigurations();
+        builder.Entity<Tea>();
+        // builder.ApplyAllConfigurations();
         builder.ApplyAllDataSeeders();
     }
 
