@@ -43,7 +43,6 @@ public class SwaggerConfiguration : IConfigureNamedOptions<SwaggerGenOptions>
             options.IncludeXmlComments(xmlPath, includeControllerXmlComments: true);
     }
 
-
     public void Configure(string name, SwaggerGenOptions options) => Configure(options);
 
 

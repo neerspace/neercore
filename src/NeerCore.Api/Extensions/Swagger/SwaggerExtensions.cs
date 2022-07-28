@@ -8,6 +8,11 @@ namespace NeerCore.Api.Extensions.Swagger;
 
 public static class SwaggerExtensions
 {
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="services"></param>
+    /// <param name="configureInfo"></param>
     public static void AddCustomSwagger(this IServiceCollection services, Func<ApiVersionDescription, OpenApiInfo>? configureInfo = null)
     {
         services.AddEndpointsApiExplorer();
@@ -19,6 +24,10 @@ public static class SwaggerExtensions
         services.AddSwaggerGen();
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="app"></param>
     public static void UseCustomSwagger(this IApplicationBuilder app)
     {
         var swaggerSettings = app.ApplicationServices.GetRequiredService<IConfiguration>().GetSwaggerSettings();
@@ -31,8 +40,8 @@ public static class SwaggerExtensions
             {
                 foreach (var description in apiProvider.ApiVersionDescriptions)
                 {
-                    string name = $"{swaggerSettings.Title} {description.GroupName.ToUpper()}";
-                    string url = $"/swagger/{description.GroupName}/swagger.json";
+                    var name = $"{swaggerSettings.Title} {description.GroupName.ToUpper()}";
+                    var url = $"/swagger/{description.GroupName}/swagger.json";
                     options.SwaggerEndpoint(url, name);
                 }
 
