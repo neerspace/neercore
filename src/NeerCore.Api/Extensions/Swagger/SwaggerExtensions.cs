@@ -2,18 +2,32 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.OpenApi.Models;
 
 namespace NeerCore.Api.Extensions.Swagger;
 
 public static class SwaggerExtensions
 {
-    public static void AddCustomSwagger(this IServiceCollection services)
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="services"></param>
+    /// <param name="configureInfo"></param>
+    public static void AddCustomSwagger(this IServiceCollection services, Func<ApiVersionDescription, OpenApiInfo>? configureInfo = null)
     {
         services.AddEndpointsApiExplorer();
+        services.Configure<OpenApiInfoProviderSettings>(options =>
+        {
+            options.ConfigureDelegate = configureInfo;
+        });
         services.ConfigureOptions<SwaggerConfiguration>();
         services.AddSwaggerGen();
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="app"></param>
     public static void UseCustomSwagger(this IApplicationBuilder app)
     {
         var swaggerSettings = app.ApplicationServices.GetRequiredService<IConfiguration>().GetSwaggerSettings();
@@ -26,8 +40,8 @@ public static class SwaggerExtensions
             {
                 foreach (var description in apiProvider.ApiVersionDescriptions)
                 {
-                    string name = $"{swaggerSettings.Title} {description.GroupName.ToUpper()}";
-                    string url = $"/swagger/{description.GroupName}/swagger.json";
+                    var name = $"{swaggerSettings.Title} {description.GroupName.ToUpper()}";
+                    var url = $"/swagger/{description.GroupName}/swagger.json";
                     options.SwaggerEndpoint(url, name);
                 }
 

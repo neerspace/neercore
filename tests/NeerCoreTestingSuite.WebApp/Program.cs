@@ -1,15 +1,18 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using NeerCore.Api;
 using NeerCore.Api.Extensions;
 using NeerCore.Api.Extensions.Swagger;
 using NeerCore.Application.Extensions;
 using NeerCore.Data.EntityFramework;
 using NeerCore.Data.EntityFramework.Abstractions;
+using NeerCore.DependencyInjection.Extensions;
 using NeerCore.Logging;
 using NeerCore.Logging.Extensions;
 using NeerCore.Mapping.Extensions;
 using NeerCoreTestingSuite.WebApp.Data;
 using NeerCoreTestingSuite.WebApp.Data.Entities;
+using NeerCoreTestingSuite.WebApp.Settings;
 using NLog;
 
 var logger = LoggerInstaller.InitFromCurrentEnvironment();
@@ -34,13 +37,14 @@ finally
 
 static void ConfigureBuilder(WebApplicationBuilder builder)
 {
-    builder.Logging.AddNLogAsDefault();
+    builder.Logging.ConfigureNLogAsDefault();
 
     builder.Services.AddDatabase<SqliteDbContext>(db =>
         db.UseSqlite(builder.Configuration.GetConnectionString("Sqlite")));
 
     builder.Services.AddMediatorApplication();
-    builder.Services.RegisterMappers();
+    builder.Services.ConfigureAllOptions();
+    builder.Services.RegisterAllMappers();
     builder.Services.AddNeerApiServices();
     builder.Services.AddNeerControllers();
 }
@@ -56,6 +60,9 @@ static WebApplication ConfigureWebApp(WebApplication app)
             .Where(e => e.Price > 10)
             .Select(e => new { e.Id, e.Price, e.Name })
             .ToList();
+
+        var settings = scope.ServiceProvider.GetRequiredService<IOptions<TestSettings>>();
+        Console.WriteLine(settings.Value.Message);
     }
 
     if (app.Configuration.GetSwaggerSettings().Enabled)

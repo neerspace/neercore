@@ -14,12 +14,20 @@ public class SwaggerConfiguration : IConfigureNamedOptions<SwaggerGenOptions>
     private readonly IWebHostEnvironment _environment;
     private readonly SwaggerConfigurationOptions _options;
     private readonly IApiVersionDescriptionProvider _provider;
+    private readonly OpenApiInfoProviderSettings _apiInfoSettings;
 
-    public SwaggerConfiguration(IConfiguration configuration, IWebHostEnvironment environment, IApiVersionDescriptionProvider provider)
+    internal SwaggerConfiguration(
+        IConfiguration configuration,
+        IWebHostEnvironment environment,
+        IApiVersionDescriptionProvider provider,
+        IOptions<OpenApiInfoProviderSettings> apiInfoSettingsAccessor)
     {
         _options = configuration.GetSwaggerSettings();
         _environment = environment;
         _provider = provider;
+        _apiInfoSettings = apiInfoSettingsAccessor.Value;
+
+        _apiInfoSettings.ConfigureDelegate ??= _ => new OpenApiInfo();
     }
 
     public void Configure(SwaggerGenOptions options)
@@ -35,7 +43,6 @@ public class SwaggerConfiguration : IConfigureNamedOptions<SwaggerGenOptions>
             options.IncludeXmlComments(xmlPath, includeControllerXmlComments: true);
     }
 
-
     public void Configure(string name, SwaggerGenOptions options) => Configure(options);
 
 
@@ -43,17 +50,16 @@ public class SwaggerConfiguration : IConfigureNamedOptions<SwaggerGenOptions>
     {
         string descriptionFilePath = Path.Join(_environment.ContentRootPath, _options.Description);
         string description = File.Exists(descriptionFilePath)
-                ? File.ReadAllText(descriptionFilePath)
-                : _options.Description ?? default!;
+            ? File.ReadAllText(descriptionFilePath)
+            : _options.Description ?? default!;
 
         description = description.Replace("{version}", versionDescription.GroupName.ToLower());
 
-        return new OpenApiInfo
-        {
-            Title = _options.Title,
-            Version = versionDescription.ApiVersion.ToString(),
-            Description = description,
-        };
+        OpenApiInfo openApiInfo = _apiInfoSettings.ConfigureDelegate!.Invoke(versionDescription);
+        openApiInfo.Version ??= versionDescription.ApiVersion.ToString();
+        openApiInfo.Description ??= description;
+        openApiInfo.Title ??= _options.Title;
+        return openApiInfo;
     }
 
     private IEnumerable<string> GetXmlComments()
