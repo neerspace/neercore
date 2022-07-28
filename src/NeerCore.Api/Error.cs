@@ -1,5 +1,8 @@
 ﻿namespace NeerCore.Api;
 
+/// <summary>
+///   Record that represents a default NeerCore HTTP error response.
+/// </summary>
 public record Error
 {
     /// <example>400</example>
@@ -23,6 +26,9 @@ public record Error
     }
 
 
+    /// <summary>
+    ///   Detailed information about single invalid field.
+    /// </summary>
     public record Details
     {
         /// <example>username</example>

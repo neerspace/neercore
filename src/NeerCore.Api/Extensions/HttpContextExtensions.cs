@@ -39,19 +39,36 @@ public static class HttpContextExtensions
         return httpContext.Request.Headers["User-Agent"].ToString();
     }
 
-    public static async Task WriteJsonAsync<T>(this HttpResponse context, HttpStatusCode statusCode, T response)
+    /// <summary>
+    ///   Sends a JSON response with provided JSON body and HTTP status code. UTF-8 encoding will be used.
+    /// </summary>
+    /// <param name="context">Represents the outgoing side of an individual HTTP request.</param>
+    /// <param name="statusCode">Contains the values of status codes defined for HTTP.</param>
+    /// <param name="response">Response object to be converted and sent as JSON.</param>
+    /// <typeparam name="TResponse">Generic response type.</typeparam>
+    public static async Task WriteJsonAsync<TResponse>(this HttpResponse context, HttpStatusCode statusCode, TResponse response)
     {
         context.ContentType = "application/json";
         context.StatusCode = (int)statusCode;
         await context.WriteAsync(JsonSerializer.Serialize(response, JsonConventions.CamelCase));
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="context"></param>
+    /// <param name="exception"></param>
     public static async Task Write500ErrorAsync(this HttpResponse context, Exception exception)
     {
         var error = new InternalServerException(exception.Message).CreateError();
         await context.WriteJsonAsync(HttpStatusCode.InternalServerError, error);
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="context"></param>
+    /// <param name="exception"></param>
     public static async Task WriteExtended500ErrorAsync(this HttpResponse context, Exception exception)
     {
         context.ContentType = "text/plain";

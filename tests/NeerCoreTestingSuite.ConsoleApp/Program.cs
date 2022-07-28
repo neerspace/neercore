@@ -9,6 +9,6 @@ greetingService.Greet("Helen");
 ServiceProvider BuildServiceProvider()
 {
 	var services = new ServiceCollection();
-	services.AddServicesFromCurrentAssembly();
+	services.AddAllServices();
 	return services.BuildServiceProvider();
 }

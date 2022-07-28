@@ -1,6 +1,8 @@
 ﻿using System.Reflection;
 using System.Text.Json.Serialization;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.OpenApi.Models;
 using NeerCore.Api.Extensions.Swagger;
 using NeerCore.DependencyInjection.Extensions;
 using Sieve.Services;
@@ -25,6 +27,11 @@ public static class ServiceCollectionExtensions
 
     public static void AddNeerApiServices(this IServiceCollection services, params Assembly[] assemblies)
     {
+        services.AddNeerApiServices(assemblies, configureInfo: null);
+    }
+
+    public static void AddNeerApiServices(this IServiceCollection services, IEnumerable<Assembly> assemblies, Func<ApiVersionDescription, OpenApiInfo>? configureInfo)
+    {
         services.AddScoped<ISieveProcessor, SieveProcessor>();
         services.AddServicesFromAssemblies(assemblies);
 
@@ -32,7 +39,7 @@ public static class ServiceCollectionExtensions
         services.AddDefaultCorsPolicy();
         services.AddCustomApiVersioning();
         services.ConfigureApiBehaviorOptions();
-        services.AddCustomSwagger();
+        services.AddCustomSwagger(configureInfo);
     }
 
 

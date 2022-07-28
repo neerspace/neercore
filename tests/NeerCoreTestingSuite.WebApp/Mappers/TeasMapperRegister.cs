@@ -2,9 +2,9 @@
 using NeerCore.Mapping.Extensions;
 using NeerCoreTestingSuite.WebApp.Data.Entities;
 
-namespace NeerCoreTestingSuite.WebApp;
+namespace NeerCoreTestingSuite.WebApp.Mappers;
 
-public class MapperRegister : IRegister
+public class TeasMapperRegister : IRegister
 {
     private const decimal BTCRate = 0.000034m;
 
