@@ -6,10 +6,15 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace NeerCore.Api;
 
+/// <summary>
+///   Configures ASP.NET Core controllers to use kebab case naming by default.
+/// </summary>
 /// <remarks>kebab-case-example</remarks>
 public class KebabCaseNamingConvention : IOutboundParameterTransformer
 {
-    /// <summary>To convert ControllerClassNames to kebab-case-style routes.</summary>
+    /// <summary>
+    ///   Used to convert ControllerClassNames to kebab-case-style routes.
+    /// </summary>
     public static void Use(MvcOptions options)
     {
         options.Conventions.Add(new RouteTokenTransformerConvention(new KebabCaseNamingConvention()));
