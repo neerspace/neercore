@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace NeerCore.Api.Extensions;
@@ -15,7 +16,7 @@ public static class ApiExtensions
         }));
     }
 
-    public static void AddCustomApiVersioning(this IServiceCollection services)
+    public static void AddCustomApiVersioning(this IServiceCollection services, IApiVersionReader? apiVersionParameterSource = null)
     {
         services.AddApiVersioning();
 
@@ -24,6 +25,9 @@ public static class ApiExtensions
             options.GroupNameFormat = "'v'VVV";
             options.SubstituteApiVersionInUrl = true;
             options.AssumeDefaultVersionWhenUnspecified = true;
+
+            if (apiVersionParameterSource is not null)
+                options.ApiVersionParameterSource = apiVersionParameterSource;
 
             options.DefaultApiVersion = ApiVersion.Default;
         });
