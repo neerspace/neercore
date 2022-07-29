@@ -40,6 +40,17 @@ Thank you for using my developments, I hope they make your life easier! ;)
 
 ## Provided features
 
+### Dependency Injection
+
+> Sample: [Console app with NeerCore DI](https://github.com/jurilents/NeerCore-Examples-ConsoleDependencyInjection)
+>
+> Wiki: [GitHub Docs](https://github.com/jurilents/NeerCore/wiki/Smart-Dependency-Injection)
+
+
+-----------------------------
+
+## Provided features
+
 ### [NeerCore](https://www.nuget.org/packages/NeerCore)
 
 - Core used by another `NeerCore.*` libs
@@ -92,6 +103,63 @@ Thank you for using my developments, I hope they make your life easier! ;)
 
 - Mapster `IRegister` DI integration
 - Useful mapper extensions for `IEnumerable`
+
+### [NeerCore.Logging.NLog](https://www.nuget.org/packages/NeerCore.Logging.NLog)
+
+- Preconfigured ready to use from the box logger
+
+-----------------------------
+
+## Features navigation
+
+### [NeerCore](https://www.nuget.org/packages/NeerCore)
+
+- [Additional HTTP Exceptions](https://github.com/jurilents/NeerCore/wiki/HTTP-Exceptions)
+- [The Most Common Extensions](https://github.com/jurilents/NeerCore/wiki/Extension-Methods)
+- [Extended `System.Text.Json` stuff](https://github.com/jurilents/NeerCore/wiki/JSON-Conventions-and-Policies)
+
+### [NeerCore.Api](https://www.nuget.org/packages/NeerCore.Api)
+
+- [Base Controllers](https://github.com/jurilents/NeerCore/wiki/Web-API-Controllers)
+- [Kebab-case Routes by Default](https://github.com/jurilents/NeerCore/wiki/Web-API-Kebab-Case-Routes)
+- [API Versioning](https://github.com/jurilents/NeerCore/wiki/Web-API-Versioning)
+- [Smart injection of Middlewares in Factory style](https://github.com/jurilents/NeerCore/wiki/Web-API-Factory-Middlewares)
+- [Exception Handler Middleware](https://github.com/jurilents/NeerCore/wiki/Web-API-Exception-Handler-Middleware)
+- [`Swagger` + `ReDoc`](https://github.com/jurilents/NeerCore/wiki/Web-API-Swagger-and-ReDoc)
+
+### [NeerCore.Application.MediatR](https://www.nuget.org/packages/NeerCore.Application.MediatR)
+
+- [Smart injection of `MediatR` + `FluentValidation`]()
+- [Base Controller with Mediator](https://github.com/jurilents/NeerCore/wiki/Web-API-Controllers)
+- [Mediator interfaces]
+
+### [NeerCore.Data](https://www.nuget.org/packages/NeerCore.Data)
+
+- [Localized String Type]
+
+### [NeerCore.Data.Abstractions](https://www.nuget.org/packages/NeerCore.Data.Abstractions)
+
+- [Entity Abstractions]
+
+### [NeerCore.Data.EntityFramework](https://www.nuget.org/packages/NeerCore.Data.EntityFramework)
+
+- [Smart Data Seeding]
+- [`DbContext` Factory]
+- [The Most Common `IQueryable` Extensions]
+
+### [NeerCore.DependencyInjection](https://www.nuget.org/packages/NeerCore.DependencyInjection)
+
+- [Smart Dependency Injection](https://github.com/jurilents/NeerCore/wiki/Smart-Dependency-Injection)
+- [Configure options with `IConfigureOptions<>`]
+
+### [NeerCore.Logging.NLog](https://www.nuget.org/packages/NeerCore.Logging.NLog)
+
+- [Smart Dependency Injection](https://github.com/jurilents/NeerCore/wiki/Smart-Dependency-Injection)
+
+### [NeerCore.Mapping.Mapster](https://www.nuget.org/packages/NeerCore.Mapping.Mapster)
+
+- [Smart Mapster Registration]
+- [Mapster Extensions]
 
 -----------------------------
 
