@@ -76,9 +76,9 @@ public static class SwaggerExtensions
         }
     }
 
-    public static SwaggerConfigurationOptions GetSwaggerSettings(this IConfiguration configuration)
+    public static SwaggerConfigurationSettings GetSwaggerSettings(this IConfiguration configuration)
     {
-        var settings = new SwaggerConfigurationOptions();
+        var settings = new SwaggerConfigurationSettings();
         configuration.Bind("Swagger", settings);
         return settings;
     }
