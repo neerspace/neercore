@@ -9,20 +9,20 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace NeerCore.Api.Extensions.Swagger;
 
-public class SwaggerConfiguration : IConfigureNamedOptions<SwaggerGenOptions>
+internal class SwaggerConfiguration : IConfigureNamedOptions<SwaggerGenOptions>
 {
     private readonly IWebHostEnvironment _environment;
-    private readonly SwaggerConfigurationOptions _options;
+    private readonly SwaggerConfigurationSettings _settings;
     private readonly IApiVersionDescriptionProvider _provider;
     private readonly OpenApiInfoProviderSettings _apiInfoSettings;
 
-    internal SwaggerConfiguration(
+    public SwaggerConfiguration(
         IConfiguration configuration,
         IWebHostEnvironment environment,
         IApiVersionDescriptionProvider provider,
         IOptions<OpenApiInfoProviderSettings> apiInfoSettingsAccessor)
     {
-        _options = configuration.GetSwaggerSettings();
+        _settings = configuration.GetSwaggerSettings();
         _environment = environment;
         _provider = provider;
         _apiInfoSettings = apiInfoSettingsAccessor.Value;
@@ -48,27 +48,27 @@ public class SwaggerConfiguration : IConfigureNamedOptions<SwaggerGenOptions>
 
     private OpenApiInfo CreateVersionInfo(ApiVersionDescription versionDescription)
     {
-        string descriptionFilePath = Path.Join(_environment.ContentRootPath, _options.Description);
+        string descriptionFilePath = Path.Join(_environment.ContentRootPath, _settings.Description);
         string description = File.Exists(descriptionFilePath)
             ? File.ReadAllText(descriptionFilePath)
-            : _options.Description ?? default!;
+            : _settings.Description ?? default!;
 
         description = description.Replace("{version}", versionDescription.GroupName.ToLower());
 
         OpenApiInfo openApiInfo = _apiInfoSettings.ConfigureDelegate!.Invoke(versionDescription);
         openApiInfo.Version ??= versionDescription.ApiVersion.ToString();
         openApiInfo.Description ??= description;
-        openApiInfo.Title ??= _options.Title;
+        openApiInfo.Title ??= _settings.Title;
         return openApiInfo;
     }
 
     private IEnumerable<string> GetXmlComments()
     {
         // Set the comments path for the Swagger JSON and UI
-        if (_options.IncludeComments is not { Length: > 0 })
+        if (_settings.IncludeComments is not { Length: > 0 })
             yield break;
 
-        foreach (string xmlDocsFile in _options.IncludeComments)
+        foreach (string xmlDocsFile in _settings.IncludeComments)
         {
             string xmlDocPath = Path.Combine(AppContext.BaseDirectory, xmlDocsFile);
             if (File.Exists(xmlDocPath))
