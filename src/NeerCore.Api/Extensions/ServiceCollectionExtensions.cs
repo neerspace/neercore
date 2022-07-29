@@ -12,9 +12,9 @@ namespace NeerCore.Api.Extensions;
 public static class ServiceCollectionExtensions
 {
     /// <summary>
-    ///   
+    ///   Adds default NeerCore stuff into your application services.
     /// </summary>
-    /// <param name="services"></param>
+    /// <param name="services">The services available in the application.</param>
     public static void AddNeerApiServices(this IServiceCollection services)
     {
         services.AddNeerApiServices(Assembly.GetCallingAssembly());
@@ -48,7 +48,7 @@ public static class ServiceCollectionExtensions
     ///   with configured conventions. For example there is <see cref="KebabCaseNamingConvention"/>
     ///   used out of a box and <see cref="JsonStringEnumConverter"/> too.
     /// </summary>
-    /// <param name="services"></param>
+    /// <param name="services">The services available in the application.</param>
     public static void AddNeerControllers(this IServiceCollection services)
     {
         services.AddControllers(KebabCaseNamingConvention.Use)

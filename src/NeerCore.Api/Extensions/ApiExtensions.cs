@@ -16,6 +16,11 @@ public static class ApiExtensions
         }));
     }
 
+    /// <summary>
+    ///   Adds service API versioning to the specified services collection.
+    /// </summary>
+    /// <param name="services">The services available in the application.</param>
+    /// <param name="apiVersionParameterSource">Configures the source for defining API version parameters.</param>
     public static void AddCustomApiVersioning(this IServiceCollection services, IApiVersionReader? apiVersionParameterSource = null)
     {
         services.AddApiVersioning();

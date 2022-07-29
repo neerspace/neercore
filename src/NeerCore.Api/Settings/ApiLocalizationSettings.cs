@@ -1,6 +1,7 @@
-﻿namespace NeerCore.Api.Options;
+﻿namespace NeerCore.Api.Settings;
 
-public class ApiLocalizationOptions
+[Obsolete]
+public class ApiLocalizationSettings
 {
     public string DefaultCulture { get; init; } = default!;
     public string[]? SupportedCultures { get; init; }
