@@ -4,7 +4,9 @@ using Microsoft.Extensions.Logging;
 
 namespace NeerCore.Api.Controllers;
 
-/// <summary>Base API controller with NLog logger.</summary>
+/// <summary>
+///   Base API controller with kebab-case routes and logger.
+/// </summary>
 [ApiController]
 [Route("/v{version:apiVersion}/[controller]")]
 public abstract class ApiController : ControllerBase
