@@ -36,16 +36,6 @@ is not support the version of .NET on which NeerCore was created.
 
 Thank you for using my developments, I hope they make your life easier! ;)
 
------------------------------
-
-## Provided features
-
-### Dependency Injection
-
-> Sample: [Console app with NeerCore DI](https://github.com/jurilents/NeerCore-Examples-ConsoleDependencyInjection)
->
-> Wiki: [GitHub Docs](https://github.com/jurilents/NeerCore/wiki/Smart-Dependency-Injection)
-
 
 -----------------------------
 
