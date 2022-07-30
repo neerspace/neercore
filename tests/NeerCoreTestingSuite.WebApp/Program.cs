@@ -4,8 +4,8 @@ using NeerCore.Api;
 using NeerCore.Api.Extensions;
 using NeerCore.Api.Extensions.Swagger;
 using NeerCore.Application.Extensions;
-using NeerCore.Data.EntityFramework;
 using NeerCore.Data.EntityFramework.Abstractions;
+using NeerCore.Data.EntityFramework.Extensions;
 using NeerCore.DependencyInjection.Extensions;
 using NeerCore.Logging;
 using NeerCore.Logging.Extensions;
@@ -39,12 +39,11 @@ static void ConfigureBuilder(WebApplicationBuilder builder)
 {
     builder.Logging.ConfigureNLogAsDefault();
 
-    builder.Services.AddDatabase<SqliteDbContext>(db =>
-        db.UseSqlite(builder.Configuration.GetConnectionString("Sqlite")));
-
+    builder.Services.AddDatabase<SqliteDbContext, SqliteDbContextFactory>();
     builder.Services.AddMediatorApplication();
     builder.Services.ConfigureAllOptions();
     builder.Services.RegisterAllMappers();
+
     builder.Services.AddNeerApiServices();
     builder.Services.AddNeerControllers();
 }
