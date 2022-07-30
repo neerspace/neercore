@@ -21,12 +21,12 @@ public static class ServiceCollectionExtensions
     [Obsolete("Use 'RegisterAllMappers' overload instead of this.")]
     public static void RegisterMappers(this IServiceCollection services)
     {
-        services.RegisterMappersFromCurrentAssembly();
+        services.RegisterMappersFromAssembly(Assembly.GetCallingAssembly());
     }
 
     public static void RegisterAllMappers(this IServiceCollection services)
     {
-        services.RegisterMappersFromCurrentAssembly();
+        services.RegisterMappersFromAssembly(Assembly.GetCallingAssembly());
     }
 
     /// <summary>

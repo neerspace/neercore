@@ -35,7 +35,7 @@ public static partial class ServiceCollectionExtensions
     /// <inheritdoc cref="AddServicesFromAssembly(IServiceCollection,Assembly,Action{InjectionOptions}?)"/>
     public static void AddAllServices(this IServiceCollection services, Action<InjectionOptions>? configureOptions = null)
     {
-        services.AddServicesFromCurrentAssembly(configureOptions);
+        services.AddServicesFromAssembly(Assembly.GetCallingAssembly(), configureOptions);
     }
 
     /// <inheritdoc cref="AddServicesFromAssembly(IServiceCollection,Assembly,Action{InjectionOptions}?)"/>

@@ -20,7 +20,7 @@ public static class ModelBuilderExtensions
 
     public static void ApplyAllConfigurations(this ModelBuilder builder)
     {
-        builder.ApplyConfigurations();
+        builder.ApplyConfigurationsFromAssembly(Assembly.GetCallingAssembly());
     }
 
     /// <param name="assemblyName"><see cref="Assembly"/> name where data seeders are providing.</param>
@@ -55,7 +55,9 @@ public static class ModelBuilderExtensions
 
     public static void ApplyAllDataSeeders(this ModelBuilder builder)
     {
-        builder.ApplyDataSeeders();
+        var assembly = Assembly.GetCallingAssembly();
+        ApplyEntityDataSeeders(builder, assembly);
+        ApplyExtendedDataSeeders(builder, assembly);
     }
 
     private static void ApplyEntityDataSeeders(ModelBuilder builder, Assembly? assembly = null)
