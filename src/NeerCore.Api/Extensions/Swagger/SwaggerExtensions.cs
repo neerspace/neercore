@@ -16,7 +16,7 @@ public static class SwaggerExtensions
     public static void AddCustomSwagger(this IServiceCollection services, Func<ApiVersionDescription, OpenApiInfo>? configureInfo = null)
     {
         services.AddEndpointsApiExplorer();
-        services.Configure<OpenApiInfoProviderSettings>(options =>
+        services.Configure<OpenApiInfoProviderOptions>(options =>
         {
             options.ConfigureDelegate = configureInfo;
         });

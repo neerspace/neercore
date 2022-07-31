@@ -1,17 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using NeerCore.Data;
+﻿using NeerCore.Data;
 using NeerCore.Data.Abstractions;
 using Sieve.Attributes;
 
 namespace NeerCoreTestingSuite.WebApp.Data.Entities;
 
-[Table("Teas")]
-public class Tea : IDatedEntity<Guid>
+public class Tea : IDateableEntity<Guid>
 {
     [Sieve(CanFilter = true, CanSort = true)]
-    [Key]
-    public Guid Id { get; init; } = Guid.NewGuid();
+    public Guid Id { get; init; }
 
     [Sieve(CanFilter = true, CanSort = true)]
     public LocalizedString Name { get; init; }
@@ -20,10 +16,8 @@ public class Tea : IDatedEntity<Guid>
     public decimal Price { get; init; }
 
     [Sieve(CanFilter = true, CanSort = true)]
-    [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
     public DateTime? Updated { get; init; }
 
     [Sieve(CanFilter = true, CanSort = true)]
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public DateTime Created { get; init; } = DateTime.UtcNow;
+    public DateTime Created { get; init; }
 }
