@@ -17,8 +17,8 @@ public sealed class SqliteDbContext : DbContext, IDatabaseContext
     {
         builder.ConfigureEntities(options =>
         {
-            options.DateTimeKind = DateTimeKind.Local;
-            options.EngineStrategy = DbEngineStrategy.Sqlite;
+            options.DateTimeKind = DateTimeKind.Utc;
+            options.EngineStrategy = DbEngineStrategy.SqlServer;
         });
     }
 

@@ -5,7 +5,8 @@ namespace NeerCoreTestingSuite.WebApp.Data;
 
 public class SqliteDbContextFactory : DbContextFactoryBase<SqliteDbContext>
 {
-    public override string SelectedConnectionName => "Sqlite";
+    // public override string SelectedConnectionName => "Sqlite";
+    public override string SelectedConnectionName => "SqlServer";
 
 
     public override SqliteDbContext CreateDbContext(string[] args) => new(CreateContextOptions());

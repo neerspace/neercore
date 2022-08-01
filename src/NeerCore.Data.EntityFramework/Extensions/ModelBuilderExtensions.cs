@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using NeerCore.Data.Abstractions;
@@ -28,10 +29,10 @@ public static class ModelBuilderExtensions
         builder.ApplyEntityDating(options);
         foreach (Assembly dataAssembly in options.DataAssemblies)
         {
-            if (options.ApplyDataSeeders)
-                builder.ApplyDataSeedersFromAssembly(dataAssembly);
             if (options.ApplyEntityTypeConfigurations)
                 builder.ApplyConfigurationsFromAssembly(dataAssembly);
+            if (options.ApplyDataSeeders)
+                builder.ApplyDataSeedersFromAssembly(dataAssembly);
         }
     }
 
@@ -55,9 +56,9 @@ public static class ModelBuilderExtensions
             if (entityIdType == typeof(Guid))
             {
                 if (options.PreferSqlSideDefaultValues && options.EngineStrategy is DbEngineStrategy.SqlServer)
-                    idPropertyBuilder.HasDefaultValueSql(options.SequentialGuids ? "NEWSEQUENTIALID()" : "NEWID()");
+                    idPropertyBuilder.HasDefaultValueSql(options.SequentialGuids ? "NEWSEQUENTIALID()" : "NEWID()").ValueGeneratedOnAdd();
                 else
-                    idPropertyBuilder.HasDefaultValue(Guid.NewGuid());
+                    idPropertyBuilder.HasDefaultValue(Guid.NewGuid()).ValueGeneratedOnAdd();
             }
             else if (entityIdType == typeof(string))
             {
