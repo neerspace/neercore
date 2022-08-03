@@ -13,7 +13,7 @@ public class SqliteDbContextFactory : DbContextFactoryBase<SqliteDbContext>
 
     public override void ConfigureContextOptions(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlite(ConnectionString,
+        optionsBuilder.UseSqlServer(ConnectionString,
             options => options.MigrationsAssembly(MigrationsAssembly));
     }
 }

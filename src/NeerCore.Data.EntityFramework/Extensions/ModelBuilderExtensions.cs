@@ -106,15 +106,16 @@ public static class ModelBuilderExtensions
         {
             builder.Entity(creatableEntityType)
                 .Property(nameof(ICreatableEntity.Created))
-                .HasDefaultValueSql(defaultValueSql);
+                .HasDefaultValueSql(defaultValueSql)
+                .ValueGeneratedOnAdd();
         }
 
         foreach (Type updatableEntityType in AssemblyProvider.GetImplementationsOf<IUpdatableEntity>())
         {
             builder.Entity(updatableEntityType)
                 .Property(nameof(IUpdatableEntity.Updated))
-                .ValueGeneratedOnUpdate()
-                .HasComputedColumnSql(defaultValueSql);
+                .HasDefaultValueSql(defaultValueSql)
+                .ValueGeneratedOnUpdate();
         }
     }
 

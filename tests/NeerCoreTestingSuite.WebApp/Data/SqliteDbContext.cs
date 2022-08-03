@@ -19,6 +19,7 @@ public sealed class SqliteDbContext : DbContext, IDatabaseContext
         {
             options.DateTimeKind = DateTimeKind.Utc;
             options.EngineStrategy = DbEngineStrategy.SqlServer;
+            options.SequentialGuids = true;
         });
     }
 
