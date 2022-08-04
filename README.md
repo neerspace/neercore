@@ -38,50 +38,6 @@ Thank you for using my developments, I hope they make your life easier! ;)
 
 -----------------------------
 
-## Provided features
-
-### [NeerCore.Data](https://www.nuget.org/packages/NeerCore.Data)
-
-- Shared DB data classes with custom primitives
-- EntityFrameworkCore localized string type
-
-### [NeerCore.Data.EntityFramework](https://www.nuget.org/packages/NeerCore.Data.EntityFramework)
-
-- Simpler way to use EntityFrameworkCore
-- `IDatabaseContext` abstraction to not use `DbContext` class directly
-- The much better `DbContextFactory`
-- Extensions for `ModelBuilder` and `IQueryable`
-
-### [NeerCore.Api](https://www.nuget.org/packages/NeerCore.Api)
-
-- ASP.NET Core WEb API ToolKit
-- `WebApplicationBuilder` extensions to integrate entry API initialization with a single method `AddNeerApi()`
-- Swagger and ReDoc documentation out of the box
-- Native Swagger support for `JsonPatchDocument`
-- _kebab-case-route-naming-by-default_
-- Custom exception handling middleware
-- NLog integration
-- Elegant navigation headers
-- `IFactoryMiddleware` injection by default
-- Extensions for `HttpContext`, `HttpResponse` and `JsonPatchDocument`
-
-### [NeerCore.Application.MediatR](https://www.nuget.org/packages/NeerCore.Application.MediatR)
-
-- CQRS pattern integration
-- MediatrR + FluentValidation
-- Additional abstractions for better mediator experience
-
-### [NeerCore.Mapping.Mapster](https://www.nuget.org/packages/NeerCore.Mapping.Mapster)
-
-- Mapster `IRegister` DI integration
-- Useful mapper extensions for `IEnumerable`
-
-### [NeerCore.Logging.NLog](https://www.nuget.org/packages/NeerCore.Logging.NLog)
-
-- Preconfigured ready to use from the box logger
-
------------------------------
-
 ## Features navigation
 
 ### [NeerCore](https://www.nuget.org/packages/NeerCore)
@@ -99,10 +55,12 @@ Thank you for using my developments, I hope they make your life easier! ;)
 - [Smart injection of Middlewares in Factory style](https://github.com/jurilents/NeerCore/wiki/Web-API-Factory-Middlewares)
 - [Exception Handler Middleware](https://github.com/jurilents/NeerCore/wiki/Web-API-Exception-Handler-Middleware)
 - [`Swagger` + `ReDoc`](https://github.com/jurilents/NeerCore/wiki/Web-API-Swagger-and-ReDoc)
+- JsonPatchDocument Swagger integration
+- Elegant Navigation Headers
 
 ### [NeerCore.Application.MediatR](https://www.nuget.org/packages/NeerCore.Application.MediatR)
 
-- [Smart injection of `MediatR` + `FluentValidation`]()
+- [Smart injection of `MediatR` + `FluentValidation`]
 - [Base Controller with Mediator](https://github.com/jurilents/NeerCore/wiki/Web-API-Controllers)
 - [Mediator interfaces]
 
@@ -113,7 +71,7 @@ Thank you for using my developments, I hope they make your life easier! ;)
 ### [NeerCore.Data.Abstractions](https://www.nuget.org/packages/NeerCore.Data.Abstractions)
 
 - Shared DB abstractions (used in one bundle with NeerCore.Data.* libs)
-- [Entity Abstractions]()
+- [Entity Abstractions]
 
 ### [NeerCore.Data.EntityFramework](https://www.nuget.org/packages/NeerCore.Data.EntityFramework)
 
@@ -128,7 +86,7 @@ Thank you for using my developments, I hope they make your life easier! ;)
 
 ### [NeerCore.Logging.NLog](https://www.nuget.org/packages/NeerCore.Logging.NLog)
 
-- [Smart Dependency Injection](https://github.com/jurilents/NeerCore/wiki/Smart-Dependency-Injection)
+- [Preconfigured from the box file+console logger]
 
 ### [NeerCore.Mapping.Mapster](https://www.nuget.org/packages/NeerCore.Mapping.Mapster)
 
