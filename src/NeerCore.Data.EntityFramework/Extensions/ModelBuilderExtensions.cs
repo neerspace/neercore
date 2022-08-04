@@ -1,6 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.Reflection;
+﻿using System.Reflection;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using NeerCore.Data.Abstractions;
 using NeerCore.Data.EntityFramework.Abstractions;
@@ -24,7 +24,8 @@ public static class ModelBuilderExtensions
         configureOptions?.Invoke(options);
         options.DataAssemblies ??= new[] { Assembly.GetCallingAssembly() };
 
-        builder.RegisterAllEntities();
+        // builder.AddAllEntities();
+        builder.AddLocalizedStrings();
         builder.ApplyEntityIds(options);
         builder.ApplyEntityDating(options);
         foreach (Assembly dataAssembly in options.DataAssemblies)
@@ -71,11 +72,35 @@ public static class ModelBuilderExtensions
     /// 
     /// </summary>
     /// <param name="builder"></param>
-    public static void RegisterAllEntities(this ModelBuilder builder)
+    public static void AddAllEntities(this ModelBuilder builder)
     {
         foreach (Type entityType in AssemblyProvider.GetImplementationsOf<IEntity>())
         {
             builder.Entity(entityType);
+        }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="builder"></param>
+    public static void AddLocalizedStrings(this ModelBuilder builder)
+    {
+        var valueComparer = new ValueComparer<LocalizedString>(
+            (ls1, ls2) => ls1.Equals(ls2),
+            ls => ls.GetHashCode(),
+            ls => new LocalizedString(ls));
+        var localizedStringType = typeof(LocalizedString);
+
+        foreach (Type entityType in AssemblyProvider.GetImplementationsOf<IEntity>())
+        {
+            var entityTypeBuilder = builder.Entity(entityType);
+            var localizedStringProperties = entityType.GetProperties().Where(p => p.PropertyType == localizedStringType);
+            foreach (var property in localizedStringProperties)
+            {
+                entityTypeBuilder.Property(property.Name)
+                    .Metadata.SetValueComparer(valueComparer);
+            }
         }
     }
 
