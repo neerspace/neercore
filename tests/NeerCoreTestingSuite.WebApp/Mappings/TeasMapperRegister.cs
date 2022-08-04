@@ -2,11 +2,11 @@
 using NeerCore.Mapping.Extensions;
 using NeerCoreTestingSuite.WebApp.Data.Entities;
 
-namespace NeerCoreTestingSuite.WebApp.Mappers;
+namespace NeerCoreTestingSuite.WebApp.Mappings;
 
 public class TeasMapperRegister : IRegister
 {
-    private const decimal BTCRate = 0.000034m;
+    private const decimal BtcRate = 0.000034m;
 
     public void Register(TypeAdapterConfig config)
     {
@@ -16,6 +16,6 @@ public class TeasMapperRegister : IRegister
         // s -> source
         config.NewConfig<Tea, Dto.Teas.Tea>()
             .Map(m => m.PriceUSD, s => s.Price)
-            .Map(m => m.PriceBTC, s => s.Price * BTCRate);
+            .Map(m => m.PriceBTC, s => s.Price * BtcRate);
     }
 }

@@ -39,12 +39,10 @@ public abstract class DbContextFactoryBase<TContext> : IDesignTimeDbContextFacto
     /// </summary>
     public virtual string ConnectionString => GetConnectionStringsFromJson(SettingsPath)[SelectedConnectionName];
 
-
     /// <summary>
     ///   Path to the assembly with migrations.
     /// </summary>
     public virtual string MigrationsAssembly => GetType().Assembly.GetName().Name!;
-
 
     /// <summary>
     ///   Creates a new instance of a derived context.
@@ -69,7 +67,6 @@ public abstract class DbContextFactoryBase<TContext> : IDesignTimeDbContextFacto
         ConfigureContextOptions(optionsBuilder);
         return optionsBuilder.Options;
     }
-
 
     /// <summary>
     ///   Gets a dictionary of connection strings.

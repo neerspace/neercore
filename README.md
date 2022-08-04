@@ -40,34 +40,6 @@ Thank you for using my developments, I hope they make your life easier! ;)
 
 ## Provided features
 
-### Dependency Injection
-
-> Sample: [Console app with NeerCore DI](https://github.com/jurilents/NeerCore-Examples-ConsoleDependencyInjection)
->
-> Wiki: [GitHub Docs](https://github.com/jurilents/NeerCore/wiki/Smart-Dependency-Injection)
-
-
------------------------------
-
-## Provided features
-
-### [NeerCore](https://www.nuget.org/packages/NeerCore)
-
-- Core used by another `NeerCore.*` libs
-- Exceptions that represents most common HTTP errors
-- Extensions for `String`, `Enum`, `IEnumerable` and `ClaimsPrincipal`
-- New JSON policies and conventions
-
-### [NeerCore.DependencyInjection](https://www.nuget.org/packages/NeerCore.DependencyInjection)
-
-- Attribute-based Dependency Injection ToolKit
-- Extensions for `Assembly` and `Type`
-- Some core reflection utilities
-
-### [NeerCore.Data.Abstractions](https://www.nuget.org/packages/NeerCore.Data.Abstractions)
-
-- Shared DB abstractions (used in one bundle with NeerCore.Data.* libs)
-
 ### [NeerCore.Data](https://www.nuget.org/packages/NeerCore.Data)
 
 - Shared DB data classes with custom primitives
@@ -114,9 +86,10 @@ Thank you for using my developments, I hope they make your life easier! ;)
 
 ### [NeerCore](https://www.nuget.org/packages/NeerCore)
 
-- [Additional HTTP Exceptions](https://github.com/jurilents/NeerCore/wiki/HTTP-Exceptions)
-- [The Most Common Extensions](https://github.com/jurilents/NeerCore/wiki/Extension-Methods)
-- [Extended `System.Text.Json` stuff](https://github.com/jurilents/NeerCore/wiki/JSON-Conventions-and-Policies)
+- Core used by another `NeerCore.*` libs
+- [Exceptions that represents themost common HTTP errors](https://github.com/jurilents/NeerCore/wiki/HTTP-Exceptions)
+- [Extensions for `String`, `Enum`, `IEnumerable` and `ClaimsPrincipal`](https://github.com/jurilents/NeerCore/wiki/Extension-Methods)
+- [New `System.Text.Json` policies and conventions](https://github.com/jurilents/NeerCore/wiki/JSON-Conventions-and-Policies)
 
 ### [NeerCore.Api](https://www.nuget.org/packages/NeerCore.Api)
 
@@ -139,7 +112,8 @@ Thank you for using my developments, I hope they make your life easier! ;)
 
 ### [NeerCore.Data.Abstractions](https://www.nuget.org/packages/NeerCore.Data.Abstractions)
 
-- [Entity Abstractions]
+- Shared DB abstractions (used in one bundle with NeerCore.Data.* libs)
+- [Entity Abstractions]()
 
 ### [NeerCore.Data.EntityFramework](https://www.nuget.org/packages/NeerCore.Data.EntityFramework)
 
@@ -149,7 +123,7 @@ Thank you for using my developments, I hope they make your life easier! ;)
 
 ### [NeerCore.DependencyInjection](https://www.nuget.org/packages/NeerCore.DependencyInjection)
 
-- [Smart Dependency Injection](https://github.com/jurilents/NeerCore/wiki/Smart-Dependency-Injection)
+- [Attribute-based Dependency Injection ToolKit](https://github.com/jurilents/NeerCore/wiki/Smart-Dependency-Injection)
 - [Configure options with `IConfigureOptions<>`]
 
 ### [NeerCore.Logging.NLog](https://www.nuget.org/packages/NeerCore.Logging.NLog)

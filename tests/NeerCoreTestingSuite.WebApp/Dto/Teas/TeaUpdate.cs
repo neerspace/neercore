@@ -10,6 +10,6 @@ public record TeaUpdate
     public string Name { get; init; } = default!;
     // public LocalizedDictionary Name { get; init; } = default!;
 
-    /// <example>19.50$</example>
-    public string Price { get; init; } = default!;
+    /// <example>19.50</example>
+    public decimal Price { get; init; }
 }

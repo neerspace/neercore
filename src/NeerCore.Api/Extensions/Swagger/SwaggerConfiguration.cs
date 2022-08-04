@@ -14,20 +14,20 @@ internal class SwaggerConfiguration : IConfigureNamedOptions<SwaggerGenOptions>
     private readonly IWebHostEnvironment _environment;
     private readonly SwaggerConfigurationSettings _settings;
     private readonly IApiVersionDescriptionProvider _provider;
-    private readonly OpenApiInfoProviderSettings _apiInfoSettings;
+    private readonly OpenApiInfoProviderOptions _apiInfoOptions;
 
     public SwaggerConfiguration(
         IConfiguration configuration,
         IWebHostEnvironment environment,
         IApiVersionDescriptionProvider provider,
-        IOptions<OpenApiInfoProviderSettings> apiInfoSettingsAccessor)
+        IOptions<OpenApiInfoProviderOptions> apiInfoSettingsAccessor)
     {
         _settings = configuration.GetSwaggerSettings();
         _environment = environment;
         _provider = provider;
-        _apiInfoSettings = apiInfoSettingsAccessor.Value;
+        _apiInfoOptions = apiInfoSettingsAccessor.Value;
 
-        _apiInfoSettings.ConfigureDelegate ??= _ => new OpenApiInfo();
+        _apiInfoOptions.ConfigureDelegate ??= _ => new OpenApiInfo();
     }
 
     public void Configure(SwaggerGenOptions options)
@@ -55,7 +55,7 @@ internal class SwaggerConfiguration : IConfigureNamedOptions<SwaggerGenOptions>
 
         description = description.Replace("{version}", versionDescription.GroupName.ToLower());
 
-        OpenApiInfo openApiInfo = _apiInfoSettings.ConfigureDelegate!.Invoke(versionDescription);
+        OpenApiInfo openApiInfo = _apiInfoOptions.ConfigureDelegate!.Invoke(versionDescription);
         openApiInfo.Version ??= versionDescription.ApiVersion.ToString();
         openApiInfo.Description ??= description;
         openApiInfo.Title ??= _settings.Title;
