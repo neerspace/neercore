@@ -95,7 +95,8 @@ public static class ModelBuilderExtensions
         foreach (Type entityType in AssemblyProvider.GetImplementationsOf<IEntity>())
         {
             var entityTypeBuilder = builder.Entity(entityType);
-            var localizedStringProperties = entityType.GetProperties().Where(p => p.PropertyType == localizedStringType);
+            var localizedStringProperties = entityType.GetProperties()
+                .Where(p => p.PropertyType == localizedStringType);
             foreach (var property in localizedStringProperties)
             {
                 entityTypeBuilder.Property(property.Name)

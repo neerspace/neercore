@@ -6,7 +6,7 @@ using NeerCore.Exceptions;
 namespace NeerCore.Data;
 
 /// <summary>Data class that represents a localizable string.</summary>
-public readonly struct LocalizedString : IEnumerable<KeyValuePair<string, string>>, IEquatable<LocalizedString>, IComparable<LocalizedString>, IComparable
+public readonly struct LocalizedString : IEnumerable<KeyValuePair<string, string>>, IEquatable<LocalizedString>
 {
     public static readonly LocalizedString Empty = "{}";
 
@@ -108,32 +108,4 @@ public readonly struct LocalizedString : IEnumerable<KeyValuePair<string, string
     public override int GetHashCode() => _localizations.GetHashCode();
 
     public override string ToString() => JsonSerializer.Serialize(_localizations);
-
-    public int CompareTo(object? obj)
-    {
-        return obj switch
-        {
-            LocalizedString localizedString => CompareTo(localizedString),
-            string stringValue => CompareTo((LocalizedString)stringValue),
-            _ => -1
-        };
-    }
-
-    public int CompareTo(LocalizedString other)
-    {
-        int result = 0;
-        foreach (var localization in _localizations)
-        {
-            if (other._localizations.ContainsKey(localization.Key))
-            {
-                result += string.CompareOrdinal(localization.Value, other._localizations[localization.Key]);
-            }
-            else
-            {
-                return -1;
-            }
-        }
-
-        return result;
-    }
 }
