@@ -29,7 +29,7 @@ public static class ServiceCollectionExtensions
 
     public static void AddMediatorApplication(this IServiceCollection services)
     {
-        services.AddMediatorApplicationFromCurrentAssembly();
+        services.AddMediatorApplication(new[] { Assembly.GetCallingAssembly() });
     }
 
     /// <inheritdoc cref="AddMediatorApplication(IServiceCollection,IEnumerable{Assembly})"/>

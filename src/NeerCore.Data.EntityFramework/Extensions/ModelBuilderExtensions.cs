@@ -1,12 +1,150 @@
 ﻿using System.Reflection;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using NeerCore.Data.Abstractions;
 using NeerCore.Data.EntityFramework.Abstractions;
+using NeerCore.Data.EntityFramework.Design;
 using NeerCore.DependencyInjection;
 
 namespace NeerCore.Data.EntityFramework.Extensions;
 
+// TODO: Add docs
+
 public static class ModelBuilderExtensions
 {
+    /// <summary>
+    ///   
+    /// </summary>
+    /// <param name="builder"></param>
+    /// <param name="configureOptions"></param>
+    public static void ConfigureEntities(this ModelBuilder builder, Action<DbDesignOptions>? configureOptions = null)
+    {
+        var options = new DbDesignOptions();
+        configureOptions?.Invoke(options);
+        options.DataAssemblies ??= new[] { Assembly.GetCallingAssembly() };
+
+        // builder.AddAllEntities();
+        builder.AddLocalizedStrings();
+        builder.ApplyEntityIds(options);
+        builder.ApplyEntityDating(options);
+        foreach (Assembly dataAssembly in options.DataAssemblies)
+        {
+            if (options.ApplyEntityTypeConfigurations)
+                builder.ApplyConfigurationsFromAssembly(dataAssembly);
+            if (options.ApplyDataSeeders)
+                builder.ApplyDataSeedersFromAssembly(dataAssembly);
+        }
+    }
+
+    /// <summary>
+    ///   
+    /// </summary>
+    /// <param name="builder"></param>
+    /// <param name="options"></param>
+    public static void ApplyEntityIds(this ModelBuilder builder, DbDesignOptions options)
+    {
+        Type entityWithIdType = typeof(IEntity<>);
+
+        foreach (Type entityType in AssemblyProvider.GetImplementationsOf(entityWithIdType))
+        {
+            // TODO: Temp decision
+            Type entityIdType = entityType.GetInterfaces().First(it => it.Name.StartsWith("IEntity`")).GetGenericArguments().First();
+            EntityTypeBuilder entityBuilder = builder.Entity(entityType);
+            entityBuilder.HasKey("Id");
+            PropertyBuilder idPropertyBuilder = entityBuilder.Property("Id");
+
+            if (entityIdType == typeof(Guid))
+            {
+                if (options.PreferSqlSideDefaultValues && options.EngineStrategy is DbEngineStrategy.SqlServer)
+                    idPropertyBuilder.HasDefaultValueSql(options.SequentialGuids ? "NEWSEQUENTIALID()" : "NEWID()").ValueGeneratedOnAdd();
+                else
+                    idPropertyBuilder.HasDefaultValue(Guid.NewGuid()).ValueGeneratedOnAdd();
+            }
+            else if (entityIdType == typeof(string))
+            {
+                idPropertyBuilder.HasDefaultValue(Guid.NewGuid().ToString());
+            }
+        }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="builder"></param>
+    public static void AddAllEntities(this ModelBuilder builder)
+    {
+        foreach (Type entityType in AssemblyProvider.GetImplementationsOf<IEntity>())
+        {
+            builder.Entity(entityType);
+        }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="builder"></param>
+    public static void AddLocalizedStrings(this ModelBuilder builder)
+    {
+        var valueComparer = new ValueComparer<LocalizedString>(
+            (ls1, ls2) => ls1.Equals(ls2),
+            ls => ls.GetHashCode(),
+            ls => new LocalizedString(ls));
+        var localizedStringType = typeof(LocalizedString);
+
+        foreach (Type entityType in AssemblyProvider.GetImplementationsOf<IEntity>())
+        {
+            var entityTypeBuilder = builder.Entity(entityType);
+            var localizedStringProperties = entityType.GetProperties()
+                .Where(p => p.PropertyType == localizedStringType);
+            foreach (var property in localizedStringProperties)
+            {
+                entityTypeBuilder.Property(property.Name)
+                    .Metadata.SetValueComparer(valueComparer);
+            }
+        }
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="builder"></param>
+    /// <param name="configureOptions"></param>
+    public static void ApplyEntityDating(this ModelBuilder builder, Action<DbDesignOptions>? configureOptions = null)
+    {
+        var options = new DbDesignOptions();
+        configureOptions?.Invoke(options);
+        builder.ApplyEntityDating(options);
+    }
+
+    private static void ApplyEntityDating(this ModelBuilder builder, DbDesignOptions options)
+    {
+        bool utc = options.DateTimeKind is DateTimeKind.Utc;
+        string defaultValueSql = options.EngineStrategy switch
+        {
+            DbEngineStrategy.SqlServer => utc ? "SYSUTCDATETIME()" : "SYSDATETIME()",
+            DbEngineStrategy.Sqlite => utc ? "DATETIME('now')" : "DATETIME()",
+            DbEngineStrategy.Postgres => utc ? "TIMEZONE('utc', NOW())" : "NOW()",
+            _ => throw new ArgumentException($"{nameof(DbEngineStrategy)} of {options.EngineStrategy} is not currently supported.")
+        };
+
+        foreach (Type creatableEntityType in AssemblyProvider.GetImplementationsOf<ICreatableEntity>())
+        {
+            builder.Entity(creatableEntityType)
+                .Property(nameof(ICreatableEntity.Created))
+                .HasDefaultValueSql(defaultValueSql)
+                .ValueGeneratedOnAdd();
+        }
+
+        foreach (Type updatableEntityType in AssemblyProvider.GetImplementationsOf<IUpdatableEntity>())
+        {
+            builder.Entity(updatableEntityType)
+                .Property(nameof(IUpdatableEntity.Updated))
+                .HasDefaultValueSql(defaultValueSql)
+                .ValueGeneratedOnUpdate();
+        }
+    }
+
     /// <summary>
     ///   Applies configuration from all <see cref="IEntityTypeConfiguration{TEntity}"/>
     ///   instances that are defined in provided <b>calling assembly</b>.
@@ -20,11 +158,11 @@ public static class ModelBuilderExtensions
 
     public static void ApplyAllConfigurations(this ModelBuilder builder)
     {
-        builder.ApplyConfigurations();
+        builder.ApplyConfigurationsFromAssembly(Assembly.GetCallingAssembly());
     }
 
     /// <param name="assemblyName"><see cref="Assembly"/> name where data seeders are providing.</param>
-    /// <inheritdoc cref="ApplyDataSeeders"/>
+    /// <inheritdoc cref="ApplyAllDataSeeders"/>
     public static void ApplyDataSeedersFromAssembly(this ModelBuilder builder, string assemblyName)
     {
         var assembly = Assembly.Load(assemblyName);
@@ -33,9 +171,17 @@ public static class ModelBuilderExtensions
     }
 
     /// <param name="assembly"><see cref="Assembly"/> where data seeders are providing.</param>
-    /// <inheritdoc cref="ApplyDataSeeders"/>
+    /// <inheritdoc cref="ApplyAllDataSeeders"/>
     public static void ApplyDataSeedersFromAssembly(this ModelBuilder builder, Assembly assembly)
     {
+        ApplyEntityDataSeeders(builder, assembly);
+        ApplyExtendedDataSeeders(builder, assembly);
+    }
+
+    [Obsolete("Use 'ApplyAllDataSeeders' instead of this.")]
+    public static void ApplyDataSeeders(this ModelBuilder builder)
+    {
+        var assembly = Assembly.GetCallingAssembly();
         ApplyEntityDataSeeders(builder, assembly);
         ApplyExtendedDataSeeders(builder, assembly);
     }
@@ -45,17 +191,11 @@ public static class ModelBuilderExtensions
     ///   seeding data from provided assembly or from the calling assembly by default.
     /// </summary>
     /// <param name="builder">Database model builder.</param>
-    [Obsolete("Use 'ApplyAllDataSeeders' instead of this.")]
-    public static void ApplyDataSeeders(this ModelBuilder builder)
+    public static void ApplyAllDataSeeders(this ModelBuilder builder)
     {
         var assembly = Assembly.GetCallingAssembly();
         ApplyEntityDataSeeders(builder, assembly);
         ApplyExtendedDataSeeders(builder, assembly);
-    }
-
-    public static void ApplyAllDataSeeders(this ModelBuilder builder)
-    {
-        builder.ApplyDataSeeders();
     }
 
     private static void ApplyEntityDataSeeders(ModelBuilder builder, Assembly? assembly = null)
