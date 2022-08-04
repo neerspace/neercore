@@ -62,10 +62,12 @@ public static partial class ServiceCollectionExtensions
     /// <param name="services">The <see cref="IServiceCollection" /> to add services to.</param>
     /// <param name="configureOptions"></param>
     /// <exception cref="ArgumentOutOfRangeException">If invalid injection type provided.</exception>
+    [Obsolete("Use 'AddAllServices' instead of this.")]
     public static void AddServices(this IServiceCollection services, Action<InjectionOptions>? configureOptions = null)
     {
         var options = new InjectionOptions();
         configureOptions?.Invoke(options);
+        options.ServiceAssemblies ??= new[] { Assembly.GetCallingAssembly() };
         services.AddServices(options);
     }
 
@@ -76,7 +78,7 @@ public static partial class ServiceCollectionExtensions
         var environment = serviceProvider.GetService<IHostEnvironment>();
         string? env = options.Environment ?? environment?.EnvironmentName;
 
-        options.ServiceAssemblies ??= new[] { Assembly.GetCallingAssembly() };
+        options.ServiceAssemblies ??= new[] { Assembly.GetEntryAssembly()! };
         IEnumerable<Type> serviceTypes = options.ServiceAssemblies.SelectMany(sa => sa.GetTypes());
 
         foreach (Type implType in serviceTypes)
