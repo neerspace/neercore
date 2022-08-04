@@ -1,5 +1,7 @@
-﻿using NeerCore.Data;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using NeerCore.Data;
 using NeerCore.Data.Abstractions;
+using NeerCore.Data.EntityFramework.Attributes;
 using Sieve.Attributes;
 
 namespace NeerCoreTestingSuite.WebApp.Data.Entities;
@@ -13,6 +15,7 @@ public class Tea : IDateableEntity<Guid>
     public LocalizedString Name { get; init; }
 
     [Sieve(CanFilter = true, CanSort = true, Name = "priceUSD")]
+    [DecimalColumn(18, 5)]
     public decimal Price { get; init; }
 
     [Sieve(CanFilter = true, CanSort = true)]
