@@ -25,11 +25,13 @@ public static class ModelBuilderExtensions
         options.DataAssemblies ??= new[] { Assembly.GetCallingAssembly() };
 
         // builder.AddAllEntities();
-        builder.AddLocalizedStrings();
         builder.ApplyEntityIds(options);
         builder.ApplyEntityDating(options);
-        foreach (Assembly dataAssembly in options.DataAssemblies)
+        foreach (Assembly? dataAssembly in options.DataAssemblies)
         {
+            if (dataAssembly is null) continue;
+
+            builder.AddLocalizedStrings(dataAssembly);
             if (options.ApplyEntityTypeConfigurations)
                 builder.ApplyConfigurationsFromAssembly(dataAssembly);
             if (options.ApplyDataSeeders)
@@ -72,9 +74,11 @@ public static class ModelBuilderExtensions
     /// 
     /// </summary>
     /// <param name="builder"></param>
-    public static void AddAllEntities(this ModelBuilder builder)
+    /// <param name="assembly"></param>
+    public static void AddAllEntities(this ModelBuilder builder, Assembly? assembly = null)
     {
-        foreach (Type entityType in AssemblyProvider.GetImplementationsOf<IEntity>())
+        assembly ??= Assembly.GetCallingAssembly();
+        foreach (Type entityType in AssemblyProvider.GetImplementationsFromAssembly<IEntity>(assembly))
         {
             builder.Entity(entityType);
         }
@@ -84,7 +88,8 @@ public static class ModelBuilderExtensions
     /// 
     /// </summary>
     /// <param name="builder"></param>
-    public static void AddLocalizedStrings(this ModelBuilder builder)
+    /// <param name="assembly"></param>
+    public static void AddLocalizedStrings(this ModelBuilder builder, Assembly? assembly = null)
     {
         var valueComparer = new ValueComparer<LocalizedString>(
             (ls1, ls2) => ls1.Equals(ls2),
@@ -92,7 +97,7 @@ public static class ModelBuilderExtensions
             ls => new LocalizedString(ls));
         var localizedStringType = typeof(LocalizedString);
 
-        foreach (Type entityType in AssemblyProvider.GetImplementationsOf<IEntity>())
+        foreach (Type entityType in AssemblyProvider.GetImplementationsFromAssembly<IEntity>(assembly))
         {
             var entityTypeBuilder = builder.Entity(entityType);
             var localizedStringProperties = entityType.GetProperties()
@@ -128,20 +133,26 @@ public static class ModelBuilderExtensions
             _ => throw new ArgumentException($"{nameof(DbEngineStrategy)} of {options.EngineStrategy} is not currently supported.")
         };
 
-        foreach (Type creatableEntityType in AssemblyProvider.GetImplementationsOf<ICreatableEntity>())
+        options.DataAssemblies ??= new[] { Assembly.GetCallingAssembly() };
+        foreach (var assembly in options.DataAssemblies)
         {
-            builder.Entity(creatableEntityType)
-                .Property(nameof(ICreatableEntity.Created))
-                .HasDefaultValueSql(defaultValueSql)
-                .ValueGeneratedOnAdd();
-        }
+            if (assembly is null) continue;
 
-        foreach (Type updatableEntityType in AssemblyProvider.GetImplementationsOf<IUpdatableEntity>())
-        {
-            builder.Entity(updatableEntityType)
-                .Property(nameof(IUpdatableEntity.Updated))
-                .HasDefaultValueSql(defaultValueSql)
-                .ValueGeneratedOnUpdate();
+            foreach (Type creatableEntityType in AssemblyProvider.GetImplementationsFromAssembly<ICreatableEntity>(assembly))
+            {
+                builder.Entity(creatableEntityType)
+                    .Property(nameof(ICreatableEntity.Created))
+                    .HasDefaultValueSql(defaultValueSql)
+                    .ValueGeneratedOnAdd();
+            }
+
+            foreach (Type updatableEntityType in AssemblyProvider.GetImplementationsFromAssembly<IUpdatableEntity>(assembly))
+            {
+                builder.Entity(updatableEntityType)
+                    .Property(nameof(IUpdatableEntity.Updated))
+                    .HasDefaultValueSql(defaultValueSql)
+                    .ValueGeneratedOnUpdate();
+            }
         }
     }
 
@@ -174,8 +185,8 @@ public static class ModelBuilderExtensions
     /// <inheritdoc cref="ApplyAllDataSeeders"/>
     public static void ApplyDataSeedersFromAssembly(this ModelBuilder builder, Assembly assembly)
     {
-        ApplyEntityDataSeeders(builder, assembly);
-        ApplyExtendedDataSeeders(builder, assembly);
+        builder.ApplyEntityDataSeeders(assembly);
+        builder.ApplyExtendedDataSeeders(assembly);
     }
 
     [Obsolete("Use 'ApplyAllDataSeeders' instead of this.")]
@@ -198,11 +209,10 @@ public static class ModelBuilderExtensions
         ApplyExtendedDataSeeders(builder, assembly);
     }
 
-    private static void ApplyEntityDataSeeders(ModelBuilder builder, Assembly? assembly = null)
+    private static void ApplyEntityDataSeeders(this ModelBuilder builder, Assembly assembly)
     {
         var interfaceType = typeof(IEntityDataSeeder<>);
-        var seeders = AssemblyProvider.GetImplementationsOf(interfaceType);
-        if (assembly is not null) seeders = seeders.Where(s => s.Assembly == assembly);
+        var seeders = AssemblyProvider.GetImplementationsFromAssembly(interfaceType, assembly);
         foreach (Type seederType in seeders)
         {
             var entityType = seederType.GetInterface(interfaceType.Name)!.GetGenericArguments().First();
@@ -213,11 +223,10 @@ public static class ModelBuilderExtensions
         }
     }
 
-    private static void ApplyExtendedDataSeeders(ModelBuilder builder, Assembly? assembly = null)
+    private static void ApplyExtendedDataSeeders(this ModelBuilder builder, Assembly assembly)
     {
         var interfaceType = typeof(IDataSeeder);
-        var seeders = AssemblyProvider.GetImplementationsOf(interfaceType);
-        if (assembly is not null) seeders = seeders.Where(s => s.Assembly == assembly);
+        var seeders = AssemblyProvider.GetImplementationsFromAssembly(interfaceType, assembly);
         foreach (Type seederType in seeders)
         {
             var seederInstance = Activator.CreateInstance(seederType)!;

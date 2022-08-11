@@ -9,7 +9,7 @@ namespace NeerCoreTestingSuite.WebApp.Data.Entities;
 public class Tea : IDateableEntity<Guid>
 {
     [Sieve(CanFilter = true, CanSort = true)]
-    public Guid Id { get; init; }
+    public Guid Id { get; init; } = Guid.NewGuid();
 
     [Sieve(CanFilter = true, CanSort = true)]
     public LocalizedString Name { get; init; }

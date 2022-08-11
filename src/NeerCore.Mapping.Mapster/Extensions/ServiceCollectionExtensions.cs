@@ -37,7 +37,7 @@ public static class ServiceCollectionExtensions
     public static void RegisterMappersFromAssembly(this IServiceCollection services, Assembly assembly)
     {
         var serviceProvider = services.BuildServiceProvider();
-        var registers = AssemblyProvider.GetImplementationsOf<IRegister>();
+        var registers = AssemblyProvider.GetImplementationsFromAssembly<IRegister>(assembly);
         foreach (Type mapperRegisterType in registers)
             serviceProvider.RegisterMapper(mapperRegisterType);
         services.AddScoped<IMapper, Mapper>();

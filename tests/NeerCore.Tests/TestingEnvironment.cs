@@ -11,8 +11,8 @@ public static partial class TestingEnvironment
     private static IHostEnvironment? cachedEnvironment;
     private static IServiceProvider? cachedServiceProvider;
 
-    public static IMediator Mediator => ServiceProvider.GetRequiredService<IMediator>();
-    public static IServiceProvider ServiceProvider => cachedServiceProvider ??= BuildServiceProvider(Configuration, Environment);
-    public static IConfiguration Configuration => cachedConfiguration ??= BuildConfiguration();
-    public static IHostEnvironment Environment => cachedEnvironment ??= BuildEnvironment();
+    public static IMediator Mediator => TestServices.GetRequiredService<IMediator>();
+    public static IServiceProvider TestServices => cachedServiceProvider ??= BuildServiceProvider(TestConfiguration, TestEnvironment);
+    public static IConfiguration TestConfiguration => cachedConfiguration ??= BuildConfiguration();
+    public static IHostEnvironment TestEnvironment => cachedEnvironment ??= BuildEnvironment();
 }

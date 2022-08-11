@@ -53,5 +53,5 @@ public class DbDesignOptions
     /// <summary>
     /// 
     /// </summary>
-    public Assembly[]? DataAssemblies { get; set; }
+    public Assembly?[]? DataAssemblies { get; set; }
 }
