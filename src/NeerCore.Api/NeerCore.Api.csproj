@@ -14,8 +14,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="FluentValidation" Version="11.1.0" />
-        <PackageReference Include="Microsoft.AspNetCore.JsonPatch" Version="6.0.7" />
+        <PackageReference Include="FluentValidation" Version="11.2.0" />
+        <PackageReference Include="Microsoft.AspNetCore.JsonPatch" Version="6.0.8" />
         <PackageReference Include="Sieve" Version="2.5.5" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
         <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.0.0" />

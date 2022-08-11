@@ -33,6 +33,11 @@ public static class AssemblyProvider
     public static readonly Func<Assembly, bool> IsApplicationAssembly = asm =>
         asm.FullName != null && asm.FullName.StartsWith(ProjectRootName, StringComparison.OrdinalIgnoreCase);
 
+    public static IEnumerable<Type> GetImplementationsFromAssembly<TBase>(Assembly assembly)
+    {
+        return GetImplementationsFromAssembly(typeof(TBase), assembly);
+    }
+
     /// <summary>
     ///   Returns a list of all <typeparamref name="TBase"/> implementations
     ///   (and child classes) that available in app assemblies.
@@ -46,6 +51,14 @@ public static class AssemblyProvider
     public static IEnumerable<Type> GetImplementationsOf<TBase>(Func<Assembly, bool>? assemblySelector = null)
     {
         return GetImplementationsOf(typeof(TBase), assemblySelector);
+    }
+
+    /// <inheritdoc cref="GetImplementationsOf{TBase}"/>
+    public static IEnumerable<Type> GetImplementationsFromAssembly(Type baseType, Assembly assembly)
+    {
+        if (assembly is null) throw new ArgumentNullException(nameof(assembly));
+        return assembly.GetTypes()
+            .Where(t => t.InheritsFrom(baseType));
     }
 
     /// <inheritdoc cref="GetImplementationsOf{TBase}"/>
@@ -96,5 +109,17 @@ public static class AssemblyProvider
                 list.Add(reference.FullName);
             }
         } while (stack.Count > 0);
+    }
+
+    public static Assembly? TryLoad(string assemblyName)
+    {
+        try
+        {
+            return Assembly.Load(assemblyName);
+        }
+        catch (FileNotFoundException)
+        {
+            return null;
+        }
     }
 }

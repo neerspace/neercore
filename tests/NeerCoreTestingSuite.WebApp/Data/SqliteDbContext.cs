@@ -1,7 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Reflection;
+using Microsoft.EntityFrameworkCore;
 using NeerCore.Data.EntityFramework.Abstractions;
 using NeerCore.Data.EntityFramework.Design;
 using NeerCore.Data.EntityFramework.Extensions;
+using NeerCore.DependencyInjection;
 
 namespace NeerCoreTestingSuite.WebApp.Data;
 
@@ -20,6 +22,11 @@ public sealed class SqliteDbContext : DbContext, IDatabaseContext
             options.DateTimeKind = DateTimeKind.Utc;
             options.EngineStrategy = DbEngineStrategy.SqlServer;
             options.SequentialGuids = true;
+            options.DataAssemblies = new[]
+            {
+                GetType().Assembly,
+                AssemblyProvider.TryLoad("NeerCore.Tests")
+            };
         });
     }
 
