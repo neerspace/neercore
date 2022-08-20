@@ -1,6 +1,10 @@
-﻿using Microsoft.OpenApi.Any;
+﻿using Microsoft.AspNetCore.JsonPatch;
+using Microsoft.AspNetCore.JsonPatch.Operations;
+using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
+using Newtonsoft.Json.Serialization;
 using Swashbuckle.AspNetCore.SwaggerGen;
+using OperationType = Microsoft.AspNetCore.JsonPatch.Operations.OperationType;
 
 namespace NeerCore.Api.DocumentFilters;
 
@@ -12,57 +16,123 @@ public class JsonPatchDocumentFilter : IDocumentFilter
 {
     public void Apply(OpenApiDocument swaggerDoc, DocumentFilterContext context)
     {
-        var jsonPatchDocSchemas = swaggerDoc.Components.Schemas
-            .Where(item => item.Key.StartsWith("Operation")
-                           || item.Key.StartsWith("JsonPatchDocument")
-                           || item.Key.StartsWith("IContractResolver"));
-        foreach (var item in jsonPatchDocSchemas)
-            swaggerDoc.Components.Schemas.Remove(item.Key);
+        // Remove default JsonPatchDocument schemas
+        RemoveContractResolverFromSchema(swaggerDoc);
 
-        swaggerDoc.Components.Schemas.Add("Operation", new OpenApiSchema
+        // Add correct 'Operation' schema instead of default
+        FixOperationSchemas(swaggerDoc);
+
+        // Apply correct '*JsonPatchDocument' schemas
+        FixJsonPatchDocumentSchemas(swaggerDoc);
+    }
+
+    private static void RemoveContractResolverFromSchema(OpenApiDocument swaggerDoc)
+    {
+        if (swaggerDoc.Components.Schemas.ContainsKey(nameof(IContractResolver)))
+            swaggerDoc.Components.Schemas.Remove(nameof(IContractResolver));
+    }
+
+    private static void FixOperationSchemas(OpenApiDocument swaggerDoc)
+    {
+        IEnumerable<IOpenApiAny> OperationPathFilter(string pathName, OpenApiSchema pathSchema, int arrayDepth = 0)
         {
-            Type = "object",
-            Properties = new Dictionary<string, OpenApiSchema>
+            yield return new OpenApiString(pathName);
+
+            // pathSchema.Type == SchemaTypes.Object
+            if (pathSchema.Reference is not null)
             {
+                var properties = pathSchema.Properties.Count == 0
+                    ? swaggerDoc.Components.Schemas[pathSchema.Reference.Id].Properties
+                    : pathSchema.Properties;
+
+                foreach (var pathSchemaProperty in properties)
                 {
-                    "op", new OpenApiSchema
+                    string nextPathName = $"{pathName}/{pathSchemaProperty.Key}";
+                    foreach (var operationItem in OperationPathFilter(nextPathName, pathSchemaProperty.Value))
+                        yield return operationItem;
+                }
+            }
+            // pathSchema.Type == SchemaTypes.Array
+            else if (pathSchema.Items is not null)
+            {
+                string nextPathName = $"{pathName}/{{{arrayDepth}}}";
+                foreach (var operationItem in OperationPathFilter(nextPathName, pathSchema.Items, arrayDepth + 1))
+                    yield return operationItem;
+            }
+        }
+
+        swaggerDoc.Components.Schemas.Remove(nameof(OperationType));
+        var operationSchemas = swaggerDoc.Components.Schemas.Where(item => item.Key.EndsWith(nameof(Operation)));
+        foreach (var operationSchema in operationSchemas)
+        {
+            string baseName = operationSchema.Key.Replace(nameof(Operation), "");
+            if (swaggerDoc.Components.Schemas.ContainsKey(baseName))
+            {
+                var baseSchema = swaggerDoc.Components.Schemas[baseName];
+                var basePropertyNames = baseSchema.Properties.SelectMany(p => OperationPathFilter("/" + p.Key, p.Value)).ToArray();
+
+                operationSchema.Value.Properties = new Dictionary<string, OpenApiSchema>
+                {
+                    { "op", new OpenApiSchema { Type = SchemaTypes.String, Enum = OperationNameEnum } },
+                    { "path", new OpenApiSchema { Type = SchemaTypes.String, Enum = basePropertyNames } },
+                    { "from", new OpenApiSchema { Type = SchemaTypes.String, Enum = basePropertyNames } },
+                    { "value", new OpenApiSchema { Type = SchemaTypes.String, Example = new OpenApiString("new value") } },
+                };
+            }
+            else
+            {
+                operationSchema.Value.Properties = new Dictionary<string, OpenApiSchema>
+                {
+                    { "op", new OpenApiSchema { Type = SchemaTypes.String, Enum = OperationNameEnum } },
+                    { "path", new OpenApiSchema { Type = SchemaTypes.String, Example = new OpenApiString("/path/to/property") } },
+                    { "from", new OpenApiSchema { Type = SchemaTypes.String, Example = new OpenApiString("/path/to/property") } },
+                    { "value", new OpenApiSchema { Type = SchemaTypes.String, Example = new OpenApiString("new value") } },
+                };
+            }
+        }
+    }
+
+    private static void FixJsonPatchDocumentSchemas(OpenApiDocument swaggerDoc)
+    {
+        var jsonPatchDocSchemas = swaggerDoc.Components.Schemas.Where(item => item.Key.EndsWith(nameof(JsonPatchDocument)));
+        foreach (var jsonPatchDocSchema in jsonPatchDocSchemas)
+        {
+            string baseName = jsonPatchDocSchema.Key.Replace(nameof(JsonPatchDocument), "");
+            var schema = jsonPatchDocSchema.Value;
+            schema.Properties = new Dictionary<string, OpenApiSchema>
+            {
+                ["operations"] = new()
+                {
+                    Type = SchemaTypes.Array,
+                    Description = "Array of operations to perform.",
+                    Items = new OpenApiSchema
                     {
-                        Type = "string", Enum = new List<IOpenApiAny>
+                        Reference = new OpenApiReference
                         {
-                            new OpenApiString("add"),
-                            new OpenApiString("copy"),
-                            new OpenApiString("move"),
-                            new OpenApiString("remove"),
-                            new OpenApiString("replace"),
-                            new OpenApiString("test"),
+                            Id = baseName + nameof(Operation),
+                            Type = ReferenceType.Schema,
                         }
                     }
-                },
-                { "path", new OpenApiSchema { Type = "string", Example = new OpenApiString("/path/to/property") } },
-                { "value", new OpenApiSchema { Type = "string", Example = new OpenApiString("new value") } },
-            }
-        });
-
-        swaggerDoc.Components.Schemas.Add("JsonPatchDocument", new OpenApiSchema
-        {
-            Type = "array",
-            Items = new OpenApiSchema
-            {
-                Reference = new OpenApiReference { Type = ReferenceType.Schema, Id = "Operation" }
-            },
-            Description = "Array of operations to perform"
-        });
-
-        foreach (var path in swaggerDoc.Paths.SelectMany(p => p.Value.Operations).Where(p => p.Key == OperationType.Patch))
-        {
-            foreach (var item in path.Value.RequestBody.Content.Where(c => !c.Key.StartsWith("application/json")))
-                path.Value.RequestBody.Content.Remove(item.Key);
-
-            var response = path.Value.RequestBody.Content.Single(c => c.Key.StartsWith("application/json"));
-            response.Value.Schema = new OpenApiSchema
-            {
-                Reference = new OpenApiReference { Type = ReferenceType.Schema, Id = "JsonPatchDocument" }
+                }
             };
         }
+    }
+
+    private static List<IOpenApiAny> OperationNameEnum => new()
+    {
+        new OpenApiString("add"),
+        new OpenApiString("copy"),
+        new OpenApiString("move"),
+        new OpenApiString("remove"),
+        new OpenApiString("replace"),
+        new OpenApiString("test"),
+        new OpenApiString("invalid"),
+    };
+
+    private static class SchemaTypes
+    {
+        public const string Object = "object";
+        public const string Array = "array";
+        public const string String = "string";
     }
 }

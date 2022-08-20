@@ -47,10 +47,12 @@ public class TeasController : LocalizedApiController
     }
 
     [HttpPatch("{id:guid}")]
-    public async Task<NoContentResult> Patch([FromRoute] Guid id, [FromBody] JsonPatchDocument patch)
+    public async Task<NoContentResult> Patch([FromRoute] Guid id, [FromBody] JsonPatchDocument<TeaUpdate> patch)
     {
         var entity = await _service.GetByIdAsync(id);
-        patch.ApplyTo(entity);
+        var dto = entity.Adapt<TeaUpdate>();
+        patch.ApplyTo(dto);
+        entity = dto.Adapt<Data.Entities.Tea>();
         await _service.UpdateAsync(entity);
         return NoContent();
     }
