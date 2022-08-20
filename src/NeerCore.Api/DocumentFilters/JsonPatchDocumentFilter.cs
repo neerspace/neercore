@@ -1,5 +1,6 @@
 ﻿using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
+using NeerCore.Extensions;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace NeerCore.Api.DocumentFilters;
@@ -13,11 +14,9 @@ public class JsonPatchDocumentFilter : IDocumentFilter
     public void Apply(OpenApiDocument swaggerDoc, DocumentFilterContext context)
     {
         var jsonPatchDocSchemas = swaggerDoc.Components.Schemas
-            .Where(item => item.Key.StartsWith("Operation")
-                           || item.Key.StartsWith("JsonPatchDocument")
-                           || item.Key.StartsWith("IContractResolver"));
-        foreach (var item in jsonPatchDocSchemas)
-            swaggerDoc.Components.Schemas.Remove(item.Key);
+            .Where(item => item.Key.Equals("Operation") || item.Key.Equals("IContractResolver"));
+        foreach (var jsonPatchDocSchema in jsonPatchDocSchemas)
+            swaggerDoc.Components.Schemas.Remove(jsonPatchDocSchema.Key);
 
         swaggerDoc.Components.Schemas.Add("Operation", new OpenApiSchema
         {
@@ -43,26 +42,36 @@ public class JsonPatchDocumentFilter : IDocumentFilter
             }
         });
 
-        swaggerDoc.Components.Schemas.Add("JsonPatchDocument", new OpenApiSchema
+        // Fix *JsonPatchDocument schemas
+        jsonPatchDocSchemas = swaggerDoc.Components.Schemas
+            .Where(item => item.Key.Contains("JsonPatchDocument"));
+        foreach (var jsonPatchDocSchema in jsonPatchDocSchemas)
         {
-            Type = "array",
-            Items = new OpenApiSchema
+            var schema = jsonPatchDocSchema.Value;
+            schema.Type = "array";
+            schema.Properties.Clear();
+            schema.AdditionalPropertiesAllowed = true;
+            schema.Items = new OpenApiSchema
             {
                 Reference = new OpenApiReference { Type = ReferenceType.Schema, Id = "Operation" }
-            },
-            Description = "Array of operations to perform"
-        });
-
-        foreach (var path in swaggerDoc.Paths.SelectMany(p => p.Value.Operations).Where(p => p.Key == OperationType.Patch))
-        {
-            foreach (var item in path.Value.RequestBody.Content.Where(c => !c.Key.StartsWith("application/json")))
-                path.Value.RequestBody.Content.Remove(item.Key);
-
-            var response = path.Value.RequestBody.Content.Single(c => c.Key.StartsWith("application/json"));
-            response.Value.Schema = new OpenApiSchema
-            {
-                Reference = new OpenApiReference { Type = ReferenceType.Schema, Id = "JsonPatchDocument" }
             };
+            if (schema.Description.IsNullOrEmpty())
+                schema.Description = "Array of operations to perform";
         }
+
+        // foreach (var path in swaggerDoc.Paths
+        //              .SelectMany(p => p.Value.Operations)
+        //              .Where(p => p.Key == OperationType.Patch))
+        // {
+        //     foreach (var item in path.Value.RequestBody.Content
+        //                  .Where(c => !c.Key.StartsWith("application/json") && !c.Key.StartsWith("application/patch+json")))
+        //         path.Value.RequestBody.Content.Remove(item.Key);
+        //
+        //     var response = path.Value.RequestBody.Content.Single(c => c.Key.StartsWith("application/json"));
+        //     response.Value.Schema = new OpenApiSchema
+        //     {
+        //         Reference = new OpenApiReference { Type = ReferenceType.Schema, Id = "JsonPatchDocument" }
+        //     };
+        // }
     }
 }
