@@ -13,11 +13,13 @@ public class JsonPatchDocumentFilter : IDocumentFilter
 {
     public void Apply(OpenApiDocument swaggerDoc, DocumentFilterContext context)
     {
+        // Remove default JsonPatchDocument schemas
         var jsonPatchDocSchemas = swaggerDoc.Components.Schemas
             .Where(item => item.Key.Equals("Operation") || item.Key.Equals("IContractResolver"));
         foreach (var jsonPatchDocSchema in jsonPatchDocSchemas)
             swaggerDoc.Components.Schemas.Remove(jsonPatchDocSchema.Key);
 
+        // Add correct 'Operation' schema instead of default
         swaggerDoc.Components.Schemas.Add("Operation", new OpenApiSchema
         {
             Type = "object",
@@ -42,36 +44,25 @@ public class JsonPatchDocumentFilter : IDocumentFilter
             }
         });
 
-        // Fix *JsonPatchDocument schemas
+        // Fix '*JsonPatchDocument' schemas
         jsonPatchDocSchemas = swaggerDoc.Components.Schemas
             .Where(item => item.Key.Contains("JsonPatchDocument"));
         foreach (var jsonPatchDocSchema in jsonPatchDocSchemas)
         {
             var schema = jsonPatchDocSchema.Value;
-            schema.Type = "array";
-            schema.Properties.Clear();
-            schema.AdditionalPropertiesAllowed = true;
-            schema.Items = new OpenApiSchema
+            schema.Properties = new Dictionary<string, OpenApiSchema>
             {
-                Reference = new OpenApiReference { Type = ReferenceType.Schema, Id = "Operation" }
+                ["operations"] = new()
+                {
+                    Reference = new OpenApiReference
+                    {
+                        Id = "Operation",
+                        Type = ReferenceType.Schema,
+                    }
+                }
             };
             if (schema.Description.IsNullOrEmpty())
                 schema.Description = "Array of operations to perform";
         }
-
-        // foreach (var path in swaggerDoc.Paths
-        //              .SelectMany(p => p.Value.Operations)
-        //              .Where(p => p.Key == OperationType.Patch))
-        // {
-        //     foreach (var item in path.Value.RequestBody.Content
-        //                  .Where(c => !c.Key.StartsWith("application/json") && !c.Key.StartsWith("application/patch+json")))
-        //         path.Value.RequestBody.Content.Remove(item.Key);
-        //
-        //     var response = path.Value.RequestBody.Content.Single(c => c.Key.StartsWith("application/json"));
-        //     response.Value.Schema = new OpenApiSchema
-        //     {
-        //         Reference = new OpenApiReference { Type = ReferenceType.Schema, Id = "JsonPatchDocument" }
-        //     };
-        // }
     }
 }

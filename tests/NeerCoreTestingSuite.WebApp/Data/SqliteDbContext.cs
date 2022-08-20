@@ -11,7 +11,10 @@ public sealed class SqliteDbContext : DbContext, IDatabaseContext
 {
     public SqliteDbContext(DbContextOptions options) : base(options)
     {
-        // Be careful with it!
+        // Disable entity tracking by default
+        ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
+
+        // Be careful with it! Remove it for real project
         Database.EnsureCreated();
     }
 
