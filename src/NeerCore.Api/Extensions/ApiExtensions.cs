@@ -6,9 +6,9 @@ namespace NeerCore.Api.Extensions;
 
 public static class ApiExtensions
 {
-    public static void AddDefaultCorsPolicy(this IServiceCollection services)
+    public static IServiceCollection AddDefaultCorsPolicy(this IServiceCollection services)
     {
-        services.AddCors(o => o.AddPolicy(CorsPolicies.AcceptAll, builder =>
+        return services.AddCors(o => o.AddPolicy(CorsPolicies.AcceptAll, builder =>
         {
             builder.AllowAnyOrigin()
                 .AllowAnyMethod()
@@ -21,11 +21,11 @@ public static class ApiExtensions
     /// </summary>
     /// <param name="services">The services available in the application.</param>
     /// <param name="apiVersionParameterSource">Configures the source for defining API version parameters.</param>
-    public static void AddCustomApiVersioning(this IServiceCollection services, IApiVersionReader? apiVersionParameterSource = null)
+    public static IServiceCollection AddCustomApiVersioning(this IServiceCollection services, IApiVersionReader? apiVersionParameterSource = null)
     {
         services.AddApiVersioning();
 
-        services.AddVersionedApiExplorer(options =>
+        return services.AddVersionedApiExplorer(options =>
         {
             options.GroupNameFormat = "'v'VVV";
             options.SubstituteApiVersionInUrl = true;
@@ -38,9 +38,9 @@ public static class ApiExtensions
         });
     }
 
-    public static void ConfigureApiBehaviorOptions(this IServiceCollection services)
+    public static IServiceCollection ConfigureApiBehaviorOptions(this IServiceCollection services)
     {
-        services.Configure<ApiBehaviorOptions>(options =>
+        return services.Configure<ApiBehaviorOptions>(options =>
         {
             // Disable default ModelState validation (because we use only FluentValidation)
             options.SuppressModelStateInvalidFilter = true;

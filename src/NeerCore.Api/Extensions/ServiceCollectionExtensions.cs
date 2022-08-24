@@ -15,22 +15,22 @@ public static class ServiceCollectionExtensions
     ///   Adds default NeerCore stuff into your application services.
     /// </summary>
     /// <param name="services">The services available in the application.</param>
-    public static void AddNeerApiServices(this IServiceCollection services)
+    public static IServiceCollection AddNeerApiServices(this IServiceCollection services)
     {
-        services.AddNeerApiServices(Assembly.GetCallingAssembly());
+        return services.AddNeerApiServices(Assembly.GetCallingAssembly());
     }
 
-    public static void AddNeerApiServices(this IServiceCollection services, params string[] assemblyNames)
+    public static IServiceCollection AddNeerApiServices(this IServiceCollection services, params string[] assemblyNames)
     {
-        services.AddNeerApiServices(assemblyNames.Select(Assembly.Load).ToArray());
+        return services.AddNeerApiServices(assemblyNames.Select(Assembly.Load).ToArray());
     }
 
-    public static void AddNeerApiServices(this IServiceCollection services, params Assembly[] assemblies)
+    public static IServiceCollection AddNeerApiServices(this IServiceCollection services, params Assembly[] assemblies)
     {
-        services.AddNeerApiServices(assemblies, configureInfo: null);
+        return services.AddNeerApiServices(assemblies, configureInfo: null);
     }
 
-    public static void AddNeerApiServices(this IServiceCollection services, IEnumerable<Assembly> assemblies, Func<ApiVersionDescription, OpenApiInfo>? configureInfo)
+    public static IServiceCollection AddNeerApiServices(this IServiceCollection services, IEnumerable<Assembly> assemblies, Func<ApiVersionDescription, OpenApiInfo>? configureInfo)
     {
         services.AddScoped<ISieveProcessor, SieveProcessor>();
         services.AddServicesFromAssemblies(assemblies);
@@ -40,6 +40,8 @@ public static class ServiceCollectionExtensions
         services.AddCustomApiVersioning();
         services.ConfigureApiBehaviorOptions();
         services.AddCustomSwagger(configureInfo);
+
+        return services;
     }
 
 
@@ -49,9 +51,9 @@ public static class ServiceCollectionExtensions
     ///   used out of a box and <see cref="JsonStringEnumConverter"/> too.
     /// </summary>
     /// <param name="services">The services available in the application.</param>
-    public static void AddNeerControllers(this IServiceCollection services)
+    public static IMvcBuilder AddNeerControllers(this IServiceCollection services)
     {
-        services.AddControllers(KebabCaseNamingConvention.Use)
+        return services.AddControllers(KebabCaseNamingConvention.Use)
             .AddJsonOptions(options => options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
     }
 }

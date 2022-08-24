@@ -13,22 +13,21 @@ public static class SwaggerExtensions
     /// </summary>
     /// <param name="services"></param>
     /// <param name="configureInfo"></param>
-    public static void AddCustomSwagger(this IServiceCollection services, Func<ApiVersionDescription, OpenApiInfo>? configureInfo = null)
+    public static IServiceCollection AddCustomSwagger(this IServiceCollection services, Func<ApiVersionDescription, OpenApiInfo>? configureInfo = null)
     {
         services.AddEndpointsApiExplorer();
-        services.Configure<OpenApiInfoProviderOptions>(options =>
-        {
-            options.ConfigureDelegate = configureInfo;
-        });
+        services.Configure<OpenApiInfoProviderOptions>(options => { options.ConfigureDelegate = configureInfo; });
         services.ConfigureOptions<SwaggerConfiguration>();
         services.AddSwaggerGen();
+
+        return services;
     }
 
     /// <summary>
     /// 
     /// </summary>
     /// <param name="app"></param>
-    public static void UseCustomSwagger(this IApplicationBuilder app)
+    public static IApplicationBuilder UseCustomSwagger(this IApplicationBuilder app)
     {
         var swaggerSettings = app.ApplicationServices.GetRequiredService<IConfiguration>().GetSwaggerSettings();
         var apiProvider = app.ApplicationServices.GetRequiredService<IApiVersionDescriptionProvider>();
@@ -74,6 +73,8 @@ public static class SwaggerExtensions
                 });
             }
         }
+
+        return app;
     }
 
     public static SwaggerConfigurationSettings GetSwaggerSettings(this IConfiguration configuration)
