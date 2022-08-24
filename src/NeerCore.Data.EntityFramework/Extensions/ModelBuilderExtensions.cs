@@ -18,7 +18,7 @@ public static class ModelBuilderExtensions
     /// </summary>
     /// <param name="builder"></param>
     /// <param name="configureOptions"></param>
-    public static void ConfigureEntities(this ModelBuilder builder, Action<DbDesignOptions>? configureOptions = null)
+    public static ModelBuilder ConfigureEntities(this ModelBuilder builder, Action<DbDesignOptions>? configureOptions = null)
     {
         var options = new DbDesignOptions();
         configureOptions?.Invoke(options);
@@ -27,6 +27,7 @@ public static class ModelBuilderExtensions
         // builder.AddAllEntities();
         builder.ApplyEntityIds(options);
         builder.ApplyEntityDating(options);
+
         foreach (Assembly? dataAssembly in options.DataAssemblies)
         {
             if (dataAssembly is null) continue;
@@ -37,6 +38,8 @@ public static class ModelBuilderExtensions
             if (options.ApplyDataSeeders)
                 builder.ApplyDataSeedersFromAssembly(dataAssembly);
         }
+
+        return builder;
     }
 
     /// <summary>
@@ -44,7 +47,7 @@ public static class ModelBuilderExtensions
     /// </summary>
     /// <param name="builder"></param>
     /// <param name="options"></param>
-    public static void ApplyEntityIds(this ModelBuilder builder, DbDesignOptions options)
+    public static ModelBuilder ApplyEntityIds(this ModelBuilder builder, DbDesignOptions options)
     {
         Type entityWithIdType = typeof(IEntity<>);
 
@@ -68,6 +71,8 @@ public static class ModelBuilderExtensions
                 idPropertyBuilder.HasDefaultValue(Guid.NewGuid().ToString());
             }
         }
+
+        return builder;
     }
 
     /// <summary>
@@ -75,13 +80,15 @@ public static class ModelBuilderExtensions
     /// </summary>
     /// <param name="builder"></param>
     /// <param name="assembly"></param>
-    public static void AddAllEntities(this ModelBuilder builder, Assembly? assembly = null)
+    public static ModelBuilder AddAllEntities(this ModelBuilder builder, Assembly? assembly = null)
     {
         assembly ??= Assembly.GetCallingAssembly();
         foreach (Type entityType in AssemblyProvider.GetImplementationsFromAssembly<IEntity>(assembly))
         {
             builder.Entity(entityType);
         }
+
+        return builder;
     }
 
     /// <summary>
@@ -89,7 +96,7 @@ public static class ModelBuilderExtensions
     /// </summary>
     /// <param name="builder"></param>
     /// <param name="assembly"></param>
-    public static void AddLocalizedStrings(this ModelBuilder builder, Assembly? assembly = null)
+    public static ModelBuilder AddLocalizedStrings(this ModelBuilder builder, Assembly? assembly = null)
     {
         var valueComparer = new ValueComparer<LocalizedString>(
             (ls1, ls2) => ls1.Equals(ls2),
@@ -108,6 +115,8 @@ public static class ModelBuilderExtensions
                     .Metadata.SetValueComparer(valueComparer);
             }
         }
+
+        return builder;
     }
 
     /// <summary>
@@ -115,14 +124,14 @@ public static class ModelBuilderExtensions
     /// </summary>
     /// <param name="builder"></param>
     /// <param name="configureOptions"></param>
-    public static void ApplyEntityDating(this ModelBuilder builder, Action<DbDesignOptions>? configureOptions = null)
+    public static ModelBuilder ApplyEntityDating(this ModelBuilder builder, Action<DbDesignOptions>? configureOptions = null)
     {
         var options = new DbDesignOptions();
         configureOptions?.Invoke(options);
-        builder.ApplyEntityDating(options);
+        return builder.ApplyEntityDating(options);
     }
 
-    private static void ApplyEntityDating(this ModelBuilder builder, DbDesignOptions options)
+    private static ModelBuilder ApplyEntityDating(this ModelBuilder builder, DbDesignOptions options)
     {
         bool utc = options.DateTimeKind is DateTimeKind.Utc;
         string defaultValueSql = options.EngineStrategy switch
@@ -154,6 +163,8 @@ public static class ModelBuilderExtensions
                     .ValueGeneratedOnUpdate();
             }
         }
+
+        return builder;
     }
 
     /// <summary>
@@ -162,39 +173,42 @@ public static class ModelBuilderExtensions
     /// </summary>
     /// <param name="builder">Database model builder.</param>
     [Obsolete("Use 'ApplyAllConfigurations' instead of this.")]
-    public static void ApplyConfigurations(this ModelBuilder builder)
+    public static ModelBuilder ApplyConfigurations(this ModelBuilder builder)
     {
-        builder.ApplyConfigurationsFromAssembly(Assembly.GetCallingAssembly());
+        return builder.ApplyConfigurationsFromAssembly(Assembly.GetCallingAssembly());
     }
 
-    public static void ApplyAllConfigurations(this ModelBuilder builder)
+    public static ModelBuilder ApplyAllConfigurations(this ModelBuilder builder)
     {
-        builder.ApplyConfigurationsFromAssembly(Assembly.GetCallingAssembly());
+        return builder.ApplyConfigurationsFromAssembly(Assembly.GetCallingAssembly());
     }
 
     /// <param name="assemblyName"><see cref="Assembly"/> name where data seeders are providing.</param>
     /// <inheritdoc cref="ApplyAllDataSeeders"/>
-    public static void ApplyDataSeedersFromAssembly(this ModelBuilder builder, string assemblyName)
+    public static ModelBuilder ApplyDataSeedersFromAssembly(this ModelBuilder builder, string assemblyName)
     {
         var assembly = Assembly.Load(assemblyName);
-        ApplyEntityDataSeeders(builder, assembly);
-        ApplyExtendedDataSeeders(builder, assembly);
+        return builder
+            .ApplyEntityDataSeeders(assembly)
+            .ApplyExtendedDataSeeders(assembly);
     }
 
     /// <param name="assembly"><see cref="Assembly"/> where data seeders are providing.</param>
     /// <inheritdoc cref="ApplyAllDataSeeders"/>
-    public static void ApplyDataSeedersFromAssembly(this ModelBuilder builder, Assembly assembly)
+    public static ModelBuilder ApplyDataSeedersFromAssembly(this ModelBuilder builder, Assembly assembly)
     {
-        builder.ApplyEntityDataSeeders(assembly);
-        builder.ApplyExtendedDataSeeders(assembly);
+        return builder
+            .ApplyEntityDataSeeders(assembly)
+            .ApplyExtendedDataSeeders(assembly);
     }
 
     [Obsolete("Use 'ApplyAllDataSeeders' instead of this.")]
-    public static void ApplyDataSeeders(this ModelBuilder builder)
+    public static ModelBuilder ApplyDataSeeders(this ModelBuilder builder)
     {
         var assembly = Assembly.GetCallingAssembly();
-        ApplyEntityDataSeeders(builder, assembly);
-        ApplyExtendedDataSeeders(builder, assembly);
+        return builder
+            .ApplyEntityDataSeeders(assembly)
+            .ApplyExtendedDataSeeders(assembly);
     }
 
     /// <summary>
@@ -202,14 +216,15 @@ public static class ModelBuilderExtensions
     ///   seeding data from provided assembly or from the calling assembly by default.
     /// </summary>
     /// <param name="builder">Database model builder.</param>
-    public static void ApplyAllDataSeeders(this ModelBuilder builder)
+    public static ModelBuilder ApplyAllDataSeeders(this ModelBuilder builder)
     {
         var assembly = Assembly.GetCallingAssembly();
         ApplyEntityDataSeeders(builder, assembly);
         ApplyExtendedDataSeeders(builder, assembly);
+        return builder;
     }
 
-    private static void ApplyEntityDataSeeders(this ModelBuilder builder, Assembly assembly)
+    private static ModelBuilder ApplyEntityDataSeeders(this ModelBuilder builder, Assembly assembly)
     {
         var interfaceType = typeof(IEntityDataSeeder<>);
         var seeders = AssemblyProvider.GetImplementationsFromAssembly(interfaceType, assembly);
@@ -221,9 +236,11 @@ public static class ModelBuilderExtensions
             var data = seedDataProperty!.Invoke(seederInstance, null) as object[];
             builder.Entity(entityType).HasData(data!);
         }
+
+        return builder;
     }
 
-    private static void ApplyExtendedDataSeeders(this ModelBuilder builder, Assembly assembly)
+    private static ModelBuilder ApplyExtendedDataSeeders(this ModelBuilder builder, Assembly assembly)
     {
         var interfaceType = typeof(IDataSeeder);
         var seeders = AssemblyProvider.GetImplementationsFromAssembly(interfaceType, assembly);
@@ -233,5 +250,7 @@ public static class ModelBuilderExtensions
             var seedMethod = seederInstance.GetType().GetMethod(nameof(IDataSeeder.Seed), new[] { builder.GetType() })!;
             seedMethod.Invoke(seederInstance, new object?[] { builder });
         }
+
+        return builder;
     }
 }

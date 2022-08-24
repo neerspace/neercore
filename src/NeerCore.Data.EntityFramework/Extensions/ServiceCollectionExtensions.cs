@@ -31,7 +31,7 @@ public static class ServiceCollectionExtensions
     /// <param name="contextLifetime">The lifetime with which to register the DbContext service in the container.</param>
     /// <param name="optionsLifetime">The lifetime with which to register the DbContextOptions service in the container.</param>
     /// <returns>The same service collection so that multiple calls can be chained.</returns>
-    public static void AddDatabase<TContext>(this IServiceCollection services,
+    public static IServiceCollection AddDatabase<TContext>(this IServiceCollection services,
         Action<DbContextOptionsBuilder>? optionsAction = null,
         ServiceLifetime contextLifetime = ServiceLifetime.Scoped,
         ServiceLifetime optionsLifetime = ServiceLifetime.Scoped)
@@ -39,6 +39,7 @@ public static class ServiceCollectionExtensions
     {
         services.AddDbContext<TContext>(optionsAction, contextLifetime, optionsLifetime);
         services.Add(new ServiceDescriptor(typeof(IDatabaseContext), typeof(TContext), contextLifetime));
+        return services;
     }
 
     /// <summary>
@@ -51,7 +52,7 @@ public static class ServiceCollectionExtensions
     /// <param name="contextLifetime">The lifetime with which to register the DbContext service in the container.</param>
     /// <param name="optionsLifetime">The lifetime with which to register the DbContextOptions service in the container.</param>
     /// <returns>The same service collection so that multiple calls can be chained.</returns>
-    public static void AddDatabase<TContext, TContextFactory>(this IServiceCollection services,
+    public static IServiceCollection AddDatabase<TContext, TContextFactory>(this IServiceCollection services,
         ServiceLifetime contextLifetime = ServiceLifetime.Scoped,
         ServiceLifetime optionsLifetime = ServiceLifetime.Scoped)
         where TContextFactory : DbContextFactoryBase<TContext>, new()
@@ -59,7 +60,7 @@ public static class ServiceCollectionExtensions
     {
         var contextFactory = new TContextFactory();
         services.AddDbContext<TContext>(contextFactory.ConfigureContextOptions, contextLifetime, optionsLifetime);
-
         services.Add(new ServiceDescriptor(typeof(IDatabaseContext), typeof(TContext), contextLifetime));
+        return services;
     }
 }
