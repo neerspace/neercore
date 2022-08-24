@@ -7,14 +7,15 @@ namespace NeerCore.DependencyInjection.Extensions;
 public static partial class ServiceCollectionExtensions
 {
     /// <inheritdoc cref="AddServicesFromAssembly(IServiceCollection,Assembly,Action{InjectionOptions}?)"/>
-    public static void AddServicesFromAssemblies(this IServiceCollection services, IEnumerable<string> assemblyNames, Action<InjectionOptions>? configureOptions = null)
+    public static IServiceCollection AddServicesFromAssemblies(this IServiceCollection services, IEnumerable<string> assemblyNames, Action<InjectionOptions>? configureOptions = null)
     {
         foreach (string assemblyName in assemblyNames)
             services.AddServicesFromAssembly(assemblyName, configureOptions);
+        return services;
     }
 
     /// <inheritdoc cref="AddServicesFromAssembly(IServiceCollection,Assembly,Action{InjectionOptions}?)"/>
-    public static void AddServicesFromAssemblies(this IServiceCollection services, IEnumerable<Assembly> assemblies, Action<InjectionOptions>? configureOptions = null)
+    public static IServiceCollection AddServicesFromAssemblies(this IServiceCollection services, IEnumerable<Assembly> assemblies, Action<InjectionOptions>? configureOptions = null)
     {
         var options = new InjectionOptions();
         configureOptions?.Invoke(options);
@@ -22,31 +23,31 @@ public static partial class ServiceCollectionExtensions
             ? assemblies
             : options.ServiceAssemblies.Concat(assemblies);
 
-        services.AddServices(options);
+        return services.AddServices(options);
     }
 
     /// <inheritdoc cref="AddServicesFromAssembly(IServiceCollection,Assembly,Action{InjectionOptions}?)"/>
     [Obsolete("Use 'AddAllServices' instead of this.")]
-    public static void AddServicesFromCurrentAssembly(this IServiceCollection services, Action<InjectionOptions>? configureOptions = null)
+    public static IServiceCollection AddServicesFromCurrentAssembly(this IServiceCollection services, Action<InjectionOptions>? configureOptions = null)
     {
-        services.AddServicesFromAssembly(Assembly.GetCallingAssembly(), configureOptions);
+        return services.AddServicesFromAssembly(Assembly.GetCallingAssembly(), configureOptions);
     }
 
     /// <inheritdoc cref="AddServicesFromAssembly(IServiceCollection,Assembly,Action{InjectionOptions}?)"/>
-    public static void AddAllServices(this IServiceCollection services, Action<InjectionOptions>? configureOptions = null)
+    public static IServiceCollection AddAllServices(this IServiceCollection services, Action<InjectionOptions>? configureOptions = null)
     {
-        services.AddServicesFromAssembly(Assembly.GetCallingAssembly(), configureOptions);
+        return services.AddServicesFromAssembly(Assembly.GetCallingAssembly(), configureOptions);
     }
 
     /// <inheritdoc cref="AddServicesFromAssembly(IServiceCollection,Assembly,Action{InjectionOptions}?)"/>
-    public static void AddServicesFromAssembly(this IServiceCollection services, string assemblyName, Action<InjectionOptions>? configureOptions = null)
+    public static IServiceCollection AddServicesFromAssembly(this IServiceCollection services, string assemblyName, Action<InjectionOptions>? configureOptions = null)
     {
-        services.AddServicesFromAssembly(Assembly.Load(assemblyName), configureOptions);
+        return services.AddServicesFromAssembly(Assembly.Load(assemblyName), configureOptions);
     }
 
     /// <param name="assembly">Services implementations assembly.</param>
     /// <inheritdoc cref="AddServices(IServiceCollection,Action{InjectionOptions}?)"/>
-    public static void AddServicesFromAssembly(this IServiceCollection services, Assembly assembly, Action<InjectionOptions>? configureOptions = null)
+    public static IServiceCollection AddServicesFromAssembly(this IServiceCollection services, Assembly assembly, Action<InjectionOptions>? configureOptions = null)
     {
         var options = new InjectionOptions();
         configureOptions?.Invoke(options);
@@ -54,7 +55,7 @@ public static partial class ServiceCollectionExtensions
             ? new[] { assembly }
             : options.ServiceAssemblies.Append(assembly);
 
-        services.AddServices(options);
+        return services.AddServices(options);
     }
 
     /// <summary>Registers all services marked with attribute <see cref="InjectAttribute"/> to DI container.</summary>
@@ -63,16 +64,16 @@ public static partial class ServiceCollectionExtensions
     /// <param name="configureOptions"></param>
     /// <exception cref="ArgumentOutOfRangeException">If invalid injection type provided.</exception>
     [Obsolete("Use 'AddAllServices' instead of this.")]
-    public static void AddServices(this IServiceCollection services, Action<InjectionOptions>? configureOptions = null)
+    public static IServiceCollection AddServices(this IServiceCollection services, Action<InjectionOptions>? configureOptions = null)
     {
         var options = new InjectionOptions();
         configureOptions?.Invoke(options);
         options.ServiceAssemblies ??= new[] { Assembly.GetCallingAssembly() };
-        services.AddServices(options);
+        return services.AddServices(options);
     }
 
 
-    private static void AddServices(this IServiceCollection services, InjectionOptions options)
+    private static IServiceCollection AddServices(this IServiceCollection services, InjectionOptions options)
     {
         var serviceProvider = services.BuildServiceProvider();
         var environment = serviceProvider.GetService<IHostEnvironment>();
@@ -113,6 +114,8 @@ public static partial class ServiceCollectionExtensions
                 }
             }
         }
+
+        return services;
     }
 
     private static void AddServices(this IServiceCollection services, InjectableAttribute attr, Type implType)

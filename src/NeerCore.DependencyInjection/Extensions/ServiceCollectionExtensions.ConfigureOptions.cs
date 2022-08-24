@@ -6,16 +6,18 @@ namespace NeerCore.DependencyInjection.Extensions;
 
 public static partial class ServiceCollectionExtensions
 {
-    public static void ConfigureAllOptions(this IServiceCollection services)
+    public static IServiceCollection ConfigureAllOptions(this IServiceCollection services)
     {
-        services.ConfigureAllOptionsFromAssembly(Assembly.GetCallingAssembly());
+        return services.ConfigureAllOptionsFromAssembly(Assembly.GetCallingAssembly());
     }
 
-    public static void ConfigureAllOptionsFromAssembly(this IServiceCollection services, Assembly assembly)
+    public static IServiceCollection ConfigureAllOptionsFromAssembly(this IServiceCollection services, Assembly assembly)
     {
         foreach (var optionsConfiguratorType in AssemblyProvider.GetImplementationsFromAssembly(typeof(IConfigureOptions<>), assembly))
         {
             services.ConfigureOptions(optionsConfiguratorType);
         }
+
+        return services;
     }
 }
