@@ -13,20 +13,20 @@ public static class ServiceCollectionExtensions
     /// </summary>
     /// <param name="services">The <see cref="IServiceCollection"/> containing service descriptors</param>
     [Obsolete("Use 'RegisterAllMappers' overload instead of this.")]
-    public static void RegisterMappersFromCurrentAssembly(this IServiceCollection services)
+    public static IServiceCollection RegisterMappersFromCurrentAssembly(this IServiceCollection services)
     {
-        services.RegisterMappersFromAssembly(Assembly.GetCallingAssembly());
+        return services.RegisterMappersFromAssembly(Assembly.GetCallingAssembly());
     }
 
     [Obsolete("Use 'RegisterAllMappers' overload instead of this.")]
-    public static void RegisterMappers(this IServiceCollection services)
+    public static IServiceCollection RegisterMappers(this IServiceCollection services)
     {
-        services.RegisterMappersFromAssembly(Assembly.GetCallingAssembly());
+        return services.RegisterMappersFromAssembly(Assembly.GetCallingAssembly());
     }
 
-    public static void RegisterAllMappers(this IServiceCollection services)
+    public static IServiceCollection RegisterAllMappers(this IServiceCollection services)
     {
-        services.RegisterMappersFromAssembly(Assembly.GetCallingAssembly());
+        return services.RegisterMappersFromAssembly(Assembly.GetCallingAssembly());
     }
 
     /// <summary>
@@ -34,13 +34,13 @@ public static class ServiceCollectionExtensions
     /// </summary>
     /// <param name="services">The <see cref="IServiceCollection"/> containing service descriptors</param>
     /// <param name="assembly">Assembly with <see cref="IRegister"/> implementations to register.</param>
-    public static void RegisterMappersFromAssembly(this IServiceCollection services, Assembly assembly)
+    public static IServiceCollection RegisterMappersFromAssembly(this IServiceCollection services, Assembly assembly)
     {
         var serviceProvider = services.BuildServiceProvider();
         var registers = AssemblyProvider.GetImplementationsFromAssembly<IRegister>(assembly);
         foreach (Type mapperRegisterType in registers)
             serviceProvider.RegisterMapper(mapperRegisterType);
-        services.AddScoped<IMapper, Mapper>();
+        return services.AddScoped<IMapper, Mapper>();
     }
 
     /// <summary>
@@ -48,12 +48,12 @@ public static class ServiceCollectionExtensions
     /// </summary>
     /// <param name="services">The <see cref="IServiceCollection"/> containing service descriptors.</param>
     /// <typeparam name="TRegister">Mappings register type.</typeparam>
-    public static void RegisterMapper<TRegister>(this IServiceCollection services)
+    public static IServiceCollection RegisterMapper<TRegister>(this IServiceCollection services)
         where TRegister : IRegister
     {
         var serviceProvider = services.BuildServiceProvider();
         serviceProvider.RegisterMapper<TRegister>();
-        services.AddScoped<IMapper, Mapper>();
+        return services.AddScoped<IMapper, Mapper>();
     }
 
     /// <summary>
@@ -61,11 +61,11 @@ public static class ServiceCollectionExtensions
     /// </summary>
     /// <param name="mapperRegisterType">Mappings register class.</param>
     /// <param name="services">The <see cref="IServiceCollection"/> containing service descriptors.</param>
-    public static void RegisterMapper(this IServiceCollection services, Type mapperRegisterType)
+    public static IServiceCollection RegisterMapper(this IServiceCollection services, Type mapperRegisterType)
     {
         var serviceProvider = services.BuildServiceProvider();
         serviceProvider.RegisterMapper(mapperRegisterType);
-        services.AddScoped<IMapper, Mapper>();
+        return services.AddScoped<IMapper, Mapper>();
     }
 
     /// <summary>
@@ -73,10 +73,10 @@ public static class ServiceCollectionExtensions
     /// </summary>
     /// <param name="serviceProvider">Service provider for services presented in <see cref="TRegister"/> DI constructor.</param>
     /// <typeparam name="TRegister">Mappings register type.</typeparam>
-    public static void RegisterMapper<TRegister>(this IServiceProvider serviceProvider)
+    public static IServiceProvider RegisterMapper<TRegister>(this IServiceProvider serviceProvider)
         where TRegister : IRegister
     {
-        serviceProvider.RegisterMapper(typeof(TRegister));
+        return serviceProvider.RegisterMapper(typeof(TRegister));
     }
 
     /// <summary>
@@ -84,12 +84,13 @@ public static class ServiceCollectionExtensions
     /// </summary>
     /// <param name="mapperRegisterType">Mappings register class.</param>
     /// <param name="serviceProvider">Service provider for services presented in <see cref="mapperRegisterType"/> DI constructor.</param>
-    public static void RegisterMapper(this IServiceProvider serviceProvider, Type mapperRegisterType)
+    public static IServiceProvider RegisterMapper(this IServiceProvider serviceProvider, Type mapperRegisterType)
     {
         var paramTypes = mapperRegisterType.GetConstructors()[0].GetParameters().Select(p => p.ParameterType);
         var constructorParams = paramTypes.Select(serviceProvider.GetService).ToArray();
 
         var register = (IRegister)Activator.CreateInstance(mapperRegisterType, constructorParams)!;
         register.Register(TypeAdapterConfig.GlobalSettings);
+        return serviceProvider;
     }
 }
