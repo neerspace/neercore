@@ -73,6 +73,7 @@ public static class AssemblyProvider
     ///   Safely checks is the <paramref name="t1"/> is inherited from <paramref name="t2"/>.
     /// </summary>
     /// <returns><b>true</b> is inherits otherwise <b>false</b></returns>
+    [Obsolete("Use this method from 'TypeExtensions'")]
     public static bool InheritsFrom(this Type? t1, Type? t2)
     {
         if (t1 is null || t2 is null)
