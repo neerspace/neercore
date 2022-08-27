@@ -75,6 +75,15 @@ public static class ModelBuilderExtensions
         return builder;
     }
 
+    public static IEnumerable<EntityTypeBuilder> GetAllEntities(this ModelBuilder builder, Assembly? assembly = null)
+    {
+        assembly ??= Assembly.GetCallingAssembly();
+        foreach (Type entityType in AssemblyProvider.GetImplementationsFromAssembly<IEntity>(assembly))
+        {
+            yield return builder.Entity(entityType);
+        }
+    }
+
     /// <summary>
     /// 
     /// </summary>
@@ -82,12 +91,7 @@ public static class ModelBuilderExtensions
     /// <param name="assembly"></param>
     public static ModelBuilder AddAllEntities(this ModelBuilder builder, Assembly? assembly = null)
     {
-        assembly ??= Assembly.GetCallingAssembly();
-        foreach (Type entityType in AssemblyProvider.GetImplementationsFromAssembly<IEntity>(assembly))
-        {
-            builder.Entity(entityType);
-        }
-
+        _ = builder.GetAllEntities(assembly).Count();
         return builder;
     }
 
