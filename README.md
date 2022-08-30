@@ -38,6 +38,34 @@ Thank you for using my developments, I hope they make your life easier! ;)
 
 -----------------------------
 
+## Getting started
+
+You can use one of provided templates for your web or console application.
+
+### [Console app with DI](https://github.com/jurilents/NeerCore-Examples-ConsoleDependencyInjection)
+
+A simple example of a console application using Dependency Injection.
+
+### [Simple API](https://github.com/jurilents/NeerCore-Examples-SimpleApi)
+
+> I recommend it as your first NeerCore project template 😏.
+
+All what you need in single project. Minimal template for simple projects.
+
+### [Services-based API](https://github.com/jurilents/NeerCore-Examples-ServiceBasedApi)
+
+Just a clean API template and nothing more :)
+
+### [CQRS-based API](https://github.com/jurilents/NeerCore-Examples-MediatorBasedApi)
+
+Clean CQRS Architecture template. All what your need to get started your new  _💡idea💡_!
+
+### [CQRS-based API with more features](https://github.com/jurilents/NeerCore-Examples-CompletedApi)
+
+Clean CQRS Architecture template with more features. Provided features: EF Identity, Localization, JWT Auth.
+
+-----------------------------
+
 ## Features navigation
 
 ### [NeerCore](https://www.nuget.org/packages/NeerCore)
@@ -92,34 +120,6 @@ Thank you for using my developments, I hope they make your life easier! ;)
 
 - [Smart Mapster Registration]
 - [Mapster Extensions]
-
------------------------------
-
-## Getting started
-
-You can use one of provided templates for your web or console application.
-
-### [Console app with DI](https://github.com/jurilents/NeerCore-Examples-ConsoleDependencyInjection)
-
-A simple example of a console application using Dependency Injection.
-
-### [Simple API](https://github.com/jurilents/NeerCore-Examples-SimpleApi)
-
-> I recommend it as your first NeerCore project template 😏.
-
-All what you need in single project. Minimal template for simple projects.
-
-### [Services-based API](https://github.com/jurilents/NeerCore-Examples-ServiceBasedApi)
-
-Just a clean API template and nothing more :)
-
-### [CQRS-based API](https://github.com/jurilents/NeerCore-Examples-MediatorBasedApi)
-
-Clean CQRS Architecture template. All what your need to get started your new  _💡idea💡_!
-
-### [CQRS-based API with more features](https://github.com/jurilents/NeerCore-Examples-CompletedApi)
-
-Clean CQRS Architecture template with more features. Provided features: EF Identity, Localization, JWT Auth.
 
 -----------------------------
 
