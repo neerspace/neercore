@@ -28,4 +28,21 @@ public static class TypeExtensions
         return type.GetAttribute<TAttribute>()
                ?? throw new TypeLoadException($"Attribute '{typeof(TAttribute).Name}' for type {type.Name} not found.");
     }
+
+    /// <summary>
+    ///   Safely checks is the <paramref name="t1"/> is inherited from <paramref name="t2"/>.
+    /// </summary>
+    /// <returns><b>true</b> is inherits otherwise <b>false</b></returns>
+    public static bool InheritsFrom(this Type? t1, Type? t2)
+    {
+        if (t1 is null || t2 is null)
+            return false;
+        if (t1.BaseType is { IsGenericType: true } && t1.BaseType.GetGenericTypeDefinition() == t2)
+            return true;
+        if (InheritsFrom(t1.BaseType!, t2))
+            return true;
+
+        return (t2.IsAssignableFrom(t1) && t1 != t2) ||
+               t1.GetInterfaces().Any(x => x.IsGenericType && x.GetGenericTypeDefinition() == t2);
+    }
 }
