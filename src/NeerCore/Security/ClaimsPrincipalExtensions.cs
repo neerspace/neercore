@@ -3,6 +3,7 @@ using NeerCore.Exceptions;
 
 namespace NeerCore.Security;
 
+[Obsolete("Should be removed in the next version. Use your own claims extension class instead of this.")]
 public static class ClaimsPrincipalExtensions
 {
     /// <summary>
