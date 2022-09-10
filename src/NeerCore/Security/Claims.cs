@@ -5,6 +5,7 @@ namespace NeerCore.Security;
 /// <summary>
 ///   A set of default claims.
 /// </summary>
+[Obsolete("Should be removed in the next version. Use your own claims class instead of this.")]
 public struct Claims
 {
     public const string Id = "sub";
