@@ -51,6 +51,8 @@ public abstract class DbContextFactoryBase<TContext> : IDesignTimeDbContextFacto
     /// <returns>An instance of db context.</returns>
     public abstract TContext CreateDbContext(string[] args);
 
+    public virtual TContext CreateDbContext() => CreateDbContext(null!);
+
     /// <summary>
     ///   Configures DbContext options.
     /// </summary>
