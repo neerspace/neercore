@@ -12,24 +12,25 @@ public static class QueryableExtensions
     ///   <see cref="NotFoundException"/> if the sequence contains no elements.
     /// </summary>
     /// <param name="source">The source query.</param>
+    /// <param name="errorMessage">The error message that will be threw instead of the default one when an exception occurs.</param>
     /// <param name="cancel">Cancellation token</param>
     /// <typeparam name="TEntity">The type of the elements of <paramref name="source"/>. Must be a type that implements <see cref="IEntity"/> interface.</typeparam>
     /// <returns>Found entity or throws 404 exception.</returns>
     /// <exception cref="NotFoundException{TEntity}"><paramref name="source"/> is empty.</exception>
-    public static async Task<TEntity> FirstOr404Async<TEntity>(this IQueryable<TEntity> source, CancellationToken cancel = default)
+    public static async Task<TEntity> FirstOr404Async<TEntity>(this IQueryable<TEntity> source, string? errorMessage = null, CancellationToken cancel = default)
         where TEntity : class, IEntity
     {
         return await source.FirstOrDefaultAsync(cancel)
-               ?? throw new NotFoundException<TEntity>();
+               ?? throw CreateNotFoundException<TEntity>(errorMessage);
     }
 
     /// <param name="predicate">A function to test each element for a condition.</param>
     /// <inheritdoc cref="FirstOr404Async{TEntity}(System.Linq.IQueryable{TEntity},System.Threading.CancellationToken)"/>
-    public static async Task<TEntity> FirstOr404Async<TEntity>(this IQueryable<TEntity> source, Expression<Func<TEntity, bool>> predicate, CancellationToken cancel = default)
+    public static async Task<TEntity> FirstOr404Async<TEntity>(this IQueryable<TEntity> source, Expression<Func<TEntity, bool>> predicate, string? errorMessage = null, CancellationToken cancel = default)
         where TEntity : class, IEntity
     {
         return await source.FirstOrDefaultAsync(predicate, cancel)
-               ?? throw new NotFoundException<TEntity>();
+               ?? throw CreateNotFoundException<TEntity>(errorMessage);
     }
 
     /// <summary>
@@ -50,5 +51,12 @@ public static class QueryableExtensions
         foreach (string inclusion in inclusions)
             source = source.Include(inclusion);
         return source;
+    }
+
+    private static NotFoundException CreateNotFoundException<TEntity>(string? errorMessage)
+    {
+        return string.IsNullOrEmpty(errorMessage)
+            ? throw new NotFoundException<TEntity>()
+            : throw new NotFoundException(errorMessage);
     }
 }
