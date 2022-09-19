@@ -56,7 +56,7 @@ public static class QueryableExtensions
     private static NotFoundException CreateNotFoundException<TEntity>(string? errorMessage)
     {
         return string.IsNullOrEmpty(errorMessage)
-            ? throw new NotFoundException<TEntity>()
-            : throw new NotFoundException(errorMessage);
+            ? new NotFoundException<TEntity>()
+            : new NotFoundException(errorMessage);
     }
 }
