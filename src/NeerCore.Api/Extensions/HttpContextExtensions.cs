@@ -58,9 +58,12 @@ public static class HttpContextExtensions
     /// </summary>
     /// <param name="context"></param>
     /// <param name="exception"></param>
-    public static async Task Write500ErrorAsync(this HttpResponse context, Exception exception)
+    /// <param name="extended"></param>
+    public static async Task Write500ErrorAsync(this HttpResponse context, Exception exception, bool extended = false)
     {
-        var error = new InternalServerException(exception.Message).CreateError();
+        var message = extended ? exception.Message : "Server Error.";
+        var error = new InternalServerException(message).CreateError();
+
         await context.WriteJsonAsync(HttpStatusCode.InternalServerError, error);
     }
 

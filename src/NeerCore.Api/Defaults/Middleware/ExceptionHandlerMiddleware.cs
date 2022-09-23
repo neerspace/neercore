@@ -48,6 +48,10 @@ public sealed class ExceptionHandlerMiddleware : IMiddleware
             {
                 await context.Response.WriteJsonAsync(HttpStatusCode.NotFound, e);
             }
+            else
+            {
+                await ProcessCommonExceptionAsync(context, e);
+            }
         }
         catch (HttpException e)
         {
@@ -56,7 +60,7 @@ public sealed class ExceptionHandlerMiddleware : IMiddleware
                 if ((int)e.StatusCode >= 500)
                 {
                     _logger.LogError(e, "Internal Server Error");
-                    await context.Response.Write500ErrorAsync(e);
+                    await context.Response.Write500ErrorAsync(e, _options.Extended500ExceptionMessage);
                 }
                 else
                 {
@@ -77,6 +81,6 @@ public sealed class ExceptionHandlerMiddleware : IMiddleware
     private async Task ProcessCommonExceptionAsync(HttpContext context, Exception e)
     {
         _logger.LogError(e, "Unhandled Server Error");
-        await context.Response.Write500ErrorAsync(e);
+        await context.Response.Write500ErrorAsync(e, _options.Extended500ExceptionMessage);
     }
 }
