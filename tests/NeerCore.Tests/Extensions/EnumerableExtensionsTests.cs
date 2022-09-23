@@ -15,7 +15,7 @@ public class EnumerableExtensionsTests
         }
         else
         {
-            Assert.Throws<NotFoundException>(source.FirstOr404);
+            Assert.Throws<NotFoundException>(() => source.FirstOr404());
         }
     }
 
@@ -23,7 +23,7 @@ public class EnumerableExtensionsTests
     [InlineData("item_1", "item_2")]
     public void Test_FirstOr404_With_Predicate(params object[] source)
     {
-        object actual = source.FirstOr404(x => (string) x == "item_2");
+        object actual = source.FirstOr404(x => (string)x == "item_2");
         Assert.Equal("item_2", actual);
     }
 }

@@ -2,7 +2,9 @@
 using FluentValidation;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 using NeerCore.Api.Extensions;
+using NeerCore.Api.Options;
 using NeerCore.Exceptions;
 
 namespace NeerCore.Api.Defaults.Middleware;
@@ -12,13 +14,15 @@ namespace NeerCore.Api.Defaults.Middleware;
 ///   a <see cref="HttpException"/> with custom formatted error messages
 ///   and default 500 exception with fine view otherwise.
 /// </summary>
-public class ExceptionHandlerMiddleware : IMiddleware
+public sealed class ExceptionHandlerMiddleware : IMiddleware
 {
-    protected readonly ILogger Logger;
+    private readonly ILogger _logger;
+    private readonly ExceptionHandlerOptions _options;
 
-    public ExceptionHandlerMiddleware(ILoggerFactory loggerFactory)
+    public ExceptionHandlerMiddleware(ILoggerFactory loggerFactory, IOptions<ExceptionHandlerOptions> optionsAccessor)
     {
-        Logger = loggerFactory.CreateLogger(GetType());
+        _logger = loggerFactory.CreateLogger(GetType());
+        _options = optionsAccessor.Value;
     }
 
     public async Task InvokeAsync(HttpContext context, RequestDelegate next)
@@ -29,22 +33,50 @@ public class ExceptionHandlerMiddleware : IMiddleware
         }
         catch (ValidationException e)
         {
-            await context.Response.WriteJsonAsync(HttpStatusCode.BadRequest, e.CreateFluentValidationError());
+            if (_options.HandleFluentValidationExceptions)
+            {
+                await context.Response.WriteJsonAsync(HttpStatusCode.BadRequest, e.CreateFluentValidationError());
+            }
+            else
+            {
+                await ProcessCommonExceptionAsync(context, e);
+            }
+        }
+        catch (InvalidOperationException e)
+        {
+            if (_options.HandleLinqExceptions)
+            {
+                await context.Response.WriteJsonAsync(HttpStatusCode.NotFound, e);
+            }
         }
         catch (HttpException e)
         {
-            if ((int)e.StatusCode >= 500)
+            if (_options.HandleHttpExceptions)
             {
-                Logger.LogError(e, "Internal Server Error");
-                await context.Response.Write500ErrorAsync(e);
+                if ((int)e.StatusCode >= 500)
+                {
+                    _logger.LogError(e, "Internal Server Error");
+                    await context.Response.Write500ErrorAsync(e);
+                }
+                else
+                {
+                    await context.Response.WriteJsonAsync(e.StatusCode, e.CreateError());
+                }
             }
             else
-                await context.Response.WriteJsonAsync(e.StatusCode, e.CreateError());
+            {
+                await ProcessCommonExceptionAsync(context, e);
+            }
         }
         catch (Exception e)
         {
-            Logger.LogError(e, "Unhandled Server Error");
-            await context.Response.Write500ErrorAsync(e);
+            await ProcessCommonExceptionAsync(context, e);
         }
+    }
+
+    private async Task ProcessCommonExceptionAsync(HttpContext context, Exception e)
+    {
+        _logger.LogError(e, "Unhandled Server Error");
+        await context.Response.Write500ErrorAsync(e);
     }
 }
