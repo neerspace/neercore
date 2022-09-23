@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using NeerCore.Api.Defaults.Middleware;
 using NeerCore.DependencyInjection;
+using ExceptionHandlerOptions = NeerCore.Api.Options.ExceptionHandlerOptions;
 
 namespace NeerCore.Api.Extensions;
 
@@ -15,6 +16,8 @@ public static class MiddlewareExtensions
     /// <param name="lifetime">Lifetime of a service in <see cref="services"/> <see cref="IServiceCollection"/>.</param>
     public static IServiceCollection AddFactoryMiddlewares(this IServiceCollection services, ServiceLifetime lifetime = ServiceLifetime.Scoped)
     {
+        services.AddOptions<ExceptionHandlerOptions>();
+        
         IEnumerable<Type> middlewares = AssemblyProvider.GetImplementationsOf<IMiddleware>(asm =>
             AssemblyProvider.IsApplicationAssembly(asm) || asm.GetName().Name!.StartsWith("NeerCore"));
         foreach (Type middleware in middlewares)
