@@ -27,13 +27,6 @@ public static partial class ServiceCollectionExtensions
     }
 
     /// <inheritdoc cref="AddServicesFromAssembly(IServiceCollection,Assembly,Action{InjectionOptions}?)"/>
-    [Obsolete("Use 'AddAllServices' instead of this.")]
-    public static IServiceCollection AddServicesFromCurrentAssembly(this IServiceCollection services, Action<InjectionOptions>? configureOptions = null)
-    {
-        return services.AddServicesFromAssembly(Assembly.GetCallingAssembly(), configureOptions);
-    }
-
-    /// <inheritdoc cref="AddServicesFromAssembly(IServiceCollection,Assembly,Action{InjectionOptions}?)"/>
     public static IServiceCollection AddAllServices(this IServiceCollection services, Action<InjectionOptions>? configureOptions = null)
     {
         return services.AddServicesFromAssembly(Assembly.GetCallingAssembly(), configureOptions);
@@ -45,8 +38,12 @@ public static partial class ServiceCollectionExtensions
         return services.AddServicesFromAssembly(Assembly.Load(assemblyName), configureOptions);
     }
 
+    /// <summary>Registers all services marked with attribute <see cref="InjectableAttribute"/> to DI container.</summary>
+    /// <remarks><b>All services implementations MUST be configured with attribute <see cref="InjectableAttribute"/>.</b></remarks>
+    /// <param name="services">The <see cref="IServiceCollection" /> to add services to.</param>
+    /// <param name="configureOptions"></param>
     /// <param name="assembly">Services implementations assembly.</param>
-    /// <inheritdoc cref="AddServices(IServiceCollection,Action{InjectionOptions}?)"/>
+    /// <exception cref="ArgumentOutOfRangeException">If invalid injection type provided.</exception>
     public static IServiceCollection AddServicesFromAssembly(this IServiceCollection services, Assembly assembly, Action<InjectionOptions>? configureOptions = null)
     {
         var options = new InjectionOptions();
@@ -57,21 +54,6 @@ public static partial class ServiceCollectionExtensions
 
         return services.AddServices(options);
     }
-
-    /// <summary>Registers all services marked with attribute <see cref="InjectAttribute"/> to DI container.</summary>
-    /// <remarks><b>All services implementations MUST be configured with attribute <see cref="InjectAttribute"/>.</b></remarks>
-    /// <param name="services">The <see cref="IServiceCollection" /> to add services to.</param>
-    /// <param name="configureOptions"></param>
-    /// <exception cref="ArgumentOutOfRangeException">If invalid injection type provided.</exception>
-    [Obsolete("Use 'AddAllServices' instead of this.")]
-    public static IServiceCollection AddServices(this IServiceCollection services, Action<InjectionOptions>? configureOptions = null)
-    {
-        var options = new InjectionOptions();
-        configureOptions?.Invoke(options);
-        options.ServiceAssemblies ??= new[] { Assembly.GetCallingAssembly() };
-        return services.AddServices(options);
-    }
-
 
     private static IServiceCollection AddServices(this IServiceCollection services, InjectionOptions options)
     {
@@ -86,32 +68,17 @@ public static partial class ServiceCollectionExtensions
         {
             var attributes = implType.GetCustomAttributes<InjectableAttribute>().ToArray();
 
-            if (attributes.Any())
+            if (!attributes.Any()) continue;
+            foreach (var attr in attributes)
             {
-                foreach (var attr in attributes)
-                {
-                    if (attr.InjectionType is InjectionType.Default)
-                        attr.InjectionType = options.DefaultInjectionType;
-                    if (attr.Lifetime is InstanceLifetime.Default)
-                        attr.Lifetime = options.DefaultLifetime.ToInstanceLifetime();
+                if (attr.InjectionType is InjectionType.Default)
+                    attr.InjectionType = options.DefaultInjectionType;
+                if (attr.Lifetime is InstanceLifetime.Default)
+                    attr.Lifetime = options.DefaultLifetime.ToInstanceLifetime();
 
-                    // Ignore service if environment is required and current env IS NOT EQUALS service env
-                    if (IsCurrentEnvironment(attr.Environment, env))
-                        services.AddServices(attr, implType);
-                }
-            }
-            else
-            {
-                // TODO: Remove obsolete in next version
-                var attributesOld = implType.GetCustomAttributes<InjectAttribute>().ToArray();
-
-                if (attributesOld.Any())
-                {
-                    foreach (var attribute in attributesOld)
-                    {
-                        services.AddServicesOld(implType, attribute);
-                    }
-                }
+                // Ignore service if environment is required and current env IS NOT EQUALS service env
+                if (IsCurrentEnvironment(attr.Environment, env))
+                    services.AddServices(attr, implType);
             }
         }
 

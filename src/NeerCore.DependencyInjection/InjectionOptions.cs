@@ -6,7 +6,7 @@ namespace NeerCore.DependencyInjection;
 /// <summary>
 ///   Service injection configuration options.
 /// </summary>
-public record InjectionOptions
+public sealed record InjectionOptions
 {
     /// <summary>
     ///   A list of <see cref="Assembly"/> where stored services marked with <see cref="InjectableAttribute"/>.

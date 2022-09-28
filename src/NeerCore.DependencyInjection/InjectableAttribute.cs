@@ -1,20 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-
-namespace NeerCore.DependencyInjection;
-
-[Obsolete("Use NeerCore.DependencyInjection.InjectableAttribute instead of this.")]
-public class InjectAttribute : InjectableAttribute
-{
-    /// <summary>
-    ///   Specifies a DI scope lifetime.
-    /// </summary>
-    public new ServiceLifetime Lifetime { get; set; } = ServiceLifetime.Transient;
-
-    /// <summary>
-    ///   Specify injection type.
-    /// </summary>
-    public new InjectionType InjectionType { get; set; } = InjectionType.Auto;
-}
+﻿namespace NeerCore.DependencyInjection;
 
 /// <summary>
 ///   Attribute to simple reference your service class with DI.
