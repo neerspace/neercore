@@ -6,7 +6,7 @@ namespace NeerCore.Exceptions;
 ///   The exception represents an HTTP error with status <b>403</b>.
 ///   Forbidden <i>(or user has no required permissions to access the resource).</i>
 /// </summary>
-public class ForbidException : HttpException
+public sealed class ForbidException : HttpException
 {
     public override HttpStatusCode StatusCode => HttpStatusCode.Forbidden;
     public override string ErrorType => "AccessDenied";

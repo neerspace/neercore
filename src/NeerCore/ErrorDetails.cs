@@ -6,4 +6,4 @@
 /// </summary>
 /// <param name="Field">Field where problem found.</param>
 /// <param name="Message">Problem description.</param>
-public record ErrorDetails(string Field, string Message);
+public sealed record ErrorDetails(string Field, string Message);

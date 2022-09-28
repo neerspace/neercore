@@ -6,7 +6,7 @@ namespace NeerCore.Json.Policies;
 /// <summary>
 ///   A snake_case_naming policy for <see cref="System.Text.Json">System.Text.Json</see>.
 /// </summary>
-public class SnakeCaseNamingPolicy : JsonNamingPolicy
+public sealed class SnakeCaseNamingPolicy : JsonNamingPolicy
 {
     /// <summary>
     ///   Default instance.

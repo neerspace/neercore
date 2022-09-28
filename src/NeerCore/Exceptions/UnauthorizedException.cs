@@ -6,7 +6,7 @@ namespace NeerCore.Exceptions;
 ///   The exception represents an HTTP error with status <b>401</b>.
 ///   Unauthorized <i>(or your resource requires an authorized user).</i>
 /// </summary>
-public class UnauthorizedException : HttpException
+public sealed class UnauthorizedException : HttpException
 {
     public override HttpStatusCode StatusCode => HttpStatusCode.Unauthorized;
     public override string ErrorType => "Unauthorized";
