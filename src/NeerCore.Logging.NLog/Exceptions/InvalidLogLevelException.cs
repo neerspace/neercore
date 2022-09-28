@@ -1,6 +1,6 @@
 namespace NeerCore.Logging.Exceptions;
 
-public class InvalidLogLevelException : Exception
+public sealed class InvalidLogLevelException : Exception
 {
     public InvalidLogLevelException(string logLevel)
         : base($"Log level {logLevel} is not valid. " +

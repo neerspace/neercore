@@ -14,7 +14,7 @@ jobs:
   deploy-nuget:
     strategy:
       matrix:
-        version: [ "1.6.0" ]
+        version: [ "1.6.0-prerelease" ]
         project:
           - NeerCore
           - NeerCore.Api
