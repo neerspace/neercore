@@ -6,8 +6,7 @@
 
 [![NuGet Release](https://img.shields.io/nuget/v/NeerCore?label=Actual&logo=nuget&style=for-the-badge)](https://www.nuget.org/packages?q=NeerCore)
 [![NuGet Pre-Release](https://img.shields.io/nuget/dt/NeerCore.DependencyInjection?color=512bd4&style=for-the-badge)](https://www.nuget.org/packages/NeerCore.DependencyInjection)
-
-[//]: # ([![NuGet Pre-Release]&#40;https://img.shields.io/nuget/vpre/NeerCore?label=Latest&logo=nuget&style=for-the-badge&#41;]&#40;https://www.nuget.org/packages?q=NeerCore&#41;)
+[![NuGet Pre-Release](https://img.shields.io/nuget/vpre/NeerCore?label=Latest&logo=nuget&style=for-the-badge)](https://www.nuget.org/packages?q=NeerCore)
 
 [![GitHub license](https://img.shields.io/github/license/jurilents/NeerCore?color=512bd4&logo=github&style=flat-square)](https://github.com/jurilents/NeerCore/blob/master/LICENSE)
 [![GitHub Actions](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fatrox%2Fsync-dotenv%2Fbadge&label=publish&style=flat-square)](https://actions-badge.atrox.dev/jurilents/NeerCore/badge)
