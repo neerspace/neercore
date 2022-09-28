@@ -1,8 +1,8 @@
 name: Publish NuGet Packages
 
 on:
-  push:
-    branches: [ master ]
+#  push:
+#    branches: [ master ]
   pull_request:
     branches: [ master ]
 
@@ -45,10 +45,10 @@ jobs:
         run: dotnet pack ./src/${{ matrix.project }}/${{ matrix.project }}.csproj -c Release --no-build /p:Version=${{ matrix.version }}  -o ./src/${{ matrix.project }}
 
       - name: Push to NuGet
-        run: dotnet nuget push "./src/${{ matrix.project }}/${{ matrix.project }}.${{ matrix.version }}.nupkg" --api-key ${{secrets.NUGET_API_KEY}} --source $pkg_source_nuget
+        run: dotnet nuget push "./src/${{ matrix.project }}/${{ matrix.project }}.${{ matrix.version }}.nupkg" --api-key ${{secrets.NUGET_API_KEY}} --source $pkg_source_nuget --skip-duplicate
 
       - name: Prepare GitHub packages source
         run: dotnet nuget add source --username jurilents --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github $pkg_source_github
 
       - name: Publish to GitHub packages
-        run: dotnet nuget push "./src/${{ matrix.project }}/${{ matrix.project }}.${{ matrix.version }}.nupkg" --api-key ${{ secrets.GITHUB_TOKEN }}  --source "github"
+        run: dotnet nuget push "./src/${{ matrix.project }}/${{ matrix.project }}.${{ matrix.version }}.nupkg" --api-key ${{ secrets.GITHUB_TOKEN }}  --source "github" --skip-duplicate
