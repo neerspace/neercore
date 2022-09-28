@@ -10,7 +10,7 @@ namespace NeerCore.Api;
 ///   Configures ASP.NET Core controllers to use kebab case naming by default.
 /// </summary>
 /// <remarks>kebab-case-example</remarks>
-public class KebabCaseNamingConvention : IOutboundParameterTransformer
+public sealed class KebabCaseNamingConvention : IOutboundParameterTransformer
 {
     /// <summary>
     ///   Used to convert ControllerClassNames to kebab-case-style routes.

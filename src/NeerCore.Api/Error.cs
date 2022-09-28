@@ -3,7 +3,7 @@
 /// <summary>
 ///   Record that represents a default NeerCore HTTP error response.
 /// </summary>
-public record Error
+public sealed record Error
 {
     /// <example>400</example>
     public int Status { get; init; }
@@ -29,7 +29,7 @@ public record Error
     /// <summary>
     ///   Detailed information about single invalid field.
     /// </summary>
-    public record Details
+    public sealed record Details
     {
         /// <example>username</example>
         public string? Field { get; init; }

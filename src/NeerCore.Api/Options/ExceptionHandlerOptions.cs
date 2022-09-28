@@ -1,6 +1,6 @@
 namespace NeerCore.Api.Options;
 
-public class ExceptionHandlerOptions
+public sealed class ExceptionHandlerOptions
 {
     public bool HandleHttpExceptions { get; set; } = true;
     public bool HandleLinqExceptions { get; set; } = true;

@@ -1,9 +1,6 @@
 ﻿namespace NeerCore.Api.Extensions.Swagger;
 
-[Obsolete("Use 'SwaggerConfigurationSettings' instead of this.")]
-public class SwaggerConfigurationOptions : SwaggerConfigurationSettings { }
-
-public class SwaggerConfigurationSettings
+public sealed class SwaggerConfigurationOptions
 {
     public bool Enabled { get; init; } = true;
     public bool ApiDocs { get; init; } = true;

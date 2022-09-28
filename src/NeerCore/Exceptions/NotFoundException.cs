@@ -7,7 +7,7 @@ namespace NeerCore.Exceptions;
 ///   The exception represents an HTTP error with status <b>404</b>.
 ///   <i>Not found (or resource not exists).</i>
 /// </summary>
-public sealed class NotFoundException : HttpException
+public class NotFoundException : HttpException
 {
     public override HttpStatusCode StatusCode => HttpStatusCode.NotFound;
     public override string ErrorType => "NotFound";
@@ -16,11 +16,7 @@ public sealed class NotFoundException : HttpException
     public NotFoundException(string message) : base(message) { }
 }
 
-public sealed class NotFoundException<T> : HttpException
+public sealed class NotFoundException<T> : NotFoundException
 {
-    public override HttpStatusCode StatusCode => HttpStatusCode.NotFound;
-    public override string ErrorType => "NotFound";
-
-
     public NotFoundException() : base(typeof(T).Name.CamelCaseToWords() + " not found.") { }
 }

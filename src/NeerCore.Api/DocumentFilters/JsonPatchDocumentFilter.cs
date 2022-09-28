@@ -12,7 +12,7 @@ namespace NeerCore.Api.DocumentFilters;
 ///   Swagger document filter to hide redundant models from
 ///   <see cref="Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{TModel}"/>.
 /// </summary>
-public class JsonPatchDocumentFilter : IDocumentFilter
+public sealed class JsonPatchDocumentFilter : IDocumentFilter
 {
     public void Apply(OpenApiDocument swaggerDoc, DocumentFilterContext context)
     {
