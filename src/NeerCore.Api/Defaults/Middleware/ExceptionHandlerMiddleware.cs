@@ -42,17 +42,6 @@ public sealed class ExceptionHandlerMiddleware : IMiddleware
                 await ProcessCommonExceptionAsync(context, e);
             }
         }
-        catch (InvalidOperationException e)
-        {
-            if (_options.HandleLinqExceptions)
-            {
-                await context.Response.WriteJsonAsync(HttpStatusCode.NotFound, e);
-            }
-            else
-            {
-                await ProcessCommonExceptionAsync(context, e);
-            }
-        }
         catch (HttpException e)
         {
             if (_options.HandleHttpExceptions)

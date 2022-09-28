@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using NeerCore.Data.EntityFramework.Comparers;
 using NeerCore.Data.EntityFramework.Converters;
 
 namespace NeerCore.Data.EntityFramework.Extensions;
@@ -19,6 +20,6 @@ public static class ModelConfigurationBuilderExtensions
 
     public static void ApplyLocalizedStringConversions(this ModelConfigurationBuilder configurationBuilder)
     {
-        configurationBuilder.Properties<LocalizedString>().HaveConversion<LocalizedStringConverter>();
+        configurationBuilder.Properties<LocalizedString>().HaveConversion<LocalizedStringConverter, LocalizedStringComparer>();
     }
 }
