@@ -1,5 +1,4 @@
-﻿using System.Reflection;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using NeerCore.Data.EntityFramework.Abstractions;
 using NeerCore.Data.EntityFramework.Design;
 using NeerCore.Data.EntityFramework.Extensions;
@@ -9,7 +8,7 @@ namespace NeerCoreTestingSuite.WebApp.Data;
 
 public sealed class SqliteDbContext : DbContext, IDatabaseContext
 {
-    public SqliteDbContext(DbContextOptions options) : base(options)
+    public SqliteDbContext(DbContextOptions<SqliteDbContext> options) : base(options)
     {
         // Disable entity tracking by default
         ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;

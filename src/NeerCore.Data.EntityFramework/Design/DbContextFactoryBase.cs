@@ -17,6 +17,14 @@ public abstract class DbContextFactoryBase<TContext> : IDesignTimeDbContextFacto
     where TContext : DbContext
 {
     /// <summary>
+    ///   Enables (true) or disables (false) an internal logging using <see cref="Log"/> method.
+    /// </summary>
+    /// <remarks>
+    ///   You can override <see cref="Log"/> method if you want to use a different logger implementation.
+    /// </remarks>
+    public virtual bool LoggingDuringMigration => true;
+
+    /// <summary>
     ///   Connection string name in settings file.
     /// </summary>
     public virtual string SelectedConnectionName => "DefaultConnection";
@@ -37,7 +45,15 @@ public abstract class DbContextFactoryBase<TContext> : IDesignTimeDbContextFacto
     /// <summary>
     ///   Connection string used for <see cref="TContext" />.
     /// </summary>
-    public virtual string ConnectionString => GetConnectionStringsFromJson(SettingsPath)[SelectedConnectionName];
+    public virtual string ConnectionString
+    {
+        get
+        {
+            var selectedConnection = GetConnectionStringsFromJson(SettingsPath)[SelectedConnectionName];
+            Log("Selected connection string:" + selectedConnection);
+            return selectedConnection;
+        }
+    }
 
     /// <summary>
     ///   Path to the assembly with migrations.
@@ -61,9 +77,9 @@ public abstract class DbContextFactoryBase<TContext> : IDesignTimeDbContextFacto
     /// <summary>
     ///   Creates DbContext options.
     /// </summary>
-    public virtual DbContextOptions CreateContextOptions()
+    public virtual DbContextOptions<TContext> CreateContextOptions()
     {
-        Console.WriteLine("Database connection used: " + SelectedConnectionName);
+        Log("Database connection used: " + SelectedConnectionName);
 
         var optionsBuilder = new DbContextOptionsBuilder<TContext>();
         ConfigureContextOptions(optionsBuilder);
@@ -99,7 +115,14 @@ public abstract class DbContextFactoryBase<TContext> : IDesignTimeDbContextFacto
         }
         catch (KeyNotFoundException)
         {
-            throw new KeyNotFoundException($"Configuration file '{appsettingsPath}' successfully found, but no connection string found there by path: '{ConnectionStringsSectionPath}'.");
+            throw new KeyNotFoundException($"Configuration file '{appsettingsPath}' successfully found, " +
+                                           $"but no connection string found there by path: '{ConnectionStringsSectionPath}'.");
         }
+    }
+
+    protected virtual void Log(string message)
+    {
+        if (LoggingDuringMigration)
+            Console.WriteLine(message);
     }
 }
