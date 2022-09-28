@@ -103,7 +103,10 @@ public readonly struct LocalizedString : IEnumerable<KeyValuePair<string, string
                && !a._localizations.Except(b._localizations).Any();
     }
 
+    public bool AnyLocalizationEquals(string other) => _localizations.Any(l => string.Equals(l.Value, other));
+    public bool AnyLocalizationEquals(string other, StringComparison comparisonType) => _localizations.Any(l => string.Equals(l.Value, other, comparisonType));
     public bool Equals(LocalizedString other) => _localizations.Equals(other._localizations);
+
     public override bool Equals(object? obj) => obj is LocalizedString other && Equals(other);
     public override int GetHashCode() => _localizations.GetHashCode();
 
