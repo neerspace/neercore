@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace NeerCore.Data.EntityFramework.Converters;
 
-public class NullableDateTimeUtcConverter : ValueConverter<DateTime?, DateTime?>
+public sealed class NullableDateTimeUtcConverter : ValueConverter<DateTime?, DateTime?>
 {
     public NullableDateTimeUtcConverter()
         : base(

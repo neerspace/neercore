@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace NeerCore.Data.EntityFramework.Converters;
 
-public class LocalizedStringConverter : ValueConverter<LocalizedString, string>
+public sealed class LocalizedStringConverter : ValueConverter<LocalizedString, string>
 {
     public LocalizedStringConverter()
             : base(
