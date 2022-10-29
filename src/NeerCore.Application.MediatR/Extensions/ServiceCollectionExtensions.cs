@@ -45,8 +45,11 @@ public static class ServiceCollectionExtensions
     public static void AddMediatorApplication(this IServiceCollection services, IEnumerable<Assembly> assemblies)
     {
         var assembliesArray = assemblies as Assembly[] ?? assemblies.ToArray();
-
-        services.AddMediatR(assembliesArray).AddFluentValidation(options => { options.DisableDataAnnotationsValidation = true; });
+        services.AddMediatR(assembliesArray).AddFluentValidationAutoValidation(options =>
+        {
+            // Disable default validation
+            options.DisableDataAnnotationsValidation = true;
+        }).AddFluentValidationClientsideAdapters();
         services.AddFluentValidation(assembliesArray);
     }
 }
