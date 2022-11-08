@@ -53,6 +53,7 @@ public static class SwaggerExtensions
 
         if (swaggerSettings.ApiDocs)
         {
+            // TODO: Check why :)
             app.UseReDoc(options =>
             {
                 var description = apiProvider.ApiVersionDescriptions[0];

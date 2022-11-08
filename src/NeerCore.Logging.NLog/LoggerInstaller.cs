@@ -85,12 +85,14 @@ public static class LoggerInstaller
     private static IConfigurationRoot BuildConfiguration(string configurationPath, string? altConfigurationPath = null)
     {
         var configurationBuilder = new ConfigurationBuilder()
-            .SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile(configurationPath, optional: true);
+            .SetBasePath(Directory.GetCurrentDirectory());
+
         if (!string.IsNullOrEmpty(altConfigurationPath))
             configurationBuilder = configurationBuilder
                 .AddJsonFile(altConfigurationPath, optional: false);
 
-        return configurationBuilder.Build();
+        return configurationBuilder
+            .AddJsonFile(configurationPath, optional: true)
+            .Build();
     }
 }

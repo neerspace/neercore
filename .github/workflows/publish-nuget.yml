@@ -16,15 +16,15 @@ jobs:
       matrix:
         version: [ "1.6.1" ]
         project:
-          - NeerCore
-          - NeerCore.Api
-          - NeerCore.Application.MediatR
-          - NeerCore.Data
-          - NeerCore.Data.Abstractions
-          - NeerCore.Data.EntityFramework
-          - NeerCore.DependencyInjection
+#          - NeerCore
+#          - NeerCore.Api
+#          - NeerCore.Application.MediatR
+#          - NeerCore.Data
+#          - NeerCore.Data.Abstractions
+#          - NeerCore.Data.EntityFramework
+#          - NeerCore.DependencyInjection
           - NeerCore.Logging.NLog
-          - NeerCore.Mapping.Mapster
+#          - NeerCore.Mapping.Mapster
 
     runs-on: ubuntu-latest
 
