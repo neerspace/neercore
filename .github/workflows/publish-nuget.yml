@@ -22,7 +22,7 @@ jobs:
 #          - NeerCore.Data
 #          - NeerCore.Data.Abstractions
 #          - NeerCore.Data.EntityFramework
-#          - NeerCore.DependencyInjection
+          - NeerCore.DependencyInjection
           - NeerCore.Logging.NLog
 #          - NeerCore.Mapping.Mapster
 
