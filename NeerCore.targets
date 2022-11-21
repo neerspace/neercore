@@ -6,7 +6,7 @@
     <RepositoryUrl>https://github.com/jurilents/NeerCore</RepositoryUrl>
     <RepositoryType>github</RepositoryType>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <AssemblyVersion>1.6.2</AssemblyVersion>
+    <AssemblyVersion>2.0.0-alpha</AssemblyVersion>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
   </PropertyGroup>
 

@@ -1,29 +1,28 @@
 <Project Sdk="Microsoft.NET.Sdk">
-    <Import Project="..\..\NeerCore.targets" />
+  <Import Project="..\..\NeerCore.targets" />
 
-    <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
 
-        <PackageTags>neercore aspnetcore rest-api versioning swagger</PackageTags>
-        <Description>The NeerCore.Api package is a set of base classes for configuring and easier work with ASP.NET web applications.
+    <PackageTags>neercore aspnetcore rest-api versioning swagger</PackageTags>
+    <Description>The NeerCore.Api package is a set of base classes for configuring and easier work with ASP.NET web applications.
 
-            It is a library for simplified writing of .NET apps. It integrates a popular set of core libraries that are required for developing full-fledged apps, but they don't come out of the box in ASP.NET. NeerCore can be used as shown in the examples in the official repository, or separately in parts that you need. You can also use part of the code from the repository if you do not need to include "one more nuget package" or if your project is not support the version of .NET on which NeerCore was created.
-        </Description>
-    </PropertyGroup>
+      It is a library for simplified writing of .NET apps. It integrates a popular set of core libraries that are required for developing full-fledged apps, but they don't come out of the box in ASP.NET. NeerCore can be used as shown in the examples in the official repository, or separately in parts that you need. You can also use part of the code from the repository if you do not need to include "one more nuget package" or if your project is not support the version of .NET on which NeerCore was created.
+    </Description>
+  </PropertyGroup>
 
-    <ItemGroup>
-        <PackageReference Include="FluentValidation" Version="11.2.2" />
-        <PackageReference Include="Microsoft.AspNetCore.JsonPatch" Version="6.0.9" />
-        <PackageReference Include="Sieve" Version="2.5.5" />
-        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
-        <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.0.0" />
-        <PackageReference Include="Swashbuckle.AspNetCore.ReDoc" Version="6.4.0" />
-    </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.JsonPatch" Version="6.0.9" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.ReDoc" Version="6.4.0" />
+    <PackageReference Include="FluentValidation" Version="11.2.2" />
+  </ItemGroup>
 
-    <ItemGroup>
-        <ProjectReference Include="..\NeerCore.DependencyInjection\NeerCore.DependencyInjection.csproj" />
-        <ProjectReference Include="..\NeerCore\NeerCore.csproj" />
-    </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NeerCore.DependencyInjection\NeerCore.DependencyInjection.csproj" />
+    <ProjectReference Include="..\NeerCore\NeerCore.csproj" />
+  </ItemGroup>
 </Project>
