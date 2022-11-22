@@ -3,7 +3,7 @@ using NeerCoreTestingSuite.ConsoleApp.Services.Abstractions;
 
 namespace NeerCoreTestingSuite.ConsoleApp.Services.Implementations;
 
-[Injectable]
+[Dependency]
 public class MathService : IMathService
 {
     public double Pi => Math.PI;

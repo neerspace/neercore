@@ -4,24 +4,24 @@ namespace NeerCore.DependencyInjection.Extensions;
 
 public static class EnumExtensions
 {
-    public static ServiceLifetime ToServiceLifetime(this InstanceLifetime instanceLifetime)
+    public static ServiceLifetime ToServiceLifetime(this Lifetime lifetime)
     {
-        return instanceLifetime switch
+        return lifetime switch
         {
-            InstanceLifetime.Singleton => ServiceLifetime.Singleton,
-            InstanceLifetime.Scoped => ServiceLifetime.Scoped,
-            InstanceLifetime.Transient => ServiceLifetime.Transient,
-            _ => throw new ArgumentOutOfRangeException(nameof(instanceLifetime), instanceLifetime, null)
+            Lifetime.Singleton => ServiceLifetime.Singleton,
+            Lifetime.Scoped => ServiceLifetime.Scoped,
+            Lifetime.Transient => ServiceLifetime.Transient,
+            _ => throw new ArgumentOutOfRangeException(nameof(lifetime), lifetime, null)
         };
     }
 
-    public static InstanceLifetime ToInstanceLifetime(this ServiceLifetime serviceLifetime)
+    public static Lifetime ToInstanceLifetime(this ServiceLifetime serviceLifetime)
     {
         return serviceLifetime switch
         {
-            ServiceLifetime.Singleton => InstanceLifetime.Singleton,
-            ServiceLifetime.Scoped => InstanceLifetime.Scoped,
-            ServiceLifetime.Transient => InstanceLifetime.Transient,
+            ServiceLifetime.Singleton => Lifetime.Singleton,
+            ServiceLifetime.Scoped => Lifetime.Scoped,
+            ServiceLifetime.Transient => Lifetime.Transient,
             _ => throw new ArgumentOutOfRangeException(nameof(serviceLifetime), serviceLifetime, null)
         };
     }

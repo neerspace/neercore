@@ -4,12 +4,12 @@
 ///   Attribute to simple reference your service class with DI.
 /// </summary>
 [AttributeUsage(AttributeTargets.Class, Inherited = false, AllowMultiple = true)]
-public class InjectableAttribute : Attribute
+public class DependencyAttribute : Attribute
 {
     /// <summary>
     ///   Specifies a DI scope lifetime.
     /// </summary>
-    public InstanceLifetime Lifetime { get; set; } = InstanceLifetime.Default;
+    public Lifetime Lifetime { get; set; } = Lifetime.Default;
 
     /// <summary>
     ///   Specify injection type.
@@ -19,7 +19,7 @@ public class InjectableAttribute : Attribute
     /// <summary>
     ///   Manually specifies injection type for current implementation.
     /// </summary>
-    public Type? ServiceType { get; set; }
+    public virtual Type? ServiceType { get; set; }
 
     /// <summary>
     ///   <b>If not null</b> - Registers a service ONLY FOR specified environment.

@@ -5,7 +5,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using NeerCore.Api.Extensions.Swagger;
 using NeerCore.DependencyInjection.Extensions;
-using Sieve.Services;
 
 namespace NeerCore.Api.Extensions;
 
@@ -32,7 +31,6 @@ public static class ServiceCollectionExtensions
 
     public static IServiceCollection AddNeerApiServices(this IServiceCollection services, IEnumerable<Assembly> assemblies, Func<ApiVersionDescription, OpenApiInfo>? configureInfo)
     {
-        services.AddScoped<ISieveProcessor, SieveProcessor>();
         services.AddServicesFromAssemblies(assemblies);
 
         services.AddFactoryMiddlewares();

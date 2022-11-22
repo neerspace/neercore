@@ -24,7 +24,6 @@ jobs:
           - NeerCore.Data.EntityFramework
           - NeerCore.DependencyInjection
           - NeerCore.Logging.NLog
-          - NeerCore.Filtering.Sieve
           - NeerCore.Mapping.Mapster
 
     runs-on: ubuntu-latest

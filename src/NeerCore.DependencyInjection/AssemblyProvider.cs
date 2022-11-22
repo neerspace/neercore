@@ -27,7 +27,7 @@ public static class AssemblyProvider
     /// <summary>
     ///   Returns a list of types from all available assemblies.
     /// </summary>
-    public static IEnumerable<Assembly> AllAssemblies => allAssemblies ??= LoadAllAssemblies();
+    public static IEnumerable<Assembly> AllAssemblies => allAssemblies ??= LoadAllAssemblies().ToArray();
 
     /// <summary>The way how to determinate that a assembly is source of your app.</summary>
     public static readonly Func<Assembly, bool> IsApplicationAssembly = asm =>
