@@ -17,7 +17,6 @@
 	<ItemGroup>
 		<ProjectReference Include="..\NeerCore.Data\NeerCore.Data.csproj" />
 		<ProjectReference Include="..\NeerCore.DependencyInjection\NeerCore.DependencyInjection.csproj" />
-		<ProjectReference Include="..\NeerCore\NeerCore.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

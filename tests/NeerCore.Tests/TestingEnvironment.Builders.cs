@@ -22,7 +22,7 @@ public static partial class TestingEnvironment
         services.AddTestDatabase();
         services.AddMediatorApplication();
         services.ConfigureAllOptions();
-        services.RegisterAllMappers();
+        services.AddAllMappers();
 
         return services.BuildServiceProvider();
     }

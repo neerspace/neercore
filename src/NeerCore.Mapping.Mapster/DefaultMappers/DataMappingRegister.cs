@@ -1,12 +1,11 @@
 using Mapster;
 using NeerCore.Data;
 
-namespace NeerCore.Mapping.Extensions;
+namespace NeerCore.Mapping.DefaultMappers;
 
-public static class TypeAdapterConfigExtensions
+public class DataMappingRegister : IRegister
 {
-    // TODO: To IRegister
-    public static void AddDefaultConfigs(this TypeAdapterConfig config)
+    public void Register(TypeAdapterConfig config)
     {
         config.NewConfig<LocalizedString, string>()
             .MapWith(localized => localized.GetCurrentLocalization());

@@ -42,7 +42,7 @@ static void ConfigureBuilder(WebApplicationBuilder builder)
     builder.Services.AddDatabase<SqliteDbContext, SqliteDbContextFactory>();
     builder.Services.AddMediatorApplication();
     builder.Services.ConfigureAllOptions();
-    builder.Services.RegisterAllMappers();
+    builder.Services.AddAllMappers();
 
     builder.Services.AddNeerApiServices();
     builder.Services.AddNeerControllers();
