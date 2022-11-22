@@ -141,9 +141,9 @@ public static class ModelBuilderExtensions
         string defaultValueSql = options.EngineStrategy switch
         {
             DbEngineStrategy.SqlServer => utc ? "SYSUTCDATETIME()" : "SYSDATETIME()",
-            DbEngineStrategy.Sqlite => utc ? "DATETIME('now')" : "DATETIME()",
-            DbEngineStrategy.Postgres => utc ? "TIMEZONE('utc', NOW())" : "NOW()",
-            _ => throw new ArgumentException($"{nameof(DbEngineStrategy)} of {options.EngineStrategy} is not currently supported.")
+            DbEngineStrategy.Sqlite    => utc ? "DATETIME('now')" : "DATETIME()",
+            DbEngineStrategy.Postgres  => utc ? "TIMEZONE('utc', NOW())" : "NOW()",
+            _                          => throw new ArgumentException($"{nameof(DbEngineStrategy)} of {options.EngineStrategy} is not currently supported.")
         };
 
         options.DataAssemblies ??= new[] { Assembly.GetCallingAssembly() };
@@ -176,12 +176,6 @@ public static class ModelBuilderExtensions
     ///   instances that are defined in provided <b>calling assembly</b>.
     /// </summary>
     /// <param name="builder">Database model builder.</param>
-    [Obsolete("Use 'ApplyAllConfigurations' instead of this.")]
-    public static ModelBuilder ApplyConfigurations(this ModelBuilder builder)
-    {
-        return builder.ApplyConfigurationsFromAssembly(Assembly.GetCallingAssembly());
-    }
-
     public static ModelBuilder ApplyAllConfigurations(this ModelBuilder builder)
     {
         return builder.ApplyConfigurationsFromAssembly(Assembly.GetCallingAssembly());
