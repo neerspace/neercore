@@ -3,7 +3,7 @@ namespace NeerCore.Logging;
 /// <summary>
 ///   Configuration for custom <b>NeerCore</b> logger.
 /// </summary>
-public class LoggingSettings
+public sealed class LoggingSettings
 {
     /// <summary>
     ///   Defines maximum logging level for loggers by specified rule.
@@ -37,7 +37,7 @@ public class LoggingSettings
     public SingleLoggerSettings ErrorFileLogger { get; set; } = new() { FilePath = "${shortdate}-error.log" };
 }
 
-public class SharedLoggerSettings
+public sealed class SharedLoggerSettings
 {
     /// <summary>
     ///   Base directory for log files.
@@ -45,7 +45,7 @@ public class SharedLoggerSettings
     public string LogsDirectoryPath { get; set; } = "~/logs/";
 }
 
-public class SingleLoggerSettings
+public sealed class SingleLoggerSettings
 {
     /// <summary>
     ///   Disables specific logger if <b>false</b> or enables if <b>true</b>
