@@ -5,9 +5,12 @@ using Microsoft.Extensions.DependencyInjection;
 using NeerCore.DependencyInjection.Extensions;
 
 var services = new ServiceCollection();
-services.AddAllServices();
+services.AddAllServices(options =>
+{
+    options.ResolveInternalImplementations = true;
+});
 var serviceProvider = services.BuildServiceProvider();
 
-serviceProvider.GetService<RootService>()?.Log();
+serviceProvider.GetService<IRootService>()?.Log();
 serviceProvider.GetService<FirstService>()?.Log();
 serviceProvider.GetService<SecondService>()?.Log();

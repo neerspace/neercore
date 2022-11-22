@@ -9,9 +9,9 @@ public static class EnumExtensions
         return lifetime switch
         {
             Lifetime.Singleton => ServiceLifetime.Singleton,
-            Lifetime.Scoped => ServiceLifetime.Scoped,
+            Lifetime.Scoped    => ServiceLifetime.Scoped,
             Lifetime.Transient => ServiceLifetime.Transient,
-            _ => throw new ArgumentOutOfRangeException(nameof(lifetime), lifetime, null)
+            _                  => throw new ArgumentOutOfRangeException(nameof(lifetime), lifetime, null)
         };
     }
 
@@ -20,9 +20,9 @@ public static class EnumExtensions
         return serviceLifetime switch
         {
             ServiceLifetime.Singleton => Lifetime.Singleton,
-            ServiceLifetime.Scoped => Lifetime.Scoped,
+            ServiceLifetime.Scoped    => Lifetime.Scoped,
             ServiceLifetime.Transient => Lifetime.Transient,
-            _ => throw new ArgumentOutOfRangeException(nameof(serviceLifetime), serviceLifetime, null)
+            _                         => throw new ArgumentOutOfRangeException(nameof(serviceLifetime), serviceLifetime, null)
         };
     }
 }

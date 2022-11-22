@@ -24,6 +24,12 @@ public sealed record InjectionOptions
     public InjectionType DefaultInjectionType { get; set; } = InjectionType.Auto;
 
     /// <summary>
+    ///   Allows (true) or disallows (false) the resolver to inject
+    ///   the implementations with internal visibility.
+    /// </summary>
+    public bool ResolveInternalImplementations { get; set; } = false;
+
+    /// <summary>
     ///   Overrides global application environment with a value you define
     ///   <b>(only when registering services)</b>.
     /// </summary>

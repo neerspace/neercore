@@ -57,6 +57,8 @@ public static partial class ServiceCollectionExtensions
 
         options.ServiceAssemblies ??= AssemblyProvider.ApplicationAssemblies;
         IEnumerable<Type> serviceTypes = options.ServiceAssemblies.SelectMany(sa => sa.GetTypes());
+        if (!options.ResolveInternalImplementations)
+            serviceTypes = serviceTypes.Where(st => st.IsPublic);
 
         foreach (Type implType in serviceTypes)
         {

@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using NeerCore.DependencyInjection.Extensions;
 
 namespace NeerCore.DependencyInjection;
 
@@ -67,24 +68,6 @@ public static class AssemblyProvider
         var assemblies = assemblySelector is null ? ApplicationAssemblies : AllAssemblies.Where(assemblySelector);
         return assemblies.SelectMany(a => a.GetTypes())
             .Where(t => t.InheritsFrom(baseType));
-    }
-
-    /// <summary>
-    ///   Safely checks is the <paramref name="t1"/> is inherited from <paramref name="t2"/>.
-    /// </summary>
-    /// <returns><b>true</b> is inherits otherwise <b>false</b></returns>
-    [Obsolete("Use this method from 'TypeExtensions'")]
-    public static bool InheritsFrom(this Type? t1, Type? t2)
-    {
-        if (t1 is null || t2 is null)
-            return false;
-        if (t1.BaseType is { IsGenericType: true } && t1.BaseType.GetGenericTypeDefinition() == t2)
-            return true;
-        if (InheritsFrom(t1.BaseType!, t2))
-            return true;
-
-        return (t2.IsAssignableFrom(t1) && t1 != t2) ||
-               t1.GetInterfaces().Any(x => x.IsGenericType && x.GetGenericTypeDefinition() == t2);
     }
 
     /// <summary>

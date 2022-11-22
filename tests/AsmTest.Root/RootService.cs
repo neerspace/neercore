@@ -2,8 +2,13 @@ using NeerCore.DependencyInjection;
 
 namespace AsmTest.Root;
 
-[Dependency]
-public class RootService
+public interface IRootService
+{
+    void Log();
+}
+
+[Dependency<IRootService>]
+internal class RootService : IRootService
 {
     public void Log() => Console.WriteLine(nameof(RootService));
 }
