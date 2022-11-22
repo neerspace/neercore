@@ -4,7 +4,7 @@
 ///   Attribute to simple reference your service class with DI.
 /// </summary>
 [AttributeUsage(AttributeTargets.Class, Inherited = false, AllowMultiple = true)]
-public class DependencyAttribute : Attribute
+public class ServiceAttribute : Attribute
 {
     /// <summary>
     ///   Specifies a DI scope lifetime.

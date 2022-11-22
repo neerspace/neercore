@@ -2,7 +2,7 @@
 
 namespace AsmTest.Root.SecondLvl;
 
-[Dependency]
+[Service]
 public class SecondService
 {
     public void Log() => Console.WriteLine(nameof(SecondService));

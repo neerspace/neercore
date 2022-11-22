@@ -9,7 +9,7 @@ namespace NeerCore.DependencyInjection;
 public sealed record InjectionOptions
 {
     /// <summary>
-    ///   A list of <see cref="Assembly"/> where stored services marked with <see cref="DependencyAttribute"/>.
+    ///   A list of <see cref="Assembly"/> where stored services marked with <see cref="ServiceAttribute"/>.
     /// </summary>
     public IEnumerable<Assembly>? ServiceAssemblies { get; set; }
 

@@ -3,7 +3,7 @@ using NeerCoreTestingSuite.ConsoleApp.Services.Abstractions;
 
 namespace NeerCoreTestingSuite.ConsoleApp.Services.Implementations;
 
-[Dependency]
+[Service]
 internal class GreetingService : IGreetingService
 {
 	private readonly IMessageSender _sender;

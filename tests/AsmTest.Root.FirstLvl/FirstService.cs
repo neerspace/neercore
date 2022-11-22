@@ -2,7 +2,7 @@
 
 namespace AsmTest.Root.FirstLvl;
 
-[Dependency]
+[Service(Lifetime = Lifetime.Scoped | Lifetime.Singleton)]
 public class FirstService
 {
     public void Log() => Console.WriteLine(nameof(FirstService));

@@ -6,8 +6,8 @@ namespace NeerCore.DependencyInjection.Extensions;
 
 public static partial class ServiceCollectionExtensions
 {
-    /// <summary>Registers all services marked with attribute <see cref="DependencyAttribute"/> to DI container.</summary>
-    /// <remarks><b>All services implementations MUST be configured with attribute <see cref="DependencyAttribute"/>.</b></remarks>
+    /// <summary>Registers all services marked with attribute <see cref="ServiceAttribute"/> to DI container.</summary>
+    /// <remarks><b>All services implementations MUST be configured with attribute <see cref="ServiceAttribute"/>.</b></remarks>
     /// <param name="services">The <see cref="IServiceCollection" /> to add services to.</param>
     /// <param name="configureOptions"></param>
     /// <param name="assembly">Services implementations assembly.</param>
@@ -62,7 +62,7 @@ public static partial class ServiceCollectionExtensions
 
         foreach (Type implType in serviceTypes)
         {
-            var attributes = implType.GetCustomAttributes<DependencyAttribute>().ToArray();
+            var attributes = implType.GetCustomAttributes<ServiceAttribute>().ToArray();
 
             if (!attributes.Any()) continue;
             foreach (var attr in attributes)
@@ -81,7 +81,7 @@ public static partial class ServiceCollectionExtensions
         return services;
     }
 
-    private static void InjectDependency(this IServiceCollection services, DependencyAttribute attr, Type implType)
+    private static void InjectDependency(this IServiceCollection services, ServiceAttribute attr, Type implType)
     {
         switch (attr.InjectionType)
         {
@@ -108,7 +108,7 @@ public static partial class ServiceCollectionExtensions
         || string.IsNullOrEmpty(appEnv)
         || string.Equals(attrEnv, appEnv, StringComparison.OrdinalIgnoreCase);
 
-    private static void AutoInject(this IServiceCollection services, Type implType, DependencyAttribute attr)
+    private static void AutoInject(this IServiceCollection services, Type implType, ServiceAttribute attr)
     {
         if (implType.GetInterfaces().Length > 0)
             InjectAsInterface(services, implType, attr);
@@ -118,19 +118,25 @@ public static partial class ServiceCollectionExtensions
             InjectAsCurrentClass(services, implType, attr);
     }
 
-    private static void InjectAsInterface(this IServiceCollection services, Type implType, DependencyAttribute attr)
+    private static void InjectAsInterface(this IServiceCollection services, Type implType, ServiceAttribute attr)
     {
         attr.ServiceType ??= implType.GetInterfaces().First();
-        services.Add(new ServiceDescriptor(attr.ServiceType, implType, attr.Lifetime.ToServiceLifetime()));
+        services.AddAll(attr.ServiceType, implType, attr.Lifetime);
     }
 
-    private static void InjectAsCurrentClass(this IServiceCollection services, Type implType, DependencyAttribute attr)
+    private static void InjectAsCurrentClass(this IServiceCollection services, Type implType, ServiceAttribute attr)
     {
-        services.Add(new ServiceDescriptor(implType, implType, attr.Lifetime.ToServiceLifetime()));
+        services.AddAll(implType, implType, attr.Lifetime);
     }
 
-    private static void InjectAsParentClass(this IServiceCollection services, Type implType, DependencyAttribute attr)
+    private static void InjectAsParentClass(this IServiceCollection services, Type implType, ServiceAttribute attr)
     {
-        services.Add(new ServiceDescriptor(implType.BaseType!, implType, attr.Lifetime.ToServiceLifetime()));
+        services.AddAll(implType.BaseType!, implType, attr.Lifetime);
+    }
+
+    private static void AddAll(this IServiceCollection services, Type serviceType, Type implType, Lifetime lifetime)
+    {
+        foreach (var serviceLifetime in lifetime.ToServiceLifetimes())
+            services.Add(new ServiceDescriptor(serviceType, implType, serviceLifetime));
     }
 }

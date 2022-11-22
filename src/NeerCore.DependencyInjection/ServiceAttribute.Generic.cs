@@ -8,12 +8,12 @@ namespace NeerCore.DependencyInjection;
 /// <remarks>
 ///   Generic overload supported only in .NET 7
 /// </remarks>
-public class DependencyAttribute<T> : DependencyAttribute
+public class ServiceAttribute<T> : ServiceAttribute
 {
     /// <inheritdoc cref="ServiceType"/>
     public sealed override Type? ServiceType { get; set; }
 
-    public DependencyAttribute()
+    public ServiceAttribute()
     {
         ServiceType = typeof(T);
     }

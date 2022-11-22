@@ -7,7 +7,7 @@ public interface IRootService
     void Log();
 }
 
-[Dependency<IRootService>]
+[Service<IRootService>]
 internal class RootService : IRootService
 {
     public void Log() => Console.WriteLine(nameof(RootService));
