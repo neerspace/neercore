@@ -30,7 +30,7 @@ public static class EnumerableExtensions
     private static NotFoundException CreateNotFoundException<TSource>(string? errorMessage)
     {
         return string.IsNullOrEmpty(errorMessage)
-            ? new NotFoundException(typeof(TSource).Name.CamelCaseToWords() + " not found.")
+            ? new NotFoundException<TSource>()
             : new NotFoundException(errorMessage);
     }
 }

@@ -18,5 +18,5 @@ public class NotFoundException : HttpException
 
 public sealed class NotFoundException<T> : NotFoundException
 {
-    public NotFoundException() : base(typeof(T).Name.CamelCaseToWords() + " not found.") { }
+    public NotFoundException() : base($"Entity {typeof(T).Name} not found.") { }
 }
