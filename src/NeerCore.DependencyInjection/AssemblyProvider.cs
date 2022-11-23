@@ -12,9 +12,10 @@ namespace NeerCore.DependencyInjection;
 /// </remarks>
 public static class AssemblyProvider
 {
-    private static readonly string ProjectRootName = Assembly.GetEntryAssembly()?.FullName?.Split('.')[0] ?? "";
-    private static IEnumerable<Assembly>? applicationAssemblies;
-    private static IEnumerable<Assembly>? allAssemblies;
+    public static string ProjectRootNamespace { get; private set; } = Assembly.GetEntryAssembly()?.FullName?.Split('.')[0] ?? "";
+
+    private static List<Assembly>? applicationAssemblies;
+    private static List<Assembly>? allAssemblies;
 
     /// <summary>
     ///   Returns a list of types only from your assemblies.
@@ -23,16 +24,18 @@ public static class AssemblyProvider
     ///   Please use naming style like 'MyApp.Application', 'MyApp.Data.Sqlite',
     ///   if you want to work with this method in correct way :)
     /// </remarks>
-    public static IEnumerable<Assembly> ApplicationAssemblies => applicationAssemblies ??= AllAssemblies.Where(IsApplicationAssembly);
+    public static IList<Assembly> ApplicationAssemblies => applicationAssemblies ??= AllAssemblies.Where(IsApplicationAssembly).ToList();
 
     /// <summary>
     ///   Returns a list of types from all available assemblies.
     /// </summary>
-    public static IEnumerable<Assembly> AllAssemblies => allAssemblies ??= LoadAllAssemblies().ToArray();
+    public static IList<Assembly> AllAssemblies => allAssemblies ??= LoadAllAssemblies().ToList();
 
-    /// <summary>The way how to determinate that a assembly is source of your app.</summary>
-    public static readonly Func<Assembly, bool> IsApplicationAssembly = asm =>
-        asm.FullName != null && asm.FullName.StartsWith(ProjectRootName, StringComparison.OrdinalIgnoreCase);
+    /// <summary>
+    ///   The way how to determinate that a assembly is source of your app.
+    /// </summary>
+    public static Func<Assembly, bool> IsApplicationAssembly { get; set; } = asm =>
+        asm.FullName != null && asm.FullName.StartsWith(ProjectRootNamespace, StringComparison.OrdinalIgnoreCase);
 
     public static IEnumerable<Type> GetImplementationsFromAssembly<TBase>(Assembly assembly)
     {
@@ -74,12 +77,12 @@ public static class AssemblyProvider
     ///   Returns a list of all available assemblies in app.
     /// </summary>
     /// <returns>Assemblies sequence.</returns>
-    public static IEnumerable<Assembly> LoadAllAssemblies()
+    public static IEnumerable<Assembly> LoadAllAssemblies(Assembly? rootAssembly = null)
     {
         var list = new List<string>();
         var stack = new Stack<Assembly>();
 
-        stack.Push(Assembly.GetEntryAssembly()!);
+        stack.Push(rootAssembly ?? Assembly.GetEntryAssembly()!);
 
         do
         {
@@ -105,5 +108,30 @@ public static class AssemblyProvider
         {
             return null;
         }
+    }
+
+    public static void ConfigureRoot(Type rootType)
+    {
+        SetRootNamespace(rootType.Namespace!);
+        AddAssembly(rootType.Assembly);
+    }
+
+    public static void AddAssembly(Assembly assembly)
+    {
+        if (assembly is null)
+            throw new ArgumentNullException(nameof(assembly));
+        var allAsm = (List<Assembly>)AllAssemblies;
+        var appAsm = (List<Assembly>)ApplicationAssemblies;
+
+        var assemblies = LoadAllAssemblies(assembly).ToArray();
+        allAsm.AddRange(assemblies);
+        appAsm.AddRange(assemblies.Where(IsApplicationAssembly));
+    }
+
+    public static void SetRootNamespace(string ns)
+    {
+        if (string.IsNullOrEmpty(ns))
+            throw new ArgumentNullException(nameof(ns));
+        ProjectRootNamespace = ns.Split('.')[0];
     }
 }

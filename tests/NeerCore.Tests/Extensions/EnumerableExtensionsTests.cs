@@ -15,7 +15,7 @@ public class EnumerableExtensionsTests
         }
         else
         {
-            Assert.Throws<NotFoundException>(() => source.FirstOr404());
+            Assert.ThrowsAny<NotFoundException>(() => source.FirstOr404());
         }
     }
 

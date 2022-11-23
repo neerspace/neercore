@@ -36,6 +36,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsmTest.Root.FirstLvl", "te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsmTest.Root.SecondLvl", "tests\AsmTest.Root.SecondLvl\AsmTest.Root.SecondLvl.csproj", "{1B381DC0-E5B7-4DD7-B882-3D2A9FE0AF36}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeerCore.DependencyInjection.TestsSideAssembly", "tests\NeerCore.DependencyInjection.TestsSideAssembly\NeerCore.DependencyInjection.TestsSideAssembly.csproj", "{741FBD41-B023-4CB4-B1AE-EAC8AC5578B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeerCore1.DependencyInjection.TestsSideAssembly", "tests\NeerCore1.DependencyInjection.TestsSideAssembly\NeerCore1.DependencyInjection.TestsSideAssembly.csproj", "{6E8B5943-75B8-40B8-920A-F042269A90DD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,6 +62,8 @@ Global
 		{EE6F2F70-4D34-4EE3-BCA7-F80503910C33} = {1716E36C-0915-44B2-9BA5-BF36BC25B3C4}
 		{A3BB2DFB-B268-4D40-8CEE-23120224B069} = {1716E36C-0915-44B2-9BA5-BF36BC25B3C4}
 		{1B381DC0-E5B7-4DD7-B882-3D2A9FE0AF36} = {1716E36C-0915-44B2-9BA5-BF36BC25B3C4}
+		{741FBD41-B023-4CB4-B1AE-EAC8AC5578B2} = {1716E36C-0915-44B2-9BA5-BF36BC25B3C4}
+		{6E8B5943-75B8-40B8-920A-F042269A90DD} = {1716E36C-0915-44B2-9BA5-BF36BC25B3C4}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{E418F129-562C-43F4-BBE3-487ED4270DFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -140,5 +146,13 @@ Global
 		{1B381DC0-E5B7-4DD7-B882-3D2A9FE0AF36}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B381DC0-E5B7-4DD7-B882-3D2A9FE0AF36}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B381DC0-E5B7-4DD7-B882-3D2A9FE0AF36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{741FBD41-B023-4CB4-B1AE-EAC8AC5578B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{741FBD41-B023-4CB4-B1AE-EAC8AC5578B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{741FBD41-B023-4CB4-B1AE-EAC8AC5578B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{741FBD41-B023-4CB4-B1AE-EAC8AC5578B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E8B5943-75B8-40B8-920A-F042269A90DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E8B5943-75B8-40B8-920A-F042269A90DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E8B5943-75B8-40B8-920A-F042269A90DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E8B5943-75B8-40B8-920A-F042269A90DD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -2,7 +2,7 @@ using NeerCore.DependencyInjection.Extensions;
 
 namespace NeerCore.DependencyInjection.Tests.Tests.Extensions;
 
-public class TypeExtensionsTests
+public sealed class TypeExtensionsTests
 {
     private interface IInterface { }
 

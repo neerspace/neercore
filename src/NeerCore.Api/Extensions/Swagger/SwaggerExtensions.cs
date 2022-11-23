@@ -53,16 +53,6 @@ public static class SwaggerExtensions
 
         if (swaggerSettings.ApiDocs)
         {
-            // TODO: Check why :)
-            app.UseReDoc(options =>
-            {
-                var description = apiProvider.ApiVersionDescriptions[0];
-                options.DocumentTitle = $"{swaggerSettings.Title} {description.GroupName.ToUpper()}";
-                options.SpecUrl = $"../swagger/{description.GroupName}/swagger.json";
-                options.RoutePrefix = swaggerSettings.ApiDocsUrl.Replace("{version}", description.GroupName.ToLower());
-                options.HeadContent = swaggerSettings.ApiDocsHeadContent;
-            });
-
             foreach (var description in apiProvider.ApiVersionDescriptions)
             {
                 app.UseReDoc(options =>
