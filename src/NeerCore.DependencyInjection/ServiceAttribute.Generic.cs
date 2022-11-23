@@ -1,5 +1,3 @@
-#if NET7_0_OR_GREATER
-
 namespace NeerCore.DependencyInjection;
 
 /// <summary>
@@ -18,5 +16,3 @@ public class ServiceAttribute<T> : ServiceAttribute
         ServiceType = typeof(T);
     }
 }
-
-#endif
