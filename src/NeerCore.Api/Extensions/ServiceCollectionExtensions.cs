@@ -35,9 +35,9 @@ public static class ServiceCollectionExtensions
 
         services.AddFactoryMiddlewares();
         services.AddDefaultCorsPolicy();
-        services.AddCustomApiVersioning();
+        services.AddNeerApiVersioning();
         services.ConfigureApiBehaviorOptions();
-        services.AddCustomSwagger(configureInfo);
+        services.AddNeerSwagger(configureInfo);
 
         return services;
     }

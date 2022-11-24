@@ -73,20 +73,68 @@ public sealed class JsonPatchDocumentFilter : IDocumentFilter
 
                 operationSchema.Value.Properties = new Dictionary<string, OpenApiSchema>
                 {
-                    { "op", new OpenApiSchema { Type = SchemaTypes.String, Enum = OperationNameEnum } },
-                    { "path", new OpenApiSchema { Type = SchemaTypes.String, Enum = basePropertyNames } },
-                    { "from", new OpenApiSchema { Type = SchemaTypes.String, Enum = basePropertyNames } },
-                    { "value", new OpenApiSchema { Type = SchemaTypes.String, Example = new OpenApiString("new value") } },
+                    {
+                        "op", new OpenApiSchema
+                        {
+                            Type = SchemaTypes.String,
+                            Enum = OperationNameEnum
+                        }
+                    },
+                    {
+                        "path", new OpenApiSchema
+                        {
+                            Type = SchemaTypes.String,
+                            Enum = basePropertyNames
+                        }
+                    },
+                    {
+                        "from", new OpenApiSchema
+                        {
+                            Type = SchemaTypes.String,
+                            Enum = basePropertyNames
+                        }
+                    },
+                    {
+                        "value", new OpenApiSchema
+                        {
+                            Type = SchemaTypes.String,
+                            Example = new OpenApiString("new value")
+                        }
+                    },
                 };
             }
             else
             {
                 operationSchema.Value.Properties = new Dictionary<string, OpenApiSchema>
                 {
-                    { "op", new OpenApiSchema { Type = SchemaTypes.String, Enum = OperationNameEnum } },
-                    { "path", new OpenApiSchema { Type = SchemaTypes.String, Example = new OpenApiString("/path/to/property") } },
-                    { "from", new OpenApiSchema { Type = SchemaTypes.String, Example = new OpenApiString("/path/to/property") } },
-                    { "value", new OpenApiSchema { Type = SchemaTypes.String, Example = new OpenApiString("new value") } },
+                    {
+                        "op", new OpenApiSchema
+                        {
+                            Type = SchemaTypes.String,
+                            Enum = OperationNameEnum
+                        }
+                    },
+                    {
+                        "path", new OpenApiSchema
+                        {
+                            Type = SchemaTypes.String,
+                            Example = new OpenApiString("/path/to/property")
+                        }
+                    },
+                    {
+                        "from", new OpenApiSchema
+                        {
+                            Type = SchemaTypes.String,
+                            Example = new OpenApiString("/path/to/property")
+                        }
+                    },
+                    {
+                        "value", new OpenApiSchema
+                        {
+                            Type = SchemaTypes.String,
+                            Example = new OpenApiString("new value")
+                        }
+                    },
                 };
             }
         }

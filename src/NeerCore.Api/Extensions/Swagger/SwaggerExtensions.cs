@@ -13,7 +13,7 @@ public static class SwaggerExtensions
     /// </summary>
     /// <param name="services"></param>
     /// <param name="configureInfo"></param>
-    public static IServiceCollection AddCustomSwagger(this IServiceCollection services, Func<ApiVersionDescription, OpenApiInfo>? configureInfo = null)
+    public static IServiceCollection AddNeerSwagger(this IServiceCollection services, Func<ApiVersionDescription, OpenApiInfo>? configureInfo = null)
     {
         services.AddEndpointsApiExplorer();
         services.Configure<OpenApiInfoProviderOptions>(options => { options.ConfigureDelegate = configureInfo; });

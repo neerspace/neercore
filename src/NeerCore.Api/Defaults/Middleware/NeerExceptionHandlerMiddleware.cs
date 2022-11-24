@@ -14,12 +14,12 @@ namespace NeerCore.Api.Defaults.Middleware;
 ///   a <see cref="HttpException"/> with custom formatted error messages
 ///   and default 500 exception with fine view otherwise.
 /// </summary>
-public sealed class ExceptionHandlerMiddleware : IMiddleware
+public sealed class NeerExceptionHandlerMiddleware : IMiddleware
 {
     private readonly ILogger _logger;
     private readonly ExceptionHandlerOptions _options;
 
-    public ExceptionHandlerMiddleware(ILoggerFactory loggerFactory, IOptions<ExceptionHandlerOptions> optionsAccessor)
+    public NeerExceptionHandlerMiddleware(ILoggerFactory loggerFactory, IOptions<ExceptionHandlerOptions> optionsAccessor)
     {
         _logger = loggerFactory.CreateLogger(GetType());
         _options = optionsAccessor.Value;

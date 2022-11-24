@@ -27,11 +27,11 @@ public static class MiddlewareExtensions
     }
 
     /// <summary>
-    ///   Adds <see cref="ExceptionHandlerMiddleware"/> to the application's request pipeline.
+    ///   Adds <see cref="NeerExceptionHandlerMiddleware"/> to the application's request pipeline.
     /// </summary>
     /// <param name="app">An <see cref="ApplicationBuilder"/> instance.</param>
-    public static IApplicationBuilder UseCustomExceptionHandler(this IApplicationBuilder app)
+    public static IApplicationBuilder UseNeerExceptionHandler(this IApplicationBuilder app)
     {
-        return app.UseMiddleware<ExceptionHandlerMiddleware>();
+        return app.UseMiddleware<NeerExceptionHandlerMiddleware>();
     }
 }
