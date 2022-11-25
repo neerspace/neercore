@@ -1,11 +1,11 @@
 using System.Collections.Concurrent;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using NeerCore.Data.EntityFramework.Typeids;
-using NeerCore.Data.EntityFramework.Typeids.Abstractions;
+using NeerCore.Typeids.Data.EntityFramework;
+using NeerCore.Typeids.Data.EntityFramework.Abstractions;
 using NeerCore.DependencyInjection.Extensions;
 
-namespace NeerCore.Api.Typeids;
+namespace NeerCore.Typeids.Api;
 
 public class CustomIdsConverterFactory : JsonConverterFactory
 {

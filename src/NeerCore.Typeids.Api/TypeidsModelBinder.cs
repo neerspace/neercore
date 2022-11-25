@@ -1,7 +1,8 @@
 using Microsoft.AspNetCore.Mvc.ModelBinding;
-using NeerCore.Data.EntityFramework.Typeids;
+using Microsoft.Extensions.DependencyInjection;
+using NeerCore.Typeids.Data.EntityFramework;
 
-namespace NeerCore.Api.Typeids;
+namespace NeerCore.Typeids.Api;
 
 public class TypeidsModelBinder : IModelBinder
 {

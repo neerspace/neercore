@@ -1,4 +1,4 @@
-namespace NeerCore.Data.EntityFramework.Typeids;
+namespace NeerCore.Typeids.Data.EntityFramework;
 
 internal static class IdentifierTypeExtensions
 {

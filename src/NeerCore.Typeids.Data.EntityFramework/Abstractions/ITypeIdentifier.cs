@@ -1,4 +1,4 @@
-namespace NeerCore.Data.EntityFramework.Typeids.Abstractions;
+namespace NeerCore.Typeids.Data.EntityFramework.Abstractions;
 
 public interface ITypeIdentifier<out TValue>
 {

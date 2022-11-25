@@ -4,11 +4,11 @@ using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NeerCore.Data.Abstractions;
-using NeerCore.Data.EntityFramework.Typeids.Abstractions;
 using NeerCore.DependencyInjection;
 using NeerCore.DependencyInjection.Extensions;
+using NeerCore.Typeids.Data.EntityFramework.Abstractions;
 
-namespace NeerCore.Data.EntityFramework.Typeids.Extensions;
+namespace NeerCore.Typeids.Data.EntityFramework.Extensions;
 
 public static class ModelBuilderExtensions
 {

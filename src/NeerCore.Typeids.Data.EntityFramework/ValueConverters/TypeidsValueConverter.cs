@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using NeerCore.Data.EntityFramework.Typeids.Abstractions;
+using NeerCore.Typeids.Data.EntityFramework.Abstractions;
 
-namespace NeerCore.Data.EntityFramework.Typeids.ValueConverters;
+namespace NeerCore.Typeids.Data.EntityFramework.ValueConverters;
 
 public class TypeidsValueConverter<TIdentifier, TValue> : ValueConverter<TIdentifier?, TValue>
     where TIdentifier : struct, ITypeIdentifier<TValue>

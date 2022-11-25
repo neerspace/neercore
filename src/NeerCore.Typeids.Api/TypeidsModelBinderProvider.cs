@@ -1,6 +1,8 @@
-using NeerCore.Data.EntityFramework.Typeids.Abstractions;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
+using NeerCore.Typeids.Data.EntityFramework.Abstractions;
+using NeerCore.DependencyInjection.Extensions;
 
-namespace NeerCore.Api.Typeids;
+namespace NeerCore.Typeids.Api;
 
 public class TypeidsModelBinderProvider : IModelBinderProvider
 {

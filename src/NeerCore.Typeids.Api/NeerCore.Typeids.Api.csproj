@@ -9,11 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.App" Version="6.0.11" />
+    <PackageReference Include="System.Text.Json" Version="6.0.7" />
   </ItemGroup>
-  
+
   <ItemGroup>
-    <ProjectReference Include="..\NeerCore.Data.EntityFramework.Typeids\NeerCore.Data.EntityFramework.Typeids.csproj" />
+    <ProjectReference Include="..\NeerCore.Typeids.Data.EntityFramework\NeerCore.Typeids.Data.EntityFramework.csproj" />
     <ProjectReference Include="..\NeerCore.DependencyInjection\NeerCore.DependencyInjection.csproj" />
   </ItemGroup>
 

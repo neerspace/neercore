@@ -89,7 +89,8 @@ public static class AssemblyProvider
             Assembly asm = stack.Pop();
             yield return asm;
 
-            var referenceAssemblies = asm.GetReferencedAssemblies().Where(a => !list.Contains(a.FullName));
+            var referenceAssemblies = asm.GetReferencedAssemblies()
+                .Where(a => !list.Contains(a.FullName));
             foreach (AssemblyName reference in referenceAssemblies)
             {
                 stack.Push(Assembly.Load(reference));

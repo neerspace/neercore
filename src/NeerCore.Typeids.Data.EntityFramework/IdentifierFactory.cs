@@ -1,8 +1,8 @@
 using System.Reflection;
 using System.Reflection.Emit;
-using NeerCore.Data.EntityFramework.Typeids.Abstractions;
+using NeerCore.Typeids.Data.EntityFramework.Abstractions;
 
-namespace NeerCore.Data.EntityFramework.Typeids;
+namespace NeerCore.Typeids.Data.EntityFramework;
 
 internal static class IdentifierFactory<TIdentifier, TValue>
     where TIdentifier : ITypeIdentifier<TValue>

@@ -1,11 +1,12 @@
 using System.Text.Json;
-using System.Text.Json.Serialization;
-using NeerCore.Data.EntityFramework.Typeids;
+using AspNetCore.Hashids.Options;
+using Microsoft.Extensions.DependencyInjection;
+using NeerCore.Data.EntityFramework.Typeids.Abstractions;
 
-namespace NeerCore.Api.Typeids;
+namespace NeerCore.Typeids.Api.Hashids;
 
-public class TypeidsJsonConverter<TIdentifier, TValue> : JsonConverter<TIdentifier>
-    where TIdentifier : NeerCore.Data.EntityFramework.Typeids.Abstractions.ITypeIdentifier<TValue>
+public class TypeidsHasidsJsonConverter<TIdentifier, TValue> : TypeidsJsonConverter<TIdentifier, TValue>
+    where TIdentifier : ITypeIdentifier<TValue>
     where TValue : new()
 {
     public override TIdentifier Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
@@ -19,7 +20,8 @@ public class TypeidsJsonConverter<TIdentifier, TValue> : JsonConverter<TIdentifi
         if (GetHashidsOptions(options).AcceptNonHashedIds)
             return CreateIdentifier(reader.GetInt32());
 
-        throw new JsonException("Element is decorated with HashidsJsonConverter \nbut is reading a non hashed id. To allow deserialize numbers set AcceptNonHashedIds to true.");
+        throw new JsonException("Element is decorated with HashidsJsonConverter \nbut is reading a non hashed id." +
+                                "To allow deserialize numbers set AcceptNonHashedIds to true.");
     }
 
 
@@ -29,9 +31,5 @@ public class TypeidsJsonConverter<TIdentifier, TValue> : JsonConverter<TIdentifi
         writer.WriteStringValue(serializedValue);
     }
 
-
-    private static TIdentifier CreateIdentifier<T>(T value) => IdentifierFactory<TIdentifier, TValue>.CreateUnsafe(value);
-
-    private static ITypeidsProcessor GetCustomIdsProcessor(JsonSerializerOptions options) => options.GetServiceProvider().GetRequiredService<ITypeidsProcessor>();
     private static HashidsOptions GetHashidsOptions(JsonSerializerOptions options) => options.GetServiceProvider().GetRequiredService<HashidsOptions>();
 }

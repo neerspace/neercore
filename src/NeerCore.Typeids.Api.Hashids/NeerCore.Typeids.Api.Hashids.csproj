@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\NeerCore.Api.Typeids\NeerCore.Api.Typeids.csproj" />
+    <ProjectReference Include="..\NeerCore.Typeids.Api\NeerCore.Typeids.Api.csproj" />
   </ItemGroup>
 
 </Project>
