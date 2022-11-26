@@ -1,4 +1,4 @@
-using NeerCore.Typeids.Data.EntityFramework.Abstractions;
+using NeerCore.Typeids.Abstractions;
 
 namespace NeerCore.Typeids.Data.EntityFramework;
 

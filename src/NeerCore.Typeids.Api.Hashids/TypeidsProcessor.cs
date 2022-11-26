@@ -1,3 +1,4 @@
+using HashidsNet;
 using NeerCore.Typeids.Data.EntityFramework;
 using NeerCore.Typeids.Data.EntityFramework.Abstractions;
 using NeerCore.DependencyInjection;
@@ -5,18 +6,11 @@ using NeerCore.DependencyInjection;
 namespace NeerCore.Typeids.Api;
 
 [Service(Lifetime = Lifetime.Singleton)]
-public class CustomIdsProcessor : ITypeidsProcessor
+public class TypeidsProcessor : ITypeidsProcessor
 {
-    private static readonly Type AchievementId = typeof(AchievementId);
-    private static readonly Type ChatId = typeof(ChatId);
-    private static readonly Type IdentityId = typeof(IdentityId);
-    private static readonly Type PublicationId = typeof(PublicationId);
-    private static readonly Type ResourceId = typeof(ResourceId);
-    private static readonly Type WorldId = typeof(WorldId);
-
     private readonly IHashids _hashids;
 
-    public CustomIdsProcessor(IHashids hashids)
+    public TypeidsProcessor(IHashids hashids)
     {
         _hashids = hashids;
     }
