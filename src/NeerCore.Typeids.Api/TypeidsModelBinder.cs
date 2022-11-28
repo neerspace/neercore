@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.Extensions.DependencyInjection;
-using NeerCore.Typeids.Abstractions;
+using NeerCore.Typeids;
 
 namespace NeerCore.Typeids.Api;
 

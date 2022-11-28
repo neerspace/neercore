@@ -3,14 +3,15 @@ using System.Text.Json.Serialization;
 using Microsoft.Extensions.DependencyInjection;
 using NeerCore.Typeids.Abstractions;
 using NeerCore.Typeids.Api.Extensions;
+using NeerCore.Typeids.Internal;
 
 namespace NeerCore.Typeids.Api;
 
-public class TypeidsJsonConverter<TIdentifier, TValue> : JsonConverter<TIdentifier>
+public class TypeidsJsonConverter<TIdentifier, TValue> : JsonConverter<TIdentifier?>
     where TIdentifier : ITypeIdentifier<TValue>
     where TValue : new()
 {
-    public override TIdentifier Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+    public override TIdentifier? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
         if (reader.TokenType == JsonTokenType.String)
             return GetCustomIdsProcessor(options).DeserializeIdentifier<TIdentifier, TValue>(reader.GetString());
@@ -24,7 +25,7 @@ public class TypeidsJsonConverter<TIdentifier, TValue> : JsonConverter<TIdentifi
 
     public override void Write(Utf8JsonWriter writer, TIdentifier value, JsonSerializerOptions options)
     {
-        string? serializedValue = GetCustomIdsProcessor(options).SerializeString<TIdentifier, TValue>(value);
+        string serializedValue = GetCustomIdsProcessor(options).SerializeString<TIdentifier, TValue>(value);
         writer.WriteStringValue(serializedValue);
     }
 

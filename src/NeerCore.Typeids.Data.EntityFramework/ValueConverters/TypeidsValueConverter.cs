@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using NeerCore.Typeids.Data.EntityFramework.Abstractions;
+using NeerCore.Typeids;
+using NeerCore.Typeids.Abstractions;
+using NeerCore.Typeids.Internal;
 
 namespace NeerCore.Typeids.Data.EntityFramework.ValueConverters;
 

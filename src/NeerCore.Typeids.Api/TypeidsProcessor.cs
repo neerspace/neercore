@@ -1,55 +1,32 @@
 using NeerCore.DependencyInjection;
-using NeerCore.Typeids.Abstractions;
+using NeerCore.Typeids.Internal;
 
 namespace NeerCore.Typeids.Api;
 
 [Service(Lifetime = Lifetime.Singleton)]
-public class TypeidsProcessor : ITypeidsProcessor
+public class TypeidsProcessor : TypeidsProcessorBase
 {
-    public string SerializeString<TIdentifier, TValue>(TIdentifier identifier)
-        where TIdentifier : ITypeIdentifier<TValue> where TValue : new() =>
-        SerializeInternal(identifier);
+    protected override string? Serialize<T>(T? identifier)
+        where T : default
+    {
+        return identifier?.ToString();
+    }
 
-    public string SerializeString(object? identifier) =>
-        SerializeInternal(identifier);
-
-    public TIdentifier DeserializeIdentifier<TIdentifier, TValue>(string? stringValue)
-        where TIdentifier : ITypeIdentifier<TValue> where TValue : new() =>
-        (TIdentifier)DeserializeIdentifier(stringValue, typeof(TIdentifier));
-
-    public object DeserializeIdentifier(string? stringValue, Type targetIdentifier)
+    protected override object? Deserialize(string? stringValue, Type targetIdentifierType)
     {
         stringValue = stringValue?.ToUpper();
-
-        if (targetIdentifier == AchievementId)
-            return new AchievementId((short)FirstOrError(_hashids.Decode(stringValue)));
-        if (targetIdentifier == ChatId)
-            return new ChatId(FirstOrError(_hashids.DecodeLong(stringValue)));
-        if (targetIdentifier == IdentityId)
-            return new IdentityId(FirstOrError(_hashids.DecodeLong(stringValue)));
-        if (targetIdentifier == PublicationId)
-            return new PublicationId(FirstOrError(_hashids.Decode(stringValue)));
-        if (targetIdentifier == ResourceId && !string.IsNullOrEmpty(stringValue))
-            return new ResourceId(new Guid(stringValue));
-        if (targetIdentifier == WorldId)
-            return new WorldId(FirstOrError(_hashids.DecodeLong(stringValue)));
-
-        throw new NotSupportedException($"Deserialization for identifier '{targetIdentifier}' does not supported.");
+        object? value = ParseString(stringValue, targetIdentifierType.GetIdentifierValueType());
+        return value is null ? default : IdentifierFactory.Create(value, targetIdentifierType);
     }
 
-    private string SerializeInternal<T>(T? identifier)
+    private static object? ParseString(string? stringValue, Type targetType)
     {
-        return identifier switch
-        {
-            AchievementId achievementId => _hashids.Encode(achievementId.Value),
-            ChatId chatId               => _hashids.EncodeLong(chatId.Value),
-            IdentityId identityId       => _hashids.EncodeLong(identityId.Value),
-            PublicationId publicationId => _hashids.Encode(publicationId.Value),
-            ResourceId resourceId       => resourceId.ToString(),
-            WorldId worldId             => _hashids.EncodeLong(worldId.Value),
-            _                           => throw new NotSupportedException($"Serialization for identifier '{identifier?.GetType()}' does not supported.")
-        };
+        if (string.IsNullOrEmpty(stringValue)) return null;
+        if (targetType == Int16Type) return short.Parse(stringValue);
+        if (targetType == Int32Type) return int.Parse(stringValue);
+        if (targetType == Int64Type) return long.Parse(stringValue);
+        if (targetType == StringType) return stringValue;
+        if (targetType == GuidType) return Guid.Parse(stringValue);
+        return null;
     }
-
-    private static T FirstOrError<T>(IList<T> collection) => collection is { Count: > 0 } ? collection[0] : throw new Exception("Invalid hash.");
 }

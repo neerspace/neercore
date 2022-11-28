@@ -1,4 +1,4 @@
-namespace NeerCore.Typeids.Abstractions.Internal;
+namespace NeerCore.Typeids.Internal;
 
 internal static class IdentifierTypeExtensions
 {
