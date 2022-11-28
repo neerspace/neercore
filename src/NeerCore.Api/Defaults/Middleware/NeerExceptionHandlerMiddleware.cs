@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using NeerCore.Api.Extensions;
-using NeerCore.Api.Options;
 using NeerCore.Exceptions;
 
 namespace NeerCore.Api.Defaults.Middleware;

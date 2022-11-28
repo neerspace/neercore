@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using NeerCore.Api.Defaults.Middleware;
 using NeerCore.DependencyInjection;
-using ExceptionHandlerOptions = NeerCore.Api.Options.ExceptionHandlerOptions;
+using ExceptionHandlerOptions = NeerCore.Api.ExceptionHandlerOptions;
 
 namespace NeerCore.Api.Extensions;
 
@@ -17,7 +17,7 @@ public static class MiddlewareExtensions
     public static IServiceCollection AddFactoryMiddlewares(this IServiceCollection services, ServiceLifetime lifetime = ServiceLifetime.Scoped)
     {
         services.AddOptions<ExceptionHandlerOptions>();
-        
+
         IEnumerable<Type> middlewares = AssemblyProvider.GetImplementationsOf<IMiddleware>(asm =>
             AssemblyProvider.IsApplicationAssembly(asm) || asm.GetName().Name!.StartsWith("NeerCore"));
         foreach (Type middleware in middlewares)
@@ -33,5 +33,14 @@ public static class MiddlewareExtensions
     public static IApplicationBuilder UseNeerExceptionHandler(this IApplicationBuilder app)
     {
         return app.UseMiddleware<NeerExceptionHandlerMiddleware>();
+    }
+
+    /// <summary>
+    ///   Register the NeerSwaggerUI middleware as custom alternative for default SwaggerUI middleware
+    /// </summary>
+    /// <param name="app">An <see cref="ApplicationBuilder"/> instance.</param>
+    public static IApplicationBuilder UseNeerSwaggerUI(this IApplicationBuilder app)
+    {
+        return app.UseMiddleware<NeerSwaggerUIMiddleware>();
     }
 }

@@ -1,4 +1,4 @@
-namespace NeerCore.Api.Options;
+namespace NeerCore.Api;
 
 public sealed class ExceptionHandlerOptions
 {
