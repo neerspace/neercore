@@ -53,7 +53,8 @@ internal sealed class SwaggerConfiguration : IConfigureNamedOptions<SwaggerGenOp
             ? File.ReadAllText(descriptionFilePath)
             : _options.Description ?? default!;
 
-        description = description.Replace("{version}", versionDescription.GroupName.ToLower());
+        if (!string.IsNullOrWhiteSpace(description))
+            description = description.Replace("{version}", versionDescription.GroupName.ToLower());
 
         OpenApiInfo openApiInfo = _apiInfoOptions.ConfigureDelegate!.Invoke(versionDescription);
         openApiInfo.Version ??= versionDescription.ApiVersion.ToString();
