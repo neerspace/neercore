@@ -70,7 +70,7 @@ static WebApplication ConfigureWebApp(WebApplication app)
     app.UseCors(CorsPolicies.AcceptAll);
     app.UseHttpsRedirection();
 
-    app.UseCustomExceptionHandler();
+    app.UseNeerExceptionHandler();
 
     app.MapControllers();
 

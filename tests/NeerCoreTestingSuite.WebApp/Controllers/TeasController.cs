@@ -1,15 +1,12 @@
 using Mapster;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
-using NeerCore.Api.Controllers;
-using NeerCore.Api.Extensions;
-using NeerCore.Mapping.Extensions;
 using NeerCoreTestingSuite.WebApp.Dto.Teas;
 using NeerCoreTestingSuite.WebApp.Services;
 
 namespace NeerCoreTestingSuite.WebApp.Controllers;
 
-public class TeasController : LocalizedApiController
+public class TeasController : ApiController
 {
     private readonly TeasService _service;
     public TeasController(TeasService service) => _service = service;
@@ -22,13 +19,13 @@ public class TeasController : LocalizedApiController
         return entity.Adapt<Tea>();
     }
 
-    [HttpGet]
-    public async Task<IEnumerable<Tea>> Filter(string filters, string sorts = "id", int page = 1, int pageSize = 10)
-    {
-        var entities = await _service.FilterAsync(filters, sorts, page, pageSize);
-        Response.SetNavigationHeaders(await _service.CountAsync(), page, pageSize);
-        return entities.AdaptAll<Tea>();
-    }
+    // [HttpGet]
+    // public async Task<IEnumerable<Tea>> Filter(string filters, string sorts = "id", int page = 1, int pageSize = 10)
+    // {
+    // var entities = await _service.FilterAsync(filters, sorts, page, pageSize);
+    // Response.SetNavigationHeaders(await _service.CountAsync(), page, pageSize);
+    // return entities.AdaptAll<Tea>();
+    // }
 
     [HttpPost]
     public async Task<ActionResult<Tea>> Post([FromBody] TeaCreate dto)

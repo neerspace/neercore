@@ -1,8 +1,11 @@
 ﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 using NeerCore.Api.Defaults.Middleware;
 using NeerCore.DependencyInjection;
+using Swashbuckle.AspNetCore.SwaggerUI;
 using ExceptionHandlerOptions = NeerCore.Api.ExceptionHandlerOptions;
 
 namespace NeerCore.Api.Extensions;
@@ -39,8 +42,40 @@ public static class MiddlewareExtensions
     ///   Register the NeerSwaggerUI middleware as custom alternative for default SwaggerUI middleware
     /// </summary>
     /// <param name="app">An <see cref="ApplicationBuilder"/> instance.</param>
-    public static IApplicationBuilder UseNeerSwaggerUI(this IApplicationBuilder app)
+    /// <param name="options"></param>
+    public static IApplicationBuilder UseNeerSwaggerUI(this IApplicationBuilder app, SwaggerUIOptions options)
     {
-        return app.UseMiddleware<NeerSwaggerUIMiddleware>();
+        return app.UseMiddleware<NeerSwaggerUIMiddleware>(options);
+    }
+
+    /// <summary>
+    ///   Register the NeerSwaggerUI middleware as custom alternative for default SwaggerUI middleware
+    /// </summary>
+    /// <param name="app">An <see cref="ApplicationBuilder"/> instance.</param>
+    /// <param name="configureAction"></param>
+    public static IApplicationBuilder UseNeerSwaggerUI(this IApplicationBuilder app, Action<SwaggerUIOptions>? configureAction = null)
+    {
+        SwaggerUIOptions options;
+        using (var scope = app.ApplicationServices.CreateScope())
+        {
+            options = scope.ServiceProvider.GetRequiredService<IOptionsSnapshot<SwaggerUIOptions>>().Value;
+            configureAction?.Invoke(options);
+        }
+
+        // To simplify the common case, use a default that will work with the SwaggerMiddleware defaults
+        if (options.ConfigObject.Urls == null)
+        {
+            var hostingEnv = app.ApplicationServices.GetRequiredService<IWebHostEnvironment>();
+            options.ConfigObject.Urls = new[]
+            {
+                new UrlDescriptor
+                {
+                    Name = $"{hostingEnv.ApplicationName} v1",
+                    Url = "v1/swagger.json"
+                }
+            };
+        }
+
+        return app.UseNeerSwaggerUI(options);
     }
 }

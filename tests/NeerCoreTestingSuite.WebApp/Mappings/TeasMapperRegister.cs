@@ -10,8 +10,6 @@ public class TeasMapperRegister : IRegister
 
     public void Register(TypeAdapterConfig config)
     {
-        config.AddDefaultConfigs();
-
         // m -> member
         // s -> source
         config.NewConfig<Tea, Dto.Teas.Tea>()

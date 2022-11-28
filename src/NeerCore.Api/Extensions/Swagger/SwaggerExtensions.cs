@@ -35,7 +35,7 @@ public static class SwaggerExtensions
         if (swaggerSettings.Enabled)
         {
             app.UseSwagger();
-            app.UseSwaggerUI(options =>
+            app.UseNeerSwaggerUI(options =>
             {
                 foreach (var description in apiProvider.ApiVersionDescriptions)
                 {
