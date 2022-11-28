@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <PackageReference Include="AspNetCore.Hashids.Int64" Version="2.0.2" />
+    <PackageReference Include="Hashids.net" Version="1.6.1" />
   </ItemGroup>
 
   <ItemGroup>

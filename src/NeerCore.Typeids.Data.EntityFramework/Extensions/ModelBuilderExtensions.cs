@@ -6,8 +6,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NeerCore.Data.Abstractions;
 using NeerCore.DependencyInjection;
 using NeerCore.DependencyInjection.Extensions;
+using NeerCore.Typeids;
 using NeerCore.Typeids.Abstractions;
-using NeerCore.Typeids.Abstractions.Internal;
+using NeerCore.Typeids.Internal;
+using NeerCore.Typeids.Data.EntityFramework.Options;
 
 namespace NeerCore.Typeids.Data.EntityFramework.Extensions;
 
@@ -18,9 +20,13 @@ public static class ModelBuilderExtensions
     private static readonly Type[] NumericType = { typeof(byte), typeof(short), typeof(int), typeof(long) };
 
 
-    public static void UseTypedIdsForAssembly(this ModelBuilder modelBuilder, Assembly entitiesAssembly)
+    public static void ApplyTypedIdsFromAssembly(this ModelBuilder modelBuilder, Action<TypeidsOptions>? configureOptions = null)
     {
-        foreach (var entityType in AssemblyProvider.GetImplementationsFromAssembly<IEntity>(entitiesAssembly))
+        var options = new TypeidsOptions();
+        configureOptions?.Invoke(options);
+
+        foreach (Assembly assembly in options.Assemblies ?? Enumerable.Repeat(Assembly.GetCallingAssembly(), 1))
+        foreach (var entityType in AssemblyProvider.GetImplementationsFromAssembly<IEntity>(assembly))
         foreach (var property in entityType.GetProperties())
         {
             var underlyingType = Nullable.GetUnderlyingType(property.PropertyType);
