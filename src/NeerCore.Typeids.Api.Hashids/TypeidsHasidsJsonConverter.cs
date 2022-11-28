@@ -1,7 +1,7 @@
 using System.Text.Json;
 using AspNetCore.Hashids.Options;
 using Microsoft.Extensions.DependencyInjection;
-using NeerCore.Data.EntityFramework.Typeids.Abstractions;
+using NeerCore.Typeids.Abstractions;
 
 namespace NeerCore.Typeids.Api.Hashids;
 

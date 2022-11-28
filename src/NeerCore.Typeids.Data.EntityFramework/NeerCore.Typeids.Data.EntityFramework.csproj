@@ -14,6 +14,7 @@
   <ItemGroup>
     <ProjectReference Include="..\NeerCore.Data.Abstractions\NeerCore.Data.Abstractions.csproj" />
     <ProjectReference Include="..\NeerCore.DependencyInjection\NeerCore.DependencyInjection.csproj" />
+    <ProjectReference Include="..\NeerCore.Typeids.Abstractions\NeerCore.Typeids.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>

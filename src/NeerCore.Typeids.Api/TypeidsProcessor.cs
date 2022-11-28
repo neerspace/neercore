@@ -1,6 +1,5 @@
 using NeerCore.DependencyInjection;
-using NeerCore.Typeids.Data.EntityFramework;
-using NeerCore.Typeids.Data.EntityFramework.Abstractions;
+using NeerCore.Typeids.Abstractions;
 
 namespace NeerCore.Typeids.Api;
 

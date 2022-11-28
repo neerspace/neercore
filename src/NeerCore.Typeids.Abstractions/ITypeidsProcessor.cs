@@ -1,6 +1,4 @@
-using NeerCore.Typeids.Abstractions;
-
-namespace NeerCore.Typeids.Data.EntityFramework;
+namespace NeerCore.Typeids.Abstractions;
 
 public interface ITypeidsProcessor
 {

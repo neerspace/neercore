@@ -6,7 +6,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NeerCore.Data.Abstractions;
 using NeerCore.DependencyInjection;
 using NeerCore.DependencyInjection.Extensions;
-using NeerCore.Typeids.Data.EntityFramework.Abstractions;
+using NeerCore.Typeids.Abstractions;
+using NeerCore.Typeids.Abstractions.Internal;
 
 namespace NeerCore.Typeids.Data.EntityFramework.Extensions;
 

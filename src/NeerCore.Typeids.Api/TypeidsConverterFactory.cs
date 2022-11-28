@@ -1,9 +1,9 @@
 using System.Collections.Concurrent;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using NeerCore.Typeids.Data.EntityFramework;
-using NeerCore.Typeids.Data.EntityFramework.Abstractions;
 using NeerCore.DependencyInjection.Extensions;
+using NeerCore.Typeids.Abstractions;
+using NeerCore.Typeids.Abstractions.Internal;
 
 namespace NeerCore.Typeids.Api;
 

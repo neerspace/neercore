@@ -1,9 +1,8 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Microsoft.Extensions.DependencyInjection;
+using NeerCore.Typeids.Abstractions;
 using NeerCore.Typeids.Api.Extensions;
-using NeerCore.Typeids.Data.EntityFramework;
-using NeerCore.Typeids.Data.EntityFramework.Abstractions;
 
 namespace NeerCore.Typeids.Api;
 

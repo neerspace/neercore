@@ -2,5 +2,5 @@ namespace NeerCore.Typeids.Abstractions;
 
 public interface IStringIdentifier
 {
-    public long Value { get; set; }
+    public string Value { get; set; }
 }

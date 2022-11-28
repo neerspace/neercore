@@ -1,7 +1,6 @@
 using HashidsNet;
-using NeerCore.Typeids.Data.EntityFramework;
-using NeerCore.Typeids.Data.EntityFramework.Abstractions;
 using NeerCore.DependencyInjection;
+using NeerCore.Typeids.Abstractions;
 
 namespace NeerCore.Typeids.Api;
 
