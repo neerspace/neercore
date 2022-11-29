@@ -2,7 +2,7 @@
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
-namespace NeerCore.Api.DocumentFilters;
+namespace NeerCore.Api.Swagger.Filters;
 
 /// <summary>
 ///   Swagger document filter to show NeerCore logo in ReDoc.

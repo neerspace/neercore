@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.OpenApi.Models;
 
-namespace NeerCore.Api.Extensions.Swagger;
+namespace NeerCore.Api.Swagger;
 
 internal sealed class OpenApiInfoProviderOptions
 {

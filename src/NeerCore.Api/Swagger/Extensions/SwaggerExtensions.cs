@@ -4,8 +4,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
+using NeerCore.Api.Extensions;
 
-namespace NeerCore.Api.Extensions.Swagger;
+namespace NeerCore.Api.Swagger.Extensions;
 
 public static class SwaggerExtensions
 {
@@ -46,17 +47,17 @@ public static class SwaggerExtensions
                 {
                     var name = $"{swaggerOptions.Title} {description.GroupName.ToUpper()}";
                     var url = $"/swagger/{description.GroupName}/swagger.json";
-                    options.SwaggerEndpoint(url, name);
+                    SwaggerUIOptionsExtensions.SwaggerEndpoint(options, url, name);
                 }
 
                 options.RoutePrefix = swaggerOptions.SwaggerUrl;
                 options.DocumentTitle = swaggerOptions.Title;
-                options.EnableFilter();
+                SwaggerUIOptionsExtensions.EnableFilter(options);
 
                 if (swaggerOptions.ExtendedDocs)
                 {
-                    options.InjectStylesheet("/neercore/swagger-extensions.css");
-                    options.InjectJavascript("/neercore/swagger-extensions.js");
+                    SwaggerUIOptionsExtensions.InjectStylesheet(options, "/neercore/swagger-extensions.css");
+                    SwaggerUIOptionsExtensions.InjectJavascript(options, "/neercore/swagger-extensions.js");
                 }
             });
         }

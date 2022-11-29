@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using NeerCore.Api;
 using NeerCore.Api.Extensions;
-using NeerCore.Api.Extensions.Swagger;
+using NeerCore.Api.Swagger.Extensions;
 using NeerCore.Application.Extensions;
 using NeerCore.Data.EntityFramework.Abstractions;
 using NeerCore.Data.EntityFramework.Extensions;

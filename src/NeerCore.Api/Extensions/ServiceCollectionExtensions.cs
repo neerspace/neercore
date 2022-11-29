@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
-using NeerCore.Api.Extensions.Swagger;
+using NeerCore.Api.Swagger.Extensions;
 using NeerCore.DependencyInjection.Extensions;
 
 namespace NeerCore.Api.Extensions;

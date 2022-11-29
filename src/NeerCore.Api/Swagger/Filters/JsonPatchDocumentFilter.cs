@@ -6,7 +6,7 @@ using Newtonsoft.Json.Serialization;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using OperationType = Microsoft.AspNetCore.JsonPatch.Operations.OperationType;
 
-namespace NeerCore.Api.DocumentFilters;
+namespace NeerCore.Api.Swagger.Filters;
 
 /// <summary>
 ///   Swagger document filter to hide redundant models from

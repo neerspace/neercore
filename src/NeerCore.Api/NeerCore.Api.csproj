@@ -34,4 +34,8 @@
     <ProjectReference Include="..\NeerCore.DependencyInjection\NeerCore.DependencyInjection.csproj" />
     <ProjectReference Include="..\NeerCore\NeerCore.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="wwwroot\swagger-plugins.js" />
+  </ItemGroup>
 </Project>
