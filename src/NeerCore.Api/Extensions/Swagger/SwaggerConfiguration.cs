@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
@@ -17,12 +16,12 @@ internal sealed class SwaggerConfiguration : IConfigureNamedOptions<SwaggerGenOp
     private readonly OpenApiInfoProviderOptions _apiInfoOptions;
 
     public SwaggerConfiguration(
-        IConfiguration configuration,
         IWebHostEnvironment environment,
         IApiVersionDescriptionProvider provider,
+        IOptions<SwaggerConfigurationOptions> swaggerOptionsAccessor,
         IOptions<OpenApiInfoProviderOptions> apiInfoSettingsAccessor)
     {
-        _options = configuration.GetSwaggerSettings();
+        _options = swaggerOptionsAccessor.Value;
         _environment = environment;
         _provider = provider;
         _apiInfoOptions = apiInfoSettingsAccessor.Value;

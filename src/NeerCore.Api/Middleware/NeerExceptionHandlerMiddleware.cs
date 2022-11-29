@@ -6,7 +6,7 @@ using Microsoft.Extensions.Options;
 using NeerCore.Api.Extensions;
 using NeerCore.Exceptions;
 
-namespace NeerCore.Api.Defaults.Middleware;
+namespace NeerCore.Api.Middleware;
 
 /// <summary>
 ///   Default NeerCore exception handling middleware to handle

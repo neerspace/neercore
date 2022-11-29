@@ -14,7 +14,7 @@ public sealed class SqliteDbContext : DbContext, IDatabaseContext
         ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
 
         // Be careful with it! Remove it for real project
-        Database.EnsureCreated();
+        // Database.EnsureCreated();
     }
 
     protected override void OnModelCreating(ModelBuilder builder)

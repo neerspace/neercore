@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
-using NeerCore.Api.Defaults.Middleware;
+using NeerCore.Api.Middleware;
 using NeerCore.DependencyInjection;
 using Swashbuckle.AspNetCore.SwaggerUI;
 using ExceptionHandlerOptions = NeerCore.Api.ExceptionHandlerOptions;

@@ -65,7 +65,7 @@ static WebApplication ConfigureWebApp(WebApplication app)
     }
 
     if (app.Configuration.GetSwaggerSettings().Enabled)
-        app.UseCustomSwagger();
+        app.UseNeerSwagger();
 
     app.UseCors(CorsPolicies.AcceptAll);
     app.UseHttpsRedirection();
