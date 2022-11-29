@@ -23,7 +23,7 @@ public sealed class SwaggerSecurityOptions
     public string Scheme { get; set; } = "Bearer";
     public SecuritySchemeType SchemeType { get; set; } = SecuritySchemeType.ApiKey;
     public string BearerFormat { get; set; } = "JWT";
+    public string ParameterName { get; set; } = "Authorization";
     public ParameterLocation ParameterLocation { get; set; } = ParameterLocation.Header;
-    public string Title { get; set; } = "Authorization";
     public string Description { get; set; } = "";
 }

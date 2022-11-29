@@ -45,7 +45,7 @@ internal sealed class SwaggerConfiguration : IConfigureNamedOptions<SwaggerGenOp
             options.AddSecurityDefinition(_config.Security.Scheme, new OpenApiSecurityScheme
             {
                 Description = _config.Security.Description,
-                Name = _config.Security.Title,
+                Name = _config.Security.ParameterName,
                 In = _config.Security.ParameterLocation,
                 Type = _config.Security.SchemeType,
                 BearerFormat = _config.Security.BearerFormat,

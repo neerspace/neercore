@@ -47,17 +47,17 @@ public static class SwaggerExtensions
                 {
                     var name = $"{swaggerOptions.Title} {description.GroupName.ToUpper()}";
                     var url = $"/swagger/{description.GroupName}/swagger.json";
-                    SwaggerUIOptionsExtensions.SwaggerEndpoint(options, url, name);
+                    options.SwaggerEndpoint(url, name);
                 }
 
                 options.RoutePrefix = swaggerOptions.SwaggerUrl;
                 options.DocumentTitle = swaggerOptions.Title;
-                SwaggerUIOptionsExtensions.EnableFilter(options);
+                options.EnableFilter();
 
                 if (swaggerOptions.ExtendedDocs)
                 {
-                    SwaggerUIOptionsExtensions.InjectStylesheet(options, "/neercore/swagger-extensions.css");
-                    SwaggerUIOptionsExtensions.InjectJavascript(options, "/neercore/swagger-extensions.js");
+                    options.InjectStylesheet("/neercore/swagger-extensions.css");
+                    options.InjectJavascript("/neercore/swagger-extensions.js");
                 }
             });
         }
