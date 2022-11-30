@@ -1,9 +1,18 @@
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using NeerCore.Data.Abstractions;
 
 namespace EFTest.SqlServer.Entities;
 
-public class Animal : IEntity<int>
+[Table("Animals")]
+public sealed class Animal : IEntity<AnimalId>
 {
-    public int Id { get; set; }
+    [Key]
+    public AnimalId Id { get; set; }
+
+    [Required]
+    [StringLength(100)]
     public string Species { get; set; } = default!;
+
+    public override string ToString() => $"{Id.Value} => {Species}";
 }

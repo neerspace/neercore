@@ -6,7 +6,7 @@ using NeerCore.DependencyInjection;
 
 namespace NeerCoreTestingSuite.WebApp.Data;
 
-public sealed class SqliteDbContext : DbContext, IDatabaseContext
+public sealed class SqliteDbContext : DbContext, IDatabase
 {
     public SqliteDbContext(DbContextOptions<SqliteDbContext> options) : base(options)
     {

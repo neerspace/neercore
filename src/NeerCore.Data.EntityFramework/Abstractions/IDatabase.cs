@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 namespace NeerCore.Data.EntityFramework.Abstractions;
 
 /// <inheritdoc cref="DbContext"/>
-public interface IDatabaseContext
+public interface IDatabase
 {
     /// <inheritdoc cref="DbContext.Database"/>
     DatabaseFacade Database { get; }

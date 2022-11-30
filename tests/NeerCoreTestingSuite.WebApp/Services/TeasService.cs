@@ -9,10 +9,10 @@ namespace NeerCoreTestingSuite.WebApp.Services;
 [Service]
 public class TeasService
 {
-    private readonly IDatabaseContext _database;
+    private readonly IDatabase _database;
     // private readonly ISieveProcessor _sieveProcessor;
 
-    public TeasService(IDatabaseContext database)
+    public TeasService(IDatabase database)
     {
         _database = database;
     }

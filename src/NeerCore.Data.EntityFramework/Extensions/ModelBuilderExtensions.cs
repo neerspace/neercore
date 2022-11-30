@@ -200,15 +200,6 @@ public static class ModelBuilderExtensions
             .ApplyExtendedDataSeeders(assembly);
     }
 
-    [Obsolete("Use 'ApplyAllDataSeeders' instead of this.")]
-    public static ModelBuilder ApplyDataSeeders(this ModelBuilder builder)
-    {
-        var assembly = Assembly.GetCallingAssembly();
-        return builder
-            .ApplyEntityDataSeeders(assembly)
-            .ApplyExtendedDataSeeders(assembly);
-    }
-
     /// <summary>
     ///   Applies all <see cref="IEntityDataSeeder{TEntity}"/> and <see cref="IDataSeeder"/>
     ///   seeding data from provided assembly or from the calling assembly by default.

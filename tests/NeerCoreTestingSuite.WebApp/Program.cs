@@ -53,7 +53,7 @@ static WebApplication ConfigureWebApp(WebApplication app)
     // Test SQL logging
     using (var scope = app.Services.CreateScope())
     {
-        var db = scope.ServiceProvider.GetRequiredService<IDatabaseContext>();
+        var db = scope.ServiceProvider.GetRequiredService<IDatabase>();
         var teas = db.Set<Tea>()
             .AsNoTracking()
             .Where(e => e.Price > 10)
