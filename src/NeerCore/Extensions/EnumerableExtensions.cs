@@ -33,4 +33,57 @@ public static class EnumerableExtensions
             ? new NotFoundException<TSource>()
             : new NotFoundException(errorMessage);
     }
+
+    public static void Deconstruct<T>(this IList<T> seq, out T first, out IEnumerable<T> rest)
+    {
+        if (seq is null) throw new ArgumentNullException(nameof(seq));
+        if (seq.Count < 1) throw DeconstructException();
+        first = seq[0];
+        rest = seq.Skip(1);
+    }
+
+    public static void Deconstruct<T>(this IList<T> seq, out T first, out T second, out IEnumerable<T> rest)
+    {
+        if (seq is null) throw new ArgumentNullException(nameof(seq));
+        if (seq.Count < 2) throw DeconstructException();
+        first = seq[0];
+        second = seq[1];
+        rest = seq.Skip(2);
+    }
+
+    public static void Deconstruct<T>(this IList<T> seq, out T first, out T second, out T third, out IEnumerable<T> rest)
+    {
+        if (seq is null) throw new ArgumentNullException(nameof(seq));
+        if (seq.Count < 3) throw DeconstructException();
+        first = seq[0];
+        second = seq[1];
+        third = seq[2];
+        rest = seq.Skip(3);
+    }
+
+    public static void Deconstruct<T>(this IList<T> seq, out T first, out T second, out T third, out T fourth, out IEnumerable<T> rest)
+    {
+        if (seq is null) throw new ArgumentNullException(nameof(seq));
+        if (seq.Count < 3) throw DeconstructException();
+        first = seq[0];
+        second = seq[1];
+        third = seq[2];
+        fourth = seq[3];
+        rest = seq.Skip(4);
+    }
+
+    public static void Deconstruct<T>(this IList<T> seq, out T first, out T second, out T third, out T fourth, out T fifth, out IEnumerable<T> rest)
+    {
+        if (seq is null) throw new ArgumentNullException(nameof(seq));
+        if (seq.Count < 3) throw DeconstructException();
+        first = seq[0];
+        second = seq[1];
+        third = seq[2];
+        fourth = seq[3];
+        fifth = seq[4];
+        rest = seq.Skip(4);
+    }
+
+    private static IndexOutOfRangeException DeconstructException() =>
+        new("Trying to deconstruct a sequence where there are not enough elements.");
 }
