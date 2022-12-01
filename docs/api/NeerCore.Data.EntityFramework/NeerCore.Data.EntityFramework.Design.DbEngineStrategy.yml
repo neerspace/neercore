@@ -1,0 +1,178 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Data.EntityFramework.Design.DbEngineStrategy
+  commentId: T:NeerCore.Data.EntityFramework.Design.DbEngineStrategy
+  id: DbEngineStrategy
+  parent: NeerCore.Data.EntityFramework.Design
+  children:
+  - NeerCore.Data.EntityFramework.Design.DbEngineStrategy.Postgres
+  - NeerCore.Data.EntityFramework.Design.DbEngineStrategy.Sqlite
+  - NeerCore.Data.EntityFramework.Design.DbEngineStrategy.SqlServer
+  - NeerCore.Data.EntityFramework.Design.DbEngineStrategy.Unspecified
+  langs:
+  - csharp
+  - vb
+  name: DbEngineStrategy
+  nameWithType: DbEngineStrategy
+  fullName: NeerCore.Data.EntityFramework.Design.DbEngineStrategy
+  type: Enum
+  source:
+    remote:
+      path: src/NeerCore.Data.EntityFramework/Design/DbEngineStrategy.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: DbEngineStrategy
+    path: ../src/NeerCore.Data.EntityFramework/Design/DbEngineStrategy.cs
+    startLine: 2
+  assemblies:
+  - NeerCore.Data.EntityFramework
+  namespace: NeerCore.Data.EntityFramework.Design
+  syntax:
+    content: 'public enum DbEngineStrategy : int'
+    content.vb: Public Enum DbEngineStrategy As Integer
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: NeerCore.Data.EntityFramework.Design.DbEngineStrategy.Unspecified
+  commentId: F:NeerCore.Data.EntityFramework.Design.DbEngineStrategy.Unspecified
+  id: Unspecified
+  parent: NeerCore.Data.EntityFramework.Design.DbEngineStrategy
+  langs:
+  - csharp
+  - vb
+  name: Unspecified
+  nameWithType: DbEngineStrategy.Unspecified
+  fullName: NeerCore.Data.EntityFramework.Design.DbEngineStrategy.Unspecified
+  type: Field
+  source:
+    remote:
+      path: src/NeerCore.Data.EntityFramework/Design/DbEngineStrategy.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: Unspecified
+    path: ../src/NeerCore.Data.EntityFramework/Design/DbEngineStrategy.cs
+    startLine: 4
+  assemblies:
+  - NeerCore.Data.EntityFramework
+  namespace: NeerCore.Data.EntityFramework.Design
+  syntax:
+    content: Unspecified = 0
+    return:
+      type: NeerCore.Data.EntityFramework.Design.DbEngineStrategy
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: NeerCore.Data.EntityFramework.Design.DbEngineStrategy.SqlServer
+  commentId: F:NeerCore.Data.EntityFramework.Design.DbEngineStrategy.SqlServer
+  id: SqlServer
+  parent: NeerCore.Data.EntityFramework.Design.DbEngineStrategy
+  langs:
+  - csharp
+  - vb
+  name: SqlServer
+  nameWithType: DbEngineStrategy.SqlServer
+  fullName: NeerCore.Data.EntityFramework.Design.DbEngineStrategy.SqlServer
+  type: Field
+  source:
+    remote:
+      path: src/NeerCore.Data.EntityFramework/Design/DbEngineStrategy.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: SqlServer
+    path: ../src/NeerCore.Data.EntityFramework/Design/DbEngineStrategy.cs
+    startLine: 5
+  assemblies:
+  - NeerCore.Data.EntityFramework
+  namespace: NeerCore.Data.EntityFramework.Design
+  syntax:
+    content: SqlServer = 1
+    return:
+      type: NeerCore.Data.EntityFramework.Design.DbEngineStrategy
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: NeerCore.Data.EntityFramework.Design.DbEngineStrategy.Sqlite
+  commentId: F:NeerCore.Data.EntityFramework.Design.DbEngineStrategy.Sqlite
+  id: Sqlite
+  parent: NeerCore.Data.EntityFramework.Design.DbEngineStrategy
+  langs:
+  - csharp
+  - vb
+  name: Sqlite
+  nameWithType: DbEngineStrategy.Sqlite
+  fullName: NeerCore.Data.EntityFramework.Design.DbEngineStrategy.Sqlite
+  type: Field
+  source:
+    remote:
+      path: src/NeerCore.Data.EntityFramework/Design/DbEngineStrategy.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: Sqlite
+    path: ../src/NeerCore.Data.EntityFramework/Design/DbEngineStrategy.cs
+    startLine: 6
+  assemblies:
+  - NeerCore.Data.EntityFramework
+  namespace: NeerCore.Data.EntityFramework.Design
+  syntax:
+    content: Sqlite = 2
+    return:
+      type: NeerCore.Data.EntityFramework.Design.DbEngineStrategy
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: NeerCore.Data.EntityFramework.Design.DbEngineStrategy.Postgres
+  commentId: F:NeerCore.Data.EntityFramework.Design.DbEngineStrategy.Postgres
+  id: Postgres
+  parent: NeerCore.Data.EntityFramework.Design.DbEngineStrategy
+  langs:
+  - csharp
+  - vb
+  name: Postgres
+  nameWithType: DbEngineStrategy.Postgres
+  fullName: NeerCore.Data.EntityFramework.Design.DbEngineStrategy.Postgres
+  type: Field
+  source:
+    remote:
+      path: src/NeerCore.Data.EntityFramework/Design/DbEngineStrategy.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: Postgres
+    path: ../src/NeerCore.Data.EntityFramework/Design/DbEngineStrategy.cs
+    startLine: 7
+  assemblies:
+  - NeerCore.Data.EntityFramework
+  namespace: NeerCore.Data.EntityFramework.Design
+  syntax:
+    content: Postgres = 3
+    return:
+      type: NeerCore.Data.EntityFramework.Design.DbEngineStrategy
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: NeerCore.Data.EntityFramework.Design
+  commentId: N:NeerCore.Data.EntityFramework.Design
+  name: NeerCore.Data.EntityFramework.Design
+  nameWithType: NeerCore.Data.EntityFramework.Design
+  fullName: NeerCore.Data.EntityFramework.Design
+- uid: NeerCore.Data.EntityFramework.Design.DbEngineStrategy
+  commentId: T:NeerCore.Data.EntityFramework.Design.DbEngineStrategy
+  parent: NeerCore.Data.EntityFramework.Design
+  name: DbEngineStrategy
+  nameWithType: DbEngineStrategy
+  fullName: NeerCore.Data.EntityFramework.Design.DbEngineStrategy

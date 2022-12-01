@@ -1,0 +1,135 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Typeids.SourceGenerators.IdentifierSourceGenerator
+  commentId: T:NeerCore.Typeids.SourceGenerators.IdentifierSourceGenerator
+  id: IdentifierSourceGenerator
+  parent: NeerCore.Typeids.SourceGenerators
+  children:
+  - NeerCore.Typeids.SourceGenerators.IdentifierSourceGenerator.Execute(GeneratorExecutionContext)
+  - NeerCore.Typeids.SourceGenerators.IdentifierSourceGenerator.Initialize(GeneratorInitializationContext)
+  langs:
+  - csharp
+  - vb
+  name: IdentifierSourceGenerator
+  nameWithType: IdentifierSourceGenerator
+  fullName: NeerCore.Typeids.SourceGenerators.IdentifierSourceGenerator
+  type: Class
+  source:
+    remote:
+      path: src/NeerCore.Typeids/SourceGenerators/IdentifierSourceGenerator.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: IdentifierSourceGenerator
+    path: ../src/NeerCore.Typeids/SourceGenerators/IdentifierSourceGenerator.cs
+    startLine: 4
+  assemblies:
+  - NeerCore.Typeids
+  namespace: NeerCore.Typeids.SourceGenerators
+  syntax:
+    content: 'public class IdentifierSourceGenerator : ISourceGenerator'
+    content.vb: >-
+      Public Class IdentifierSourceGenerator
+
+          Inherits ISourceGenerator
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: NeerCore.Typeids.SourceGenerators.IdentifierSourceGenerator.Initialize(GeneratorInitializationContext)
+  commentId: M:NeerCore.Typeids.SourceGenerators.IdentifierSourceGenerator.Initialize(GeneratorInitializationContext)
+  id: Initialize(GeneratorInitializationContext)
+  parent: NeerCore.Typeids.SourceGenerators.IdentifierSourceGenerator
+  langs:
+  - csharp
+  - vb
+  name: Initialize(GeneratorInitializationContext)
+  nameWithType: IdentifierSourceGenerator.Initialize(GeneratorInitializationContext)
+  fullName: NeerCore.Typeids.SourceGenerators.IdentifierSourceGenerator.Initialize(GeneratorInitializationContext)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Typeids/SourceGenerators/IdentifierSourceGenerator.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: Initialize
+    path: ../src/NeerCore.Typeids/SourceGenerators/IdentifierSourceGenerator.cs
+    startLine: 7
+  assemblies:
+  - NeerCore.Typeids
+  namespace: NeerCore.Typeids.SourceGenerators
+  syntax:
+    content: public void Initialize(GeneratorInitializationContext context)
+    parameters:
+    - id: context
+      type: GeneratorInitializationContext
+    content.vb: Public Sub Initialize(context As GeneratorInitializationContext)
+  overload: NeerCore.Typeids.SourceGenerators.IdentifierSourceGenerator.Initialize*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: NeerCore.Typeids.SourceGenerators.IdentifierSourceGenerator.Execute(GeneratorExecutionContext)
+  commentId: M:NeerCore.Typeids.SourceGenerators.IdentifierSourceGenerator.Execute(GeneratorExecutionContext)
+  id: Execute(GeneratorExecutionContext)
+  parent: NeerCore.Typeids.SourceGenerators.IdentifierSourceGenerator
+  langs:
+  - csharp
+  - vb
+  name: Execute(GeneratorExecutionContext)
+  nameWithType: IdentifierSourceGenerator.Execute(GeneratorExecutionContext)
+  fullName: NeerCore.Typeids.SourceGenerators.IdentifierSourceGenerator.Execute(GeneratorExecutionContext)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Typeids/SourceGenerators/IdentifierSourceGenerator.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: Execute
+    path: ../src/NeerCore.Typeids/SourceGenerators/IdentifierSourceGenerator.cs
+    startLine: 12
+  assemblies:
+  - NeerCore.Typeids
+  namespace: NeerCore.Typeids.SourceGenerators
+  syntax:
+    content: public void Execute(GeneratorExecutionContext context)
+    parameters:
+    - id: context
+      type: GeneratorExecutionContext
+    content.vb: Public Sub Execute(context As GeneratorExecutionContext)
+  overload: NeerCore.Typeids.SourceGenerators.IdentifierSourceGenerator.Execute*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: NeerCore.Typeids.SourceGenerators
+  commentId: N:NeerCore.Typeids.SourceGenerators
+  name: NeerCore.Typeids.SourceGenerators
+  nameWithType: NeerCore.Typeids.SourceGenerators
+  fullName: NeerCore.Typeids.SourceGenerators
+- uid: NeerCore.Typeids.SourceGenerators.IdentifierSourceGenerator.Initialize*
+  commentId: Overload:NeerCore.Typeids.SourceGenerators.IdentifierSourceGenerator.Initialize
+  name: Initialize
+  nameWithType: IdentifierSourceGenerator.Initialize
+  fullName: NeerCore.Typeids.SourceGenerators.IdentifierSourceGenerator.Initialize
+- uid: GeneratorInitializationContext
+  commentId: '!:GeneratorInitializationContext'
+  isExternal: true
+  name: GeneratorInitializationContext
+  nameWithType: GeneratorInitializationContext
+  fullName: GeneratorInitializationContext
+- uid: NeerCore.Typeids.SourceGenerators.IdentifierSourceGenerator.Execute*
+  commentId: Overload:NeerCore.Typeids.SourceGenerators.IdentifierSourceGenerator.Execute
+  name: Execute
+  nameWithType: IdentifierSourceGenerator.Execute
+  fullName: NeerCore.Typeids.SourceGenerators.IdentifierSourceGenerator.Execute
+- uid: GeneratorExecutionContext
+  commentId: '!:GeneratorExecutionContext'
+  isExternal: true
+  name: GeneratorExecutionContext
+  nameWithType: GeneratorExecutionContext
+  fullName: GeneratorExecutionContext

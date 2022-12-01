@@ -1,0 +1,263 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.ErrorDetails
+  commentId: T:NeerCore.ErrorDetails
+  id: ErrorDetails
+  parent: NeerCore
+  children:
+  - NeerCore.ErrorDetails.#ctor(System.String,System.String)
+  - NeerCore.ErrorDetails.Field
+  - NeerCore.ErrorDetails.Message
+  langs:
+  - csharp
+  - vb
+  name: ErrorDetails
+  nameWithType: ErrorDetails
+  fullName: NeerCore.ErrorDetails
+  type: Class
+  source:
+    remote:
+      path: src/NeerCore/ErrorDetails.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: ErrorDetails
+    path: src/NeerCore/ErrorDetails.cs
+    startLine: 8
+  assemblies:
+  - NeerCore
+  namespace: NeerCore
+  summary: "\nRepresents a part of exception to describe\na problem for single field.\n"
+  example: []
+  syntax:
+    content: 'public sealed class ErrorDetails : object'
+    content.vb: >-
+      Public NotInheritable Class ErrorDetails
+
+          Inherits Object
+  inheritance:
+  - System.Object
+  implements:
+  - System.IEquatable{NeerCore.ErrorDetails}
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: NeerCore.ErrorDetails.#ctor(System.String,System.String)
+  commentId: M:NeerCore.ErrorDetails.#ctor(System.String,System.String)
+  id: '#ctor(System.String,System.String)'
+  parent: NeerCore.ErrorDetails
+  langs:
+  - csharp
+  - vb
+  name: ErrorDetails(String, String)
+  nameWithType: ErrorDetails.ErrorDetails(String, String)
+  fullName: NeerCore.ErrorDetails.ErrorDetails(System.String, System.String)
+  type: Constructor
+  source:
+    remote:
+      path: src/NeerCore/ErrorDetails.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: .ctor
+    path: src/NeerCore/ErrorDetails.cs
+    startLine: 8
+  assemblies:
+  - NeerCore
+  namespace: NeerCore
+  summary: "\nRepresents a part of exception to describe\na problem for single field.\n"
+  example: []
+  syntax:
+    content: public ErrorDetails(string Field, string Message)
+    parameters:
+    - id: Field
+      type: System.String
+      description: Field where problem found.
+    - id: Message
+      type: System.String
+      description: Problem description.
+    content.vb: Public Sub New(Field As String, Message As String)
+  overload: NeerCore.ErrorDetails.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: NeerCore.ErrorDetails.Field
+  commentId: P:NeerCore.ErrorDetails.Field
+  id: Field
+  parent: NeerCore.ErrorDetails
+  langs:
+  - csharp
+  - vb
+  name: Field
+  nameWithType: ErrorDetails.Field
+  fullName: NeerCore.ErrorDetails.Field
+  type: Property
+  source:
+    remote:
+      path: src/NeerCore/ErrorDetails.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: Field
+    path: src/NeerCore/ErrorDetails.cs
+    startLine: 8
+  assemblies:
+  - NeerCore
+  namespace: NeerCore
+  syntax:
+    content: public string Field { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Field As String
+  overload: NeerCore.ErrorDetails.Field*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: NeerCore.ErrorDetails.Message
+  commentId: P:NeerCore.ErrorDetails.Message
+  id: Message
+  parent: NeerCore.ErrorDetails
+  langs:
+  - csharp
+  - vb
+  name: Message
+  nameWithType: ErrorDetails.Message
+  fullName: NeerCore.ErrorDetails.Message
+  type: Property
+  source:
+    remote:
+      path: src/NeerCore/ErrorDetails.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: Message
+    path: src/NeerCore/ErrorDetails.cs
+    startLine: 8
+  assemblies:
+  - NeerCore
+  namespace: NeerCore
+  syntax:
+    content: public string Message { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property Message As String
+  overload: NeerCore.ErrorDetails.Message*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: NeerCore
+  commentId: N:NeerCore
+  name: NeerCore
+  nameWithType: NeerCore
+  fullName: NeerCore
+- uid: System.IEquatable{NeerCore.ErrorDetails}
+  commentId: '!:System.IEquatable{NeerCore.ErrorDetails}'
+  definition: System.IEquatable`1
+  name: IEquatable<ErrorDetails>
+  nameWithType: IEquatable<ErrorDetails>
+  fullName: System.IEquatable<NeerCore.ErrorDetails>
+  nameWithType.vb: IEquatable(Of ErrorDetails)
+  fullName.vb: System.IEquatable(Of NeerCore.ErrorDetails)
+  name.vb: IEquatable(Of ErrorDetails)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: NeerCore.ErrorDetails
+    name: ErrorDetails
+    nameWithType: ErrorDetails
+    fullName: NeerCore.ErrorDetails
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: NeerCore.ErrorDetails
+    name: ErrorDetails
+    nameWithType: ErrorDetails
+    fullName: NeerCore.ErrorDetails
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.IEquatable`1
+  commentId: '!:System.IEquatable`1'
+  isExternal: true
+  name: IEquatable<>
+  nameWithType: IEquatable<>
+  fullName: System.IEquatable<>
+  nameWithType.vb: IEquatable(Of )
+  fullName.vb: System.IEquatable(Of )
+  name.vb: IEquatable(Of )
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    nameWithType: IEquatable
+    fullName: System.IEquatable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NeerCore.ErrorDetails.#ctor*
+  commentId: Overload:NeerCore.ErrorDetails.#ctor
+  name: ErrorDetails
+  nameWithType: ErrorDetails.ErrorDetails
+  fullName: NeerCore.ErrorDetails.ErrorDetails
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: NeerCore.ErrorDetails.Field*
+  commentId: Overload:NeerCore.ErrorDetails.Field
+  name: Field
+  nameWithType: ErrorDetails.Field
+  fullName: NeerCore.ErrorDetails.Field
+- uid: NeerCore.ErrorDetails.Message*
+  commentId: Overload:NeerCore.ErrorDetails.Message
+  name: Message
+  nameWithType: ErrorDetails.Message
+  fullName: NeerCore.ErrorDetails.Message

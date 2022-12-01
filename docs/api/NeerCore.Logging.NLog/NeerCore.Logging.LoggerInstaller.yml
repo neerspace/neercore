@@ -1,0 +1,424 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Logging.LoggerInstaller
+  commentId: T:NeerCore.Logging.LoggerInstaller
+  id: LoggerInstaller
+  parent: NeerCore.Logging
+  children:
+  - NeerCore.Logging.LoggerInstaller.InitDefault(System.Nullable{Action{NeerCore.Logging.LoggingSettings}},System.Nullable{System.String})
+  - NeerCore.Logging.LoggerInstaller.InitFromCurrentEnvironment(System.String,System.String,System.Nullable{System.String})
+  - NeerCore.Logging.LoggerInstaller.InitFromEnvironment(System.Nullable{System.String},System.String,System.Nullable{System.String})
+  - NeerCore.Logging.LoggerInstaller.InitFromFile(System.String,System.String,System.Nullable{System.String})
+  langs:
+  - csharp
+  - vb
+  name: LoggerInstaller
+  nameWithType: LoggerInstaller
+  fullName: NeerCore.Logging.LoggerInstaller
+  type: Class
+  source:
+    remote:
+      path: src/NeerCore.Logging.NLog/LoggerInstaller.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: LoggerInstaller
+    path: src/NeerCore.Logging.NLog/LoggerInstaller.cs
+    startLine: 12
+  assemblies:
+  - NeerCore.Logging.NLog
+  namespace: NeerCore.Logging
+  summary: "\nNLog logger installer. Configures and creates logger.\n"
+  example: []
+  syntax:
+    content: 'public static class LoggerInstaller : object'
+    content.vb: >-
+      Public Module LoggerInstaller
+
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: NeerCore.Logging.LoggerInstaller.InitDefault(System.Nullable{Action{NeerCore.Logging.LoggingSettings}},System.Nullable{System.String})
+  commentId: M:NeerCore.Logging.LoggerInstaller.InitDefault(System.Nullable{Action{NeerCore.Logging.LoggingSettings}},System.Nullable{System.String})
+  id: InitDefault(System.Nullable{Action{NeerCore.Logging.LoggingSettings}},System.Nullable{System.String})
+  parent: NeerCore.Logging.LoggerInstaller
+  langs:
+  - csharp
+  - vb
+  name: InitDefault(Nullable<Action<LoggingSettings>>, Nullable<String>)
+  nameWithType: LoggerInstaller.InitDefault(Nullable<Action<LoggingSettings>>, Nullable<String>)
+  fullName: NeerCore.Logging.LoggerInstaller.InitDefault(System.Nullable<Action<NeerCore.Logging.LoggingSettings>>, System.Nullable<System.String>)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Logging.NLog/LoggerInstaller.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: InitDefault
+    path: src/NeerCore.Logging.NLog/LoggerInstaller.cs
+    startLine: 23
+  assemblies:
+  - NeerCore.Logging.NLog
+  namespace: NeerCore.Logging
+  summary: "\nConfigures logger with predefined settings and sets it to\n<see cref=\"!:LogManager.Configuration\">LogManager.Configuration</see>.\n"
+  example: []
+  syntax:
+    content: public static ILogger InitDefault(Action<LoggingSettings>? configureOptions = null, string? defaultLoggerName = null)
+    parameters:
+    - id: configureOptions
+      type: System.Nullable{Action{NeerCore.Logging.LoggingSettings}}
+      description: Logger options configuration <see cref="!:Action&lt;T>"></see>.
+    - id: defaultLoggerName
+      type: System.Nullable{System.String}
+      description: Returned <see cref="!:ILogger"></see> instance name (<strong>{RootNamespace}.Program</strong> by default).
+    return:
+      type: ILogger
+      description: Configured <see cref="!:ILogger"></see> instance.
+    content.vb: Public Shared Function InitDefault(configureOptions As Action(Of LoggingSettings)? = Nothing, defaultLoggerName As String? = Nothing) As ILogger
+  overload: NeerCore.Logging.LoggerInstaller.InitDefault*
+  nameWithType.vb: LoggerInstaller.InitDefault(Nullable(Of Action(Of LoggingSettings)), Nullable(Of String))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: NeerCore.Logging.LoggerInstaller.InitDefault(System.Nullable(Of Action(Of NeerCore.Logging.LoggingSettings)), System.Nullable(Of System.String))
+  name.vb: InitDefault(Nullable(Of Action(Of LoggingSettings)), Nullable(Of String))
+- uid: NeerCore.Logging.LoggerInstaller.InitFromCurrentEnvironment(System.String,System.String,System.Nullable{System.String})
+  commentId: M:NeerCore.Logging.LoggerInstaller.InitFromCurrentEnvironment(System.String,System.String,System.Nullable{System.String})
+  id: InitFromCurrentEnvironment(System.String,System.String,System.Nullable{System.String})
+  parent: NeerCore.Logging.LoggerInstaller
+  langs:
+  - csharp
+  - vb
+  name: InitFromCurrentEnvironment(String, String, Nullable<String>)
+  nameWithType: LoggerInstaller.InitFromCurrentEnvironment(String, String, Nullable<String>)
+  fullName: NeerCore.Logging.LoggerInstaller.InitFromCurrentEnvironment(System.String, System.String, System.Nullable<System.String>)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Logging.NLog/LoggerInstaller.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: InitFromCurrentEnvironment
+    path: src/NeerCore.Logging.NLog/LoggerInstaller.cs
+    startLine: 38
+  assemblies:
+  - NeerCore.Logging.NLog
+  namespace: NeerCore.Logging
+  summary: "\nConfigures logger with predefined settings based on <strong>appsettings.{Environment}.json</strong>\nand sets it to <see cref=\"!:LogManager.Configuration\">LogManager.Configuration</see>.\n"
+  example: []
+  syntax:
+    content: public static ILogger InitFromCurrentEnvironment(string sectionName = "Logging", string environmentVariableName = "ASPNETCORE_ENVIRONMENT", string? defaultLoggerName = null)
+    parameters:
+    - id: sectionName
+      type: System.String
+      description: Logger configuration section name in appsettings file.
+    - id: environmentVariableName
+      type: System.String
+      description: Environment variable name where is set application environment (Development/Production/Staging).
+    - id: defaultLoggerName
+      type: System.Nullable{System.String}
+      description: Returned <see cref="!:ILogger"></see> instance name (<strong>{RootNamespace}.Program</strong> by default).
+    return:
+      type: ILogger
+      description: Configured <see cref="!:ILogger"></see> instance.
+    content.vb: Public Shared Function InitFromCurrentEnvironment(sectionName As String = "Logging", environmentVariableName As String = "ASPNETCORE_ENVIRONMENT", defaultLoggerName As String? = Nothing) As ILogger
+  overload: NeerCore.Logging.LoggerInstaller.InitFromCurrentEnvironment*
+  nameWithType.vb: LoggerInstaller.InitFromCurrentEnvironment(String, String, Nullable(Of String))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: NeerCore.Logging.LoggerInstaller.InitFromCurrentEnvironment(System.String, System.String, System.Nullable(Of System.String))
+  name.vb: InitFromCurrentEnvironment(String, String, Nullable(Of String))
+- uid: NeerCore.Logging.LoggerInstaller.InitFromEnvironment(System.Nullable{System.String},System.String,System.Nullable{System.String})
+  commentId: M:NeerCore.Logging.LoggerInstaller.InitFromEnvironment(System.Nullable{System.String},System.String,System.Nullable{System.String})
+  id: InitFromEnvironment(System.Nullable{System.String},System.String,System.Nullable{System.String})
+  parent: NeerCore.Logging.LoggerInstaller
+  langs:
+  - csharp
+  - vb
+  name: InitFromEnvironment(Nullable<String>, String, Nullable<String>)
+  nameWithType: LoggerInstaller.InitFromEnvironment(Nullable<String>, String, Nullable<String>)
+  fullName: NeerCore.Logging.LoggerInstaller.InitFromEnvironment(System.Nullable<System.String>, System.String, System.Nullable<System.String>)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Logging.NLog/LoggerInstaller.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: InitFromEnvironment
+    path: src/NeerCore.Logging.NLog/LoggerInstaller.cs
+    startLine: 52
+  assemblies:
+  - NeerCore.Logging.NLog
+  namespace: NeerCore.Logging
+  summary: "\nConfigures logger with predefined settings based on <strong>appsettings.{Environment}.json</strong>\nand sets it to <see cref=\"!:LogManager.Configuration\">LogManager.Configuration</see>.\n"
+  example: []
+  syntax:
+    content: public static ILogger InitFromEnvironment(string? environment, string sectionName = "Logging", string? defaultLoggerName = null)
+    parameters:
+    - id: environment
+      type: System.Nullable{System.String}
+      description: Application environment (Development/Production/Staging).
+    - id: sectionName
+      type: System.String
+      description: Logger configuration section name in appsettings file.
+    - id: defaultLoggerName
+      type: System.Nullable{System.String}
+      description: Returned <see cref="!:ILogger"></see> instance name (<strong>{RootNamespace}.Program</strong> by default).
+    return:
+      type: ILogger
+      description: Configured <see cref="!:ILogger"></see> instance.
+    content.vb: Public Shared Function InitFromEnvironment(environment As String?, sectionName As String = "Logging", defaultLoggerName As String? = Nothing) As ILogger
+  overload: NeerCore.Logging.LoggerInstaller.InitFromEnvironment*
+  nameWithType.vb: LoggerInstaller.InitFromEnvironment(Nullable(Of String), String, Nullable(Of String))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: NeerCore.Logging.LoggerInstaller.InitFromEnvironment(System.Nullable(Of System.String), System.String, System.Nullable(Of System.String))
+  name.vb: InitFromEnvironment(Nullable(Of String), String, Nullable(Of String))
+- uid: NeerCore.Logging.LoggerInstaller.InitFromFile(System.String,System.String,System.Nullable{System.String})
+  commentId: M:NeerCore.Logging.LoggerInstaller.InitFromFile(System.String,System.String,System.Nullable{System.String})
+  id: InitFromFile(System.String,System.String,System.Nullable{System.String})
+  parent: NeerCore.Logging.LoggerInstaller
+  langs:
+  - csharp
+  - vb
+  name: InitFromFile(String, String, Nullable<String>)
+  nameWithType: LoggerInstaller.InitFromFile(String, String, Nullable<String>)
+  fullName: NeerCore.Logging.LoggerInstaller.InitFromFile(System.String, System.String, System.Nullable<System.String>)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Logging.NLog/LoggerInstaller.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: InitFromFile
+    path: src/NeerCore.Logging.NLog/LoggerInstaller.cs
+    startLine: 74
+  assemblies:
+  - NeerCore.Logging.NLog
+  namespace: NeerCore.Logging
+  summary: "\nConfigures logger with predefined settings based on file targeted in <code data-dev-comment-type=\"paramref\" class=\"paramref\">configurationPath</code>\nand sets it to <see cref=\"!:LogManager.Configuration\">LogManager.Configuration</see>.\n"
+  remarks: "\nThis method does not provide predefined configuration, you should set all configuration in\n<code data-dev-comment-type=\"paramref\" class=\"paramref\">configurationPath</code> file with root section <code data-dev-comment-type=\"paramref\" class=\"paramref\">rootSectionName</code>.\n"
+  example: []
+  syntax:
+    content: public static ILogger InitFromFile(string configurationPath = "NLog.json", string rootSectionName = "NLog", string? defaultLoggerName = null)
+    parameters:
+    - id: configurationPath
+      type: System.String
+      description: Logger configuration section name in <code data-dev-comment-type="paramref" class="paramref">rootSectionName</code> file.
+    - id: rootSectionName
+      type: System.String
+      description: NLog configuration file path.
+    - id: defaultLoggerName
+      type: System.Nullable{System.String}
+      description: Returned <see cref="!:ILogger"></see> instance name (<strong>{RootNamespace}.Program</strong> by default).
+    return:
+      type: ILogger
+      description: Configured <see cref="!:ILogger"></see> instance.
+    content.vb: Public Shared Function InitFromFile(configurationPath As String = "NLog.json", rootSectionName As String = "NLog", defaultLoggerName As String? = Nothing) As ILogger
+  overload: NeerCore.Logging.LoggerInstaller.InitFromFile*
+  nameWithType.vb: LoggerInstaller.InitFromFile(String, String, Nullable(Of String))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: NeerCore.Logging.LoggerInstaller.InitFromFile(System.String, System.String, System.Nullable(Of System.String))
+  name.vb: InitFromFile(String, String, Nullable(Of String))
+references:
+- uid: NeerCore.Logging
+  commentId: N:NeerCore.Logging
+  name: NeerCore.Logging
+  nameWithType: NeerCore.Logging
+  fullName: NeerCore.Logging
+- uid: NeerCore.Logging.LoggerInstaller.InitDefault*
+  commentId: Overload:NeerCore.Logging.LoggerInstaller.InitDefault
+  name: InitDefault
+  nameWithType: LoggerInstaller.InitDefault
+  fullName: NeerCore.Logging.LoggerInstaller.InitDefault
+- uid: System.Nullable{Action{NeerCore.Logging.LoggingSettings}}
+  commentId: '!:System.Nullable{Action{NeerCore.Logging.LoggingSettings}}'
+  definition: System.Nullable`1
+  name: Nullable<Action<LoggingSettings>>
+  nameWithType: Nullable<Action<LoggingSettings>>
+  fullName: System.Nullable<Action<NeerCore.Logging.LoggingSettings>>
+  nameWithType.vb: Nullable(Of Action(Of LoggingSettings))
+  fullName.vb: System.Nullable(Of Action(Of NeerCore.Logging.LoggingSettings))
+  name.vb: Nullable(Of Action(Of LoggingSettings))
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: NeerCore.Logging.LoggingSettings
+    name: LoggingSettings
+    nameWithType: LoggingSettings
+    fullName: NeerCore.Logging.LoggingSettings
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: NeerCore.Logging.LoggingSettings
+    name: LoggingSettings
+    nameWithType: LoggingSettings
+    fullName: NeerCore.Logging.LoggingSettings
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable{System.String}
+  commentId: '!:System.Nullable{System.String}'
+  definition: System.Nullable`1
+  name: Nullable<String>
+  nameWithType: Nullable<String>
+  fullName: System.Nullable<System.String>
+  nameWithType.vb: Nullable(Of String)
+  fullName.vb: System.Nullable(Of System.String)
+  name.vb: Nullable(Of String)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ILogger
+  isExternal: true
+  name: ILogger
+  nameWithType: ILogger
+  fullName: ILogger
+- uid: System.Nullable`1
+  isExternal: true
+  name: Nullable<>
+  nameWithType: Nullable<>
+  fullName: System.Nullable<>
+  nameWithType.vb: Nullable(Of )
+  fullName.vb: System.Nullable(Of )
+  name.vb: Nullable(Of )
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NeerCore.Logging.LoggerInstaller.InitFromCurrentEnvironment*
+  commentId: Overload:NeerCore.Logging.LoggerInstaller.InitFromCurrentEnvironment
+  name: InitFromCurrentEnvironment
+  nameWithType: LoggerInstaller.InitFromCurrentEnvironment
+  fullName: NeerCore.Logging.LoggerInstaller.InitFromCurrentEnvironment
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: NeerCore.Logging.LoggerInstaller.InitFromEnvironment*
+  commentId: Overload:NeerCore.Logging.LoggerInstaller.InitFromEnvironment
+  name: InitFromEnvironment
+  nameWithType: LoggerInstaller.InitFromEnvironment
+  fullName: NeerCore.Logging.LoggerInstaller.InitFromEnvironment
+- uid: NeerCore.Logging.LoggerInstaller.InitFromFile*
+  commentId: Overload:NeerCore.Logging.LoggerInstaller.InitFromFile
+  name: InitFromFile
+  nameWithType: LoggerInstaller.InitFromFile
+  fullName: NeerCore.Logging.LoggerInstaller.InitFromFile

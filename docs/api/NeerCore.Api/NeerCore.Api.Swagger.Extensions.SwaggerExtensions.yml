@@ -1,0 +1,344 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Api.Swagger.Extensions.SwaggerExtensions
+  commentId: T:NeerCore.Api.Swagger.Extensions.SwaggerExtensions
+  id: SwaggerExtensions
+  parent: NeerCore.Api.Swagger.Extensions
+  children:
+  - NeerCore.Api.Swagger.Extensions.SwaggerExtensions.AddNeerSwagger(IServiceCollection,System.Nullable{Func{ApiVersionDescription,OpenApiInfo}})
+  - NeerCore.Api.Swagger.Extensions.SwaggerExtensions.GetSwaggerSettings(IConfiguration)
+  - NeerCore.Api.Swagger.Extensions.SwaggerExtensions.UseNeerSwagger(IApplicationBuilder)
+  langs:
+  - csharp
+  - vb
+  name: SwaggerExtensions
+  nameWithType: SwaggerExtensions
+  fullName: NeerCore.Api.Swagger.Extensions.SwaggerExtensions
+  type: Class
+  source:
+    remote:
+      path: src/NeerCore.Api/Swagger/Extensions/SwaggerExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: SwaggerExtensions
+    path: ../src/NeerCore.Api/Swagger/Extensions/SwaggerExtensions.cs
+    startLine: 10
+  assemblies:
+  - NeerCore.Api
+  namespace: NeerCore.Api.Swagger.Extensions
+  syntax:
+    content: 'public static class SwaggerExtensions : object'
+    content.vb: >-
+      Public Module SwaggerExtensions
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: NeerCore.Api.Swagger.Extensions.SwaggerExtensions.AddNeerSwagger(IServiceCollection,System.Nullable{Func{ApiVersionDescription,OpenApiInfo}})
+  commentId: M:NeerCore.Api.Swagger.Extensions.SwaggerExtensions.AddNeerSwagger(IServiceCollection,System.Nullable{Func{ApiVersionDescription,OpenApiInfo}})
+  id: AddNeerSwagger(IServiceCollection,System.Nullable{Func{ApiVersionDescription,OpenApiInfo}})
+  isExtensionMethod: true
+  parent: NeerCore.Api.Swagger.Extensions.SwaggerExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddNeerSwagger(IServiceCollection, Nullable<Func<ApiVersionDescription, OpenApiInfo>>)
+  nameWithType: SwaggerExtensions.AddNeerSwagger(IServiceCollection, Nullable<Func<ApiVersionDescription, OpenApiInfo>>)
+  fullName: NeerCore.Api.Swagger.Extensions.SwaggerExtensions.AddNeerSwagger(IServiceCollection, System.Nullable<Func<ApiVersionDescription, OpenApiInfo>>)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Api/Swagger/Extensions/SwaggerExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: AddNeerSwagger
+    path: ../src/NeerCore.Api/Swagger/Extensions/SwaggerExtensions.cs
+    startLine: 19
+  assemblies:
+  - NeerCore.Api
+  namespace: NeerCore.Api.Swagger.Extensions
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public static IServiceCollection AddNeerSwagger(this IServiceCollection services, Func<ApiVersionDescription, OpenApiInfo>? configureInfo = null)
+    parameters:
+    - id: services
+      type: IServiceCollection
+      description: ''
+    - id: configureInfo
+      type: System.Nullable{Func{ApiVersionDescription,OpenApiInfo}}
+      description: ''
+    return:
+      type: IServiceCollection
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function AddNeerSwagger(services As IServiceCollection, configureInfo As Func(Of ApiVersionDescription, OpenApiInfo)? = Nothing) As IServiceCollection
+  overload: NeerCore.Api.Swagger.Extensions.SwaggerExtensions.AddNeerSwagger*
+  nameWithType.vb: SwaggerExtensions.AddNeerSwagger(IServiceCollection, Nullable(Of Func(Of ApiVersionDescription, OpenApiInfo)))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: NeerCore.Api.Swagger.Extensions.SwaggerExtensions.AddNeerSwagger(IServiceCollection, System.Nullable(Of Func(Of ApiVersionDescription, OpenApiInfo)))
+  name.vb: AddNeerSwagger(IServiceCollection, Nullable(Of Func(Of ApiVersionDescription, OpenApiInfo)))
+- uid: NeerCore.Api.Swagger.Extensions.SwaggerExtensions.UseNeerSwagger(IApplicationBuilder)
+  commentId: M:NeerCore.Api.Swagger.Extensions.SwaggerExtensions.UseNeerSwagger(IApplicationBuilder)
+  id: UseNeerSwagger(IApplicationBuilder)
+  isExtensionMethod: true
+  parent: NeerCore.Api.Swagger.Extensions.SwaggerExtensions
+  langs:
+  - csharp
+  - vb
+  name: UseNeerSwagger(IApplicationBuilder)
+  nameWithType: SwaggerExtensions.UseNeerSwagger(IApplicationBuilder)
+  fullName: NeerCore.Api.Swagger.Extensions.SwaggerExtensions.UseNeerSwagger(IApplicationBuilder)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Api/Swagger/Extensions/SwaggerExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: UseNeerSwagger
+    path: ../src/NeerCore.Api/Swagger/Extensions/SwaggerExtensions.cs
+    startLine: 35
+  assemblies:
+  - NeerCore.Api
+  namespace: NeerCore.Api.Swagger.Extensions
+  summary: "\n\n"
+  example: []
+  syntax:
+    content: public static IApplicationBuilder UseNeerSwagger(this IApplicationBuilder app)
+    parameters:
+    - id: app
+      type: IApplicationBuilder
+      description: ''
+    return:
+      type: IApplicationBuilder
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function UseNeerSwagger(app As IApplicationBuilder) As IApplicationBuilder
+  overload: NeerCore.Api.Swagger.Extensions.SwaggerExtensions.UseNeerSwagger*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: NeerCore.Api.Swagger.Extensions.SwaggerExtensions.GetSwaggerSettings(IConfiguration)
+  commentId: M:NeerCore.Api.Swagger.Extensions.SwaggerExtensions.GetSwaggerSettings(IConfiguration)
+  id: GetSwaggerSettings(IConfiguration)
+  isExtensionMethod: true
+  parent: NeerCore.Api.Swagger.Extensions.SwaggerExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetSwaggerSettings(IConfiguration)
+  nameWithType: SwaggerExtensions.GetSwaggerSettings(IConfiguration)
+  fullName: NeerCore.Api.Swagger.Extensions.SwaggerExtensions.GetSwaggerSettings(IConfiguration)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Api/Swagger/Extensions/SwaggerExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: GetSwaggerSettings
+    path: ../src/NeerCore.Api/Swagger/Extensions/SwaggerExtensions.cs
+    startLine: 81
+  assemblies:
+  - NeerCore.Api
+  namespace: NeerCore.Api.Swagger.Extensions
+  syntax:
+    content: public static SwaggerConfigurationOptions GetSwaggerSettings(this IConfiguration configuration)
+    parameters:
+    - id: configuration
+      type: IConfiguration
+    return:
+      type: NeerCore.Api.Swagger.SwaggerConfigurationOptions
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function GetSwaggerSettings(configuration As IConfiguration) As SwaggerConfigurationOptions
+  overload: NeerCore.Api.Swagger.Extensions.SwaggerExtensions.GetSwaggerSettings*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: NeerCore.Api.Swagger.Extensions
+  commentId: N:NeerCore.Api.Swagger.Extensions
+  name: NeerCore.Api.Swagger.Extensions
+  nameWithType: NeerCore.Api.Swagger.Extensions
+  fullName: NeerCore.Api.Swagger.Extensions
+- uid: NeerCore.Api.Swagger.Extensions.SwaggerExtensions.AddNeerSwagger*
+  commentId: Overload:NeerCore.Api.Swagger.Extensions.SwaggerExtensions.AddNeerSwagger
+  name: AddNeerSwagger
+  nameWithType: SwaggerExtensions.AddNeerSwagger
+  fullName: NeerCore.Api.Swagger.Extensions.SwaggerExtensions.AddNeerSwagger
+- uid: IServiceCollection
+  isExternal: true
+  name: IServiceCollection
+  nameWithType: IServiceCollection
+  fullName: IServiceCollection
+- uid: System.Nullable{Func{ApiVersionDescription,OpenApiInfo}}
+  commentId: '!:System.Nullable{Func{ApiVersionDescription,OpenApiInfo}}'
+  definition: System.Nullable`1
+  name: Nullable<Func<ApiVersionDescription, OpenApiInfo>>
+  nameWithType: Nullable<Func<ApiVersionDescription, OpenApiInfo>>
+  fullName: System.Nullable<Func<ApiVersionDescription, OpenApiInfo>>
+  nameWithType.vb: Nullable(Of Func(Of ApiVersionDescription, OpenApiInfo))
+  fullName.vb: System.Nullable(Of Func(Of ApiVersionDescription, OpenApiInfo))
+  name.vb: Nullable(Of Func(Of ApiVersionDescription, OpenApiInfo))
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Func`2
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: ApiVersionDescription
+    name: ApiVersionDescription
+    nameWithType: ApiVersionDescription
+    fullName: ApiVersionDescription
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: OpenApiInfo
+    name: OpenApiInfo
+    nameWithType: OpenApiInfo
+    fullName: OpenApiInfo
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Func`2
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: ApiVersionDescription
+    name: ApiVersionDescription
+    nameWithType: ApiVersionDescription
+    fullName: ApiVersionDescription
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: OpenApiInfo
+    name: OpenApiInfo
+    nameWithType: OpenApiInfo
+    fullName: OpenApiInfo
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable`1
+  isExternal: true
+  name: Nullable<>
+  nameWithType: Nullable<>
+  fullName: System.Nullable<>
+  nameWithType.vb: Nullable(Of )
+  fullName.vb: System.Nullable(Of )
+  name.vb: Nullable(Of )
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NeerCore.Api.Swagger.Extensions.SwaggerExtensions.UseNeerSwagger*
+  commentId: Overload:NeerCore.Api.Swagger.Extensions.SwaggerExtensions.UseNeerSwagger
+  name: UseNeerSwagger
+  nameWithType: SwaggerExtensions.UseNeerSwagger
+  fullName: NeerCore.Api.Swagger.Extensions.SwaggerExtensions.UseNeerSwagger
+- uid: IApplicationBuilder
+  isExternal: true
+  name: IApplicationBuilder
+  nameWithType: IApplicationBuilder
+  fullName: IApplicationBuilder
+- uid: NeerCore.Api.Swagger.Extensions.SwaggerExtensions.GetSwaggerSettings*
+  commentId: Overload:NeerCore.Api.Swagger.Extensions.SwaggerExtensions.GetSwaggerSettings
+  name: GetSwaggerSettings
+  nameWithType: SwaggerExtensions.GetSwaggerSettings
+  fullName: NeerCore.Api.Swagger.Extensions.SwaggerExtensions.GetSwaggerSettings
+- uid: IConfiguration
+  commentId: '!:IConfiguration'
+  isExternal: true
+  name: IConfiguration
+  nameWithType: IConfiguration
+  fullName: IConfiguration
+- uid: NeerCore.Api.Swagger.SwaggerConfigurationOptions
+  commentId: T:NeerCore.Api.Swagger.SwaggerConfigurationOptions
+  parent: NeerCore.Api.Swagger
+  name: SwaggerConfigurationOptions
+  nameWithType: SwaggerConfigurationOptions
+  fullName: NeerCore.Api.Swagger.SwaggerConfigurationOptions
+- uid: NeerCore.Api.Swagger
+  commentId: N:NeerCore.Api.Swagger
+  name: NeerCore.Api.Swagger
+  nameWithType: NeerCore.Api.Swagger
+  fullName: NeerCore.Api.Swagger

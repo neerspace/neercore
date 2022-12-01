@@ -1,0 +1,84 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Api.CorsPolicies
+  commentId: T:NeerCore.Api.CorsPolicies
+  id: CorsPolicies
+  parent: NeerCore.Api
+  children:
+  - NeerCore.Api.CorsPolicies.AcceptAll
+  langs:
+  - csharp
+  - vb
+  name: CorsPolicies
+  nameWithType: CorsPolicies
+  fullName: NeerCore.Api.CorsPolicies
+  type: Class
+  source:
+    remote:
+      path: src/NeerCore.Api/CorsPolicies.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: CorsPolicies
+    path: ../src/NeerCore.Api/CorsPolicies.cs
+    startLine: 2
+  assemblies:
+  - NeerCore.Api
+  namespace: NeerCore.Api
+  syntax:
+    content: 'public static class CorsPolicies : object'
+    content.vb: >-
+      Public Module CorsPolicies
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: NeerCore.Api.CorsPolicies.AcceptAll
+  commentId: F:NeerCore.Api.CorsPolicies.AcceptAll
+  id: AcceptAll
+  parent: NeerCore.Api.CorsPolicies
+  langs:
+  - csharp
+  - vb
+  name: AcceptAll
+  nameWithType: CorsPolicies.AcceptAll
+  fullName: NeerCore.Api.CorsPolicies.AcceptAll
+  type: Field
+  source:
+    remote:
+      path: src/NeerCore.Api/CorsPolicies.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: AcceptAll
+    path: ../src/NeerCore.Api/CorsPolicies.cs
+    startLine: 4
+  assemblies:
+  - NeerCore.Api
+  namespace: NeerCore.Api
+  syntax:
+    content: public const string AcceptAll = null
+    return:
+      type: System.String
+    content.vb: Public Const AcceptAll As String = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: NeerCore.Api
+  commentId: N:NeerCore.Api
+  name: NeerCore.Api
+  nameWithType: NeerCore.Api
+  fullName: NeerCore.Api
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String

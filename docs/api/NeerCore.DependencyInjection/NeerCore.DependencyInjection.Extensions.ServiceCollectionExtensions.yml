@@ -1,0 +1,664 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions
+  commentId: T:NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions
+  id: ServiceCollectionExtensions
+  parent: NeerCore.DependencyInjection.Extensions
+  children:
+  - NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.AddAllServices(IServiceCollection,System.Nullable{Action{NeerCore.DependencyInjection.InjectionOptions}})
+  - NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.AddServicesFromAssemblies(IServiceCollection,IEnumerable{Assembly},System.Nullable{Action{NeerCore.DependencyInjection.InjectionOptions}})
+  - NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.AddServicesFromAssemblies(IServiceCollection,IEnumerable{System.String},System.Nullable{Action{NeerCore.DependencyInjection.InjectionOptions}})
+  - NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.AddServicesFromAssembly(IServiceCollection,Assembly,System.Nullable{Action{NeerCore.DependencyInjection.InjectionOptions}})
+  - NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.AddServicesFromAssembly(IServiceCollection,System.String,System.Nullable{Action{NeerCore.DependencyInjection.InjectionOptions}})
+  - NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.ConfigureAllOptions(IServiceCollection)
+  - NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.ConfigureAllOptionsFromAssembly(IServiceCollection,Assembly)
+  langs:
+  - csharp
+  - vb
+  name: ServiceCollectionExtensions
+  nameWithType: ServiceCollectionExtensions
+  fullName: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions
+  type: Class
+  source:
+    remote:
+      path: src/NeerCore.DependencyInjection/Extensions/ServiceCollectionExtensions.ConfigureOptions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: ServiceCollectionExtensions
+    path: src/NeerCore.DependencyInjection/Extensions/ServiceCollectionExtensions.ConfigureOptions.cs
+    startLine: 6
+  assemblies:
+  - NeerCore.DependencyInjection
+  namespace: NeerCore.DependencyInjection.Extensions
+  syntax:
+    content: 'public static class ServiceCollectionExtensions : object'
+    content.vb: >-
+      Public Module ServiceCollectionExtensions
+
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.AddServicesFromAssembly(IServiceCollection,Assembly,System.Nullable{Action{NeerCore.DependencyInjection.InjectionOptions}})
+  commentId: M:NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.AddServicesFromAssembly(IServiceCollection,Assembly,System.Nullable{Action{NeerCore.DependencyInjection.InjectionOptions}})
+  id: AddServicesFromAssembly(IServiceCollection,Assembly,System.Nullable{Action{NeerCore.DependencyInjection.InjectionOptions}})
+  isExtensionMethod: true
+  parent: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddServicesFromAssembly(IServiceCollection, Assembly, Nullable<Action<InjectionOptions>>)
+  nameWithType: ServiceCollectionExtensions.AddServicesFromAssembly(IServiceCollection, Assembly, Nullable<Action<InjectionOptions>>)
+  fullName: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.AddServicesFromAssembly(IServiceCollection, Assembly, System.Nullable<Action<NeerCore.DependencyInjection.InjectionOptions>>)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.DependencyInjection/Extensions/ServiceCollectionExtensions.AddServices.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: AddServicesFromAssembly
+    path: src/NeerCore.DependencyInjection/Extensions/ServiceCollectionExtensions.AddServices.cs
+    startLine: 14
+  assemblies:
+  - NeerCore.DependencyInjection
+  namespace: NeerCore.DependencyInjection.Extensions
+  summary: Registers all services marked with attribute <xref href="NeerCore.DependencyInjection.ServiceAttribute" data-throw-if-not-resolved="false"></xref> to DI container.
+  remarks: <strong>All services implementations MUST be configured with attribute <xref href="NeerCore.DependencyInjection.ServiceAttribute" data-throw-if-not-resolved="false"></xref>.</strong>
+  example: []
+  syntax:
+    content: public static IServiceCollection AddServicesFromAssembly(this IServiceCollection services, Assembly assembly, Action<InjectionOptions>? configureOptions = null)
+    parameters:
+    - id: services
+      type: IServiceCollection
+      description: The <see cref="!:IServiceCollection"></see> to add services to.
+    - id: assembly
+      type: Assembly
+      description: Services implementations assembly.
+    - id: configureOptions
+      type: System.Nullable{Action{NeerCore.DependencyInjection.InjectionOptions}}
+      description: ''
+    return:
+      type: IServiceCollection
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function AddServicesFromAssembly(services As IServiceCollection, assembly As Assembly, configureOptions As Action(Of InjectionOptions)? = Nothing) As IServiceCollection
+  overload: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.AddServicesFromAssembly*
+  nameWithType.vb: ServiceCollectionExtensions.AddServicesFromAssembly(IServiceCollection, Assembly, Nullable(Of Action(Of InjectionOptions)))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.AddServicesFromAssembly(IServiceCollection, Assembly, System.Nullable(Of Action(Of NeerCore.DependencyInjection.InjectionOptions)))
+  name.vb: AddServicesFromAssembly(IServiceCollection, Assembly, Nullable(Of Action(Of InjectionOptions)))
+- uid: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.AddServicesFromAssembly(IServiceCollection,System.String,System.Nullable{Action{NeerCore.DependencyInjection.InjectionOptions}})
+  commentId: M:NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.AddServicesFromAssembly(IServiceCollection,System.String,System.Nullable{Action{NeerCore.DependencyInjection.InjectionOptions}})
+  id: AddServicesFromAssembly(IServiceCollection,System.String,System.Nullable{Action{NeerCore.DependencyInjection.InjectionOptions}})
+  isExtensionMethod: true
+  parent: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddServicesFromAssembly(IServiceCollection, String, Nullable<Action<InjectionOptions>>)
+  nameWithType: ServiceCollectionExtensions.AddServicesFromAssembly(IServiceCollection, String, Nullable<Action<InjectionOptions>>)
+  fullName: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.AddServicesFromAssembly(IServiceCollection, System.String, System.Nullable<Action<NeerCore.DependencyInjection.InjectionOptions>>)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.DependencyInjection/Extensions/ServiceCollectionExtensions.AddServices.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: AddServicesFromAssembly
+    path: src/NeerCore.DependencyInjection/Extensions/ServiceCollectionExtensions.AddServices.cs
+    startLine: 20
+  assemblies:
+  - NeerCore.DependencyInjection
+  namespace: NeerCore.DependencyInjection.Extensions
+  example: []
+  syntax:
+    content: public static IServiceCollection AddServicesFromAssembly(this IServiceCollection services, string assemblyName, Action<InjectionOptions>? configureOptions = null)
+    parameters:
+    - id: services
+      type: IServiceCollection
+    - id: assemblyName
+      type: System.String
+    - id: configureOptions
+      type: System.Nullable{Action{NeerCore.DependencyInjection.InjectionOptions}}
+    return:
+      type: IServiceCollection
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function AddServicesFromAssembly(services As IServiceCollection, assemblyName As String, configureOptions As Action(Of InjectionOptions)? = Nothing) As IServiceCollection
+  overload: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.AddServicesFromAssembly*
+  nameWithType.vb: ServiceCollectionExtensions.AddServicesFromAssembly(IServiceCollection, String, Nullable(Of Action(Of InjectionOptions)))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.AddServicesFromAssembly(IServiceCollection, System.String, System.Nullable(Of Action(Of NeerCore.DependencyInjection.InjectionOptions)))
+  name.vb: AddServicesFromAssembly(IServiceCollection, String, Nullable(Of Action(Of InjectionOptions)))
+- uid: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.AddServicesFromAssemblies(IServiceCollection,IEnumerable{System.String},System.Nullable{Action{NeerCore.DependencyInjection.InjectionOptions}})
+  commentId: M:NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.AddServicesFromAssemblies(IServiceCollection,IEnumerable{System.String},System.Nullable{Action{NeerCore.DependencyInjection.InjectionOptions}})
+  id: AddServicesFromAssemblies(IServiceCollection,IEnumerable{System.String},System.Nullable{Action{NeerCore.DependencyInjection.InjectionOptions}})
+  isExtensionMethod: true
+  parent: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddServicesFromAssemblies(IServiceCollection, IEnumerable<String>, Nullable<Action<InjectionOptions>>)
+  nameWithType: ServiceCollectionExtensions.AddServicesFromAssemblies(IServiceCollection, IEnumerable<String>, Nullable<Action<InjectionOptions>>)
+  fullName: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.AddServicesFromAssemblies(IServiceCollection, IEnumerable<System.String>, System.Nullable<Action<NeerCore.DependencyInjection.InjectionOptions>>)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.DependencyInjection/Extensions/ServiceCollectionExtensions.AddServices.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: AddServicesFromAssemblies
+    path: src/NeerCore.DependencyInjection/Extensions/ServiceCollectionExtensions.AddServices.cs
+    startLine: 26
+  assemblies:
+  - NeerCore.DependencyInjection
+  namespace: NeerCore.DependencyInjection.Extensions
+  example: []
+  syntax:
+    content: public static IServiceCollection AddServicesFromAssemblies(this IServiceCollection services, IEnumerable<string> assemblyNames, Action<InjectionOptions>? configureOptions = null)
+    parameters:
+    - id: services
+      type: IServiceCollection
+    - id: assemblyNames
+      type: IEnumerable{System.String}
+    - id: configureOptions
+      type: System.Nullable{Action{NeerCore.DependencyInjection.InjectionOptions}}
+    return:
+      type: IServiceCollection
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function AddServicesFromAssemblies(services As IServiceCollection, assemblyNames As IEnumerable(Of String), configureOptions As Action(Of InjectionOptions)? = Nothing) As IServiceCollection
+  overload: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.AddServicesFromAssemblies*
+  nameWithType.vb: ServiceCollectionExtensions.AddServicesFromAssemblies(IServiceCollection, IEnumerable(Of String), Nullable(Of Action(Of InjectionOptions)))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.AddServicesFromAssemblies(IServiceCollection, IEnumerable(Of System.String), System.Nullable(Of Action(Of NeerCore.DependencyInjection.InjectionOptions)))
+  name.vb: AddServicesFromAssemblies(IServiceCollection, IEnumerable(Of String), Nullable(Of Action(Of InjectionOptions)))
+- uid: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.AddServicesFromAssemblies(IServiceCollection,IEnumerable{Assembly},System.Nullable{Action{NeerCore.DependencyInjection.InjectionOptions}})
+  commentId: M:NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.AddServicesFromAssemblies(IServiceCollection,IEnumerable{Assembly},System.Nullable{Action{NeerCore.DependencyInjection.InjectionOptions}})
+  id: AddServicesFromAssemblies(IServiceCollection,IEnumerable{Assembly},System.Nullable{Action{NeerCore.DependencyInjection.InjectionOptions}})
+  isExtensionMethod: true
+  parent: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddServicesFromAssemblies(IServiceCollection, IEnumerable<Assembly>, Nullable<Action<InjectionOptions>>)
+  nameWithType: ServiceCollectionExtensions.AddServicesFromAssemblies(IServiceCollection, IEnumerable<Assembly>, Nullable<Action<InjectionOptions>>)
+  fullName: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.AddServicesFromAssemblies(IServiceCollection, IEnumerable<Assembly>, System.Nullable<Action<NeerCore.DependencyInjection.InjectionOptions>>)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.DependencyInjection/Extensions/ServiceCollectionExtensions.AddServices.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: AddServicesFromAssemblies
+    path: src/NeerCore.DependencyInjection/Extensions/ServiceCollectionExtensions.AddServices.cs
+    startLine: 32
+  assemblies:
+  - NeerCore.DependencyInjection
+  namespace: NeerCore.DependencyInjection.Extensions
+  example: []
+  syntax:
+    content: public static IServiceCollection AddServicesFromAssemblies(this IServiceCollection services, IEnumerable<Assembly> assemblies, Action<InjectionOptions>? configureOptions = null)
+    parameters:
+    - id: services
+      type: IServiceCollection
+    - id: assemblies
+      type: IEnumerable{Assembly}
+    - id: configureOptions
+      type: System.Nullable{Action{NeerCore.DependencyInjection.InjectionOptions}}
+    return:
+      type: IServiceCollection
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function AddServicesFromAssemblies(services As IServiceCollection, assemblies As IEnumerable(Of Assembly), configureOptions As Action(Of InjectionOptions)? = Nothing) As IServiceCollection
+  overload: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.AddServicesFromAssemblies*
+  nameWithType.vb: ServiceCollectionExtensions.AddServicesFromAssemblies(IServiceCollection, IEnumerable(Of Assembly), Nullable(Of Action(Of InjectionOptions)))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.AddServicesFromAssemblies(IServiceCollection, IEnumerable(Of Assembly), System.Nullable(Of Action(Of NeerCore.DependencyInjection.InjectionOptions)))
+  name.vb: AddServicesFromAssemblies(IServiceCollection, IEnumerable(Of Assembly), Nullable(Of Action(Of InjectionOptions)))
+- uid: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.AddAllServices(IServiceCollection,System.Nullable{Action{NeerCore.DependencyInjection.InjectionOptions}})
+  commentId: M:NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.AddAllServices(IServiceCollection,System.Nullable{Action{NeerCore.DependencyInjection.InjectionOptions}})
+  id: AddAllServices(IServiceCollection,System.Nullable{Action{NeerCore.DependencyInjection.InjectionOptions}})
+  isExtensionMethod: true
+  parent: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddAllServices(IServiceCollection, Nullable<Action<InjectionOptions>>)
+  nameWithType: ServiceCollectionExtensions.AddAllServices(IServiceCollection, Nullable<Action<InjectionOptions>>)
+  fullName: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.AddAllServices(IServiceCollection, System.Nullable<Action<NeerCore.DependencyInjection.InjectionOptions>>)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.DependencyInjection/Extensions/ServiceCollectionExtensions.AddServices.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: AddAllServices
+    path: src/NeerCore.DependencyInjection/Extensions/ServiceCollectionExtensions.AddServices.cs
+    startLine: 44
+  assemblies:
+  - NeerCore.DependencyInjection
+  namespace: NeerCore.DependencyInjection.Extensions
+  example: []
+  syntax:
+    content: public static IServiceCollection AddAllServices(this IServiceCollection services, Action<InjectionOptions>? configureOptions = null)
+    parameters:
+    - id: services
+      type: IServiceCollection
+    - id: configureOptions
+      type: System.Nullable{Action{NeerCore.DependencyInjection.InjectionOptions}}
+    return:
+      type: IServiceCollection
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function AddAllServices(services As IServiceCollection, configureOptions As Action(Of InjectionOptions)? = Nothing) As IServiceCollection
+  overload: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.AddAllServices*
+  nameWithType.vb: ServiceCollectionExtensions.AddAllServices(IServiceCollection, Nullable(Of Action(Of InjectionOptions)))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.AddAllServices(IServiceCollection, System.Nullable(Of Action(Of NeerCore.DependencyInjection.InjectionOptions)))
+  name.vb: AddAllServices(IServiceCollection, Nullable(Of Action(Of InjectionOptions)))
+- uid: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.ConfigureAllOptions(IServiceCollection)
+  commentId: M:NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.ConfigureAllOptions(IServiceCollection)
+  id: ConfigureAllOptions(IServiceCollection)
+  isExtensionMethod: true
+  parent: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: ConfigureAllOptions(IServiceCollection)
+  nameWithType: ServiceCollectionExtensions.ConfigureAllOptions(IServiceCollection)
+  fullName: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.ConfigureAllOptions(IServiceCollection)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.DependencyInjection/Extensions/ServiceCollectionExtensions.ConfigureOptions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: ConfigureAllOptions
+    path: src/NeerCore.DependencyInjection/Extensions/ServiceCollectionExtensions.ConfigureOptions.cs
+    startLine: 8
+  assemblies:
+  - NeerCore.DependencyInjection
+  namespace: NeerCore.DependencyInjection.Extensions
+  syntax:
+    content: public static IServiceCollection ConfigureAllOptions(this IServiceCollection services)
+    parameters:
+    - id: services
+      type: IServiceCollection
+    return:
+      type: IServiceCollection
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function ConfigureAllOptions(services As IServiceCollection) As IServiceCollection
+  overload: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.ConfigureAllOptions*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.ConfigureAllOptionsFromAssembly(IServiceCollection,Assembly)
+  commentId: M:NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.ConfigureAllOptionsFromAssembly(IServiceCollection,Assembly)
+  id: ConfigureAllOptionsFromAssembly(IServiceCollection,Assembly)
+  isExtensionMethod: true
+  parent: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: ConfigureAllOptionsFromAssembly(IServiceCollection, Assembly)
+  nameWithType: ServiceCollectionExtensions.ConfigureAllOptionsFromAssembly(IServiceCollection, Assembly)
+  fullName: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.ConfigureAllOptionsFromAssembly(IServiceCollection, Assembly)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.DependencyInjection/Extensions/ServiceCollectionExtensions.ConfigureOptions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: ConfigureAllOptionsFromAssembly
+    path: src/NeerCore.DependencyInjection/Extensions/ServiceCollectionExtensions.ConfigureOptions.cs
+    startLine: 18
+  assemblies:
+  - NeerCore.DependencyInjection
+  namespace: NeerCore.DependencyInjection.Extensions
+  syntax:
+    content: public static IServiceCollection ConfigureAllOptionsFromAssembly(this IServiceCollection services, Assembly assembly)
+    parameters:
+    - id: services
+      type: IServiceCollection
+    - id: assembly
+      type: Assembly
+    return:
+      type: IServiceCollection
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function ConfigureAllOptionsFromAssembly(services As IServiceCollection, assembly As Assembly) As IServiceCollection
+  overload: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.ConfigureAllOptionsFromAssembly*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: NeerCore.DependencyInjection.Extensions
+  commentId: N:NeerCore.DependencyInjection.Extensions
+  name: NeerCore.DependencyInjection.Extensions
+  nameWithType: NeerCore.DependencyInjection.Extensions
+  fullName: NeerCore.DependencyInjection.Extensions
+- uid: NeerCore.DependencyInjection.ServiceAttribute
+  commentId: T:NeerCore.DependencyInjection.ServiceAttribute
+  parent: NeerCore.DependencyInjection
+  name: ServiceAttribute
+  nameWithType: ServiceAttribute
+  fullName: NeerCore.DependencyInjection.ServiceAttribute
+- uid: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.AddServicesFromAssembly*
+  commentId: Overload:NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.AddServicesFromAssembly
+  name: AddServicesFromAssembly
+  nameWithType: ServiceCollectionExtensions.AddServicesFromAssembly
+  fullName: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.AddServicesFromAssembly
+- uid: IServiceCollection
+  isExternal: true
+  name: IServiceCollection
+  nameWithType: IServiceCollection
+  fullName: IServiceCollection
+- uid: Assembly
+  isExternal: true
+  name: Assembly
+  nameWithType: Assembly
+  fullName: Assembly
+- uid: System.Nullable{Action{NeerCore.DependencyInjection.InjectionOptions}}
+  commentId: '!:System.Nullable{Action{NeerCore.DependencyInjection.InjectionOptions}}'
+  definition: System.Nullable`1
+  name: Nullable<Action<InjectionOptions>>
+  nameWithType: Nullable<Action<InjectionOptions>>
+  fullName: System.Nullable<Action<NeerCore.DependencyInjection.InjectionOptions>>
+  nameWithType.vb: Nullable(Of Action(Of InjectionOptions))
+  fullName.vb: System.Nullable(Of Action(Of NeerCore.DependencyInjection.InjectionOptions))
+  name.vb: Nullable(Of Action(Of InjectionOptions))
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: NeerCore.DependencyInjection.InjectionOptions
+    name: InjectionOptions
+    nameWithType: InjectionOptions
+    fullName: NeerCore.DependencyInjection.InjectionOptions
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: NeerCore.DependencyInjection.InjectionOptions
+    name: InjectionOptions
+    nameWithType: InjectionOptions
+    fullName: NeerCore.DependencyInjection.InjectionOptions
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NeerCore.DependencyInjection
+  commentId: N:NeerCore.DependencyInjection
+  name: NeerCore.DependencyInjection
+  nameWithType: NeerCore.DependencyInjection
+  fullName: NeerCore.DependencyInjection
+- uid: System.Nullable`1
+  isExternal: true
+  name: Nullable<>
+  nameWithType: Nullable<>
+  fullName: System.Nullable<>
+  nameWithType.vb: Nullable(Of )
+  fullName.vb: System.Nullable(Of )
+  name.vb: Nullable(Of )
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.AddServicesFromAssembly(IServiceCollection,Assembly,System.Nullable{Action{NeerCore.DependencyInjection.InjectionOptions}})
+  commentId: M:NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.AddServicesFromAssembly(IServiceCollection,Assembly,System.Nullable{Action{NeerCore.DependencyInjection.InjectionOptions}})
+  isExternal: true
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.AddServicesFromAssemblies*
+  commentId: Overload:NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.AddServicesFromAssemblies
+  name: AddServicesFromAssemblies
+  nameWithType: ServiceCollectionExtensions.AddServicesFromAssemblies
+  fullName: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.AddServicesFromAssemblies
+- uid: IEnumerable{System.String}
+  commentId: '!:IEnumerable{System.String}'
+  definition: IEnumerable`1
+  name: IEnumerable<String>
+  nameWithType: IEnumerable<String>
+  fullName: IEnumerable<System.String>
+  nameWithType.vb: IEnumerable(Of String)
+  fullName.vb: IEnumerable(Of System.String)
+  name.vb: IEnumerable(Of String)
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IEnumerable`1
+  isExternal: true
+  name: IEnumerable<>
+  nameWithType: IEnumerable<>
+  fullName: IEnumerable<>
+  nameWithType.vb: IEnumerable(Of )
+  fullName.vb: IEnumerable(Of )
+  name.vb: IEnumerable(Of )
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IEnumerable{Assembly}
+  commentId: '!:IEnumerable{Assembly}'
+  definition: IEnumerable`1
+  name: IEnumerable<Assembly>
+  nameWithType: IEnumerable<Assembly>
+  fullName: IEnumerable<Assembly>
+  nameWithType.vb: IEnumerable(Of Assembly)
+  fullName.vb: IEnumerable(Of Assembly)
+  name.vb: IEnumerable(Of Assembly)
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Assembly
+    name: Assembly
+    nameWithType: Assembly
+    fullName: Assembly
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Assembly
+    name: Assembly
+    nameWithType: Assembly
+    fullName: Assembly
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.AddAllServices*
+  commentId: Overload:NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.AddAllServices
+  name: AddAllServices
+  nameWithType: ServiceCollectionExtensions.AddAllServices
+  fullName: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.AddAllServices
+- uid: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.ConfigureAllOptions*
+  commentId: Overload:NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.ConfigureAllOptions
+  name: ConfigureAllOptions
+  nameWithType: ServiceCollectionExtensions.ConfigureAllOptions
+  fullName: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.ConfigureAllOptions
+- uid: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.ConfigureAllOptionsFromAssembly*
+  commentId: Overload:NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.ConfigureAllOptionsFromAssembly
+  name: ConfigureAllOptionsFromAssembly
+  nameWithType: ServiceCollectionExtensions.ConfigureAllOptionsFromAssembly
+  fullName: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions.ConfigureAllOptionsFromAssembly

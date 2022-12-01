@@ -1,0 +1,22 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Data.Exceptions
+  commentId: N:NeerCore.Data.Exceptions
+  id: NeerCore.Data.Exceptions
+  children:
+  - NeerCore.Data.Exceptions.InvalidLanguageCodeException
+  langs:
+  - csharp
+  - vb
+  name: NeerCore.Data.Exceptions
+  nameWithType: NeerCore.Data.Exceptions
+  fullName: NeerCore.Data.Exceptions
+  type: Namespace
+  assemblies:
+  - NeerCore.Data
+references:
+- uid: NeerCore.Data.Exceptions.InvalidLanguageCodeException
+  commentId: T:NeerCore.Data.Exceptions.InvalidLanguageCodeException
+  name: InvalidLanguageCodeException
+  nameWithType: InvalidLanguageCodeException
+  fullName: NeerCore.Data.Exceptions.InvalidLanguageCodeException

@@ -1,0 +1,34 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Data
+  commentId: N:NeerCore.Data
+  id: NeerCore.Data
+  children:
+  - NeerCore.Data.LocalizationDictionary
+  - NeerCore.Data.LocalizedString
+  langs:
+  - csharp
+  - vb
+  name: NeerCore.Data
+  nameWithType: NeerCore.Data
+  fullName: NeerCore.Data
+  type: Namespace
+  assemblies:
+  - NeerCore.Data
+references:
+- uid: NeerCore.Data.LocalizationDictionary
+  commentId: T:NeerCore.Data.LocalizationDictionary
+  name: LocalizationDictionary
+  nameWithType: LocalizationDictionary
+  fullName: NeerCore.Data.LocalizationDictionary
+- uid: NeerCore.Data.LocalizedString
+  commentId: T:NeerCore.Data.LocalizedString
+  parent: NeerCore.Data
+  name: LocalizedString
+  nameWithType: LocalizedString
+  fullName: NeerCore.Data.LocalizedString
+- uid: NeerCore.Data
+  commentId: N:NeerCore.Data
+  name: NeerCore.Data
+  nameWithType: NeerCore.Data
+  fullName: NeerCore.Data

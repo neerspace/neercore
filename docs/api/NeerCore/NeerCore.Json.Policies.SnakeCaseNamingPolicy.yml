@@ -1,0 +1,147 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Json.Policies.SnakeCaseNamingPolicy
+  commentId: T:NeerCore.Json.Policies.SnakeCaseNamingPolicy
+  id: SnakeCaseNamingPolicy
+  parent: NeerCore.Json.Policies
+  children:
+  - NeerCore.Json.Policies.SnakeCaseNamingPolicy.ConvertName(System.String)
+  - NeerCore.Json.Policies.SnakeCaseNamingPolicy.Instance
+  langs:
+  - csharp
+  - vb
+  name: SnakeCaseNamingPolicy
+  nameWithType: SnakeCaseNamingPolicy
+  fullName: NeerCore.Json.Policies.SnakeCaseNamingPolicy
+  type: Class
+  source:
+    remote:
+      path: src/NeerCore/Json/Policies/SnakeCaseNamingPolicy.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: SnakeCaseNamingPolicy
+    path: ../src/NeerCore/Json/Policies/SnakeCaseNamingPolicy.cs
+    startLine: 8
+  assemblies:
+  - NeerCore
+  namespace: NeerCore.Json.Policies
+  summary: "\nA snake_case_naming policy for <see cref=\"!:System.Text.Json\">System.Text.Json</see>.\n"
+  example: []
+  syntax:
+    content: 'public sealed class SnakeCaseNamingPolicy : JsonNamingPolicy'
+    content.vb: >-
+      Public NotInheritable Class SnakeCaseNamingPolicy
+          Inherits JsonNamingPolicy
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: NeerCore.Json.Policies.SnakeCaseNamingPolicy.Instance
+  commentId: P:NeerCore.Json.Policies.SnakeCaseNamingPolicy.Instance
+  id: Instance
+  parent: NeerCore.Json.Policies.SnakeCaseNamingPolicy
+  langs:
+  - csharp
+  - vb
+  name: Instance
+  nameWithType: SnakeCaseNamingPolicy.Instance
+  fullName: NeerCore.Json.Policies.SnakeCaseNamingPolicy.Instance
+  type: Property
+  source:
+    remote:
+      path: src/NeerCore/Json/Policies/SnakeCaseNamingPolicy.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: Instance
+    path: ../src/NeerCore/Json/Policies/SnakeCaseNamingPolicy.cs
+    startLine: 13
+  assemblies:
+  - NeerCore
+  namespace: NeerCore.Json.Policies
+  summary: "\nDefault instance.\n"
+  example: []
+  syntax:
+    content: public static SnakeCaseNamingPolicy Instance { get; }
+    parameters: []
+    return:
+      type: NeerCore.Json.Policies.SnakeCaseNamingPolicy
+    content.vb: Public Shared ReadOnly Property Instance As SnakeCaseNamingPolicy
+  overload: NeerCore.Json.Policies.SnakeCaseNamingPolicy.Instance*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: NeerCore.Json.Policies.SnakeCaseNamingPolicy.ConvertName(System.String)
+  commentId: M:NeerCore.Json.Policies.SnakeCaseNamingPolicy.ConvertName(System.String)
+  id: ConvertName(System.String)
+  parent: NeerCore.Json.Policies.SnakeCaseNamingPolicy
+  langs:
+  - csharp
+  - vb
+  name: ConvertName(String)
+  nameWithType: SnakeCaseNamingPolicy.ConvertName(String)
+  fullName: NeerCore.Json.Policies.SnakeCaseNamingPolicy.ConvertName(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore/Json/Policies/SnakeCaseNamingPolicy.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: ConvertName
+    path: ../src/NeerCore/Json/Policies/SnakeCaseNamingPolicy.cs
+    startLine: 15
+  assemblies:
+  - NeerCore
+  namespace: NeerCore.Json.Policies
+  syntax:
+    content: public override string ConvertName(string name)
+    parameters:
+    - id: name
+      type: System.String
+    return:
+      type: System.String
+    content.vb: Public Overrides Function ConvertName(name As String) As String
+  overload: NeerCore.Json.Policies.SnakeCaseNamingPolicy.ConvertName*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: NeerCore.Json.Policies
+  commentId: N:NeerCore.Json.Policies
+  name: NeerCore.Json.Policies
+  nameWithType: NeerCore.Json.Policies
+  fullName: NeerCore.Json.Policies
+- uid: NeerCore.Json.Policies.SnakeCaseNamingPolicy.Instance*
+  commentId: Overload:NeerCore.Json.Policies.SnakeCaseNamingPolicy.Instance
+  name: Instance
+  nameWithType: SnakeCaseNamingPolicy.Instance
+  fullName: NeerCore.Json.Policies.SnakeCaseNamingPolicy.Instance
+- uid: NeerCore.Json.Policies.SnakeCaseNamingPolicy
+  commentId: T:NeerCore.Json.Policies.SnakeCaseNamingPolicy
+  parent: NeerCore.Json.Policies
+  name: SnakeCaseNamingPolicy
+  nameWithType: SnakeCaseNamingPolicy
+  fullName: NeerCore.Json.Policies.SnakeCaseNamingPolicy
+- uid: NeerCore.Json.Policies.SnakeCaseNamingPolicy.ConvertName*
+  commentId: Overload:NeerCore.Json.Policies.SnakeCaseNamingPolicy.ConvertName
+  name: ConvertName
+  nameWithType: SnakeCaseNamingPolicy.ConvertName
+  fullName: NeerCore.Json.Policies.SnakeCaseNamingPolicy.ConvertName
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String

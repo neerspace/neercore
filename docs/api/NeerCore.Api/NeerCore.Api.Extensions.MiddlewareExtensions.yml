@@ -1,0 +1,382 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Api.Extensions.MiddlewareExtensions
+  commentId: T:NeerCore.Api.Extensions.MiddlewareExtensions
+  id: MiddlewareExtensions
+  parent: NeerCore.Api.Extensions
+  children:
+  - NeerCore.Api.Extensions.MiddlewareExtensions.AddFactoryMiddlewares(IServiceCollection,ServiceLifetime)
+  - NeerCore.Api.Extensions.MiddlewareExtensions.UseNeerExceptionHandler(IApplicationBuilder)
+  - NeerCore.Api.Extensions.MiddlewareExtensions.UseNeerSwaggerUI(IApplicationBuilder,SwaggerUIOptions)
+  - NeerCore.Api.Extensions.MiddlewareExtensions.UseNeerSwaggerUI(IApplicationBuilder,System.Nullable{Action{SwaggerUIOptions}})
+  langs:
+  - csharp
+  - vb
+  name: MiddlewareExtensions
+  nameWithType: MiddlewareExtensions
+  fullName: NeerCore.Api.Extensions.MiddlewareExtensions
+  type: Class
+  source:
+    remote:
+      path: src/NeerCore.Api/Extensions/MiddlewareExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: MiddlewareExtensions
+    path: ../src/NeerCore.Api/Extensions/MiddlewareExtensions.cs
+    startLine: 12
+  assemblies:
+  - NeerCore.Api
+  namespace: NeerCore.Api.Extensions
+  syntax:
+    content: 'public static class MiddlewareExtensions : object'
+    content.vb: >-
+      Public Module MiddlewareExtensions
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: NeerCore.Api.Extensions.MiddlewareExtensions.AddFactoryMiddlewares(IServiceCollection,ServiceLifetime)
+  commentId: M:NeerCore.Api.Extensions.MiddlewareExtensions.AddFactoryMiddlewares(IServiceCollection,ServiceLifetime)
+  id: AddFactoryMiddlewares(IServiceCollection,ServiceLifetime)
+  isExtensionMethod: true
+  parent: NeerCore.Api.Extensions.MiddlewareExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddFactoryMiddlewares(IServiceCollection, ServiceLifetime)
+  nameWithType: MiddlewareExtensions.AddFactoryMiddlewares(IServiceCollection, ServiceLifetime)
+  fullName: NeerCore.Api.Extensions.MiddlewareExtensions.AddFactoryMiddlewares(IServiceCollection, ServiceLifetime)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Api/Extensions/MiddlewareExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: AddFactoryMiddlewares
+    path: ../src/NeerCore.Api/Extensions/MiddlewareExtensions.cs
+    startLine: 19
+  assemblies:
+  - NeerCore.Api
+  namespace: NeerCore.Api.Extensions
+  summary: "\nAdds all factory style middlewares that implements <see cref=\"!:IMiddleware\"></see> interface.\n"
+  example: []
+  syntax:
+    content: public static IServiceCollection AddFactoryMiddlewares(this IServiceCollection services, ServiceLifetime lifetime = null)
+    parameters:
+    - id: services
+      type: IServiceCollection
+      description: A collection of service descriptors.
+    - id: lifetime
+      type: ServiceLifetime
+      description: Lifetime of a service in <see cref="!:services"></see> <see cref="!:IServiceCollection"></see>.
+    return:
+      type: IServiceCollection
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function AddFactoryMiddlewares(services As IServiceCollection, lifetime As ServiceLifetime = Nothing) As IServiceCollection
+  overload: NeerCore.Api.Extensions.MiddlewareExtensions.AddFactoryMiddlewares*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: NeerCore.Api.Extensions.MiddlewareExtensions.UseNeerExceptionHandler(IApplicationBuilder)
+  commentId: M:NeerCore.Api.Extensions.MiddlewareExtensions.UseNeerExceptionHandler(IApplicationBuilder)
+  id: UseNeerExceptionHandler(IApplicationBuilder)
+  isExtensionMethod: true
+  parent: NeerCore.Api.Extensions.MiddlewareExtensions
+  langs:
+  - csharp
+  - vb
+  name: UseNeerExceptionHandler(IApplicationBuilder)
+  nameWithType: MiddlewareExtensions.UseNeerExceptionHandler(IApplicationBuilder)
+  fullName: NeerCore.Api.Extensions.MiddlewareExtensions.UseNeerExceptionHandler(IApplicationBuilder)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Api/Extensions/MiddlewareExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: UseNeerExceptionHandler
+    path: ../src/NeerCore.Api/Extensions/MiddlewareExtensions.cs
+    startLine: 35
+  assemblies:
+  - NeerCore.Api
+  namespace: NeerCore.Api.Extensions
+  summary: "\nAdds <xref href=\"NeerCore.Api.Middleware.NeerExceptionHandlerMiddleware\" data-throw-if-not-resolved=\"false\"></xref> to the application&apos;s request pipeline.\n"
+  example: []
+  syntax:
+    content: public static IApplicationBuilder UseNeerExceptionHandler(this IApplicationBuilder app)
+    parameters:
+    - id: app
+      type: IApplicationBuilder
+      description: An <see cref="!:ApplicationBuilder"></see> instance.
+    return:
+      type: IApplicationBuilder
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function UseNeerExceptionHandler(app As IApplicationBuilder) As IApplicationBuilder
+  overload: NeerCore.Api.Extensions.MiddlewareExtensions.UseNeerExceptionHandler*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: NeerCore.Api.Extensions.MiddlewareExtensions.UseNeerSwaggerUI(IApplicationBuilder,SwaggerUIOptions)
+  commentId: M:NeerCore.Api.Extensions.MiddlewareExtensions.UseNeerSwaggerUI(IApplicationBuilder,SwaggerUIOptions)
+  id: UseNeerSwaggerUI(IApplicationBuilder,SwaggerUIOptions)
+  isExtensionMethod: true
+  parent: NeerCore.Api.Extensions.MiddlewareExtensions
+  langs:
+  - csharp
+  - vb
+  name: UseNeerSwaggerUI(IApplicationBuilder, SwaggerUIOptions)
+  nameWithType: MiddlewareExtensions.UseNeerSwaggerUI(IApplicationBuilder, SwaggerUIOptions)
+  fullName: NeerCore.Api.Extensions.MiddlewareExtensions.UseNeerSwaggerUI(IApplicationBuilder, SwaggerUIOptions)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Api/Extensions/MiddlewareExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: UseNeerSwaggerUI
+    path: ../src/NeerCore.Api/Extensions/MiddlewareExtensions.cs
+    startLine: 45
+  assemblies:
+  - NeerCore.Api
+  namespace: NeerCore.Api.Extensions
+  summary: "\nRegister the NeerSwaggerUI middleware as custom alternative for default SwaggerUI middleware\n"
+  example: []
+  syntax:
+    content: public static IApplicationBuilder UseNeerSwaggerUI(this IApplicationBuilder app, SwaggerUIOptions options)
+    parameters:
+    - id: app
+      type: IApplicationBuilder
+      description: An <see cref="!:ApplicationBuilder"></see> instance.
+    - id: options
+      type: SwaggerUIOptions
+      description: ''
+    return:
+      type: IApplicationBuilder
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function UseNeerSwaggerUI(app As IApplicationBuilder, options As SwaggerUIOptions) As IApplicationBuilder
+  overload: NeerCore.Api.Extensions.MiddlewareExtensions.UseNeerSwaggerUI*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: NeerCore.Api.Extensions.MiddlewareExtensions.UseNeerSwaggerUI(IApplicationBuilder,System.Nullable{Action{SwaggerUIOptions}})
+  commentId: M:NeerCore.Api.Extensions.MiddlewareExtensions.UseNeerSwaggerUI(IApplicationBuilder,System.Nullable{Action{SwaggerUIOptions}})
+  id: UseNeerSwaggerUI(IApplicationBuilder,System.Nullable{Action{SwaggerUIOptions}})
+  isExtensionMethod: true
+  parent: NeerCore.Api.Extensions.MiddlewareExtensions
+  langs:
+  - csharp
+  - vb
+  name: UseNeerSwaggerUI(IApplicationBuilder, Nullable<Action<SwaggerUIOptions>>)
+  nameWithType: MiddlewareExtensions.UseNeerSwaggerUI(IApplicationBuilder, Nullable<Action<SwaggerUIOptions>>)
+  fullName: NeerCore.Api.Extensions.MiddlewareExtensions.UseNeerSwaggerUI(IApplicationBuilder, System.Nullable<Action<SwaggerUIOptions>>)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Api/Extensions/MiddlewareExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: UseNeerSwaggerUI
+    path: ../src/NeerCore.Api/Extensions/MiddlewareExtensions.cs
+    startLine: 55
+  assemblies:
+  - NeerCore.Api
+  namespace: NeerCore.Api.Extensions
+  summary: "\nRegister the NeerSwaggerUI middleware as custom alternative for default SwaggerUI middleware\n"
+  example: []
+  syntax:
+    content: public static IApplicationBuilder UseNeerSwaggerUI(this IApplicationBuilder app, Action<SwaggerUIOptions>? configureAction = null)
+    parameters:
+    - id: app
+      type: IApplicationBuilder
+      description: An <see cref="!:ApplicationBuilder"></see> instance.
+    - id: configureAction
+      type: System.Nullable{Action{SwaggerUIOptions}}
+      description: ''
+    return:
+      type: IApplicationBuilder
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function UseNeerSwaggerUI(app As IApplicationBuilder, configureAction As Action(Of SwaggerUIOptions)? = Nothing) As IApplicationBuilder
+  overload: NeerCore.Api.Extensions.MiddlewareExtensions.UseNeerSwaggerUI*
+  nameWithType.vb: MiddlewareExtensions.UseNeerSwaggerUI(IApplicationBuilder, Nullable(Of Action(Of SwaggerUIOptions)))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: NeerCore.Api.Extensions.MiddlewareExtensions.UseNeerSwaggerUI(IApplicationBuilder, System.Nullable(Of Action(Of SwaggerUIOptions)))
+  name.vb: UseNeerSwaggerUI(IApplicationBuilder, Nullable(Of Action(Of SwaggerUIOptions)))
+references:
+- uid: NeerCore.Api.Extensions
+  commentId: N:NeerCore.Api.Extensions
+  name: NeerCore.Api.Extensions
+  nameWithType: NeerCore.Api.Extensions
+  fullName: NeerCore.Api.Extensions
+- uid: NeerCore.Api.Extensions.MiddlewareExtensions.AddFactoryMiddlewares*
+  commentId: Overload:NeerCore.Api.Extensions.MiddlewareExtensions.AddFactoryMiddlewares
+  name: AddFactoryMiddlewares
+  nameWithType: MiddlewareExtensions.AddFactoryMiddlewares
+  fullName: NeerCore.Api.Extensions.MiddlewareExtensions.AddFactoryMiddlewares
+- uid: IServiceCollection
+  isExternal: true
+  name: IServiceCollection
+  nameWithType: IServiceCollection
+  fullName: IServiceCollection
+- uid: ServiceLifetime
+  commentId: '!:ServiceLifetime'
+  isExternal: true
+  name: ServiceLifetime
+  nameWithType: ServiceLifetime
+  fullName: ServiceLifetime
+- uid: NeerCore.Api.Middleware.NeerExceptionHandlerMiddleware
+  commentId: T:NeerCore.Api.Middleware.NeerExceptionHandlerMiddleware
+  name: NeerExceptionHandlerMiddleware
+  nameWithType: NeerExceptionHandlerMiddleware
+  fullName: NeerCore.Api.Middleware.NeerExceptionHandlerMiddleware
+- uid: NeerCore.Api.Extensions.MiddlewareExtensions.UseNeerExceptionHandler*
+  commentId: Overload:NeerCore.Api.Extensions.MiddlewareExtensions.UseNeerExceptionHandler
+  name: UseNeerExceptionHandler
+  nameWithType: MiddlewareExtensions.UseNeerExceptionHandler
+  fullName: NeerCore.Api.Extensions.MiddlewareExtensions.UseNeerExceptionHandler
+- uid: IApplicationBuilder
+  isExternal: true
+  name: IApplicationBuilder
+  nameWithType: IApplicationBuilder
+  fullName: IApplicationBuilder
+- uid: NeerCore.Api.Extensions.MiddlewareExtensions.UseNeerSwaggerUI*
+  commentId: Overload:NeerCore.Api.Extensions.MiddlewareExtensions.UseNeerSwaggerUI
+  name: UseNeerSwaggerUI
+  nameWithType: MiddlewareExtensions.UseNeerSwaggerUI
+  fullName: NeerCore.Api.Extensions.MiddlewareExtensions.UseNeerSwaggerUI
+- uid: SwaggerUIOptions
+  commentId: '!:SwaggerUIOptions'
+  isExternal: true
+  name: SwaggerUIOptions
+  nameWithType: SwaggerUIOptions
+  fullName: SwaggerUIOptions
+- uid: System.Nullable{Action{SwaggerUIOptions}}
+  commentId: '!:System.Nullable{Action{SwaggerUIOptions}}'
+  definition: System.Nullable`1
+  name: Nullable<Action<SwaggerUIOptions>>
+  nameWithType: Nullable<Action<SwaggerUIOptions>>
+  fullName: System.Nullable<Action<SwaggerUIOptions>>
+  nameWithType.vb: Nullable(Of Action(Of SwaggerUIOptions))
+  fullName.vb: System.Nullable(Of Action(Of SwaggerUIOptions))
+  name.vb: Nullable(Of Action(Of SwaggerUIOptions))
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: SwaggerUIOptions
+    name: SwaggerUIOptions
+    nameWithType: SwaggerUIOptions
+    fullName: SwaggerUIOptions
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: SwaggerUIOptions
+    name: SwaggerUIOptions
+    nameWithType: SwaggerUIOptions
+    fullName: SwaggerUIOptions
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable`1
+  isExternal: true
+  name: Nullable<>
+  nameWithType: Nullable<>
+  fullName: System.Nullable<>
+  nameWithType.vb: Nullable(Of )
+  fullName.vb: System.Nullable(Of )
+  name.vb: Nullable(Of )
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )

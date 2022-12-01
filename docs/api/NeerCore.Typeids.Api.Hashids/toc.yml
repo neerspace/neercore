@@ -1,0 +1,14 @@
+### YamlMime:TableOfContent
+- uid: NeerCore.Typeids.Api.Hashids
+  name: NeerCore.Typeids.Api.Hashids
+  items:
+  - uid: NeerCore.Typeids.Api.Hashids.TypeidsHashidsProcessor
+    name: TypeidsHashidsProcessor
+  - uid: NeerCore.Typeids.Api.Hashids.TypeidsHasidsJsonConverter`2
+    name: TypeidsHasidsJsonConverter<TIdentifier, TValue>
+    name.vb: TypeidsHasidsJsonConverter(Of TIdentifier, TValue)
+- uid: NeerCore.Typeids.Api.Hashids.Extensions
+  name: NeerCore.Typeids.Api.Hashids.Extensions
+  items:
+  - uid: NeerCore.Typeids.Api.Hashids.Extensions.ServiceCollectionExtensions
+    name: ServiceCollectionExtensions

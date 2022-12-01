@@ -1,0 +1,111 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Data.Abstractions.IEntity`1
+  commentId: T:NeerCore.Data.Abstractions.IEntity`1
+  id: IEntity`1
+  parent: NeerCore.Data.Abstractions
+  children:
+  - NeerCore.Data.Abstractions.IEntity`1.Id
+  langs:
+  - csharp
+  - vb
+  name: IEntity<TKey>
+  nameWithType: IEntity<TKey>
+  fullName: NeerCore.Data.Abstractions.IEntity<TKey>
+  type: Interface
+  source:
+    remote:
+      path: src/NeerCore.Data.Abstractions/IEntity.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: IEntity
+    path: ../src/NeerCore.Data.Abstractions/IEntity.cs
+    startLine: 11
+  assemblies:
+  - NeerCore.Data.Abstractions
+  namespace: NeerCore.Data.Abstractions
+  summary: "\nDefines entity with the required <xref href=\"NeerCore.Data.Abstractions.IEntity%601.Id\" data-throw-if-not-resolved=\"false\"></xref> property.\n"
+  example: []
+  syntax:
+    content: 'public interface IEntity<out TKey> : IEntity'
+    typeParameters:
+    - id: TKey
+      description: <xref href="NeerCore.Data.Abstractions.IEntity%601.Id" data-throw-if-not-resolved="false"></xref> type.
+    content.vb: >-
+      Public Interface IEntity(Of Out TKey)
+          Inherits IEntity
+  nameWithType.vb: IEntity(Of TKey)
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+  fullName.vb: NeerCore.Data.Abstractions.IEntity(Of TKey)
+  name.vb: IEntity(Of TKey)
+- uid: NeerCore.Data.Abstractions.IEntity`1.Id
+  commentId: P:NeerCore.Data.Abstractions.IEntity`1.Id
+  id: Id
+  parent: NeerCore.Data.Abstractions.IEntity`1
+  langs:
+  - csharp
+  - vb
+  name: Id
+  nameWithType: IEntity<TKey>.Id
+  fullName: NeerCore.Data.Abstractions.IEntity<TKey>.Id
+  type: Property
+  source:
+    remote:
+      path: src/NeerCore.Data.Abstractions/IEntity.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: Id
+    path: ../src/NeerCore.Data.Abstractions/IEntity.cs
+    startLine: 13
+  assemblies:
+  - NeerCore.Data.Abstractions
+  namespace: NeerCore.Data.Abstractions
+  syntax:
+    content: TKey Id { get; }
+    parameters: []
+    return:
+      type: '{TKey}'
+    content.vb: ReadOnly Property Id As TKey
+  overload: NeerCore.Data.Abstractions.IEntity`1.Id*
+  nameWithType.vb: IEntity(Of TKey).Id
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+  fullName.vb: NeerCore.Data.Abstractions.IEntity(Of TKey).Id
+references:
+- uid: NeerCore.Data.Abstractions.IEntity`1.Id
+  commentId: P:NeerCore.Data.Abstractions.IEntity`1.Id
+  name: Id
+  nameWithType: IEntity<TKey>.Id
+  fullName: NeerCore.Data.Abstractions.IEntity<TKey>.Id
+  nameWithType.vb: IEntity(Of TKey).Id
+  fullName.vb: NeerCore.Data.Abstractions.IEntity(Of TKey).Id
+- uid: NeerCore.Data.Abstractions
+  commentId: N:NeerCore.Data.Abstractions
+  name: NeerCore.Data.Abstractions
+  nameWithType: NeerCore.Data.Abstractions
+  fullName: NeerCore.Data.Abstractions
+- uid: NeerCore.Data.Abstractions.IEntity`1.Id*
+  commentId: Overload:NeerCore.Data.Abstractions.IEntity`1.Id
+  name: Id
+  nameWithType: IEntity<TKey>.Id
+  fullName: NeerCore.Data.Abstractions.IEntity<TKey>.Id
+  nameWithType.vb: IEntity(Of TKey).Id
+  fullName.vb: NeerCore.Data.Abstractions.IEntity(Of TKey).Id
+- uid: '{TKey}'
+  commentId: '!:TKey'
+  definition: TKey
+  name: TKey
+  nameWithType: TKey
+  fullName: TKey
+- uid: TKey
+  commentId: '!:TKey'
+  name: TKey
+  nameWithType: TKey
+  fullName: TKey

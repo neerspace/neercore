@@ -1,0 +1,14 @@
+{
+  "NeerCore.Data.Abstractions": "NeerCore.Data.Abstractions.yml",
+  "NeerCore.Data.Abstractions.ICreatableEntity": "NeerCore.Data.Abstractions.ICreatableEntity.yml",
+  "NeerCore.Data.Abstractions.ICreatableEntity.Created": "NeerCore.Data.Abstractions.ICreatableEntity.yml",
+  "NeerCore.Data.Abstractions.ICreatableEntity`1": "NeerCore.Data.Abstractions.ICreatableEntity-1.yml",
+  "NeerCore.Data.Abstractions.IDateableEntity": "NeerCore.Data.Abstractions.IDateableEntity.yml",
+  "NeerCore.Data.Abstractions.IDateableEntity`1": "NeerCore.Data.Abstractions.IDateableEntity-1.yml",
+  "NeerCore.Data.Abstractions.IEntity": "NeerCore.Data.Abstractions.IEntity.yml",
+  "NeerCore.Data.Abstractions.IEntity`1": "NeerCore.Data.Abstractions.IEntity-1.yml",
+  "NeerCore.Data.Abstractions.IEntity`1.Id": "NeerCore.Data.Abstractions.IEntity-1.yml",
+  "NeerCore.Data.Abstractions.IUpdatableEntity": "NeerCore.Data.Abstractions.IUpdatableEntity.yml",
+  "NeerCore.Data.Abstractions.IUpdatableEntity.Updated": "NeerCore.Data.Abstractions.IUpdatableEntity.yml",
+  "NeerCore.Data.Abstractions.IUpdatableEntity`1": "NeerCore.Data.Abstractions.IUpdatableEntity-1.yml"
+}

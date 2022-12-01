@@ -1,0 +1,28 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Typeids.Api.Extensions
+  commentId: N:NeerCore.Typeids.Api.Extensions
+  id: NeerCore.Typeids.Api.Extensions
+  children:
+  - NeerCore.Typeids.Api.Extensions.JsonSerializerOptionsExtensions
+  - NeerCore.Typeids.Api.Extensions.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: NeerCore.Typeids.Api.Extensions
+  nameWithType: NeerCore.Typeids.Api.Extensions
+  fullName: NeerCore.Typeids.Api.Extensions
+  type: Namespace
+  assemblies:
+  - NeerCore.Typeids.Api
+references:
+- uid: NeerCore.Typeids.Api.Extensions.JsonSerializerOptionsExtensions
+  commentId: T:NeerCore.Typeids.Api.Extensions.JsonSerializerOptionsExtensions
+  name: JsonSerializerOptionsExtensions
+  nameWithType: JsonSerializerOptionsExtensions
+  fullName: NeerCore.Typeids.Api.Extensions.JsonSerializerOptionsExtensions
+- uid: NeerCore.Typeids.Api.Extensions.ServiceCollectionExtensions
+  commentId: T:NeerCore.Typeids.Api.Extensions.ServiceCollectionExtensions
+  name: ServiceCollectionExtensions
+  nameWithType: ServiceCollectionExtensions
+  fullName: NeerCore.Typeids.Api.Extensions.ServiceCollectionExtensions

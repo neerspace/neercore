@@ -1,0 +1,1124 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.DependencyInjection.AssemblyProvider
+  commentId: T:NeerCore.DependencyInjection.AssemblyProvider
+  id: AssemblyProvider
+  parent: NeerCore.DependencyInjection
+  children:
+  - NeerCore.DependencyInjection.AssemblyProvider.AddAssembly(Assembly)
+  - NeerCore.DependencyInjection.AssemblyProvider.AllAssemblies
+  - NeerCore.DependencyInjection.AssemblyProvider.ApplicationAssemblies
+  - NeerCore.DependencyInjection.AssemblyProvider.ConfigureRoot(Type)
+  - NeerCore.DependencyInjection.AssemblyProvider.GetImplementationsFromAssembly(Type,Assembly)
+  - NeerCore.DependencyInjection.AssemblyProvider.GetImplementationsFromAssembly``1(Assembly)
+  - NeerCore.DependencyInjection.AssemblyProvider.GetImplementationsOf(Type,System.Nullable{Func{Assembly,System.Boolean}})
+  - NeerCore.DependencyInjection.AssemblyProvider.GetImplementationsOf``1(System.Nullable{Func{Assembly,System.Boolean}})
+  - NeerCore.DependencyInjection.AssemblyProvider.IsApplicationAssembly
+  - NeerCore.DependencyInjection.AssemblyProvider.LoadAllAssemblies(System.Nullable{Assembly})
+  - NeerCore.DependencyInjection.AssemblyProvider.ProjectRootNamespace
+  - NeerCore.DependencyInjection.AssemblyProvider.SetRootNamespace(System.String)
+  - NeerCore.DependencyInjection.AssemblyProvider.TryLoad(System.String)
+  langs:
+  - csharp
+  - vb
+  name: AssemblyProvider
+  nameWithType: AssemblyProvider
+  fullName: NeerCore.DependencyInjection.AssemblyProvider
+  type: Class
+  source:
+    remote:
+      path: src/NeerCore.DependencyInjection/AssemblyProvider.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: AssemblyProvider
+    path: src/NeerCore.DependencyInjection/AssemblyProvider.cs
+    startLine: 12
+  assemblies:
+  - NeerCore.DependencyInjection
+  namespace: NeerCore.DependencyInjection
+  summary: "\nWrapper to simplify usage of some reflection features.\n"
+  remarks: "\nPlease use naming style like &apos;MyApp.Application&apos;, &apos;MyApp.Data.Sqlite&apos;,\nif you want to work with this class in correct way :)\n"
+  example: []
+  syntax:
+    content: 'public static class AssemblyProvider : object'
+    content.vb: >-
+      Public Module AssemblyProvider
+
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: NeerCore.DependencyInjection.AssemblyProvider.ProjectRootNamespace
+  commentId: P:NeerCore.DependencyInjection.AssemblyProvider.ProjectRootNamespace
+  id: ProjectRootNamespace
+  parent: NeerCore.DependencyInjection.AssemblyProvider
+  langs:
+  - csharp
+  - vb
+  name: ProjectRootNamespace
+  nameWithType: AssemblyProvider.ProjectRootNamespace
+  fullName: NeerCore.DependencyInjection.AssemblyProvider.ProjectRootNamespace
+  type: Property
+  source:
+    remote:
+      path: src/NeerCore.DependencyInjection/AssemblyProvider.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: ProjectRootNamespace
+    path: src/NeerCore.DependencyInjection/AssemblyProvider.cs
+    startLine: 14
+  assemblies:
+  - NeerCore.DependencyInjection
+  namespace: NeerCore.DependencyInjection
+  syntax:
+    content: public static string ProjectRootNamespace { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Shared ReadOnly Property ProjectRootNamespace As String
+  overload: NeerCore.DependencyInjection.AssemblyProvider.ProjectRootNamespace*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: NeerCore.DependencyInjection.AssemblyProvider.ApplicationAssemblies
+  commentId: P:NeerCore.DependencyInjection.AssemblyProvider.ApplicationAssemblies
+  id: ApplicationAssemblies
+  parent: NeerCore.DependencyInjection.AssemblyProvider
+  langs:
+  - csharp
+  - vb
+  name: ApplicationAssemblies
+  nameWithType: AssemblyProvider.ApplicationAssemblies
+  fullName: NeerCore.DependencyInjection.AssemblyProvider.ApplicationAssemblies
+  type: Property
+  source:
+    remote:
+      path: src/NeerCore.DependencyInjection/AssemblyProvider.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: ApplicationAssemblies
+    path: src/NeerCore.DependencyInjection/AssemblyProvider.cs
+    startLine: 26
+  assemblies:
+  - NeerCore.DependencyInjection
+  namespace: NeerCore.DependencyInjection
+  summary: "\nReturns a list of types only from your assemblies.\n"
+  remarks: "\nPlease use naming style like &apos;MyApp.Application&apos;, &apos;MyApp.Data.Sqlite&apos;,\nif you want to work with this method in correct way :)\n"
+  example: []
+  syntax:
+    content: public static IList<Assembly> ApplicationAssemblies { get; }
+    parameters: []
+    return:
+      type: IList{Assembly}
+    content.vb: Public Shared ReadOnly Property ApplicationAssemblies As IList(Of Assembly)
+  overload: NeerCore.DependencyInjection.AssemblyProvider.ApplicationAssemblies*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: NeerCore.DependencyInjection.AssemblyProvider.AllAssemblies
+  commentId: P:NeerCore.DependencyInjection.AssemblyProvider.AllAssemblies
+  id: AllAssemblies
+  parent: NeerCore.DependencyInjection.AssemblyProvider
+  langs:
+  - csharp
+  - vb
+  name: AllAssemblies
+  nameWithType: AssemblyProvider.AllAssemblies
+  fullName: NeerCore.DependencyInjection.AssemblyProvider.AllAssemblies
+  type: Property
+  source:
+    remote:
+      path: src/NeerCore.DependencyInjection/AssemblyProvider.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: AllAssemblies
+    path: src/NeerCore.DependencyInjection/AssemblyProvider.cs
+    startLine: 31
+  assemblies:
+  - NeerCore.DependencyInjection
+  namespace: NeerCore.DependencyInjection
+  summary: "\nReturns a list of types from all available assemblies.\n"
+  example: []
+  syntax:
+    content: public static IList<Assembly> AllAssemblies { get; }
+    parameters: []
+    return:
+      type: IList{Assembly}
+    content.vb: Public Shared ReadOnly Property AllAssemblies As IList(Of Assembly)
+  overload: NeerCore.DependencyInjection.AssemblyProvider.AllAssemblies*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  modifiers.vb:
+  - Public
+  - Shared
+  - ReadOnly
+- uid: NeerCore.DependencyInjection.AssemblyProvider.IsApplicationAssembly
+  commentId: P:NeerCore.DependencyInjection.AssemblyProvider.IsApplicationAssembly
+  id: IsApplicationAssembly
+  parent: NeerCore.DependencyInjection.AssemblyProvider
+  langs:
+  - csharp
+  - vb
+  name: IsApplicationAssembly
+  nameWithType: AssemblyProvider.IsApplicationAssembly
+  fullName: NeerCore.DependencyInjection.AssemblyProvider.IsApplicationAssembly
+  type: Property
+  source:
+    remote:
+      path: src/NeerCore.DependencyInjection/AssemblyProvider.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: IsApplicationAssembly
+    path: src/NeerCore.DependencyInjection/AssemblyProvider.cs
+    startLine: 36
+  assemblies:
+  - NeerCore.DependencyInjection
+  namespace: NeerCore.DependencyInjection
+  summary: "\nThe way how to determinate that a assembly is source of your app.\n"
+  example: []
+  syntax:
+    content: public static Func<Assembly, bool> IsApplicationAssembly { get; set; }
+    parameters: []
+    return:
+      type: Func{Assembly,System.Boolean}
+    content.vb: Public Shared Property IsApplicationAssembly As Func(Of Assembly, Boolean)
+  overload: NeerCore.DependencyInjection.AssemblyProvider.IsApplicationAssembly*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: NeerCore.DependencyInjection.AssemblyProvider.GetImplementationsFromAssembly``1(Assembly)
+  commentId: M:NeerCore.DependencyInjection.AssemblyProvider.GetImplementationsFromAssembly``1(Assembly)
+  id: GetImplementationsFromAssembly``1(Assembly)
+  parent: NeerCore.DependencyInjection.AssemblyProvider
+  langs:
+  - csharp
+  - vb
+  name: GetImplementationsFromAssembly<TBase>(Assembly)
+  nameWithType: AssemblyProvider.GetImplementationsFromAssembly<TBase>(Assembly)
+  fullName: NeerCore.DependencyInjection.AssemblyProvider.GetImplementationsFromAssembly<TBase>(Assembly)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.DependencyInjection/AssemblyProvider.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: GetImplementationsFromAssembly
+    path: src/NeerCore.DependencyInjection/AssemblyProvider.cs
+    startLine: 39
+  assemblies:
+  - NeerCore.DependencyInjection
+  namespace: NeerCore.DependencyInjection
+  syntax:
+    content: public static IEnumerable<Type> GetImplementationsFromAssembly<TBase>(Assembly assembly)
+    parameters:
+    - id: assembly
+      type: Assembly
+    typeParameters:
+    - id: TBase
+    return:
+      type: IEnumerable{Type}
+    content.vb: Public Shared Function GetImplementationsFromAssembly(Of TBase)(assembly As Assembly) As IEnumerable(Of Type)
+  overload: NeerCore.DependencyInjection.AssemblyProvider.GetImplementationsFromAssembly*
+  nameWithType.vb: AssemblyProvider.GetImplementationsFromAssembly(Of TBase)(Assembly)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: NeerCore.DependencyInjection.AssemblyProvider.GetImplementationsFromAssembly(Of TBase)(Assembly)
+  name.vb: GetImplementationsFromAssembly(Of TBase)(Assembly)
+- uid: NeerCore.DependencyInjection.AssemblyProvider.GetImplementationsOf``1(System.Nullable{Func{Assembly,System.Boolean}})
+  commentId: M:NeerCore.DependencyInjection.AssemblyProvider.GetImplementationsOf``1(System.Nullable{Func{Assembly,System.Boolean}})
+  id: GetImplementationsOf``1(System.Nullable{Func{Assembly,System.Boolean}})
+  parent: NeerCore.DependencyInjection.AssemblyProvider
+  langs:
+  - csharp
+  - vb
+  name: GetImplementationsOf<TBase>(Nullable<Func<Assembly, Boolean>>)
+  nameWithType: AssemblyProvider.GetImplementationsOf<TBase>(Nullable<Func<Assembly, Boolean>>)
+  fullName: NeerCore.DependencyInjection.AssemblyProvider.GetImplementationsOf<TBase>(System.Nullable<Func<Assembly, System.Boolean>>)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.DependencyInjection/AssemblyProvider.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: GetImplementationsOf
+    path: src/NeerCore.DependencyInjection/AssemblyProvider.cs
+    startLine: 54
+  assemblies:
+  - NeerCore.DependencyInjection
+  namespace: NeerCore.DependencyInjection
+  summary: "\nReturns a list of all <code data-dev-comment-type=\"typeparamref\" class=\"typeparamref\">TBase</code> implementations\n(and child classes) that available in app assemblies.\n"
+  example: []
+  syntax:
+    content: public static IEnumerable<Type> GetImplementationsOf<TBase>(Func<Assembly, bool>? assemblySelector = null)
+    parameters:
+    - id: assemblySelector
+      type: System.Nullable{Func{Assembly,System.Boolean}}
+      description: "\nFilters specific assemblies to search implementations there\n(if null only application assemblies will be researched).\n"
+    typeParameters:
+    - id: TBase
+      description: Parent class or interface.
+    return:
+      type: IEnumerable{Type}
+      description: A list of found types.
+    content.vb: Public Shared Function GetImplementationsOf(Of TBase)(assemblySelector As Func(Of Assembly, Boolean)? = Nothing) As IEnumerable(Of Type)
+  overload: NeerCore.DependencyInjection.AssemblyProvider.GetImplementationsOf*
+  nameWithType.vb: AssemblyProvider.GetImplementationsOf(Of TBase)(Nullable(Of Func(Of Assembly, Boolean)))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: NeerCore.DependencyInjection.AssemblyProvider.GetImplementationsOf(Of TBase)(System.Nullable(Of Func(Of Assembly, System.Boolean)))
+  name.vb: GetImplementationsOf(Of TBase)(Nullable(Of Func(Of Assembly, Boolean)))
+- uid: NeerCore.DependencyInjection.AssemblyProvider.GetImplementationsFromAssembly(Type,Assembly)
+  commentId: M:NeerCore.DependencyInjection.AssemblyProvider.GetImplementationsFromAssembly(Type,Assembly)
+  id: GetImplementationsFromAssembly(Type,Assembly)
+  parent: NeerCore.DependencyInjection.AssemblyProvider
+  langs:
+  - csharp
+  - vb
+  name: GetImplementationsFromAssembly(Type, Assembly)
+  nameWithType: AssemblyProvider.GetImplementationsFromAssembly(Type, Assembly)
+  fullName: NeerCore.DependencyInjection.AssemblyProvider.GetImplementationsFromAssembly(Type, Assembly)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.DependencyInjection/AssemblyProvider.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: GetImplementationsFromAssembly
+    path: src/NeerCore.DependencyInjection/AssemblyProvider.cs
+    startLine: 60
+  assemblies:
+  - NeerCore.DependencyInjection
+  namespace: NeerCore.DependencyInjection
+  example: []
+  syntax:
+    content: public static IEnumerable<Type> GetImplementationsFromAssembly(Type baseType, Assembly assembly)
+    parameters:
+    - id: baseType
+      type: Type
+    - id: assembly
+      type: Assembly
+    return:
+      type: IEnumerable{Type}
+    content.vb: Public Shared Function GetImplementationsFromAssembly(baseType As Type, assembly As Assembly) As IEnumerable(Of Type)
+  overload: NeerCore.DependencyInjection.AssemblyProvider.GetImplementationsFromAssembly*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: NeerCore.DependencyInjection.AssemblyProvider.GetImplementationsOf(Type,System.Nullable{Func{Assembly,System.Boolean}})
+  commentId: M:NeerCore.DependencyInjection.AssemblyProvider.GetImplementationsOf(Type,System.Nullable{Func{Assembly,System.Boolean}})
+  id: GetImplementationsOf(Type,System.Nullable{Func{Assembly,System.Boolean}})
+  parent: NeerCore.DependencyInjection.AssemblyProvider
+  langs:
+  - csharp
+  - vb
+  name: GetImplementationsOf(Type, Nullable<Func<Assembly, Boolean>>)
+  nameWithType: AssemblyProvider.GetImplementationsOf(Type, Nullable<Func<Assembly, Boolean>>)
+  fullName: NeerCore.DependencyInjection.AssemblyProvider.GetImplementationsOf(Type, System.Nullable<Func<Assembly, System.Boolean>>)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.DependencyInjection/AssemblyProvider.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: GetImplementationsOf
+    path: src/NeerCore.DependencyInjection/AssemblyProvider.cs
+    startLine: 68
+  assemblies:
+  - NeerCore.DependencyInjection
+  namespace: NeerCore.DependencyInjection
+  example: []
+  syntax:
+    content: public static IEnumerable<Type> GetImplementationsOf(Type baseType, Func<Assembly, bool>? assemblySelector = null)
+    parameters:
+    - id: baseType
+      type: Type
+    - id: assemblySelector
+      type: System.Nullable{Func{Assembly,System.Boolean}}
+    return:
+      type: IEnumerable{Type}
+    content.vb: Public Shared Function GetImplementationsOf(baseType As Type, assemblySelector As Func(Of Assembly, Boolean)? = Nothing) As IEnumerable(Of Type)
+  overload: NeerCore.DependencyInjection.AssemblyProvider.GetImplementationsOf*
+  nameWithType.vb: AssemblyProvider.GetImplementationsOf(Type, Nullable(Of Func(Of Assembly, Boolean)))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: NeerCore.DependencyInjection.AssemblyProvider.GetImplementationsOf(Type, System.Nullable(Of Func(Of Assembly, System.Boolean)))
+  name.vb: GetImplementationsOf(Type, Nullable(Of Func(Of Assembly, Boolean)))
+- uid: NeerCore.DependencyInjection.AssemblyProvider.LoadAllAssemblies(System.Nullable{Assembly})
+  commentId: M:NeerCore.DependencyInjection.AssemblyProvider.LoadAllAssemblies(System.Nullable{Assembly})
+  id: LoadAllAssemblies(System.Nullable{Assembly})
+  parent: NeerCore.DependencyInjection.AssemblyProvider
+  langs:
+  - csharp
+  - vb
+  name: LoadAllAssemblies(Nullable<Assembly>)
+  nameWithType: AssemblyProvider.LoadAllAssemblies(Nullable<Assembly>)
+  fullName: NeerCore.DependencyInjection.AssemblyProvider.LoadAllAssemblies(System.Nullable<Assembly>)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.DependencyInjection/AssemblyProvider.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: LoadAllAssemblies
+    path: src/NeerCore.DependencyInjection/AssemblyProvider.cs
+    startLine: 79
+  assemblies:
+  - NeerCore.DependencyInjection
+  namespace: NeerCore.DependencyInjection
+  summary: "\nReturns a list of all available assemblies in app.\n"
+  example: []
+  syntax:
+    content: public static IEnumerable<Assembly> LoadAllAssemblies(Assembly? rootAssembly = null)
+    parameters:
+    - id: rootAssembly
+      type: System.Nullable{Assembly}
+    return:
+      type: IEnumerable{Assembly}
+      description: Assemblies sequence.
+    content.vb: Public Shared Function LoadAllAssemblies(rootAssembly As Assembly? = Nothing) As IEnumerable(Of Assembly)
+  overload: NeerCore.DependencyInjection.AssemblyProvider.LoadAllAssemblies*
+  nameWithType.vb: AssemblyProvider.LoadAllAssemblies(Nullable(Of Assembly))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: NeerCore.DependencyInjection.AssemblyProvider.LoadAllAssemblies(System.Nullable(Of Assembly))
+  name.vb: LoadAllAssemblies(Nullable(Of Assembly))
+- uid: NeerCore.DependencyInjection.AssemblyProvider.TryLoad(System.String)
+  commentId: M:NeerCore.DependencyInjection.AssemblyProvider.TryLoad(System.String)
+  id: TryLoad(System.String)
+  parent: NeerCore.DependencyInjection.AssemblyProvider
+  langs:
+  - csharp
+  - vb
+  name: TryLoad(String)
+  nameWithType: AssemblyProvider.TryLoad(String)
+  fullName: NeerCore.DependencyInjection.AssemblyProvider.TryLoad(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.DependencyInjection/AssemblyProvider.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: TryLoad
+    path: src/NeerCore.DependencyInjection/AssemblyProvider.cs
+    startLine: 101
+  assemblies:
+  - NeerCore.DependencyInjection
+  namespace: NeerCore.DependencyInjection
+  syntax:
+    content: public static Assembly? TryLoad(string assemblyName)
+    parameters:
+    - id: assemblyName
+      type: System.String
+    return:
+      type: System.Nullable{Assembly}
+    content.vb: Public Shared Function TryLoad(assemblyName As String) As Assembly?
+  overload: NeerCore.DependencyInjection.AssemblyProvider.TryLoad*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: NeerCore.DependencyInjection.AssemblyProvider.ConfigureRoot(Type)
+  commentId: M:NeerCore.DependencyInjection.AssemblyProvider.ConfigureRoot(Type)
+  id: ConfigureRoot(Type)
+  parent: NeerCore.DependencyInjection.AssemblyProvider
+  langs:
+  - csharp
+  - vb
+  name: ConfigureRoot(Type)
+  nameWithType: AssemblyProvider.ConfigureRoot(Type)
+  fullName: NeerCore.DependencyInjection.AssemblyProvider.ConfigureRoot(Type)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.DependencyInjection/AssemblyProvider.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: ConfigureRoot
+    path: src/NeerCore.DependencyInjection/AssemblyProvider.cs
+    startLine: 113
+  assemblies:
+  - NeerCore.DependencyInjection
+  namespace: NeerCore.DependencyInjection
+  syntax:
+    content: public static void ConfigureRoot(Type rootType)
+    parameters:
+    - id: rootType
+      type: Type
+    content.vb: Public Shared Sub ConfigureRoot(rootType As Type)
+  overload: NeerCore.DependencyInjection.AssemblyProvider.ConfigureRoot*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: NeerCore.DependencyInjection.AssemblyProvider.AddAssembly(Assembly)
+  commentId: M:NeerCore.DependencyInjection.AssemblyProvider.AddAssembly(Assembly)
+  id: AddAssembly(Assembly)
+  parent: NeerCore.DependencyInjection.AssemblyProvider
+  langs:
+  - csharp
+  - vb
+  name: AddAssembly(Assembly)
+  nameWithType: AssemblyProvider.AddAssembly(Assembly)
+  fullName: NeerCore.DependencyInjection.AssemblyProvider.AddAssembly(Assembly)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.DependencyInjection/AssemblyProvider.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: AddAssembly
+    path: src/NeerCore.DependencyInjection/AssemblyProvider.cs
+    startLine: 119
+  assemblies:
+  - NeerCore.DependencyInjection
+  namespace: NeerCore.DependencyInjection
+  syntax:
+    content: public static void AddAssembly(Assembly assembly)
+    parameters:
+    - id: assembly
+      type: Assembly
+    content.vb: Public Shared Sub AddAssembly(assembly As Assembly)
+  overload: NeerCore.DependencyInjection.AssemblyProvider.AddAssembly*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: NeerCore.DependencyInjection.AssemblyProvider.SetRootNamespace(System.String)
+  commentId: M:NeerCore.DependencyInjection.AssemblyProvider.SetRootNamespace(System.String)
+  id: SetRootNamespace(System.String)
+  parent: NeerCore.DependencyInjection.AssemblyProvider
+  langs:
+  - csharp
+  - vb
+  name: SetRootNamespace(String)
+  nameWithType: AssemblyProvider.SetRootNamespace(String)
+  fullName: NeerCore.DependencyInjection.AssemblyProvider.SetRootNamespace(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.DependencyInjection/AssemblyProvider.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: SetRootNamespace
+    path: src/NeerCore.DependencyInjection/AssemblyProvider.cs
+    startLine: 131
+  assemblies:
+  - NeerCore.DependencyInjection
+  namespace: NeerCore.DependencyInjection
+  syntax:
+    content: public static void SetRootNamespace(string ns)
+    parameters:
+    - id: ns
+      type: System.String
+    content.vb: Public Shared Sub SetRootNamespace(ns As String)
+  overload: NeerCore.DependencyInjection.AssemblyProvider.SetRootNamespace*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: NeerCore.DependencyInjection
+  commentId: N:NeerCore.DependencyInjection
+  name: NeerCore.DependencyInjection
+  nameWithType: NeerCore.DependencyInjection
+  fullName: NeerCore.DependencyInjection
+- uid: NeerCore.DependencyInjection.AssemblyProvider.ProjectRootNamespace*
+  commentId: Overload:NeerCore.DependencyInjection.AssemblyProvider.ProjectRootNamespace
+  name: ProjectRootNamespace
+  nameWithType: AssemblyProvider.ProjectRootNamespace
+  fullName: NeerCore.DependencyInjection.AssemblyProvider.ProjectRootNamespace
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: NeerCore.DependencyInjection.AssemblyProvider.ApplicationAssemblies*
+  commentId: Overload:NeerCore.DependencyInjection.AssemblyProvider.ApplicationAssemblies
+  name: ApplicationAssemblies
+  nameWithType: AssemblyProvider.ApplicationAssemblies
+  fullName: NeerCore.DependencyInjection.AssemblyProvider.ApplicationAssemblies
+- uid: IList{Assembly}
+  commentId: '!:IList{Assembly}'
+  definition: IList`1
+  name: IList<Assembly>
+  nameWithType: IList<Assembly>
+  fullName: IList<Assembly>
+  nameWithType.vb: IList(Of Assembly)
+  fullName.vb: IList(Of Assembly)
+  name.vb: IList(Of Assembly)
+  spec.csharp:
+  - uid: IList`1
+    name: IList
+    nameWithType: IList
+    fullName: IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Assembly
+    name: Assembly
+    nameWithType: Assembly
+    fullName: Assembly
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IList`1
+    name: IList
+    nameWithType: IList
+    fullName: IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Assembly
+    name: Assembly
+    nameWithType: Assembly
+    fullName: Assembly
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IList`1
+  isExternal: true
+  name: IList<>
+  nameWithType: IList<>
+  fullName: IList<>
+  nameWithType.vb: IList(Of )
+  fullName.vb: IList(Of )
+  name.vb: IList(Of )
+  spec.csharp:
+  - uid: IList`1
+    name: IList
+    nameWithType: IList
+    fullName: IList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IList`1
+    name: IList
+    nameWithType: IList
+    fullName: IList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NeerCore.DependencyInjection.AssemblyProvider.AllAssemblies*
+  commentId: Overload:NeerCore.DependencyInjection.AssemblyProvider.AllAssemblies
+  name: AllAssemblies
+  nameWithType: AssemblyProvider.AllAssemblies
+  fullName: NeerCore.DependencyInjection.AssemblyProvider.AllAssemblies
+- uid: NeerCore.DependencyInjection.AssemblyProvider.IsApplicationAssembly*
+  commentId: Overload:NeerCore.DependencyInjection.AssemblyProvider.IsApplicationAssembly
+  name: IsApplicationAssembly
+  nameWithType: AssemblyProvider.IsApplicationAssembly
+  fullName: NeerCore.DependencyInjection.AssemblyProvider.IsApplicationAssembly
+- uid: Func{Assembly,System.Boolean}
+  commentId: '!:Func{Assembly,System.Boolean}'
+  definition: Func`2
+  name: Func<Assembly, Boolean>
+  nameWithType: Func<Assembly, Boolean>
+  fullName: Func<Assembly, System.Boolean>
+  nameWithType.vb: Func(Of Assembly, Boolean)
+  fullName.vb: Func(Of Assembly, System.Boolean)
+  name.vb: Func(Of Assembly, Boolean)
+  spec.csharp:
+  - uid: Func`2
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Assembly
+    name: Assembly
+    nameWithType: Assembly
+    fullName: Assembly
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Func`2
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Assembly
+    name: Assembly
+    nameWithType: Assembly
+    fullName: Assembly
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Func`2
+  commentId: '!:Func`2'
+  isExternal: true
+  name: Func<, >
+  nameWithType: Func<, >
+  fullName: Func<, >
+  nameWithType.vb: Func(Of , )
+  fullName.vb: Func(Of , )
+  name.vb: Func(Of , )
+  spec.csharp:
+  - uid: Func`2
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Func`2
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NeerCore.DependencyInjection.AssemblyProvider.GetImplementationsFromAssembly*
+  commentId: Overload:NeerCore.DependencyInjection.AssemblyProvider.GetImplementationsFromAssembly
+  name: GetImplementationsFromAssembly
+  nameWithType: AssemblyProvider.GetImplementationsFromAssembly
+  fullName: NeerCore.DependencyInjection.AssemblyProvider.GetImplementationsFromAssembly
+- uid: Assembly
+  isExternal: true
+  name: Assembly
+  nameWithType: Assembly
+  fullName: Assembly
+- uid: IEnumerable{Type}
+  commentId: '!:IEnumerable{Type}'
+  definition: IEnumerable`1
+  name: IEnumerable<Type>
+  nameWithType: IEnumerable<Type>
+  fullName: IEnumerable<Type>
+  nameWithType.vb: IEnumerable(Of Type)
+  fullName.vb: IEnumerable(Of Type)
+  name.vb: IEnumerable(Of Type)
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Type
+    name: Type
+    nameWithType: Type
+    fullName: Type
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Type
+    name: Type
+    nameWithType: Type
+    fullName: Type
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IEnumerable`1
+  isExternal: true
+  name: IEnumerable<>
+  nameWithType: IEnumerable<>
+  fullName: IEnumerable<>
+  nameWithType.vb: IEnumerable(Of )
+  fullName.vb: IEnumerable(Of )
+  name.vb: IEnumerable(Of )
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NeerCore.DependencyInjection.AssemblyProvider.GetImplementationsOf*
+  commentId: Overload:NeerCore.DependencyInjection.AssemblyProvider.GetImplementationsOf
+  name: GetImplementationsOf
+  nameWithType: AssemblyProvider.GetImplementationsOf
+  fullName: NeerCore.DependencyInjection.AssemblyProvider.GetImplementationsOf
+- uid: System.Nullable{Func{Assembly,System.Boolean}}
+  commentId: '!:System.Nullable{Func{Assembly,System.Boolean}}'
+  definition: System.Nullable`1
+  name: Nullable<Func<Assembly, Boolean>>
+  nameWithType: Nullable<Func<Assembly, Boolean>>
+  fullName: System.Nullable<Func<Assembly, System.Boolean>>
+  nameWithType.vb: Nullable(Of Func(Of Assembly, Boolean))
+  fullName.vb: System.Nullable(Of Func(Of Assembly, System.Boolean))
+  name.vb: Nullable(Of Func(Of Assembly, Boolean))
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Func`2
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Assembly
+    name: Assembly
+    nameWithType: Assembly
+    fullName: Assembly
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Func`2
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Assembly
+    name: Assembly
+    nameWithType: Assembly
+    fullName: Assembly
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable`1
+  isExternal: true
+  name: Nullable<>
+  nameWithType: Nullable<>
+  fullName: System.Nullable<>
+  nameWithType.vb: Nullable(Of )
+  fullName.vb: System.Nullable(Of )
+  name.vb: Nullable(Of )
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NeerCore.DependencyInjection.AssemblyProvider.GetImplementationsOf``1(System.Nullable{Func{Assembly,System.Boolean}})
+  commentId: M:NeerCore.DependencyInjection.AssemblyProvider.GetImplementationsOf``1(System.Nullable{Func{Assembly,System.Boolean}})
+  isExternal: true
+- uid: Type
+  isExternal: true
+  name: Type
+  nameWithType: Type
+  fullName: Type
+- uid: NeerCore.DependencyInjection.AssemblyProvider.LoadAllAssemblies*
+  commentId: Overload:NeerCore.DependencyInjection.AssemblyProvider.LoadAllAssemblies
+  name: LoadAllAssemblies
+  nameWithType: AssemblyProvider.LoadAllAssemblies
+  fullName: NeerCore.DependencyInjection.AssemblyProvider.LoadAllAssemblies
+- uid: System.Nullable{Assembly}
+  commentId: '!:System.Nullable{Assembly}'
+  definition: System.Nullable`1
+  name: Nullable<Assembly>
+  nameWithType: Nullable<Assembly>
+  fullName: System.Nullable<Assembly>
+  nameWithType.vb: Nullable(Of Assembly)
+  fullName.vb: System.Nullable(Of Assembly)
+  name.vb: Nullable(Of Assembly)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Assembly
+    name: Assembly
+    nameWithType: Assembly
+    fullName: Assembly
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Assembly
+    name: Assembly
+    nameWithType: Assembly
+    fullName: Assembly
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IEnumerable{Assembly}
+  commentId: '!:IEnumerable{Assembly}'
+  definition: IEnumerable`1
+  name: IEnumerable<Assembly>
+  nameWithType: IEnumerable<Assembly>
+  fullName: IEnumerable<Assembly>
+  nameWithType.vb: IEnumerable(Of Assembly)
+  fullName.vb: IEnumerable(Of Assembly)
+  name.vb: IEnumerable(Of Assembly)
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Assembly
+    name: Assembly
+    nameWithType: Assembly
+    fullName: Assembly
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Assembly
+    name: Assembly
+    nameWithType: Assembly
+    fullName: Assembly
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NeerCore.DependencyInjection.AssemblyProvider.TryLoad*
+  commentId: Overload:NeerCore.DependencyInjection.AssemblyProvider.TryLoad
+  name: TryLoad
+  nameWithType: AssemblyProvider.TryLoad
+  fullName: NeerCore.DependencyInjection.AssemblyProvider.TryLoad
+- uid: NeerCore.DependencyInjection.AssemblyProvider.ConfigureRoot*
+  commentId: Overload:NeerCore.DependencyInjection.AssemblyProvider.ConfigureRoot
+  name: ConfigureRoot
+  nameWithType: AssemblyProvider.ConfigureRoot
+  fullName: NeerCore.DependencyInjection.AssemblyProvider.ConfigureRoot
+- uid: NeerCore.DependencyInjection.AssemblyProvider.AddAssembly*
+  commentId: Overload:NeerCore.DependencyInjection.AssemblyProvider.AddAssembly
+  name: AddAssembly
+  nameWithType: AssemblyProvider.AddAssembly
+  fullName: NeerCore.DependencyInjection.AssemblyProvider.AddAssembly
+- uid: NeerCore.DependencyInjection.AssemblyProvider.SetRootNamespace*
+  commentId: Overload:NeerCore.DependencyInjection.AssemblyProvider.SetRootNamespace
+  name: SetRootNamespace
+  nameWithType: AssemblyProvider.SetRootNamespace
+  fullName: NeerCore.DependencyInjection.AssemblyProvider.SetRootNamespace

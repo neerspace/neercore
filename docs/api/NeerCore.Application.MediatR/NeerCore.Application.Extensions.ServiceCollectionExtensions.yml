@@ -1,0 +1,424 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Application.Extensions.ServiceCollectionExtensions
+  commentId: T:NeerCore.Application.Extensions.ServiceCollectionExtensions
+  id: ServiceCollectionExtensions
+  parent: NeerCore.Application.Extensions
+  children:
+  - NeerCore.Application.Extensions.ServiceCollectionExtensions.AddMediatorApplication(IServiceCollection)
+  - NeerCore.Application.Extensions.ServiceCollectionExtensions.AddMediatorApplication(IServiceCollection,Assembly)
+  - NeerCore.Application.Extensions.ServiceCollectionExtensions.AddMediatorApplication(IServiceCollection,IEnumerable{Assembly})
+  - NeerCore.Application.Extensions.ServiceCollectionExtensions.AddMediatorApplication(IServiceCollection,IEnumerable{System.String})
+  - NeerCore.Application.Extensions.ServiceCollectionExtensions.AddMediatorApplication(IServiceCollection,System.String)
+  langs:
+  - csharp
+  - vb
+  name: ServiceCollectionExtensions
+  nameWithType: ServiceCollectionExtensions
+  fullName: NeerCore.Application.Extensions.ServiceCollectionExtensions
+  type: Class
+  source:
+    remote:
+      path: src/NeerCore.Application.MediatR/Extensions/ServiceCollectionExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: ServiceCollectionExtensions
+    path: ../src/NeerCore.Application.MediatR/Extensions/ServiceCollectionExtensions.cs
+    startLine: 9
+  assemblies:
+  - NeerCore.Application.MediatR
+  namespace: NeerCore.Application.Extensions
+  syntax:
+    content: 'public static class ServiceCollectionExtensions : object'
+    content.vb: >-
+      Public Module ServiceCollectionExtensions
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: NeerCore.Application.Extensions.ServiceCollectionExtensions.AddMediatorApplication(IServiceCollection,System.String)
+  commentId: M:NeerCore.Application.Extensions.ServiceCollectionExtensions.AddMediatorApplication(IServiceCollection,System.String)
+  id: AddMediatorApplication(IServiceCollection,System.String)
+  isExtensionMethod: true
+  parent: NeerCore.Application.Extensions.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddMediatorApplication(IServiceCollection, String)
+  nameWithType: ServiceCollectionExtensions.AddMediatorApplication(IServiceCollection, String)
+  fullName: NeerCore.Application.Extensions.ServiceCollectionExtensions.AddMediatorApplication(IServiceCollection, System.String)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Application.MediatR/Extensions/ServiceCollectionExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: AddMediatorApplication
+    path: ../src/NeerCore.Application.MediatR/Extensions/ServiceCollectionExtensions.cs
+    startLine: 12
+  assemblies:
+  - NeerCore.Application.MediatR
+  namespace: NeerCore.Application.Extensions
+  summary: "\nAdds MediatR with embedded FluentValidation.\n"
+  example: []
+  syntax:
+    content: public static void AddMediatorApplication(this IServiceCollection services, string assemblyName)
+    parameters:
+    - id: services
+      type: IServiceCollection
+      description: The <see cref="!:IServiceCollection"></see> to add services to.
+    - id: assemblyName
+      type: System.String
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Sub AddMediatorApplication(services As IServiceCollection, assemblyName As String)
+  overload: NeerCore.Application.Extensions.ServiceCollectionExtensions.AddMediatorApplication*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: NeerCore.Application.Extensions.ServiceCollectionExtensions.AddMediatorApplication(IServiceCollection,Assembly)
+  commentId: M:NeerCore.Application.Extensions.ServiceCollectionExtensions.AddMediatorApplication(IServiceCollection,Assembly)
+  id: AddMediatorApplication(IServiceCollection,Assembly)
+  isExtensionMethod: true
+  parent: NeerCore.Application.Extensions.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddMediatorApplication(IServiceCollection, Assembly)
+  nameWithType: ServiceCollectionExtensions.AddMediatorApplication(IServiceCollection, Assembly)
+  fullName: NeerCore.Application.Extensions.ServiceCollectionExtensions.AddMediatorApplication(IServiceCollection, Assembly)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Application.MediatR/Extensions/ServiceCollectionExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: AddMediatorApplication
+    path: ../src/NeerCore.Application.MediatR/Extensions/ServiceCollectionExtensions.cs
+    startLine: 18
+  assemblies:
+  - NeerCore.Application.MediatR
+  namespace: NeerCore.Application.Extensions
+  summary: "\nAdds MediatR with embedded FluentValidation.\n"
+  example: []
+  syntax:
+    content: public static void AddMediatorApplication(this IServiceCollection services, Assembly assembly)
+    parameters:
+    - id: services
+      type: IServiceCollection
+      description: The <see cref="!:IServiceCollection"></see> to add services to.
+    - id: assembly
+      type: Assembly
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Sub AddMediatorApplication(services As IServiceCollection, assembly As Assembly)
+  overload: NeerCore.Application.Extensions.ServiceCollectionExtensions.AddMediatorApplication*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: NeerCore.Application.Extensions.ServiceCollectionExtensions.AddMediatorApplication(IServiceCollection)
+  commentId: M:NeerCore.Application.Extensions.ServiceCollectionExtensions.AddMediatorApplication(IServiceCollection)
+  id: AddMediatorApplication(IServiceCollection)
+  isExtensionMethod: true
+  parent: NeerCore.Application.Extensions.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddMediatorApplication(IServiceCollection)
+  nameWithType: ServiceCollectionExtensions.AddMediatorApplication(IServiceCollection)
+  fullName: NeerCore.Application.Extensions.ServiceCollectionExtensions.AddMediatorApplication(IServiceCollection)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Application.MediatR/Extensions/ServiceCollectionExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: AddMediatorApplication
+    path: ../src/NeerCore.Application.MediatR/Extensions/ServiceCollectionExtensions.cs
+    startLine: 27
+  assemblies:
+  - NeerCore.Application.MediatR
+  namespace: NeerCore.Application.Extensions
+  summary: "\nAdds MediatR with embedded FluentValidation.\n"
+  example: []
+  syntax:
+    content: public static void AddMediatorApplication(this IServiceCollection services)
+    parameters:
+    - id: services
+      type: IServiceCollection
+      description: The <see cref="!:IServiceCollection"></see> to add services to.
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Sub AddMediatorApplication(services As IServiceCollection)
+  overload: NeerCore.Application.Extensions.ServiceCollectionExtensions.AddMediatorApplication*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: NeerCore.Application.Extensions.ServiceCollectionExtensions.AddMediatorApplication(IServiceCollection,IEnumerable{System.String})
+  commentId: M:NeerCore.Application.Extensions.ServiceCollectionExtensions.AddMediatorApplication(IServiceCollection,IEnumerable{System.String})
+  id: AddMediatorApplication(IServiceCollection,IEnumerable{System.String})
+  isExtensionMethod: true
+  parent: NeerCore.Application.Extensions.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddMediatorApplication(IServiceCollection, IEnumerable<String>)
+  nameWithType: ServiceCollectionExtensions.AddMediatorApplication(IServiceCollection, IEnumerable<String>)
+  fullName: NeerCore.Application.Extensions.ServiceCollectionExtensions.AddMediatorApplication(IServiceCollection, IEnumerable<System.String>)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Application.MediatR/Extensions/ServiceCollectionExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: AddMediatorApplication
+    path: ../src/NeerCore.Application.MediatR/Extensions/ServiceCollectionExtensions.cs
+    startLine: 33
+  assemblies:
+  - NeerCore.Application.MediatR
+  namespace: NeerCore.Application.Extensions
+  summary: "\nAdds MediatR with embedded FluentValidation.\n"
+  example: []
+  syntax:
+    content: public static void AddMediatorApplication(this IServiceCollection services, IEnumerable<string> assemblyNames)
+    parameters:
+    - id: services
+      type: IServiceCollection
+      description: The <see cref="!:IServiceCollection"></see> to add services to.
+    - id: assemblyNames
+      type: IEnumerable{System.String}
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Sub AddMediatorApplication(services As IServiceCollection, assemblyNames As IEnumerable(Of String))
+  overload: NeerCore.Application.Extensions.ServiceCollectionExtensions.AddMediatorApplication*
+  nameWithType.vb: ServiceCollectionExtensions.AddMediatorApplication(IServiceCollection, IEnumerable(Of String))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: NeerCore.Application.Extensions.ServiceCollectionExtensions.AddMediatorApplication(IServiceCollection, IEnumerable(Of System.String))
+  name.vb: AddMediatorApplication(IServiceCollection, IEnumerable(Of String))
+- uid: NeerCore.Application.Extensions.ServiceCollectionExtensions.AddMediatorApplication(IServiceCollection,IEnumerable{Assembly})
+  commentId: M:NeerCore.Application.Extensions.ServiceCollectionExtensions.AddMediatorApplication(IServiceCollection,IEnumerable{Assembly})
+  id: AddMediatorApplication(IServiceCollection,IEnumerable{Assembly})
+  isExtensionMethod: true
+  parent: NeerCore.Application.Extensions.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddMediatorApplication(IServiceCollection, IEnumerable<Assembly>)
+  nameWithType: ServiceCollectionExtensions.AddMediatorApplication(IServiceCollection, IEnumerable<Assembly>)
+  fullName: NeerCore.Application.Extensions.ServiceCollectionExtensions.AddMediatorApplication(IServiceCollection, IEnumerable<Assembly>)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Application.MediatR/Extensions/ServiceCollectionExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: AddMediatorApplication
+    path: ../src/NeerCore.Application.MediatR/Extensions/ServiceCollectionExtensions.cs
+    startLine: 44
+  assemblies:
+  - NeerCore.Application.MediatR
+  namespace: NeerCore.Application.Extensions
+  summary: "\nAdds MediatR with embedded FluentValidation.\n"
+  example: []
+  syntax:
+    content: public static void AddMediatorApplication(this IServiceCollection services, IEnumerable<Assembly> assemblies)
+    parameters:
+    - id: services
+      type: IServiceCollection
+      description: The <see cref="!:IServiceCollection"></see> to add services to.
+    - id: assemblies
+      type: IEnumerable{Assembly}
+      description: Mediator <see cref="!:IRequest"></see> and <see cref="!:IRequestHandler&lt;TRequest>"></see> implementations assemblies.
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Sub AddMediatorApplication(services As IServiceCollection, assemblies As IEnumerable(Of Assembly))
+  overload: NeerCore.Application.Extensions.ServiceCollectionExtensions.AddMediatorApplication*
+  nameWithType.vb: ServiceCollectionExtensions.AddMediatorApplication(IServiceCollection, IEnumerable(Of Assembly))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: NeerCore.Application.Extensions.ServiceCollectionExtensions.AddMediatorApplication(IServiceCollection, IEnumerable(Of Assembly))
+  name.vb: AddMediatorApplication(IServiceCollection, IEnumerable(Of Assembly))
+references:
+- uid: NeerCore.Application.Extensions
+  commentId: N:NeerCore.Application.Extensions
+  name: NeerCore.Application.Extensions
+  nameWithType: NeerCore.Application.Extensions
+  fullName: NeerCore.Application.Extensions
+- uid: NeerCore.Application.Extensions.ServiceCollectionExtensions.AddMediatorApplication(IServiceCollection,IEnumerable{Assembly})
+  commentId: M:NeerCore.Application.Extensions.ServiceCollectionExtensions.AddMediatorApplication(IServiceCollection,IEnumerable{Assembly})
+  isExternal: true
+- uid: NeerCore.Application.Extensions.ServiceCollectionExtensions.AddMediatorApplication*
+  commentId: Overload:NeerCore.Application.Extensions.ServiceCollectionExtensions.AddMediatorApplication
+  name: AddMediatorApplication
+  nameWithType: ServiceCollectionExtensions.AddMediatorApplication
+  fullName: NeerCore.Application.Extensions.ServiceCollectionExtensions.AddMediatorApplication
+- uid: IServiceCollection
+  isExternal: true
+  name: IServiceCollection
+  nameWithType: IServiceCollection
+  fullName: IServiceCollection
+- uid: System.String
+  commentId: '!:System.String'
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Assembly
+  commentId: '!:Assembly'
+  isExternal: true
+  name: Assembly
+  nameWithType: Assembly
+  fullName: Assembly
+- uid: IEnumerable{System.String}
+  commentId: '!:IEnumerable{System.String}'
+  definition: IEnumerable`1
+  name: IEnumerable<String>
+  nameWithType: IEnumerable<String>
+  fullName: IEnumerable<System.String>
+  nameWithType.vb: IEnumerable(Of String)
+  fullName.vb: IEnumerable(Of System.String)
+  name.vb: IEnumerable(Of String)
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IEnumerable`1
+  isExternal: true
+  name: IEnumerable<>
+  nameWithType: IEnumerable<>
+  fullName: IEnumerable<>
+  nameWithType.vb: IEnumerable(Of )
+  fullName.vb: IEnumerable(Of )
+  name.vb: IEnumerable(Of )
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IEnumerable{Assembly}
+  commentId: '!:IEnumerable{Assembly}'
+  definition: IEnumerable`1
+  name: IEnumerable<Assembly>
+  nameWithType: IEnumerable<Assembly>
+  fullName: IEnumerable<Assembly>
+  nameWithType.vb: IEnumerable(Of Assembly)
+  fullName.vb: IEnumerable(Of Assembly)
+  name.vb: IEnumerable(Of Assembly)
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Assembly
+    name: Assembly
+    nameWithType: Assembly
+    fullName: Assembly
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Assembly
+    name: Assembly
+    nameWithType: Assembly
+    fullName: Assembly
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )

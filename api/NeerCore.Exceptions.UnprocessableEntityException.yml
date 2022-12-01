@@ -1,0 +1,290 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Exceptions.UnprocessableEntityException
+  commentId: T:NeerCore.Exceptions.UnprocessableEntityException
+  id: UnprocessableEntityException
+  parent: NeerCore.Exceptions
+  children:
+  - NeerCore.Exceptions.UnprocessableEntityException.#ctor(System.String)
+  - NeerCore.Exceptions.UnprocessableEntityException.ErrorType
+  - NeerCore.Exceptions.UnprocessableEntityException.StatusCode
+  langs:
+  - csharp
+  - vb
+  name: UnprocessableEntityException
+  nameWithType: UnprocessableEntityException
+  fullName: NeerCore.Exceptions.UnprocessableEntityException
+  type: Class
+  source:
+    remote:
+      path: src/NeerCore/Exceptions/UnprocessableEntityException.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: UnprocessableEntityException
+    path: src/NeerCore/Exceptions/UnprocessableEntityException.cs
+    startLine: 8
+  assemblies:
+  - NeerCore
+  namespace: NeerCore.Exceptions
+  summary: "\nThe exception represents an HTTP error with status <strong>422</strong>.\nUnprocessable entity <em>(indicates that the request was well-formed but was unable to be followed due to semantic errors).</em>\n"
+  example: []
+  syntax:
+    content: 'public sealed class UnprocessableEntityException : HttpException'
+    content.vb: >-
+      Public NotInheritable Class UnprocessableEntityException
+
+          Inherits HttpException
+  inheritance:
+  - System.Object
+  - NeerCore.Exceptions.HttpException
+  inheritedMembers:
+  - NeerCore.Exceptions.HttpException.Details
+  extensionMethods:
+  - NeerCore.Exceptions.HttpException.NeerCore.Api.Extensions.HttpExceptionExtensions.CreateError
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: NeerCore.Exceptions.UnprocessableEntityException.StatusCode
+  commentId: P:NeerCore.Exceptions.UnprocessableEntityException.StatusCode
+  id: StatusCode
+  parent: NeerCore.Exceptions.UnprocessableEntityException
+  langs:
+  - csharp
+  - vb
+  name: StatusCode
+  nameWithType: UnprocessableEntityException.StatusCode
+  fullName: NeerCore.Exceptions.UnprocessableEntityException.StatusCode
+  type: Property
+  source:
+    remote:
+      path: src/NeerCore/Exceptions/UnprocessableEntityException.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: StatusCode
+    path: src/NeerCore/Exceptions/UnprocessableEntityException.cs
+    startLine: 10
+  assemblies:
+  - NeerCore
+  namespace: NeerCore.Exceptions
+  syntax:
+    content: public override HttpStatusCode StatusCode { get; }
+    parameters: []
+    return:
+      type: HttpStatusCode
+    content.vb: Public Overrides ReadOnly Property StatusCode As HttpStatusCode
+  overridden: NeerCore.Exceptions.HttpException.StatusCode
+  overload: NeerCore.Exceptions.UnprocessableEntityException.StatusCode*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+- uid: NeerCore.Exceptions.UnprocessableEntityException.ErrorType
+  commentId: P:NeerCore.Exceptions.UnprocessableEntityException.ErrorType
+  id: ErrorType
+  parent: NeerCore.Exceptions.UnprocessableEntityException
+  langs:
+  - csharp
+  - vb
+  name: ErrorType
+  nameWithType: UnprocessableEntityException.ErrorType
+  fullName: NeerCore.Exceptions.UnprocessableEntityException.ErrorType
+  type: Property
+  source:
+    remote:
+      path: src/NeerCore/Exceptions/UnprocessableEntityException.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: ErrorType
+    path: src/NeerCore/Exceptions/UnprocessableEntityException.cs
+    startLine: 11
+  assemblies:
+  - NeerCore
+  namespace: NeerCore.Exceptions
+  syntax:
+    content: public override string ErrorType { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Overrides ReadOnly Property ErrorType As String
+  overridden: NeerCore.Exceptions.HttpException.ErrorType
+  overload: NeerCore.Exceptions.UnprocessableEntityException.ErrorType*
+  modifiers.csharp:
+  - public
+  - override
+  - get
+  modifiers.vb:
+  - Public
+  - Overrides
+  - ReadOnly
+- uid: NeerCore.Exceptions.UnprocessableEntityException.#ctor(System.String)
+  commentId: M:NeerCore.Exceptions.UnprocessableEntityException.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: NeerCore.Exceptions.UnprocessableEntityException
+  langs:
+  - csharp
+  - vb
+  name: UnprocessableEntityException(String)
+  nameWithType: UnprocessableEntityException.UnprocessableEntityException(String)
+  fullName: NeerCore.Exceptions.UnprocessableEntityException.UnprocessableEntityException(System.String)
+  type: Constructor
+  source:
+    remote:
+      path: src/NeerCore/Exceptions/UnprocessableEntityException.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: .ctor
+    path: src/NeerCore/Exceptions/UnprocessableEntityException.cs
+    startLine: 14
+  assemblies:
+  - NeerCore
+  namespace: NeerCore.Exceptions
+  syntax:
+    content: public UnprocessableEntityException(string message)
+    parameters:
+    - id: message
+      type: System.String
+    content.vb: Public Sub New(message As String)
+  overload: NeerCore.Exceptions.UnprocessableEntityException.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: NeerCore.Exceptions
+  commentId: N:NeerCore.Exceptions
+  name: NeerCore.Exceptions
+  nameWithType: NeerCore.Exceptions
+  fullName: NeerCore.Exceptions
+- uid: NeerCore.Exceptions.HttpException
+  commentId: T:NeerCore.Exceptions.HttpException
+  parent: NeerCore.Exceptions
+  name: HttpException
+  nameWithType: HttpException
+  fullName: NeerCore.Exceptions.HttpException
+- uid: NeerCore.Exceptions.HttpException.Details
+  commentId: P:NeerCore.Exceptions.HttpException.Details
+  parent: NeerCore.Exceptions.HttpException
+  name: Details
+  nameWithType: HttpException.Details
+  fullName: NeerCore.Exceptions.HttpException.Details
+- uid: NeerCore.Exceptions.HttpException.NeerCore.Api.Extensions.HttpExceptionExtensions.CreateError
+  commentId: M:NeerCore.Api.Extensions.HttpExceptionExtensions.CreateError(NeerCore.Exceptions.HttpException)
+  parent: NeerCore.Api.Extensions.HttpExceptionExtensions
+  definition: NeerCore.Api.Extensions.HttpExceptionExtensions.CreateError(NeerCore.Exceptions.HttpException)
+  name: CreateError()
+  nameWithType: HttpExceptionExtensions.CreateError()
+  fullName: NeerCore.Api.Extensions.HttpExceptionExtensions.CreateError()
+  spec.csharp:
+  - uid: NeerCore.Api.Extensions.HttpExceptionExtensions.CreateError
+    name: CreateError
+    nameWithType: HttpExceptionExtensions.CreateError
+    fullName: NeerCore.Api.Extensions.HttpExceptionExtensions.CreateError
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: NeerCore.Api.Extensions.HttpExceptionExtensions.CreateError
+    name: CreateError
+    nameWithType: HttpExceptionExtensions.CreateError
+    fullName: NeerCore.Api.Extensions.HttpExceptionExtensions.CreateError
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NeerCore.Api.Extensions.HttpExceptionExtensions.CreateError(NeerCore.Exceptions.HttpException)
+  commentId: M:NeerCore.Api.Extensions.HttpExceptionExtensions.CreateError(NeerCore.Exceptions.HttpException)
+  name: CreateError(HttpException)
+  nameWithType: HttpExceptionExtensions.CreateError(HttpException)
+  fullName: NeerCore.Api.Extensions.HttpExceptionExtensions.CreateError(NeerCore.Exceptions.HttpException)
+  spec.csharp:
+  - uid: NeerCore.Api.Extensions.HttpExceptionExtensions.CreateError(NeerCore.Exceptions.HttpException)
+    name: CreateError
+    nameWithType: HttpExceptionExtensions.CreateError
+    fullName: NeerCore.Api.Extensions.HttpExceptionExtensions.CreateError
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: NeerCore.Exceptions.HttpException
+    name: HttpException
+    nameWithType: HttpException
+    fullName: NeerCore.Exceptions.HttpException
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: NeerCore.Api.Extensions.HttpExceptionExtensions.CreateError(NeerCore.Exceptions.HttpException)
+    name: CreateError
+    nameWithType: HttpExceptionExtensions.CreateError
+    fullName: NeerCore.Api.Extensions.HttpExceptionExtensions.CreateError
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: NeerCore.Exceptions.HttpException
+    name: HttpException
+    nameWithType: HttpException
+    fullName: NeerCore.Exceptions.HttpException
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NeerCore.Api.Extensions.HttpExceptionExtensions
+  commentId: T:NeerCore.Api.Extensions.HttpExceptionExtensions
+  parent: NeerCore.Api.Extensions
+  name: HttpExceptionExtensions
+  nameWithType: HttpExceptionExtensions
+  fullName: NeerCore.Api.Extensions.HttpExceptionExtensions
+- uid: NeerCore.Api.Extensions
+  commentId: N:NeerCore.Api.Extensions
+  name: NeerCore.Api.Extensions
+  nameWithType: NeerCore.Api.Extensions
+  fullName: NeerCore.Api.Extensions
+- uid: NeerCore.Exceptions.HttpException.StatusCode
+  commentId: P:NeerCore.Exceptions.HttpException.StatusCode
+  parent: NeerCore.Exceptions.HttpException
+  name: StatusCode
+  nameWithType: HttpException.StatusCode
+  fullName: NeerCore.Exceptions.HttpException.StatusCode
+- uid: NeerCore.Exceptions.UnprocessableEntityException.StatusCode*
+  commentId: Overload:NeerCore.Exceptions.UnprocessableEntityException.StatusCode
+  name: StatusCode
+  nameWithType: UnprocessableEntityException.StatusCode
+  fullName: NeerCore.Exceptions.UnprocessableEntityException.StatusCode
+- uid: HttpStatusCode
+  isExternal: true
+  name: HttpStatusCode
+  nameWithType: HttpStatusCode
+  fullName: HttpStatusCode
+- uid: NeerCore.Exceptions.HttpException.ErrorType
+  commentId: P:NeerCore.Exceptions.HttpException.ErrorType
+  parent: NeerCore.Exceptions.HttpException
+  name: ErrorType
+  nameWithType: HttpException.ErrorType
+  fullName: NeerCore.Exceptions.HttpException.ErrorType
+- uid: NeerCore.Exceptions.UnprocessableEntityException.ErrorType*
+  commentId: Overload:NeerCore.Exceptions.UnprocessableEntityException.ErrorType
+  name: ErrorType
+  nameWithType: UnprocessableEntityException.ErrorType
+  fullName: NeerCore.Exceptions.UnprocessableEntityException.ErrorType
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: NeerCore.Exceptions.UnprocessableEntityException.#ctor*
+  commentId: Overload:NeerCore.Exceptions.UnprocessableEntityException.#ctor
+  name: UnprocessableEntityException
+  nameWithType: UnprocessableEntityException.UnprocessableEntityException
+  fullName: NeerCore.Exceptions.UnprocessableEntityException.UnprocessableEntityException

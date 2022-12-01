@@ -1,0 +1,205 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Exceptions.NotFoundException`1
+  commentId: T:NeerCore.Exceptions.NotFoundException`1
+  id: NotFoundException`1
+  parent: NeerCore.Exceptions
+  children:
+  - NeerCore.Exceptions.NotFoundException`1.#ctor
+  langs:
+  - csharp
+  - vb
+  name: NotFoundException<T>
+  nameWithType: NotFoundException<T>
+  fullName: NeerCore.Exceptions.NotFoundException<T>
+  type: Class
+  source:
+    remote:
+      path: src/NeerCore/Exceptions/NotFoundException.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: NotFoundException
+    path: src/NeerCore/Exceptions/NotFoundException.cs
+    startLine: 18
+  assemblies:
+  - NeerCore
+  namespace: NeerCore.Exceptions
+  syntax:
+    content: 'public sealed class NotFoundException<T> : NotFoundException'
+    typeParameters:
+    - id: T
+    content.vb: >-
+      Public NotInheritable Class NotFoundException(Of T)
+
+          Inherits NotFoundException
+  inheritance:
+  - System.Object
+  - NeerCore.Exceptions.HttpException
+  - NeerCore.Exceptions.NotFoundException
+  inheritedMembers:
+  - NeerCore.Exceptions.NotFoundException.StatusCode
+  - NeerCore.Exceptions.NotFoundException.ErrorType
+  - NeerCore.Exceptions.HttpException.Details
+  extensionMethods:
+  - NeerCore.Exceptions.HttpException.NeerCore.Api.Extensions.HttpExceptionExtensions.CreateError
+  nameWithType.vb: NotFoundException(Of T)
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+  fullName.vb: NeerCore.Exceptions.NotFoundException(Of T)
+  name.vb: NotFoundException(Of T)
+- uid: NeerCore.Exceptions.NotFoundException`1.#ctor
+  commentId: M:NeerCore.Exceptions.NotFoundException`1.#ctor
+  id: '#ctor'
+  parent: NeerCore.Exceptions.NotFoundException`1
+  langs:
+  - csharp
+  - vb
+  name: NotFoundException()
+  nameWithType: NotFoundException<T>.NotFoundException()
+  fullName: NeerCore.Exceptions.NotFoundException<T>.NotFoundException()
+  type: Constructor
+  source:
+    remote:
+      path: src/NeerCore/Exceptions/NotFoundException.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: .ctor
+    path: src/NeerCore/Exceptions/NotFoundException.cs
+    startLine: 20
+  assemblies:
+  - NeerCore
+  namespace: NeerCore.Exceptions
+  syntax:
+    content: public NotFoundException()
+    content.vb: Public Sub New
+  overload: NeerCore.Exceptions.NotFoundException`1.#ctor*
+  nameWithType.vb: NotFoundException(Of T).NotFoundException()
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: NeerCore.Exceptions.NotFoundException(Of T).NotFoundException()
+references:
+- uid: NeerCore.Exceptions
+  commentId: N:NeerCore.Exceptions
+  name: NeerCore.Exceptions
+  nameWithType: NeerCore.Exceptions
+  fullName: NeerCore.Exceptions
+- uid: NeerCore.Exceptions.HttpException
+  commentId: T:NeerCore.Exceptions.HttpException
+  parent: NeerCore.Exceptions
+  name: HttpException
+  nameWithType: HttpException
+  fullName: NeerCore.Exceptions.HttpException
+- uid: NeerCore.Exceptions.NotFoundException
+  commentId: T:NeerCore.Exceptions.NotFoundException
+  parent: NeerCore.Exceptions
+  name: NotFoundException
+  nameWithType: NotFoundException
+  fullName: NeerCore.Exceptions.NotFoundException
+- uid: NeerCore.Exceptions.NotFoundException.StatusCode
+  commentId: P:NeerCore.Exceptions.NotFoundException.StatusCode
+  parent: NeerCore.Exceptions.NotFoundException
+  name: StatusCode
+  nameWithType: NotFoundException.StatusCode
+  fullName: NeerCore.Exceptions.NotFoundException.StatusCode
+- uid: NeerCore.Exceptions.NotFoundException.ErrorType
+  commentId: P:NeerCore.Exceptions.NotFoundException.ErrorType
+  parent: NeerCore.Exceptions.NotFoundException
+  name: ErrorType
+  nameWithType: NotFoundException.ErrorType
+  fullName: NeerCore.Exceptions.NotFoundException.ErrorType
+- uid: NeerCore.Exceptions.HttpException.Details
+  commentId: P:NeerCore.Exceptions.HttpException.Details
+  parent: NeerCore.Exceptions.HttpException
+  name: Details
+  nameWithType: HttpException.Details
+  fullName: NeerCore.Exceptions.HttpException.Details
+- uid: NeerCore.Exceptions.HttpException.NeerCore.Api.Extensions.HttpExceptionExtensions.CreateError
+  commentId: M:NeerCore.Api.Extensions.HttpExceptionExtensions.CreateError(NeerCore.Exceptions.HttpException)
+  parent: NeerCore.Api.Extensions.HttpExceptionExtensions
+  definition: NeerCore.Api.Extensions.HttpExceptionExtensions.CreateError(NeerCore.Exceptions.HttpException)
+  name: CreateError()
+  nameWithType: HttpExceptionExtensions.CreateError()
+  fullName: NeerCore.Api.Extensions.HttpExceptionExtensions.CreateError()
+  spec.csharp:
+  - uid: NeerCore.Api.Extensions.HttpExceptionExtensions.CreateError
+    name: CreateError
+    nameWithType: HttpExceptionExtensions.CreateError
+    fullName: NeerCore.Api.Extensions.HttpExceptionExtensions.CreateError
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: NeerCore.Api.Extensions.HttpExceptionExtensions.CreateError
+    name: CreateError
+    nameWithType: HttpExceptionExtensions.CreateError
+    fullName: NeerCore.Api.Extensions.HttpExceptionExtensions.CreateError
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NeerCore.Api.Extensions.HttpExceptionExtensions.CreateError(NeerCore.Exceptions.HttpException)
+  commentId: M:NeerCore.Api.Extensions.HttpExceptionExtensions.CreateError(NeerCore.Exceptions.HttpException)
+  name: CreateError(HttpException)
+  nameWithType: HttpExceptionExtensions.CreateError(HttpException)
+  fullName: NeerCore.Api.Extensions.HttpExceptionExtensions.CreateError(NeerCore.Exceptions.HttpException)
+  spec.csharp:
+  - uid: NeerCore.Api.Extensions.HttpExceptionExtensions.CreateError(NeerCore.Exceptions.HttpException)
+    name: CreateError
+    nameWithType: HttpExceptionExtensions.CreateError
+    fullName: NeerCore.Api.Extensions.HttpExceptionExtensions.CreateError
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: NeerCore.Exceptions.HttpException
+    name: HttpException
+    nameWithType: HttpException
+    fullName: NeerCore.Exceptions.HttpException
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: NeerCore.Api.Extensions.HttpExceptionExtensions.CreateError(NeerCore.Exceptions.HttpException)
+    name: CreateError
+    nameWithType: HttpExceptionExtensions.CreateError
+    fullName: NeerCore.Api.Extensions.HttpExceptionExtensions.CreateError
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: NeerCore.Exceptions.HttpException
+    name: HttpException
+    nameWithType: HttpException
+    fullName: NeerCore.Exceptions.HttpException
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NeerCore.Api.Extensions.HttpExceptionExtensions
+  commentId: T:NeerCore.Api.Extensions.HttpExceptionExtensions
+  parent: NeerCore.Api.Extensions
+  name: HttpExceptionExtensions
+  nameWithType: HttpExceptionExtensions
+  fullName: NeerCore.Api.Extensions.HttpExceptionExtensions
+- uid: NeerCore.Api.Extensions
+  commentId: N:NeerCore.Api.Extensions
+  name: NeerCore.Api.Extensions
+  nameWithType: NeerCore.Api.Extensions
+  fullName: NeerCore.Api.Extensions
+- uid: NeerCore.Exceptions.NotFoundException`1.#ctor*
+  commentId: Overload:NeerCore.Exceptions.NotFoundException`1.#ctor
+  name: NotFoundException
+  nameWithType: NotFoundException<T>.NotFoundException
+  fullName: NeerCore.Exceptions.NotFoundException<T>.NotFoundException
+  nameWithType.vb: NotFoundException(Of T).NotFoundException
+  fullName.vb: NeerCore.Exceptions.NotFoundException(Of T).NotFoundException

@@ -1,0 +1,450 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.DependencyInjection.ServiceAttribute
+  commentId: T:NeerCore.DependencyInjection.ServiceAttribute
+  id: ServiceAttribute
+  parent: NeerCore.DependencyInjection
+  children:
+  - NeerCore.DependencyInjection.ServiceAttribute.DevelopmentOnly
+  - NeerCore.DependencyInjection.ServiceAttribute.Environment
+  - NeerCore.DependencyInjection.ServiceAttribute.InjectionType
+  - NeerCore.DependencyInjection.ServiceAttribute.Lifetime
+  - NeerCore.DependencyInjection.ServiceAttribute.ProductionOnly
+  - NeerCore.DependencyInjection.ServiceAttribute.ServiceType
+  langs:
+  - csharp
+  - vb
+  name: ServiceAttribute
+  nameWithType: ServiceAttribute
+  fullName: NeerCore.DependencyInjection.ServiceAttribute
+  type: Class
+  source:
+    remote:
+      path: src/NeerCore.DependencyInjection/ServiceAttribute.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: ServiceAttribute
+    path: src/NeerCore.DependencyInjection/ServiceAttribute.cs
+    startLine: 5
+  assemblies:
+  - NeerCore.DependencyInjection
+  namespace: NeerCore.DependencyInjection
+  summary: "\nAttribute to simple reference your service class with DI.\n"
+  example: []
+  syntax:
+    content: 'public class ServiceAttribute : Attribute'
+    content.vb: >-
+      Public Class ServiceAttribute
+
+          Inherits Attribute
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - NeerCore.DependencyInjection.ServiceAttribute`1
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: NeerCore.DependencyInjection.ServiceAttribute.Lifetime
+  commentId: P:NeerCore.DependencyInjection.ServiceAttribute.Lifetime
+  id: Lifetime
+  parent: NeerCore.DependencyInjection.ServiceAttribute
+  langs:
+  - csharp
+  - vb
+  name: Lifetime
+  nameWithType: ServiceAttribute.Lifetime
+  fullName: NeerCore.DependencyInjection.ServiceAttribute.Lifetime
+  type: Property
+  source:
+    remote:
+      path: src/NeerCore.DependencyInjection/ServiceAttribute.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: Lifetime
+    path: src/NeerCore.DependencyInjection/ServiceAttribute.cs
+    startLine: 11
+  assemblies:
+  - NeerCore.DependencyInjection
+  namespace: NeerCore.DependencyInjection
+  summary: "\nSpecifies a DI scope lifetime.\n"
+  example: []
+  syntax:
+    content: public Lifetime Lifetime { get; set; }
+    parameters: []
+    return:
+      type: NeerCore.DependencyInjection.Lifetime
+    content.vb: Public Property Lifetime As Lifetime
+  overload: NeerCore.DependencyInjection.ServiceAttribute.Lifetime*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: NeerCore.DependencyInjection.ServiceAttribute.InjectionType
+  commentId: P:NeerCore.DependencyInjection.ServiceAttribute.InjectionType
+  id: InjectionType
+  parent: NeerCore.DependencyInjection.ServiceAttribute
+  langs:
+  - csharp
+  - vb
+  name: InjectionType
+  nameWithType: ServiceAttribute.InjectionType
+  fullName: NeerCore.DependencyInjection.ServiceAttribute.InjectionType
+  type: Property
+  source:
+    remote:
+      path: src/NeerCore.DependencyInjection/ServiceAttribute.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: InjectionType
+    path: src/NeerCore.DependencyInjection/ServiceAttribute.cs
+    startLine: 16
+  assemblies:
+  - NeerCore.DependencyInjection
+  namespace: NeerCore.DependencyInjection
+  summary: "\nSpecify injection type.\n"
+  example: []
+  syntax:
+    content: public InjectionType InjectionType { get; set; }
+    parameters: []
+    return:
+      type: NeerCore.DependencyInjection.InjectionType
+    content.vb: Public Property InjectionType As InjectionType
+  overload: NeerCore.DependencyInjection.ServiceAttribute.InjectionType*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: NeerCore.DependencyInjection.ServiceAttribute.ServiceType
+  commentId: P:NeerCore.DependencyInjection.ServiceAttribute.ServiceType
+  id: ServiceType
+  parent: NeerCore.DependencyInjection.ServiceAttribute
+  langs:
+  - csharp
+  - vb
+  name: ServiceType
+  nameWithType: ServiceAttribute.ServiceType
+  fullName: NeerCore.DependencyInjection.ServiceAttribute.ServiceType
+  type: Property
+  source:
+    remote:
+      path: src/NeerCore.DependencyInjection/ServiceAttribute.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: ServiceType
+    path: src/NeerCore.DependencyInjection/ServiceAttribute.cs
+    startLine: 21
+  assemblies:
+  - NeerCore.DependencyInjection
+  namespace: NeerCore.DependencyInjection
+  summary: "\nManually specifies injection type for current implementation.\n"
+  example: []
+  syntax:
+    content: public virtual Type? ServiceType { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{Type}
+    content.vb: Public Overridable Property ServiceType As Type?
+  overload: NeerCore.DependencyInjection.ServiceAttribute.ServiceType*
+  modifiers.csharp:
+  - public
+  - virtual
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  - Overridable
+- uid: NeerCore.DependencyInjection.ServiceAttribute.Environment
+  commentId: P:NeerCore.DependencyInjection.ServiceAttribute.Environment
+  id: Environment
+  parent: NeerCore.DependencyInjection.ServiceAttribute
+  langs:
+  - csharp
+  - vb
+  name: Environment
+  nameWithType: ServiceAttribute.Environment
+  fullName: NeerCore.DependencyInjection.ServiceAttribute.Environment
+  type: Property
+  source:
+    remote:
+      path: src/NeerCore.DependencyInjection/ServiceAttribute.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: Environment
+    path: src/NeerCore.DependencyInjection/ServiceAttribute.cs
+    startLine: 27
+  assemblies:
+  - NeerCore.DependencyInjection
+  namespace: NeerCore.DependencyInjection
+  summary: "\n<strong>If not null</strong> - Registers a service ONLY FOR specified environment.\nIn all others, this service will not be available!\n"
+  example: []
+  syntax:
+    content: public string? Environment { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.String}
+    content.vb: Public Property Environment As String?
+  overload: NeerCore.DependencyInjection.ServiceAttribute.Environment*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: NeerCore.DependencyInjection.ServiceAttribute.ProductionOnly
+  commentId: P:NeerCore.DependencyInjection.ServiceAttribute.ProductionOnly
+  id: ProductionOnly
+  parent: NeerCore.DependencyInjection.ServiceAttribute
+  langs:
+  - csharp
+  - vb
+  name: ProductionOnly
+  nameWithType: ServiceAttribute.ProductionOnly
+  fullName: NeerCore.DependencyInjection.ServiceAttribute.ProductionOnly
+  type: Property
+  source:
+    remote:
+      path: src/NeerCore.DependencyInjection/ServiceAttribute.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: ProductionOnly
+    path: src/NeerCore.DependencyInjection/ServiceAttribute.cs
+    startLine: 33
+  assemblies:
+  - NeerCore.DependencyInjection
+  namespace: NeerCore.DependencyInjection
+  summary: "\n<strong>If true</strong> - Registers a service ONLY FOR the &apos;Production&apos; environment.\nIn all others, this service will not be available!\n"
+  example: []
+  syntax:
+    content: public bool ProductionOnly { set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public WriteOnly Property ProductionOnly As Boolean
+  overload: NeerCore.DependencyInjection.ServiceAttribute.ProductionOnly*
+  modifiers.csharp:
+  - public
+  - set
+  modifiers.vb:
+  - Public
+  - WriteOnly
+- uid: NeerCore.DependencyInjection.ServiceAttribute.DevelopmentOnly
+  commentId: P:NeerCore.DependencyInjection.ServiceAttribute.DevelopmentOnly
+  id: DevelopmentOnly
+  parent: NeerCore.DependencyInjection.ServiceAttribute
+  langs:
+  - csharp
+  - vb
+  name: DevelopmentOnly
+  nameWithType: ServiceAttribute.DevelopmentOnly
+  fullName: NeerCore.DependencyInjection.ServiceAttribute.DevelopmentOnly
+  type: Property
+  source:
+    remote:
+      path: src/NeerCore.DependencyInjection/ServiceAttribute.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: DevelopmentOnly
+    path: src/NeerCore.DependencyInjection/ServiceAttribute.cs
+    startLine: 42
+  assemblies:
+  - NeerCore.DependencyInjection
+  namespace: NeerCore.DependencyInjection
+  summary: "\n<strong>If true</strong> - Registers a service ONLY FOR the &apos;Development&apos; environment.\nIn all others, this service will not be available!\n"
+  example: []
+  syntax:
+    content: public bool DevelopmentOnly { set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public WriteOnly Property DevelopmentOnly As Boolean
+  overload: NeerCore.DependencyInjection.ServiceAttribute.DevelopmentOnly*
+  modifiers.csharp:
+  - public
+  - set
+  modifiers.vb:
+  - Public
+  - WriteOnly
+references:
+- uid: NeerCore.DependencyInjection
+  commentId: N:NeerCore.DependencyInjection
+  name: NeerCore.DependencyInjection
+  nameWithType: NeerCore.DependencyInjection
+  fullName: NeerCore.DependencyInjection
+- uid: NeerCore.DependencyInjection.ServiceAttribute.Lifetime*
+  commentId: Overload:NeerCore.DependencyInjection.ServiceAttribute.Lifetime
+  name: Lifetime
+  nameWithType: ServiceAttribute.Lifetime
+  fullName: NeerCore.DependencyInjection.ServiceAttribute.Lifetime
+- uid: NeerCore.DependencyInjection.Lifetime
+  commentId: T:NeerCore.DependencyInjection.Lifetime
+  parent: NeerCore.DependencyInjection
+  name: Lifetime
+  nameWithType: Lifetime
+  fullName: NeerCore.DependencyInjection.Lifetime
+- uid: NeerCore.DependencyInjection.ServiceAttribute.InjectionType*
+  commentId: Overload:NeerCore.DependencyInjection.ServiceAttribute.InjectionType
+  name: InjectionType
+  nameWithType: ServiceAttribute.InjectionType
+  fullName: NeerCore.DependencyInjection.ServiceAttribute.InjectionType
+- uid: NeerCore.DependencyInjection.InjectionType
+  commentId: T:NeerCore.DependencyInjection.InjectionType
+  parent: NeerCore.DependencyInjection
+  name: InjectionType
+  nameWithType: InjectionType
+  fullName: NeerCore.DependencyInjection.InjectionType
+- uid: NeerCore.DependencyInjection.ServiceAttribute.ServiceType*
+  commentId: Overload:NeerCore.DependencyInjection.ServiceAttribute.ServiceType
+  name: ServiceType
+  nameWithType: ServiceAttribute.ServiceType
+  fullName: NeerCore.DependencyInjection.ServiceAttribute.ServiceType
+- uid: System.Nullable{Type}
+  commentId: '!:System.Nullable{Type}'
+  definition: System.Nullable`1
+  name: Nullable<Type>
+  nameWithType: Nullable<Type>
+  fullName: System.Nullable<Type>
+  nameWithType.vb: Nullable(Of Type)
+  fullName.vb: System.Nullable(Of Type)
+  name.vb: Nullable(Of Type)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Type
+    name: Type
+    nameWithType: Type
+    fullName: Type
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Type
+    name: Type
+    nameWithType: Type
+    fullName: Type
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable`1
+  isExternal: true
+  name: Nullable<>
+  nameWithType: Nullable<>
+  fullName: System.Nullable<>
+  nameWithType.vb: Nullable(Of )
+  fullName.vb: System.Nullable(Of )
+  name.vb: Nullable(Of )
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NeerCore.DependencyInjection.ServiceAttribute.Environment*
+  commentId: Overload:NeerCore.DependencyInjection.ServiceAttribute.Environment
+  name: Environment
+  nameWithType: ServiceAttribute.Environment
+  fullName: NeerCore.DependencyInjection.ServiceAttribute.Environment
+- uid: System.Nullable{System.String}
+  commentId: '!:System.Nullable{System.String}'
+  definition: System.Nullable`1
+  name: Nullable<String>
+  nameWithType: Nullable<String>
+  fullName: System.Nullable<System.String>
+  nameWithType.vb: Nullable(Of String)
+  fullName.vb: System.Nullable(Of System.String)
+  name.vb: Nullable(Of String)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NeerCore.DependencyInjection.ServiceAttribute.ProductionOnly*
+  commentId: Overload:NeerCore.DependencyInjection.ServiceAttribute.ProductionOnly
+  name: ProductionOnly
+  nameWithType: ServiceAttribute.ProductionOnly
+  fullName: NeerCore.DependencyInjection.ServiceAttribute.ProductionOnly
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: NeerCore.DependencyInjection.ServiceAttribute.DevelopmentOnly*
+  commentId: Overload:NeerCore.DependencyInjection.ServiceAttribute.DevelopmentOnly
+  name: DevelopmentOnly
+  nameWithType: ServiceAttribute.DevelopmentOnly
+  fullName: NeerCore.DependencyInjection.ServiceAttribute.DevelopmentOnly

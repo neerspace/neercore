@@ -1,0 +1,170 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Data.EntityFramework.Abstractions.IEntityDataSeeder`1
+  commentId: T:NeerCore.Data.EntityFramework.Abstractions.IEntityDataSeeder`1
+  id: IEntityDataSeeder`1
+  parent: NeerCore.Data.EntityFramework.Abstractions
+  children:
+  - NeerCore.Data.EntityFramework.Abstractions.IEntityDataSeeder`1.Data
+  langs:
+  - csharp
+  - vb
+  name: IEntityDataSeeder<TEntity>
+  nameWithType: IEntityDataSeeder<TEntity>
+  fullName: NeerCore.Data.EntityFramework.Abstractions.IEntityDataSeeder<TEntity>
+  type: Interface
+  source:
+    remote:
+      path: src/NeerCore.Data.EntityFramework/Abstractions/IEntityDataSeeder.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: IEntityDataSeeder
+    path: ../src/NeerCore.Data.EntityFramework/Abstractions/IEntityDataSeeder.cs
+    startLine: 8
+  assemblies:
+  - NeerCore.Data.EntityFramework
+  namespace: NeerCore.Data.EntityFramework.Abstractions
+  summary: "\nProvides clean API to auto seed your data in DB for single entity.\n"
+  example: []
+  syntax:
+    content: >-
+      public interface IEntityDataSeeder<out TEntity>
+          where TEntity : class, IEntity
+    typeParameters:
+    - id: TEntity
+      description: Entity type to seed.
+    content.vb: Public Interface IEntityDataSeeder(Of Out TEntity As {Class, IEntity})
+  nameWithType.vb: IEntityDataSeeder(Of TEntity)
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+  fullName.vb: NeerCore.Data.EntityFramework.Abstractions.IEntityDataSeeder(Of TEntity)
+  name.vb: IEntityDataSeeder(Of TEntity)
+- uid: NeerCore.Data.EntityFramework.Abstractions.IEntityDataSeeder`1.Data
+  commentId: P:NeerCore.Data.EntityFramework.Abstractions.IEntityDataSeeder`1.Data
+  id: Data
+  parent: NeerCore.Data.EntityFramework.Abstractions.IEntityDataSeeder`1
+  langs:
+  - csharp
+  - vb
+  name: Data
+  nameWithType: IEntityDataSeeder<TEntity>.Data
+  fullName: NeerCore.Data.EntityFramework.Abstractions.IEntityDataSeeder<TEntity>.Data
+  type: Property
+  source:
+    remote:
+      path: src/NeerCore.Data.EntityFramework/Abstractions/IEntityDataSeeder.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: Data
+    path: ../src/NeerCore.Data.EntityFramework/Abstractions/IEntityDataSeeder.cs
+    startLine: 11
+  assemblies:
+  - NeerCore.Data.EntityFramework
+  namespace: NeerCore.Data.EntityFramework.Abstractions
+  syntax:
+    content: IEnumerable<TEntity> Data { get; }
+    parameters: []
+    return:
+      type: IEnumerable{{TEntity}}
+    content.vb: ReadOnly Property Data As IEnumerable(Of TEntity)
+  overload: NeerCore.Data.EntityFramework.Abstractions.IEntityDataSeeder`1.Data*
+  nameWithType.vb: IEntityDataSeeder(Of TEntity).Data
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+  fullName.vb: NeerCore.Data.EntityFramework.Abstractions.IEntityDataSeeder(Of TEntity).Data
+references:
+- uid: NeerCore.Data.EntityFramework.Abstractions
+  commentId: N:NeerCore.Data.EntityFramework.Abstractions
+  name: NeerCore.Data.EntityFramework.Abstractions
+  nameWithType: NeerCore.Data.EntityFramework.Abstractions
+  fullName: NeerCore.Data.EntityFramework.Abstractions
+- uid: NeerCore.Data.EntityFramework.Abstractions.IEntityDataSeeder`1.Data*
+  commentId: Overload:NeerCore.Data.EntityFramework.Abstractions.IEntityDataSeeder`1.Data
+  name: Data
+  nameWithType: IEntityDataSeeder<TEntity>.Data
+  fullName: NeerCore.Data.EntityFramework.Abstractions.IEntityDataSeeder<TEntity>.Data
+  nameWithType.vb: IEntityDataSeeder(Of TEntity).Data
+  fullName.vb: NeerCore.Data.EntityFramework.Abstractions.IEntityDataSeeder(Of TEntity).Data
+- uid: IEnumerable{{TEntity}}
+  commentId: '!:IEnumerable{`0}'
+  definition: IEnumerable`1
+  name: IEnumerable<TEntity>
+  nameWithType: IEnumerable<TEntity>
+  fullName: IEnumerable<TEntity>
+  nameWithType.vb: IEnumerable(Of TEntity)
+  fullName.vb: IEnumerable(Of TEntity)
+  name.vb: IEnumerable(Of TEntity)
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TEntity
+    nameWithType: TEntity
+    fullName: TEntity
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TEntity
+    nameWithType: TEntity
+    fullName: TEntity
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IEnumerable`1
+  isExternal: true
+  name: IEnumerable<>
+  nameWithType: IEnumerable<>
+  fullName: IEnumerable<>
+  nameWithType.vb: IEnumerable(Of )
+  fullName.vb: IEnumerable(Of )
+  name.vb: IEnumerable(Of )
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )

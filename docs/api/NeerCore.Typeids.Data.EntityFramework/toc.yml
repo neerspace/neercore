@@ -1,0 +1,17 @@
+### YamlMime:TableOfContent
+- uid: NeerCore.Typeids.Data.EntityFramework.Extensions
+  name: NeerCore.Typeids.Data.EntityFramework.Extensions
+  items:
+  - uid: NeerCore.Typeids.Data.EntityFramework.Extensions.ModelBuilderExtensions
+    name: ModelBuilderExtensions
+- uid: NeerCore.Typeids.Data.EntityFramework.Options
+  name: NeerCore.Typeids.Data.EntityFramework.Options
+  items:
+  - uid: NeerCore.Typeids.Data.EntityFramework.Options.TypeidsOptions
+    name: TypeidsOptions
+- uid: NeerCore.Typeids.Data.EntityFramework.ValueConverters
+  name: NeerCore.Typeids.Data.EntityFramework.ValueConverters
+  items:
+  - uid: NeerCore.Typeids.Data.EntityFramework.ValueConverters.TypeidsValueConverter`2
+    name: TypeidsValueConverter<TIdentifier, TValue>
+    name.vb: TypeidsValueConverter(Of TIdentifier, TValue)

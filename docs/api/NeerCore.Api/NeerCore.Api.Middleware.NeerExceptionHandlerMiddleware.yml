@@ -1,0 +1,246 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Api.Middleware.NeerExceptionHandlerMiddleware
+  commentId: T:NeerCore.Api.Middleware.NeerExceptionHandlerMiddleware
+  id: NeerExceptionHandlerMiddleware
+  parent: NeerCore.Api.Middleware
+  children:
+  - NeerCore.Api.Middleware.NeerExceptionHandlerMiddleware.#ctor(ILoggerFactory,IOptions{NeerCore.Api.ExceptionHandlerOptions})
+  - NeerCore.Api.Middleware.NeerExceptionHandlerMiddleware.InvokeAsync(HttpContext,RequestDelegate)
+  langs:
+  - csharp
+  - vb
+  name: NeerExceptionHandlerMiddleware
+  nameWithType: NeerExceptionHandlerMiddleware
+  fullName: NeerCore.Api.Middleware.NeerExceptionHandlerMiddleware
+  type: Class
+  source:
+    remote:
+      path: src/NeerCore.Api/Middleware/NeerExceptionHandlerMiddleware.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: NeerExceptionHandlerMiddleware
+    path: ../src/NeerCore.Api/Middleware/NeerExceptionHandlerMiddleware.cs
+    startLine: 15
+  assemblies:
+  - NeerCore.Api
+  namespace: NeerCore.Api.Middleware
+  summary: "\nDefault NeerCore exception handling middleware to handle\na <xref href=\"NeerCore.Exceptions.HttpException\" data-throw-if-not-resolved=\"false\"></xref> with custom formatted error messages\nand default 500 exception with fine view otherwise.\n"
+  example: []
+  syntax:
+    content: 'public sealed class NeerExceptionHandlerMiddleware : IMiddleware'
+    content.vb: >-
+      Public NotInheritable Class NeerExceptionHandlerMiddleware
+          Inherits IMiddleware
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: NeerCore.Api.Middleware.NeerExceptionHandlerMiddleware.#ctor(ILoggerFactory,IOptions{NeerCore.Api.ExceptionHandlerOptions})
+  commentId: M:NeerCore.Api.Middleware.NeerExceptionHandlerMiddleware.#ctor(ILoggerFactory,IOptions{NeerCore.Api.ExceptionHandlerOptions})
+  id: '#ctor(ILoggerFactory,IOptions{NeerCore.Api.ExceptionHandlerOptions})'
+  parent: NeerCore.Api.Middleware.NeerExceptionHandlerMiddleware
+  langs:
+  - csharp
+  - vb
+  name: NeerExceptionHandlerMiddleware(ILoggerFactory, IOptions<ExceptionHandlerOptions>)
+  nameWithType: NeerExceptionHandlerMiddleware.NeerExceptionHandlerMiddleware(ILoggerFactory, IOptions<ExceptionHandlerOptions>)
+  fullName: NeerCore.Api.Middleware.NeerExceptionHandlerMiddleware.NeerExceptionHandlerMiddleware(ILoggerFactory, IOptions<NeerCore.Api.ExceptionHandlerOptions>)
+  type: Constructor
+  source:
+    remote:
+      path: src/NeerCore.Api/Middleware/NeerExceptionHandlerMiddleware.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: .ctor
+    path: ../src/NeerCore.Api/Middleware/NeerExceptionHandlerMiddleware.cs
+    startLine: 20
+  assemblies:
+  - NeerCore.Api
+  namespace: NeerCore.Api.Middleware
+  syntax:
+    content: public NeerExceptionHandlerMiddleware(ILoggerFactory loggerFactory, IOptions<ExceptionHandlerOptions> optionsAccessor)
+    parameters:
+    - id: loggerFactory
+      type: ILoggerFactory
+    - id: optionsAccessor
+      type: IOptions{NeerCore.Api.ExceptionHandlerOptions}
+    content.vb: Public Sub New(loggerFactory As ILoggerFactory, optionsAccessor As IOptions(Of ExceptionHandlerOptions))
+  overload: NeerCore.Api.Middleware.NeerExceptionHandlerMiddleware.#ctor*
+  nameWithType.vb: NeerExceptionHandlerMiddleware.NeerExceptionHandlerMiddleware(ILoggerFactory, IOptions(Of ExceptionHandlerOptions))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: NeerCore.Api.Middleware.NeerExceptionHandlerMiddleware.NeerExceptionHandlerMiddleware(ILoggerFactory, IOptions(Of NeerCore.Api.ExceptionHandlerOptions))
+  name.vb: NeerExceptionHandlerMiddleware(ILoggerFactory, IOptions(Of ExceptionHandlerOptions))
+- uid: NeerCore.Api.Middleware.NeerExceptionHandlerMiddleware.InvokeAsync(HttpContext,RequestDelegate)
+  commentId: M:NeerCore.Api.Middleware.NeerExceptionHandlerMiddleware.InvokeAsync(HttpContext,RequestDelegate)
+  id: InvokeAsync(HttpContext,RequestDelegate)
+  parent: NeerCore.Api.Middleware.NeerExceptionHandlerMiddleware
+  langs:
+  - csharp
+  - vb
+  name: InvokeAsync(HttpContext, RequestDelegate)
+  nameWithType: NeerExceptionHandlerMiddleware.InvokeAsync(HttpContext, RequestDelegate)
+  fullName: NeerCore.Api.Middleware.NeerExceptionHandlerMiddleware.InvokeAsync(HttpContext, RequestDelegate)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Api/Middleware/NeerExceptionHandlerMiddleware.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: InvokeAsync
+    path: ../src/NeerCore.Api/Middleware/NeerExceptionHandlerMiddleware.cs
+    startLine: 26
+  assemblies:
+  - NeerCore.Api
+  namespace: NeerCore.Api.Middleware
+  syntax:
+    content: public async Task InvokeAsync(HttpContext context, RequestDelegate next)
+    parameters:
+    - id: context
+      type: HttpContext
+    - id: next
+      type: RequestDelegate
+    return:
+      type: Task
+    content.vb: Public Function InvokeAsync(context As HttpContext, next As RequestDelegate) As Task
+  overload: NeerCore.Api.Middleware.NeerExceptionHandlerMiddleware.InvokeAsync*
+  modifiers.csharp:
+  - public
+  - async
+  modifiers.vb:
+  - Public
+references:
+- uid: NeerCore.Exceptions.HttpException
+  commentId: T:NeerCore.Exceptions.HttpException
+  parent: NeerCore.Exceptions
+  name: HttpException
+  nameWithType: HttpException
+  fullName: NeerCore.Exceptions.HttpException
+- uid: NeerCore.Api.Middleware
+  commentId: N:NeerCore.Api.Middleware
+  name: NeerCore.Api.Middleware
+  nameWithType: NeerCore.Api.Middleware
+  fullName: NeerCore.Api.Middleware
+- uid: NeerCore.Exceptions
+  commentId: N:NeerCore.Exceptions
+  name: NeerCore.Exceptions
+  nameWithType: NeerCore.Exceptions
+  fullName: NeerCore.Exceptions
+- uid: NeerCore.Api.Middleware.NeerExceptionHandlerMiddleware.#ctor*
+  commentId: Overload:NeerCore.Api.Middleware.NeerExceptionHandlerMiddleware.#ctor
+  name: NeerExceptionHandlerMiddleware
+  nameWithType: NeerExceptionHandlerMiddleware.NeerExceptionHandlerMiddleware
+  fullName: NeerCore.Api.Middleware.NeerExceptionHandlerMiddleware.NeerExceptionHandlerMiddleware
+- uid: ILoggerFactory
+  isExternal: true
+  name: ILoggerFactory
+  nameWithType: ILoggerFactory
+  fullName: ILoggerFactory
+- uid: IOptions{NeerCore.Api.ExceptionHandlerOptions}
+  commentId: '!:IOptions{NeerCore.Api.ExceptionHandlerOptions}'
+  definition: IOptions`1
+  name: IOptions<ExceptionHandlerOptions>
+  nameWithType: IOptions<ExceptionHandlerOptions>
+  fullName: IOptions<NeerCore.Api.ExceptionHandlerOptions>
+  nameWithType.vb: IOptions(Of ExceptionHandlerOptions)
+  fullName.vb: IOptions(Of NeerCore.Api.ExceptionHandlerOptions)
+  name.vb: IOptions(Of ExceptionHandlerOptions)
+  spec.csharp:
+  - uid: IOptions`1
+    name: IOptions
+    nameWithType: IOptions
+    fullName: IOptions
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: NeerCore.Api.ExceptionHandlerOptions
+    name: ExceptionHandlerOptions
+    nameWithType: ExceptionHandlerOptions
+    fullName: NeerCore.Api.ExceptionHandlerOptions
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IOptions`1
+    name: IOptions
+    nameWithType: IOptions
+    fullName: IOptions
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: NeerCore.Api.ExceptionHandlerOptions
+    name: ExceptionHandlerOptions
+    nameWithType: ExceptionHandlerOptions
+    fullName: NeerCore.Api.ExceptionHandlerOptions
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IOptions`1
+  isExternal: true
+  name: IOptions<>
+  nameWithType: IOptions<>
+  fullName: IOptions<>
+  nameWithType.vb: IOptions(Of )
+  fullName.vb: IOptions(Of )
+  name.vb: IOptions(Of )
+  spec.csharp:
+  - uid: IOptions`1
+    name: IOptions
+    nameWithType: IOptions
+    fullName: IOptions
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IOptions`1
+    name: IOptions
+    nameWithType: IOptions
+    fullName: IOptions
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NeerCore.Api.Middleware.NeerExceptionHandlerMiddleware.InvokeAsync*
+  commentId: Overload:NeerCore.Api.Middleware.NeerExceptionHandlerMiddleware.InvokeAsync
+  name: InvokeAsync
+  nameWithType: NeerExceptionHandlerMiddleware.InvokeAsync
+  fullName: NeerCore.Api.Middleware.NeerExceptionHandlerMiddleware.InvokeAsync
+- uid: HttpContext
+  isExternal: true
+  name: HttpContext
+  nameWithType: HttpContext
+  fullName: HttpContext
+- uid: RequestDelegate
+  isExternal: true
+  name: RequestDelegate
+  nameWithType: RequestDelegate
+  fullName: RequestDelegate
+- uid: Task
+  isExternal: true
+  name: Task
+  nameWithType: Task
+  fullName: Task

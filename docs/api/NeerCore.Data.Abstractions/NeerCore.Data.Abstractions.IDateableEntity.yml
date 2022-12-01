@@ -1,0 +1,71 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Data.Abstractions.IDateableEntity
+  commentId: T:NeerCore.Data.Abstractions.IDateableEntity
+  id: IDateableEntity
+  parent: NeerCore.Data.Abstractions
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: IDateableEntity
+  nameWithType: IDateableEntity
+  fullName: NeerCore.Data.Abstractions.IDateableEntity
+  type: Interface
+  source:
+    remote:
+      path: src/NeerCore.Data.Abstractions/IDateableEntity.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: IDateableEntity
+    path: ../src/NeerCore.Data.Abstractions/IDateableEntity.cs
+    startLine: 6
+  assemblies:
+  - NeerCore.Data.Abstractions
+  namespace: NeerCore.Data.Abstractions
+  summary: "\nDefines an entity with the required <see cref=\"!:DateTime\">Nullable&lt;DateTime></see> when entity was\nlast <xref href=\"NeerCore.Data.Abstractions.IUpdatableEntity.Updated\" data-throw-if-not-resolved=\"false\"></xref> and <see cref=\"!:DateTime\"></see> when it was <xref href=\"NeerCore.Data.Abstractions.ICreatableEntity.Created\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: 'public interface IDateableEntity : ICreatableEntity, IUpdatableEntity'
+    content.vb: >-
+      Public Interface IDateableEntity
+          Inherits ICreatableEntity, IUpdatableEntity
+  inheritedMembers:
+  - NeerCore.Data.Abstractions.ICreatableEntity.Created
+  - NeerCore.Data.Abstractions.IUpdatableEntity.Updated
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+references:
+- uid: NeerCore.Data.Abstractions.IUpdatableEntity.Updated
+  commentId: P:NeerCore.Data.Abstractions.IUpdatableEntity.Updated
+  parent: NeerCore.Data.Abstractions.IUpdatableEntity
+  name: Updated
+  nameWithType: IUpdatableEntity.Updated
+  fullName: NeerCore.Data.Abstractions.IUpdatableEntity.Updated
+- uid: NeerCore.Data.Abstractions.ICreatableEntity.Created
+  commentId: P:NeerCore.Data.Abstractions.ICreatableEntity.Created
+  parent: NeerCore.Data.Abstractions.ICreatableEntity
+  name: Created
+  nameWithType: ICreatableEntity.Created
+  fullName: NeerCore.Data.Abstractions.ICreatableEntity.Created
+- uid: NeerCore.Data.Abstractions
+  commentId: N:NeerCore.Data.Abstractions
+  name: NeerCore.Data.Abstractions
+  nameWithType: NeerCore.Data.Abstractions
+  fullName: NeerCore.Data.Abstractions
+- uid: NeerCore.Data.Abstractions.IUpdatableEntity
+  commentId: T:NeerCore.Data.Abstractions.IUpdatableEntity
+  parent: NeerCore.Data.Abstractions
+  name: IUpdatableEntity
+  nameWithType: IUpdatableEntity
+  fullName: NeerCore.Data.Abstractions.IUpdatableEntity
+- uid: NeerCore.Data.Abstractions.ICreatableEntity
+  commentId: T:NeerCore.Data.Abstractions.ICreatableEntity
+  parent: NeerCore.Data.Abstractions
+  name: ICreatableEntity
+  nameWithType: ICreatableEntity
+  fullName: NeerCore.Data.Abstractions.ICreatableEntity

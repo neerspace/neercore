@@ -1,0 +1,177 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Data.Abstractions.IUpdatableEntity
+  commentId: T:NeerCore.Data.Abstractions.IUpdatableEntity
+  id: IUpdatableEntity
+  parent: NeerCore.Data.Abstractions
+  children:
+  - NeerCore.Data.Abstractions.IUpdatableEntity.Updated
+  langs:
+  - csharp
+  - vb
+  name: IUpdatableEntity
+  nameWithType: IUpdatableEntity
+  fullName: NeerCore.Data.Abstractions.IUpdatableEntity
+  type: Interface
+  source:
+    remote:
+      path: src/NeerCore.Data.Abstractions/IUpdatableEntity.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: IUpdatableEntity
+    path: ../src/NeerCore.Data.Abstractions/IUpdatableEntity.cs
+    startLine: 6
+  assemblies:
+  - NeerCore.Data.Abstractions
+  namespace: NeerCore.Data.Abstractions
+  summary: "\nDefines an entity with the required <see cref=\"!:DateTime\">Nullable&lt;DateTime></see>\nwhen entity was last <xref href=\"NeerCore.Data.Abstractions.IUpdatableEntity.Updated\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public interface IUpdatableEntity
+    content.vb: Public Interface IUpdatableEntity
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: NeerCore.Data.Abstractions.IUpdatableEntity.Updated
+  commentId: P:NeerCore.Data.Abstractions.IUpdatableEntity.Updated
+  id: Updated
+  parent: NeerCore.Data.Abstractions.IUpdatableEntity
+  langs:
+  - csharp
+  - vb
+  name: Updated
+  nameWithType: IUpdatableEntity.Updated
+  fullName: NeerCore.Data.Abstractions.IUpdatableEntity.Updated
+  type: Property
+  source:
+    remote:
+      path: src/NeerCore.Data.Abstractions/IUpdatableEntity.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: Updated
+    path: ../src/NeerCore.Data.Abstractions/IUpdatableEntity.cs
+    startLine: 12
+  assemblies:
+  - NeerCore.Data.Abstractions
+  namespace: NeerCore.Data.Abstractions
+  summary: "\nGets the <see cref=\"!:DateTime\"></see> the entity was last updated\n(or null if it was created and never updated).\n"
+  example: []
+  syntax:
+    content: DateTime? Updated { get; }
+    parameters: []
+    return:
+      type: System.Nullable{DateTime}
+    content.vb: ReadOnly Property Updated As DateTime?
+  overload: NeerCore.Data.Abstractions.IUpdatableEntity.Updated*
+  modifiers.csharp:
+  - get
+  modifiers.vb:
+  - ReadOnly
+references:
+- uid: NeerCore.Data.Abstractions.IUpdatableEntity.Updated
+  commentId: P:NeerCore.Data.Abstractions.IUpdatableEntity.Updated
+  parent: NeerCore.Data.Abstractions.IUpdatableEntity
+  name: Updated
+  nameWithType: IUpdatableEntity.Updated
+  fullName: NeerCore.Data.Abstractions.IUpdatableEntity.Updated
+- uid: NeerCore.Data.Abstractions
+  commentId: N:NeerCore.Data.Abstractions
+  name: NeerCore.Data.Abstractions
+  nameWithType: NeerCore.Data.Abstractions
+  fullName: NeerCore.Data.Abstractions
+- uid: NeerCore.Data.Abstractions.IUpdatableEntity
+  commentId: T:NeerCore.Data.Abstractions.IUpdatableEntity
+  parent: NeerCore.Data.Abstractions
+  name: IUpdatableEntity
+  nameWithType: IUpdatableEntity
+  fullName: NeerCore.Data.Abstractions.IUpdatableEntity
+- uid: NeerCore.Data.Abstractions.IUpdatableEntity.Updated*
+  commentId: Overload:NeerCore.Data.Abstractions.IUpdatableEntity.Updated
+  name: Updated
+  nameWithType: IUpdatableEntity.Updated
+  fullName: NeerCore.Data.Abstractions.IUpdatableEntity.Updated
+- uid: System.Nullable{DateTime}
+  commentId: '!:System.Nullable{DateTime}'
+  definition: System.Nullable`1
+  name: Nullable<DateTime>
+  nameWithType: Nullable<DateTime>
+  fullName: System.Nullable<DateTime>
+  nameWithType.vb: Nullable(Of DateTime)
+  fullName.vb: System.Nullable(Of DateTime)
+  name.vb: Nullable(Of DateTime)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: DateTime
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: DateTime
+    name: DateTime
+    nameWithType: DateTime
+    fullName: DateTime
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable`1
+  commentId: '!:System.Nullable`1'
+  isExternal: true
+  name: Nullable<>
+  nameWithType: Nullable<>
+  fullName: System.Nullable<>
+  nameWithType.vb: Nullable(Of )
+  fullName.vb: System.Nullable(Of )
+  name.vb: Nullable(Of )
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )

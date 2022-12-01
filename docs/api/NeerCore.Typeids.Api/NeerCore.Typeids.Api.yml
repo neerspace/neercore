@@ -1,0 +1,101 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Typeids.Api
+  commentId: N:NeerCore.Typeids.Api
+  id: NeerCore.Typeids.Api
+  children:
+  - NeerCore.Typeids.Api.CustomIdsConverterFactory
+  - NeerCore.Typeids.Api.TypeidsJsonConverter`2
+  - NeerCore.Typeids.Api.TypeidsModelBinder
+  - NeerCore.Typeids.Api.TypeidsModelBinderProvider
+  - NeerCore.Typeids.Api.TypeidsProcessor
+  - NeerCore.Typeids.Api.TypeidsProcessorBase
+  langs:
+  - csharp
+  - vb
+  name: NeerCore.Typeids.Api
+  nameWithType: NeerCore.Typeids.Api
+  fullName: NeerCore.Typeids.Api
+  type: Namespace
+  assemblies:
+  - NeerCore.Typeids.Api
+references:
+- uid: NeerCore.Typeids.Api.CustomIdsConverterFactory
+  commentId: T:NeerCore.Typeids.Api.CustomIdsConverterFactory
+  name: CustomIdsConverterFactory
+  nameWithType: CustomIdsConverterFactory
+  fullName: NeerCore.Typeids.Api.CustomIdsConverterFactory
+- uid: NeerCore.Typeids.Api.TypeidsJsonConverter`2
+  commentId: T:NeerCore.Typeids.Api.TypeidsJsonConverter`2
+  name: TypeidsJsonConverter<TIdentifier, TValue>
+  nameWithType: TypeidsJsonConverter<TIdentifier, TValue>
+  fullName: NeerCore.Typeids.Api.TypeidsJsonConverter<TIdentifier, TValue>
+  nameWithType.vb: TypeidsJsonConverter(Of TIdentifier, TValue)
+  fullName.vb: NeerCore.Typeids.Api.TypeidsJsonConverter(Of TIdentifier, TValue)
+  name.vb: TypeidsJsonConverter(Of TIdentifier, TValue)
+  spec.csharp:
+  - uid: NeerCore.Typeids.Api.TypeidsJsonConverter`2
+    name: TypeidsJsonConverter
+    nameWithType: TypeidsJsonConverter
+    fullName: NeerCore.Typeids.Api.TypeidsJsonConverter
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TIdentifier
+    nameWithType: TIdentifier
+    fullName: TIdentifier
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: NeerCore.Typeids.Api.TypeidsJsonConverter`2
+    name: TypeidsJsonConverter
+    nameWithType: TypeidsJsonConverter
+    fullName: NeerCore.Typeids.Api.TypeidsJsonConverter
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TIdentifier
+    nameWithType: TIdentifier
+    fullName: TIdentifier
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NeerCore.Typeids.Api.TypeidsModelBinder
+  commentId: T:NeerCore.Typeids.Api.TypeidsModelBinder
+  name: TypeidsModelBinder
+  nameWithType: TypeidsModelBinder
+  fullName: NeerCore.Typeids.Api.TypeidsModelBinder
+- uid: NeerCore.Typeids.Api.TypeidsModelBinderProvider
+  commentId: T:NeerCore.Typeids.Api.TypeidsModelBinderProvider
+  name: TypeidsModelBinderProvider
+  nameWithType: TypeidsModelBinderProvider
+  fullName: NeerCore.Typeids.Api.TypeidsModelBinderProvider
+- uid: NeerCore.Typeids.Api.TypeidsProcessor
+  commentId: T:NeerCore.Typeids.Api.TypeidsProcessor
+  name: TypeidsProcessor
+  nameWithType: TypeidsProcessor
+  fullName: NeerCore.Typeids.Api.TypeidsProcessor
+- uid: NeerCore.Typeids.Api.TypeidsProcessorBase
+  commentId: T:NeerCore.Typeids.Api.TypeidsProcessorBase
+  parent: NeerCore.Typeids.Api
+  name: TypeidsProcessorBase
+  nameWithType: TypeidsProcessorBase
+  fullName: NeerCore.Typeids.Api.TypeidsProcessorBase
+- uid: NeerCore.Typeids.Api
+  commentId: N:NeerCore.Typeids.Api
+  name: NeerCore.Typeids.Api
+  nameWithType: NeerCore.Typeids.Api
+  fullName: NeerCore.Typeids.Api

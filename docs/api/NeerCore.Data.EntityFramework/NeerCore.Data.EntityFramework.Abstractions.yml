@@ -1,0 +1,65 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Data.EntityFramework.Abstractions
+  commentId: N:NeerCore.Data.EntityFramework.Abstractions
+  id: NeerCore.Data.EntityFramework.Abstractions
+  children:
+  - NeerCore.Data.EntityFramework.Abstractions.IDatabase
+  - NeerCore.Data.EntityFramework.Abstractions.IDataSeeder
+  - NeerCore.Data.EntityFramework.Abstractions.IEntityDataSeeder`1
+  langs:
+  - csharp
+  - vb
+  name: NeerCore.Data.EntityFramework.Abstractions
+  nameWithType: NeerCore.Data.EntityFramework.Abstractions
+  fullName: NeerCore.Data.EntityFramework.Abstractions
+  type: Namespace
+  assemblies:
+  - NeerCore.Data.EntityFramework
+references:
+- uid: NeerCore.Data.EntityFramework.Abstractions.IDatabase
+  commentId: T:NeerCore.Data.EntityFramework.Abstractions.IDatabase
+  name: IDatabase
+  nameWithType: IDatabase
+  fullName: NeerCore.Data.EntityFramework.Abstractions.IDatabase
+- uid: NeerCore.Data.EntityFramework.Abstractions.IDataSeeder
+  commentId: T:NeerCore.Data.EntityFramework.Abstractions.IDataSeeder
+  name: IDataSeeder
+  nameWithType: IDataSeeder
+  fullName: NeerCore.Data.EntityFramework.Abstractions.IDataSeeder
+- uid: NeerCore.Data.EntityFramework.Abstractions.IEntityDataSeeder`1
+  commentId: T:NeerCore.Data.EntityFramework.Abstractions.IEntityDataSeeder`1
+  name: IEntityDataSeeder<TEntity>
+  nameWithType: IEntityDataSeeder<TEntity>
+  fullName: NeerCore.Data.EntityFramework.Abstractions.IEntityDataSeeder<TEntity>
+  nameWithType.vb: IEntityDataSeeder(Of TEntity)
+  fullName.vb: NeerCore.Data.EntityFramework.Abstractions.IEntityDataSeeder(Of TEntity)
+  name.vb: IEntityDataSeeder(Of TEntity)
+  spec.csharp:
+  - uid: NeerCore.Data.EntityFramework.Abstractions.IEntityDataSeeder`1
+    name: IEntityDataSeeder
+    nameWithType: IEntityDataSeeder
+    fullName: NeerCore.Data.EntityFramework.Abstractions.IEntityDataSeeder
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TEntity
+    nameWithType: TEntity
+    fullName: TEntity
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: NeerCore.Data.EntityFramework.Abstractions.IEntityDataSeeder`1
+    name: IEntityDataSeeder
+    nameWithType: IEntityDataSeeder
+    fullName: NeerCore.Data.EntityFramework.Abstractions.IEntityDataSeeder
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TEntity
+    nameWithType: TEntity
+    fullName: TEntity
+  - name: )
+    nameWithType: )
+    fullName: )

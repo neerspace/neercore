@@ -6,6 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <IsPackable>true</IsPackable>
+    <DocumentationFile>$(XmlDocsBaseDirectory)/NeerCore.Data.Abstractions.xml</DocumentationFile>
 
     <PackageTags>neercore</PackageTags>
     <Description>The NeerCore.Data.Abstractions package provides a set of basic abstractions for other NeerCore libraries that are related to working with databases.

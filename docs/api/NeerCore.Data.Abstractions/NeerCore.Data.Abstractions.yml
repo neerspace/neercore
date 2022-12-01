@@ -1,0 +1,195 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Data.Abstractions
+  commentId: N:NeerCore.Data.Abstractions
+  id: NeerCore.Data.Abstractions
+  children:
+  - NeerCore.Data.Abstractions.ICreatableEntity
+  - NeerCore.Data.Abstractions.ICreatableEntity`1
+  - NeerCore.Data.Abstractions.IDateableEntity
+  - NeerCore.Data.Abstractions.IDateableEntity`1
+  - NeerCore.Data.Abstractions.IEntity
+  - NeerCore.Data.Abstractions.IEntity`1
+  - NeerCore.Data.Abstractions.IUpdatableEntity
+  - NeerCore.Data.Abstractions.IUpdatableEntity`1
+  langs:
+  - csharp
+  - vb
+  name: NeerCore.Data.Abstractions
+  nameWithType: NeerCore.Data.Abstractions
+  fullName: NeerCore.Data.Abstractions
+  type: Namespace
+  assemblies:
+  - NeerCore.Data.Abstractions
+references:
+- uid: NeerCore.Data.Abstractions.ICreatableEntity
+  commentId: T:NeerCore.Data.Abstractions.ICreatableEntity
+  parent: NeerCore.Data.Abstractions
+  name: ICreatableEntity
+  nameWithType: ICreatableEntity
+  fullName: NeerCore.Data.Abstractions.ICreatableEntity
+- uid: NeerCore.Data.Abstractions.ICreatableEntity`1
+  commentId: T:NeerCore.Data.Abstractions.ICreatableEntity`1
+  name: ICreatableEntity<TKey>
+  nameWithType: ICreatableEntity<TKey>
+  fullName: NeerCore.Data.Abstractions.ICreatableEntity<TKey>
+  nameWithType.vb: ICreatableEntity(Of TKey)
+  fullName.vb: NeerCore.Data.Abstractions.ICreatableEntity(Of TKey)
+  name.vb: ICreatableEntity(Of TKey)
+  spec.csharp:
+  - uid: NeerCore.Data.Abstractions.ICreatableEntity`1
+    name: ICreatableEntity
+    nameWithType: ICreatableEntity
+    fullName: NeerCore.Data.Abstractions.ICreatableEntity
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: NeerCore.Data.Abstractions.ICreatableEntity`1
+    name: ICreatableEntity
+    nameWithType: ICreatableEntity
+    fullName: NeerCore.Data.Abstractions.ICreatableEntity
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NeerCore.Data.Abstractions.IDateableEntity
+  commentId: T:NeerCore.Data.Abstractions.IDateableEntity
+  name: IDateableEntity
+  nameWithType: IDateableEntity
+  fullName: NeerCore.Data.Abstractions.IDateableEntity
+- uid: NeerCore.Data.Abstractions.IDateableEntity`1
+  commentId: T:NeerCore.Data.Abstractions.IDateableEntity`1
+  name: IDateableEntity<TKey>
+  nameWithType: IDateableEntity<TKey>
+  fullName: NeerCore.Data.Abstractions.IDateableEntity<TKey>
+  nameWithType.vb: IDateableEntity(Of TKey)
+  fullName.vb: NeerCore.Data.Abstractions.IDateableEntity(Of TKey)
+  name.vb: IDateableEntity(Of TKey)
+  spec.csharp:
+  - uid: NeerCore.Data.Abstractions.IDateableEntity`1
+    name: IDateableEntity
+    nameWithType: IDateableEntity
+    fullName: NeerCore.Data.Abstractions.IDateableEntity
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: NeerCore.Data.Abstractions.IDateableEntity`1
+    name: IDateableEntity
+    nameWithType: IDateableEntity
+    fullName: NeerCore.Data.Abstractions.IDateableEntity
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NeerCore.Data.Abstractions.IEntity
+  commentId: T:NeerCore.Data.Abstractions.IEntity
+  name: IEntity
+  nameWithType: IEntity
+  fullName: NeerCore.Data.Abstractions.IEntity
+- uid: NeerCore.Data.Abstractions.IEntity`1
+  commentId: T:NeerCore.Data.Abstractions.IEntity`1
+  name: IEntity<TKey>
+  nameWithType: IEntity<TKey>
+  fullName: NeerCore.Data.Abstractions.IEntity<TKey>
+  nameWithType.vb: IEntity(Of TKey)
+  fullName.vb: NeerCore.Data.Abstractions.IEntity(Of TKey)
+  name.vb: IEntity(Of TKey)
+  spec.csharp:
+  - uid: NeerCore.Data.Abstractions.IEntity`1
+    name: IEntity
+    nameWithType: IEntity
+    fullName: NeerCore.Data.Abstractions.IEntity
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: NeerCore.Data.Abstractions.IEntity`1
+    name: IEntity
+    nameWithType: IEntity
+    fullName: NeerCore.Data.Abstractions.IEntity
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NeerCore.Data.Abstractions.IUpdatableEntity
+  commentId: T:NeerCore.Data.Abstractions.IUpdatableEntity
+  parent: NeerCore.Data.Abstractions
+  name: IUpdatableEntity
+  nameWithType: IUpdatableEntity
+  fullName: NeerCore.Data.Abstractions.IUpdatableEntity
+- uid: NeerCore.Data.Abstractions.IUpdatableEntity`1
+  commentId: T:NeerCore.Data.Abstractions.IUpdatableEntity`1
+  name: IUpdatableEntity<TKey>
+  nameWithType: IUpdatableEntity<TKey>
+  fullName: NeerCore.Data.Abstractions.IUpdatableEntity<TKey>
+  nameWithType.vb: IUpdatableEntity(Of TKey)
+  fullName.vb: NeerCore.Data.Abstractions.IUpdatableEntity(Of TKey)
+  name.vb: IUpdatableEntity(Of TKey)
+  spec.csharp:
+  - uid: NeerCore.Data.Abstractions.IUpdatableEntity`1
+    name: IUpdatableEntity
+    nameWithType: IUpdatableEntity
+    fullName: NeerCore.Data.Abstractions.IUpdatableEntity
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: NeerCore.Data.Abstractions.IUpdatableEntity`1
+    name: IUpdatableEntity
+    nameWithType: IUpdatableEntity
+    fullName: NeerCore.Data.Abstractions.IUpdatableEntity
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NeerCore.Data.Abstractions
+  commentId: N:NeerCore.Data.Abstractions
+  name: NeerCore.Data.Abstractions
+  nameWithType: NeerCore.Data.Abstractions
+  fullName: NeerCore.Data.Abstractions

@@ -1,0 +1,46 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.DependencyInjection.Extensions
+  commentId: N:NeerCore.DependencyInjection.Extensions
+  id: NeerCore.DependencyInjection.Extensions
+  children:
+  - NeerCore.DependencyInjection.Extensions.AssemblyExtensions
+  - NeerCore.DependencyInjection.Extensions.EnumExtensions
+  - NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions
+  - NeerCore.DependencyInjection.Extensions.TypeExtensions
+  langs:
+  - csharp
+  - vb
+  name: NeerCore.DependencyInjection.Extensions
+  nameWithType: NeerCore.DependencyInjection.Extensions
+  fullName: NeerCore.DependencyInjection.Extensions
+  type: Namespace
+  assemblies:
+  - NeerCore.DependencyInjection
+references:
+- uid: NeerCore.DependencyInjection.Extensions.AssemblyExtensions
+  commentId: T:NeerCore.DependencyInjection.Extensions.AssemblyExtensions
+  name: AssemblyExtensions
+  nameWithType: AssemblyExtensions
+  fullName: NeerCore.DependencyInjection.Extensions.AssemblyExtensions
+- uid: NeerCore.DependencyInjection.Extensions.EnumExtensions
+  commentId: T:NeerCore.DependencyInjection.Extensions.EnumExtensions
+  parent: NeerCore.DependencyInjection.Extensions
+  name: EnumExtensions
+  nameWithType: EnumExtensions
+  fullName: NeerCore.DependencyInjection.Extensions.EnumExtensions
+- uid: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions
+  commentId: T:NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions
+  name: ServiceCollectionExtensions
+  nameWithType: ServiceCollectionExtensions
+  fullName: NeerCore.DependencyInjection.Extensions.ServiceCollectionExtensions
+- uid: NeerCore.DependencyInjection.Extensions.TypeExtensions
+  commentId: T:NeerCore.DependencyInjection.Extensions.TypeExtensions
+  name: TypeExtensions
+  nameWithType: TypeExtensions
+  fullName: NeerCore.DependencyInjection.Extensions.TypeExtensions
+- uid: NeerCore.DependencyInjection.Extensions
+  commentId: N:NeerCore.DependencyInjection.Extensions
+  name: NeerCore.DependencyInjection.Extensions
+  nameWithType: NeerCore.DependencyInjection.Extensions
+  fullName: NeerCore.DependencyInjection.Extensions

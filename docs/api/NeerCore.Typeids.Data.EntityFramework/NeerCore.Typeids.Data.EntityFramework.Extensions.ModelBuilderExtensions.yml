@@ -1,0 +1,203 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Typeids.Data.EntityFramework.Extensions.ModelBuilderExtensions
+  commentId: T:NeerCore.Typeids.Data.EntityFramework.Extensions.ModelBuilderExtensions
+  id: ModelBuilderExtensions
+  parent: NeerCore.Typeids.Data.EntityFramework.Extensions
+  children:
+  - NeerCore.Typeids.Data.EntityFramework.Extensions.ModelBuilderExtensions.ApplyTypedIdsFromAssembly(ModelBuilder,System.Nullable{Action{NeerCore.Typeids.Data.EntityFramework.Options.TypeidsOptions}})
+  langs:
+  - csharp
+  - vb
+  name: ModelBuilderExtensions
+  nameWithType: ModelBuilderExtensions
+  fullName: NeerCore.Typeids.Data.EntityFramework.Extensions.ModelBuilderExtensions
+  type: Class
+  source:
+    remote:
+      path: src/NeerCore.Typeids.Data.EntityFramework/Extensions/ModelBuilderExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: ModelBuilderExtensions
+    path: ../src/NeerCore.Typeids.Data.EntityFramework/Extensions/ModelBuilderExtensions.cs
+    startLine: 15
+  assemblies:
+  - NeerCore.Typeids.Data.EntityFramework
+  namespace: NeerCore.Typeids.Data.EntityFramework.Extensions
+  syntax:
+    content: 'public static class ModelBuilderExtensions : object'
+    content.vb: >-
+      Public Module ModelBuilderExtensions
+
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: NeerCore.Typeids.Data.EntityFramework.Extensions.ModelBuilderExtensions.ApplyTypedIdsFromAssembly(ModelBuilder,System.Nullable{Action{NeerCore.Typeids.Data.EntityFramework.Options.TypeidsOptions}})
+  commentId: M:NeerCore.Typeids.Data.EntityFramework.Extensions.ModelBuilderExtensions.ApplyTypedIdsFromAssembly(ModelBuilder,System.Nullable{Action{NeerCore.Typeids.Data.EntityFramework.Options.TypeidsOptions}})
+  id: ApplyTypedIdsFromAssembly(ModelBuilder,System.Nullable{Action{NeerCore.Typeids.Data.EntityFramework.Options.TypeidsOptions}})
+  isExtensionMethod: true
+  parent: NeerCore.Typeids.Data.EntityFramework.Extensions.ModelBuilderExtensions
+  langs:
+  - csharp
+  - vb
+  name: ApplyTypedIdsFromAssembly(ModelBuilder, Nullable<Action<TypeidsOptions>>)
+  nameWithType: ModelBuilderExtensions.ApplyTypedIdsFromAssembly(ModelBuilder, Nullable<Action<TypeidsOptions>>)
+  fullName: NeerCore.Typeids.Data.EntityFramework.Extensions.ModelBuilderExtensions.ApplyTypedIdsFromAssembly(ModelBuilder, System.Nullable<Action<NeerCore.Typeids.Data.EntityFramework.Options.TypeidsOptions>>)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Typeids.Data.EntityFramework/Extensions/ModelBuilderExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: ApplyTypedIdsFromAssembly
+    path: ../src/NeerCore.Typeids.Data.EntityFramework/Extensions/ModelBuilderExtensions.cs
+    startLine: 22
+  assemblies:
+  - NeerCore.Typeids.Data.EntityFramework
+  namespace: NeerCore.Typeids.Data.EntityFramework.Extensions
+  syntax:
+    content: public static void ApplyTypedIdsFromAssembly(this ModelBuilder modelBuilder, Action<TypeidsOptions>? configureOptions = null)
+    parameters:
+    - id: modelBuilder
+      type: ModelBuilder
+    - id: configureOptions
+      type: System.Nullable{Action{NeerCore.Typeids.Data.EntityFramework.Options.TypeidsOptions}}
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Sub ApplyTypedIdsFromAssembly(modelBuilder As ModelBuilder, configureOptions As Action(Of TypeidsOptions)? = Nothing)
+  overload: NeerCore.Typeids.Data.EntityFramework.Extensions.ModelBuilderExtensions.ApplyTypedIdsFromAssembly*
+  nameWithType.vb: ModelBuilderExtensions.ApplyTypedIdsFromAssembly(ModelBuilder, Nullable(Of Action(Of TypeidsOptions)))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: NeerCore.Typeids.Data.EntityFramework.Extensions.ModelBuilderExtensions.ApplyTypedIdsFromAssembly(ModelBuilder, System.Nullable(Of Action(Of NeerCore.Typeids.Data.EntityFramework.Options.TypeidsOptions)))
+  name.vb: ApplyTypedIdsFromAssembly(ModelBuilder, Nullable(Of Action(Of TypeidsOptions)))
+references:
+- uid: NeerCore.Typeids.Data.EntityFramework.Extensions
+  commentId: N:NeerCore.Typeids.Data.EntityFramework.Extensions
+  name: NeerCore.Typeids.Data.EntityFramework.Extensions
+  nameWithType: NeerCore.Typeids.Data.EntityFramework.Extensions
+  fullName: NeerCore.Typeids.Data.EntityFramework.Extensions
+- uid: NeerCore.Typeids.Data.EntityFramework.Extensions.ModelBuilderExtensions.ApplyTypedIdsFromAssembly*
+  commentId: Overload:NeerCore.Typeids.Data.EntityFramework.Extensions.ModelBuilderExtensions.ApplyTypedIdsFromAssembly
+  name: ApplyTypedIdsFromAssembly
+  nameWithType: ModelBuilderExtensions.ApplyTypedIdsFromAssembly
+  fullName: NeerCore.Typeids.Data.EntityFramework.Extensions.ModelBuilderExtensions.ApplyTypedIdsFromAssembly
+- uid: ModelBuilder
+  commentId: '!:ModelBuilder'
+  isExternal: true
+  name: ModelBuilder
+  nameWithType: ModelBuilder
+  fullName: ModelBuilder
+- uid: System.Nullable{Action{NeerCore.Typeids.Data.EntityFramework.Options.TypeidsOptions}}
+  commentId: '!:System.Nullable{Action{NeerCore.Typeids.Data.EntityFramework.Options.TypeidsOptions}}'
+  definition: System.Nullable`1
+  name: Nullable<Action<TypeidsOptions>>
+  nameWithType: Nullable<Action<TypeidsOptions>>
+  fullName: System.Nullable<Action<NeerCore.Typeids.Data.EntityFramework.Options.TypeidsOptions>>
+  nameWithType.vb: Nullable(Of Action(Of TypeidsOptions))
+  fullName.vb: System.Nullable(Of Action(Of NeerCore.Typeids.Data.EntityFramework.Options.TypeidsOptions))
+  name.vb: Nullable(Of Action(Of TypeidsOptions))
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: NeerCore.Typeids.Data.EntityFramework.Options.TypeidsOptions
+    name: TypeidsOptions
+    nameWithType: TypeidsOptions
+    fullName: NeerCore.Typeids.Data.EntityFramework.Options.TypeidsOptions
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: NeerCore.Typeids.Data.EntityFramework.Options.TypeidsOptions
+    name: TypeidsOptions
+    nameWithType: TypeidsOptions
+    fullName: NeerCore.Typeids.Data.EntityFramework.Options.TypeidsOptions
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable`1
+  isExternal: true
+  name: Nullable<>
+  nameWithType: Nullable<>
+  fullName: System.Nullable<>
+  nameWithType.vb: Nullable(Of )
+  fullName.vb: System.Nullable(Of )
+  name.vb: Nullable(Of )
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )

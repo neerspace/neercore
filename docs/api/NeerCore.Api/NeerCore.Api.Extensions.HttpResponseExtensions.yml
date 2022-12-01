@@ -1,0 +1,173 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Api.Extensions.HttpResponseExtensions
+  commentId: T:NeerCore.Api.Extensions.HttpResponseExtensions
+  id: HttpResponseExtensions
+  parent: NeerCore.Api.Extensions
+  children:
+  - NeerCore.Api.Extensions.HttpResponseExtensions.SetNavigationHeaders(HttpResponse,System.Int32,System.Int32,System.Int32)
+  - NeerCore.Api.Extensions.HttpResponseExtensions.SetPaginationHeaders(HttpResponse,System.Int32,System.Int32,System.Int32)
+  langs:
+  - csharp
+  - vb
+  name: HttpResponseExtensions
+  nameWithType: HttpResponseExtensions
+  fullName: NeerCore.Api.Extensions.HttpResponseExtensions
+  type: Class
+  source:
+    remote:
+      path: src/NeerCore.Api/Extensions/HttpResponseExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: HttpResponseExtensions
+    path: ../src/NeerCore.Api/Extensions/HttpResponseExtensions.cs
+    startLine: 4
+  assemblies:
+  - NeerCore.Api
+  namespace: NeerCore.Api.Extensions
+  syntax:
+    content: 'public static class HttpResponseExtensions : object'
+    content.vb: >-
+      Public Module HttpResponseExtensions
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: NeerCore.Api.Extensions.HttpResponseExtensions.SetNavigationHeaders(HttpResponse,System.Int32,System.Int32,System.Int32)
+  commentId: M:NeerCore.Api.Extensions.HttpResponseExtensions.SetNavigationHeaders(HttpResponse,System.Int32,System.Int32,System.Int32)
+  id: SetNavigationHeaders(HttpResponse,System.Int32,System.Int32,System.Int32)
+  isExtensionMethod: true
+  parent: NeerCore.Api.Extensions.HttpResponseExtensions
+  langs:
+  - csharp
+  - vb
+  name: SetNavigationHeaders(HttpResponse, Int32, Int32, Int32)
+  nameWithType: HttpResponseExtensions.SetNavigationHeaders(HttpResponse, Int32, Int32, Int32)
+  fullName: NeerCore.Api.Extensions.HttpResponseExtensions.SetNavigationHeaders(HttpResponse, System.Int32, System.Int32, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Api/Extensions/HttpResponseExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: SetNavigationHeaders
+    path: ../src/NeerCore.Api/Extensions/HttpResponseExtensions.cs
+    startLine: 37
+  assemblies:
+  - NeerCore.Api
+  namespace: NeerCore.Api.Extensions
+  summary: "\nAdds pagination info to the current response headers.\nAnd also adds CORS header to allow the browser use pagination headers.\n<br />\nSets next headers:\n<ul><li><strong>Navigation-Page</strong>: Current navigation page.</li><li><strong>Navigation-Last-Page</strong>: Max navigation page value.</li><li><strong>Navigation-Total</strong>: Totals count of filtered items (without pagination).</li><li><strong>Access-Control-Expose-Headers</strong>: Allows previous headers in CORS.</li></ul>\n"
+  remarks: For paging navigation style.
+  example:
+  - "\nController action pseudo code:\n<br />\n<pre><code>  [HttpGet]\n  public IEnumerable&lt;Model> GetList(string filters, int page = 1, int pageSize = 10)\n  {\n    IEnumerable&lt;Model> models = _service.Filter(filters, page, pageSize);\n    int total = _service.Count(filters);\n    Response.SetNavigationHeaders(total, page, pageSize);\n    return models;\n  }</code></pre>\n"
+  syntax:
+    content: public static void SetNavigationHeaders(this HttpResponse response, int total, int page, int pageSize)
+    parameters:
+    - id: response
+      type: HttpResponse
+      description: Represents the outgoing side of an individual HTTP request.
+    - id: total
+      type: System.Int32
+      description: Total count of all entities.
+    - id: page
+      type: System.Int32
+      description: Current navigation page. (starts from 1)
+    - id: pageSize
+      type: System.Int32
+      description: Count of items per each page.
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Sub SetNavigationHeaders(response As HttpResponse, total As Integer, page As Integer, pageSize As Integer)
+  overload: NeerCore.Api.Extensions.HttpResponseExtensions.SetNavigationHeaders*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: NeerCore.Api.Extensions.HttpResponseExtensions.SetPaginationHeaders(HttpResponse,System.Int32,System.Int32,System.Int32)
+  commentId: M:NeerCore.Api.Extensions.HttpResponseExtensions.SetPaginationHeaders(HttpResponse,System.Int32,System.Int32,System.Int32)
+  id: SetPaginationHeaders(HttpResponse,System.Int32,System.Int32,System.Int32)
+  isExtensionMethod: true
+  parent: NeerCore.Api.Extensions.HttpResponseExtensions
+  langs:
+  - csharp
+  - vb
+  name: SetPaginationHeaders(HttpResponse, Int32, Int32, Int32)
+  nameWithType: HttpResponseExtensions.SetPaginationHeaders(HttpResponse, Int32, Int32, Int32)
+  fullName: NeerCore.Api.Extensions.HttpResponseExtensions.SetPaginationHeaders(HttpResponse, System.Int32, System.Int32, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Api/Extensions/HttpResponseExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: SetPaginationHeaders
+    path: ../src/NeerCore.Api/Extensions/HttpResponseExtensions.cs
+    startLine: 76
+  assemblies:
+  - NeerCore.Api
+  namespace: NeerCore.Api.Extensions
+  summary: "\nAdds pagination info to the current response headers.\nAnd also adds CORS header to allow the browser use pagination headers.\n<br />\nSets next headers:\n<ul><li><strong>Navigation-Page</strong>: Current navigation page.</li><li><strong>Navigation-Last-Page</strong>: Max navigation page value.</li><li><strong>Navigation-Total</strong>: Totals count of filtered items (without pagination).</li><li><strong>Access-Control-Expose-Headers</strong>: Allows previous headers in CORS.</li></ul>\n"
+  remarks: For skip-take navigation style.
+  example:
+  - "\nController action pseudo code:\n<br />\n<pre><code>  [HttpGet]\n  public IEnumerable&lt;Model> GetList(string filters, int skip = 0, int take = 10)\n  {\n    IEnumerable&lt;Model> models = _service.Filter(filters, skip, take);\n    int total = _service.Count(filters);\n    Response.SetPaginationHeaders(total, skip, take);\n    return models;\n  }</code></pre>\n"
+  syntax:
+    content: public static void SetPaginationHeaders(this HttpResponse response, int total, int skip, int take)
+    parameters:
+    - id: response
+      type: HttpResponse
+      description: Represents the outgoing side of an individual HTTP request.
+    - id: total
+      type: System.Int32
+      description: Total count of all entities.
+    - id: skip
+      type: System.Int32
+      description: Index of first element in the result sequence.
+    - id: take
+      type: System.Int32
+      description: Count of items in result sequence.
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Sub SetPaginationHeaders(response As HttpResponse, total As Integer, skip As Integer, take As Integer)
+  overload: NeerCore.Api.Extensions.HttpResponseExtensions.SetPaginationHeaders*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: NeerCore.Api.Extensions
+  commentId: N:NeerCore.Api.Extensions
+  name: NeerCore.Api.Extensions
+  nameWithType: NeerCore.Api.Extensions
+  fullName: NeerCore.Api.Extensions
+- uid: NeerCore.Api.Extensions.HttpResponseExtensions.SetNavigationHeaders*
+  commentId: Overload:NeerCore.Api.Extensions.HttpResponseExtensions.SetNavigationHeaders
+  name: SetNavigationHeaders
+  nameWithType: HttpResponseExtensions.SetNavigationHeaders
+  fullName: NeerCore.Api.Extensions.HttpResponseExtensions.SetNavigationHeaders
+- uid: HttpResponse
+  isExternal: true
+  name: HttpResponse
+  nameWithType: HttpResponse
+  fullName: HttpResponse
+- uid: System.Int32
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: NeerCore.Api.Extensions.HttpResponseExtensions.SetPaginationHeaders*
+  commentId: Overload:NeerCore.Api.Extensions.HttpResponseExtensions.SetPaginationHeaders
+  name: SetPaginationHeaders
+  nameWithType: HttpResponseExtensions.SetPaginationHeaders
+  fullName: NeerCore.Api.Extensions.HttpResponseExtensions.SetPaginationHeaders

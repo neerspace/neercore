@@ -1,0 +1,22 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Json
+  commentId: N:NeerCore.Json
+  id: NeerCore.Json
+  children:
+  - NeerCore.Json.JsonConventions
+  langs:
+  - csharp
+  - vb
+  name: NeerCore.Json
+  nameWithType: NeerCore.Json
+  fullName: NeerCore.Json
+  type: Namespace
+  assemblies:
+  - NeerCore
+references:
+- uid: NeerCore.Json.JsonConventions
+  commentId: T:NeerCore.Json.JsonConventions
+  name: JsonConventions
+  nameWithType: JsonConventions
+  fullName: NeerCore.Json.JsonConventions

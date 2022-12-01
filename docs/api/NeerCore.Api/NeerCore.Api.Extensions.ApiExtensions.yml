@@ -1,0 +1,281 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Api.Extensions.ApiExtensions
+  commentId: T:NeerCore.Api.Extensions.ApiExtensions
+  id: ApiExtensions
+  parent: NeerCore.Api.Extensions
+  children:
+  - NeerCore.Api.Extensions.ApiExtensions.AddDefaultCorsPolicy(IServiceCollection)
+  - NeerCore.Api.Extensions.ApiExtensions.AddNeerApiVersioning(IServiceCollection,System.Nullable{IApiVersionReader})
+  - NeerCore.Api.Extensions.ApiExtensions.ConfigureApiBehaviorOptions(IServiceCollection)
+  langs:
+  - csharp
+  - vb
+  name: ApiExtensions
+  nameWithType: ApiExtensions
+  fullName: NeerCore.Api.Extensions.ApiExtensions
+  type: Class
+  source:
+    remote:
+      path: src/NeerCore.Api/Extensions/ApiExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: ApiExtensions
+    path: ../src/NeerCore.Api/Extensions/ApiExtensions.cs
+    startLine: 6
+  assemblies:
+  - NeerCore.Api
+  namespace: NeerCore.Api.Extensions
+  syntax:
+    content: 'public static class ApiExtensions : object'
+    content.vb: >-
+      Public Module ApiExtensions
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: NeerCore.Api.Extensions.ApiExtensions.AddDefaultCorsPolicy(IServiceCollection)
+  commentId: M:NeerCore.Api.Extensions.ApiExtensions.AddDefaultCorsPolicy(IServiceCollection)
+  id: AddDefaultCorsPolicy(IServiceCollection)
+  isExtensionMethod: true
+  parent: NeerCore.Api.Extensions.ApiExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddDefaultCorsPolicy(IServiceCollection)
+  nameWithType: ApiExtensions.AddDefaultCorsPolicy(IServiceCollection)
+  fullName: NeerCore.Api.Extensions.ApiExtensions.AddDefaultCorsPolicy(IServiceCollection)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Api/Extensions/ApiExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: AddDefaultCorsPolicy
+    path: ../src/NeerCore.Api/Extensions/ApiExtensions.cs
+    startLine: 8
+  assemblies:
+  - NeerCore.Api
+  namespace: NeerCore.Api.Extensions
+  syntax:
+    content: public static IServiceCollection AddDefaultCorsPolicy(this IServiceCollection services)
+    parameters:
+    - id: services
+      type: IServiceCollection
+    return:
+      type: IServiceCollection
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function AddDefaultCorsPolicy(services As IServiceCollection) As IServiceCollection
+  overload: NeerCore.Api.Extensions.ApiExtensions.AddDefaultCorsPolicy*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: NeerCore.Api.Extensions.ApiExtensions.AddNeerApiVersioning(IServiceCollection,System.Nullable{IApiVersionReader})
+  commentId: M:NeerCore.Api.Extensions.ApiExtensions.AddNeerApiVersioning(IServiceCollection,System.Nullable{IApiVersionReader})
+  id: AddNeerApiVersioning(IServiceCollection,System.Nullable{IApiVersionReader})
+  isExtensionMethod: true
+  parent: NeerCore.Api.Extensions.ApiExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddNeerApiVersioning(IServiceCollection, Nullable<IApiVersionReader>)
+  nameWithType: ApiExtensions.AddNeerApiVersioning(IServiceCollection, Nullable<IApiVersionReader>)
+  fullName: NeerCore.Api.Extensions.ApiExtensions.AddNeerApiVersioning(IServiceCollection, System.Nullable<IApiVersionReader>)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Api/Extensions/ApiExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: AddNeerApiVersioning
+    path: ../src/NeerCore.Api/Extensions/ApiExtensions.cs
+    startLine: 23
+  assemblies:
+  - NeerCore.Api
+  namespace: NeerCore.Api.Extensions
+  summary: "\nAdds service API versioning to the specified services collection.\n"
+  example: []
+  syntax:
+    content: public static IServiceCollection AddNeerApiVersioning(this IServiceCollection services, IApiVersionReader? apiVersionParameterSource = null)
+    parameters:
+    - id: services
+      type: IServiceCollection
+      description: The services available in the application.
+    - id: apiVersionParameterSource
+      type: System.Nullable{IApiVersionReader}
+      description: Configures the source for defining API version parameters.
+    return:
+      type: IServiceCollection
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function AddNeerApiVersioning(services As IServiceCollection, apiVersionParameterSource As IApiVersionReader? = Nothing) As IServiceCollection
+  overload: NeerCore.Api.Extensions.ApiExtensions.AddNeerApiVersioning*
+  nameWithType.vb: ApiExtensions.AddNeerApiVersioning(IServiceCollection, Nullable(Of IApiVersionReader))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: NeerCore.Api.Extensions.ApiExtensions.AddNeerApiVersioning(IServiceCollection, System.Nullable(Of IApiVersionReader))
+  name.vb: AddNeerApiVersioning(IServiceCollection, Nullable(Of IApiVersionReader))
+- uid: NeerCore.Api.Extensions.ApiExtensions.ConfigureApiBehaviorOptions(IServiceCollection)
+  commentId: M:NeerCore.Api.Extensions.ApiExtensions.ConfigureApiBehaviorOptions(IServiceCollection)
+  id: ConfigureApiBehaviorOptions(IServiceCollection)
+  isExtensionMethod: true
+  parent: NeerCore.Api.Extensions.ApiExtensions
+  langs:
+  - csharp
+  - vb
+  name: ConfigureApiBehaviorOptions(IServiceCollection)
+  nameWithType: ApiExtensions.ConfigureApiBehaviorOptions(IServiceCollection)
+  fullName: NeerCore.Api.Extensions.ApiExtensions.ConfigureApiBehaviorOptions(IServiceCollection)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Api/Extensions/ApiExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: ConfigureApiBehaviorOptions
+    path: ../src/NeerCore.Api/Extensions/ApiExtensions.cs
+    startLine: 40
+  assemblies:
+  - NeerCore.Api
+  namespace: NeerCore.Api.Extensions
+  syntax:
+    content: public static IServiceCollection ConfigureApiBehaviorOptions(this IServiceCollection services)
+    parameters:
+    - id: services
+      type: IServiceCollection
+    return:
+      type: IServiceCollection
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function ConfigureApiBehaviorOptions(services As IServiceCollection) As IServiceCollection
+  overload: NeerCore.Api.Extensions.ApiExtensions.ConfigureApiBehaviorOptions*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: NeerCore.Api.Extensions
+  commentId: N:NeerCore.Api.Extensions
+  name: NeerCore.Api.Extensions
+  nameWithType: NeerCore.Api.Extensions
+  fullName: NeerCore.Api.Extensions
+- uid: NeerCore.Api.Extensions.ApiExtensions.AddDefaultCorsPolicy*
+  commentId: Overload:NeerCore.Api.Extensions.ApiExtensions.AddDefaultCorsPolicy
+  name: AddDefaultCorsPolicy
+  nameWithType: ApiExtensions.AddDefaultCorsPolicy
+  fullName: NeerCore.Api.Extensions.ApiExtensions.AddDefaultCorsPolicy
+- uid: IServiceCollection
+  isExternal: true
+  name: IServiceCollection
+  nameWithType: IServiceCollection
+  fullName: IServiceCollection
+- uid: NeerCore.Api.Extensions.ApiExtensions.AddNeerApiVersioning*
+  commentId: Overload:NeerCore.Api.Extensions.ApiExtensions.AddNeerApiVersioning
+  name: AddNeerApiVersioning
+  nameWithType: ApiExtensions.AddNeerApiVersioning
+  fullName: NeerCore.Api.Extensions.ApiExtensions.AddNeerApiVersioning
+- uid: System.Nullable{IApiVersionReader}
+  commentId: '!:System.Nullable{IApiVersionReader}'
+  definition: System.Nullable`1
+  name: Nullable<IApiVersionReader>
+  nameWithType: Nullable<IApiVersionReader>
+  fullName: System.Nullable<IApiVersionReader>
+  nameWithType.vb: Nullable(Of IApiVersionReader)
+  fullName.vb: System.Nullable(Of IApiVersionReader)
+  name.vb: Nullable(Of IApiVersionReader)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: IApiVersionReader
+    name: IApiVersionReader
+    nameWithType: IApiVersionReader
+    fullName: IApiVersionReader
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: IApiVersionReader
+    name: IApiVersionReader
+    nameWithType: IApiVersionReader
+    fullName: IApiVersionReader
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable`1
+  isExternal: true
+  name: Nullable<>
+  nameWithType: Nullable<>
+  fullName: System.Nullable<>
+  nameWithType.vb: Nullable(Of )
+  fullName.vb: System.Nullable(Of )
+  name.vb: Nullable(Of )
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NeerCore.Api.Extensions.ApiExtensions.ConfigureApiBehaviorOptions*
+  commentId: Overload:NeerCore.Api.Extensions.ApiExtensions.ConfigureApiBehaviorOptions
+  name: ConfigureApiBehaviorOptions
+  nameWithType: ApiExtensions.ConfigureApiBehaviorOptions
+  fullName: NeerCore.Api.Extensions.ApiExtensions.ConfigureApiBehaviorOptions

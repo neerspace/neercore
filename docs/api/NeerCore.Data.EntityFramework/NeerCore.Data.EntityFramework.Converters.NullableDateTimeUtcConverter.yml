@@ -1,0 +1,82 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Data.EntityFramework.Converters.NullableDateTimeUtcConverter
+  commentId: T:NeerCore.Data.EntityFramework.Converters.NullableDateTimeUtcConverter
+  id: NullableDateTimeUtcConverter
+  parent: NeerCore.Data.EntityFramework.Converters
+  children:
+  - NeerCore.Data.EntityFramework.Converters.NullableDateTimeUtcConverter.#ctor
+  langs:
+  - csharp
+  - vb
+  name: NullableDateTimeUtcConverter
+  nameWithType: NullableDateTimeUtcConverter
+  fullName: NeerCore.Data.EntityFramework.Converters.NullableDateTimeUtcConverter
+  type: Class
+  source:
+    remote:
+      path: src/NeerCore.Data.EntityFramework/Converters/NullableDateTimeUtcConverter.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: NullableDateTimeUtcConverter
+    path: ../src/NeerCore.Data.EntityFramework/Converters/NullableDateTimeUtcConverter.cs
+    startLine: 4
+  assemblies:
+  - NeerCore.Data.EntityFramework
+  namespace: NeerCore.Data.EntityFramework.Converters
+  syntax:
+    content: 'public sealed class NullableDateTimeUtcConverter : ValueConverter<DateTime?, DateTime?>'
+    content.vb: >-
+      Public NotInheritable Class NullableDateTimeUtcConverter
+          Inherits ValueConverter(Of DateTime?, DateTime?)
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: NeerCore.Data.EntityFramework.Converters.NullableDateTimeUtcConverter.#ctor
+  commentId: M:NeerCore.Data.EntityFramework.Converters.NullableDateTimeUtcConverter.#ctor
+  id: '#ctor'
+  parent: NeerCore.Data.EntityFramework.Converters.NullableDateTimeUtcConverter
+  langs:
+  - csharp
+  - vb
+  name: NullableDateTimeUtcConverter()
+  nameWithType: NullableDateTimeUtcConverter.NullableDateTimeUtcConverter()
+  fullName: NeerCore.Data.EntityFramework.Converters.NullableDateTimeUtcConverter.NullableDateTimeUtcConverter()
+  type: Constructor
+  source:
+    remote:
+      path: src/NeerCore.Data.EntityFramework/Converters/NullableDateTimeUtcConverter.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: .ctor
+    path: ../src/NeerCore.Data.EntityFramework/Converters/NullableDateTimeUtcConverter.cs
+    startLine: 6
+  assemblies:
+  - NeerCore.Data.EntityFramework
+  namespace: NeerCore.Data.EntityFramework.Converters
+  syntax:
+    content: public NullableDateTimeUtcConverter()
+    content.vb: Public Sub New
+  overload: NeerCore.Data.EntityFramework.Converters.NullableDateTimeUtcConverter.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: NeerCore.Data.EntityFramework.Converters
+  commentId: N:NeerCore.Data.EntityFramework.Converters
+  name: NeerCore.Data.EntityFramework.Converters
+  nameWithType: NeerCore.Data.EntityFramework.Converters
+  fullName: NeerCore.Data.EntityFramework.Converters
+- uid: NeerCore.Data.EntityFramework.Converters.NullableDateTimeUtcConverter.#ctor*
+  commentId: Overload:NeerCore.Data.EntityFramework.Converters.NullableDateTimeUtcConverter.#ctor
+  name: NullableDateTimeUtcConverter
+  nameWithType: NullableDateTimeUtcConverter.NullableDateTimeUtcConverter
+  fullName: NeerCore.Data.EntityFramework.Converters.NullableDateTimeUtcConverter.NullableDateTimeUtcConverter

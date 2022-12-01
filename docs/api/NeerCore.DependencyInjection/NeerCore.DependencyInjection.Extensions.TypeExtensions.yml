@@ -1,0 +1,326 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.DependencyInjection.Extensions.TypeExtensions
+  commentId: T:NeerCore.DependencyInjection.Extensions.TypeExtensions
+  id: TypeExtensions
+  parent: NeerCore.DependencyInjection.Extensions
+  children:
+  - NeerCore.DependencyInjection.Extensions.TypeExtensions.GetAttribute``1(Type,System.Boolean)
+  - NeerCore.DependencyInjection.Extensions.TypeExtensions.GetRequiredAttribute``1(Type,System.Boolean)
+  - NeerCore.DependencyInjection.Extensions.TypeExtensions.InheritsFrom(System.Nullable{Type},System.Nullable{Type})
+  langs:
+  - csharp
+  - vb
+  name: TypeExtensions
+  nameWithType: TypeExtensions
+  fullName: NeerCore.DependencyInjection.Extensions.TypeExtensions
+  type: Class
+  source:
+    remote:
+      path: src/NeerCore.DependencyInjection/Extensions/TypeExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: TypeExtensions
+    path: src/NeerCore.DependencyInjection/Extensions/TypeExtensions.cs
+    startLine: 4
+  assemblies:
+  - NeerCore.DependencyInjection
+  namespace: NeerCore.DependencyInjection.Extensions
+  syntax:
+    content: 'public static class TypeExtensions : object'
+    content.vb: >-
+      Public Module TypeExtensions
+
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: NeerCore.DependencyInjection.Extensions.TypeExtensions.GetAttribute``1(Type,System.Boolean)
+  commentId: M:NeerCore.DependencyInjection.Extensions.TypeExtensions.GetAttribute``1(Type,System.Boolean)
+  id: GetAttribute``1(Type,System.Boolean)
+  isExtensionMethod: true
+  parent: NeerCore.DependencyInjection.Extensions.TypeExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetAttribute<TAttribute>(Type, Boolean)
+  nameWithType: TypeExtensions.GetAttribute<TAttribute>(Type, Boolean)
+  fullName: NeerCore.DependencyInjection.Extensions.TypeExtensions.GetAttribute<TAttribute>(Type, System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.DependencyInjection/Extensions/TypeExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: GetAttribute
+    path: src/NeerCore.DependencyInjection/Extensions/TypeExtensions.cs
+    startLine: 14
+  assemblies:
+  - NeerCore.DependencyInjection
+  namespace: NeerCore.DependencyInjection.Extensions
+  summary: "\nSimple way to get attribute on type.\n"
+  example: []
+  syntax:
+    content: >-
+      public static TAttribute GetAttribute<TAttribute>(this Type type, bool searchInParents = false)
+
+          where TAttribute : Attribute
+    parameters:
+    - id: type
+      type: Type
+      description: The type from which to get the attribute
+    - id: searchInParents
+      type: System.Boolean
+      description: Allows (if true) to search for given attribute in all parent classes.
+    typeParameters:
+    - id: TAttribute
+    return:
+      type: '{TAttribute}'
+      description: <see cref="!:TAttribute"></see> or <xref uid="langword_csharp_null" name="null" href=""></xref>.
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function GetAttribute(Of TAttribute As Attribute)(type As Type, searchInParents As Boolean = False) As TAttribute
+  overload: NeerCore.DependencyInjection.Extensions.TypeExtensions.GetAttribute*
+  nameWithType.vb: TypeExtensions.GetAttribute(Of TAttribute)(Type, Boolean)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: NeerCore.DependencyInjection.Extensions.TypeExtensions.GetAttribute(Of TAttribute)(Type, System.Boolean)
+  name.vb: GetAttribute(Of TAttribute)(Type, Boolean)
+- uid: NeerCore.DependencyInjection.Extensions.TypeExtensions.GetRequiredAttribute``1(Type,System.Boolean)
+  commentId: M:NeerCore.DependencyInjection.Extensions.TypeExtensions.GetRequiredAttribute``1(Type,System.Boolean)
+  id: GetRequiredAttribute``1(Type,System.Boolean)
+  isExtensionMethod: true
+  parent: NeerCore.DependencyInjection.Extensions.TypeExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetRequiredAttribute<TAttribute>(Type, Boolean)
+  nameWithType: TypeExtensions.GetRequiredAttribute<TAttribute>(Type, Boolean)
+  fullName: NeerCore.DependencyInjection.Extensions.TypeExtensions.GetRequiredAttribute<TAttribute>(Type, System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.DependencyInjection/Extensions/TypeExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: GetRequiredAttribute
+    path: src/NeerCore.DependencyInjection/Extensions/TypeExtensions.cs
+    startLine: 31
+  assemblies:
+  - NeerCore.DependencyInjection
+  namespace: NeerCore.DependencyInjection.Extensions
+  summary: "\nSimple way to get required attribute on type.\n"
+  example: []
+  syntax:
+    content: >-
+      public static TAttribute GetRequiredAttribute<TAttribute>(this Type type, bool searchInParents = false)
+
+          where TAttribute : Attribute
+    parameters:
+    - id: type
+      type: Type
+      description: The type from which to get the attribute
+    - id: searchInParents
+      type: System.Boolean
+      description: Allows (if true) to search for given attribute in all parent classes.
+    typeParameters:
+    - id: TAttribute
+    return:
+      type: '{TAttribute}'
+      description: <see cref="!:TAttribute"></see> or throws <see cref="!:TypeLoadException"></see>.
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function GetRequiredAttribute(Of TAttribute As Attribute)(type As Type, searchInParents As Boolean = False) As TAttribute
+  overload: NeerCore.DependencyInjection.Extensions.TypeExtensions.GetRequiredAttribute*
+  nameWithType.vb: TypeExtensions.GetRequiredAttribute(Of TAttribute)(Type, Boolean)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: NeerCore.DependencyInjection.Extensions.TypeExtensions.GetRequiredAttribute(Of TAttribute)(Type, System.Boolean)
+  name.vb: GetRequiredAttribute(Of TAttribute)(Type, Boolean)
+- uid: NeerCore.DependencyInjection.Extensions.TypeExtensions.InheritsFrom(System.Nullable{Type},System.Nullable{Type})
+  commentId: M:NeerCore.DependencyInjection.Extensions.TypeExtensions.InheritsFrom(System.Nullable{Type},System.Nullable{Type})
+  id: InheritsFrom(System.Nullable{Type},System.Nullable{Type})
+  isExtensionMethod: true
+  parent: NeerCore.DependencyInjection.Extensions.TypeExtensions
+  langs:
+  - csharp
+  - vb
+  name: InheritsFrom(Nullable<Type>, Nullable<Type>)
+  nameWithType: TypeExtensions.InheritsFrom(Nullable<Type>, Nullable<Type>)
+  fullName: NeerCore.DependencyInjection.Extensions.TypeExtensions.InheritsFrom(System.Nullable<Type>, System.Nullable<Type>)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.DependencyInjection/Extensions/TypeExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: InheritsFrom
+    path: src/NeerCore.DependencyInjection/Extensions/TypeExtensions.cs
+    startLine: 45
+  assemblies:
+  - NeerCore.DependencyInjection
+  namespace: NeerCore.DependencyInjection.Extensions
+  summary: "\nSafely checks is the <code data-dev-comment-type=\"paramref\" class=\"paramref\">t1</code> is inherited from <code data-dev-comment-type=\"paramref\" class=\"paramref\">t2</code>.\n"
+  example: []
+  syntax:
+    content: public static bool InheritsFrom(this Type? t1, Type? t2)
+    parameters:
+    - id: t1
+      type: System.Nullable{Type}
+    - id: t2
+      type: System.Nullable{Type}
+    return:
+      type: System.Boolean
+      description: <strong>true</strong> is inherits otherwise <strong>false</strong>
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function InheritsFrom(t1 As Type?, t2 As Type?) As Boolean
+  overload: NeerCore.DependencyInjection.Extensions.TypeExtensions.InheritsFrom*
+  nameWithType.vb: TypeExtensions.InheritsFrom(Nullable(Of Type), Nullable(Of Type))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: NeerCore.DependencyInjection.Extensions.TypeExtensions.InheritsFrom(System.Nullable(Of Type), System.Nullable(Of Type))
+  name.vb: InheritsFrom(Nullable(Of Type), Nullable(Of Type))
+references:
+- uid: NeerCore.DependencyInjection.Extensions
+  commentId: N:NeerCore.DependencyInjection.Extensions
+  name: NeerCore.DependencyInjection.Extensions
+  nameWithType: NeerCore.DependencyInjection.Extensions
+  fullName: NeerCore.DependencyInjection.Extensions
+- uid: NeerCore.DependencyInjection.Extensions.TypeExtensions.GetAttribute*
+  commentId: Overload:NeerCore.DependencyInjection.Extensions.TypeExtensions.GetAttribute
+  name: GetAttribute
+  nameWithType: TypeExtensions.GetAttribute
+  fullName: NeerCore.DependencyInjection.Extensions.TypeExtensions.GetAttribute
+- uid: Type
+  isExternal: true
+  name: Type
+  nameWithType: Type
+  fullName: Type
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: '{TAttribute}'
+  commentId: '!:TAttribute'
+  definition: TAttribute
+  name: TAttribute
+  nameWithType: TAttribute
+  fullName: TAttribute
+- uid: TAttribute
+  name: TAttribute
+  nameWithType: TAttribute
+  fullName: TAttribute
+- uid: NeerCore.DependencyInjection.Extensions.TypeExtensions.GetRequiredAttribute*
+  commentId: Overload:NeerCore.DependencyInjection.Extensions.TypeExtensions.GetRequiredAttribute
+  name: GetRequiredAttribute
+  nameWithType: TypeExtensions.GetRequiredAttribute
+  fullName: NeerCore.DependencyInjection.Extensions.TypeExtensions.GetRequiredAttribute
+- uid: NeerCore.DependencyInjection.Extensions.TypeExtensions.InheritsFrom*
+  commentId: Overload:NeerCore.DependencyInjection.Extensions.TypeExtensions.InheritsFrom
+  name: InheritsFrom
+  nameWithType: TypeExtensions.InheritsFrom
+  fullName: NeerCore.DependencyInjection.Extensions.TypeExtensions.InheritsFrom
+- uid: System.Nullable{Type}
+  commentId: '!:System.Nullable{Type}'
+  definition: System.Nullable`1
+  name: Nullable<Type>
+  nameWithType: Nullable<Type>
+  fullName: System.Nullable<Type>
+  nameWithType.vb: Nullable(Of Type)
+  fullName.vb: System.Nullable(Of Type)
+  name.vb: Nullable(Of Type)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Type
+    name: Type
+    nameWithType: Type
+    fullName: Type
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Type
+    name: Type
+    nameWithType: Type
+    fullName: Type
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable`1
+  isExternal: true
+  name: Nullable<>
+  nameWithType: Nullable<>
+  fullName: System.Nullable<>
+  nameWithType.vb: Nullable(Of )
+  fullName.vb: System.Nullable(Of )
+  name.vb: Nullable(Of )
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )

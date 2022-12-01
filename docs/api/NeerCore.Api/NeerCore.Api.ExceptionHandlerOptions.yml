@@ -1,0 +1,174 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Api.ExceptionHandlerOptions
+  commentId: T:NeerCore.Api.ExceptionHandlerOptions
+  id: ExceptionHandlerOptions
+  parent: NeerCore.Api
+  children:
+  - NeerCore.Api.ExceptionHandlerOptions.Extended500ExceptionMessage
+  - NeerCore.Api.ExceptionHandlerOptions.HandleFluentValidationExceptions
+  - NeerCore.Api.ExceptionHandlerOptions.HandleHttpExceptions
+  langs:
+  - csharp
+  - vb
+  name: ExceptionHandlerOptions
+  nameWithType: ExceptionHandlerOptions
+  fullName: NeerCore.Api.ExceptionHandlerOptions
+  type: Class
+  source:
+    remote:
+      path: src/NeerCore.Api/ExceptionHandlerOptions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: ExceptionHandlerOptions
+    path: ../src/NeerCore.Api/ExceptionHandlerOptions.cs
+    startLine: 2
+  assemblies:
+  - NeerCore.Api
+  namespace: NeerCore.Api
+  syntax:
+    content: 'public sealed class ExceptionHandlerOptions : object'
+    content.vb: >-
+      Public NotInheritable Class ExceptionHandlerOptions
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: NeerCore.Api.ExceptionHandlerOptions.HandleHttpExceptions
+  commentId: P:NeerCore.Api.ExceptionHandlerOptions.HandleHttpExceptions
+  id: HandleHttpExceptions
+  parent: NeerCore.Api.ExceptionHandlerOptions
+  langs:
+  - csharp
+  - vb
+  name: HandleHttpExceptions
+  nameWithType: ExceptionHandlerOptions.HandleHttpExceptions
+  fullName: NeerCore.Api.ExceptionHandlerOptions.HandleHttpExceptions
+  type: Property
+  source:
+    remote:
+      path: src/NeerCore.Api/ExceptionHandlerOptions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: HandleHttpExceptions
+    path: ../src/NeerCore.Api/ExceptionHandlerOptions.cs
+    startLine: 4
+  assemblies:
+  - NeerCore.Api
+  namespace: NeerCore.Api
+  syntax:
+    content: public bool HandleHttpExceptions { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property HandleHttpExceptions As Boolean
+  overload: NeerCore.Api.ExceptionHandlerOptions.HandleHttpExceptions*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: NeerCore.Api.ExceptionHandlerOptions.HandleFluentValidationExceptions
+  commentId: P:NeerCore.Api.ExceptionHandlerOptions.HandleFluentValidationExceptions
+  id: HandleFluentValidationExceptions
+  parent: NeerCore.Api.ExceptionHandlerOptions
+  langs:
+  - csharp
+  - vb
+  name: HandleFluentValidationExceptions
+  nameWithType: ExceptionHandlerOptions.HandleFluentValidationExceptions
+  fullName: NeerCore.Api.ExceptionHandlerOptions.HandleFluentValidationExceptions
+  type: Property
+  source:
+    remote:
+      path: src/NeerCore.Api/ExceptionHandlerOptions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: HandleFluentValidationExceptions
+    path: ../src/NeerCore.Api/ExceptionHandlerOptions.cs
+    startLine: 5
+  assemblies:
+  - NeerCore.Api
+  namespace: NeerCore.Api
+  syntax:
+    content: public bool HandleFluentValidationExceptions { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property HandleFluentValidationExceptions As Boolean
+  overload: NeerCore.Api.ExceptionHandlerOptions.HandleFluentValidationExceptions*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: NeerCore.Api.ExceptionHandlerOptions.Extended500ExceptionMessage
+  commentId: P:NeerCore.Api.ExceptionHandlerOptions.Extended500ExceptionMessage
+  id: Extended500ExceptionMessage
+  parent: NeerCore.Api.ExceptionHandlerOptions
+  langs:
+  - csharp
+  - vb
+  name: Extended500ExceptionMessage
+  nameWithType: ExceptionHandlerOptions.Extended500ExceptionMessage
+  fullName: NeerCore.Api.ExceptionHandlerOptions.Extended500ExceptionMessage
+  type: Property
+  source:
+    remote:
+      path: src/NeerCore.Api/ExceptionHandlerOptions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: Extended500ExceptionMessage
+    path: ../src/NeerCore.Api/ExceptionHandlerOptions.cs
+    startLine: 6
+  assemblies:
+  - NeerCore.Api
+  namespace: NeerCore.Api
+  syntax:
+    content: public bool Extended500ExceptionMessage { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property Extended500ExceptionMessage As Boolean
+  overload: NeerCore.Api.ExceptionHandlerOptions.Extended500ExceptionMessage*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: NeerCore.Api
+  commentId: N:NeerCore.Api
+  name: NeerCore.Api
+  nameWithType: NeerCore.Api
+  fullName: NeerCore.Api
+- uid: NeerCore.Api.ExceptionHandlerOptions.HandleHttpExceptions*
+  commentId: Overload:NeerCore.Api.ExceptionHandlerOptions.HandleHttpExceptions
+  name: HandleHttpExceptions
+  nameWithType: ExceptionHandlerOptions.HandleHttpExceptions
+  fullName: NeerCore.Api.ExceptionHandlerOptions.HandleHttpExceptions
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: NeerCore.Api.ExceptionHandlerOptions.HandleFluentValidationExceptions*
+  commentId: Overload:NeerCore.Api.ExceptionHandlerOptions.HandleFluentValidationExceptions
+  name: HandleFluentValidationExceptions
+  nameWithType: ExceptionHandlerOptions.HandleFluentValidationExceptions
+  fullName: NeerCore.Api.ExceptionHandlerOptions.HandleFluentValidationExceptions
+- uid: NeerCore.Api.ExceptionHandlerOptions.Extended500ExceptionMessage*
+  commentId: Overload:NeerCore.Api.ExceptionHandlerOptions.Extended500ExceptionMessage
+  name: Extended500ExceptionMessage
+  nameWithType: ExceptionHandlerOptions.Extended500ExceptionMessage
+  fullName: NeerCore.Api.ExceptionHandlerOptions.Extended500ExceptionMessage

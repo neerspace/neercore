@@ -1,0 +1,155 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Typeids.Api.CustomIdsConverterFactory
+  commentId: T:NeerCore.Typeids.Api.CustomIdsConverterFactory
+  id: CustomIdsConverterFactory
+  parent: NeerCore.Typeids.Api
+  children:
+  - NeerCore.Typeids.Api.CustomIdsConverterFactory.CanConvert(Type)
+  - NeerCore.Typeids.Api.CustomIdsConverterFactory.CreateConverter(Type,JsonSerializerOptions)
+  langs:
+  - csharp
+  - vb
+  name: CustomIdsConverterFactory
+  nameWithType: CustomIdsConverterFactory
+  fullName: NeerCore.Typeids.Api.CustomIdsConverterFactory
+  type: Class
+  source:
+    remote:
+      path: src/NeerCore.Typeids.Api/TypeidsConverterFactory.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: CustomIdsConverterFactory
+    path: ../src/NeerCore.Typeids.Api/TypeidsConverterFactory.cs
+    startLine: 10
+  assemblies:
+  - NeerCore.Typeids.Api
+  namespace: NeerCore.Typeids.Api
+  syntax:
+    content: 'public class CustomIdsConverterFactory : JsonConverterFactory'
+    content.vb: >-
+      Public Class CustomIdsConverterFactory
+
+          Inherits JsonConverterFactory
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: NeerCore.Typeids.Api.CustomIdsConverterFactory.CanConvert(Type)
+  commentId: M:NeerCore.Typeids.Api.CustomIdsConverterFactory.CanConvert(Type)
+  id: CanConvert(Type)
+  parent: NeerCore.Typeids.Api.CustomIdsConverterFactory
+  langs:
+  - csharp
+  - vb
+  name: CanConvert(Type)
+  nameWithType: CustomIdsConverterFactory.CanConvert(Type)
+  fullName: NeerCore.Typeids.Api.CustomIdsConverterFactory.CanConvert(Type)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Typeids.Api/TypeidsConverterFactory.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: CanConvert
+    path: ../src/NeerCore.Typeids.Api/TypeidsConverterFactory.cs
+    startLine: 16
+  assemblies:
+  - NeerCore.Typeids.Api
+  namespace: NeerCore.Typeids.Api
+  syntax:
+    content: public override bool CanConvert(Type typeToConvert)
+    parameters:
+    - id: typeToConvert
+      type: Type
+    return:
+      type: System.Boolean
+    content.vb: Public Overrides Function CanConvert(typeToConvert As Type) As Boolean
+  overload: NeerCore.Typeids.Api.CustomIdsConverterFactory.CanConvert*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+- uid: NeerCore.Typeids.Api.CustomIdsConverterFactory.CreateConverter(Type,JsonSerializerOptions)
+  commentId: M:NeerCore.Typeids.Api.CustomIdsConverterFactory.CreateConverter(Type,JsonSerializerOptions)
+  id: CreateConverter(Type,JsonSerializerOptions)
+  parent: NeerCore.Typeids.Api.CustomIdsConverterFactory
+  langs:
+  - csharp
+  - vb
+  name: CreateConverter(Type, JsonSerializerOptions)
+  nameWithType: CustomIdsConverterFactory.CreateConverter(Type, JsonSerializerOptions)
+  fullName: NeerCore.Typeids.Api.CustomIdsConverterFactory.CreateConverter(Type, JsonSerializerOptions)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Typeids.Api/TypeidsConverterFactory.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: CreateConverter
+    path: ../src/NeerCore.Typeids.Api/TypeidsConverterFactory.cs
+    startLine: 21
+  assemblies:
+  - NeerCore.Typeids.Api
+  namespace: NeerCore.Typeids.Api
+  syntax:
+    content: public override JsonConverter CreateConverter(Type typeToConvert, JsonSerializerOptions options)
+    parameters:
+    - id: typeToConvert
+      type: Type
+    - id: options
+      type: JsonSerializerOptions
+    return:
+      type: JsonConverter
+    content.vb: Public Overrides Function CreateConverter(typeToConvert As Type, options As JsonSerializerOptions) As JsonConverter
+  overload: NeerCore.Typeids.Api.CustomIdsConverterFactory.CreateConverter*
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+references:
+- uid: NeerCore.Typeids.Api
+  commentId: N:NeerCore.Typeids.Api
+  name: NeerCore.Typeids.Api
+  nameWithType: NeerCore.Typeids.Api
+  fullName: NeerCore.Typeids.Api
+- uid: NeerCore.Typeids.Api.CustomIdsConverterFactory.CanConvert*
+  commentId: Overload:NeerCore.Typeids.Api.CustomIdsConverterFactory.CanConvert
+  name: CanConvert
+  nameWithType: CustomIdsConverterFactory.CanConvert
+  fullName: NeerCore.Typeids.Api.CustomIdsConverterFactory.CanConvert
+- uid: Type
+  isExternal: true
+  name: Type
+  nameWithType: Type
+  fullName: Type
+- uid: System.Boolean
+  commentId: '!:System.Boolean'
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: NeerCore.Typeids.Api.CustomIdsConverterFactory.CreateConverter*
+  commentId: Overload:NeerCore.Typeids.Api.CustomIdsConverterFactory.CreateConverter
+  name: CreateConverter
+  nameWithType: CustomIdsConverterFactory.CreateConverter
+  fullName: NeerCore.Typeids.Api.CustomIdsConverterFactory.CreateConverter
+- uid: JsonSerializerOptions
+  isExternal: true
+  name: JsonSerializerOptions
+  nameWithType: JsonSerializerOptions
+  fullName: JsonSerializerOptions
+- uid: JsonConverter
+  commentId: '!:JsonConverter'
+  isExternal: true
+  name: JsonConverter
+  nameWithType: JsonConverter
+  fullName: JsonConverter

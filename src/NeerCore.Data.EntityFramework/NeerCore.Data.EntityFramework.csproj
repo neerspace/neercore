@@ -6,6 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <IsPackable>true</IsPackable>
+    <DocumentationFile>$(XmlDocsBaseDirectory)/NeerCore.Data.EntityFramework.xml</DocumentationFile>
 
     <PackageTags>neercore entityframeworkcore</PackageTags>
     <Description>The NeerCore.Data.EntityFramework package is a wrapper for Microsoft.EntityFrameworkCore. It simplifies the work with this library and is integrated into the NeerCore ecosystem.

@@ -1,0 +1,90 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Mapping.DefaultMappers.DataMappingRegister
+  commentId: T:NeerCore.Mapping.DefaultMappers.DataMappingRegister
+  id: DataMappingRegister
+  parent: NeerCore.Mapping.DefaultMappers
+  children:
+  - NeerCore.Mapping.DefaultMappers.DataMappingRegister.Register(TypeAdapterConfig)
+  langs:
+  - csharp
+  - vb
+  name: DataMappingRegister
+  nameWithType: DataMappingRegister
+  fullName: NeerCore.Mapping.DefaultMappers.DataMappingRegister
+  type: Class
+  source:
+    remote:
+      path: src/NeerCore.Mapping.Mapster/DefaultMappers/DataMappingRegister.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: DataMappingRegister
+    path: src/NeerCore.Mapping.Mapster/DefaultMappers/DataMappingRegister.cs
+    startLine: 5
+  assemblies:
+  - NeerCore.Mapping.Mapster
+  namespace: NeerCore.Mapping.DefaultMappers
+  syntax:
+    content: 'public class DataMappingRegister : IRegister'
+    content.vb: >-
+      Public Class DataMappingRegister
+
+          Inherits IRegister
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: NeerCore.Mapping.DefaultMappers.DataMappingRegister.Register(TypeAdapterConfig)
+  commentId: M:NeerCore.Mapping.DefaultMappers.DataMappingRegister.Register(TypeAdapterConfig)
+  id: Register(TypeAdapterConfig)
+  parent: NeerCore.Mapping.DefaultMappers.DataMappingRegister
+  langs:
+  - csharp
+  - vb
+  name: Register(TypeAdapterConfig)
+  nameWithType: DataMappingRegister.Register(TypeAdapterConfig)
+  fullName: NeerCore.Mapping.DefaultMappers.DataMappingRegister.Register(TypeAdapterConfig)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Mapping.Mapster/DefaultMappers/DataMappingRegister.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: Register
+    path: src/NeerCore.Mapping.Mapster/DefaultMappers/DataMappingRegister.cs
+    startLine: 7
+  assemblies:
+  - NeerCore.Mapping.Mapster
+  namespace: NeerCore.Mapping.DefaultMappers
+  syntax:
+    content: public void Register(TypeAdapterConfig config)
+    parameters:
+    - id: config
+      type: TypeAdapterConfig
+    content.vb: Public Sub Register(config As TypeAdapterConfig)
+  overload: NeerCore.Mapping.DefaultMappers.DataMappingRegister.Register*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: NeerCore.Mapping.DefaultMappers
+  commentId: N:NeerCore.Mapping.DefaultMappers
+  name: NeerCore.Mapping.DefaultMappers
+  nameWithType: NeerCore.Mapping.DefaultMappers
+  fullName: NeerCore.Mapping.DefaultMappers
+- uid: NeerCore.Mapping.DefaultMappers.DataMappingRegister.Register*
+  commentId: Overload:NeerCore.Mapping.DefaultMappers.DataMappingRegister.Register
+  name: Register
+  nameWithType: DataMappingRegister.Register
+  fullName: NeerCore.Mapping.DefaultMappers.DataMappingRegister.Register
+- uid: TypeAdapterConfig
+  commentId: '!:TypeAdapterConfig'
+  isExternal: true
+  name: TypeAdapterConfig
+  nameWithType: TypeAdapterConfig
+  fullName: TypeAdapterConfig

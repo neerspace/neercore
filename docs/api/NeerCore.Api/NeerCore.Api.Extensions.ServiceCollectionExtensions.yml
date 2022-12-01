@@ -1,0 +1,557 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Api.Extensions.ServiceCollectionExtensions
+  commentId: T:NeerCore.Api.Extensions.ServiceCollectionExtensions
+  id: ServiceCollectionExtensions
+  parent: NeerCore.Api.Extensions
+  children:
+  - NeerCore.Api.Extensions.ServiceCollectionExtensions.AddNeerApiServices(IServiceCollection)
+  - NeerCore.Api.Extensions.ServiceCollectionExtensions.AddNeerApiServices(IServiceCollection,Assembly[])
+  - NeerCore.Api.Extensions.ServiceCollectionExtensions.AddNeerApiServices(IServiceCollection,IEnumerable{Assembly},System.Nullable{Func{ApiVersionDescription,OpenApiInfo}})
+  - NeerCore.Api.Extensions.ServiceCollectionExtensions.AddNeerApiServices(IServiceCollection,System.String[])
+  - NeerCore.Api.Extensions.ServiceCollectionExtensions.AddNeerControllers(IServiceCollection)
+  langs:
+  - csharp
+  - vb
+  name: ServiceCollectionExtensions
+  nameWithType: ServiceCollectionExtensions
+  fullName: NeerCore.Api.Extensions.ServiceCollectionExtensions
+  type: Class
+  source:
+    remote:
+      path: src/NeerCore.Api/Extensions/ServiceCollectionExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: ServiceCollectionExtensions
+    path: ../src/NeerCore.Api/Extensions/ServiceCollectionExtensions.cs
+    startLine: 10
+  assemblies:
+  - NeerCore.Api
+  namespace: NeerCore.Api.Extensions
+  syntax:
+    content: 'public static class ServiceCollectionExtensions : object'
+    content.vb: >-
+      Public Module ServiceCollectionExtensions
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: NeerCore.Api.Extensions.ServiceCollectionExtensions.AddNeerApiServices(IServiceCollection)
+  commentId: M:NeerCore.Api.Extensions.ServiceCollectionExtensions.AddNeerApiServices(IServiceCollection)
+  id: AddNeerApiServices(IServiceCollection)
+  isExtensionMethod: true
+  parent: NeerCore.Api.Extensions.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddNeerApiServices(IServiceCollection)
+  nameWithType: ServiceCollectionExtensions.AddNeerApiServices(IServiceCollection)
+  fullName: NeerCore.Api.Extensions.ServiceCollectionExtensions.AddNeerApiServices(IServiceCollection)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Api/Extensions/ServiceCollectionExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: AddNeerApiServices
+    path: ../src/NeerCore.Api/Extensions/ServiceCollectionExtensions.cs
+    startLine: 16
+  assemblies:
+  - NeerCore.Api
+  namespace: NeerCore.Api.Extensions
+  summary: "\nAdds default NeerCore stuff into your application services.\n"
+  example: []
+  syntax:
+    content: public static IServiceCollection AddNeerApiServices(this IServiceCollection services)
+    parameters:
+    - id: services
+      type: IServiceCollection
+      description: The services available in the application.
+    return:
+      type: IServiceCollection
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function AddNeerApiServices(services As IServiceCollection) As IServiceCollection
+  overload: NeerCore.Api.Extensions.ServiceCollectionExtensions.AddNeerApiServices*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: NeerCore.Api.Extensions.ServiceCollectionExtensions.AddNeerApiServices(IServiceCollection,System.String[])
+  commentId: M:NeerCore.Api.Extensions.ServiceCollectionExtensions.AddNeerApiServices(IServiceCollection,System.String[])
+  id: AddNeerApiServices(IServiceCollection,System.String[])
+  isExtensionMethod: true
+  parent: NeerCore.Api.Extensions.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddNeerApiServices(IServiceCollection, String[])
+  nameWithType: ServiceCollectionExtensions.AddNeerApiServices(IServiceCollection, String[])
+  fullName: NeerCore.Api.Extensions.ServiceCollectionExtensions.AddNeerApiServices(IServiceCollection, System.String[])
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Api/Extensions/ServiceCollectionExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: AddNeerApiServices
+    path: ../src/NeerCore.Api/Extensions/ServiceCollectionExtensions.cs
+    startLine: 21
+  assemblies:
+  - NeerCore.Api
+  namespace: NeerCore.Api.Extensions
+  syntax:
+    content: public static IServiceCollection AddNeerApiServices(this IServiceCollection services, params string[] assemblyNames)
+    parameters:
+    - id: services
+      type: IServiceCollection
+    - id: assemblyNames
+      type: System.String[]
+    return:
+      type: IServiceCollection
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function AddNeerApiServices(services As IServiceCollection, ParamArray assemblyNames As String()) As IServiceCollection
+  overload: NeerCore.Api.Extensions.ServiceCollectionExtensions.AddNeerApiServices*
+  nameWithType.vb: ServiceCollectionExtensions.AddNeerApiServices(IServiceCollection, String())
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: NeerCore.Api.Extensions.ServiceCollectionExtensions.AddNeerApiServices(IServiceCollection, System.String())
+  name.vb: AddNeerApiServices(IServiceCollection, String())
+- uid: NeerCore.Api.Extensions.ServiceCollectionExtensions.AddNeerApiServices(IServiceCollection,Assembly[])
+  commentId: M:NeerCore.Api.Extensions.ServiceCollectionExtensions.AddNeerApiServices(IServiceCollection,Assembly[])
+  id: AddNeerApiServices(IServiceCollection,Assembly[])
+  isExtensionMethod: true
+  parent: NeerCore.Api.Extensions.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddNeerApiServices(IServiceCollection, Assembly[])
+  nameWithType: ServiceCollectionExtensions.AddNeerApiServices(IServiceCollection, Assembly[])
+  fullName: NeerCore.Api.Extensions.ServiceCollectionExtensions.AddNeerApiServices(IServiceCollection, Assembly[])
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Api/Extensions/ServiceCollectionExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: AddNeerApiServices
+    path: ../src/NeerCore.Api/Extensions/ServiceCollectionExtensions.cs
+    startLine: 26
+  assemblies:
+  - NeerCore.Api
+  namespace: NeerCore.Api.Extensions
+  syntax:
+    content: public static IServiceCollection AddNeerApiServices(this IServiceCollection services, params Assembly[] assemblies)
+    parameters:
+    - id: services
+      type: IServiceCollection
+    - id: assemblies
+      type: Assembly[]
+    return:
+      type: IServiceCollection
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function AddNeerApiServices(services As IServiceCollection, ParamArray assemblies As Assembly()) As IServiceCollection
+  overload: NeerCore.Api.Extensions.ServiceCollectionExtensions.AddNeerApiServices*
+  nameWithType.vb: ServiceCollectionExtensions.AddNeerApiServices(IServiceCollection, Assembly())
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: NeerCore.Api.Extensions.ServiceCollectionExtensions.AddNeerApiServices(IServiceCollection, Assembly())
+  name.vb: AddNeerApiServices(IServiceCollection, Assembly())
+- uid: NeerCore.Api.Extensions.ServiceCollectionExtensions.AddNeerApiServices(IServiceCollection,IEnumerable{Assembly},System.Nullable{Func{ApiVersionDescription,OpenApiInfo}})
+  commentId: M:NeerCore.Api.Extensions.ServiceCollectionExtensions.AddNeerApiServices(IServiceCollection,IEnumerable{Assembly},System.Nullable{Func{ApiVersionDescription,OpenApiInfo}})
+  id: AddNeerApiServices(IServiceCollection,IEnumerable{Assembly},System.Nullable{Func{ApiVersionDescription,OpenApiInfo}})
+  isExtensionMethod: true
+  parent: NeerCore.Api.Extensions.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddNeerApiServices(IServiceCollection, IEnumerable<Assembly>, Nullable<Func<ApiVersionDescription, OpenApiInfo>>)
+  nameWithType: ServiceCollectionExtensions.AddNeerApiServices(IServiceCollection, IEnumerable<Assembly>, Nullable<Func<ApiVersionDescription, OpenApiInfo>>)
+  fullName: NeerCore.Api.Extensions.ServiceCollectionExtensions.AddNeerApiServices(IServiceCollection, IEnumerable<Assembly>, System.Nullable<Func<ApiVersionDescription, OpenApiInfo>>)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Api/Extensions/ServiceCollectionExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: AddNeerApiServices
+    path: ../src/NeerCore.Api/Extensions/ServiceCollectionExtensions.cs
+    startLine: 31
+  assemblies:
+  - NeerCore.Api
+  namespace: NeerCore.Api.Extensions
+  syntax:
+    content: public static IServiceCollection AddNeerApiServices(this IServiceCollection services, IEnumerable<Assembly> assemblies, Func<ApiVersionDescription, OpenApiInfo>? configureInfo)
+    parameters:
+    - id: services
+      type: IServiceCollection
+    - id: assemblies
+      type: IEnumerable{Assembly}
+    - id: configureInfo
+      type: System.Nullable{Func{ApiVersionDescription,OpenApiInfo}}
+    return:
+      type: IServiceCollection
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function AddNeerApiServices(services As IServiceCollection, assemblies As IEnumerable(Of Assembly), configureInfo As Func(Of ApiVersionDescription, OpenApiInfo)?) As IServiceCollection
+  overload: NeerCore.Api.Extensions.ServiceCollectionExtensions.AddNeerApiServices*
+  nameWithType.vb: ServiceCollectionExtensions.AddNeerApiServices(IServiceCollection, IEnumerable(Of Assembly), Nullable(Of Func(Of ApiVersionDescription, OpenApiInfo)))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: NeerCore.Api.Extensions.ServiceCollectionExtensions.AddNeerApiServices(IServiceCollection, IEnumerable(Of Assembly), System.Nullable(Of Func(Of ApiVersionDescription, OpenApiInfo)))
+  name.vb: AddNeerApiServices(IServiceCollection, IEnumerable(Of Assembly), Nullable(Of Func(Of ApiVersionDescription, OpenApiInfo)))
+- uid: NeerCore.Api.Extensions.ServiceCollectionExtensions.AddNeerControllers(IServiceCollection)
+  commentId: M:NeerCore.Api.Extensions.ServiceCollectionExtensions.AddNeerControllers(IServiceCollection)
+  id: AddNeerControllers(IServiceCollection)
+  isExtensionMethod: true
+  parent: NeerCore.Api.Extensions.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddNeerControllers(IServiceCollection)
+  nameWithType: ServiceCollectionExtensions.AddNeerControllers(IServiceCollection)
+  fullName: NeerCore.Api.Extensions.ServiceCollectionExtensions.AddNeerControllers(IServiceCollection)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Api/Extensions/ServiceCollectionExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: AddNeerControllers
+    path: ../src/NeerCore.Api/Extensions/ServiceCollectionExtensions.cs
+    startLine: 51
+  assemblies:
+  - NeerCore.Api
+  namespace: NeerCore.Api.Extensions
+  summary: "\nAdds services for controllers to the specified <see cref=\"!:IServiceCollection\"></see>\nwith configured conventions. For example there is <xref href=\"NeerCore.Api.KebabCaseNamingConvention\" data-throw-if-not-resolved=\"false\"></xref>\nused out of a box and <see cref=\"!:JsonStringEnumConverter\"></see> too.\n"
+  example: []
+  syntax:
+    content: public static IMvcBuilder AddNeerControllers(this IServiceCollection services)
+    parameters:
+    - id: services
+      type: IServiceCollection
+      description: The services available in the application.
+    return:
+      type: IMvcBuilder
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function AddNeerControllers(services As IServiceCollection) As IMvcBuilder
+  overload: NeerCore.Api.Extensions.ServiceCollectionExtensions.AddNeerControllers*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: NeerCore.Api.Extensions
+  commentId: N:NeerCore.Api.Extensions
+  name: NeerCore.Api.Extensions
+  nameWithType: NeerCore.Api.Extensions
+  fullName: NeerCore.Api.Extensions
+- uid: NeerCore.Api.Extensions.ServiceCollectionExtensions.AddNeerApiServices*
+  commentId: Overload:NeerCore.Api.Extensions.ServiceCollectionExtensions.AddNeerApiServices
+  name: AddNeerApiServices
+  nameWithType: ServiceCollectionExtensions.AddNeerApiServices
+  fullName: NeerCore.Api.Extensions.ServiceCollectionExtensions.AddNeerApiServices
+- uid: IServiceCollection
+  isExternal: true
+  name: IServiceCollection
+  nameWithType: IServiceCollection
+  fullName: IServiceCollection
+- uid: System.String[]
+  isExternal: true
+  name: String[]
+  nameWithType: String[]
+  fullName: System.String[]
+  nameWithType.vb: String()
+  fullName.vb: System.String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: Assembly[]
+  isExternal: true
+  name: Assembly[]
+  nameWithType: Assembly[]
+  fullName: Assembly[]
+  nameWithType.vb: Assembly()
+  fullName.vb: Assembly()
+  name.vb: Assembly()
+  spec.csharp:
+  - uid: Assembly
+    name: Assembly
+    nameWithType: Assembly
+    fullName: Assembly
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: Assembly
+    name: Assembly
+    nameWithType: Assembly
+    fullName: Assembly
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: IEnumerable{Assembly}
+  commentId: '!:IEnumerable{Assembly}'
+  definition: IEnumerable`1
+  name: IEnumerable<Assembly>
+  nameWithType: IEnumerable<Assembly>
+  fullName: IEnumerable<Assembly>
+  nameWithType.vb: IEnumerable(Of Assembly)
+  fullName.vb: IEnumerable(Of Assembly)
+  name.vb: IEnumerable(Of Assembly)
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Assembly
+    name: Assembly
+    nameWithType: Assembly
+    fullName: Assembly
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Assembly
+    name: Assembly
+    nameWithType: Assembly
+    fullName: Assembly
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable{Func{ApiVersionDescription,OpenApiInfo}}
+  commentId: '!:System.Nullable{Func{ApiVersionDescription,OpenApiInfo}}'
+  definition: System.Nullable`1
+  name: Nullable<Func<ApiVersionDescription, OpenApiInfo>>
+  nameWithType: Nullable<Func<ApiVersionDescription, OpenApiInfo>>
+  fullName: System.Nullable<Func<ApiVersionDescription, OpenApiInfo>>
+  nameWithType.vb: Nullable(Of Func(Of ApiVersionDescription, OpenApiInfo))
+  fullName.vb: System.Nullable(Of Func(Of ApiVersionDescription, OpenApiInfo))
+  name.vb: Nullable(Of Func(Of ApiVersionDescription, OpenApiInfo))
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Func`2
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: ApiVersionDescription
+    name: ApiVersionDescription
+    nameWithType: ApiVersionDescription
+    fullName: ApiVersionDescription
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: OpenApiInfo
+    name: OpenApiInfo
+    nameWithType: OpenApiInfo
+    fullName: OpenApiInfo
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Func`2
+    name: Func
+    nameWithType: Func
+    fullName: Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: ApiVersionDescription
+    name: ApiVersionDescription
+    nameWithType: ApiVersionDescription
+    fullName: ApiVersionDescription
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: OpenApiInfo
+    name: OpenApiInfo
+    nameWithType: OpenApiInfo
+    fullName: OpenApiInfo
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IEnumerable`1
+  commentId: '!:IEnumerable`1'
+  isExternal: true
+  name: IEnumerable<>
+  nameWithType: IEnumerable<>
+  fullName: IEnumerable<>
+  nameWithType.vb: IEnumerable(Of )
+  fullName.vb: IEnumerable(Of )
+  name.vb: IEnumerable(Of )
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable`1
+  isExternal: true
+  name: Nullable<>
+  nameWithType: Nullable<>
+  fullName: System.Nullable<>
+  nameWithType.vb: Nullable(Of )
+  fullName.vb: System.Nullable(Of )
+  name.vb: Nullable(Of )
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NeerCore.Api.KebabCaseNamingConvention
+  commentId: T:NeerCore.Api.KebabCaseNamingConvention
+  name: KebabCaseNamingConvention
+  nameWithType: KebabCaseNamingConvention
+  fullName: NeerCore.Api.KebabCaseNamingConvention
+- uid: NeerCore.Api.Extensions.ServiceCollectionExtensions.AddNeerControllers*
+  commentId: Overload:NeerCore.Api.Extensions.ServiceCollectionExtensions.AddNeerControllers
+  name: AddNeerControllers
+  nameWithType: ServiceCollectionExtensions.AddNeerControllers
+  fullName: NeerCore.Api.Extensions.ServiceCollectionExtensions.AddNeerControllers
+- uid: IMvcBuilder
+  commentId: '!:IMvcBuilder'
+  isExternal: true
+  name: IMvcBuilder
+  nameWithType: IMvcBuilder
+  fullName: IMvcBuilder

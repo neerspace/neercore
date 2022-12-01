@@ -1,0 +1,302 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Typeids.Api.TypeidsJsonConverter`2
+  commentId: T:NeerCore.Typeids.Api.TypeidsJsonConverter`2
+  id: TypeidsJsonConverter`2
+  parent: NeerCore.Typeids.Api
+  children:
+  - NeerCore.Typeids.Api.TypeidsJsonConverter`2.CreateIdentifier``1(``0)
+  - NeerCore.Typeids.Api.TypeidsJsonConverter`2.GetCustomIdsProcessor(JsonSerializerOptions)
+  - NeerCore.Typeids.Api.TypeidsJsonConverter`2.Read(Utf8JsonReader@,Type,JsonSerializerOptions)
+  - NeerCore.Typeids.Api.TypeidsJsonConverter`2.Write(Utf8JsonWriter,`0,JsonSerializerOptions)
+  langs:
+  - csharp
+  - vb
+  name: TypeidsJsonConverter<TIdentifier, TValue>
+  nameWithType: TypeidsJsonConverter<TIdentifier, TValue>
+  fullName: NeerCore.Typeids.Api.TypeidsJsonConverter<TIdentifier, TValue>
+  type: Class
+  source:
+    remote:
+      path: src/NeerCore.Typeids.Api/TypeidsJsonConverter.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: TypeidsJsonConverter
+    path: ../src/NeerCore.Typeids.Api/TypeidsJsonConverter.cs
+    startLine: 9
+  assemblies:
+  - NeerCore.Typeids.Api
+  namespace: NeerCore.Typeids.Api
+  syntax:
+    content: 'public class TypeidsJsonConverter<TIdentifier, TValue> : JsonConverter<TIdentifier> where TIdentifier : ITypeIdentifier<TValue> where TValue : new()'
+    typeParameters:
+    - id: TIdentifier
+    - id: TValue
+    content.vb: >-
+      Public Class TypeidsJsonConverter(Of TIdentifier As ITypeIdentifier(Of TValue), TValue As New)
+
+          Inherits JsonConverter(Of TIdentifier)
+  inheritance:
+  - System.Object
+  nameWithType.vb: TypeidsJsonConverter(Of TIdentifier, TValue)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+  fullName.vb: NeerCore.Typeids.Api.TypeidsJsonConverter(Of TIdentifier, TValue)
+  name.vb: TypeidsJsonConverter(Of TIdentifier, TValue)
+- uid: NeerCore.Typeids.Api.TypeidsJsonConverter`2.Read(Utf8JsonReader@,Type,JsonSerializerOptions)
+  commentId: M:NeerCore.Typeids.Api.TypeidsJsonConverter`2.Read(Utf8JsonReader@,Type,JsonSerializerOptions)
+  id: Read(Utf8JsonReader@,Type,JsonSerializerOptions)
+  parent: NeerCore.Typeids.Api.TypeidsJsonConverter`2
+  langs:
+  - csharp
+  - vb
+  name: Read(ref Utf8JsonReader, Type, JsonSerializerOptions)
+  nameWithType: TypeidsJsonConverter<TIdentifier, TValue>.Read(ref Utf8JsonReader, Type, JsonSerializerOptions)
+  fullName: NeerCore.Typeids.Api.TypeidsJsonConverter<TIdentifier, TValue>.Read(ref Utf8JsonReader, Type, JsonSerializerOptions)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Typeids.Api/TypeidsJsonConverter.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: Read
+    path: ../src/NeerCore.Typeids.Api/TypeidsJsonConverter.cs
+    startLine: 13
+  assemblies:
+  - NeerCore.Typeids.Api
+  namespace: NeerCore.Typeids.Api
+  syntax:
+    content: public override TIdentifier Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+    parameters:
+    - id: reader
+      type: Utf8JsonReader
+    - id: typeToConvert
+      type: Type
+    - id: options
+      type: JsonSerializerOptions
+    return:
+      type: '{TIdentifier}'
+    content.vb: Public Overrides Function Read(ByRef reader As Utf8JsonReader, typeToConvert As Type, options As JsonSerializerOptions) As TIdentifier
+  overload: NeerCore.Typeids.Api.TypeidsJsonConverter`2.Read*
+  nameWithType.vb: TypeidsJsonConverter(Of TIdentifier, TValue).Read(ByRef Utf8JsonReader, Type, JsonSerializerOptions)
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  fullName.vb: NeerCore.Typeids.Api.TypeidsJsonConverter(Of TIdentifier, TValue).Read(ByRef Utf8JsonReader, Type, JsonSerializerOptions)
+  name.vb: Read(ByRef Utf8JsonReader, Type, JsonSerializerOptions)
+- uid: NeerCore.Typeids.Api.TypeidsJsonConverter`2.Write(Utf8JsonWriter,`0,JsonSerializerOptions)
+  commentId: M:NeerCore.Typeids.Api.TypeidsJsonConverter`2.Write(Utf8JsonWriter,`0,JsonSerializerOptions)
+  id: Write(Utf8JsonWriter,`0,JsonSerializerOptions)
+  parent: NeerCore.Typeids.Api.TypeidsJsonConverter`2
+  langs:
+  - csharp
+  - vb
+  name: Write(Utf8JsonWriter, TIdentifier, JsonSerializerOptions)
+  nameWithType: TypeidsJsonConverter<TIdentifier, TValue>.Write(Utf8JsonWriter, TIdentifier, JsonSerializerOptions)
+  fullName: NeerCore.Typeids.Api.TypeidsJsonConverter<TIdentifier, TValue>.Write(Utf8JsonWriter, TIdentifier, JsonSerializerOptions)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Typeids.Api/TypeidsJsonConverter.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: Write
+    path: ../src/NeerCore.Typeids.Api/TypeidsJsonConverter.cs
+    startLine: 25
+  assemblies:
+  - NeerCore.Typeids.Api
+  namespace: NeerCore.Typeids.Api
+  syntax:
+    content: public override void Write(Utf8JsonWriter writer, TIdentifier value, JsonSerializerOptions options)
+    parameters:
+    - id: writer
+      type: Utf8JsonWriter
+    - id: value
+      type: '{TIdentifier}'
+    - id: options
+      type: JsonSerializerOptions
+    content.vb: Public Overrides Sub Write(writer As Utf8JsonWriter, value As TIdentifier, options As JsonSerializerOptions)
+  overload: NeerCore.Typeids.Api.TypeidsJsonConverter`2.Write*
+  nameWithType.vb: TypeidsJsonConverter(Of TIdentifier, TValue).Write(Utf8JsonWriter, TIdentifier, JsonSerializerOptions)
+  modifiers.csharp:
+  - public
+  - override
+  modifiers.vb:
+  - Public
+  - Overrides
+  fullName.vb: NeerCore.Typeids.Api.TypeidsJsonConverter(Of TIdentifier, TValue).Write(Utf8JsonWriter, TIdentifier, JsonSerializerOptions)
+- uid: NeerCore.Typeids.Api.TypeidsJsonConverter`2.CreateIdentifier``1(``0)
+  commentId: M:NeerCore.Typeids.Api.TypeidsJsonConverter`2.CreateIdentifier``1(``0)
+  id: CreateIdentifier``1(``0)
+  parent: NeerCore.Typeids.Api.TypeidsJsonConverter`2
+  langs:
+  - csharp
+  - vb
+  name: CreateIdentifier<T>(T)
+  nameWithType: TypeidsJsonConverter<TIdentifier, TValue>.CreateIdentifier<T>(T)
+  fullName: NeerCore.Typeids.Api.TypeidsJsonConverter<TIdentifier, TValue>.CreateIdentifier<T>(T)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Typeids.Api/TypeidsJsonConverter.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: CreateIdentifier
+    path: ../src/NeerCore.Typeids.Api/TypeidsJsonConverter.cs
+    startLine: 32
+  assemblies:
+  - NeerCore.Typeids.Api
+  namespace: NeerCore.Typeids.Api
+  syntax:
+    content: protected static TIdentifier CreateIdentifier<T>(T value)
+    parameters:
+    - id: value
+      type: '{T}'
+    typeParameters:
+    - id: T
+    return:
+      type: '{TIdentifier}'
+    content.vb: Protected Shared Function CreateIdentifier(Of T)(value As T) As TIdentifier
+  overload: NeerCore.Typeids.Api.TypeidsJsonConverter`2.CreateIdentifier*
+  nameWithType.vb: TypeidsJsonConverter(Of TIdentifier, TValue).CreateIdentifier(Of T)(T)
+  modifiers.csharp:
+  - protected
+  - static
+  modifiers.vb:
+  - Protected
+  - Shared
+  fullName.vb: NeerCore.Typeids.Api.TypeidsJsonConverter(Of TIdentifier, TValue).CreateIdentifier(Of T)(T)
+  name.vb: CreateIdentifier(Of T)(T)
+- uid: NeerCore.Typeids.Api.TypeidsJsonConverter`2.GetCustomIdsProcessor(JsonSerializerOptions)
+  commentId: M:NeerCore.Typeids.Api.TypeidsJsonConverter`2.GetCustomIdsProcessor(JsonSerializerOptions)
+  id: GetCustomIdsProcessor(JsonSerializerOptions)
+  parent: NeerCore.Typeids.Api.TypeidsJsonConverter`2
+  langs:
+  - csharp
+  - vb
+  name: GetCustomIdsProcessor(JsonSerializerOptions)
+  nameWithType: TypeidsJsonConverter<TIdentifier, TValue>.GetCustomIdsProcessor(JsonSerializerOptions)
+  fullName: NeerCore.Typeids.Api.TypeidsJsonConverter<TIdentifier, TValue>.GetCustomIdsProcessor(JsonSerializerOptions)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Typeids.Api/TypeidsJsonConverter.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: GetCustomIdsProcessor
+    path: ../src/NeerCore.Typeids.Api/TypeidsJsonConverter.cs
+    startLine: 34
+  assemblies:
+  - NeerCore.Typeids.Api
+  namespace: NeerCore.Typeids.Api
+  syntax:
+    content: protected static ITypeidsProcessor GetCustomIdsProcessor(JsonSerializerOptions options)
+    parameters:
+    - id: options
+      type: JsonSerializerOptions
+    return:
+      type: NeerCore.Typeids.ITypeidsProcessor
+    content.vb: Protected Shared Function GetCustomIdsProcessor(options As JsonSerializerOptions) As ITypeidsProcessor
+  overload: NeerCore.Typeids.Api.TypeidsJsonConverter`2.GetCustomIdsProcessor*
+  nameWithType.vb: TypeidsJsonConverter(Of TIdentifier, TValue).GetCustomIdsProcessor(JsonSerializerOptions)
+  modifiers.csharp:
+  - protected
+  - static
+  modifiers.vb:
+  - Protected
+  - Shared
+  fullName.vb: NeerCore.Typeids.Api.TypeidsJsonConverter(Of TIdentifier, TValue).GetCustomIdsProcessor(JsonSerializerOptions)
+references:
+- uid: NeerCore.Typeids.Api
+  commentId: N:NeerCore.Typeids.Api
+  name: NeerCore.Typeids.Api
+  nameWithType: NeerCore.Typeids.Api
+  fullName: NeerCore.Typeids.Api
+- uid: NeerCore.Typeids.Api.TypeidsJsonConverter`2.Read*
+  commentId: Overload:NeerCore.Typeids.Api.TypeidsJsonConverter`2.Read
+  name: Read
+  nameWithType: TypeidsJsonConverter<TIdentifier, TValue>.Read
+  fullName: NeerCore.Typeids.Api.TypeidsJsonConverter<TIdentifier, TValue>.Read
+  nameWithType.vb: TypeidsJsonConverter(Of TIdentifier, TValue).Read
+  fullName.vb: NeerCore.Typeids.Api.TypeidsJsonConverter(Of TIdentifier, TValue).Read
+- uid: Utf8JsonReader
+  commentId: '!:Utf8JsonReader'
+  isExternal: true
+  name: Utf8JsonReader
+  nameWithType: Utf8JsonReader
+  fullName: Utf8JsonReader
+- uid: Type
+  isExternal: true
+  name: Type
+  nameWithType: Type
+  fullName: Type
+- uid: JsonSerializerOptions
+  isExternal: true
+  name: JsonSerializerOptions
+  nameWithType: JsonSerializerOptions
+  fullName: JsonSerializerOptions
+- uid: '{TIdentifier}'
+  commentId: '!:TIdentifier'
+  definition: TIdentifier
+  name: TIdentifier
+  nameWithType: TIdentifier
+  fullName: TIdentifier
+- uid: TIdentifier
+  name: TIdentifier
+  nameWithType: TIdentifier
+  fullName: TIdentifier
+- uid: NeerCore.Typeids.Api.TypeidsJsonConverter`2.Write*
+  commentId: Overload:NeerCore.Typeids.Api.TypeidsJsonConverter`2.Write
+  name: Write
+  nameWithType: TypeidsJsonConverter<TIdentifier, TValue>.Write
+  fullName: NeerCore.Typeids.Api.TypeidsJsonConverter<TIdentifier, TValue>.Write
+  nameWithType.vb: TypeidsJsonConverter(Of TIdentifier, TValue).Write
+  fullName.vb: NeerCore.Typeids.Api.TypeidsJsonConverter(Of TIdentifier, TValue).Write
+- uid: Utf8JsonWriter
+  commentId: '!:Utf8JsonWriter'
+  isExternal: true
+  name: Utf8JsonWriter
+  nameWithType: Utf8JsonWriter
+  fullName: Utf8JsonWriter
+- uid: NeerCore.Typeids.Api.TypeidsJsonConverter`2.CreateIdentifier*
+  commentId: Overload:NeerCore.Typeids.Api.TypeidsJsonConverter`2.CreateIdentifier
+  name: CreateIdentifier
+  nameWithType: TypeidsJsonConverter<TIdentifier, TValue>.CreateIdentifier
+  fullName: NeerCore.Typeids.Api.TypeidsJsonConverter<TIdentifier, TValue>.CreateIdentifier
+  nameWithType.vb: TypeidsJsonConverter(Of TIdentifier, TValue).CreateIdentifier
+  fullName.vb: NeerCore.Typeids.Api.TypeidsJsonConverter(Of TIdentifier, TValue).CreateIdentifier
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: NeerCore.Typeids.Api.TypeidsJsonConverter`2.GetCustomIdsProcessor*
+  commentId: Overload:NeerCore.Typeids.Api.TypeidsJsonConverter`2.GetCustomIdsProcessor
+  name: GetCustomIdsProcessor
+  nameWithType: TypeidsJsonConverter<TIdentifier, TValue>.GetCustomIdsProcessor
+  fullName: NeerCore.Typeids.Api.TypeidsJsonConverter<TIdentifier, TValue>.GetCustomIdsProcessor
+  nameWithType.vb: TypeidsJsonConverter(Of TIdentifier, TValue).GetCustomIdsProcessor
+  fullName.vb: NeerCore.Typeids.Api.TypeidsJsonConverter(Of TIdentifier, TValue).GetCustomIdsProcessor
+- uid: NeerCore.Typeids.ITypeidsProcessor
+  commentId: T:NeerCore.Typeids.ITypeidsProcessor
+  parent: NeerCore.Typeids
+  name: ITypeidsProcessor
+  nameWithType: ITypeidsProcessor
+  fullName: NeerCore.Typeids.ITypeidsProcessor
+- uid: NeerCore.Typeids
+  commentId: N:NeerCore.Typeids
+  name: NeerCore.Typeids
+  nameWithType: NeerCore.Typeids
+  fullName: NeerCore.Typeids

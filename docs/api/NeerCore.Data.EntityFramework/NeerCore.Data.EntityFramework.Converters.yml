@@ -1,0 +1,34 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Data.EntityFramework.Converters
+  commentId: N:NeerCore.Data.EntityFramework.Converters
+  id: NeerCore.Data.EntityFramework.Converters
+  children:
+  - NeerCore.Data.EntityFramework.Converters.DateTimeUtcConverter
+  - NeerCore.Data.EntityFramework.Converters.LocalizedStringConverter
+  - NeerCore.Data.EntityFramework.Converters.NullableDateTimeUtcConverter
+  langs:
+  - csharp
+  - vb
+  name: NeerCore.Data.EntityFramework.Converters
+  nameWithType: NeerCore.Data.EntityFramework.Converters
+  fullName: NeerCore.Data.EntityFramework.Converters
+  type: Namespace
+  assemblies:
+  - NeerCore.Data.EntityFramework
+references:
+- uid: NeerCore.Data.EntityFramework.Converters.DateTimeUtcConverter
+  commentId: T:NeerCore.Data.EntityFramework.Converters.DateTimeUtcConverter
+  name: DateTimeUtcConverter
+  nameWithType: DateTimeUtcConverter
+  fullName: NeerCore.Data.EntityFramework.Converters.DateTimeUtcConverter
+- uid: NeerCore.Data.EntityFramework.Converters.LocalizedStringConverter
+  commentId: T:NeerCore.Data.EntityFramework.Converters.LocalizedStringConverter
+  name: LocalizedStringConverter
+  nameWithType: LocalizedStringConverter
+  fullName: NeerCore.Data.EntityFramework.Converters.LocalizedStringConverter
+- uid: NeerCore.Data.EntityFramework.Converters.NullableDateTimeUtcConverter
+  commentId: T:NeerCore.Data.EntityFramework.Converters.NullableDateTimeUtcConverter
+  name: NullableDateTimeUtcConverter
+  nameWithType: NullableDateTimeUtcConverter
+  fullName: NeerCore.Data.EntityFramework.Converters.NullableDateTimeUtcConverter

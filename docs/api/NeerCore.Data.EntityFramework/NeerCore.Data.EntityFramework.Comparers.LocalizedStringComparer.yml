@@ -1,0 +1,82 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Data.EntityFramework.Comparers.LocalizedStringComparer
+  commentId: T:NeerCore.Data.EntityFramework.Comparers.LocalizedStringComparer
+  id: LocalizedStringComparer
+  parent: NeerCore.Data.EntityFramework.Comparers
+  children:
+  - NeerCore.Data.EntityFramework.Comparers.LocalizedStringComparer.#ctor
+  langs:
+  - csharp
+  - vb
+  name: LocalizedStringComparer
+  nameWithType: LocalizedStringComparer
+  fullName: NeerCore.Data.EntityFramework.Comparers.LocalizedStringComparer
+  type: Class
+  source:
+    remote:
+      path: src/NeerCore.Data.EntityFramework/Comparers/LocalizedStringComparer.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: LocalizedStringComparer
+    path: ../src/NeerCore.Data.EntityFramework/Comparers/LocalizedStringComparer.cs
+    startLine: 4
+  assemblies:
+  - NeerCore.Data.EntityFramework
+  namespace: NeerCore.Data.EntityFramework.Comparers
+  syntax:
+    content: 'public sealed class LocalizedStringComparer : ValueComparer<LocalizedString>'
+    content.vb: >-
+      Public NotInheritable Class LocalizedStringComparer
+          Inherits ValueComparer(Of LocalizedString)
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: NeerCore.Data.EntityFramework.Comparers.LocalizedStringComparer.#ctor
+  commentId: M:NeerCore.Data.EntityFramework.Comparers.LocalizedStringComparer.#ctor
+  id: '#ctor'
+  parent: NeerCore.Data.EntityFramework.Comparers.LocalizedStringComparer
+  langs:
+  - csharp
+  - vb
+  name: LocalizedStringComparer()
+  nameWithType: LocalizedStringComparer.LocalizedStringComparer()
+  fullName: NeerCore.Data.EntityFramework.Comparers.LocalizedStringComparer.LocalizedStringComparer()
+  type: Constructor
+  source:
+    remote:
+      path: src/NeerCore.Data.EntityFramework/Comparers/LocalizedStringComparer.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: .ctor
+    path: ../src/NeerCore.Data.EntityFramework/Comparers/LocalizedStringComparer.cs
+    startLine: 6
+  assemblies:
+  - NeerCore.Data.EntityFramework
+  namespace: NeerCore.Data.EntityFramework.Comparers
+  syntax:
+    content: public LocalizedStringComparer()
+    content.vb: Public Sub New
+  overload: NeerCore.Data.EntityFramework.Comparers.LocalizedStringComparer.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: NeerCore.Data.EntityFramework.Comparers
+  commentId: N:NeerCore.Data.EntityFramework.Comparers
+  name: NeerCore.Data.EntityFramework.Comparers
+  nameWithType: NeerCore.Data.EntityFramework.Comparers
+  fullName: NeerCore.Data.EntityFramework.Comparers
+- uid: NeerCore.Data.EntityFramework.Comparers.LocalizedStringComparer.#ctor*
+  commentId: Overload:NeerCore.Data.EntityFramework.Comparers.LocalizedStringComparer.#ctor
+  name: LocalizedStringComparer
+  nameWithType: LocalizedStringComparer.LocalizedStringComparer
+  fullName: NeerCore.Data.EntityFramework.Comparers.LocalizedStringComparer.LocalizedStringComparer

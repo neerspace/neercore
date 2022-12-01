@@ -1,0 +1,28 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Logging.Extensions
+  commentId: N:NeerCore.Logging.Extensions
+  id: NeerCore.Logging.Extensions
+  children:
+  - NeerCore.Logging.Extensions.LoggingBuilderExtensions
+  - NeerCore.Logging.Extensions.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: NeerCore.Logging.Extensions
+  nameWithType: NeerCore.Logging.Extensions
+  fullName: NeerCore.Logging.Extensions
+  type: Namespace
+  assemblies:
+  - NeerCore.Logging.NLog
+references:
+- uid: NeerCore.Logging.Extensions.LoggingBuilderExtensions
+  commentId: T:NeerCore.Logging.Extensions.LoggingBuilderExtensions
+  name: LoggingBuilderExtensions
+  nameWithType: LoggingBuilderExtensions
+  fullName: NeerCore.Logging.Extensions.LoggingBuilderExtensions
+- uid: NeerCore.Logging.Extensions.ServiceCollectionExtensions
+  commentId: T:NeerCore.Logging.Extensions.ServiceCollectionExtensions
+  name: ServiceCollectionExtensions
+  nameWithType: ServiceCollectionExtensions
+  fullName: NeerCore.Logging.Extensions.ServiceCollectionExtensions

@@ -1,0 +1,476 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Data.EntityFramework.Extensions.DbSetExtensions
+  commentId: T:NeerCore.Data.EntityFramework.Extensions.DbSetExtensions
+  id: DbSetExtensions
+  parent: NeerCore.Data.EntityFramework.Extensions
+  children:
+  - NeerCore.Data.EntityFramework.Extensions.DbSetExtensions.FindOr404Async``1(DbSet{``0},System.Nullable{System.Object},CancellationToken)
+  - NeerCore.Data.EntityFramework.Extensions.DbSetExtensions.FindOr404Async``1(DbSet{``0},System.Nullable{System.Object}[],CancellationToken)
+  langs:
+  - csharp
+  - vb
+  name: DbSetExtensions
+  nameWithType: DbSetExtensions
+  fullName: NeerCore.Data.EntityFramework.Extensions.DbSetExtensions
+  type: Class
+  source:
+    remote:
+      path: src/NeerCore.Data.EntityFramework/Extensions/DbSetExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: DbSetExtensions
+    path: ../src/NeerCore.Data.EntityFramework/Extensions/DbSetExtensions.cs
+    startLine: 6
+  assemblies:
+  - NeerCore.Data.EntityFramework
+  namespace: NeerCore.Data.EntityFramework.Extensions
+  syntax:
+    content: 'public static class DbSetExtensions : object'
+    content.vb: >-
+      Public Module DbSetExtensions
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: NeerCore.Data.EntityFramework.Extensions.DbSetExtensions.FindOr404Async``1(DbSet{``0},System.Nullable{System.Object},CancellationToken)
+  commentId: M:NeerCore.Data.EntityFramework.Extensions.DbSetExtensions.FindOr404Async``1(DbSet{``0},System.Nullable{System.Object},CancellationToken)
+  id: FindOr404Async``1(DbSet{``0},System.Nullable{System.Object},CancellationToken)
+  isExtensionMethod: true
+  parent: NeerCore.Data.EntityFramework.Extensions.DbSetExtensions
+  langs:
+  - csharp
+  - vb
+  name: FindOr404Async<TEntity>(DbSet<TEntity>, Nullable<Object>, CancellationToken)
+  nameWithType: DbSetExtensions.FindOr404Async<TEntity>(DbSet<TEntity>, Nullable<Object>, CancellationToken)
+  fullName: NeerCore.Data.EntityFramework.Extensions.DbSetExtensions.FindOr404Async<TEntity>(DbSet<TEntity>, System.Nullable<System.Object>, CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Data.EntityFramework/Extensions/DbSetExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: FindOr404Async
+    path: ../src/NeerCore.Data.EntityFramework/Extensions/DbSetExtensions.cs
+    startLine: 9
+  assemblies:
+  - NeerCore.Data.EntityFramework
+  namespace: NeerCore.Data.EntityFramework.Extensions
+  summary: "\nFinds an entity with the given primary key values.\nIf an entity with the given primary key values is\nbeing tracked by the context, then it is returned\nimmediately without making a request to the database.\nOtherwise, a query is made to the database for an entity\nwith the given primary key values and this entity, if found,\nis attached to the context and returned. If no entity is found,\nthen <xref href=\"NeerCore.Exceptions.NotFoundException%601\" data-throw-if-not-resolved=\"false\"></xref> is thrown.\n"
+  example: []
+  syntax:
+    content: >-
+      public static async Task<TEntity> FindOr404Async<TEntity>(this DbSet<TEntity> dbSet, object? key, CancellationToken cancellationToken = null)
+          where TEntity : class, IEntity
+    parameters:
+    - id: dbSet
+      type: DbSet{{TEntity}}
+      description: Entity Framework database set.
+    - id: key
+      type: System.Nullable{System.Object}
+    - id: cancellationToken
+      type: CancellationToken
+      description: A <see cref="!:CancellationToken"></see> to observe while waiting for the task to complete
+    typeParameters:
+    - id: TEntity
+      description: Entity type that implements <xref href="NeerCore.Data.Abstractions.IEntity" data-throw-if-not-resolved="false"></xref> interface.
+    return:
+      type: Task{{TEntity}}
+      description: The entity found, or throw <xref href="NeerCore.Exceptions.NotFoundException%601" data-throw-if-not-resolved="false"></xref>.
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function FindOr404Async(Of TEntity As {Class, IEntity})(dbSet As DbSet(Of TEntity), key As Object?, cancellationToken As CancellationToken = Nothing) As Task(Of TEntity)
+  overload: NeerCore.Data.EntityFramework.Extensions.DbSetExtensions.FindOr404Async*
+  exceptions:
+  - type: NeerCore.Exceptions.NotFoundException`1
+    commentId: T:NeerCore.Exceptions.NotFoundException`1
+    description: If the entity is not found.
+  nameWithType.vb: DbSetExtensions.FindOr404Async(Of TEntity)(DbSet(Of TEntity), Nullable(Of Object), CancellationToken)
+  modifiers.csharp:
+  - public
+  - static
+  - async
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: NeerCore.Data.EntityFramework.Extensions.DbSetExtensions.FindOr404Async(Of TEntity)(DbSet(Of TEntity), System.Nullable(Of System.Object), CancellationToken)
+  name.vb: FindOr404Async(Of TEntity)(DbSet(Of TEntity), Nullable(Of Object), CancellationToken)
+- uid: NeerCore.Data.EntityFramework.Extensions.DbSetExtensions.FindOr404Async``1(DbSet{``0},System.Nullable{System.Object}[],CancellationToken)
+  commentId: M:NeerCore.Data.EntityFramework.Extensions.DbSetExtensions.FindOr404Async``1(DbSet{``0},System.Nullable{System.Object}[],CancellationToken)
+  id: FindOr404Async``1(DbSet{``0},System.Nullable{System.Object}[],CancellationToken)
+  isExtensionMethod: true
+  parent: NeerCore.Data.EntityFramework.Extensions.DbSetExtensions
+  langs:
+  - csharp
+  - vb
+  name: FindOr404Async<TEntity>(DbSet<TEntity>, Nullable<Object>[], CancellationToken)
+  nameWithType: DbSetExtensions.FindOr404Async<TEntity>(DbSet<TEntity>, Nullable<Object>[], CancellationToken)
+  fullName: NeerCore.Data.EntityFramework.Extensions.DbSetExtensions.FindOr404Async<TEntity>(DbSet<TEntity>, System.Nullable<System.Object>[], CancellationToken)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Data.EntityFramework/Extensions/DbSetExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: FindOr404Async
+    path: ../src/NeerCore.Data.EntityFramework/Extensions/DbSetExtensions.cs
+    startLine: 32
+  assemblies:
+  - NeerCore.Data.EntityFramework
+  namespace: NeerCore.Data.EntityFramework.Extensions
+  summary: "\nFinds an entity with the given primary key values.\nIf an entity with the given primary key values is\nbeing tracked by the context, then it is returned\nimmediately without making a request to the database.\nOtherwise, a query is made to the database for an entity\nwith the given primary key values and this entity, if found,\nis attached to the context and returned. If no entity is found,\nthen <xref href=\"NeerCore.Exceptions.NotFoundException%601\" data-throw-if-not-resolved=\"false\"></xref> is thrown.\n"
+  example: []
+  syntax:
+    content: >-
+      public static async Task<TEntity> FindOr404Async<TEntity>(this DbSet<TEntity> dbSet, object? [] keyValues, CancellationToken cancellationToken = null)
+          where TEntity : class, IEntity
+    parameters:
+    - id: dbSet
+      type: DbSet{{TEntity}}
+      description: Entity Framework database set.
+    - id: keyValues
+      type: System.Nullable{System.Object}[]
+      description: The values of the primary key for the entity to be found.
+    - id: cancellationToken
+      type: CancellationToken
+      description: A <see cref="!:CancellationToken"></see> to observe while waiting for the task to complete
+    typeParameters:
+    - id: TEntity
+      description: Entity type that implements <xref href="NeerCore.Data.Abstractions.IEntity" data-throw-if-not-resolved="false"></xref> interface.
+    return:
+      type: Task{{TEntity}}
+      description: The entity found, or throw <xref href="NeerCore.Exceptions.NotFoundException%601" data-throw-if-not-resolved="false"></xref>.
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function FindOr404Async(Of TEntity As {Class, IEntity})(dbSet As DbSet(Of TEntity), keyValues As Object?(), cancellationToken As CancellationToken = Nothing) As Task(Of TEntity)
+  overload: NeerCore.Data.EntityFramework.Extensions.DbSetExtensions.FindOr404Async*
+  exceptions:
+  - type: NeerCore.Exceptions.NotFoundException`1
+    commentId: T:NeerCore.Exceptions.NotFoundException`1
+    description: If the entity is not found.
+  nameWithType.vb: DbSetExtensions.FindOr404Async(Of TEntity)(DbSet(Of TEntity), Nullable(Of Object)(), CancellationToken)
+  modifiers.csharp:
+  - public
+  - static
+  - async
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: NeerCore.Data.EntityFramework.Extensions.DbSetExtensions.FindOr404Async(Of TEntity)(DbSet(Of TEntity), System.Nullable(Of System.Object)(), CancellationToken)
+  name.vb: FindOr404Async(Of TEntity)(DbSet(Of TEntity), Nullable(Of Object)(), CancellationToken)
+references:
+- uid: NeerCore.Data.EntityFramework.Extensions
+  commentId: N:NeerCore.Data.EntityFramework.Extensions
+  name: NeerCore.Data.EntityFramework.Extensions
+  nameWithType: NeerCore.Data.EntityFramework.Extensions
+  fullName: NeerCore.Data.EntityFramework.Extensions
+- uid: NeerCore.Data.EntityFramework.Extensions.DbSetExtensions.FindOr404Async``1(DbSet{``0},System.Nullable{System.Object}[],CancellationToken)
+  commentId: M:NeerCore.Data.EntityFramework.Extensions.DbSetExtensions.FindOr404Async``1(DbSet{``0},System.Nullable{System.Object}[],CancellationToken)
+  isExternal: true
+- uid: NeerCore.Data.EntityFramework.Extensions.DbSetExtensions.FindOr404Async*
+  commentId: Overload:NeerCore.Data.EntityFramework.Extensions.DbSetExtensions.FindOr404Async
+  name: FindOr404Async
+  nameWithType: DbSetExtensions.FindOr404Async
+  fullName: NeerCore.Data.EntityFramework.Extensions.DbSetExtensions.FindOr404Async
+- uid: NeerCore.Exceptions.NotFoundException`1
+  commentId: T:NeerCore.Exceptions.NotFoundException`1
+  isExternal: true
+- uid: DbSet{{TEntity}}
+  commentId: '!:DbSet{``0}'
+  definition: DbSet`1
+  name: DbSet<TEntity>
+  nameWithType: DbSet<TEntity>
+  fullName: DbSet<TEntity>
+  nameWithType.vb: DbSet(Of TEntity)
+  fullName.vb: DbSet(Of TEntity)
+  name.vb: DbSet(Of TEntity)
+  spec.csharp:
+  - uid: DbSet`1
+    name: DbSet
+    nameWithType: DbSet
+    fullName: DbSet
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TEntity
+    nameWithType: TEntity
+    fullName: TEntity
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: DbSet`1
+    name: DbSet
+    nameWithType: DbSet
+    fullName: DbSet
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TEntity
+    nameWithType: TEntity
+    fullName: TEntity
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable{System.Object}
+  commentId: '!:System.Nullable{System.Object}'
+  definition: System.Nullable`1
+  name: Nullable<Object>
+  nameWithType: Nullable<Object>
+  fullName: System.Nullable<System.Object>
+  nameWithType.vb: Nullable(Of Object)
+  fullName.vb: System.Nullable(Of System.Object)
+  name.vb: Nullable(Of Object)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: CancellationToken
+  isExternal: true
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: CancellationToken
+- uid: Task{{TEntity}}
+  commentId: '!:Task{``0}'
+  definition: Task`1
+  name: Task<TEntity>
+  nameWithType: Task<TEntity>
+  fullName: Task<TEntity>
+  nameWithType.vb: Task(Of TEntity)
+  fullName.vb: Task(Of TEntity)
+  name.vb: Task(Of TEntity)
+  spec.csharp:
+  - uid: Task`1
+    name: Task
+    nameWithType: Task
+    fullName: Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TEntity
+    nameWithType: TEntity
+    fullName: TEntity
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Task`1
+    name: Task
+    nameWithType: Task
+    fullName: Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TEntity
+    nameWithType: TEntity
+    fullName: TEntity
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: DbSet`1
+  isExternal: true
+  name: DbSet<>
+  nameWithType: DbSet<>
+  fullName: DbSet<>
+  nameWithType.vb: DbSet(Of )
+  fullName.vb: DbSet(Of )
+  name.vb: DbSet(Of )
+  spec.csharp:
+  - uid: DbSet`1
+    name: DbSet
+    nameWithType: DbSet
+    fullName: DbSet
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: DbSet`1
+    name: DbSet
+    nameWithType: DbSet
+    fullName: DbSet
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable`1
+  isExternal: true
+  name: Nullable<>
+  nameWithType: Nullable<>
+  fullName: System.Nullable<>
+  nameWithType.vb: Nullable(Of )
+  fullName.vb: System.Nullable(Of )
+  name.vb: Nullable(Of )
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Task`1
+  isExternal: true
+  name: Task<>
+  nameWithType: Task<>
+  fullName: Task<>
+  nameWithType.vb: Task(Of )
+  fullName.vb: Task(Of )
+  name.vb: Task(Of )
+  spec.csharp:
+  - uid: Task`1
+    name: Task
+    nameWithType: Task
+    fullName: Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Task`1
+    name: Task
+    nameWithType: Task
+    fullName: Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NeerCore.Data.Abstractions.IEntity
+  commentId: T:NeerCore.Data.Abstractions.IEntity
+  isExternal: true
+- uid: System.Nullable{System.Object}[]
+  isExternal: true
+  name: Nullable<Object>[]
+  nameWithType: Nullable<Object>[]
+  fullName: System.Nullable<System.Object>[]
+  nameWithType.vb: Nullable(Of Object)()
+  fullName.vb: System.Nullable(Of System.Object)()
+  name.vb: Nullable(Of Object)()
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ()
+    nameWithType: ()
+    fullName: ()

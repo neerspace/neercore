@@ -1,0 +1,397 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Mapping.Extensions.EnumerableExtensions
+  commentId: T:NeerCore.Mapping.Extensions.EnumerableExtensions
+  id: EnumerableExtensions
+  parent: NeerCore.Mapping.Extensions
+  children:
+  - NeerCore.Mapping.Extensions.EnumerableExtensions.AdaptAll``1(System.Nullable{IEnumerable{System.Object}})
+  - NeerCore.Mapping.Extensions.EnumerableExtensions.AdaptAll``2(System.Nullable{IEnumerable{``0}})
+  langs:
+  - csharp
+  - vb
+  name: EnumerableExtensions
+  nameWithType: EnumerableExtensions
+  fullName: NeerCore.Mapping.Extensions.EnumerableExtensions
+  type: Class
+  source:
+    remote:
+      path: src/NeerCore.Mapping.Mapster/Extensions/EnumerableExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: EnumerableExtensions
+    path: src/NeerCore.Mapping.Mapster/Extensions/EnumerableExtensions.cs
+    startLine: 4
+  assemblies:
+  - NeerCore.Mapping.Mapster
+  namespace: NeerCore.Mapping.Extensions
+  syntax:
+    content: 'public static class EnumerableExtensions : object'
+    content.vb: >-
+      Public Module EnumerableExtensions
+
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: NeerCore.Mapping.Extensions.EnumerableExtensions.AdaptAll``1(System.Nullable{IEnumerable{System.Object}})
+  commentId: M:NeerCore.Mapping.Extensions.EnumerableExtensions.AdaptAll``1(System.Nullable{IEnumerable{System.Object}})
+  id: AdaptAll``1(System.Nullable{IEnumerable{System.Object}})
+  isExtensionMethod: true
+  parent: NeerCore.Mapping.Extensions.EnumerableExtensions
+  langs:
+  - csharp
+  - vb
+  name: AdaptAll<TDestination>(Nullable<IEnumerable<Object>>)
+  nameWithType: EnumerableExtensions.AdaptAll<TDestination>(Nullable<IEnumerable<Object>>)
+  fullName: NeerCore.Mapping.Extensions.EnumerableExtensions.AdaptAll<TDestination>(System.Nullable<IEnumerable<System.Object>>)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Mapping.Mapster/Extensions/EnumerableExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: AdaptAll
+    path: src/NeerCore.Mapping.Mapster/Extensions/EnumerableExtensions.cs
+    startLine: 10
+  assemblies:
+  - NeerCore.Mapping.Mapster
+  namespace: NeerCore.Mapping.Extensions
+  summary: Adapts a sequence of objects with one type to sequence of type <code data-dev-comment-type="typeparamref" class="typeparamref">TDestination</code>.
+  example: []
+  syntax:
+    content: public static IEnumerable<TDestination> AdaptAll<TDestination>(this IEnumerable<object>? source)
+    parameters:
+    - id: source
+      type: System.Nullable{IEnumerable{System.Object}}
+      description: The <see cref="!:IEnumerable&lt;T>"></see> to adapt.
+    typeParameters:
+    - id: TDestination
+      description: Destination sequence items type.
+    return:
+      type: IEnumerable{{TDestination}}
+      description: Sequence of type <code data-dev-comment-type="typeparamref" class="typeparamref">TDestination</code>.
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function AdaptAll(Of TDestination)(source As IEnumerable(Of Object)?) As IEnumerable(Of TDestination)
+  overload: NeerCore.Mapping.Extensions.EnumerableExtensions.AdaptAll*
+  nameWithType.vb: EnumerableExtensions.AdaptAll(Of TDestination)(Nullable(Of IEnumerable(Of Object)))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: NeerCore.Mapping.Extensions.EnumerableExtensions.AdaptAll(Of TDestination)(System.Nullable(Of IEnumerable(Of System.Object)))
+  name.vb: AdaptAll(Of TDestination)(Nullable(Of IEnumerable(Of Object)))
+- uid: NeerCore.Mapping.Extensions.EnumerableExtensions.AdaptAll``2(System.Nullable{IEnumerable{``0}})
+  commentId: M:NeerCore.Mapping.Extensions.EnumerableExtensions.AdaptAll``2(System.Nullable{IEnumerable{``0}})
+  id: AdaptAll``2(System.Nullable{IEnumerable{``0}})
+  isExtensionMethod: true
+  parent: NeerCore.Mapping.Extensions.EnumerableExtensions
+  langs:
+  - csharp
+  - vb
+  name: AdaptAll<TSource, TDestination>(Nullable<IEnumerable<TSource>>)
+  nameWithType: EnumerableExtensions.AdaptAll<TSource, TDestination>(Nullable<IEnumerable<TSource>>)
+  fullName: NeerCore.Mapping.Extensions.EnumerableExtensions.AdaptAll<TSource, TDestination>(System.Nullable<IEnumerable<TSource>>)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Mapping.Mapster/Extensions/EnumerableExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: AdaptAll
+    path: src/NeerCore.Mapping.Mapster/Extensions/EnumerableExtensions.cs
+    startLine: 19
+  assemblies:
+  - NeerCore.Mapping.Mapster
+  namespace: NeerCore.Mapping.Extensions
+  example: []
+  syntax:
+    content: public static IEnumerable<TDestination> AdaptAll<TSource, TDestination>(this IEnumerable<TSource>? source)
+    parameters:
+    - id: source
+      type: System.Nullable{IEnumerable{{TSource}}}
+    typeParameters:
+    - id: TSource
+      description: The type of the elements of <code data-dev-comment-type="paramref" class="paramref">source</code>.
+    - id: TDestination
+    return:
+      type: IEnumerable{{TDestination}}
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function AdaptAll(Of TSource, TDestination)(source As IEnumerable(Of TSource)?) As IEnumerable(Of TDestination)
+  overload: NeerCore.Mapping.Extensions.EnumerableExtensions.AdaptAll*
+  nameWithType.vb: EnumerableExtensions.AdaptAll(Of TSource, TDestination)(Nullable(Of IEnumerable(Of TSource)))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: NeerCore.Mapping.Extensions.EnumerableExtensions.AdaptAll(Of TSource, TDestination)(System.Nullable(Of IEnumerable(Of TSource)))
+  name.vb: AdaptAll(Of TSource, TDestination)(Nullable(Of IEnumerable(Of TSource)))
+references:
+- uid: NeerCore.Mapping.Extensions
+  commentId: N:NeerCore.Mapping.Extensions
+  name: NeerCore.Mapping.Extensions
+  nameWithType: NeerCore.Mapping.Extensions
+  fullName: NeerCore.Mapping.Extensions
+- uid: NeerCore.Mapping.Extensions.EnumerableExtensions.AdaptAll*
+  commentId: Overload:NeerCore.Mapping.Extensions.EnumerableExtensions.AdaptAll
+  name: AdaptAll
+  nameWithType: EnumerableExtensions.AdaptAll
+  fullName: NeerCore.Mapping.Extensions.EnumerableExtensions.AdaptAll
+- uid: System.Nullable{IEnumerable{System.Object}}
+  commentId: '!:System.Nullable{IEnumerable{System.Object}}'
+  definition: System.Nullable`1
+  name: Nullable<IEnumerable<Object>>
+  nameWithType: Nullable<IEnumerable<Object>>
+  fullName: System.Nullable<IEnumerable<System.Object>>
+  nameWithType.vb: Nullable(Of IEnumerable(Of Object))
+  fullName.vb: System.Nullable(Of IEnumerable(Of System.Object))
+  name.vb: Nullable(Of IEnumerable(Of Object))
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IEnumerable{{TDestination}}
+  commentId: '!:IEnumerable{``0}'
+  definition: IEnumerable`1
+  name: IEnumerable<TDestination>
+  nameWithType: IEnumerable<TDestination>
+  fullName: IEnumerable<TDestination>
+  nameWithType.vb: IEnumerable(Of TDestination)
+  fullName.vb: IEnumerable(Of TDestination)
+  name.vb: IEnumerable(Of TDestination)
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TDestination
+    nameWithType: TDestination
+    fullName: TDestination
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TDestination
+    nameWithType: TDestination
+    fullName: TDestination
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable`1
+  isExternal: true
+  name: Nullable<>
+  nameWithType: Nullable<>
+  fullName: System.Nullable<>
+  nameWithType.vb: Nullable(Of )
+  fullName.vb: System.Nullable(Of )
+  name.vb: Nullable(Of )
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: IEnumerable`1
+  isExternal: true
+  name: IEnumerable<>
+  nameWithType: IEnumerable<>
+  fullName: IEnumerable<>
+  nameWithType.vb: IEnumerable(Of )
+  fullName.vb: IEnumerable(Of )
+  name.vb: IEnumerable(Of )
+  spec.csharp:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NeerCore.Mapping.Extensions.EnumerableExtensions.AdaptAll``1(System.Nullable{IEnumerable{System.Object}})
+  commentId: M:NeerCore.Mapping.Extensions.EnumerableExtensions.AdaptAll``1(System.Nullable{IEnumerable{System.Object}})
+  isExternal: true
+- uid: System.Nullable{IEnumerable{{TSource}}}
+  commentId: '!:System.Nullable{IEnumerable{``0}}'
+  definition: System.Nullable`1
+  name: Nullable<IEnumerable<TSource>>
+  nameWithType: Nullable<IEnumerable<TSource>>
+  fullName: System.Nullable<IEnumerable<TSource>>
+  nameWithType.vb: Nullable(Of IEnumerable(Of TSource))
+  fullName.vb: System.Nullable(Of IEnumerable(Of TSource))
+  name.vb: Nullable(Of IEnumerable(Of TSource))
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TSource
+    nameWithType: TSource
+    fullName: TSource
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TSource
+    nameWithType: TSource
+    fullName: TSource
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )

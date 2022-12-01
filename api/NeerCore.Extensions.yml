@@ -1,0 +1,34 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Extensions
+  commentId: N:NeerCore.Extensions
+  id: NeerCore.Extensions
+  children:
+  - NeerCore.Extensions.EnumerableExtensions
+  - NeerCore.Extensions.EnumExtensions
+  - NeerCore.Extensions.StringExtensions
+  langs:
+  - csharp
+  - vb
+  name: NeerCore.Extensions
+  nameWithType: NeerCore.Extensions
+  fullName: NeerCore.Extensions
+  type: Namespace
+  assemblies:
+  - NeerCore
+references:
+- uid: NeerCore.Extensions.EnumerableExtensions
+  commentId: T:NeerCore.Extensions.EnumerableExtensions
+  name: EnumerableExtensions
+  nameWithType: EnumerableExtensions
+  fullName: NeerCore.Extensions.EnumerableExtensions
+- uid: NeerCore.Extensions.EnumExtensions
+  commentId: T:NeerCore.Extensions.EnumExtensions
+  name: EnumExtensions
+  nameWithType: EnumExtensions
+  fullName: NeerCore.Extensions.EnumExtensions
+- uid: NeerCore.Extensions.StringExtensions
+  commentId: T:NeerCore.Extensions.StringExtensions
+  name: StringExtensions
+  nameWithType: StringExtensions
+  fullName: NeerCore.Extensions.StringExtensions

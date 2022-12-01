@@ -1,0 +1,139 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Typeids.Abstractions.IShortIntIdentifier
+  commentId: T:NeerCore.Typeids.Abstractions.IShortIntIdentifier
+  id: IShortIntIdentifier
+  parent: NeerCore.Typeids.Abstractions
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: IShortIntIdentifier
+  nameWithType: IShortIntIdentifier
+  fullName: NeerCore.Typeids.Abstractions.IShortIntIdentifier
+  type: Interface
+  source:
+    remote:
+      path: src/NeerCore.Typeids/Abstractions/ITypeIdentifier.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: IShortIntIdentifier
+    path: ../src/NeerCore.Typeids/Abstractions/ITypeIdentifier.cs
+    startLine: 11
+  assemblies:
+  - NeerCore.Typeids
+  namespace: NeerCore.Typeids.Abstractions
+  syntax:
+    content: 'public interface IShortIntIdentifier : ITypeIdentifier<short>'
+    content.vb: >-
+      Public Interface IShortIntIdentifier
+
+          Inherits ITypeIdentifier(Of Short)
+  inheritedMembers:
+  - NeerCore.Typeids.Abstractions.ITypeIdentifier{System.Int16}.Value
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+references:
+- uid: NeerCore.Typeids.Abstractions
+  commentId: N:NeerCore.Typeids.Abstractions
+  name: NeerCore.Typeids.Abstractions
+  nameWithType: NeerCore.Typeids.Abstractions
+  fullName: NeerCore.Typeids.Abstractions
+- uid: NeerCore.Typeids.Abstractions.ITypeIdentifier{System.Int16}.Value
+  commentId: P:NeerCore.Typeids.Abstractions.ITypeIdentifier{System.Int16}.Value
+  parent: NeerCore.Typeids.Abstractions.ITypeIdentifier{System.Int16}
+  definition: NeerCore.Typeids.Abstractions.ITypeIdentifier`1.Value
+  name: Value
+  nameWithType: ITypeIdentifier<Int16>.Value
+  fullName: NeerCore.Typeids.Abstractions.ITypeIdentifier<System.Int16>.Value
+  nameWithType.vb: ITypeIdentifier(Of Int16).Value
+  fullName.vb: NeerCore.Typeids.Abstractions.ITypeIdentifier(Of System.Int16).Value
+- uid: NeerCore.Typeids.Abstractions.ITypeIdentifier`1.Value
+  commentId: P:NeerCore.Typeids.Abstractions.ITypeIdentifier`1.Value
+  name: Value
+  nameWithType: ITypeIdentifier<TValue>.Value
+  fullName: NeerCore.Typeids.Abstractions.ITypeIdentifier<TValue>.Value
+  nameWithType.vb: ITypeIdentifier(Of TValue).Value
+  fullName.vb: NeerCore.Typeids.Abstractions.ITypeIdentifier(Of TValue).Value
+- uid: NeerCore.Typeids.Abstractions.ITypeIdentifier{System.Int16}
+  commentId: T:NeerCore.Typeids.Abstractions.ITypeIdentifier{System.Int16}
+  parent: NeerCore.Typeids.Abstractions
+  definition: NeerCore.Typeids.Abstractions.ITypeIdentifier`1
+  name: ITypeIdentifier<Int16>
+  nameWithType: ITypeIdentifier<Int16>
+  fullName: NeerCore.Typeids.Abstractions.ITypeIdentifier<System.Int16>
+  nameWithType.vb: ITypeIdentifier(Of Int16)
+  fullName.vb: NeerCore.Typeids.Abstractions.ITypeIdentifier(Of System.Int16)
+  name.vb: ITypeIdentifier(Of Int16)
+  spec.csharp:
+  - uid: NeerCore.Typeids.Abstractions.ITypeIdentifier`1
+    name: ITypeIdentifier
+    nameWithType: ITypeIdentifier
+    fullName: NeerCore.Typeids.Abstractions.ITypeIdentifier
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int16
+    name: Int16
+    nameWithType: Int16
+    fullName: System.Int16
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: NeerCore.Typeids.Abstractions.ITypeIdentifier`1
+    name: ITypeIdentifier
+    nameWithType: ITypeIdentifier
+    fullName: NeerCore.Typeids.Abstractions.ITypeIdentifier
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int16
+    name: Int16
+    nameWithType: Int16
+    fullName: System.Int16
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NeerCore.Typeids.Abstractions.ITypeIdentifier`1
+  commentId: T:NeerCore.Typeids.Abstractions.ITypeIdentifier`1
+  name: ITypeIdentifier<TValue>
+  nameWithType: ITypeIdentifier<TValue>
+  fullName: NeerCore.Typeids.Abstractions.ITypeIdentifier<TValue>
+  nameWithType.vb: ITypeIdentifier(Of TValue)
+  fullName.vb: NeerCore.Typeids.Abstractions.ITypeIdentifier(Of TValue)
+  name.vb: ITypeIdentifier(Of TValue)
+  spec.csharp:
+  - uid: NeerCore.Typeids.Abstractions.ITypeIdentifier`1
+    name: ITypeIdentifier
+    nameWithType: ITypeIdentifier
+    fullName: NeerCore.Typeids.Abstractions.ITypeIdentifier
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: NeerCore.Typeids.Abstractions.ITypeIdentifier`1
+    name: ITypeIdentifier
+    nameWithType: ITypeIdentifier
+    fullName: NeerCore.Typeids.Abstractions.ITypeIdentifier
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )

@@ -1,0 +1,270 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.DependencyInjection.Lifetime
+  commentId: T:NeerCore.DependencyInjection.Lifetime
+  id: Lifetime
+  parent: NeerCore.DependencyInjection
+  children:
+  - NeerCore.DependencyInjection.Lifetime.Default
+  - NeerCore.DependencyInjection.Lifetime.Scoped
+  - NeerCore.DependencyInjection.Lifetime.Singleton
+  - NeerCore.DependencyInjection.Lifetime.Transient
+  langs:
+  - csharp
+  - vb
+  name: Lifetime
+  nameWithType: Lifetime
+  fullName: NeerCore.DependencyInjection.Lifetime
+  type: Enum
+  source:
+    remote:
+      path: src/NeerCore.DependencyInjection/Lifetime.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: Lifetime
+    path: src/NeerCore.DependencyInjection/Lifetime.cs
+    startLine: 8
+  assemblies:
+  - NeerCore.DependencyInjection
+  namespace: NeerCore.DependencyInjection
+  summary: "\nSpecifies the lifetime of a service in an <see cref=\"!:IServiceCollection\"></see>.\nExtended analogue for <see cref=\"!:Microsoft.Extensions.DependencyInjection.ServiceLifetime\"></see>.\n"
+  example: []
+  syntax:
+    content: 'public enum Lifetime : byte'
+    content.vb: Public Enum Lifetime As Byte
+  extensionMethods:
+  - NeerCore.DependencyInjection.Lifetime.NeerCore.DependencyInjection.Extensions.EnumExtensions.ToServiceLifetimes
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: NeerCore.DependencyInjection.Lifetime.Default
+  commentId: F:NeerCore.DependencyInjection.Lifetime.Default
+  id: Default
+  parent: NeerCore.DependencyInjection.Lifetime
+  langs:
+  - csharp
+  - vb
+  name: Default
+  nameWithType: Lifetime.Default
+  fullName: NeerCore.DependencyInjection.Lifetime.Default
+  type: Field
+  source:
+    remote:
+      path: src/NeerCore.DependencyInjection/Lifetime.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: Default
+    path: src/NeerCore.DependencyInjection/Lifetime.cs
+    startLine: 14
+  assemblies:
+  - NeerCore.DependencyInjection
+  namespace: NeerCore.DependencyInjection
+  summary: "\nUses the default value defined at configuring injection.\n"
+  example: []
+  syntax:
+    content: Default = null
+    return:
+      type: NeerCore.DependencyInjection.Lifetime
+    content.vb: Default = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: NeerCore.DependencyInjection.Lifetime.Singleton
+  commentId: F:NeerCore.DependencyInjection.Lifetime.Singleton
+  id: Singleton
+  parent: NeerCore.DependencyInjection.Lifetime
+  langs:
+  - csharp
+  - vb
+  name: Singleton
+  nameWithType: Lifetime.Singleton
+  fullName: NeerCore.DependencyInjection.Lifetime.Singleton
+  type: Field
+  source:
+    remote:
+      path: src/NeerCore.DependencyInjection/Lifetime.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: Singleton
+    path: src/NeerCore.DependencyInjection/Lifetime.cs
+    startLine: 19
+  assemblies:
+  - NeerCore.DependencyInjection
+  namespace: NeerCore.DependencyInjection
+  summary: "\nSpecifies that a single instance of the service will be created.\n"
+  example: []
+  syntax:
+    content: Singleton = null
+    return:
+      type: NeerCore.DependencyInjection.Lifetime
+    content.vb: Singleton = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: NeerCore.DependencyInjection.Lifetime.Scoped
+  commentId: F:NeerCore.DependencyInjection.Lifetime.Scoped
+  id: Scoped
+  parent: NeerCore.DependencyInjection.Lifetime
+  langs:
+  - csharp
+  - vb
+  name: Scoped
+  nameWithType: Lifetime.Scoped
+  fullName: NeerCore.DependencyInjection.Lifetime.Scoped
+  type: Field
+  source:
+    remote:
+      path: src/NeerCore.DependencyInjection/Lifetime.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: Scoped
+    path: src/NeerCore.DependencyInjection/Lifetime.cs
+    startLine: 27
+  assemblies:
+  - NeerCore.DependencyInjection
+  namespace: NeerCore.DependencyInjection
+  summary: "\nSpecifies that a new instance of the service will be created for each scope.\n"
+  remarks: "\nIn ASP.NET Core applications a scope is created around each server request.\n"
+  example: []
+  syntax:
+    content: Scoped = null
+    return:
+      type: NeerCore.DependencyInjection.Lifetime
+    content.vb: Scoped = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: NeerCore.DependencyInjection.Lifetime.Transient
+  commentId: F:NeerCore.DependencyInjection.Lifetime.Transient
+  id: Transient
+  parent: NeerCore.DependencyInjection.Lifetime
+  langs:
+  - csharp
+  - vb
+  name: Transient
+  nameWithType: Lifetime.Transient
+  fullName: NeerCore.DependencyInjection.Lifetime.Transient
+  type: Field
+  source:
+    remote:
+      path: src/NeerCore.DependencyInjection/Lifetime.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: Transient
+    path: src/NeerCore.DependencyInjection/Lifetime.cs
+    startLine: 32
+  assemblies:
+  - NeerCore.DependencyInjection
+  namespace: NeerCore.DependencyInjection
+  summary: "\nSpecifies that a new instance of the service will be created every time it is requested.\n"
+  example: []
+  syntax:
+    content: Transient = null
+    return:
+      type: NeerCore.DependencyInjection.Lifetime
+    content.vb: Transient = Nothing
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: NeerCore.DependencyInjection
+  commentId: N:NeerCore.DependencyInjection
+  name: NeerCore.DependencyInjection
+  nameWithType: NeerCore.DependencyInjection
+  fullName: NeerCore.DependencyInjection
+- uid: NeerCore.DependencyInjection.Lifetime.NeerCore.DependencyInjection.Extensions.EnumExtensions.ToServiceLifetimes
+  commentId: M:NeerCore.DependencyInjection.Extensions.EnumExtensions.ToServiceLifetimes(NeerCore.DependencyInjection.Lifetime)
+  parent: NeerCore.DependencyInjection.Extensions.EnumExtensions
+  definition: NeerCore.DependencyInjection.Extensions.EnumExtensions.ToServiceLifetimes(NeerCore.DependencyInjection.Lifetime)
+  name: ToServiceLifetimes()
+  nameWithType: EnumExtensions.ToServiceLifetimes()
+  fullName: NeerCore.DependencyInjection.Extensions.EnumExtensions.ToServiceLifetimes()
+  spec.csharp:
+  - uid: NeerCore.DependencyInjection.Extensions.EnumExtensions.ToServiceLifetimes
+    name: ToServiceLifetimes
+    nameWithType: EnumExtensions.ToServiceLifetimes
+    fullName: NeerCore.DependencyInjection.Extensions.EnumExtensions.ToServiceLifetimes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: NeerCore.DependencyInjection.Extensions.EnumExtensions.ToServiceLifetimes
+    name: ToServiceLifetimes
+    nameWithType: EnumExtensions.ToServiceLifetimes
+    fullName: NeerCore.DependencyInjection.Extensions.EnumExtensions.ToServiceLifetimes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NeerCore.DependencyInjection.Extensions.EnumExtensions.ToServiceLifetimes(NeerCore.DependencyInjection.Lifetime)
+  commentId: M:NeerCore.DependencyInjection.Extensions.EnumExtensions.ToServiceLifetimes(NeerCore.DependencyInjection.Lifetime)
+  name: ToServiceLifetimes(Lifetime)
+  nameWithType: EnumExtensions.ToServiceLifetimes(Lifetime)
+  fullName: NeerCore.DependencyInjection.Extensions.EnumExtensions.ToServiceLifetimes(NeerCore.DependencyInjection.Lifetime)
+  spec.csharp:
+  - uid: NeerCore.DependencyInjection.Extensions.EnumExtensions.ToServiceLifetimes(NeerCore.DependencyInjection.Lifetime)
+    name: ToServiceLifetimes
+    nameWithType: EnumExtensions.ToServiceLifetimes
+    fullName: NeerCore.DependencyInjection.Extensions.EnumExtensions.ToServiceLifetimes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: NeerCore.DependencyInjection.Lifetime
+    name: Lifetime
+    nameWithType: Lifetime
+    fullName: NeerCore.DependencyInjection.Lifetime
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: NeerCore.DependencyInjection.Extensions.EnumExtensions.ToServiceLifetimes(NeerCore.DependencyInjection.Lifetime)
+    name: ToServiceLifetimes
+    nameWithType: EnumExtensions.ToServiceLifetimes
+    fullName: NeerCore.DependencyInjection.Extensions.EnumExtensions.ToServiceLifetimes
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: NeerCore.DependencyInjection.Lifetime
+    name: Lifetime
+    nameWithType: Lifetime
+    fullName: NeerCore.DependencyInjection.Lifetime
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NeerCore.DependencyInjection.Extensions.EnumExtensions
+  commentId: T:NeerCore.DependencyInjection.Extensions.EnumExtensions
+  parent: NeerCore.DependencyInjection.Extensions
+  name: EnumExtensions
+  nameWithType: EnumExtensions
+  fullName: NeerCore.DependencyInjection.Extensions.EnumExtensions
+- uid: NeerCore.DependencyInjection.Extensions
+  commentId: N:NeerCore.DependencyInjection.Extensions
+  name: NeerCore.DependencyInjection.Extensions
+  nameWithType: NeerCore.DependencyInjection.Extensions
+  fullName: NeerCore.DependencyInjection.Extensions
+- uid: NeerCore.DependencyInjection.Lifetime
+  commentId: T:NeerCore.DependencyInjection.Lifetime
+  parent: NeerCore.DependencyInjection
+  name: Lifetime
+  nameWithType: Lifetime
+  fullName: NeerCore.DependencyInjection.Lifetime

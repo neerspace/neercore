@@ -1,0 +1,28 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Mapping.Extensions
+  commentId: N:NeerCore.Mapping.Extensions
+  id: NeerCore.Mapping.Extensions
+  children:
+  - NeerCore.Mapping.Extensions.EnumerableExtensions
+  - NeerCore.Mapping.Extensions.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: NeerCore.Mapping.Extensions
+  nameWithType: NeerCore.Mapping.Extensions
+  fullName: NeerCore.Mapping.Extensions
+  type: Namespace
+  assemblies:
+  - NeerCore.Mapping.Mapster
+references:
+- uid: NeerCore.Mapping.Extensions.EnumerableExtensions
+  commentId: T:NeerCore.Mapping.Extensions.EnumerableExtensions
+  name: EnumerableExtensions
+  nameWithType: EnumerableExtensions
+  fullName: NeerCore.Mapping.Extensions.EnumerableExtensions
+- uid: NeerCore.Mapping.Extensions.ServiceCollectionExtensions
+  commentId: T:NeerCore.Mapping.Extensions.ServiceCollectionExtensions
+  name: ServiceCollectionExtensions
+  nameWithType: ServiceCollectionExtensions
+  fullName: NeerCore.Mapping.Extensions.ServiceCollectionExtensions

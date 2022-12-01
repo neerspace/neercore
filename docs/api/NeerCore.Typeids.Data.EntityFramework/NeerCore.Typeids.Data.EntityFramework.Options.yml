@@ -1,0 +1,22 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Typeids.Data.EntityFramework.Options
+  commentId: N:NeerCore.Typeids.Data.EntityFramework.Options
+  id: NeerCore.Typeids.Data.EntityFramework.Options
+  children:
+  - NeerCore.Typeids.Data.EntityFramework.Options.TypeidsOptions
+  langs:
+  - csharp
+  - vb
+  name: NeerCore.Typeids.Data.EntityFramework.Options
+  nameWithType: NeerCore.Typeids.Data.EntityFramework.Options
+  fullName: NeerCore.Typeids.Data.EntityFramework.Options
+  type: Namespace
+  assemblies:
+  - NeerCore.Typeids.Data.EntityFramework
+references:
+- uid: NeerCore.Typeids.Data.EntityFramework.Options.TypeidsOptions
+  commentId: T:NeerCore.Typeids.Data.EntityFramework.Options.TypeidsOptions
+  name: TypeidsOptions
+  nameWithType: TypeidsOptions
+  fullName: NeerCore.Typeids.Data.EntityFramework.Options.TypeidsOptions

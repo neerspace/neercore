@@ -1,0 +1,161 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Api.Extensions.HttpExceptionExtensions
+  commentId: T:NeerCore.Api.Extensions.HttpExceptionExtensions
+  id: HttpExceptionExtensions
+  parent: NeerCore.Api.Extensions
+  children:
+  - NeerCore.Api.Extensions.HttpExceptionExtensions.CreateError(NeerCore.Exceptions.HttpException)
+  - NeerCore.Api.Extensions.HttpExceptionExtensions.CreateFluentValidationError(ValidationException)
+  langs:
+  - csharp
+  - vb
+  name: HttpExceptionExtensions
+  nameWithType: HttpExceptionExtensions
+  fullName: NeerCore.Api.Extensions.HttpExceptionExtensions
+  type: Class
+  source:
+    remote:
+      path: src/NeerCore.Api/Extensions/HttpExceptionExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: HttpExceptionExtensions
+    path: ../src/NeerCore.Api/Extensions/HttpExceptionExtensions.cs
+    startLine: 5
+  assemblies:
+  - NeerCore.Api
+  namespace: NeerCore.Api.Extensions
+  syntax:
+    content: 'public static class HttpExceptionExtensions : object'
+    content.vb: >-
+      Public Module HttpExceptionExtensions
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: NeerCore.Api.Extensions.HttpExceptionExtensions.CreateError(NeerCore.Exceptions.HttpException)
+  commentId: M:NeerCore.Api.Extensions.HttpExceptionExtensions.CreateError(NeerCore.Exceptions.HttpException)
+  id: CreateError(NeerCore.Exceptions.HttpException)
+  isExtensionMethod: true
+  parent: NeerCore.Api.Extensions.HttpExceptionExtensions
+  langs:
+  - csharp
+  - vb
+  name: CreateError(HttpException)
+  nameWithType: HttpExceptionExtensions.CreateError(HttpException)
+  fullName: NeerCore.Api.Extensions.HttpExceptionExtensions.CreateError(NeerCore.Exceptions.HttpException)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Api/Extensions/HttpExceptionExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: CreateError
+    path: ../src/NeerCore.Api/Extensions/HttpExceptionExtensions.cs
+    startLine: 7
+  assemblies:
+  - NeerCore.Api
+  namespace: NeerCore.Api.Extensions
+  syntax:
+    content: public static Error CreateError(this HttpException e)
+    parameters:
+    - id: e
+      type: NeerCore.Exceptions.HttpException
+    return:
+      type: NeerCore.Api.Error
+    content.vb: "<ExtensionAttribute>\nPublic Shared Function CreateError(e As HttpException) As "
+  overload: NeerCore.Api.Extensions.HttpExceptionExtensions.CreateError*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: NeerCore.Api.Extensions.HttpExceptionExtensions.CreateFluentValidationError(ValidationException)
+  commentId: M:NeerCore.Api.Extensions.HttpExceptionExtensions.CreateFluentValidationError(ValidationException)
+  id: CreateFluentValidationError(ValidationException)
+  isExtensionMethod: true
+  parent: NeerCore.Api.Extensions.HttpExceptionExtensions
+  langs:
+  - csharp
+  - vb
+  name: CreateFluentValidationError(ValidationException)
+  nameWithType: HttpExceptionExtensions.CreateFluentValidationError(ValidationException)
+  fullName: NeerCore.Api.Extensions.HttpExceptionExtensions.CreateFluentValidationError(ValidationException)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Api/Extensions/HttpExceptionExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: CreateFluentValidationError
+    path: ../src/NeerCore.Api/Extensions/HttpExceptionExtensions.cs
+    startLine: 14
+  assemblies:
+  - NeerCore.Api
+  namespace: NeerCore.Api.Extensions
+  syntax:
+    content: public static Error CreateFluentValidationError(this ValidationException e)
+    parameters:
+    - id: e
+      type: ValidationException
+    return:
+      type: NeerCore.Api.Error
+    content.vb: "<ExtensionAttribute>\nPublic Shared Function CreateFluentValidationError(e As ValidationException) As "
+  overload: NeerCore.Api.Extensions.HttpExceptionExtensions.CreateFluentValidationError*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: NeerCore.Api.Extensions
+  commentId: N:NeerCore.Api.Extensions
+  name: NeerCore.Api.Extensions
+  nameWithType: NeerCore.Api.Extensions
+  fullName: NeerCore.Api.Extensions
+- uid: NeerCore.Api.Extensions.HttpExceptionExtensions.CreateError*
+  commentId: Overload:NeerCore.Api.Extensions.HttpExceptionExtensions.CreateError
+  name: CreateError
+  nameWithType: HttpExceptionExtensions.CreateError
+  fullName: NeerCore.Api.Extensions.HttpExceptionExtensions.CreateError
+- uid: NeerCore.Exceptions.HttpException
+  commentId: T:NeerCore.Exceptions.HttpException
+  parent: NeerCore.Exceptions
+  name: HttpException
+  nameWithType: HttpException
+  fullName: NeerCore.Exceptions.HttpException
+- uid: NeerCore.Api.Error
+  commentId: T:NeerCore.Api.Error
+  parent: NeerCore.Api
+  name: Error
+  nameWithType: Error
+  fullName: NeerCore.Api.Error
+- uid: NeerCore.Exceptions
+  commentId: N:NeerCore.Exceptions
+  name: NeerCore.Exceptions
+  nameWithType: NeerCore.Exceptions
+  fullName: NeerCore.Exceptions
+- uid: NeerCore.Api
+  commentId: N:NeerCore.Api
+  name: NeerCore.Api
+  nameWithType: NeerCore.Api
+  fullName: NeerCore.Api
+- uid: NeerCore.Api.Extensions.HttpExceptionExtensions.CreateFluentValidationError*
+  commentId: Overload:NeerCore.Api.Extensions.HttpExceptionExtensions.CreateFluentValidationError
+  name: CreateFluentValidationError
+  nameWithType: HttpExceptionExtensions.CreateFluentValidationError
+  fullName: NeerCore.Api.Extensions.HttpExceptionExtensions.CreateFluentValidationError
+- uid: ValidationException
+  commentId: '!:ValidationException'
+  isExternal: true
+  name: ValidationException
+  nameWithType: ValidationException
+  fullName: ValidationException

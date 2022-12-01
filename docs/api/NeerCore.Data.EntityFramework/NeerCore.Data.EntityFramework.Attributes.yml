@@ -1,0 +1,22 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Data.EntityFramework.Attributes
+  commentId: N:NeerCore.Data.EntityFramework.Attributes
+  id: NeerCore.Data.EntityFramework.Attributes
+  children:
+  - NeerCore.Data.EntityFramework.Attributes.DecimalColumnAttribute
+  langs:
+  - csharp
+  - vb
+  name: NeerCore.Data.EntityFramework.Attributes
+  nameWithType: NeerCore.Data.EntityFramework.Attributes
+  fullName: NeerCore.Data.EntityFramework.Attributes
+  type: Namespace
+  assemblies:
+  - NeerCore.Data.EntityFramework
+references:
+- uid: NeerCore.Data.EntityFramework.Attributes.DecimalColumnAttribute
+  commentId: T:NeerCore.Data.EntityFramework.Attributes.DecimalColumnAttribute
+  name: DecimalColumnAttribute
+  nameWithType: DecimalColumnAttribute
+  fullName: NeerCore.Data.EntityFramework.Attributes.DecimalColumnAttribute

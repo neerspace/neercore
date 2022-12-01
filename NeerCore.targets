@@ -9,6 +9,10 @@
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <XmlDocsBaseDirectory>bin/Shared</XmlDocsBaseDirectory>
+  </PropertyGroup>
+
   <ItemGroup>
     <None Include="..\..\favicon.png">
       <Pack>True</Pack>

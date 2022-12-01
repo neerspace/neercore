@@ -1,0 +1,206 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Typeids.Api.Hashids.Extensions.ServiceCollectionExtensions
+  commentId: T:NeerCore.Typeids.Api.Hashids.Extensions.ServiceCollectionExtensions
+  id: ServiceCollectionExtensions
+  parent: NeerCore.Typeids.Api.Hashids.Extensions
+  children:
+  - NeerCore.Typeids.Api.Hashids.Extensions.ServiceCollectionExtensions.AddTypeidsWithHashids(IServiceCollection,System.Nullable{Action{HashidsOptions}})
+  langs:
+  - csharp
+  - vb
+  name: ServiceCollectionExtensions
+  nameWithType: ServiceCollectionExtensions
+  fullName: NeerCore.Typeids.Api.Hashids.Extensions.ServiceCollectionExtensions
+  type: Class
+  source:
+    remote:
+      path: src/NeerCore.Typeids.Api.Hashids/Extensions/ServiceCollectionExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: ServiceCollectionExtensions
+    path: ../src/NeerCore.Typeids.Api.Hashids/Extensions/ServiceCollectionExtensions.cs
+    startLine: 5
+  assemblies:
+  - NeerCore.Typeids.Api.Hashids
+  namespace: NeerCore.Typeids.Api.Hashids.Extensions
+  syntax:
+    content: 'public static class ServiceCollectionExtensions : object'
+    content.vb: >-
+      Public Module ServiceCollectionExtensions
+
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: NeerCore.Typeids.Api.Hashids.Extensions.ServiceCollectionExtensions.AddTypeidsWithHashids(IServiceCollection,System.Nullable{Action{HashidsOptions}})
+  commentId: M:NeerCore.Typeids.Api.Hashids.Extensions.ServiceCollectionExtensions.AddTypeidsWithHashids(IServiceCollection,System.Nullable{Action{HashidsOptions}})
+  id: AddTypeidsWithHashids(IServiceCollection,System.Nullable{Action{HashidsOptions}})
+  isExtensionMethod: true
+  parent: NeerCore.Typeids.Api.Hashids.Extensions.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: AddTypeidsWithHashids(IServiceCollection, Nullable<Action<HashidsOptions>>)
+  nameWithType: ServiceCollectionExtensions.AddTypeidsWithHashids(IServiceCollection, Nullable<Action<HashidsOptions>>)
+  fullName: NeerCore.Typeids.Api.Hashids.Extensions.ServiceCollectionExtensions.AddTypeidsWithHashids(IServiceCollection, System.Nullable<Action<HashidsOptions>>)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Typeids.Api.Hashids/Extensions/ServiceCollectionExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: AddTypeidsWithHashids
+    path: ../src/NeerCore.Typeids.Api.Hashids/Extensions/ServiceCollectionExtensions.cs
+    startLine: 7
+  assemblies:
+  - NeerCore.Typeids.Api.Hashids
+  namespace: NeerCore.Typeids.Api.Hashids.Extensions
+  syntax:
+    content: public static IServiceCollection AddTypeidsWithHashids(this IServiceCollection services, Action<HashidsOptions>? setup = null)
+    parameters:
+    - id: services
+      type: IServiceCollection
+    - id: setup
+      type: System.Nullable{Action{HashidsOptions}}
+    return:
+      type: IServiceCollection
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function AddTypeidsWithHashids(services As IServiceCollection, setup As Action(Of HashidsOptions)? = Nothing) As IServiceCollection
+  overload: NeerCore.Typeids.Api.Hashids.Extensions.ServiceCollectionExtensions.AddTypeidsWithHashids*
+  nameWithType.vb: ServiceCollectionExtensions.AddTypeidsWithHashids(IServiceCollection, Nullable(Of Action(Of HashidsOptions)))
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: NeerCore.Typeids.Api.Hashids.Extensions.ServiceCollectionExtensions.AddTypeidsWithHashids(IServiceCollection, System.Nullable(Of Action(Of HashidsOptions)))
+  name.vb: AddTypeidsWithHashids(IServiceCollection, Nullable(Of Action(Of HashidsOptions)))
+references:
+- uid: NeerCore.Typeids.Api.Hashids.Extensions
+  commentId: N:NeerCore.Typeids.Api.Hashids.Extensions
+  name: NeerCore.Typeids.Api.Hashids.Extensions
+  nameWithType: NeerCore.Typeids.Api.Hashids.Extensions
+  fullName: NeerCore.Typeids.Api.Hashids.Extensions
+- uid: NeerCore.Typeids.Api.Hashids.Extensions.ServiceCollectionExtensions.AddTypeidsWithHashids*
+  commentId: Overload:NeerCore.Typeids.Api.Hashids.Extensions.ServiceCollectionExtensions.AddTypeidsWithHashids
+  name: AddTypeidsWithHashids
+  nameWithType: ServiceCollectionExtensions.AddTypeidsWithHashids
+  fullName: NeerCore.Typeids.Api.Hashids.Extensions.ServiceCollectionExtensions.AddTypeidsWithHashids
+- uid: IServiceCollection
+  isExternal: true
+  name: IServiceCollection
+  nameWithType: IServiceCollection
+  fullName: IServiceCollection
+- uid: System.Nullable{Action{HashidsOptions}}
+  commentId: '!:System.Nullable{Action{HashidsOptions}}'
+  definition: System.Nullable`1
+  name: Nullable<Action<HashidsOptions>>
+  nameWithType: Nullable<Action<HashidsOptions>>
+  fullName: System.Nullable<Action<HashidsOptions>>
+  nameWithType.vb: Nullable(Of Action(Of HashidsOptions))
+  fullName.vb: System.Nullable(Of Action(Of HashidsOptions))
+  name.vb: Nullable(Of Action(Of HashidsOptions))
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: HashidsOptions
+    name: HashidsOptions
+    nameWithType: HashidsOptions
+    fullName: HashidsOptions
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: Action`1
+    name: Action
+    nameWithType: Action
+    fullName: Action
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: HashidsOptions
+    name: HashidsOptions
+    nameWithType: HashidsOptions
+    fullName: HashidsOptions
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable`1
+  isExternal: true
+  name: Nullable<>
+  nameWithType: Nullable<>
+  fullName: System.Nullable<>
+  nameWithType.vb: Nullable(Of )
+  fullName.vb: System.Nullable(Of )
+  name.vb: Nullable(Of )
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )

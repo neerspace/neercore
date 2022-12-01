@@ -1,0 +1,46 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Data.EntityFramework.Extensions
+  commentId: N:NeerCore.Data.EntityFramework.Extensions
+  id: NeerCore.Data.EntityFramework.Extensions
+  children:
+  - NeerCore.Data.EntityFramework.Extensions.DbSetExtensions
+  - NeerCore.Data.EntityFramework.Extensions.ModelBuilderExtensions
+  - NeerCore.Data.EntityFramework.Extensions.ModelConfigurationBuilderExtensions
+  - NeerCore.Data.EntityFramework.Extensions.QueryableExtensions
+  - NeerCore.Data.EntityFramework.Extensions.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: NeerCore.Data.EntityFramework.Extensions
+  nameWithType: NeerCore.Data.EntityFramework.Extensions
+  fullName: NeerCore.Data.EntityFramework.Extensions
+  type: Namespace
+  assemblies:
+  - NeerCore.Data.EntityFramework
+references:
+- uid: NeerCore.Data.EntityFramework.Extensions.DbSetExtensions
+  commentId: T:NeerCore.Data.EntityFramework.Extensions.DbSetExtensions
+  name: DbSetExtensions
+  nameWithType: DbSetExtensions
+  fullName: NeerCore.Data.EntityFramework.Extensions.DbSetExtensions
+- uid: NeerCore.Data.EntityFramework.Extensions.ModelBuilderExtensions
+  commentId: T:NeerCore.Data.EntityFramework.Extensions.ModelBuilderExtensions
+  name: ModelBuilderExtensions
+  nameWithType: ModelBuilderExtensions
+  fullName: NeerCore.Data.EntityFramework.Extensions.ModelBuilderExtensions
+- uid: NeerCore.Data.EntityFramework.Extensions.ModelConfigurationBuilderExtensions
+  commentId: T:NeerCore.Data.EntityFramework.Extensions.ModelConfigurationBuilderExtensions
+  name: ModelConfigurationBuilderExtensions
+  nameWithType: ModelConfigurationBuilderExtensions
+  fullName: NeerCore.Data.EntityFramework.Extensions.ModelConfigurationBuilderExtensions
+- uid: NeerCore.Data.EntityFramework.Extensions.QueryableExtensions
+  commentId: T:NeerCore.Data.EntityFramework.Extensions.QueryableExtensions
+  name: QueryableExtensions
+  nameWithType: QueryableExtensions
+  fullName: NeerCore.Data.EntityFramework.Extensions.QueryableExtensions
+- uid: NeerCore.Data.EntityFramework.Extensions.ServiceCollectionExtensions
+  commentId: T:NeerCore.Data.EntityFramework.Extensions.ServiceCollectionExtensions
+  name: ServiceCollectionExtensions
+  nameWithType: ServiceCollectionExtensions
+  fullName: NeerCore.Data.EntityFramework.Extensions.ServiceCollectionExtensions

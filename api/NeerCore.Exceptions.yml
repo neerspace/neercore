@@ -1,0 +1,108 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Exceptions
+  commentId: N:NeerCore.Exceptions
+  id: NeerCore.Exceptions
+  children:
+  - NeerCore.Exceptions.ConflictException
+  - NeerCore.Exceptions.ForbidException
+  - NeerCore.Exceptions.HttpException
+  - NeerCore.Exceptions.InternalServerException
+  - NeerCore.Exceptions.NotFoundException
+  - NeerCore.Exceptions.NotFoundException`1
+  - NeerCore.Exceptions.UnauthorizedException
+  - NeerCore.Exceptions.UnprocessableEntityException
+  - NeerCore.Exceptions.ValidationFailedException
+  langs:
+  - csharp
+  - vb
+  name: NeerCore.Exceptions
+  nameWithType: NeerCore.Exceptions
+  fullName: NeerCore.Exceptions
+  type: Namespace
+  assemblies:
+  - NeerCore
+references:
+- uid: NeerCore.Exceptions.ConflictException
+  commentId: T:NeerCore.Exceptions.ConflictException
+  name: ConflictException
+  nameWithType: ConflictException
+  fullName: NeerCore.Exceptions.ConflictException
+- uid: NeerCore.Exceptions.ForbidException
+  commentId: T:NeerCore.Exceptions.ForbidException
+  name: ForbidException
+  nameWithType: ForbidException
+  fullName: NeerCore.Exceptions.ForbidException
+- uid: NeerCore.Exceptions.HttpException
+  commentId: T:NeerCore.Exceptions.HttpException
+  parent: NeerCore.Exceptions
+  name: HttpException
+  nameWithType: HttpException
+  fullName: NeerCore.Exceptions.HttpException
+- uid: NeerCore.Exceptions.InternalServerException
+  commentId: T:NeerCore.Exceptions.InternalServerException
+  name: InternalServerException
+  nameWithType: InternalServerException
+  fullName: NeerCore.Exceptions.InternalServerException
+- uid: NeerCore.Exceptions.NotFoundException
+  commentId: T:NeerCore.Exceptions.NotFoundException
+  parent: NeerCore.Exceptions
+  name: NotFoundException
+  nameWithType: NotFoundException
+  fullName: NeerCore.Exceptions.NotFoundException
+- uid: NeerCore.Exceptions.NotFoundException`1
+  commentId: T:NeerCore.Exceptions.NotFoundException`1
+  name: NotFoundException<T>
+  nameWithType: NotFoundException<T>
+  fullName: NeerCore.Exceptions.NotFoundException<T>
+  nameWithType.vb: NotFoundException(Of T)
+  fullName.vb: NeerCore.Exceptions.NotFoundException(Of T)
+  name.vb: NotFoundException(Of T)
+  spec.csharp:
+  - uid: NeerCore.Exceptions.NotFoundException`1
+    name: NotFoundException
+    nameWithType: NotFoundException
+    fullName: NeerCore.Exceptions.NotFoundException
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: NeerCore.Exceptions.NotFoundException`1
+    name: NotFoundException
+    nameWithType: NotFoundException
+    fullName: NeerCore.Exceptions.NotFoundException
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NeerCore.Exceptions.UnauthorizedException
+  commentId: T:NeerCore.Exceptions.UnauthorizedException
+  name: UnauthorizedException
+  nameWithType: UnauthorizedException
+  fullName: NeerCore.Exceptions.UnauthorizedException
+- uid: NeerCore.Exceptions.UnprocessableEntityException
+  commentId: T:NeerCore.Exceptions.UnprocessableEntityException
+  name: UnprocessableEntityException
+  nameWithType: UnprocessableEntityException
+  fullName: NeerCore.Exceptions.UnprocessableEntityException
+- uid: NeerCore.Exceptions.ValidationFailedException
+  commentId: T:NeerCore.Exceptions.ValidationFailedException
+  name: ValidationFailedException
+  nameWithType: ValidationFailedException
+  fullName: NeerCore.Exceptions.ValidationFailedException
+- uid: NeerCore.Exceptions
+  commentId: N:NeerCore.Exceptions
+  name: NeerCore.Exceptions
+  nameWithType: NeerCore.Exceptions
+  fullName: NeerCore.Exceptions

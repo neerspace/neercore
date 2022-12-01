@@ -6,6 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <IsPackable>true</IsPackable>
+    <DocumentationFile>$(XmlDocsBaseDirectory)/NeerCore.Api.xml</DocumentationFile>
 
     <PackageTags>neercore aspnetcore rest-api versioning swagger</PackageTags>
     <Description>The NeerCore.Api package is a set of base classes for configuring and easier work with ASP.NET web applications.

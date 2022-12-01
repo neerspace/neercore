@@ -1,0 +1,86 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Data.EntityFramework.Design
+  commentId: N:NeerCore.Data.EntityFramework.Design
+  id: NeerCore.Data.EntityFramework.Design
+  children:
+  - NeerCore.Data.EntityFramework.Design.DateTimeFormat
+  - NeerCore.Data.EntityFramework.Design.DbContextFactoryBase`1
+  - NeerCore.Data.EntityFramework.Design.DbDesignOptions
+  - NeerCore.Data.EntityFramework.Design.DbEngineStrategy
+  - NeerCore.Data.EntityFramework.Design.SqlDbMap
+  langs:
+  - csharp
+  - vb
+  name: NeerCore.Data.EntityFramework.Design
+  nameWithType: NeerCore.Data.EntityFramework.Design
+  fullName: NeerCore.Data.EntityFramework.Design
+  type: Namespace
+  assemblies:
+  - NeerCore.Data.EntityFramework
+references:
+- uid: NeerCore.Data.EntityFramework.Design.DateTimeFormat
+  commentId: T:NeerCore.Data.EntityFramework.Design.DateTimeFormat
+  parent: NeerCore.Data.EntityFramework.Design
+  name: DateTimeFormat
+  nameWithType: DateTimeFormat
+  fullName: NeerCore.Data.EntityFramework.Design.DateTimeFormat
+- uid: NeerCore.Data.EntityFramework.Design.DbContextFactoryBase`1
+  commentId: T:NeerCore.Data.EntityFramework.Design.DbContextFactoryBase`1
+  name: DbContextFactoryBase<TContext>
+  nameWithType: DbContextFactoryBase<TContext>
+  fullName: NeerCore.Data.EntityFramework.Design.DbContextFactoryBase<TContext>
+  nameWithType.vb: DbContextFactoryBase(Of TContext)
+  fullName.vb: NeerCore.Data.EntityFramework.Design.DbContextFactoryBase(Of TContext)
+  name.vb: DbContextFactoryBase(Of TContext)
+  spec.csharp:
+  - uid: NeerCore.Data.EntityFramework.Design.DbContextFactoryBase`1
+    name: DbContextFactoryBase
+    nameWithType: DbContextFactoryBase
+    fullName: NeerCore.Data.EntityFramework.Design.DbContextFactoryBase
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TContext
+    nameWithType: TContext
+    fullName: TContext
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: NeerCore.Data.EntityFramework.Design.DbContextFactoryBase`1
+    name: DbContextFactoryBase
+    nameWithType: DbContextFactoryBase
+    fullName: NeerCore.Data.EntityFramework.Design.DbContextFactoryBase
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TContext
+    nameWithType: TContext
+    fullName: TContext
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NeerCore.Data.EntityFramework.Design.DbDesignOptions
+  commentId: T:NeerCore.Data.EntityFramework.Design.DbDesignOptions
+  parent: NeerCore.Data.EntityFramework.Design
+  name: DbDesignOptions
+  nameWithType: DbDesignOptions
+  fullName: NeerCore.Data.EntityFramework.Design.DbDesignOptions
+- uid: NeerCore.Data.EntityFramework.Design.DbEngineStrategy
+  commentId: T:NeerCore.Data.EntityFramework.Design.DbEngineStrategy
+  parent: NeerCore.Data.EntityFramework.Design
+  name: DbEngineStrategy
+  nameWithType: DbEngineStrategy
+  fullName: NeerCore.Data.EntityFramework.Design.DbEngineStrategy
+- uid: NeerCore.Data.EntityFramework.Design.SqlDbMap
+  commentId: T:NeerCore.Data.EntityFramework.Design.SqlDbMap
+  parent: NeerCore.Data.EntityFramework.Design
+  name: SqlDbMap
+  nameWithType: SqlDbMap
+  fullName: NeerCore.Data.EntityFramework.Design.SqlDbMap
+- uid: NeerCore.Data.EntityFramework.Design
+  commentId: N:NeerCore.Data.EntityFramework.Design
+  name: NeerCore.Data.EntityFramework.Design
+  nameWithType: NeerCore.Data.EntityFramework.Design
+  fullName: NeerCore.Data.EntityFramework.Design

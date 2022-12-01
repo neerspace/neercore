@@ -1,0 +1,107 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.DependencyInjection.Extensions.AssemblyExtensions
+  commentId: T:NeerCore.DependencyInjection.Extensions.AssemblyExtensions
+  id: AssemblyExtensions
+  parent: NeerCore.DependencyInjection.Extensions
+  children:
+  - NeerCore.DependencyInjection.Extensions.AssemblyExtensions.GetBaseNamespace(Assembly)
+  langs:
+  - csharp
+  - vb
+  name: AssemblyExtensions
+  nameWithType: AssemblyExtensions
+  fullName: NeerCore.DependencyInjection.Extensions.AssemblyExtensions
+  type: Class
+  source:
+    remote:
+      path: src/NeerCore.DependencyInjection/Extensions/AssemblyExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: AssemblyExtensions
+    path: src/NeerCore.DependencyInjection/Extensions/AssemblyExtensions.cs
+    startLine: 4
+  assemblies:
+  - NeerCore.DependencyInjection
+  namespace: NeerCore.DependencyInjection.Extensions
+  syntax:
+    content: 'public static class AssemblyExtensions : object'
+    content.vb: >-
+      Public Module AssemblyExtensions
+
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: NeerCore.DependencyInjection.Extensions.AssemblyExtensions.GetBaseNamespace(Assembly)
+  commentId: M:NeerCore.DependencyInjection.Extensions.AssemblyExtensions.GetBaseNamespace(Assembly)
+  id: GetBaseNamespace(Assembly)
+  isExtensionMethod: true
+  parent: NeerCore.DependencyInjection.Extensions.AssemblyExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetBaseNamespace(Assembly)
+  nameWithType: AssemblyExtensions.GetBaseNamespace(Assembly)
+  fullName: NeerCore.DependencyInjection.Extensions.AssemblyExtensions.GetBaseNamespace(Assembly)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.DependencyInjection/Extensions/AssemblyExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: GetBaseNamespace
+    path: src/NeerCore.DependencyInjection/Extensions/AssemblyExtensions.cs
+    startLine: 12
+  assemblies:
+  - NeerCore.DependencyInjection
+  namespace: NeerCore.DependencyInjection.Extensions
+  summary: "\nReturns a root namespace part.\n"
+  example: []
+  syntax:
+    content: public static string GetBaseNamespace(this Assembly assembly)
+    parameters:
+    - id: assembly
+      type: Assembly
+      description: An instance of any assembly.
+    return:
+      type: System.String
+      description: For assembly with namespace name &apos;NeerCore.Data.Abstractions&apos; returns a &apos;NeerCore&apos;.
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function GetBaseNamespace(assembly As Assembly) As String
+  overload: NeerCore.DependencyInjection.Extensions.AssemblyExtensions.GetBaseNamespace*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: NeerCore.DependencyInjection.Extensions
+  commentId: N:NeerCore.DependencyInjection.Extensions
+  name: NeerCore.DependencyInjection.Extensions
+  nameWithType: NeerCore.DependencyInjection.Extensions
+  fullName: NeerCore.DependencyInjection.Extensions
+- uid: NeerCore.DependencyInjection.Extensions.AssemblyExtensions.GetBaseNamespace*
+  commentId: Overload:NeerCore.DependencyInjection.Extensions.AssemblyExtensions.GetBaseNamespace
+  name: GetBaseNamespace
+  nameWithType: AssemblyExtensions.GetBaseNamespace
+  fullName: NeerCore.DependencyInjection.Extensions.AssemblyExtensions.GetBaseNamespace
+- uid: Assembly
+  isExternal: true
+  name: Assembly
+  nameWithType: Assembly
+  fullName: Assembly
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String

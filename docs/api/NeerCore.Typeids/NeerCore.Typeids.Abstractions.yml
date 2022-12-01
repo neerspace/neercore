@@ -1,0 +1,83 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Typeids.Abstractions
+  commentId: N:NeerCore.Typeids.Abstractions
+  id: NeerCore.Typeids.Abstractions
+  children:
+  - NeerCore.Typeids.Abstractions.IGuidIdentifier
+  - NeerCore.Typeids.Abstractions.IIntIdentifier
+  - NeerCore.Typeids.Abstractions.ILongIntIdentifier
+  - NeerCore.Typeids.Abstractions.IShortIntIdentifier
+  - NeerCore.Typeids.Abstractions.IStringIdentifier
+  - NeerCore.Typeids.Abstractions.ITypeIdentifier`1
+  langs:
+  - csharp
+  - vb
+  name: NeerCore.Typeids.Abstractions
+  nameWithType: NeerCore.Typeids.Abstractions
+  fullName: NeerCore.Typeids.Abstractions
+  type: Namespace
+  assemblies:
+  - NeerCore.Typeids
+references:
+- uid: NeerCore.Typeids.Abstractions.ITypeIdentifier`1
+  commentId: T:NeerCore.Typeids.Abstractions.ITypeIdentifier`1
+  name: ITypeIdentifier<TValue>
+  nameWithType: ITypeIdentifier<TValue>
+  fullName: NeerCore.Typeids.Abstractions.ITypeIdentifier<TValue>
+  nameWithType.vb: ITypeIdentifier(Of TValue)
+  fullName.vb: NeerCore.Typeids.Abstractions.ITypeIdentifier(Of TValue)
+  name.vb: ITypeIdentifier(Of TValue)
+  spec.csharp:
+  - uid: NeerCore.Typeids.Abstractions.ITypeIdentifier`1
+    name: ITypeIdentifier
+    nameWithType: ITypeIdentifier
+    fullName: NeerCore.Typeids.Abstractions.ITypeIdentifier
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: NeerCore.Typeids.Abstractions.ITypeIdentifier`1
+    name: ITypeIdentifier
+    nameWithType: ITypeIdentifier
+    fullName: NeerCore.Typeids.Abstractions.ITypeIdentifier
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NeerCore.Typeids.Abstractions.IGuidIdentifier
+  commentId: T:NeerCore.Typeids.Abstractions.IGuidIdentifier
+  name: IGuidIdentifier
+  nameWithType: IGuidIdentifier
+  fullName: NeerCore.Typeids.Abstractions.IGuidIdentifier
+- uid: NeerCore.Typeids.Abstractions.IStringIdentifier
+  commentId: T:NeerCore.Typeids.Abstractions.IStringIdentifier
+  name: IStringIdentifier
+  nameWithType: IStringIdentifier
+  fullName: NeerCore.Typeids.Abstractions.IStringIdentifier
+- uid: NeerCore.Typeids.Abstractions.IShortIntIdentifier
+  commentId: T:NeerCore.Typeids.Abstractions.IShortIntIdentifier
+  name: IShortIntIdentifier
+  nameWithType: IShortIntIdentifier
+  fullName: NeerCore.Typeids.Abstractions.IShortIntIdentifier
+- uid: NeerCore.Typeids.Abstractions.IIntIdentifier
+  commentId: T:NeerCore.Typeids.Abstractions.IIntIdentifier
+  name: IIntIdentifier
+  nameWithType: IIntIdentifier
+  fullName: NeerCore.Typeids.Abstractions.IIntIdentifier
+- uid: NeerCore.Typeids.Abstractions.ILongIntIdentifier
+  commentId: T:NeerCore.Typeids.Abstractions.ILongIntIdentifier
+  name: ILongIntIdentifier
+  nameWithType: ILongIntIdentifier
+  fullName: NeerCore.Typeids.Abstractions.ILongIntIdentifier

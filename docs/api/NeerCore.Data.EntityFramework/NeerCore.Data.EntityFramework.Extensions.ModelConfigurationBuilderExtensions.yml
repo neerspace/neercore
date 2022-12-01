@@ -1,0 +1,185 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Data.EntityFramework.Extensions.ModelConfigurationBuilderExtensions
+  commentId: T:NeerCore.Data.EntityFramework.Extensions.ModelConfigurationBuilderExtensions
+  id: ModelConfigurationBuilderExtensions
+  parent: NeerCore.Data.EntityFramework.Extensions
+  children:
+  - NeerCore.Data.EntityFramework.Extensions.ModelConfigurationBuilderExtensions.ApplyLocalizedStringConversions(ModelConfigurationBuilder)
+  - NeerCore.Data.EntityFramework.Extensions.ModelConfigurationBuilderExtensions.ApplyUtcDateTimeConversions(ModelConfigurationBuilder)
+  - NeerCore.Data.EntityFramework.Extensions.ModelConfigurationBuilderExtensions.ConfigureDataConversions(ModelConfigurationBuilder)
+  langs:
+  - csharp
+  - vb
+  name: ModelConfigurationBuilderExtensions
+  nameWithType: ModelConfigurationBuilderExtensions
+  fullName: NeerCore.Data.EntityFramework.Extensions.ModelConfigurationBuilderExtensions
+  type: Class
+  source:
+    remote:
+      path: src/NeerCore.Data.EntityFramework/Extensions/ModelConfigurationBuilderExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: ModelConfigurationBuilderExtensions
+    path: ../src/NeerCore.Data.EntityFramework/Extensions/ModelConfigurationBuilderExtensions.cs
+    startLine: 6
+  assemblies:
+  - NeerCore.Data.EntityFramework
+  namespace: NeerCore.Data.EntityFramework.Extensions
+  syntax:
+    content: 'public static class ModelConfigurationBuilderExtensions : object'
+    content.vb: >-
+      Public Module ModelConfigurationBuilderExtensions
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: NeerCore.Data.EntityFramework.Extensions.ModelConfigurationBuilderExtensions.ConfigureDataConversions(ModelConfigurationBuilder)
+  commentId: M:NeerCore.Data.EntityFramework.Extensions.ModelConfigurationBuilderExtensions.ConfigureDataConversions(ModelConfigurationBuilder)
+  id: ConfigureDataConversions(ModelConfigurationBuilder)
+  isExtensionMethod: true
+  parent: NeerCore.Data.EntityFramework.Extensions.ModelConfigurationBuilderExtensions
+  langs:
+  - csharp
+  - vb
+  name: ConfigureDataConversions(ModelConfigurationBuilder)
+  nameWithType: ModelConfigurationBuilderExtensions.ConfigureDataConversions(ModelConfigurationBuilder)
+  fullName: NeerCore.Data.EntityFramework.Extensions.ModelConfigurationBuilderExtensions.ConfigureDataConversions(ModelConfigurationBuilder)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Data.EntityFramework/Extensions/ModelConfigurationBuilderExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: ConfigureDataConversions
+    path: ../src/NeerCore.Data.EntityFramework/Extensions/ModelConfigurationBuilderExtensions.cs
+    startLine: 8
+  assemblies:
+  - NeerCore.Data.EntityFramework
+  namespace: NeerCore.Data.EntityFramework.Extensions
+  syntax:
+    content: public static void ConfigureDataConversions(this ModelConfigurationBuilder configurationBuilder)
+    parameters:
+    - id: configurationBuilder
+      type: ModelConfigurationBuilder
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Sub ConfigureDataConversions(configurationBuilder As ModelConfigurationBuilder)
+  overload: NeerCore.Data.EntityFramework.Extensions.ModelConfigurationBuilderExtensions.ConfigureDataConversions*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: NeerCore.Data.EntityFramework.Extensions.ModelConfigurationBuilderExtensions.ApplyUtcDateTimeConversions(ModelConfigurationBuilder)
+  commentId: M:NeerCore.Data.EntityFramework.Extensions.ModelConfigurationBuilderExtensions.ApplyUtcDateTimeConversions(ModelConfigurationBuilder)
+  id: ApplyUtcDateTimeConversions(ModelConfigurationBuilder)
+  isExtensionMethod: true
+  parent: NeerCore.Data.EntityFramework.Extensions.ModelConfigurationBuilderExtensions
+  langs:
+  - csharp
+  - vb
+  name: ApplyUtcDateTimeConversions(ModelConfigurationBuilder)
+  nameWithType: ModelConfigurationBuilderExtensions.ApplyUtcDateTimeConversions(ModelConfigurationBuilder)
+  fullName: NeerCore.Data.EntityFramework.Extensions.ModelConfigurationBuilderExtensions.ApplyUtcDateTimeConversions(ModelConfigurationBuilder)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Data.EntityFramework/Extensions/ModelConfigurationBuilderExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: ApplyUtcDateTimeConversions
+    path: ../src/NeerCore.Data.EntityFramework/Extensions/ModelConfigurationBuilderExtensions.cs
+    startLine: 14
+  assemblies:
+  - NeerCore.Data.EntityFramework
+  namespace: NeerCore.Data.EntityFramework.Extensions
+  syntax:
+    content: public static void ApplyUtcDateTimeConversions(this ModelConfigurationBuilder configurationBuilder)
+    parameters:
+    - id: configurationBuilder
+      type: ModelConfigurationBuilder
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Sub ApplyUtcDateTimeConversions(configurationBuilder As ModelConfigurationBuilder)
+  overload: NeerCore.Data.EntityFramework.Extensions.ModelConfigurationBuilderExtensions.ApplyUtcDateTimeConversions*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: NeerCore.Data.EntityFramework.Extensions.ModelConfigurationBuilderExtensions.ApplyLocalizedStringConversions(ModelConfigurationBuilder)
+  commentId: M:NeerCore.Data.EntityFramework.Extensions.ModelConfigurationBuilderExtensions.ApplyLocalizedStringConversions(ModelConfigurationBuilder)
+  id: ApplyLocalizedStringConversions(ModelConfigurationBuilder)
+  isExtensionMethod: true
+  parent: NeerCore.Data.EntityFramework.Extensions.ModelConfigurationBuilderExtensions
+  langs:
+  - csharp
+  - vb
+  name: ApplyLocalizedStringConversions(ModelConfigurationBuilder)
+  nameWithType: ModelConfigurationBuilderExtensions.ApplyLocalizedStringConversions(ModelConfigurationBuilder)
+  fullName: NeerCore.Data.EntityFramework.Extensions.ModelConfigurationBuilderExtensions.ApplyLocalizedStringConversions(ModelConfigurationBuilder)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Data.EntityFramework/Extensions/ModelConfigurationBuilderExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: ApplyLocalizedStringConversions
+    path: ../src/NeerCore.Data.EntityFramework/Extensions/ModelConfigurationBuilderExtensions.cs
+    startLine: 20
+  assemblies:
+  - NeerCore.Data.EntityFramework
+  namespace: NeerCore.Data.EntityFramework.Extensions
+  syntax:
+    content: public static void ApplyLocalizedStringConversions(this ModelConfigurationBuilder configurationBuilder)
+    parameters:
+    - id: configurationBuilder
+      type: ModelConfigurationBuilder
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Sub ApplyLocalizedStringConversions(configurationBuilder As ModelConfigurationBuilder)
+  overload: NeerCore.Data.EntityFramework.Extensions.ModelConfigurationBuilderExtensions.ApplyLocalizedStringConversions*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: NeerCore.Data.EntityFramework.Extensions
+  commentId: N:NeerCore.Data.EntityFramework.Extensions
+  name: NeerCore.Data.EntityFramework.Extensions
+  nameWithType: NeerCore.Data.EntityFramework.Extensions
+  fullName: NeerCore.Data.EntityFramework.Extensions
+- uid: NeerCore.Data.EntityFramework.Extensions.ModelConfigurationBuilderExtensions.ConfigureDataConversions*
+  commentId: Overload:NeerCore.Data.EntityFramework.Extensions.ModelConfigurationBuilderExtensions.ConfigureDataConversions
+  name: ConfigureDataConversions
+  nameWithType: ModelConfigurationBuilderExtensions.ConfigureDataConversions
+  fullName: NeerCore.Data.EntityFramework.Extensions.ModelConfigurationBuilderExtensions.ConfigureDataConversions
+- uid: ModelConfigurationBuilder
+  isExternal: true
+  name: ModelConfigurationBuilder
+  nameWithType: ModelConfigurationBuilder
+  fullName: ModelConfigurationBuilder
+- uid: NeerCore.Data.EntityFramework.Extensions.ModelConfigurationBuilderExtensions.ApplyUtcDateTimeConversions*
+  commentId: Overload:NeerCore.Data.EntityFramework.Extensions.ModelConfigurationBuilderExtensions.ApplyUtcDateTimeConversions
+  name: ApplyUtcDateTimeConversions
+  nameWithType: ModelConfigurationBuilderExtensions.ApplyUtcDateTimeConversions
+  fullName: NeerCore.Data.EntityFramework.Extensions.ModelConfigurationBuilderExtensions.ApplyUtcDateTimeConversions
+- uid: NeerCore.Data.EntityFramework.Extensions.ModelConfigurationBuilderExtensions.ApplyLocalizedStringConversions*
+  commentId: Overload:NeerCore.Data.EntityFramework.Extensions.ModelConfigurationBuilderExtensions.ApplyLocalizedStringConversions
+  name: ApplyLocalizedStringConversions
+  nameWithType: ModelConfigurationBuilderExtensions.ApplyLocalizedStringConversions
+  fullName: NeerCore.Data.EntityFramework.Extensions.ModelConfigurationBuilderExtensions.ApplyLocalizedStringConversions

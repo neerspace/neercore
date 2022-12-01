@@ -1,0 +1,26 @@
+### YamlMime:TableOfContent
+- uid: NeerCore.Logging
+  name: NeerCore.Logging
+  items:
+  - uid: NeerCore.Logging.LoggerInstaller
+    name: LoggerInstaller
+  - uid: NeerCore.Logging.LoggerLayouts
+    name: LoggerLayouts
+  - uid: NeerCore.Logging.LoggingSettings
+    name: LoggingSettings
+  - uid: NeerCore.Logging.SharedLoggerSettings
+    name: SharedLoggerSettings
+  - uid: NeerCore.Logging.SingleLoggerSettings
+    name: SingleLoggerSettings
+- uid: NeerCore.Logging.Exceptions
+  name: NeerCore.Logging.Exceptions
+  items:
+  - uid: NeerCore.Logging.Exceptions.InvalidLogLevelException
+    name: InvalidLogLevelException
+- uid: NeerCore.Logging.Extensions
+  name: NeerCore.Logging.Extensions
+  items:
+  - uid: NeerCore.Logging.Extensions.LoggingBuilderExtensions
+    name: LoggingBuilderExtensions
+  - uid: NeerCore.Logging.Extensions.ServiceCollectionExtensions
+    name: ServiceCollectionExtensions

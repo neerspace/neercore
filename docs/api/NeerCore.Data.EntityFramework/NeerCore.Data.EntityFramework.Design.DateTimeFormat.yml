@@ -1,0 +1,112 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Data.EntityFramework.Design.DateTimeFormat
+  commentId: T:NeerCore.Data.EntityFramework.Design.DateTimeFormat
+  id: DateTimeFormat
+  parent: NeerCore.Data.EntityFramework.Design
+  children:
+  - NeerCore.Data.EntityFramework.Design.DateTimeFormat.Local
+  - NeerCore.Data.EntityFramework.Design.DateTimeFormat.Utc
+  langs:
+  - csharp
+  - vb
+  name: DateTimeFormat
+  nameWithType: DateTimeFormat
+  fullName: NeerCore.Data.EntityFramework.Design.DateTimeFormat
+  type: Enum
+  source:
+    remote:
+      path: src/NeerCore.Data.EntityFramework/Design/DateTimeFormat.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: DateTimeFormat
+    path: ../src/NeerCore.Data.EntityFramework/Design/DateTimeFormat.cs
+    startLine: 2
+  assemblies:
+  - NeerCore.Data.EntityFramework
+  namespace: NeerCore.Data.EntityFramework.Design
+  syntax:
+    content: 'public enum DateTimeFormat : int'
+    content.vb: Public Enum DateTimeFormat As Integer
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: NeerCore.Data.EntityFramework.Design.DateTimeFormat.Local
+  commentId: F:NeerCore.Data.EntityFramework.Design.DateTimeFormat.Local
+  id: Local
+  parent: NeerCore.Data.EntityFramework.Design.DateTimeFormat
+  langs:
+  - csharp
+  - vb
+  name: Local
+  nameWithType: DateTimeFormat.Local
+  fullName: NeerCore.Data.EntityFramework.Design.DateTimeFormat.Local
+  type: Field
+  source:
+    remote:
+      path: src/NeerCore.Data.EntityFramework/Design/DateTimeFormat.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: Local
+    path: ../src/NeerCore.Data.EntityFramework/Design/DateTimeFormat.cs
+    startLine: 4
+  assemblies:
+  - NeerCore.Data.EntityFramework
+  namespace: NeerCore.Data.EntityFramework.Design
+  syntax:
+    content: Local = 0
+    return:
+      type: NeerCore.Data.EntityFramework.Design.DateTimeFormat
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: NeerCore.Data.EntityFramework.Design.DateTimeFormat.Utc
+  commentId: F:NeerCore.Data.EntityFramework.Design.DateTimeFormat.Utc
+  id: Utc
+  parent: NeerCore.Data.EntityFramework.Design.DateTimeFormat
+  langs:
+  - csharp
+  - vb
+  name: Utc
+  nameWithType: DateTimeFormat.Utc
+  fullName: NeerCore.Data.EntityFramework.Design.DateTimeFormat.Utc
+  type: Field
+  source:
+    remote:
+      path: src/NeerCore.Data.EntityFramework/Design/DateTimeFormat.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: Utc
+    path: ../src/NeerCore.Data.EntityFramework/Design/DateTimeFormat.cs
+    startLine: 5
+  assemblies:
+  - NeerCore.Data.EntityFramework
+  namespace: NeerCore.Data.EntityFramework.Design
+  syntax:
+    content: Utc = 1
+    return:
+      type: NeerCore.Data.EntityFramework.Design.DateTimeFormat
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: NeerCore.Data.EntityFramework.Design
+  commentId: N:NeerCore.Data.EntityFramework.Design
+  name: NeerCore.Data.EntityFramework.Design
+  nameWithType: NeerCore.Data.EntityFramework.Design
+  fullName: NeerCore.Data.EntityFramework.Design
+- uid: NeerCore.Data.EntityFramework.Design.DateTimeFormat
+  commentId: T:NeerCore.Data.EntityFramework.Design.DateTimeFormat
+  parent: NeerCore.Data.EntityFramework.Design
+  name: DateTimeFormat
+  nameWithType: DateTimeFormat
+  fullName: NeerCore.Data.EntityFramework.Design.DateTimeFormat

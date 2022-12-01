@@ -1,0 +1,620 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Api.Swagger.SwaggerConfigurationOptions
+  commentId: T:NeerCore.Api.Swagger.SwaggerConfigurationOptions
+  id: SwaggerConfigurationOptions
+  parent: NeerCore.Api.Swagger
+  children:
+  - NeerCore.Api.Swagger.SwaggerConfigurationOptions.ApiDocs
+  - NeerCore.Api.Swagger.SwaggerConfigurationOptions.ApiDocsHeadContent
+  - NeerCore.Api.Swagger.SwaggerConfigurationOptions.ApiDocsUrl
+  - NeerCore.Api.Swagger.SwaggerConfigurationOptions.Description
+  - NeerCore.Api.Swagger.SwaggerConfigurationOptions.Enabled
+  - NeerCore.Api.Swagger.SwaggerConfigurationOptions.ExtendedDocs
+  - NeerCore.Api.Swagger.SwaggerConfigurationOptions.IncludeComments
+  - NeerCore.Api.Swagger.SwaggerConfigurationOptions.RestResponses
+  - NeerCore.Api.Swagger.SwaggerConfigurationOptions.Security
+  - NeerCore.Api.Swagger.SwaggerConfigurationOptions.SwaggerUrl
+  - NeerCore.Api.Swagger.SwaggerConfigurationOptions.Title
+  langs:
+  - csharp
+  - vb
+  name: SwaggerConfigurationOptions
+  nameWithType: SwaggerConfigurationOptions
+  fullName: NeerCore.Api.Swagger.SwaggerConfigurationOptions
+  type: Class
+  source:
+    remote:
+      path: src/NeerCore.Api/Swagger/SwaggerConfigurationOptions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: SwaggerConfigurationOptions
+    path: ../src/NeerCore.Api/Swagger/SwaggerConfigurationOptions.cs
+    startLine: 4
+  assemblies:
+  - NeerCore.Api
+  namespace: NeerCore.Api.Swagger
+  syntax:
+    content: 'public sealed class SwaggerConfigurationOptions : object'
+    content.vb: >-
+      Public NotInheritable Class SwaggerConfigurationOptions
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: NeerCore.Api.Swagger.SwaggerConfigurationOptions.Enabled
+  commentId: P:NeerCore.Api.Swagger.SwaggerConfigurationOptions.Enabled
+  id: Enabled
+  parent: NeerCore.Api.Swagger.SwaggerConfigurationOptions
+  langs:
+  - csharp
+  - vb
+  name: Enabled
+  nameWithType: SwaggerConfigurationOptions.Enabled
+  fullName: NeerCore.Api.Swagger.SwaggerConfigurationOptions.Enabled
+  type: Property
+  source:
+    remote:
+      path: src/NeerCore.Api/Swagger/SwaggerConfigurationOptions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: Enabled
+    path: ../src/NeerCore.Api/Swagger/SwaggerConfigurationOptions.cs
+    startLine: 6
+  assemblies:
+  - NeerCore.Api
+  namespace: NeerCore.Api.Swagger
+  syntax:
+    content: public bool Enabled { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property Enabled As Boolean
+  overload: NeerCore.Api.Swagger.SwaggerConfigurationOptions.Enabled*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: NeerCore.Api.Swagger.SwaggerConfigurationOptions.ApiDocs
+  commentId: P:NeerCore.Api.Swagger.SwaggerConfigurationOptions.ApiDocs
+  id: ApiDocs
+  parent: NeerCore.Api.Swagger.SwaggerConfigurationOptions
+  langs:
+  - csharp
+  - vb
+  name: ApiDocs
+  nameWithType: SwaggerConfigurationOptions.ApiDocs
+  fullName: NeerCore.Api.Swagger.SwaggerConfigurationOptions.ApiDocs
+  type: Property
+  source:
+    remote:
+      path: src/NeerCore.Api/Swagger/SwaggerConfigurationOptions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: ApiDocs
+    path: ../src/NeerCore.Api/Swagger/SwaggerConfigurationOptions.cs
+    startLine: 7
+  assemblies:
+  - NeerCore.Api
+  namespace: NeerCore.Api.Swagger
+  syntax:
+    content: public bool ApiDocs { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property ApiDocs As Boolean
+  overload: NeerCore.Api.Swagger.SwaggerConfigurationOptions.ApiDocs*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: NeerCore.Api.Swagger.SwaggerConfigurationOptions.ExtendedDocs
+  commentId: P:NeerCore.Api.Swagger.SwaggerConfigurationOptions.ExtendedDocs
+  id: ExtendedDocs
+  parent: NeerCore.Api.Swagger.SwaggerConfigurationOptions
+  langs:
+  - csharp
+  - vb
+  name: ExtendedDocs
+  nameWithType: SwaggerConfigurationOptions.ExtendedDocs
+  fullName: NeerCore.Api.Swagger.SwaggerConfigurationOptions.ExtendedDocs
+  type: Property
+  source:
+    remote:
+      path: src/NeerCore.Api/Swagger/SwaggerConfigurationOptions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: ExtendedDocs
+    path: ../src/NeerCore.Api/Swagger/SwaggerConfigurationOptions.cs
+    startLine: 8
+  assemblies:
+  - NeerCore.Api
+  namespace: NeerCore.Api.Swagger
+  syntax:
+    content: public bool ExtendedDocs { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property ExtendedDocs As Boolean
+  overload: NeerCore.Api.Swagger.SwaggerConfigurationOptions.ExtendedDocs*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: NeerCore.Api.Swagger.SwaggerConfigurationOptions.RestResponses
+  commentId: P:NeerCore.Api.Swagger.SwaggerConfigurationOptions.RestResponses
+  id: RestResponses
+  parent: NeerCore.Api.Swagger.SwaggerConfigurationOptions
+  langs:
+  - csharp
+  - vb
+  name: RestResponses
+  nameWithType: SwaggerConfigurationOptions.RestResponses
+  fullName: NeerCore.Api.Swagger.SwaggerConfigurationOptions.RestResponses
+  type: Property
+  source:
+    remote:
+      path: src/NeerCore.Api/Swagger/SwaggerConfigurationOptions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: RestResponses
+    path: ../src/NeerCore.Api/Swagger/SwaggerConfigurationOptions.cs
+    startLine: 9
+  assemblies:
+  - NeerCore.Api
+  namespace: NeerCore.Api.Swagger
+  syntax:
+    content: public bool RestResponses { get; set; }
+    parameters: []
+    return:
+      type: System.Boolean
+    content.vb: Public Property RestResponses As Boolean
+  overload: NeerCore.Api.Swagger.SwaggerConfigurationOptions.RestResponses*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: NeerCore.Api.Swagger.SwaggerConfigurationOptions.SwaggerUrl
+  commentId: P:NeerCore.Api.Swagger.SwaggerConfigurationOptions.SwaggerUrl
+  id: SwaggerUrl
+  parent: NeerCore.Api.Swagger.SwaggerConfigurationOptions
+  langs:
+  - csharp
+  - vb
+  name: SwaggerUrl
+  nameWithType: SwaggerConfigurationOptions.SwaggerUrl
+  fullName: NeerCore.Api.Swagger.SwaggerConfigurationOptions.SwaggerUrl
+  type: Property
+  source:
+    remote:
+      path: src/NeerCore.Api/Swagger/SwaggerConfigurationOptions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: SwaggerUrl
+    path: ../src/NeerCore.Api/Swagger/SwaggerConfigurationOptions.cs
+    startLine: 10
+  assemblies:
+  - NeerCore.Api
+  namespace: NeerCore.Api.Swagger
+  syntax:
+    content: public string SwaggerUrl { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property SwaggerUrl As String
+  overload: NeerCore.Api.Swagger.SwaggerConfigurationOptions.SwaggerUrl*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: NeerCore.Api.Swagger.SwaggerConfigurationOptions.ApiDocsUrl
+  commentId: P:NeerCore.Api.Swagger.SwaggerConfigurationOptions.ApiDocsUrl
+  id: ApiDocsUrl
+  parent: NeerCore.Api.Swagger.SwaggerConfigurationOptions
+  langs:
+  - csharp
+  - vb
+  name: ApiDocsUrl
+  nameWithType: SwaggerConfigurationOptions.ApiDocsUrl
+  fullName: NeerCore.Api.Swagger.SwaggerConfigurationOptions.ApiDocsUrl
+  type: Property
+  source:
+    remote:
+      path: src/NeerCore.Api/Swagger/SwaggerConfigurationOptions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: ApiDocsUrl
+    path: ../src/NeerCore.Api/Swagger/SwaggerConfigurationOptions.cs
+    startLine: 11
+  assemblies:
+  - NeerCore.Api
+  namespace: NeerCore.Api.Swagger
+  syntax:
+    content: public string ApiDocsUrl { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property ApiDocsUrl As String
+  overload: NeerCore.Api.Swagger.SwaggerConfigurationOptions.ApiDocsUrl*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: NeerCore.Api.Swagger.SwaggerConfigurationOptions.ApiDocsHeadContent
+  commentId: P:NeerCore.Api.Swagger.SwaggerConfigurationOptions.ApiDocsHeadContent
+  id: ApiDocsHeadContent
+  parent: NeerCore.Api.Swagger.SwaggerConfigurationOptions
+  langs:
+  - csharp
+  - vb
+  name: ApiDocsHeadContent
+  nameWithType: SwaggerConfigurationOptions.ApiDocsHeadContent
+  fullName: NeerCore.Api.Swagger.SwaggerConfigurationOptions.ApiDocsHeadContent
+  type: Property
+  source:
+    remote:
+      path: src/NeerCore.Api/Swagger/SwaggerConfigurationOptions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: ApiDocsHeadContent
+    path: ../src/NeerCore.Api/Swagger/SwaggerConfigurationOptions.cs
+    startLine: 12
+  assemblies:
+  - NeerCore.Api
+  namespace: NeerCore.Api.Swagger
+  syntax:
+    content: public string ApiDocsHeadContent { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property ApiDocsHeadContent As String
+  overload: NeerCore.Api.Swagger.SwaggerConfigurationOptions.ApiDocsHeadContent*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: NeerCore.Api.Swagger.SwaggerConfigurationOptions.Security
+  commentId: P:NeerCore.Api.Swagger.SwaggerConfigurationOptions.Security
+  id: Security
+  parent: NeerCore.Api.Swagger.SwaggerConfigurationOptions
+  langs:
+  - csharp
+  - vb
+  name: Security
+  nameWithType: SwaggerConfigurationOptions.Security
+  fullName: NeerCore.Api.Swagger.SwaggerConfigurationOptions.Security
+  type: Property
+  source:
+    remote:
+      path: src/NeerCore.Api/Swagger/SwaggerConfigurationOptions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: Security
+    path: ../src/NeerCore.Api/Swagger/SwaggerConfigurationOptions.cs
+    startLine: 13
+  assemblies:
+  - NeerCore.Api
+  namespace: NeerCore.Api.Swagger
+  syntax:
+    content: public SwaggerSecurityOptions Security { get; set; }
+    parameters: []
+    return:
+      type: NeerCore.Api.Swagger.SwaggerSecurityOptions
+    content.vb: Public Property Security As SwaggerSecurityOptions
+  overload: NeerCore.Api.Swagger.SwaggerConfigurationOptions.Security*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: NeerCore.Api.Swagger.SwaggerConfigurationOptions.Title
+  commentId: P:NeerCore.Api.Swagger.SwaggerConfigurationOptions.Title
+  id: Title
+  parent: NeerCore.Api.Swagger.SwaggerConfigurationOptions
+  langs:
+  - csharp
+  - vb
+  name: Title
+  nameWithType: SwaggerConfigurationOptions.Title
+  fullName: NeerCore.Api.Swagger.SwaggerConfigurationOptions.Title
+  type: Property
+  source:
+    remote:
+      path: src/NeerCore.Api/Swagger/SwaggerConfigurationOptions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: Title
+    path: ../src/NeerCore.Api/Swagger/SwaggerConfigurationOptions.cs
+    startLine: 14
+  assemblies:
+  - NeerCore.Api
+  namespace: NeerCore.Api.Swagger
+  syntax:
+    content: public string? Title { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.String}
+    content.vb: Public Property Title As String?
+  overload: NeerCore.Api.Swagger.SwaggerConfigurationOptions.Title*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: NeerCore.Api.Swagger.SwaggerConfigurationOptions.Description
+  commentId: P:NeerCore.Api.Swagger.SwaggerConfigurationOptions.Description
+  id: Description
+  parent: NeerCore.Api.Swagger.SwaggerConfigurationOptions
+  langs:
+  - csharp
+  - vb
+  name: Description
+  nameWithType: SwaggerConfigurationOptions.Description
+  fullName: NeerCore.Api.Swagger.SwaggerConfigurationOptions.Description
+  type: Property
+  source:
+    remote:
+      path: src/NeerCore.Api/Swagger/SwaggerConfigurationOptions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: Description
+    path: ../src/NeerCore.Api/Swagger/SwaggerConfigurationOptions.cs
+    startLine: 15
+  assemblies:
+  - NeerCore.Api
+  namespace: NeerCore.Api.Swagger
+  syntax:
+    content: public string? Description { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{System.String}
+    content.vb: Public Property Description As String?
+  overload: NeerCore.Api.Swagger.SwaggerConfigurationOptions.Description*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: NeerCore.Api.Swagger.SwaggerConfigurationOptions.IncludeComments
+  commentId: P:NeerCore.Api.Swagger.SwaggerConfigurationOptions.IncludeComments
+  id: IncludeComments
+  parent: NeerCore.Api.Swagger.SwaggerConfigurationOptions
+  langs:
+  - csharp
+  - vb
+  name: IncludeComments
+  nameWithType: SwaggerConfigurationOptions.IncludeComments
+  fullName: NeerCore.Api.Swagger.SwaggerConfigurationOptions.IncludeComments
+  type: Property
+  source:
+    remote:
+      path: src/NeerCore.Api/Swagger/SwaggerConfigurationOptions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: IncludeComments
+    path: ../src/NeerCore.Api/Swagger/SwaggerConfigurationOptions.cs
+    startLine: 16
+  assemblies:
+  - NeerCore.Api
+  namespace: NeerCore.Api.Swagger
+  syntax:
+    content: public string[] IncludeComments { get; set; }
+    parameters: []
+    return:
+      type: System.String[]
+    content.vb: Public Property IncludeComments As String()
+  overload: NeerCore.Api.Swagger.SwaggerConfigurationOptions.IncludeComments*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: NeerCore.Api.Swagger
+  commentId: N:NeerCore.Api.Swagger
+  name: NeerCore.Api.Swagger
+  nameWithType: NeerCore.Api.Swagger
+  fullName: NeerCore.Api.Swagger
+- uid: NeerCore.Api.Swagger.SwaggerConfigurationOptions.Enabled*
+  commentId: Overload:NeerCore.Api.Swagger.SwaggerConfigurationOptions.Enabled
+  name: Enabled
+  nameWithType: SwaggerConfigurationOptions.Enabled
+  fullName: NeerCore.Api.Swagger.SwaggerConfigurationOptions.Enabled
+- uid: System.Boolean
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: NeerCore.Api.Swagger.SwaggerConfigurationOptions.ApiDocs*
+  commentId: Overload:NeerCore.Api.Swagger.SwaggerConfigurationOptions.ApiDocs
+  name: ApiDocs
+  nameWithType: SwaggerConfigurationOptions.ApiDocs
+  fullName: NeerCore.Api.Swagger.SwaggerConfigurationOptions.ApiDocs
+- uid: NeerCore.Api.Swagger.SwaggerConfigurationOptions.ExtendedDocs*
+  commentId: Overload:NeerCore.Api.Swagger.SwaggerConfigurationOptions.ExtendedDocs
+  name: ExtendedDocs
+  nameWithType: SwaggerConfigurationOptions.ExtendedDocs
+  fullName: NeerCore.Api.Swagger.SwaggerConfigurationOptions.ExtendedDocs
+- uid: NeerCore.Api.Swagger.SwaggerConfigurationOptions.RestResponses*
+  commentId: Overload:NeerCore.Api.Swagger.SwaggerConfigurationOptions.RestResponses
+  name: RestResponses
+  nameWithType: SwaggerConfigurationOptions.RestResponses
+  fullName: NeerCore.Api.Swagger.SwaggerConfigurationOptions.RestResponses
+- uid: NeerCore.Api.Swagger.SwaggerConfigurationOptions.SwaggerUrl*
+  commentId: Overload:NeerCore.Api.Swagger.SwaggerConfigurationOptions.SwaggerUrl
+  name: SwaggerUrl
+  nameWithType: SwaggerConfigurationOptions.SwaggerUrl
+  fullName: NeerCore.Api.Swagger.SwaggerConfigurationOptions.SwaggerUrl
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: NeerCore.Api.Swagger.SwaggerConfigurationOptions.ApiDocsUrl*
+  commentId: Overload:NeerCore.Api.Swagger.SwaggerConfigurationOptions.ApiDocsUrl
+  name: ApiDocsUrl
+  nameWithType: SwaggerConfigurationOptions.ApiDocsUrl
+  fullName: NeerCore.Api.Swagger.SwaggerConfigurationOptions.ApiDocsUrl
+- uid: NeerCore.Api.Swagger.SwaggerConfigurationOptions.ApiDocsHeadContent*
+  commentId: Overload:NeerCore.Api.Swagger.SwaggerConfigurationOptions.ApiDocsHeadContent
+  name: ApiDocsHeadContent
+  nameWithType: SwaggerConfigurationOptions.ApiDocsHeadContent
+  fullName: NeerCore.Api.Swagger.SwaggerConfigurationOptions.ApiDocsHeadContent
+- uid: NeerCore.Api.Swagger.SwaggerConfigurationOptions.Security*
+  commentId: Overload:NeerCore.Api.Swagger.SwaggerConfigurationOptions.Security
+  name: Security
+  nameWithType: SwaggerConfigurationOptions.Security
+  fullName: NeerCore.Api.Swagger.SwaggerConfigurationOptions.Security
+- uid: NeerCore.Api.Swagger.SwaggerSecurityOptions
+  commentId: T:NeerCore.Api.Swagger.SwaggerSecurityOptions
+  parent: NeerCore.Api.Swagger
+  name: SwaggerSecurityOptions
+  nameWithType: SwaggerSecurityOptions
+  fullName: NeerCore.Api.Swagger.SwaggerSecurityOptions
+- uid: NeerCore.Api.Swagger.SwaggerConfigurationOptions.Title*
+  commentId: Overload:NeerCore.Api.Swagger.SwaggerConfigurationOptions.Title
+  name: Title
+  nameWithType: SwaggerConfigurationOptions.Title
+  fullName: NeerCore.Api.Swagger.SwaggerConfigurationOptions.Title
+- uid: System.Nullable{System.String}
+  commentId: '!:System.Nullable{System.String}'
+  definition: System.Nullable`1
+  name: Nullable<String>
+  nameWithType: Nullable<String>
+  fullName: System.Nullable<System.String>
+  nameWithType.vb: Nullable(Of String)
+  fullName.vb: System.Nullable(Of System.String)
+  name.vb: Nullable(Of String)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable`1
+  isExternal: true
+  name: Nullable<>
+  nameWithType: Nullable<>
+  fullName: System.Nullable<>
+  nameWithType.vb: Nullable(Of )
+  fullName.vb: System.Nullable(Of )
+  name.vb: Nullable(Of )
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NeerCore.Api.Swagger.SwaggerConfigurationOptions.Description*
+  commentId: Overload:NeerCore.Api.Swagger.SwaggerConfigurationOptions.Description
+  name: Description
+  nameWithType: SwaggerConfigurationOptions.Description
+  fullName: NeerCore.Api.Swagger.SwaggerConfigurationOptions.Description
+- uid: NeerCore.Api.Swagger.SwaggerConfigurationOptions.IncludeComments*
+  commentId: Overload:NeerCore.Api.Swagger.SwaggerConfigurationOptions.IncludeComments
+  name: IncludeComments
+  nameWithType: SwaggerConfigurationOptions.IncludeComments
+  fullName: NeerCore.Api.Swagger.SwaggerConfigurationOptions.IncludeComments
+- uid: System.String[]
+  isExternal: true
+  name: String[]
+  nameWithType: String[]
+  fullName: System.String[]
+  nameWithType.vb: String()
+  fullName.vb: System.String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()

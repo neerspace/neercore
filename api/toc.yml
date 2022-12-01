@@ -1,0 +1,47 @@
+### YamlMime:TableOfContent
+- uid: NeerCore
+  name: NeerCore
+  items:
+  - uid: NeerCore.ErrorDetails
+    name: ErrorDetails
+- uid: NeerCore.Exceptions
+  name: NeerCore.Exceptions
+  items:
+  - uid: NeerCore.Exceptions.ConflictException
+    name: ConflictException
+  - uid: NeerCore.Exceptions.ForbidException
+    name: ForbidException
+  - uid: NeerCore.Exceptions.HttpException
+    name: HttpException
+  - uid: NeerCore.Exceptions.InternalServerException
+    name: InternalServerException
+  - uid: NeerCore.Exceptions.NotFoundException
+    name: NotFoundException
+  - uid: NeerCore.Exceptions.NotFoundException`1
+    name: NotFoundException<T>
+    name.vb: NotFoundException(Of T)
+  - uid: NeerCore.Exceptions.UnauthorizedException
+    name: UnauthorizedException
+  - uid: NeerCore.Exceptions.UnprocessableEntityException
+    name: UnprocessableEntityException
+  - uid: NeerCore.Exceptions.ValidationFailedException
+    name: ValidationFailedException
+- uid: NeerCore.Extensions
+  name: NeerCore.Extensions
+  items:
+  - uid: NeerCore.Extensions.EnumerableExtensions
+    name: EnumerableExtensions
+  - uid: NeerCore.Extensions.EnumExtensions
+    name: EnumExtensions
+  - uid: NeerCore.Extensions.StringExtensions
+    name: StringExtensions
+- uid: NeerCore.Json
+  name: NeerCore.Json
+  items:
+  - uid: NeerCore.Json.JsonConventions
+    name: JsonConventions
+- uid: NeerCore.Json.Policies
+  name: NeerCore.Json.Policies
+  items:
+  - uid: NeerCore.Json.Policies.SnakeCaseNamingPolicy
+    name: SnakeCaseNamingPolicy

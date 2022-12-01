@@ -1,0 +1,58 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Api.Extensions
+  commentId: N:NeerCore.Api.Extensions
+  id: NeerCore.Api.Extensions
+  children:
+  - NeerCore.Api.Extensions.ApiExtensions
+  - NeerCore.Api.Extensions.HttpContextExtensions
+  - NeerCore.Api.Extensions.HttpExceptionExtensions
+  - NeerCore.Api.Extensions.HttpResponseExtensions
+  - NeerCore.Api.Extensions.MiddlewareExtensions
+  - NeerCore.Api.Extensions.ServiceCollectionExtensions
+  - NeerCore.Api.Extensions.WebApplicationExtensions
+  langs:
+  - csharp
+  - vb
+  name: NeerCore.Api.Extensions
+  nameWithType: NeerCore.Api.Extensions
+  fullName: NeerCore.Api.Extensions
+  type: Namespace
+  assemblies:
+  - NeerCore.Api
+references:
+- uid: NeerCore.Api.Extensions.ApiExtensions
+  commentId: T:NeerCore.Api.Extensions.ApiExtensions
+  name: ApiExtensions
+  nameWithType: ApiExtensions
+  fullName: NeerCore.Api.Extensions.ApiExtensions
+- uid: NeerCore.Api.Extensions.HttpContextExtensions
+  commentId: T:NeerCore.Api.Extensions.HttpContextExtensions
+  name: HttpContextExtensions
+  nameWithType: HttpContextExtensions
+  fullName: NeerCore.Api.Extensions.HttpContextExtensions
+- uid: NeerCore.Api.Extensions.HttpExceptionExtensions
+  commentId: T:NeerCore.Api.Extensions.HttpExceptionExtensions
+  name: HttpExceptionExtensions
+  nameWithType: HttpExceptionExtensions
+  fullName: NeerCore.Api.Extensions.HttpExceptionExtensions
+- uid: NeerCore.Api.Extensions.HttpResponseExtensions
+  commentId: T:NeerCore.Api.Extensions.HttpResponseExtensions
+  name: HttpResponseExtensions
+  nameWithType: HttpResponseExtensions
+  fullName: NeerCore.Api.Extensions.HttpResponseExtensions
+- uid: NeerCore.Api.Extensions.MiddlewareExtensions
+  commentId: T:NeerCore.Api.Extensions.MiddlewareExtensions
+  name: MiddlewareExtensions
+  nameWithType: MiddlewareExtensions
+  fullName: NeerCore.Api.Extensions.MiddlewareExtensions
+- uid: NeerCore.Api.Extensions.ServiceCollectionExtensions
+  commentId: T:NeerCore.Api.Extensions.ServiceCollectionExtensions
+  name: ServiceCollectionExtensions
+  nameWithType: ServiceCollectionExtensions
+  fullName: NeerCore.Api.Extensions.ServiceCollectionExtensions
+- uid: NeerCore.Api.Extensions.WebApplicationExtensions
+  commentId: T:NeerCore.Api.Extensions.WebApplicationExtensions
+  name: WebApplicationExtensions
+  nameWithType: WebApplicationExtensions
+  fullName: NeerCore.Api.Extensions.WebApplicationExtensions

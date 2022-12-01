@@ -1,0 +1,137 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Logging.LoggerLayouts
+  commentId: T:NeerCore.Logging.LoggerLayouts
+  id: LoggerLayouts
+  parent: NeerCore.Logging
+  children:
+  - NeerCore.Logging.LoggerLayouts.ConsoleLayout
+  - NeerCore.Logging.LoggerLayouts.FileLayout
+  langs:
+  - csharp
+  - vb
+  name: LoggerLayouts
+  nameWithType: LoggerLayouts
+  fullName: NeerCore.Logging.LoggerLayouts
+  type: Class
+  source:
+    remote:
+      path: src/NeerCore.Logging.NLog/LoggerLayouts.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: LoggerLayouts
+    path: src/NeerCore.Logging.NLog/LoggerLayouts.cs
+    startLine: 2
+  assemblies:
+  - NeerCore.Logging.NLog
+  namespace: NeerCore.Logging
+  syntax:
+    content: 'public static class LoggerLayouts : object'
+    content.vb: >-
+      Public Module LoggerLayouts
+
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: NeerCore.Logging.LoggerLayouts.FileLayout
+  commentId: P:NeerCore.Logging.LoggerLayouts.FileLayout
+  id: FileLayout
+  parent: NeerCore.Logging.LoggerLayouts
+  langs:
+  - csharp
+  - vb
+  name: FileLayout
+  nameWithType: LoggerLayouts.FileLayout
+  fullName: NeerCore.Logging.LoggerLayouts.FileLayout
+  type: Property
+  source:
+    remote:
+      path: src/NeerCore.Logging.NLog/LoggerLayouts.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: FileLayout
+    path: src/NeerCore.Logging.NLog/LoggerLayouts.cs
+    startLine: 19
+  assemblies:
+  - NeerCore.Logging.NLog
+  namespace: NeerCore.Logging
+  syntax:
+    content: public static string FileLayout { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Shared Property FileLayout As String
+  overload: NeerCore.Logging.LoggerLayouts.FileLayout*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: NeerCore.Logging.LoggerLayouts.ConsoleLayout
+  commentId: P:NeerCore.Logging.LoggerLayouts.ConsoleLayout
+  id: ConsoleLayout
+  parent: NeerCore.Logging.LoggerLayouts
+  langs:
+  - csharp
+  - vb
+  name: ConsoleLayout
+  nameWithType: LoggerLayouts.ConsoleLayout
+  fullName: NeerCore.Logging.LoggerLayouts.ConsoleLayout
+  type: Property
+  source:
+    remote:
+      path: src/NeerCore.Logging.NLog/LoggerLayouts.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: ConsoleLayout
+    path: src/NeerCore.Logging.NLog/LoggerLayouts.cs
+    startLine: 21
+  assemblies:
+  - NeerCore.Logging.NLog
+  namespace: NeerCore.Logging
+  syntax:
+    content: public static string ConsoleLayout { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Shared Property ConsoleLayout As String
+  overload: NeerCore.Logging.LoggerLayouts.ConsoleLayout*
+  modifiers.csharp:
+  - public
+  - static
+  - get
+  - set
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: NeerCore.Logging
+  commentId: N:NeerCore.Logging
+  name: NeerCore.Logging
+  nameWithType: NeerCore.Logging
+  fullName: NeerCore.Logging
+- uid: NeerCore.Logging.LoggerLayouts.FileLayout*
+  commentId: Overload:NeerCore.Logging.LoggerLayouts.FileLayout
+  name: FileLayout
+  nameWithType: LoggerLayouts.FileLayout
+  fullName: NeerCore.Logging.LoggerLayouts.FileLayout
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: NeerCore.Logging.LoggerLayouts.ConsoleLayout*
+  commentId: Overload:NeerCore.Logging.LoggerLayouts.ConsoleLayout
+  name: ConsoleLayout
+  nameWithType: LoggerLayouts.ConsoleLayout
+  fullName: NeerCore.Logging.LoggerLayouts.ConsoleLayout

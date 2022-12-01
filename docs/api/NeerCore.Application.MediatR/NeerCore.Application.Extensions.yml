@@ -1,0 +1,22 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Application.Extensions
+  commentId: N:NeerCore.Application.Extensions
+  id: NeerCore.Application.Extensions
+  children:
+  - NeerCore.Application.Extensions.ServiceCollectionExtensions
+  langs:
+  - csharp
+  - vb
+  name: NeerCore.Application.Extensions
+  nameWithType: NeerCore.Application.Extensions
+  fullName: NeerCore.Application.Extensions
+  type: Namespace
+  assemblies:
+  - NeerCore.Application.MediatR
+references:
+- uid: NeerCore.Application.Extensions.ServiceCollectionExtensions
+  commentId: T:NeerCore.Application.Extensions.ServiceCollectionExtensions
+  name: ServiceCollectionExtensions
+  nameWithType: ServiceCollectionExtensions
+  fullName: NeerCore.Application.Extensions.ServiceCollectionExtensions

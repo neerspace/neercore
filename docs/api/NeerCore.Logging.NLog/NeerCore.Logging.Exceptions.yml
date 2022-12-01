@@ -1,0 +1,22 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Logging.Exceptions
+  commentId: N:NeerCore.Logging.Exceptions
+  id: NeerCore.Logging.Exceptions
+  children:
+  - NeerCore.Logging.Exceptions.InvalidLogLevelException
+  langs:
+  - csharp
+  - vb
+  name: NeerCore.Logging.Exceptions
+  nameWithType: NeerCore.Logging.Exceptions
+  fullName: NeerCore.Logging.Exceptions
+  type: Namespace
+  assemblies:
+  - NeerCore.Logging.NLog
+references:
+- uid: NeerCore.Logging.Exceptions.InvalidLogLevelException
+  commentId: T:NeerCore.Logging.Exceptions.InvalidLogLevelException
+  name: InvalidLogLevelException
+  nameWithType: InvalidLogLevelException
+  fullName: NeerCore.Logging.Exceptions.InvalidLogLevelException

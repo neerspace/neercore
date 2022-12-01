@@ -1,0 +1,388 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Logging.LoggingSettings
+  commentId: T:NeerCore.Logging.LoggingSettings
+  id: LoggingSettings
+  parent: NeerCore.Logging
+  children:
+  - NeerCore.Logging.LoggingSettings.ConsoleLogger
+  - NeerCore.Logging.LoggingSettings.ErrorFileLogger
+  - NeerCore.Logging.LoggingSettings.FullFileLogger
+  - NeerCore.Logging.LoggingSettings.LogLevel
+  - NeerCore.Logging.LoggingSettings.Shared
+  langs:
+  - csharp
+  - vb
+  name: LoggingSettings
+  nameWithType: LoggingSettings
+  fullName: NeerCore.Logging.LoggingSettings
+  type: Class
+  source:
+    remote:
+      path: src/NeerCore.Logging.NLog/LoggingSettings.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: LoggingSettings
+    path: src/NeerCore.Logging.NLog/LoggingSettings.cs
+    startLine: 5
+  assemblies:
+  - NeerCore.Logging.NLog
+  namespace: NeerCore.Logging
+  summary: "\nConfiguration for custom <strong>NeerCore</strong> logger.\n"
+  example: []
+  syntax:
+    content: 'public sealed class LoggingSettings : object'
+    content.vb: >-
+      Public NotInheritable Class LoggingSettings
+
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: NeerCore.Logging.LoggingSettings.LogLevel
+  commentId: P:NeerCore.Logging.LoggingSettings.LogLevel
+  id: LogLevel
+  parent: NeerCore.Logging.LoggingSettings
+  langs:
+  - csharp
+  - vb
+  name: LogLevel
+  nameWithType: LoggingSettings.LogLevel
+  fullName: NeerCore.Logging.LoggingSettings.LogLevel
+  type: Property
+  source:
+    remote:
+      path: src/NeerCore.Logging.NLog/LoggingSettings.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: LogLevel
+    path: src/NeerCore.Logging.NLog/LoggingSettings.cs
+    startLine: 16
+  assemblies:
+  - NeerCore.Logging.NLog
+  namespace: NeerCore.Logging
+  summary: "\nDefines maximum logging level for loggers by specified rule.\n"
+  remarks: "\nUse &apos;*&apos; character in logger name as dynamic postfix.\n"
+  example:
+  - "\n&quot;Microsoft.EntityFrameworkCore.*&quot;: &quot;Warning&quot;\n"
+  syntax:
+    content: public Dictionary<string, string> LogLevel { get; set; }
+    parameters: []
+    return:
+      type: Dictionary{System.String,System.String}
+    content.vb: Public Property LogLevel As Dictionary(Of String, String)
+  overload: NeerCore.Logging.LoggingSettings.LogLevel*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: NeerCore.Logging.LoggingSettings.Shared
+  commentId: P:NeerCore.Logging.LoggingSettings.Shared
+  id: Shared
+  parent: NeerCore.Logging.LoggingSettings
+  langs:
+  - csharp
+  - vb
+  name: Shared
+  nameWithType: LoggingSettings.Shared
+  fullName: NeerCore.Logging.LoggingSettings.Shared
+  type: Property
+  source:
+    remote:
+      path: src/NeerCore.Logging.NLog/LoggingSettings.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: Shared
+    path: src/NeerCore.Logging.NLog/LoggingSettings.cs
+    startLine: 21
+  assemblies:
+  - NeerCore.Logging.NLog
+  namespace: NeerCore.Logging
+  summary: "\nShared settings for all loggers.\n"
+  example: []
+  syntax:
+    content: public SharedLoggerSettings Shared { get; set; }
+    parameters: []
+    return:
+      type: NeerCore.Logging.SharedLoggerSettings
+    content.vb: Public Property Shared As SharedLoggerSettings
+  overload: NeerCore.Logging.LoggingSettings.Shared*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: NeerCore.Logging.LoggingSettings.ConsoleLogger
+  commentId: P:NeerCore.Logging.LoggingSettings.ConsoleLogger
+  id: ConsoleLogger
+  parent: NeerCore.Logging.LoggingSettings
+  langs:
+  - csharp
+  - vb
+  name: ConsoleLogger
+  nameWithType: LoggingSettings.ConsoleLogger
+  fullName: NeerCore.Logging.LoggingSettings.ConsoleLogger
+  type: Property
+  source:
+    remote:
+      path: src/NeerCore.Logging.NLog/LoggingSettings.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: ConsoleLogger
+    path: src/NeerCore.Logging.NLog/LoggingSettings.cs
+    startLine: 26
+  assemblies:
+  - NeerCore.Logging.NLog
+  namespace: NeerCore.Logging
+  summary: "\nConfiguration for predefined console logger.\n"
+  example: []
+  syntax:
+    content: public SingleLoggerSettings ConsoleLogger { get; set; }
+    parameters: []
+    return:
+      type: NeerCore.Logging.SingleLoggerSettings
+    content.vb: Public Property ConsoleLogger As SingleLoggerSettings
+  overload: NeerCore.Logging.LoggingSettings.ConsoleLogger*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: NeerCore.Logging.LoggingSettings.FullFileLogger
+  commentId: P:NeerCore.Logging.LoggingSettings.FullFileLogger
+  id: FullFileLogger
+  parent: NeerCore.Logging.LoggingSettings
+  langs:
+  - csharp
+  - vb
+  name: FullFileLogger
+  nameWithType: LoggingSettings.FullFileLogger
+  fullName: NeerCore.Logging.LoggingSettings.FullFileLogger
+  type: Property
+  source:
+    remote:
+      path: src/NeerCore.Logging.NLog/LoggingSettings.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: FullFileLogger
+    path: src/NeerCore.Logging.NLog/LoggingSettings.cs
+    startLine: 31
+  assemblies:
+  - NeerCore.Logging.NLog
+  namespace: NeerCore.Logging
+  summary: "\nConfiguration for predefined file logger for all log levels.\n"
+  example: []
+  syntax:
+    content: public SingleLoggerSettings FullFileLogger { get; set; }
+    parameters: []
+    return:
+      type: NeerCore.Logging.SingleLoggerSettings
+    content.vb: Public Property FullFileLogger As SingleLoggerSettings
+  overload: NeerCore.Logging.LoggingSettings.FullFileLogger*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: NeerCore.Logging.LoggingSettings.ErrorFileLogger
+  commentId: P:NeerCore.Logging.LoggingSettings.ErrorFileLogger
+  id: ErrorFileLogger
+  parent: NeerCore.Logging.LoggingSettings
+  langs:
+  - csharp
+  - vb
+  name: ErrorFileLogger
+  nameWithType: LoggingSettings.ErrorFileLogger
+  fullName: NeerCore.Logging.LoggingSettings.ErrorFileLogger
+  type: Property
+  source:
+    remote:
+      path: src/NeerCore.Logging.NLog/LoggingSettings.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: ErrorFileLogger
+    path: src/NeerCore.Logging.NLog/LoggingSettings.cs
+    startLine: 36
+  assemblies:
+  - NeerCore.Logging.NLog
+  namespace: NeerCore.Logging
+  summary: "\nConfiguration for predefined file logger for warnings and errors.\n"
+  example: []
+  syntax:
+    content: public SingleLoggerSettings ErrorFileLogger { get; set; }
+    parameters: []
+    return:
+      type: NeerCore.Logging.SingleLoggerSettings
+    content.vb: Public Property ErrorFileLogger As SingleLoggerSettings
+  overload: NeerCore.Logging.LoggingSettings.ErrorFileLogger*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: NeerCore.Logging
+  commentId: N:NeerCore.Logging
+  name: NeerCore.Logging
+  nameWithType: NeerCore.Logging
+  fullName: NeerCore.Logging
+- uid: NeerCore.Logging.LoggingSettings.LogLevel*
+  commentId: Overload:NeerCore.Logging.LoggingSettings.LogLevel
+  name: LogLevel
+  nameWithType: LoggingSettings.LogLevel
+  fullName: NeerCore.Logging.LoggingSettings.LogLevel
+- uid: Dictionary{System.String,System.String}
+  commentId: '!:Dictionary{System.String,System.String}'
+  definition: Dictionary`2
+  name: Dictionary<String, String>
+  nameWithType: Dictionary<String, String>
+  fullName: Dictionary<System.String, System.String>
+  nameWithType.vb: Dictionary(Of String, String)
+  fullName.vb: Dictionary(Of System.String, System.String)
+  name.vb: Dictionary(Of String, String)
+  spec.csharp:
+  - uid: Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: Dictionary`2
+  commentId: '!:Dictionary`2'
+  isExternal: true
+  name: Dictionary<, >
+  nameWithType: Dictionary<, >
+  fullName: Dictionary<, >
+  nameWithType.vb: Dictionary(Of , )
+  fullName.vb: Dictionary(Of , )
+  name.vb: Dictionary(Of , )
+  spec.csharp:
+  - uid: Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NeerCore.Logging.LoggingSettings.Shared*
+  commentId: Overload:NeerCore.Logging.LoggingSettings.Shared
+  name: Shared
+  nameWithType: LoggingSettings.Shared
+  fullName: NeerCore.Logging.LoggingSettings.Shared
+- uid: NeerCore.Logging.SharedLoggerSettings
+  commentId: T:NeerCore.Logging.SharedLoggerSettings
+  parent: NeerCore.Logging
+  name: SharedLoggerSettings
+  nameWithType: SharedLoggerSettings
+  fullName: NeerCore.Logging.SharedLoggerSettings
+- uid: NeerCore.Logging.LoggingSettings.ConsoleLogger*
+  commentId: Overload:NeerCore.Logging.LoggingSettings.ConsoleLogger
+  name: ConsoleLogger
+  nameWithType: LoggingSettings.ConsoleLogger
+  fullName: NeerCore.Logging.LoggingSettings.ConsoleLogger
+- uid: NeerCore.Logging.SingleLoggerSettings
+  commentId: T:NeerCore.Logging.SingleLoggerSettings
+  parent: NeerCore.Logging
+  name: SingleLoggerSettings
+  nameWithType: SingleLoggerSettings
+  fullName: NeerCore.Logging.SingleLoggerSettings
+- uid: NeerCore.Logging.LoggingSettings.FullFileLogger*
+  commentId: Overload:NeerCore.Logging.LoggingSettings.FullFileLogger
+  name: FullFileLogger
+  nameWithType: LoggingSettings.FullFileLogger
+  fullName: NeerCore.Logging.LoggingSettings.FullFileLogger
+- uid: NeerCore.Logging.LoggingSettings.ErrorFileLogger*
+  commentId: Overload:NeerCore.Logging.LoggingSettings.ErrorFileLogger
+  name: ErrorFileLogger
+  nameWithType: LoggingSettings.ErrorFileLogger
+  fullName: NeerCore.Logging.LoggingSettings.ErrorFileLogger

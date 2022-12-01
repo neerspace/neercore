@@ -1,0 +1,47 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Application.Abstractions.ICommandHandler`1
+  commentId: T:NeerCore.Application.Abstractions.ICommandHandler`1
+  id: ICommandHandler`1
+  parent: NeerCore.Application.Abstractions
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: ICommandHandler<TCommand>
+  nameWithType: ICommandHandler<TCommand>
+  fullName: NeerCore.Application.Abstractions.ICommandHandler<TCommand>
+  type: Interface
+  source:
+    remote:
+      path: src/NeerCore.Application.MediatR/Abstractions/ICommandHandler.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: ICommandHandler
+    path: ../src/NeerCore.Application.MediatR/Abstractions/ICommandHandler.cs
+    startLine: 7
+  assemblies:
+  - NeerCore.Application.MediatR
+  namespace: NeerCore.Application.Abstractions
+  syntax:
+    content: 'public interface ICommandHandler<in TCommand> : ICommandHandler<TCommand, Unit> where TCommand : ICommand<Unit>'
+    typeParameters:
+    - id: TCommand
+    content.vb: >-
+      Public Interface ICommandHandler(Of In TCommand As ICommand(Of Unit))
+          Inherits ICommandHandler(Of TCommand, Unit)
+  nameWithType.vb: ICommandHandler(Of TCommand)
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+  fullName.vb: NeerCore.Application.Abstractions.ICommandHandler(Of TCommand)
+  name.vb: ICommandHandler(Of TCommand)
+references:
+- uid: NeerCore.Application.Abstractions
+  commentId: N:NeerCore.Application.Abstractions
+  name: NeerCore.Application.Abstractions
+  nameWithType: NeerCore.Application.Abstractions
+  fullName: NeerCore.Application.Abstractions

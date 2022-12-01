@@ -1,0 +1,47 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Application.Abstractions.IQuery`1
+  commentId: T:NeerCore.Application.Abstractions.IQuery`1
+  id: IQuery`1
+  parent: NeerCore.Application.Abstractions
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: IQuery<TResponse>
+  nameWithType: IQuery<TResponse>
+  fullName: NeerCore.Application.Abstractions.IQuery<TResponse>
+  type: Interface
+  source:
+    remote:
+      path: src/NeerCore.Application.MediatR/Abstractions/IQuery.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: IQuery
+    path: ../src/NeerCore.Application.MediatR/Abstractions/IQuery.cs
+    startLine: 4
+  assemblies:
+  - NeerCore.Application.MediatR
+  namespace: NeerCore.Application.Abstractions
+  syntax:
+    content: public interface IQuery<out TResponse>
+    typeParameters:
+    - id: TResponse
+    content.vb: >-
+      Public Interface IQuery(Of Out TResponse)
+          Inherits IRequest(Of TResponse)
+  nameWithType.vb: IQuery(Of TResponse)
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+  fullName.vb: NeerCore.Application.Abstractions.IQuery(Of TResponse)
+  name.vb: IQuery(Of TResponse)
+references:
+- uid: NeerCore.Application.Abstractions
+  commentId: N:NeerCore.Application.Abstractions
+  name: NeerCore.Application.Abstractions
+  nameWithType: NeerCore.Application.Abstractions
+  fullName: NeerCore.Application.Abstractions

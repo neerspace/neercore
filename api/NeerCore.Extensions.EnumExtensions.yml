@@ -1,0 +1,182 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Extensions.EnumExtensions
+  commentId: T:NeerCore.Extensions.EnumExtensions
+  id: EnumExtensions
+  parent: NeerCore.Extensions
+  children:
+  - NeerCore.Extensions.EnumExtensions.GetDisplayName``1(``0)
+  - NeerCore.Extensions.EnumExtensions.GetRequiredDisplayName``1(``0)
+  langs:
+  - csharp
+  - vb
+  name: EnumExtensions
+  nameWithType: EnumExtensions
+  fullName: NeerCore.Extensions.EnumExtensions
+  type: Class
+  source:
+    remote:
+      path: src/NeerCore/Extensions/EnumExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: EnumExtensions
+    path: src/NeerCore/Extensions/EnumExtensions.cs
+    startLine: 5
+  assemblies:
+  - NeerCore
+  namespace: NeerCore.Extensions
+  syntax:
+    content: 'public static class EnumExtensions : object'
+    content.vb: >-
+      Public Module EnumExtensions
+
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: NeerCore.Extensions.EnumExtensions.GetDisplayName``1(``0)
+  commentId: M:NeerCore.Extensions.EnumExtensions.GetDisplayName``1(``0)
+  id: GetDisplayName``1(``0)
+  isExtensionMethod: true
+  parent: NeerCore.Extensions.EnumExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetDisplayName<TEnum>(TEnum)
+  nameWithType: EnumExtensions.GetDisplayName<TEnum>(TEnum)
+  fullName: NeerCore.Extensions.EnumExtensions.GetDisplayName<TEnum>(TEnum)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore/Extensions/EnumExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: GetDisplayName
+    path: src/NeerCore/Extensions/EnumExtensions.cs
+    startLine: 13
+  assemblies:
+  - NeerCore
+  namespace: NeerCore.Extensions
+  summary: "\nConverts enum to string by <see cref=\"!:EnumMemberAttribute\"></see> attribute value\nor returns default ToString() if attribute is not provided.\n"
+  example: []
+  syntax:
+    content: >-
+      public static string GetDisplayName<TEnum>(this TEnum value)
+
+          where TEnum : Enum
+    parameters:
+    - id: value
+      type: '{TEnum}'
+      description: Enum member (for example <see cref="!:DayOfWeek"></see>.<see cref="!:DayOfWeek.Sunday"></see>)
+    typeParameters:
+    - id: TEnum
+    return:
+      type: System.String
+      description: String value for given enum member
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function GetDisplayName(Of TEnum As  Enum)(value As TEnum) As String
+  overload: NeerCore.Extensions.EnumExtensions.GetDisplayName*
+  nameWithType.vb: EnumExtensions.GetDisplayName(Of TEnum)(TEnum)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: NeerCore.Extensions.EnumExtensions.GetDisplayName(Of TEnum)(TEnum)
+  name.vb: GetDisplayName(Of TEnum)(TEnum)
+- uid: NeerCore.Extensions.EnumExtensions.GetRequiredDisplayName``1(``0)
+  commentId: M:NeerCore.Extensions.EnumExtensions.GetRequiredDisplayName``1(``0)
+  id: GetRequiredDisplayName``1(``0)
+  isExtensionMethod: true
+  parent: NeerCore.Extensions.EnumExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetRequiredDisplayName<TEnum>(TEnum)
+  nameWithType: EnumExtensions.GetRequiredDisplayName<TEnum>(TEnum)
+  fullName: NeerCore.Extensions.EnumExtensions.GetRequiredDisplayName<TEnum>(TEnum)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore/Extensions/EnumExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: GetRequiredDisplayName
+    path: src/NeerCore/Extensions/EnumExtensions.cs
+    startLine: 30
+  assemblies:
+  - NeerCore
+  namespace: NeerCore.Extensions
+  summary: "\nConverts enum to string by <see cref=\"!:EnumMemberAttribute\"></see> attribute value.\n<br /><br />\nUse this method with care, because if the attribute is not specified, an error will be thrown.\nIf you are sure that everything is OK, then you can use it, and if not, then it is better to\nlook at the safe <xref href=\"NeerCore.Extensions.EnumExtensions.GetDisplayName%60%601(%60%600)\" data-throw-if-not-resolved=\"false\"></xref> method.\n"
+  example: []
+  syntax:
+    content: >-
+      public static string GetRequiredDisplayName<TEnum>(this TEnum value)
+
+          where TEnum : Enum
+    parameters:
+    - id: value
+      type: '{TEnum}'
+      description: Enum member (for example <see cref="!:DayOfWeek"></see>.<see cref="!:DayOfWeek.Sunday"></see>)
+    typeParameters:
+    - id: TEnum
+    return:
+      type: System.String
+      description: String value for given enum member
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function GetRequiredDisplayName(Of TEnum As  Enum)(value As TEnum) As String
+  overload: NeerCore.Extensions.EnumExtensions.GetRequiredDisplayName*
+  nameWithType.vb: EnumExtensions.GetRequiredDisplayName(Of TEnum)(TEnum)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: NeerCore.Extensions.EnumExtensions.GetRequiredDisplayName(Of TEnum)(TEnum)
+  name.vb: GetRequiredDisplayName(Of TEnum)(TEnum)
+references:
+- uid: NeerCore.Extensions
+  commentId: N:NeerCore.Extensions
+  name: NeerCore.Extensions
+  nameWithType: NeerCore.Extensions
+  fullName: NeerCore.Extensions
+- uid: NeerCore.Extensions.EnumExtensions.GetDisplayName*
+  commentId: Overload:NeerCore.Extensions.EnumExtensions.GetDisplayName
+  name: GetDisplayName
+  nameWithType: EnumExtensions.GetDisplayName
+  fullName: NeerCore.Extensions.EnumExtensions.GetDisplayName
+- uid: '{TEnum}'
+  commentId: '!:TEnum'
+  definition: TEnum
+  name: TEnum
+  nameWithType: TEnum
+  fullName: TEnum
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: TEnum
+  name: TEnum
+  nameWithType: TEnum
+  fullName: TEnum
+- uid: NeerCore.Extensions.EnumExtensions.GetDisplayName``1(``0)
+  commentId: M:NeerCore.Extensions.EnumExtensions.GetDisplayName``1(``0)
+  isExternal: true
+- uid: NeerCore.Extensions.EnumExtensions.GetRequiredDisplayName*
+  commentId: Overload:NeerCore.Extensions.EnumExtensions.GetRequiredDisplayName
+  name: GetRequiredDisplayName
+  nameWithType: EnumExtensions.GetRequiredDisplayName
+  fullName: NeerCore.Extensions.EnumExtensions.GetRequiredDisplayName

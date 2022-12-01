@@ -1,0 +1,50 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Application.Abstractions.IQueryHandler`2
+  commentId: T:NeerCore.Application.Abstractions.IQueryHandler`2
+  id: IQueryHandler`2
+  parent: NeerCore.Application.Abstractions
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: IQueryHandler<TQuery, TResponse>
+  nameWithType: IQueryHandler<TQuery, TResponse>
+  fullName: NeerCore.Application.Abstractions.IQueryHandler<TQuery, TResponse>
+  type: Interface
+  source:
+    remote:
+      path: src/NeerCore.Application.MediatR/Abstractions/IQueryHandler.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: IQueryHandler
+    path: ../src/NeerCore.Application.MediatR/Abstractions/IQueryHandler.cs
+    startLine: 4
+  assemblies:
+  - NeerCore.Application.MediatR
+  namespace: NeerCore.Application.Abstractions
+  syntax:
+    content: >-
+      public interface IQueryHandler<in TQuery, TResponse>
+          where TQuery : IQuery<TResponse>
+    typeParameters:
+    - id: TQuery
+    - id: TResponse
+    content.vb: >-
+      Public Interface IQueryHandler(Of In TQuery As IQuery(Of TResponse), TResponse)
+          Inherits IRequestHandler(Of TQuery, TResponse)
+  nameWithType.vb: IQueryHandler(Of TQuery, TResponse)
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+  fullName.vb: NeerCore.Application.Abstractions.IQueryHandler(Of TQuery, TResponse)
+  name.vb: IQueryHandler(Of TQuery, TResponse)
+references:
+- uid: NeerCore.Application.Abstractions
+  commentId: N:NeerCore.Application.Abstractions
+  name: NeerCore.Application.Abstractions
+  nameWithType: NeerCore.Application.Abstractions
+  fullName: NeerCore.Application.Abstractions

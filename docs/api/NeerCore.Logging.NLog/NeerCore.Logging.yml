@@ -1,0 +1,53 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Logging
+  commentId: N:NeerCore.Logging
+  id: NeerCore.Logging
+  children:
+  - NeerCore.Logging.LoggerInstaller
+  - NeerCore.Logging.LoggerLayouts
+  - NeerCore.Logging.LoggingSettings
+  - NeerCore.Logging.SharedLoggerSettings
+  - NeerCore.Logging.SingleLoggerSettings
+  langs:
+  - csharp
+  - vb
+  name: NeerCore.Logging
+  nameWithType: NeerCore.Logging
+  fullName: NeerCore.Logging
+  type: Namespace
+  assemblies:
+  - NeerCore.Logging.NLog
+references:
+- uid: NeerCore.Logging.LoggerInstaller
+  commentId: T:NeerCore.Logging.LoggerInstaller
+  name: LoggerInstaller
+  nameWithType: LoggerInstaller
+  fullName: NeerCore.Logging.LoggerInstaller
+- uid: NeerCore.Logging.LoggerLayouts
+  commentId: T:NeerCore.Logging.LoggerLayouts
+  name: LoggerLayouts
+  nameWithType: LoggerLayouts
+  fullName: NeerCore.Logging.LoggerLayouts
+- uid: NeerCore.Logging.LoggingSettings
+  commentId: T:NeerCore.Logging.LoggingSettings
+  name: LoggingSettings
+  nameWithType: LoggingSettings
+  fullName: NeerCore.Logging.LoggingSettings
+- uid: NeerCore.Logging.SharedLoggerSettings
+  commentId: T:NeerCore.Logging.SharedLoggerSettings
+  parent: NeerCore.Logging
+  name: SharedLoggerSettings
+  nameWithType: SharedLoggerSettings
+  fullName: NeerCore.Logging.SharedLoggerSettings
+- uid: NeerCore.Logging.SingleLoggerSettings
+  commentId: T:NeerCore.Logging.SingleLoggerSettings
+  parent: NeerCore.Logging
+  name: SingleLoggerSettings
+  nameWithType: SingleLoggerSettings
+  fullName: NeerCore.Logging.SingleLoggerSettings
+- uid: NeerCore.Logging
+  commentId: N:NeerCore.Logging
+  name: NeerCore.Logging
+  nameWithType: NeerCore.Logging
+  fullName: NeerCore.Logging

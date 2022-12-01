@@ -1,0 +1,161 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Extensions.StringExtensions
+  commentId: T:NeerCore.Extensions.StringExtensions
+  id: StringExtensions
+  parent: NeerCore.Extensions
+  children:
+  - NeerCore.Extensions.StringExtensions.ApplyLimit(System.String,System.Int32)
+  - NeerCore.Extensions.StringExtensions.ToSnakeCase(System.String)
+  langs:
+  - csharp
+  - vb
+  name: StringExtensions
+  nameWithType: StringExtensions
+  fullName: NeerCore.Extensions.StringExtensions
+  type: Class
+  source:
+    remote:
+      path: src/NeerCore/Extensions/StringExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: StringExtensions
+    path: ../src/NeerCore/Extensions/StringExtensions.cs
+    startLine: 2
+  assemblies:
+  - NeerCore
+  namespace: NeerCore.Extensions
+  syntax:
+    content: 'public static class StringExtensions : object'
+    content.vb: >-
+      Public Module StringExtensions
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: NeerCore.Extensions.StringExtensions.ApplyLimit(System.String,System.Int32)
+  commentId: M:NeerCore.Extensions.StringExtensions.ApplyLimit(System.String,System.Int32)
+  id: ApplyLimit(System.String,System.Int32)
+  isExtensionMethod: true
+  parent: NeerCore.Extensions.StringExtensions
+  langs:
+  - csharp
+  - vb
+  name: ApplyLimit(String, Int32)
+  nameWithType: StringExtensions.ApplyLimit(String, Int32)
+  fullName: NeerCore.Extensions.StringExtensions.ApplyLimit(System.String, System.Int32)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore/Extensions/StringExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: ApplyLimit
+    path: ../src/NeerCore/Extensions/StringExtensions.cs
+    startLine: 12
+  assemblies:
+  - NeerCore
+  namespace: NeerCore.Extensions
+  summary: "\nReturns a source string <code data-dev-comment-type=\"paramref\" class=\"paramref\">value</code> if it&apos;s length\nis less then <code data-dev-comment-type=\"paramref\" class=\"paramref\">limit</code> or substring with length\nequals the <code data-dev-comment-type=\"paramref\" class=\"paramref\">limit</code> and starts at the index 0.\n"
+  example: []
+  syntax:
+    content: public static string ApplyLimit(this string value, int limit)
+    parameters:
+    - id: value
+      type: System.String
+      description: Source not null string.
+    - id: limit
+      type: System.Int32
+      description: Max length for the <code data-dev-comment-type="paramref" class="paramref">value</code>.
+    return:
+      type: System.String
+      description: Limited string.
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function ApplyLimit(value As String, limit As Integer) As String
+  overload: NeerCore.Extensions.StringExtensions.ApplyLimit*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+- uid: NeerCore.Extensions.StringExtensions.ToSnakeCase(System.String)
+  commentId: M:NeerCore.Extensions.StringExtensions.ToSnakeCase(System.String)
+  id: ToSnakeCase(System.String)
+  isExtensionMethod: true
+  parent: NeerCore.Extensions.StringExtensions
+  langs:
+  - csharp
+  - vb
+  name: ToSnakeCase(String)
+  nameWithType: StringExtensions.ToSnakeCase(String)
+  fullName: NeerCore.Extensions.StringExtensions.ToSnakeCase(System.String)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore/Extensions/StringExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: ToSnakeCase
+    path: ../src/NeerCore/Extensions/StringExtensions.cs
+    startLine: 21
+  assemblies:
+  - NeerCore
+  namespace: NeerCore.Extensions
+  summary: Converts &apos;MyExampleString&apos; to &apos;my_example_string&apos;.
+  example: []
+  syntax:
+    content: public static string ToSnakeCase(this string value)
+    parameters:
+    - id: value
+      type: System.String
+      description: Source pascal or camel case &apos;MyExampleString&apos;.
+    return:
+      type: System.String
+      description: Camel case string &apos;my_example_string&apos;.
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function ToSnakeCase(value As String) As String
+  overload: NeerCore.Extensions.StringExtensions.ToSnakeCase*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: NeerCore.Extensions
+  commentId: N:NeerCore.Extensions
+  name: NeerCore.Extensions
+  nameWithType: NeerCore.Extensions
+  fullName: NeerCore.Extensions
+- uid: NeerCore.Extensions.StringExtensions.ApplyLimit*
+  commentId: Overload:NeerCore.Extensions.StringExtensions.ApplyLimit
+  name: ApplyLimit
+  nameWithType: StringExtensions.ApplyLimit
+  fullName: NeerCore.Extensions.StringExtensions.ApplyLimit
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Int32
+  commentId: '!:System.Int32'
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: NeerCore.Extensions.StringExtensions.ToSnakeCase*
+  commentId: Overload:NeerCore.Extensions.StringExtensions.ToSnakeCase
+  name: ToSnakeCase
+  nameWithType: StringExtensions.ToSnakeCase
+  fullName: NeerCore.Extensions.StringExtensions.ToSnakeCase

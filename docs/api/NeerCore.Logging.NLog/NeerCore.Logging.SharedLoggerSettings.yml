@@ -1,0 +1,95 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Logging.SharedLoggerSettings
+  commentId: T:NeerCore.Logging.SharedLoggerSettings
+  id: SharedLoggerSettings
+  parent: NeerCore.Logging
+  children:
+  - NeerCore.Logging.SharedLoggerSettings.LogsDirectoryPath
+  langs:
+  - csharp
+  - vb
+  name: SharedLoggerSettings
+  nameWithType: SharedLoggerSettings
+  fullName: NeerCore.Logging.SharedLoggerSettings
+  type: Class
+  source:
+    remote:
+      path: src/NeerCore.Logging.NLog/LoggingSettings.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: SharedLoggerSettings
+    path: src/NeerCore.Logging.NLog/LoggingSettings.cs
+    startLine: 39
+  assemblies:
+  - NeerCore.Logging.NLog
+  namespace: NeerCore.Logging
+  syntax:
+    content: 'public sealed class SharedLoggerSettings : object'
+    content.vb: >-
+      Public NotInheritable Class SharedLoggerSettings
+
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: NeerCore.Logging.SharedLoggerSettings.LogsDirectoryPath
+  commentId: P:NeerCore.Logging.SharedLoggerSettings.LogsDirectoryPath
+  id: LogsDirectoryPath
+  parent: NeerCore.Logging.SharedLoggerSettings
+  langs:
+  - csharp
+  - vb
+  name: LogsDirectoryPath
+  nameWithType: SharedLoggerSettings.LogsDirectoryPath
+  fullName: NeerCore.Logging.SharedLoggerSettings.LogsDirectoryPath
+  type: Property
+  source:
+    remote:
+      path: src/NeerCore.Logging.NLog/LoggingSettings.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: LogsDirectoryPath
+    path: src/NeerCore.Logging.NLog/LoggingSettings.cs
+    startLine: 44
+  assemblies:
+  - NeerCore.Logging.NLog
+  namespace: NeerCore.Logging
+  summary: "\nBase directory for log files.\n"
+  example: []
+  syntax:
+    content: public string LogsDirectoryPath { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property LogsDirectoryPath As String
+  overload: NeerCore.Logging.SharedLoggerSettings.LogsDirectoryPath*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: NeerCore.Logging
+  commentId: N:NeerCore.Logging
+  name: NeerCore.Logging
+  nameWithType: NeerCore.Logging
+  fullName: NeerCore.Logging
+- uid: NeerCore.Logging.SharedLoggerSettings.LogsDirectoryPath*
+  commentId: Overload:NeerCore.Logging.SharedLoggerSettings.LogsDirectoryPath
+  name: LogsDirectoryPath
+  nameWithType: SharedLoggerSettings.LogsDirectoryPath
+  fullName: NeerCore.Logging.SharedLoggerSettings.LogsDirectoryPath
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String

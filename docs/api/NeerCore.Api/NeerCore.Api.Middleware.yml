@@ -1,0 +1,28 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Api.Middleware
+  commentId: N:NeerCore.Api.Middleware
+  id: NeerCore.Api.Middleware
+  children:
+  - NeerCore.Api.Middleware.NeerExceptionHandlerMiddleware
+  - NeerCore.Api.Middleware.NeerSwaggerUIMiddleware
+  langs:
+  - csharp
+  - vb
+  name: NeerCore.Api.Middleware
+  nameWithType: NeerCore.Api.Middleware
+  fullName: NeerCore.Api.Middleware
+  type: Namespace
+  assemblies:
+  - NeerCore.Api
+references:
+- uid: NeerCore.Api.Middleware.NeerExceptionHandlerMiddleware
+  commentId: T:NeerCore.Api.Middleware.NeerExceptionHandlerMiddleware
+  name: NeerExceptionHandlerMiddleware
+  nameWithType: NeerExceptionHandlerMiddleware
+  fullName: NeerCore.Api.Middleware.NeerExceptionHandlerMiddleware
+- uid: NeerCore.Api.Middleware.NeerSwaggerUIMiddleware
+  commentId: T:NeerCore.Api.Middleware.NeerSwaggerUIMiddleware
+  name: NeerSwaggerUIMiddleware
+  nameWithType: NeerSwaggerUIMiddleware
+  fullName: NeerCore.Api.Middleware.NeerSwaggerUIMiddleware

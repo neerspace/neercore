@@ -1,0 +1,176 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Typeids.Data.EntityFramework.ValueConverters.TypeidsValueConverter`2
+  commentId: T:NeerCore.Typeids.Data.EntityFramework.ValueConverters.TypeidsValueConverter`2
+  id: TypeidsValueConverter`2
+  parent: NeerCore.Typeids.Data.EntityFramework.ValueConverters
+  children:
+  - NeerCore.Typeids.Data.EntityFramework.ValueConverters.TypeidsValueConverter`2.#ctor(System.Nullable{ConverterMappingHints})
+  langs:
+  - csharp
+  - vb
+  name: TypeidsValueConverter<TIdentifier, TValue>
+  nameWithType: TypeidsValueConverter<TIdentifier, TValue>
+  fullName: NeerCore.Typeids.Data.EntityFramework.ValueConverters.TypeidsValueConverter<TIdentifier, TValue>
+  type: Class
+  source:
+    remote:
+      path: src/NeerCore.Typeids.Data.EntityFramework/ValueConverters/TypeidsValueConverter.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: TypeidsValueConverter
+    path: ../src/NeerCore.Typeids.Data.EntityFramework/ValueConverters/TypeidsValueConverter.cs
+    startLine: 7
+  assemblies:
+  - NeerCore.Typeids.Data.EntityFramework
+  namespace: NeerCore.Typeids.Data.EntityFramework.ValueConverters
+  syntax:
+    content: 'public class TypeidsValueConverter<TIdentifier, TValue> : ValueConverter<TIdentifier?, TValue> where TIdentifier : struct, ITypeIdentifier<TValue> where TValue : struct'
+    typeParameters:
+    - id: TIdentifier
+    - id: TValue
+    content.vb: >-
+      Public Class TypeidsValueConverter(Of TIdentifier As {Structure, ITypeIdentifier(Of TValue)}, TValue As Structure)
+
+          Inherits ValueConverter(Of TIdentifier?, TValue)
+  inheritance:
+  - System.Object
+  nameWithType.vb: TypeidsValueConverter(Of TIdentifier, TValue)
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+  fullName.vb: NeerCore.Typeids.Data.EntityFramework.ValueConverters.TypeidsValueConverter(Of TIdentifier, TValue)
+  name.vb: TypeidsValueConverter(Of TIdentifier, TValue)
+- uid: NeerCore.Typeids.Data.EntityFramework.ValueConverters.TypeidsValueConverter`2.#ctor(System.Nullable{ConverterMappingHints})
+  commentId: M:NeerCore.Typeids.Data.EntityFramework.ValueConverters.TypeidsValueConverter`2.#ctor(System.Nullable{ConverterMappingHints})
+  id: '#ctor(System.Nullable{ConverterMappingHints})'
+  parent: NeerCore.Typeids.Data.EntityFramework.ValueConverters.TypeidsValueConverter`2
+  langs:
+  - csharp
+  - vb
+  name: TypeidsValueConverter(Nullable<ConverterMappingHints>)
+  nameWithType: TypeidsValueConverter<TIdentifier, TValue>.TypeidsValueConverter(Nullable<ConverterMappingHints>)
+  fullName: NeerCore.Typeids.Data.EntityFramework.ValueConverters.TypeidsValueConverter<TIdentifier, TValue>.TypeidsValueConverter(System.Nullable<ConverterMappingHints>)
+  type: Constructor
+  source:
+    remote:
+      path: src/NeerCore.Typeids.Data.EntityFramework/ValueConverters/TypeidsValueConverter.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: .ctor
+    path: ../src/NeerCore.Typeids.Data.EntityFramework/ValueConverters/TypeidsValueConverter.cs
+    startLine: 11
+  assemblies:
+  - NeerCore.Typeids.Data.EntityFramework
+  namespace: NeerCore.Typeids.Data.EntityFramework.ValueConverters
+  syntax:
+    content: public TypeidsValueConverter(ConverterMappingHints? mappingHints = null)
+    parameters:
+    - id: mappingHints
+      type: System.Nullable{ConverterMappingHints}
+    content.vb: Public Sub New(mappingHints As ConverterMappingHints? = Nothing)
+  overload: NeerCore.Typeids.Data.EntityFramework.ValueConverters.TypeidsValueConverter`2.#ctor*
+  nameWithType.vb: TypeidsValueConverter(Of TIdentifier, TValue).TypeidsValueConverter(Nullable(Of ConverterMappingHints))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: NeerCore.Typeids.Data.EntityFramework.ValueConverters.TypeidsValueConverter(Of TIdentifier, TValue).TypeidsValueConverter(System.Nullable(Of ConverterMappingHints))
+  name.vb: TypeidsValueConverter(Nullable(Of ConverterMappingHints))
+references:
+- uid: NeerCore.Typeids.Data.EntityFramework.ValueConverters
+  commentId: N:NeerCore.Typeids.Data.EntityFramework.ValueConverters
+  name: NeerCore.Typeids.Data.EntityFramework.ValueConverters
+  nameWithType: NeerCore.Typeids.Data.EntityFramework.ValueConverters
+  fullName: NeerCore.Typeids.Data.EntityFramework.ValueConverters
+- uid: NeerCore.Typeids.Data.EntityFramework.ValueConverters.TypeidsValueConverter`2.#ctor*
+  commentId: Overload:NeerCore.Typeids.Data.EntityFramework.ValueConverters.TypeidsValueConverter`2.#ctor
+  name: TypeidsValueConverter
+  nameWithType: TypeidsValueConverter<TIdentifier, TValue>.TypeidsValueConverter
+  fullName: NeerCore.Typeids.Data.EntityFramework.ValueConverters.TypeidsValueConverter<TIdentifier, TValue>.TypeidsValueConverter
+  nameWithType.vb: TypeidsValueConverter(Of TIdentifier, TValue).TypeidsValueConverter
+  fullName.vb: NeerCore.Typeids.Data.EntityFramework.ValueConverters.TypeidsValueConverter(Of TIdentifier, TValue).TypeidsValueConverter
+- uid: System.Nullable{ConverterMappingHints}
+  commentId: '!:System.Nullable{ConverterMappingHints}'
+  definition: System.Nullable`1
+  name: Nullable<ConverterMappingHints>
+  nameWithType: Nullable<ConverterMappingHints>
+  fullName: System.Nullable<ConverterMappingHints>
+  nameWithType.vb: Nullable(Of ConverterMappingHints)
+  fullName.vb: System.Nullable(Of ConverterMappingHints)
+  name.vb: Nullable(Of ConverterMappingHints)
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: ConverterMappingHints
+    name: ConverterMappingHints
+    nameWithType: ConverterMappingHints
+    fullName: ConverterMappingHints
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: ConverterMappingHints
+    name: ConverterMappingHints
+    nameWithType: ConverterMappingHints
+    fullName: ConverterMappingHints
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable`1
+  isExternal: true
+  name: Nullable<>
+  nameWithType: Nullable<>
+  fullName: System.Nullable<>
+  nameWithType.vb: Nullable(Of )
+  fullName.vb: System.Nullable(Of )
+  name.vb: Nullable(Of )
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )

@@ -1,0 +1,381 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Exceptions.HttpException
+  commentId: T:NeerCore.Exceptions.HttpException
+  id: HttpException
+  parent: NeerCore.Exceptions
+  children:
+  - NeerCore.Exceptions.HttpException.#ctor(System.String,System.Nullable{IReadOnlyList{NeerCore.ErrorDetails}})
+  - NeerCore.Exceptions.HttpException.#ctor(System.String,System.String)
+  - NeerCore.Exceptions.HttpException.Details
+  - NeerCore.Exceptions.HttpException.ErrorType
+  - NeerCore.Exceptions.HttpException.StatusCode
+  langs:
+  - csharp
+  - vb
+  name: HttpException
+  nameWithType: HttpException
+  fullName: NeerCore.Exceptions.HttpException
+  type: Class
+  source:
+    remote:
+      path: src/NeerCore/Exceptions/HttpException.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: HttpException
+    path: ../src/NeerCore/Exceptions/HttpException.cs
+    startLine: 5
+  assemblies:
+  - NeerCore
+  namespace: NeerCore.Exceptions
+  summary: The base exception that represents an HTTP error.
+  example: []
+  syntax:
+    content: 'public abstract class HttpException : Exception'
+    content.vb: >-
+      Public MustInherit Class HttpException
+          Inherits Exception
+  inheritance:
+  - System.Object
+  derivedClasses:
+  - NeerCore.Exceptions.ConflictException
+  - NeerCore.Exceptions.ForbidException
+  - NeerCore.Exceptions.InternalServerException
+  - NeerCore.Exceptions.NotFoundException
+  - NeerCore.Exceptions.UnauthorizedException
+  - NeerCore.Exceptions.UnprocessableEntityException
+  - NeerCore.Exceptions.ValidationFailedException
+  modifiers.csharp:
+  - public
+  - abstract
+  - class
+  modifiers.vb:
+  - Public
+  - MustInherit
+  - Class
+- uid: NeerCore.Exceptions.HttpException.StatusCode
+  commentId: P:NeerCore.Exceptions.HttpException.StatusCode
+  id: StatusCode
+  parent: NeerCore.Exceptions.HttpException
+  langs:
+  - csharp
+  - vb
+  name: StatusCode
+  nameWithType: HttpException.StatusCode
+  fullName: NeerCore.Exceptions.HttpException.StatusCode
+  type: Property
+  source:
+    remote:
+      path: src/NeerCore/Exceptions/HttpException.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: StatusCode
+    path: ../src/NeerCore/Exceptions/HttpException.cs
+    startLine: 16
+  assemblies:
+  - NeerCore
+  namespace: NeerCore.Exceptions
+  summary: "\nThe error response code with which it will be returned\n(if used within a web app, otherwise it will work like a normal exception).\n"
+  remarks: "\n1. I recommend using <strong>4XX</strong> for client errors and <strong>5XX</strong> for server errors.\n<br />\n2. I strongly advise you not to use any other values for exceptions!\n"
+  example: []
+  syntax:
+    content: public abstract HttpStatusCode StatusCode { get; }
+    parameters: []
+    return:
+      type: HttpStatusCode
+    content.vb: Public MustOverride ReadOnly Property StatusCode As HttpStatusCode
+  overload: NeerCore.Exceptions.HttpException.StatusCode*
+  modifiers.csharp:
+  - public
+  - abstract
+  - get
+  modifiers.vb:
+  - Public
+  - MustOverride
+  - ReadOnly
+- uid: NeerCore.Exceptions.HttpException.ErrorType
+  commentId: P:NeerCore.Exceptions.HttpException.ErrorType
+  id: ErrorType
+  parent: NeerCore.Exceptions.HttpException
+  langs:
+  - csharp
+  - vb
+  name: ErrorType
+  nameWithType: HttpException.ErrorType
+  fullName: NeerCore.Exceptions.HttpException.ErrorType
+  type: Property
+  source:
+    remote:
+      path: src/NeerCore/Exceptions/HttpException.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: ErrorType
+    path: ../src/NeerCore/Exceptions/HttpException.cs
+    startLine: 19
+  assemblies:
+  - NeerCore
+  namespace: NeerCore.Exceptions
+  summary: Your custom error type.
+  example: []
+  syntax:
+    content: public abstract string ErrorType { get; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public MustOverride ReadOnly Property ErrorType As String
+  overload: NeerCore.Exceptions.HttpException.ErrorType*
+  modifiers.csharp:
+  - public
+  - abstract
+  - get
+  modifiers.vb:
+  - Public
+  - MustOverride
+  - ReadOnly
+- uid: NeerCore.Exceptions.HttpException.Details
+  commentId: P:NeerCore.Exceptions.HttpException.Details
+  id: Details
+  parent: NeerCore.Exceptions.HttpException
+  langs:
+  - csharp
+  - vb
+  name: Details
+  nameWithType: HttpException.Details
+  fullName: NeerCore.Exceptions.HttpException.Details
+  type: Property
+  source:
+    remote:
+      path: src/NeerCore/Exceptions/HttpException.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: Details
+    path: ../src/NeerCore/Exceptions/HttpException.cs
+    startLine: 26
+  assemblies:
+  - NeerCore
+  namespace: NeerCore.Exceptions
+  summary: "\nIt is not enough for all exceptions to describe their type.\nIt is often necessary to provide additional information,\nsuch as which fields have which list of errors.\n"
+  example: []
+  syntax:
+    content: public IReadOnlyList<ErrorDetails>? Details { get; set; }
+    parameters: []
+    return:
+      type: System.Nullable{IReadOnlyList{NeerCore.ErrorDetails}}
+    content.vb: Public Property Details As IReadOnlyList(Of ErrorDetails)?
+  overload: NeerCore.Exceptions.HttpException.Details*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: NeerCore.Exceptions.HttpException.#ctor(System.String,System.Nullable{IReadOnlyList{NeerCore.ErrorDetails}})
+  commentId: M:NeerCore.Exceptions.HttpException.#ctor(System.String,System.Nullable{IReadOnlyList{NeerCore.ErrorDetails}})
+  id: '#ctor(System.String,System.Nullable{IReadOnlyList{NeerCore.ErrorDetails}})'
+  parent: NeerCore.Exceptions.HttpException
+  langs:
+  - csharp
+  - vb
+  name: HttpException(String, Nullable<IReadOnlyList<ErrorDetails>>)
+  nameWithType: HttpException.HttpException(String, Nullable<IReadOnlyList<ErrorDetails>>)
+  fullName: NeerCore.Exceptions.HttpException.HttpException(System.String, System.Nullable<IReadOnlyList<NeerCore.ErrorDetails>>)
+  type: Constructor
+  source:
+    remote:
+      path: src/NeerCore/Exceptions/HttpException.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: .ctor
+    path: ../src/NeerCore/Exceptions/HttpException.cs
+    startLine: 29
+  assemblies:
+  - NeerCore
+  namespace: NeerCore.Exceptions
+  syntax:
+    content: protected HttpException(string message, IReadOnlyList<ErrorDetails>? details = null)
+    parameters:
+    - id: message
+      type: System.String
+    - id: details
+      type: System.Nullable{IReadOnlyList{NeerCore.ErrorDetails}}
+    content.vb: Protected Sub New(message As String, details As IReadOnlyList(Of ErrorDetails)? = Nothing)
+  overload: NeerCore.Exceptions.HttpException.#ctor*
+  nameWithType.vb: HttpException.HttpException(String, Nullable(Of IReadOnlyList(Of ErrorDetails)))
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+  fullName.vb: NeerCore.Exceptions.HttpException.HttpException(System.String, System.Nullable(Of IReadOnlyList(Of NeerCore.ErrorDetails)))
+  name.vb: HttpException(String, Nullable(Of IReadOnlyList(Of ErrorDetails)))
+- uid: NeerCore.Exceptions.HttpException.#ctor(System.String,System.String)
+  commentId: M:NeerCore.Exceptions.HttpException.#ctor(System.String,System.String)
+  id: '#ctor(System.String,System.String)'
+  parent: NeerCore.Exceptions.HttpException
+  langs:
+  - csharp
+  - vb
+  name: HttpException(String, String)
+  nameWithType: HttpException.HttpException(String, String)
+  fullName: NeerCore.Exceptions.HttpException.HttpException(System.String, System.String)
+  type: Constructor
+  source:
+    remote:
+      path: src/NeerCore/Exceptions/HttpException.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: .ctor
+    path: ../src/NeerCore/Exceptions/HttpException.cs
+    startLine: 34
+  assemblies:
+  - NeerCore
+  namespace: NeerCore.Exceptions
+  syntax:
+    content: protected HttpException(string field, string message)
+    parameters:
+    - id: field
+      type: System.String
+    - id: message
+      type: System.String
+    content.vb: Protected Sub New(field As String, message As String)
+  overload: NeerCore.Exceptions.HttpException.#ctor*
+  modifiers.csharp:
+  - protected
+  modifiers.vb:
+  - Protected
+references:
+- uid: NeerCore.Exceptions
+  commentId: N:NeerCore.Exceptions
+  name: NeerCore.Exceptions
+  nameWithType: NeerCore.Exceptions
+  fullName: NeerCore.Exceptions
+- uid: NeerCore.Exceptions.HttpException.StatusCode*
+  commentId: Overload:NeerCore.Exceptions.HttpException.StatusCode
+  name: StatusCode
+  nameWithType: HttpException.StatusCode
+  fullName: NeerCore.Exceptions.HttpException.StatusCode
+- uid: HttpStatusCode
+  isExternal: true
+  name: HttpStatusCode
+  nameWithType: HttpStatusCode
+  fullName: HttpStatusCode
+- uid: NeerCore.Exceptions.HttpException.ErrorType*
+  commentId: Overload:NeerCore.Exceptions.HttpException.ErrorType
+  name: ErrorType
+  nameWithType: HttpException.ErrorType
+  fullName: NeerCore.Exceptions.HttpException.ErrorType
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: NeerCore.Exceptions.HttpException.Details*
+  commentId: Overload:NeerCore.Exceptions.HttpException.Details
+  name: Details
+  nameWithType: HttpException.Details
+  fullName: NeerCore.Exceptions.HttpException.Details
+- uid: System.Nullable{IReadOnlyList{NeerCore.ErrorDetails}}
+  commentId: '!:System.Nullable{IReadOnlyList{NeerCore.ErrorDetails}}'
+  definition: System.Nullable`1
+  name: Nullable<IReadOnlyList<ErrorDetails>>
+  nameWithType: Nullable<IReadOnlyList<ErrorDetails>>
+  fullName: System.Nullable<IReadOnlyList<NeerCore.ErrorDetails>>
+  nameWithType.vb: Nullable(Of IReadOnlyList(Of ErrorDetails))
+  fullName.vb: System.Nullable(Of IReadOnlyList(Of NeerCore.ErrorDetails))
+  name.vb: Nullable(Of IReadOnlyList(Of ErrorDetails))
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: IReadOnlyList`1
+    name: IReadOnlyList
+    nameWithType: IReadOnlyList
+    fullName: IReadOnlyList
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: NeerCore.ErrorDetails
+    name: ErrorDetails
+    nameWithType: ErrorDetails
+    fullName: NeerCore.ErrorDetails
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: IReadOnlyList`1
+    name: IReadOnlyList
+    nameWithType: IReadOnlyList
+    fullName: IReadOnlyList
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: NeerCore.ErrorDetails
+    name: ErrorDetails
+    nameWithType: ErrorDetails
+    fullName: NeerCore.ErrorDetails
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Nullable`1
+  isExternal: true
+  name: Nullable<>
+  nameWithType: Nullable<>
+  fullName: System.Nullable<>
+  nameWithType.vb: Nullable(Of )
+  fullName.vb: System.Nullable(Of )
+  name.vb: Nullable(Of )
+  spec.csharp:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Nullable`1
+    name: Nullable
+    nameWithType: Nullable
+    fullName: System.Nullable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: ''
+    nameWithType: ''
+    fullName: ''
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: NeerCore.Exceptions.HttpException.#ctor*
+  commentId: Overload:NeerCore.Exceptions.HttpException.#ctor
+  name: HttpException
+  nameWithType: HttpException.HttpException
+  fullName: NeerCore.Exceptions.HttpException.HttpException

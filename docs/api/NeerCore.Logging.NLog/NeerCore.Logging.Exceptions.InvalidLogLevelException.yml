@@ -1,0 +1,91 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Logging.Exceptions.InvalidLogLevelException
+  commentId: T:NeerCore.Logging.Exceptions.InvalidLogLevelException
+  id: InvalidLogLevelException
+  parent: NeerCore.Logging.Exceptions
+  children:
+  - NeerCore.Logging.Exceptions.InvalidLogLevelException.#ctor(System.String)
+  langs:
+  - csharp
+  - vb
+  name: InvalidLogLevelException
+  nameWithType: InvalidLogLevelException
+  fullName: NeerCore.Logging.Exceptions.InvalidLogLevelException
+  type: Class
+  source:
+    remote:
+      path: src/NeerCore.Logging.NLog/Exceptions/InvalidLogLevelException.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: InvalidLogLevelException
+    path: src/NeerCore.Logging.NLog/Exceptions/InvalidLogLevelException.cs
+    startLine: 2
+  assemblies:
+  - NeerCore.Logging.NLog
+  namespace: NeerCore.Logging.Exceptions
+  syntax:
+    content: 'public sealed class InvalidLogLevelException : Exception'
+    content.vb: >-
+      Public NotInheritable Class InvalidLogLevelException
+
+          Inherits Exception
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: NeerCore.Logging.Exceptions.InvalidLogLevelException.#ctor(System.String)
+  commentId: M:NeerCore.Logging.Exceptions.InvalidLogLevelException.#ctor(System.String)
+  id: '#ctor(System.String)'
+  parent: NeerCore.Logging.Exceptions.InvalidLogLevelException
+  langs:
+  - csharp
+  - vb
+  name: InvalidLogLevelException(String)
+  nameWithType: InvalidLogLevelException.InvalidLogLevelException(String)
+  fullName: NeerCore.Logging.Exceptions.InvalidLogLevelException.InvalidLogLevelException(System.String)
+  type: Constructor
+  source:
+    remote:
+      path: src/NeerCore.Logging.NLog/Exceptions/InvalidLogLevelException.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: .ctor
+    path: src/NeerCore.Logging.NLog/Exceptions/InvalidLogLevelException.cs
+    startLine: 4
+  assemblies:
+  - NeerCore.Logging.NLog
+  namespace: NeerCore.Logging.Exceptions
+  syntax:
+    content: public InvalidLogLevelException(string logLevel)
+    parameters:
+    - id: logLevel
+      type: System.String
+    content.vb: Public Sub New(logLevel As String)
+  overload: NeerCore.Logging.Exceptions.InvalidLogLevelException.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: NeerCore.Logging.Exceptions
+  commentId: N:NeerCore.Logging.Exceptions
+  name: NeerCore.Logging.Exceptions
+  nameWithType: NeerCore.Logging.Exceptions
+  fullName: NeerCore.Logging.Exceptions
+- uid: NeerCore.Logging.Exceptions.InvalidLogLevelException.#ctor*
+  commentId: Overload:NeerCore.Logging.Exceptions.InvalidLogLevelException.#ctor
+  name: InvalidLogLevelException
+  nameWithType: InvalidLogLevelException.InvalidLogLevelException
+  fullName: NeerCore.Logging.Exceptions.InvalidLogLevelException.InvalidLogLevelException
+- uid: System.String
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String

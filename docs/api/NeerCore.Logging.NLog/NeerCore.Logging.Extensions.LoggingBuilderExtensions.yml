@@ -1,0 +1,100 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Logging.Extensions.LoggingBuilderExtensions
+  commentId: T:NeerCore.Logging.Extensions.LoggingBuilderExtensions
+  id: LoggingBuilderExtensions
+  parent: NeerCore.Logging.Extensions
+  children:
+  - NeerCore.Logging.Extensions.LoggingBuilderExtensions.ConfigureNLogAsDefault(ILoggingBuilder)
+  langs:
+  - csharp
+  - vb
+  name: LoggingBuilderExtensions
+  nameWithType: LoggingBuilderExtensions
+  fullName: NeerCore.Logging.Extensions.LoggingBuilderExtensions
+  type: Class
+  source:
+    remote:
+      path: src/NeerCore.Logging.NLog/Extensions/LoggingBuilderExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: LoggingBuilderExtensions
+    path: src/NeerCore.Logging.NLog/Extensions/LoggingBuilderExtensions.cs
+    startLine: 6
+  assemblies:
+  - NeerCore.Logging.NLog
+  namespace: NeerCore.Logging.Extensions
+  syntax:
+    content: 'public static class LoggingBuilderExtensions : object'
+    content.vb: >-
+      Public Module LoggingBuilderExtensions
+
+          Inherits Object
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: NeerCore.Logging.Extensions.LoggingBuilderExtensions.ConfigureNLogAsDefault(ILoggingBuilder)
+  commentId: M:NeerCore.Logging.Extensions.LoggingBuilderExtensions.ConfigureNLogAsDefault(ILoggingBuilder)
+  id: ConfigureNLogAsDefault(ILoggingBuilder)
+  isExtensionMethod: true
+  parent: NeerCore.Logging.Extensions.LoggingBuilderExtensions
+  langs:
+  - csharp
+  - vb
+  name: ConfigureNLogAsDefault(ILoggingBuilder)
+  nameWithType: LoggingBuilderExtensions.ConfigureNLogAsDefault(ILoggingBuilder)
+  fullName: NeerCore.Logging.Extensions.LoggingBuilderExtensions.ConfigureNLogAsDefault(ILoggingBuilder)
+  type: Method
+  source:
+    remote:
+      path: src/NeerCore.Logging.NLog/Extensions/LoggingBuilderExtensions.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: ConfigureNLogAsDefault
+    path: src/NeerCore.Logging.NLog/Extensions/LoggingBuilderExtensions.cs
+    startLine: 11
+  assemblies:
+  - NeerCore.Logging.NLog
+  namespace: NeerCore.Logging.Extensions
+  summary: "\nChanges default logging provider to NLog.\n"
+  example: []
+  syntax:
+    content: public static ILoggingBuilder ConfigureNLogAsDefault(this ILoggingBuilder logging)
+    parameters:
+    - id: logging
+      type: ILoggingBuilder
+    return:
+      type: ILoggingBuilder
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function ConfigureNLogAsDefault(logging As ILoggingBuilder) As ILoggingBuilder
+  overload: NeerCore.Logging.Extensions.LoggingBuilderExtensions.ConfigureNLogAsDefault*
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: NeerCore.Logging.Extensions
+  commentId: N:NeerCore.Logging.Extensions
+  name: NeerCore.Logging.Extensions
+  nameWithType: NeerCore.Logging.Extensions
+  fullName: NeerCore.Logging.Extensions
+- uid: NeerCore.Logging.Extensions.LoggingBuilderExtensions.ConfigureNLogAsDefault*
+  commentId: Overload:NeerCore.Logging.Extensions.LoggingBuilderExtensions.ConfigureNLogAsDefault
+  name: ConfigureNLogAsDefault
+  nameWithType: LoggingBuilderExtensions.ConfigureNLogAsDefault
+  fullName: NeerCore.Logging.Extensions.LoggingBuilderExtensions.ConfigureNLogAsDefault
+- uid: ILoggingBuilder
+  isExternal: true
+  name: ILoggingBuilder
+  nameWithType: ILoggingBuilder
+  fullName: ILoggingBuilder

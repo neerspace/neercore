@@ -1,0 +1,22 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Mapping.DefaultMappers
+  commentId: N:NeerCore.Mapping.DefaultMappers
+  id: NeerCore.Mapping.DefaultMappers
+  children:
+  - NeerCore.Mapping.DefaultMappers.DataMappingRegister
+  langs:
+  - csharp
+  - vb
+  name: NeerCore.Mapping.DefaultMappers
+  nameWithType: NeerCore.Mapping.DefaultMappers
+  fullName: NeerCore.Mapping.DefaultMappers
+  type: Namespace
+  assemblies:
+  - NeerCore.Mapping.Mapster
+references:
+- uid: NeerCore.Mapping.DefaultMappers.DataMappingRegister
+  commentId: T:NeerCore.Mapping.DefaultMappers.DataMappingRegister
+  name: DataMappingRegister
+  nameWithType: DataMappingRegister
+  fullName: NeerCore.Mapping.DefaultMappers.DataMappingRegister

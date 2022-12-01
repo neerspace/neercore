@@ -1,0 +1,82 @@
+### YamlMime:ManagedReference
+items:
+- uid: NeerCore.Data.EntityFramework.Converters.LocalizedStringConverter
+  commentId: T:NeerCore.Data.EntityFramework.Converters.LocalizedStringConverter
+  id: LocalizedStringConverter
+  parent: NeerCore.Data.EntityFramework.Converters
+  children:
+  - NeerCore.Data.EntityFramework.Converters.LocalizedStringConverter.#ctor
+  langs:
+  - csharp
+  - vb
+  name: LocalizedStringConverter
+  nameWithType: LocalizedStringConverter
+  fullName: NeerCore.Data.EntityFramework.Converters.LocalizedStringConverter
+  type: Class
+  source:
+    remote:
+      path: src/NeerCore.Data.EntityFramework/Converters/LocalizedStringConverter.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: LocalizedStringConverter
+    path: ../src/NeerCore.Data.EntityFramework/Converters/LocalizedStringConverter.cs
+    startLine: 4
+  assemblies:
+  - NeerCore.Data.EntityFramework
+  namespace: NeerCore.Data.EntityFramework.Converters
+  syntax:
+    content: 'public sealed class LocalizedStringConverter : ValueConverter<LocalizedString, string>'
+    content.vb: >-
+      Public NotInheritable Class LocalizedStringConverter
+          Inherits ValueConverter(Of LocalizedString, String)
+  inheritance:
+  - System.Object
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: NeerCore.Data.EntityFramework.Converters.LocalizedStringConverter.#ctor
+  commentId: M:NeerCore.Data.EntityFramework.Converters.LocalizedStringConverter.#ctor
+  id: '#ctor'
+  parent: NeerCore.Data.EntityFramework.Converters.LocalizedStringConverter
+  langs:
+  - csharp
+  - vb
+  name: LocalizedStringConverter()
+  nameWithType: LocalizedStringConverter.LocalizedStringConverter()
+  fullName: NeerCore.Data.EntityFramework.Converters.LocalizedStringConverter.LocalizedStringConverter()
+  type: Constructor
+  source:
+    remote:
+      path: src/NeerCore.Data.EntityFramework/Converters/LocalizedStringConverter.cs
+      branch: v2.0.0
+      repo: https://github.com/NeerSpace/NeerCore.git
+    id: .ctor
+    path: ../src/NeerCore.Data.EntityFramework/Converters/LocalizedStringConverter.cs
+    startLine: 6
+  assemblies:
+  - NeerCore.Data.EntityFramework
+  namespace: NeerCore.Data.EntityFramework.Converters
+  syntax:
+    content: public LocalizedStringConverter()
+    content.vb: Public Sub New
+  overload: NeerCore.Data.EntityFramework.Converters.LocalizedStringConverter.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: NeerCore.Data.EntityFramework.Converters
+  commentId: N:NeerCore.Data.EntityFramework.Converters
+  name: NeerCore.Data.EntityFramework.Converters
+  nameWithType: NeerCore.Data.EntityFramework.Converters
+  fullName: NeerCore.Data.EntityFramework.Converters
+- uid: NeerCore.Data.EntityFramework.Converters.LocalizedStringConverter.#ctor*
+  commentId: Overload:NeerCore.Data.EntityFramework.Converters.LocalizedStringConverter.#ctor
+  name: LocalizedStringConverter
+  nameWithType: LocalizedStringConverter.LocalizedStringConverter
+  fullName: NeerCore.Data.EntityFramework.Converters.LocalizedStringConverter.LocalizedStringConverter
