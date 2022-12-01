@@ -12,7 +12,7 @@ docs_/
 # JetBrains Rider cache
 riderModule.iml
 /_ReSharper.Caches/
-#.idea/
+.idea/
 
 # Visual Studio cahche
 .vs/
