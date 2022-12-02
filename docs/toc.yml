@@ -1,6 +1,11 @@
-- name: Articles
-  href: articles/
+- name: Getting Started
+  href: getting-started/
+  homepage: getting-started/index.html
 
-- name: Api Documentation
+- name: Code Examples
+  href: examples/
+  homepage: examples/index.html
+
+- name: API Reference
   href: api/
   homepage: api.html

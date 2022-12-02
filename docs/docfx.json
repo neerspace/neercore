@@ -1,57 +1,57 @@
 {
   "metadata": [
-    {
-      "src": [{"src": "../src/NeerCore", "files": ["**.csproj"] }],
-      "dest": "api/NeerCore"
-    },
-    {
-      "src": [{"src": "../src/NeerCore.Api", "files": ["**.csproj"] }],
-      "dest": "api/NeerCore.Api"
-    },
-    {
-      "src": [{"src": "../src/NeerCore.Application.MediatR", "files": ["**.csproj"] }],
-      "dest": "api/NeerCore.Application.MediatR"
-    },
-    {
-      "src": [{"src": "../src/NeerCore.Data", "files": ["**.csproj"] }],
-      "dest": "api/NeerCore.Data"
-    },
-    {
-      "src": [{"src": "../src/NeerCore.Data.Abstractions", "files": ["**.csproj"] }],
-      "dest": "api/NeerCore.Data.Abstractions"
-    },
-    {
-      "src": [{"src": "../src/NeerCore.Data.EntityFramework", "files": ["**.csproj"] }],
-      "dest": "api/NeerCore.Data.EntityFramework"
-    },
-    {
-      "src": [{"src": "../src/NeerCore.DependencyInjection", "files": ["**.csproj"] }],
-      "dest": "api/NeerCore.DependencyInjection"
-    },
-    {
-      "src": [{"src": "../src/NeerCore.Logging.NLog", "files": ["**.csproj"] }],
-      "dest": "api/NeerCore.Logging.NLog"
-    },
-    {
-      "src": [{"src": "../src/NeerCore.Mapping.Mapster", "files": ["**.csproj"] }],
-      "dest": "api/NeerCore.Mapping.Mapster"
-    },
-    {
-      "src": [{"src": "../src/NeerCore.Typeids", "files": ["**.csproj"] }],
-      "dest": "api/NeerCore.Typeids"
-    },
-    {
-      "src": [{"src": "../src/NeerCore.Typeids.Api", "files": ["**.csproj"] }],
-      "dest": "api/NeerCore.Typeids.Api"
-    },
-    {
-      "src": [{"src": "../src/NeerCore.Typeids.Api.Hashids", "files": ["**.csproj"] }],
-      "dest": "api/NeerCore.Typeids.Api.Hashids"
-    },
-    {
-      "src": [{"src": "../src/NeerCore.Typeids.Data.EntityFramework", "files": ["**.csproj"] }],
-      "dest": "api/NeerCore.Typeids.Data.EntityFramework"
-    }
+    //    {
+    //      "src": [{"src": "../src/NeerCore", "files": ["**.csproj"] }],
+    //      "dest": "api/NeerCore"
+    //    },
+    //    {
+    //      "src": [{"src": "../src/NeerCore.Api", "files": ["**.csproj"] }],
+    //      "dest": "api/NeerCore.Api"
+    //    },
+    //    {
+    //      "src": [{"src": "../src/NeerCore.Application.MediatR", "files": ["**.csproj"] }],
+    //      "dest": "api/NeerCore.Application.MediatR"
+    //    },
+    //    {
+    //      "src": [{"src": "../src/NeerCore.Data", "files": ["**.csproj"] }],
+    //      "dest": "api/NeerCore.Data"
+    //    },
+    //    {
+    //      "src": [{"src": "../src/NeerCore.Data.Abstractions", "files": ["**.csproj"] }],
+    //      "dest": "api/NeerCore.Data.Abstractions"
+    //    },
+    //    {
+    //      "src": [{"src": "../src/NeerCore.Data.EntityFramework", "files": ["**.csproj"] }],
+    //      "dest": "api/NeerCore.Data.EntityFramework"
+    //    },
+    //    {
+    //      "src": [{"src": "../src/NeerCore.DependencyInjection", "files": ["**.csproj"] }],
+    //      "dest": "api/NeerCore.DependencyInjection"
+    //    },
+    //    {
+    //      "src": [{"src": "../src/NeerCore.Logging.NLog", "files": ["**.csproj"] }],
+    //      "dest": "api/NeerCore.Logging.NLog"
+    //    },
+    //    {
+    //      "src": [{"src": "../src/NeerCore.Mapping.Mapster", "files": ["**.csproj"] }],
+    //      "dest": "api/NeerCore.Mapping.Mapster"
+    //    },
+    //    {
+    //      "src": [{"src": "../src/NeerCore.Typeids", "files": ["**.csproj"] }],
+    //      "dest": "api/NeerCore.Typeids"
+    //    },
+    //    {
+    //      "src": [{"src": "../src/NeerCore.Typeids.Api", "files": ["**.csproj"] }],
+    //      "dest": "api/NeerCore.Typeids.Api"
+    //    },
+    //    {
+    //      "src": [{"src": "../src/NeerCore.Typeids.Api.Hashids", "files": ["**.csproj"] }],
+    //      "dest": "api/NeerCore.Typeids.Api.Hashids"
+    //    },
+    //    {
+    //      "src": [{"src": "../src/NeerCore.Typeids.Data.EntityFramework", "files": ["**.csproj"] }],
+    //      "dest": "api/NeerCore.Typeids.Data.EntityFramework"
+    //    }
   ],
   "build": {
     "content": [
@@ -63,8 +63,8 @@
       },
       {
         "files": [
-          "articles/**.md",
-          "articles/**/toc.yml",
+          "**.md",
+          "**/toc.yml",
           "toc.yml",
           "*.md"
         ]
