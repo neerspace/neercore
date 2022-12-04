@@ -1,0 +1,1 @@
+# Using Smart Dependency Injection in .NET 6+ Console Apps

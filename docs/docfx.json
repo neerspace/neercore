@@ -2,64 +2,65 @@
   "metadata": [
     //    {
     //      "src": [{"src": "../src/NeerCore", "files": ["**.csproj"] }],
-    //      "dest": "api/NeerCore"
+    //      "dest": "obj/api/NeerCore"
     //    },
     //    {
     //      "src": [{"src": "../src/NeerCore.Api", "files": ["**.csproj"] }],
-    //      "dest": "api/NeerCore.Api"
+    //      "dest": "obj/api/NeerCore.Api"
     //    },
     //    {
     //      "src": [{"src": "../src/NeerCore.Application.MediatR", "files": ["**.csproj"] }],
-    //      "dest": "api/NeerCore.Application.MediatR"
+    //      "dest": "obj/api/NeerCore.Application.MediatR"
     //    },
     //    {
     //      "src": [{"src": "../src/NeerCore.Data", "files": ["**.csproj"] }],
-    //      "dest": "api/NeerCore.Data"
+    //      "dest": "obj/api/NeerCore.Data"
     //    },
     //    {
     //      "src": [{"src": "../src/NeerCore.Data.Abstractions", "files": ["**.csproj"] }],
-    //      "dest": "api/NeerCore.Data.Abstractions"
+    //      "dest": "obj/api/NeerCore.Data.Abstractions"
     //    },
     //    {
     //      "src": [{"src": "../src/NeerCore.Data.EntityFramework", "files": ["**.csproj"] }],
-    //      "dest": "api/NeerCore.Data.EntityFramework"
+    //      "dest": "obj/api/NeerCore.Data.EntityFramework"
     //    },
     //    {
     //      "src": [{"src": "../src/NeerCore.DependencyInjection", "files": ["**.csproj"] }],
-    //      "dest": "api/NeerCore.DependencyInjection"
+    //      "dest": "obj/api/NeerCore.DependencyInjection"
     //    },
     //    {
     //      "src": [{"src": "../src/NeerCore.Logging.NLog", "files": ["**.csproj"] }],
-    //      "dest": "api/NeerCore.Logging.NLog"
+    //      "dest": "obj/api/NeerCore.Logging.NLog"
     //    },
     //    {
     //      "src": [{"src": "../src/NeerCore.Mapping.Mapster", "files": ["**.csproj"] }],
-    //      "dest": "api/NeerCore.Mapping.Mapster"
+    //      "dest": "obj/api/NeerCore.Mapping.Mapster"
     //    },
     //    {
     //      "src": [{"src": "../src/NeerCore.Typeids", "files": ["**.csproj"] }],
-    //      "dest": "api/NeerCore.Typeids"
+    //      "dest": "obj/api/NeerCore.Typeids"
     //    },
     //    {
     //      "src": [{"src": "../src/NeerCore.Typeids.Api", "files": ["**.csproj"] }],
-    //      "dest": "api/NeerCore.Typeids.Api"
+    //      "dest": "obj/api/NeerCore.Typeids.Api"
     //    },
     //    {
     //      "src": [{"src": "../src/NeerCore.Typeids.Api.Hashids", "files": ["**.csproj"] }],
-    //      "dest": "api/NeerCore.Typeids.Api.Hashids"
+    //      "dest": "obj/api/NeerCore.Typeids.Api.Hashids"
     //    },
     //    {
     //      "src": [{"src": "../src/NeerCore.Typeids.Data.EntityFramework", "files": ["**.csproj"] }],
-    //      "dest": "api/NeerCore.Typeids.Data.EntityFramework"
+    //      "dest": "obj/api/NeerCore.Typeids.Data.EntityFramework"
     //    }
   ],
   "build": {
     "content": [
       {
         "files": [
-          "api/**.yml",
-          "api/index.md"
-        ]
+          "*/**.yml"
+        ],
+        "src": "obj/api",
+        "dest": "api"
       },
       {
         "files": [
@@ -105,9 +106,9 @@
     "disableGitFeatures": false,
     "globalMetadata": {
       "_enableSearch": true,
-      "_appLogoPath": "../favicon.png",
-      "_appFaviconPath": "../favicon.png",
-      "_appTitle": "NeerCore Docs",
+      "_appLogoPath": "assets/favicon.png",
+      "_appFaviconPath": "assets/favicon.png",
+      "_appTitle": "NeerCore",
       "_appFooter": "Copyright (c) jurilents"
     }
   }
