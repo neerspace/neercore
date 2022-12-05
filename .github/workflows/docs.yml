@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - v2.0.0
     paths:
       - src/**
       - docs/**
@@ -11,6 +12,7 @@ on:
   pull_request:
     branches:
       - master
+      - v2.0.0
     paths:
       - docs/**
       - .github/workflows/docs.yml
