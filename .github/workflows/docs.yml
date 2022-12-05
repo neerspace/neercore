@@ -3,18 +3,17 @@ name: Publish Docs
 on:
   push:
     branches:
-      - main
+      - master
     paths:
       - src/**
       - docs/**
       - .github/workflows/docs.yml
   pull_request:
     branches:
-      - main
+      - master
     paths:
       - docs/**
       - .github/workflows/docs.yml
-  workflow_dispatch:
 
 jobs:
   generate-docs:
@@ -36,7 +35,7 @@ jobs:
 
       - name: DocFX Build
         working-directory: docs
-        run: docfx .\docfx.json
+        run: docfx ./docs/docfx.json
         continue-on-error: false
 
       - name: Publish
