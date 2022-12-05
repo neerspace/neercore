@@ -25,6 +25,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Log
+        run: dir
+
       - name: Setup .NET 6.0
         uses: actions/setup-dotnet@v1
         with:
@@ -37,7 +40,7 @@ jobs:
 
       - name: DocFX Build
         working-directory: docs
-        run: docfx ./docs/docfx.json
+        run: docfx ./docfx.json
         continue-on-error: false
 
       - name: Publish
