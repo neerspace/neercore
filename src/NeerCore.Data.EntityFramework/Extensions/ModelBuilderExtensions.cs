@@ -61,7 +61,7 @@ public static class ModelBuilderExtensions
 
             if (entityIdType == typeof(Guid))
             {
-                if (options.PreferSqlSideDefaultValues && options.EngineStrategy is DbEngineStrategy.SqlServer)
+                if (options is { PreferSqlSideDefaultValues: true, EngineStrategy: DbEngineStrategy.SqlServer })
                     idPropertyBuilder.HasDefaultValueSql(options.SequentialGuids ? "NEWSEQUENTIALID()" : "NEWID()").ValueGeneratedOnAdd();
                 else
                     idPropertyBuilder.HasDefaultValue(Guid.NewGuid()).ValueGeneratedOnAdd();

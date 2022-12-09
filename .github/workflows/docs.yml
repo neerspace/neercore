@@ -12,14 +12,9 @@ on:
 
 jobs:
   generate-docs:
-
     runs-on: windows-latest
-
     steps:
       - uses: actions/checkout@v2
-
-      - name: Log
-        run: dir
 
       - name: Setup .NET 6.0
         uses: actions/setup-dotnet@v1
@@ -31,9 +26,6 @@ jobs:
         with:
           args: install docfx
 
-      - name: Log 2
-        run: dir
-
       - name: DocFX Build
         working-directory: docs
         run: docfx ./docfx.json
@@ -43,6 +35,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: v2.0.0
+          publish_branch: ${GITHUB_REF##*/}
           publish_dir: docs/_site
           force_orphan: true
