@@ -16,6 +16,11 @@ jobs:
     runs-on: windows-latest
 
     steps:
+      - uses: actions/checkout@v2
+
+      - name: Log
+        run: dir
+
       - name: Setup .NET 6.0
         uses: actions/setup-dotnet@v1
         with:
@@ -26,14 +31,18 @@ jobs:
         with:
           args: install docfx
 
+      - name: Log 2
+        run: dir
+
       - name: DocFX Build
-        run: docfx docs/docfx.json
+        working-directory: docs
+        run: docfx ./docfx.json
         continue-on-error: false
 
       - name: Publish GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-#          publish_branch: documentation
+          publish_branch: v2.0.0
           publish_dir: docs/_site
           force_orphan: true
