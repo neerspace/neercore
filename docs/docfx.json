@@ -85,10 +85,8 @@
         "resource": [
             {
                 "files": [
-                    "assets/**",
-                    "docs/assets/**"
-                ],
-                "src": "../"
+                    "assets/**"
+                ]
             }
         ],
         "overwrite": [

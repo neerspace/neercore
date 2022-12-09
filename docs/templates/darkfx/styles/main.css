@@ -1,3 +1,8 @@
+#logo {
+  height: 70%;
+  margin-top: 20%;
+}
+
 :root, body.dark-theme {
   --color-foreground: #ccd5dc;
   --color-navbar: #66666d;
