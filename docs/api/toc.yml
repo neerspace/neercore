@@ -1,0 +1,41 @@
+- name: API Reference
+  href: index.md
+
+- name: NeerCore
+  href: /api/NeerCore.yml
+
+- name: NeerCore.Api
+  href: /api/NeerCore.Api.yml
+
+- name: NeerCore.Application.MediatR
+  href: /api/NeerCore.Application.MediatR.yml
+
+- name: NeerCore.Data
+  href: /api/NeerCore.Data.yml
+
+- name: NeerCore.Data.Abstractions
+  href: /api/NeerCore.Data.Abstractions.yml
+
+- name: NeerCore.Data.EntityFramework
+  href: /api/NeerCore.Data.EntityFramework.yml
+
+- name: NeerCore.DependencyInjection
+  href: /api/NeerCore.DependencyInjection.yml
+
+- name: NeerCore.Logging.NLog
+  href: /api/NeerCore.Logging.NLog.yml
+
+- name: NeerCore.Mapping.Mapster
+  href: /api/NeerCore.Mapping.DefaultMappers.yml
+
+- name: NeerCore.Typeids
+  href: /api/NeerCore.Typeids.yml
+
+- name: NeerCore.Typeids.Api
+  href: /api/NeerCore.Typeids.Api.yml
+
+- name: NeerCore.Typeids.Api.Hashids
+  href: /api/NeerCore.Typeids.Api.Hashids.yml
+
+- name: NeerCore.Typeids.Data.EntityFramework
+  href: /api/NeerCore.Typeids.Data.EntityFramework.Extensions.yml
