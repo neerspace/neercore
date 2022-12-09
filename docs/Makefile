@@ -2,7 +2,7 @@
 # MacOS: brew install docfx
 
 build:
-	docfx
+	docfx ./docfx.json
 
 serve:
 	docfx --serve

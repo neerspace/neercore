@@ -1,5 +1,7 @@
 - name: API Reference
-  href: /
+  href: index.md
+  items:
+    - href: /api/
 
 - name: NeerCore
   href: /api/NeerCore/NeerCore.html
