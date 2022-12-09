@@ -27,8 +27,8 @@ public static class TypeExtensions
     /// </summary>
     /// <param name="type">The type from which to get the attribute</param>
     /// <param name="searchInParents">Allows (if true) to search for given attribute in all parent classes.</param>
+    /// <typeparam name="TAttribute">Attribute type to get.</typeparam>
     /// <returns><see cref="TAttribute"/> or throws <see cref="TypeLoadException"/>.</returns>
-    /// <exception cref="TypeLoadException">If TAttribute not found on type</exception>
     public static TAttribute GetRequiredAttribute<TAttribute>(this Type type, bool searchInParents = false)
         where TAttribute : Attribute
     {
