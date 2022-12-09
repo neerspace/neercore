@@ -12,15 +12,15 @@ public static class TypeExtensions
     /// <param name="type">The type from which to get the attribute</param>
     /// <param name="searchInParents">Allows (if true) to search for given attribute in all parent classes.</param>
     /// <returns><see cref="TAttribute"/> or <see langword="null"/>.</returns>
-    public static TAttribute? GetAttribute<TAttribute>(this Type type, bool searchInParents = false)
-        where TAttribute : Attribute
-    {
-        Attribute? attr = type.GetCustomAttribute(typeof(TAttribute));
-        if (attr is null && searchInParents)
-            return TryGetAttributeFromParentClass<TAttribute>(type);
-
-        return attr as TAttribute;
-    }
+    // public static TAttribute? GetAttribute<TAttribute>(this Type type, bool searchInParents = false)
+    //     where TAttribute : Attribute
+    // {
+    //     Attribute? attr = type.GetCustomAttribute(typeof(TAttribute));
+    //     if (attr is null && searchInParents)
+    //         return TryGetAttributeFromParentClass<TAttribute>(type);
+    //
+    //     return attr as TAttribute;
+    // }
 
     /// <summary>
     ///   Simple way to get required attribute on type.
@@ -29,15 +29,15 @@ public static class TypeExtensions
     /// <param name="searchInParents">Allows (if true) to search for given attribute in all parent classes.</param>
     /// <typeparam name="TAttribute">Attribute type to get.</typeparam>
     /// <returns><see cref="TAttribute"/> or throws <see cref="TypeLoadException"/>.</returns>
-    public static TAttribute GetRequiredAttribute<TAttribute>(this Type type, bool searchInParents = false)
-        where TAttribute : Attribute
-    {
-        var attr = type.GetAttribute<TAttribute>();
-        if (attr is null && searchInParents)
-            attr = TryGetAttributeFromParentClass<TAttribute>(type);
-
-        return attr ?? throw new TypeLoadException($"Attribute '{typeof(TAttribute).Name}' for type {type.Name} not found.");
-    }
+    // public static TAttribute GetRequiredAttribute<TAttribute>(this Type type, bool searchInParents = false)
+    //     where TAttribute : Attribute
+    // {
+    //     var attr = type.GetAttribute<TAttribute>();
+    //     if (attr is null && searchInParents)
+    //         attr = TryGetAttributeFromParentClass<TAttribute>(type);
+    //
+    //     return attr ?? throw new TypeLoadException($"Attribute '{typeof(TAttribute).Name}' for type {type.Name} not found.");
+    // }
 
     /// <summary>
     ///   Safely checks is the <paramref name="t1"/> is inherited from <paramref name="t2"/>.
