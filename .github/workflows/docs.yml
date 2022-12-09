@@ -27,8 +27,7 @@ jobs:
           args: install docfx
 
       - name: DocFX Build
-        working-directory: .
-        run: docfx ../docs/docfx.json
+        run: docfx docs/docfx.json
         continue-on-error: false
 
       - name: Publish GitHub Pages
