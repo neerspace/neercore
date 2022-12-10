@@ -6,7 +6,6 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NeerCore.Data.Abstractions;
 using NeerCore.DependencyInjection;
 using NeerCore.DependencyInjection.Extensions;
-using NeerCore.Typeids;
 using NeerCore.Typeids.Abstractions;
 using NeerCore.Typeids.Internal;
 using NeerCore.Typeids.Data.EntityFramework.Options;
