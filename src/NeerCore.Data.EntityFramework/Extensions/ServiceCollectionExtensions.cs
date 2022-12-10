@@ -8,7 +8,7 @@ namespace NeerCore.Data.EntityFramework.Extensions;
 public static class ServiceCollectionExtensions
 {
     /// <summary>
-    ///   Adds a <see cref="DbContext"/> to DI container as <see cref="IDatabaseContext"/> abstraction.
+    ///   Adds a <see cref="DbContext"/> to DI container as <see cref="IDatabase"/> abstraction.
     /// </summary>
     /// <typeparam name="TContext">The type of context to be registered.</typeparam>
     /// <param name="services">The <see cref="IServiceCollection" /> to add services to.</param>
@@ -35,15 +35,15 @@ public static class ServiceCollectionExtensions
         Action<DbContextOptionsBuilder>? optionsAction = null,
         ServiceLifetime contextLifetime = ServiceLifetime.Scoped,
         ServiceLifetime optionsLifetime = ServiceLifetime.Scoped)
-        where TContext : DbContext, IDatabaseContext
+        where TContext : DbContext, IDatabase
     {
         services.AddDbContext<TContext>(optionsAction, contextLifetime, optionsLifetime);
-        services.Add(new ServiceDescriptor(typeof(IDatabaseContext), typeof(TContext), contextLifetime));
+        services.Add(new ServiceDescriptor(typeof(IDatabase), typeof(TContext), contextLifetime));
         return services;
     }
 
     /// <summary>
-    ///   Adds a <see cref="DbContext"/> to DI container as <see cref="IDatabaseContext"/> abstraction
+    ///   Adds a <see cref="DbContext"/> to DI container as <see cref="IDatabase"/> abstraction
     ///   and use configuration from <typeparamref name="TContextFactory"/>.
     /// </summary>
     /// <typeparam name="TContext">The type of context to be registered.</typeparam>
@@ -56,11 +56,11 @@ public static class ServiceCollectionExtensions
         ServiceLifetime contextLifetime = ServiceLifetime.Scoped,
         ServiceLifetime optionsLifetime = ServiceLifetime.Scoped)
         where TContextFactory : DbContextFactoryBase<TContext>, new()
-        where TContext : DbContext, IDatabaseContext
+        where TContext : DbContext, IDatabase
     {
         var contextFactory = new TContextFactory();
         services.AddDbContext<TContext>(contextFactory.ConfigureContextOptions, contextLifetime, optionsLifetime);
-        services.Add(new ServiceDescriptor(typeof(IDatabaseContext), typeof(TContext), contextLifetime));
+        services.Add(new ServiceDescriptor(typeof(IDatabase), typeof(TContext), contextLifetime));
         return services;
     }
 }

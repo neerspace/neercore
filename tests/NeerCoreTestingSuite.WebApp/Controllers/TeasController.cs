@@ -1,15 +1,13 @@
 using Mapster;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
-using NeerCore.Api.Controllers;
-using NeerCore.Api.Extensions;
-using NeerCore.Mapping.Extensions;
 using NeerCoreTestingSuite.WebApp.Dto.Teas;
 using NeerCoreTestingSuite.WebApp.Services;
 
 namespace NeerCoreTestingSuite.WebApp.Controllers;
 
-public class TeasController : LocalizedApiController
+public class TeasController : ApiController
 {
     private readonly TeasService _service;
     public TeasController(TeasService service) => _service = service;
@@ -22,15 +20,16 @@ public class TeasController : LocalizedApiController
         return entity.Adapt<Tea>();
     }
 
-    [HttpGet]
-    public async Task<IEnumerable<Tea>> Filter(string filters, string sorts = "id", int page = 1, int pageSize = 10)
-    {
-        var entities = await _service.FilterAsync(filters, sorts, page, pageSize);
-        Response.SetNavigationHeaders(await _service.CountAsync(), page, pageSize);
-        return entities.AdaptAll<Tea>();
-    }
+    // [HttpGet]
+    // public async Task<IEnumerable<Tea>> Filter(string filters, string sorts = "id", int page = 1, int pageSize = 10)
+    // {
+    // var entities = await _service.FilterAsync(filters, sorts, page, pageSize);
+    // Response.SetNavigationHeaders(await _service.CountAsync(), page, pageSize);
+    // return entities.AdaptAll<Tea>();
+    // }
 
     [HttpPost]
+    [AllowAnonymous]
     public async Task<ActionResult<Tea>> Post([FromBody] TeaCreate dto)
     {
         var entity = dto.Adapt<Data.Entities.Tea>();
@@ -38,7 +37,14 @@ public class TeasController : LocalizedApiController
         return CreatedAtAction(nameof(Get), new { id = entity.Id }, entity.Adapt<Tea>());
     }
 
+    /// <summary>
+    /// Update tea
+    /// </summary>
+    /// <remarks>
+    /// Test remark
+    /// </remarks>
     [HttpPut("{id:guid}")]
+    [Authorize]
     public async Task<NoContentResult> Put([FromRoute] Guid id, [FromBody] TeaUpdate dto)
     {
         var entity = (dto with { Id = id }).Adapt<Data.Entities.Tea>();
@@ -46,6 +52,12 @@ public class TeasController : LocalizedApiController
         return NoContent();
     }
 
+    /// <summary>
+    /// Update some fields
+    /// </summary>
+    /// <param name="id">Tea ID</param>
+    /// <param name="patch"></param>
+    /// <response code="504">Timeout Error</response>
     [HttpPatch("{id:guid}")]
     public async Task<NoContentResult> Patch([FromRoute] Guid id, [FromBody] JsonPatchDocument<TeaUpdate> patch)
     {

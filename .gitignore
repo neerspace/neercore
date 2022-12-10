@@ -1,3 +1,5 @@
+_site/
+
 ##### Custom ignores #####
 *.db
 *.db-shm

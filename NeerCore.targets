@@ -6,8 +6,11 @@
     <RepositoryUrl>https://github.com/jurilents/NeerCore</RepositoryUrl>
     <RepositoryType>github</RepositoryType>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <AssemblyVersion>1.6.2</AssemblyVersion>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <XmlDocsBaseDirectory>bin/Shared</XmlDocsBaseDirectory>
   </PropertyGroup>
 
   <ItemGroup>

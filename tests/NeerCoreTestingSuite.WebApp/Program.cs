@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using NeerCore.Api;
 using NeerCore.Api.Extensions;
-using NeerCore.Api.Extensions.Swagger;
+using NeerCore.Api.Swagger.Extensions;
 using NeerCore.Application.Extensions;
 using NeerCore.Data.EntityFramework.Abstractions;
 using NeerCore.Data.EntityFramework.Extensions;
@@ -42,7 +42,7 @@ static void ConfigureBuilder(WebApplicationBuilder builder)
     builder.Services.AddDatabase<SqliteDbContext, SqliteDbContextFactory>();
     builder.Services.AddMediatorApplication();
     builder.Services.ConfigureAllOptions();
-    builder.Services.RegisterAllMappers();
+    builder.Services.AddAllMappers();
 
     builder.Services.AddNeerApiServices();
     builder.Services.AddNeerControllers();
@@ -53,7 +53,7 @@ static WebApplication ConfigureWebApp(WebApplication app)
     // Test SQL logging
     using (var scope = app.Services.CreateScope())
     {
-        var db = scope.ServiceProvider.GetRequiredService<IDatabaseContext>();
+        var db = scope.ServiceProvider.GetRequiredService<IDatabase>();
         var teas = db.Set<Tea>()
             .AsNoTracking()
             .Where(e => e.Price > 10)
@@ -65,12 +65,12 @@ static WebApplication ConfigureWebApp(WebApplication app)
     }
 
     if (app.Configuration.GetSwaggerSettings().Enabled)
-        app.UseCustomSwagger();
+        app.UseNeerSwagger();
 
     app.UseCors(CorsPolicies.AcceptAll);
     app.UseHttpsRedirection();
 
-    app.UseCustomExceptionHandler();
+    app.UseNeerExceptionHandler();
 
     app.MapControllers();
 

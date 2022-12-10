@@ -3,7 +3,7 @@ using NeerCoreTestingSuite.ConsoleApp.Services.Abstractions;
 
 namespace NeerCoreTestingSuite.ConsoleApp.Services.Implementations;
 
-[Injectable]
+[Service]
 public class ConsoleMessageSender : IMessageSender
 {
 	public void Send(string message)

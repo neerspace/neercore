@@ -16,7 +16,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.9" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.9" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.11" />
 	</ItemGroup>
 
 	<PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -37,10 +37,6 @@
 
 	<ItemGroup>
 	  <Folder Include="bin\Debug\net6.0\logs" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <DocFileItem Remove="bin\Debug\NeerCoreTestingSuite.WebApp.xml" />
 	</ItemGroup>
 
 </Project>

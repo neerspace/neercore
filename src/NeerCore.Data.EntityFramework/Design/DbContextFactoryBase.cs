@@ -22,7 +22,7 @@ public abstract class DbContextFactoryBase<TContext> : IDesignTimeDbContextFacto
     /// <remarks>
     ///   You can override <see cref="Log"/> method if you want to use a different logger implementation.
     /// </remarks>
-    public virtual bool LoggingDuringMigration => true;
+    public virtual TextWriter? LogWriter => Console.Out;
 
     /// <summary>
     ///   Connection string name in settings file.
@@ -50,7 +50,7 @@ public abstract class DbContextFactoryBase<TContext> : IDesignTimeDbContextFacto
         get
         {
             var selectedConnection = GetConnectionStringsFromJson(SettingsPath)[SelectedConnectionName];
-            Log("Selected connection string:" + selectedConnection);
+            LogWriter?.Write("Selected connection string: " + selectedConnection);
             return selectedConnection;
         }
     }
@@ -79,7 +79,7 @@ public abstract class DbContextFactoryBase<TContext> : IDesignTimeDbContextFacto
     /// </summary>
     public virtual DbContextOptions<TContext> CreateContextOptions()
     {
-        Log("Database connection used: " + SelectedConnectionName);
+        LogWriter?.Write("Database connection used: " + SelectedConnectionName);
 
         var optionsBuilder = new DbContextOptionsBuilder<TContext>();
         ConfigureContextOptions(optionsBuilder);
@@ -118,11 +118,5 @@ public abstract class DbContextFactoryBase<TContext> : IDesignTimeDbContextFacto
             throw new KeyNotFoundException($"Configuration file '{appsettingsPath}' successfully found, " +
                                            $"but no connection string found there by path: '{ConnectionStringsSectionPath}'.");
         }
-    }
-
-    protected virtual void Log(string message)
-    {
-        if (LoggingDuringMigration)
-            Console.WriteLine(message);
     }
 }

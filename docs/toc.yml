@@ -1,0 +1,12 @@
+- name: Home
+  href: /
+
+- name: Getting Started
+  href: getting-started/
+
+- name: Code Examples
+  href: examples/
+
+- name: API Reference
+  href: api/
+  homepage: api/

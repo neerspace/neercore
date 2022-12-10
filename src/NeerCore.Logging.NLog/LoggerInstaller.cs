@@ -23,6 +23,7 @@ public static class LoggerInstaller
     /// <returns>Configured <see cref="ILogger"/> instance.</returns>
     public static ILogger InitDefault(Action<LoggingSettings>? configureOptions = null, string? defaultLoggerName = null)
     {
+        LogManager.AutoShutdown = true;
         DefaultLoggerInstaller.Configure(configureOptions);
         return CreateDefaultLogger(defaultLoggerName);
     }
@@ -37,6 +38,7 @@ public static class LoggerInstaller
     /// <returns>Configured <see cref="ILogger"/> instance.</returns>
     public static ILogger InitFromCurrentEnvironment(string sectionName = "Logging", string environmentVariableName = "ASPNETCORE_ENVIRONMENT", string? defaultLoggerName = null)
     {
+        LogManager.AutoShutdown = true;
         return InitFromEnvironment(Environment.GetEnvironmentVariable(environmentVariableName), sectionName, defaultLoggerName);
     }
 
@@ -52,6 +54,8 @@ public static class LoggerInstaller
     {
         string configurationPath = string.IsNullOrEmpty(environment) ? AppSettingsName : $"appsettings.{environment}.json";
         var loggingConfigSection = BuildConfiguration(configurationPath, AppSettingsName).GetSection(sectionName);
+
+        LogManager.AutoShutdown = true;
         DefaultLoggerInstaller.Configure(loggingConfigSection.Bind);
         return CreateDefaultLogger(defaultLoggerName);
     }
@@ -72,6 +76,7 @@ public static class LoggerInstaller
     {
         var config = BuildConfiguration(configurationPath);
 
+        LogManager.AutoShutdown = true;
         LogManager.Configuration = new NLogLoggingConfiguration(config.GetRequiredSection(rootSectionName));
         return NLogBuilder.ConfigureNLog(LogManager.Configuration).GetLogger(defaultLoggerName);
     }

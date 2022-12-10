@@ -1,0 +1,15 @@
+# API Reference
+
+- [**NeerCore**](/api/NeerCore/NeerCore.html)
+- [**NeerCore.Api**](/api/NeerCore.Api/NeerCore.Api.html)
+- [**NeerCore.Application.MediatR**](/api/NeerCore.Application.MediatR/NeerCore.Application.Abstractions.html)
+- [**NeerCore.Data**](/api/NeerCore.Data/NeerCore.Data.html)
+- [**NeerCore.Data.Abstractions**](/api/NeerCore.Data.Abstractions/NeerCore.Data.Abstractions.html)
+- [**NeerCore.Data.EntityFramework**](/api/NeerCore.Data.EntityFramework/NeerCore.Data.EntityFramework.Abstractions.html)
+- [**NeerCore.DependencyInjection**](/api/NeerCore.DependencyInjection/NeerCore.DependencyInjection.html)
+- [**NeerCore.Logging.NLog**](/api/NeerCore.Logging.NLog/NeerCore.Logging.html)
+- [**NeerCore.Mapping.Mapster**](/api/NeerCore.Mapping.Mapster/NeerCore.Mapping.DefaultMappers.html)
+- [**NeerCore.Typeids**](/api/NeerCore.Typeids/NeerCore.Typeids.html)
+- [**NeerCore.Typeids.Api**](/api/NeerCore.Typeids.Api/NeerCore.Typeids.Api.html)
+- [**NeerCore.Typeids.Api.Hashids**](/api/NeerCore.Typeids.Api.Hashids/NeerCore.Typeids.Api.Hashids.html)
+- [**NeerCore.Typeids.Data.EntityFramework**](/api/NeerCore.Typeids.Data.EntityFramework/NeerCore.Typeids.Data.EntityFramework.Extensions.html)

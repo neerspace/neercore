@@ -1,24 +1,26 @@
 <Project Sdk="Microsoft.NET.Sdk">
-    <Import Project="..\..\NeerCore.targets" />
+  <Import Project="..\..\NeerCore.targets" />
 
-    <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
-        <RootNamespace>NeerCore.Logging</RootNamespace>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsPackable>true</IsPackable>
 
-        <PackageTags>neercore logging nlog</PackageTags>
-        <Description>The NeerCore.Logging.NLog package is a pre-configured logger with NLog allows you to use pretty colored console logging, file logging and separte file with all errors and warnings.
+    <RootNamespace>NeerCore.Logging</RootNamespace>
 
-            It is a library for simplified writing of .NET apps. It integrates a popular set of core libraries that are required for developing full-fledged apps, but they don't come out of the box in ASP.NET. NeerCore can be used as shown in the examples in the official repository, or separately in parts that you need. You can also use part of the code from the repository if you do not need to include "one more nuget package" or if your project is not support the version of .NET on which NeerCore was created.
-        </Description>
-    </PropertyGroup>
+    <PackageTags>neercore logging nlog</PackageTags>
+    <Description>The NeerCore.Logging.NLog package is a pre-configured logger with NLog allows you to use pretty colored console logging, file logging and separte file with all errors and warnings.
 
-    <ItemGroup>
-        <PackageReference Include="NLog.Web.AspNetCore" Version="5.1.4" />
-    </ItemGroup>
+      It is a library for simplified writing of .NET apps. It integrates a popular set of core libraries that are required for developing full-fledged apps, but they don't come out of the box in ASP.NET. NeerCore can be used as shown in the examples in the official repository, or separately in parts that you need. You can also use part of the code from the repository if you do not need to include "one more nuget package" or if your project is not support the version of .NET on which NeerCore was created.
+    </Description>
+  </PropertyGroup>
 
-    <ItemGroup>
-        <ProjectReference Include="..\NeerCore.DependencyInjection\NeerCore.DependencyInjection.csproj" />
-    </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="NLog.Web.AspNetCore" Version="5.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NeerCore.DependencyInjection\NeerCore.DependencyInjection.csproj" />
+  </ItemGroup>
 </Project>

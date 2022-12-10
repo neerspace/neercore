@@ -9,7 +9,7 @@ namespace NeerCore.DependencyInjection;
 public sealed record InjectionOptions
 {
     /// <summary>
-    ///   A list of <see cref="Assembly"/> where stored services marked with <see cref="InjectableAttribute"/>.
+    ///   A list of <see cref="Assembly"/> where stored services marked with <see cref="ServiceAttribute"/>.
     /// </summary>
     public IEnumerable<Assembly>? ServiceAssemblies { get; set; }
 
@@ -22,6 +22,12 @@ public sealed record InjectionOptions
     ///   The default injection mode for all services where the `InjectionType` is not manually overridden.
     /// </summary>
     public InjectionType DefaultInjectionType { get; set; } = InjectionType.Auto;
+
+    /// <summary>
+    ///   Allows (true) or disallows (false) the resolver to inject
+    ///   the implementations with internal visibility.
+    /// </summary>
+    public bool ResolveInternalImplementations { get; set; } = false;
 
     /// <summary>
     ///   Overrides global application environment with a value you define

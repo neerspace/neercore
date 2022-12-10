@@ -1,0 +1,23 @@
+#swagger-ui li {
+    margin-bottom: 15px;
+}
+
+#swagger-ui blockquote {
+    background: rgba(0, 0, 0, .05);
+    border-radius: 4px;
+    padding: 5px 7px;
+    border-left: 4px solid #9012fe;
+}
+
+#swagger-ui div.information-container.wrapper > section  ol:nth-child(6) > li:nth-child(2) > p > span {
+    color: #aaaaaa;
+}
+
+#swagger-ui .alert {
+    color: #b90808;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}

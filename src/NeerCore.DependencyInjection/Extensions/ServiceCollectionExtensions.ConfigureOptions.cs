@@ -8,7 +8,12 @@ public static partial class ServiceCollectionExtensions
 {
     public static IServiceCollection ConfigureAllOptions(this IServiceCollection services)
     {
-        return services.ConfigureAllOptionsFromAssembly(Assembly.GetCallingAssembly());
+        foreach (var optionsConfiguratorType in AssemblyProvider.GetImplementationsOf(typeof(IConfigureOptions<>)))
+        {
+            services.ConfigureOptions(optionsConfiguratorType);
+        }
+
+        return services;
     }
 
     public static IServiceCollection ConfigureAllOptionsFromAssembly(this IServiceCollection services, Assembly assembly)

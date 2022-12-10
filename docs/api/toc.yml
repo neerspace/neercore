@@ -1,0 +1,43 @@
+- name: API Reference
+  href: index.md
+  items:
+    - href: /api/
+
+- name: NeerCore
+  href: /api/NeerCore/NeerCore.html
+
+- name: NeerCore.Api
+  href: /api/NeerCore.Api/NeerCore.Api.html
+
+- name: NeerCore.Application.Abstractions
+  href: /api/NeerCore.Application.MediatR/NeerCore.Application.Abstractions.html
+
+- name: NeerCore.Data
+  href: /api/NeerCore.Data/NeerCore.Data.html
+
+- name: NeerCore.Data.Abstractions
+  href: /api/NeerCore.Data.Abstractions/NeerCore.Data.Abstractions.html
+
+- name: NeerCore.Data.EntityFramework.Abstractions
+  href: /api/NeerCore.Data.EntityFramework/NeerCore.Data.EntityFramework.Abstractions.html
+
+- name: NeerCore.DependencyInjection
+  href: /api/NeerCore.DependencyInjection/NeerCore.DependencyInjection.html
+
+- name: NeerCore.Logging
+  href: /api/NeerCore.Logging.NLog/NeerCore.Logging.html
+
+- name: NeerCore.Mapping.DefaultMappers
+  href: /api/NeerCore.Mapping.Mapster/NeerCore.Mapping.DefaultMappers.html
+
+- name: NeerCore.Typeids
+  href: /api/NeerCore.Typeids/NeerCore.Typeids.html
+
+- name: NeerCore.Typeids.Api
+  href: /api/NeerCore.Typeids.Api/NeerCore.Typeids.Api.html
+
+- name: NeerCore.Typeids.Api.Hashids
+  href: /api/NeerCore.Typeids.Api.Hashids/NeerCore.Typeids.Api.Hashids.html
+
+- name: NeerCore.Typeids.Data.EntityFramework.Extensions
+  href: /api/NeerCore.Typeids.Data.EntityFramework/NeerCore.Typeids.Data.EntityFramework.Extensions.html

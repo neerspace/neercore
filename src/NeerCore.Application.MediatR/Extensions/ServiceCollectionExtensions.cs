@@ -3,6 +3,7 @@ using FluentValidation.AspNetCore;
 using MediatR;
 using MediatR.Extensions.FluentValidation.AspNetCore;
 using Microsoft.Extensions.DependencyInjection;
+using NeerCore.DependencyInjection;
 
 namespace NeerCore.Application.Extensions;
 
@@ -20,26 +21,25 @@ public static class ServiceCollectionExtensions
         services.AddMediatorApplication(new[] { assembly });
     }
 
-    /// <inheritdoc cref="AddMediatorApplication(IServiceCollection,IEnumerable{Assembly})"/>
-    [Obsolete("Use AddMediatorApplication overload instead of this.")]
-    public static void AddMediatorApplicationFromCurrentAssembly(this IServiceCollection services)
-    {
-        services.AddMediatorApplication(new[] { Assembly.GetCallingAssembly() });
-    }
-
+    /// <summary>
+    ///   Adds MediatR with embedded FluentValidation.
+    /// </summary>
+    /// <param name="services">The <see cref="IServiceCollection" /> to add services to.</param>
     public static void AddMediatorApplication(this IServiceCollection services)
     {
-        services.AddMediatorApplication(new[] { Assembly.GetCallingAssembly() });
+        services.AddMediatorApplication(AssemblyProvider.ApplicationAssemblies);
     }
 
     /// <inheritdoc cref="AddMediatorApplication(IServiceCollection,IEnumerable{Assembly})"/>
     public static void AddMediatorApplication(this IServiceCollection services, IEnumerable<string> assemblyNames)
     {
-        var assemblies = assemblyNames.Select(asm => AppDomain.CurrentDomain.Load(asm)).ToArray();
+        var assemblies = assemblyNames.Select(Assembly.Load).ToArray();
         services.AddMediatorApplication(assemblies);
     }
 
-    /// <summary>Adds MediatR with embedded FluentValidation.</summary>
+    /// <summary>
+    ///   Adds MediatR with embedded FluentValidation.
+    /// </summary>
     /// <param name="services">The <see cref="IServiceCollection" /> to add services to.</param>
     /// <param name="assemblies">Mediator <see cref="IRequest"/> and <see cref="IRequestHandler{TRequest}"/> implementations assemblies.</param>
     public static void AddMediatorApplication(this IServiceCollection services, IEnumerable<Assembly> assemblies)

@@ -61,7 +61,7 @@ public static class ModelBuilderExtensions
 
             if (entityIdType == typeof(Guid))
             {
-                if (options.PreferSqlSideDefaultValues && options.EngineStrategy is DbEngineStrategy.SqlServer)
+                if (options is { PreferSqlSideDefaultValues: true, EngineStrategy: DbEngineStrategy.SqlServer })
                     idPropertyBuilder.HasDefaultValueSql(options.SequentialGuids ? "NEWSEQUENTIALID()" : "NEWID()").ValueGeneratedOnAdd();
                 else
                     idPropertyBuilder.HasDefaultValue(Guid.NewGuid()).ValueGeneratedOnAdd();
@@ -141,9 +141,9 @@ public static class ModelBuilderExtensions
         string defaultValueSql = options.EngineStrategy switch
         {
             DbEngineStrategy.SqlServer => utc ? "SYSUTCDATETIME()" : "SYSDATETIME()",
-            DbEngineStrategy.Sqlite => utc ? "DATETIME('now')" : "DATETIME()",
-            DbEngineStrategy.Postgres => utc ? "TIMEZONE('utc', NOW())" : "NOW()",
-            _ => throw new ArgumentException($"{nameof(DbEngineStrategy)} of {options.EngineStrategy} is not currently supported.")
+            DbEngineStrategy.Sqlite    => utc ? "DATETIME('now')" : "DATETIME()",
+            DbEngineStrategy.Postgres  => utc ? "TIMEZONE('utc', NOW())" : "NOW()",
+            _                          => throw new ArgumentException($"{nameof(DbEngineStrategy)} of {options.EngineStrategy} is not currently supported.")
         };
 
         options.DataAssemblies ??= new[] { Assembly.GetCallingAssembly() };
@@ -176,12 +176,6 @@ public static class ModelBuilderExtensions
     ///   instances that are defined in provided <b>calling assembly</b>.
     /// </summary>
     /// <param name="builder">Database model builder.</param>
-    [Obsolete("Use 'ApplyAllConfigurations' instead of this.")]
-    public static ModelBuilder ApplyConfigurations(this ModelBuilder builder)
-    {
-        return builder.ApplyConfigurationsFromAssembly(Assembly.GetCallingAssembly());
-    }
-
     public static ModelBuilder ApplyAllConfigurations(this ModelBuilder builder)
     {
         return builder.ApplyConfigurationsFromAssembly(Assembly.GetCallingAssembly());
@@ -201,15 +195,6 @@ public static class ModelBuilderExtensions
     /// <inheritdoc cref="ApplyAllDataSeeders"/>
     public static ModelBuilder ApplyDataSeedersFromAssembly(this ModelBuilder builder, Assembly assembly)
     {
-        return builder
-            .ApplyEntityDataSeeders(assembly)
-            .ApplyExtendedDataSeeders(assembly);
-    }
-
-    [Obsolete("Use 'ApplyAllDataSeeders' instead of this.")]
-    public static ModelBuilder ApplyDataSeeders(this ModelBuilder builder)
-    {
-        var assembly = Assembly.GetCallingAssembly();
         return builder
             .ApplyEntityDataSeeders(assembly)
             .ApplyExtendedDataSeeders(assembly);

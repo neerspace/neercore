@@ -1,0 +1,14 @@
+- name: Introduction
+  href: index.md
+
+- name: (ASP.NET) Smart DI
+  href: smart-di/di-in-aspnet.md
+
+- name: (ASP.NET) Add Neer-NLog Logger
+  href: logging/neer-nlog-in-aspnet.md
+
+- name: Smart DI (Console)
+  href: smart-di/di-in-console.md
+
+- name: Add Neer-NLog Logger (Console)
+  href: logging/neer-nlog-in-console.md
