@@ -48,7 +48,7 @@ jobs:
       #   run: dotnet test -c Release --no-build
 
       - name: Pack to NuGet packages
-        run: dotnet pack ./src/${{matrix.project}}/${{matrix.project}}.csproj -c Release --no-build /p:Version=${{matrix.version}} -o ./src/${{project}}
+        run: dotnet pack ./src/${{matrix.project}}/${{matrix.project}}.csproj -c Release --no-build /p:Version=${{matrix.version}} -o ./src/${{matrix.project}}
 
       - name: Push to NuGet
         run: dotnet nuget push "./src/${{matrix.project}}/${{matrix.project}}.${{matrix.version}}.nupkg" --api-key ${{secrets.NUGET_API_KEY}} --source $pkg_source_nuget --skip-duplicate
