@@ -8,7 +8,7 @@ on:
 
 env:
   pkg_source_nuget: "https://api.nuget.org/v3/index.json"
-  pkg_source_github: "https://nuget.pkg.github.com/jurilents/index.json"
+  pkg_source_github: "https://nuget.pkg.github.com/NeerSpace/index.json"
 
 jobs:
   deploy-nuget:
