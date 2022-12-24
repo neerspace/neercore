@@ -35,7 +35,7 @@ NeerCore can be used as shown in the examples in the official repository, or sep
 also use part of the code from the repository if you do not need to include "one more nuget package" or if your project
 is not support the version of .NET on which NeerCore was created.
 
-Thank you for using my developments, I hope they make your life easier! ;)
+Thank you for using my developments, I hope they will make your life easier! ;)
 
 -----------------------------
 
