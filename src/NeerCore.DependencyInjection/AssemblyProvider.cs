@@ -93,8 +93,15 @@ public static class AssemblyProvider
                 .Where(a => !list.Contains(a.FullName));
             foreach (AssemblyName reference in referenceAssemblies)
             {
-                stack.Push(Assembly.Load(reference));
-                list.Add(reference.FullName);
+                try
+                {
+                    stack.Push(Assembly.Load(reference));
+                    list.Add(reference.FullName);
+                }
+                catch (FileNotFoundException)
+                {
+                    // ignore unresolved assemblies
+                }
             }
         } while (stack.Count > 0);
     }
