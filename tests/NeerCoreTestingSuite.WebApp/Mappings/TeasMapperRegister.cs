@@ -1,5 +1,4 @@
 ﻿using Mapster;
-using NeerCore.Mapping.Extensions;
 using NeerCoreTestingSuite.WebApp.Data.Entities;
 
 namespace NeerCoreTestingSuite.WebApp.Mappings;

@@ -60,22 +60,22 @@ public static partial class ServiceCollectionExtensions
         if (!options.ResolveInternalImplementations)
             serviceTypes = serviceTypes.Where(st => st.IsPublic);
 
-        foreach (Type implType in serviceTypes)
+        var serviceWithAttributes = serviceTypes
+            .SelectMany(st => st.GetCustomAttributes<ServiceAttribute>()
+                .Select(attr => (Service: st, Attribute: attr)))
+            .OrderBy(st => st.Attribute.Priority);
+        foreach (var servInfo in serviceWithAttributes)
         {
-            var attributes = implType.GetCustomAttributes<ServiceAttribute>().ToArray();
+            ServiceAttribute attr = servInfo.Attribute;
 
-            if (!attributes.Any()) continue;
-            foreach (var attr in attributes)
-            {
-                if (attr.InjectionType is InjectionType.Default)
-                    attr.InjectionType = options.DefaultInjectionType;
-                if (attr.Lifetime.HasFlag(Lifetime.Default))
-                    attr.Lifetime = options.DefaultLifetime.ToInstanceLifetime();
+            if (attr.InjectionType is InjectionType.Default)
+                attr.InjectionType = options.DefaultInjectionType;
+            if (attr.Lifetime.HasFlag(Lifetime.Default))
+                attr.Lifetime = options.DefaultLifetime.ToInstanceLifetime();
 
-                // Ignore service if environment is required and current env IS NOT EQUALS service env
-                if (IsCurrentEnvironment(attr.Environment, env))
-                    services.InjectDependency(attr, implType);
-            }
+            // Ignore service if environment is required and current env IS NOT EQUALS service env
+            if (IsCurrentEnvironment(attr.Environment, env))
+                services.InjectDependency(attr, servInfo.Service);
         }
 
         return services;

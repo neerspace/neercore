@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\NeerCore.Typeids\NeerCore.Typeids.csproj" />
+    <ProjectReference Include="..\NeerCore.Api\NeerCore.Api.csproj" />
     <ProjectReference Include="..\NeerCore.DependencyInjection\NeerCore.DependencyInjection.csproj" />
   </ItemGroup>
 

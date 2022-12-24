@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using NeerCore.Typeids;
 using NeerCore.Typeids.Abstractions;
 using NeerCore.Typeids.Internal;
 

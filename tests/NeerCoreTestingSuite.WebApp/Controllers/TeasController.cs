@@ -2,6 +2,7 @@ using Mapster;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
+using NeerCore.Mapping.Extensions;
 using NeerCoreTestingSuite.WebApp.Dto.Teas;
 using NeerCoreTestingSuite.WebApp.Services;
 
@@ -18,6 +19,13 @@ public class TeasController : ApiController
     {
         var entity = await _service.GetByIdAsync(id);
         return entity.Adapt<Tea>();
+    }
+
+    [HttpGet]
+    public async Task<IEnumerable<Tea>> GetAll()
+    {
+        var entities = await _service.GetAllAsync();
+        return entities.AdaptAll<Tea>();
     }
 
     // [HttpGet]

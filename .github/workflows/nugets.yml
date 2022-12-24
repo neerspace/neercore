@@ -2,35 +2,35 @@ name: Publish NuGet Packages
 
 on:
   push:
-    branches: master
+    branches: [ master, 'v2.0.0' ]
 #  pull_request:
 #    branches: master
 
 env:
   pkg_source_nuget: "https://api.nuget.org/v3/index.json"
-  pkg_source_github: "https://nuget.pkg.github.com/jurilents/index.json"
+  pkg_source_github: "https://nuget.pkg.github.com/NeerSpace/index.json"
 
 jobs:
   deploy-nuget:
     if: ${{ !contains(github.event.head_commit.message, '[no_ci]') }}
 
     strategy:
-      data:
-        version: [ '2.0.0-alpha1' ]
+      matrix:
+        version: [ '2.0.0-alpha2' ]
         project:
-          - NeerCore
+#          - NeerCore
           - NeerCore.Api
-          - NeerCore.Application.MediatR
-          - NeerCore.Data
-          - NeerCore.Data.Abstractions
-          - NeerCore.Data.EntityFramework
+#          - NeerCore.Application.MediatR
+#          - NeerCore.Data
+#          - NeerCore.Data.Abstractions
+#          - NeerCore.Data.EntityFramework
           - NeerCore.DependencyInjection
-          - NeerCore.Logging.NLog
-          - NeerCore.Mapping.Mapster
+#          - NeerCore.Logging.NLog
+#          - NeerCore.Mapping.Mapster
           - NeerCore.Typeids
           - NeerCore.Typeids.Api
-          - NeerCore.Typeids.Api.Hashids
-          - NeerCore.Typeids.Data.EntityFramework
+#          - NeerCore.Typeids.Api.Hashids
+#          - NeerCore.Typeids.Data.EntityFramework
 
     runs-on: ubuntu-latest
 
@@ -42,19 +42,19 @@ jobs:
         uses: actions/setup-dotnet@v1
 
       - name: Build
-        run: dotnet build ./src/${{data.project}}/${{data.project}}.csproj -c Release
+        run: dotnet build ./src/${{matrix.project}}/${{matrix.project}}.csproj -c Release
       
       # - name: Test
       #   run: dotnet test -c Release --no-build
 
       - name: Pack to NuGet packages
-        run: dotnet pack ./src/${{data.project}}/${{data.project}}.csproj -c Release --no-build /p:Version=${{data.version}} -o ./src/${{project}}
+        run: dotnet pack ./src/${{matrix.project}}/${{matrix.project}}.csproj -c Release --no-build /p:Version=${{matrix.version}} -o ./src/${{matrix.project}}
 
       - name: Push to NuGet
-        run: dotnet nuget push "./src/${{data.project}}/${{data.project}}.${{data.version}}.nupkg" --api-key ${{secrets.NUGET_API_KEY}} --source $pkg_source_nuget --skip-duplicate
+        run: dotnet nuget push "./src/${{matrix.project}}/${{matrix.project}}.${{matrix.version}}.nupkg" --api-key ${{secrets.NUGET_API_KEY}} --source $pkg_source_nuget --skip-duplicate
 
       - name: Prepare GitHub packages source
         run: dotnet nuget add source --username jurilents --password ${{secrets.GITHUB_TOKEN}} --store-password-in-clear-text --name github $pkg_source_github
 
       - name: Publish to GitHub packages
-        run: dotnet nuget push "./src/${{data.project}}/${{data.project}}.${{data.version}}.nupkg" --api-key ${{secrets.GITHUB_TOKEN}}  --source "github" --skip-duplicate
+        run: dotnet nuget push "./src/${{matrix.project}}/${{matrix.project}}.${{matrix.version}}.nupkg" --api-key ${{secrets.GITHUB_TOKEN}}  --source "github" --skip-duplicate

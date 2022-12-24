@@ -6,7 +6,6 @@ using Microsoft.Extensions.Options;
 using NeerCore.Api.Middleware;
 using NeerCore.DependencyInjection;
 using Swashbuckle.AspNetCore.SwaggerUI;
-using ExceptionHandlerOptions = NeerCore.Api.ExceptionHandlerOptions;
 
 namespace NeerCore.Api.Extensions;
 

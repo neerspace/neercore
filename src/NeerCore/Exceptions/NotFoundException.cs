@@ -1,5 +1,4 @@
 ﻿using System.Net;
-using NeerCore.Extensions;
 
 namespace NeerCore.Exceptions;
 
