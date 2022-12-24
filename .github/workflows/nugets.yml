@@ -16,21 +16,21 @@ jobs:
 
     strategy:
       matrix:
-        version: [ '2.0.0-alpha2' ]
+        version: [ '2.0.0-alpha3' ]
         project:
           - NeerCore
-    #          - NeerCore.Api
-    #          - NeerCore.Application.MediatR
-    #          - NeerCore.Data
-    #          - NeerCore.Data.Abstractions
-    #          - NeerCore.Data.EntityFramework
-    #          - NeerCore.DependencyInjection
-    #          - NeerCore.Logging.NLog
-    #          - NeerCore.Mapping.Mapster
-    #          - NeerCore.Typeids
-    #          - NeerCore.Typeids.Api
-    #          - NeerCore.Typeids.Api.Hashids
-    #          - NeerCore.Typeids.Data.EntityFramework
+          - NeerCore.Api
+          - NeerCore.Application.MediatR
+          - NeerCore.Data
+          - NeerCore.Data.Abstractions
+          - NeerCore.Data.EntityFramework
+          - NeerCore.DependencyInjection
+          - NeerCore.Logging.NLog
+          - NeerCore.Mapping.Mapster
+          - NeerCore.Typeids
+          - NeerCore.Typeids.Api
+          - NeerCore.Typeids.Api.Hashids
+          - NeerCore.Typeids.Data.EntityFramework
 
     runs-on: ubuntu-latest
 
