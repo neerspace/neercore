@@ -23,6 +23,11 @@ public class TeasService
         return entity ?? throw new NotFoundException<Tea>();
     }
 
+    public async Task<IEnumerable<Tea>> GetAllAsync()
+    {
+        return await _database.Set<Tea>().ToArrayAsync();
+    }
+
     // public async Task<IEnumerable<Tea>> FilterAsync(string filters, string sorts, int page, int pageSize)
     // {
     //     var sieve = new SieveModel { Filters = filters, Sorts = sorts, Page = page, PageSize = pageSize };

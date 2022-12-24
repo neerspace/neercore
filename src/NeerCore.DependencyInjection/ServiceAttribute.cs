@@ -22,6 +22,11 @@ public class ServiceAttribute : Attribute
     public virtual Type? ServiceType { get; set; }
 
     /// <summary>
+    /// 
+    /// </summary>
+    public int? Priority { get; set; }
+
+    /// <summary>
     ///   <b>If not null</b> - Registers a service ONLY FOR specified environment.
     ///   In all others, this service will not be available!
     /// </summary>

@@ -16,15 +16,15 @@ jobs:
 
     strategy:
       matrix:
-        version: [ '2.0.0-alpha1.1' ]
+        version: [ '2.0.0-alpha2' ]
         project:
 #          - NeerCore
-#          - NeerCore.Api
+          - NeerCore.Api
 #          - NeerCore.Application.MediatR
 #          - NeerCore.Data
 #          - NeerCore.Data.Abstractions
 #          - NeerCore.Data.EntityFramework
-#          - NeerCore.DependencyInjection
+          - NeerCore.DependencyInjection
 #          - NeerCore.Logging.NLog
 #          - NeerCore.Mapping.Mapster
           - NeerCore.Typeids
