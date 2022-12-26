@@ -12,5 +12,14 @@ public sealed class InternalServerException : HttpException
     public override string ErrorType => "InternalServerError";
 
 
-    public InternalServerException(string message) : base(message) { }
+    public InternalServerException(string message, bool addTraceDetails = false) : base(message)
+    {
+        if (addTraceDetails)
+        {
+            Details = new ErrorDetails[]
+            {
+                new("Trace", ToString())
+            };
+        }
+    }
 }

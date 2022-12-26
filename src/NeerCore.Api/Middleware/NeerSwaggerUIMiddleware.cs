@@ -26,9 +26,11 @@ public class NeerSwaggerUIMiddleware
     private readonly StaticFileMiddleware _swaggerStaticFileMiddleware;
     private readonly StaticFileMiddleware _neerStaticFileMiddleware;
     private readonly JsonSerializerOptions _jsonSerializerOptions;
+    private readonly RequestDelegate _next;
 
     public NeerSwaggerUIMiddleware(RequestDelegate next, IWebHostEnvironment environment, ILoggerFactory loggerFactory, SwaggerUIOptions? options, IOptions<SwaggerConfigurationOptions> swaggerOptionsAccessor)
     {
+        _next = next;
         _swaggerConfiguration = swaggerOptionsAccessor.Value;
         _options = options ?? new SwaggerUIOptions();
 
@@ -70,6 +72,10 @@ public class NeerSwaggerUIMiddleware
                     await _swaggerStaticFileMiddleware.Invoke(httpContext);
                 }
             }
+        }
+        else
+        {
+            await _next(httpContext);
         }
     }
 

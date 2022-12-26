@@ -50,7 +50,7 @@ public abstract class DbContextFactoryBase<TContext> : IDesignTimeDbContextFacto
         get
         {
             var selectedConnection = GetConnectionStringsFromJson(SettingsPath)[SelectedConnectionName];
-            LogWriter?.Write("Selected connection string: " + selectedConnection);
+            LogWriter?.Write("Selected connection string: " + selectedConnection + "\n");
             return selectedConnection;
         }
     }
