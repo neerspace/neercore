@@ -1,0 +1,360 @@
+# This template based on C# Code Conventions by Google
+# https://github.com/googleapis/google-cloud-dotnet/blob/main/.editorconfig
+# with Neerspace modifications
+# To learn more about .editorconfig see https://aka.ms/editorconfigdocs
+
+# top-most EditorConfig file
+root = true
+
+###############################
+# Core EditorConfig Options   #
+###############################
+# All files
+[*]
+charset                     = utf-8
+end_of_line                 = lf
+tab_width                   = 4
+indent_size                 = 4
+indent_style                = space
+insert_final_newline        = false
+trim_trailing_whitespace    = true
+max_line_length             = 140
+ij_continuation_indent_size = 2
+ij_smart_tabs               = false
+ij_visual_guides            = 140 # right guideline position in your code (none – to disable)
+ij_wrap_on_typing           = false
+file_header_template        = Copyright 2022 @jurilents\n\nLicensed under the Apache License, Version 2.0 (the "License").\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\nhttps://github.com/NeerSpace/NeerCore/blob/master/LICENSE
+
+
+###############################
+# .NET Coding Conventions     #
+###############################
+
+# Generated code
+[*{_AssemblyInfo.cs,.g.cs}]
+generated_code = true
+
+# Code files
+[*.{cs}]
+resharper_continuous_indent_multiplier                                   = 1
+
+# Organize usings
+dotnet_sort_system_directives_first                                      = true
+
+# this. preferences
+dotnet_style_qualification_for_field                                     = false:suggestion
+dotnet_style_qualification_for_property                                  = false:suggestion
+dotnet_style_qualification_for_method                                    = false:suggestion
+dotnet_style_qualification_for_event                                     = false:suggestion
+
+# Language keywords vs BCL types preferences
+dotnet_style_predefined_type_for_locals_parameters_members               = true:suggestion
+dotnet_style_predefined_type_for_member_access                           = true:suggestion
+
+# Parentheses preferences
+dotnet_style_parentheses_in_arithmetic_binary_operators                  = always_for_clarity:silent
+dotnet_style_parentheses_in_relational_binary_operators                  = always_for_clarity:silent
+dotnet_style_parentheses_in_other_binary_operators                       = always_for_clarity:silent
+dotnet_style_parentheses_in_other_operators                              = never_if_unnecessary:silent
+
+# Modifier preferences
+csharp_preferred_modifier_order                                          = public, private, protected, internal, static, extern, new, virtual, abstract, sealed, override, readonly, unsafe, volatile, async:warning
+dotnet_style_require_accessibility_modifiers                             = for_non_interface_members:warning
+dotnet_style_readonly_field                                              = true:warning
+
+# Expression-level preferences
+dotnet_style_object_initializer                                          = true:suggestion
+dotnet_style_collection_initializer                                      = true:suggestion
+dotnet_style_explicit_tuple_names                                        = true:suggestion
+dotnet_style_null_propagation                                            = true:suggestion
+dotnet_style_coalesce_expression                                         = true:suggestion
+dotnet_style_prefer_is_null_check_over_reference_equality_method         = true:suggestion
+dotnet_style_prefer_inferred_tuple_names                                 = true:suggestion
+dotnet_style_prefer_inferred_anonymous_type_member_names                 = true:suggestion
+dotnet_style_prefer_auto_properties                                      = true:suggestion
+dotnet_style_prefer_conditional_expression_over_assignment               = true:silent
+dotnet_style_prefer_conditional_expression_over_return                   = true:silent
+csharp_prefer_simple_default_expression                                  = true:suggestion
+
+###############################
+# Naming Conventions          #
+###############################
+# Style Definitions
+dotnet_naming_style.pascal_case_style.capitalization                     = pascal_case
+
+# Use PascalCase for constant fields
+dotnet_naming_rule.constant_fields_should_be_pascal_case.severity        = suggestion
+dotnet_naming_rule.constant_fields_should_be_pascal_case.symbols         = constant_fields
+dotnet_naming_rule.constant_fields_should_be_pascal_case.style           = pascal_case_style
+dotnet_naming_symbols.constant_fields.applicable_kinds                   = field
+dotnet_naming_symbols.constant_fields.applicable_accessibilities         = *
+dotnet_naming_symbols.constant_fields.required_modifiers                 = const
+dotnet_naming_style.pascal_case_style.capitalization                     = pascal_case
+
+# static fields should have s_ prefix
+dotnet_naming_rule.static_fields_should_have_prefix.severity             = suggestion
+dotnet_naming_rule.static_fields_should_have_prefix.symbols              = static_fields
+dotnet_naming_rule.static_fields_should_have_prefix.style                = static_prefix_style
+dotnet_naming_symbols.static_fields.applicable_kinds                     = field
+dotnet_naming_symbols.static_fields.required_modifiers                   = static
+dotnet_naming_symbols.static_fields.applicable_accessibilities           = private, internal, private_protected
+dotnet_naming_style.static_prefix_style.required_prefix                  = s_
+dotnet_naming_style.static_prefix_style.capitalization                   = camel_case
+
+# internal and private fields should be _camelCase
+dotnet_naming_rule.camel_case_for_private_internal_fields.severity       = suggestion
+dotnet_naming_rule.camel_case_for_private_internal_fields.symbols        = private_internal_fields
+dotnet_naming_rule.camel_case_for_private_internal_fields.style          = camel_case_underscore_style
+dotnet_naming_symbols.private_internal_fields.applicable_kinds           = field
+dotnet_naming_symbols.private_internal_fields.applicable_accessibilities = private, internal
+dotnet_naming_style.camel_case_underscore_style.required_prefix          = _
+dotnet_naming_style.camel_case_underscore_style.capitalization           = camel_case
+
+###############################
+# C# Coding Conventions       #
+###############################
+
+# var preferences
+csharp_style_var_for_built_in_types                                      = false:hint
+csharp_style_var_when_type_is_apparent                                   = true:hint
+csharp_style_var_elsewhere                                               = true:hint
+
+csharp_using_directive_placement                                         = outside_namespace:warning
+csharp_prefer_braces                                                     = false:suggestion
+# csharp_preserve_single_line_blocks = true:none
+# csharp_preserve_single_line_statements = false:none
+csharp_prefer_static_local_function                                      = false:suggestion
+csharp_prefer_simple_using_statement                                     = true:suggestion
+csharp_style_prefer_switch_expression                                    = true:suggestion
+
+# Expression-bodied members
+csharp_style_expression_bodied_methods                                   = true:hint
+csharp_style_expression_bodied_constructors                              = true:hint
+csharp_style_expression_bodied_operators                                 = true:suggestion
+csharp_style_expression_bodied_properties                                = true:suggestion
+csharp_style_expression_bodied_indexers                                  = true:suggestion
+csharp_style_expression_bodied_accessors                                 = true:suggestion
+csharp_style_expression_bodied_lambdas                                   = true:suggestion
+csharp_style_expression_bodied_local_functions                           = true:suggestion
+
+# Pattern matching preferences
+csharp_style_pattern_matching_over_is_with_cast_check                    = true:suggestion
+csharp_style_pattern_matching_over_as_with_null_check                    = true:suggestion
+csharp_style_inlined_variable_declaration                                = true:suggestion
+
+# Null-checking preferences
+csharp_style_throw_expression                                            = true:suggestion
+csharp_style_conditional_delegate_call                                   = true:suggestion
+
+# Other features
+csharp_style_prefer_index_operator                                       = true:suggestion
+csharp_style_prefer_range_operator                                       = true:suggestion
+csharp_style_pattern_local_over_anonymous_function                       = false:none
+
+###############################
+# C# Formatting Rules         #
+###############################
+
+# New line preferences
+csharp_new_line_before_open_brace                                        = all
+csharp_new_line_before_else                                              = true
+csharp_new_line_before_catch                                             = true
+csharp_new_line_before_finally                                           = true
+csharp_new_line_before_members_in_object_initializers                    = true
+csharp_new_line_before_members_in_anonymous_types                        = true
+csharp_new_line_between_query_expression_clauses                         = true
+
+# Indentation preferences
+csharp_indent_block_contents                                             = true
+csharp_indent_braces                                                     = false
+csharp_indent_case_contents                                              = true
+csharp_indent_case_contents_when_block                                   = true
+csharp_indent_switch_labels                                              = true
+csharp_indent_labels                                                     = one_less_than_current
+
+# Space preferences
+csharp_space_after_cast                                                  = true
+csharp_space_after_colon_in_inheritance_clause                           = true
+csharp_space_after_comma                                                 = true
+csharp_space_after_dot                                                   = false
+csharp_space_after_keywords_in_control_flow_statements                   = true
+csharp_space_after_semicolon_in_for_statement                            = true
+csharp_space_between_method_call_parameter_list_parentheses              = false
+csharp_space_between_method_declaration_parameter_list_parentheses       = false
+csharp_space_between_parentheses                                         = false
+csharp_space_before_comma                                                = false
+csharp_space_before_dot                                                  = false
+csharp_space_before_open_square_brackets                                 = false
+csharp_space_before_semicolon_in_for_statement                           = false
+csharp_space_between_empty_square_brackets                               = false
+csharp_space_around_declaration_statements                               = do_not_ignore
+csharp_space_before_colon_in_inheritance_clause                          = true
+csharp_space_after_colon_in_inheritance_clause                           = true
+csharp_space_around_binary_operators                                     = before_and_after
+csharp_space_between_method_declaration_empty_parameter_list_parentheses = false
+csharp_space_between_method_call_name_and_opening_parenthesis            = false
+csharp_space_between_method_call_empty_parameter_list_parentheses        = false
+csharp_space_between_method_declaration_name_and_open_parenthesis        = false
+csharp_space_between_square_brackets                                     = false
+
+# Wrapping preferences
+csharp_preserve_single_line_statements                                   = true
+csharp_preserve_single_line_blocks                                       = true
+
+# License header
+csharp_style_namespace_declarations                                      = file_scoped:suggestion
+csharp_style_prefer_null_check_over_type_check                           = true:suggestion
+csharp_style_prefer_local_over_anonymous_function                        = true:suggestion
+csharp_style_prefer_tuple_swap                                           = true:suggestion
+csharp_style_implicit_object_creation_when_type_is_apparent              = true:suggestion
+csharp_style_unused_value_assignment_preference                          = discard_variable:suggestion
+csharp_style_unused_value_expression_statement_preference                = discard_variable:suggestion
+csharp_style_prefer_pattern_matching                                     = true:suggestion
+csharp_style_prefer_not_pattern                                          = true:suggestion
+csharp_style_prefer_extended_property_pattern                            = true:suggestion
+csharp_style_prefer_parameter_null_checking                              = true:suggestion
+csharp_style_prefer_method_group_conversion                              = true:suggestion
+
+# Resharper
+csharp_int_align_switch_sections                                         = true
+csharp_int_align_switch_expressions                                      = true
+csharp_place_simple_initializer_on_single_line                           = true:silent
+# csharp_max_initializer_elements_on_line = 2
+csharp_wrap_object_and_collection_initializer_style                      = chop_if_long
+csharp_wrap_parameters_style                                             = wrap_if_long
+csharp_max_formal_parameters_on_line                                     = 4
+csharp_wrap_after_declaration_lpar                                       = true
+
+# Resharper highlightings
+
+# Resharper recommends to use 'abstract class' where it's possible,
+# but almost we use reflection to create instances,
+# so this highlighting is redundant for us
+resharper_class_never_instantiated_global_highlighting                   = none
+
+
+# Microsoft .NET properties
+csharp_space_between_parentheses                                         = false
+csharp_space_between_square_brackets                                     = false
+
+# ReSharper properties
+resharper_csharp_align_multiline_calls_chain                             = false
+resharper_csharp_outdent_dots                                            = true
+
+
+# ###############################
+# # Other Languages Conventions #
+# ###############################
+[.editorconfig]
+ij_editorconfig_align_group_field_declarations     = true
+ij_editorconfig_space_after_colon                  = false
+ij_editorconfig_space_after_comma                  = true
+ij_editorconfig_space_before_colon                 = false
+ij_editorconfig_space_before_comma                 = false
+ij_editorconfig_spaces_around_assignment_operators = true
+
+[*.{csv,tsv}]
+indent_style                       = tab
+ij_csv_keep_indents_on_empty_lines = false
+ij_csv_wrap_long_lines             = false
+
+# XML project/config/general files
+[*.{xml,csproj,props,targets,ruleset,config,nuspec,resx,DotSettings,DotSettings.user}]
+indent_size                             = 2
+tab_width                               = 2
+ij_continuation_indent_size             = 2
+ij_xml_align_attributes                 = true
+ij_xml_align_text                       = false
+ij_xml_attribute_wrap                   = split_into_lines
+ij_xml_block_comment_add_space          = false
+ij_xml_block_comment_at_first_column    = false
+ij_xml_keep_blank_lines                 = 2
+ij_xml_keep_indents_on_empty_lines      = false
+ij_xml_keep_line_breaks                 = false
+ij_xml_keep_line_breaks_in_text         = true
+ij_xml_keep_whitespaces                 = false
+ij_xml_keep_whitespaces_around_cdata    = preserve
+ij_xml_keep_whitespaces_inside_cdata    = true
+ij_xml_line_comment_at_first_column     = false
+ij_xml_space_after_tag_name             = false
+ij_xml_space_around_equals_in_attribute = false
+ij_xml_space_inside_empty_tag           = true
+ij_xml_text_wrap                        = normal
+
+[{*.htm,*.html}]
+indent_size                                = 2
+tab_width                                  = 2
+ij_continuation_indent_size                = 2
+ij_html_add_new_line_before_tags           = body, div, p, form, h1, h2, h3
+ij_html_align_attributes                   = true
+ij_html_align_text                         = false
+ij_html_attribute_wrap                     = split_into_lines
+ij_html_block_comment_add_space            = false
+ij_html_block_comment_at_first_column      = false
+ij_html_do_not_align_children_of_min_lines = 0
+ij_html_do_not_break_if_inline_tags        = title, h1, h2, h3, h4, h5, h6, p
+ij_html_do_not_indent_children_of_tags     = html, thead, tbody, tfoot
+ij_html_enforce_quotes                     = true
+ij_html_inline_tags                        = none # a, abbr, acronym, b, basefont, bdo, big, br, cite, cite, code, dfn, em, font, i, img, input, kbd, label, q, s, samp, select, small, span, strike, strong, sub, sup, textarea, tt, u, var
+ij_html_keep_blank_lines                   = 2
+ij_html_keep_indents_on_empty_lines        = false
+ij_html_keep_line_breaks                   = false
+ij_html_keep_line_breaks_in_text           = true
+ij_html_keep_whitespaces                   = false
+ij_html_keep_whitespaces_inside            = span, pre, textarea
+ij_html_line_comment_at_first_column       = false
+ij_html_new_line_after_last_attribute      = never
+ij_html_new_line_before_first_attribute    = never
+ij_html_quote_style                        = double
+ij_html_remove_new_line_before_tags        = br
+ij_html_space_after_tag_name               = false
+ij_html_space_around_equality_in_attribute = false
+ij_html_space_inside_empty_tag             = true
+ij_html_text_wrap                          = normal
+
+# JSON
+[{*.har,*.jsb2,*.jsb3,*.json,.babelrc,.eslintrc,.prettierrc,.stylelintrc,bowerrc}]
+indent_size                         = 2
+ij_json_array_wrapping              = split_into_lines
+ij_json_keep_blank_lines_in_code    = 0
+ij_json_keep_indents_on_empty_lines = false
+ij_json_keep_line_breaks            = false
+ij_json_keep_trailing_comma         = false
+ij_json_object_wrapping             = split_into_lines
+ij_json_property_alignment          = do_not_align
+ij_json_space_after_colon           = true
+ij_json_space_after_comma           = true
+ij_json_spaces_within_braces        = true
+ij_json_spaces_within_brackets      = false
+ij_json_wrap_long_lines             = true
+
+[{*.yaml,*.yml}]
+indent_size                         = 2
+ij_yaml_align_values_properties     = do_not_align
+ij_yaml_autoinsert_sequence_marker  = true
+ij_yaml_block_mapping_on_new_line   = false
+ij_yaml_indent_sequence_value       = true
+ij_yaml_keep_indents_on_empty_lines = false
+ij_yaml_keep_line_breaks            = false
+ij_yaml_sequence_on_new_line        = true
+ij_yaml_space_before_colon          = false
+ij_yaml_spaces_within_braces        = true
+ij_yaml_spaces_within_brackets      = true
+
+[{*.markdown,*.md}]
+ij_markdown_force_one_space_after_blockquote_symbol = true
+ij_markdown_force_one_space_after_header_symbol     = true
+ij_markdown_force_one_space_after_list_bullet       = true
+ij_markdown_force_one_space_between_words           = true
+ij_markdown_format_tables                           = true
+ij_markdown_insert_quote_arrows_on_wrap             = true
+ij_markdown_keep_indents_on_empty_lines             = false
+ij_markdown_keep_line_breaks_inside_text_blocks     = true
+ij_markdown_max_lines_around_block_elements         = 1
+ij_markdown_max_lines_around_header                 = 1
+ij_markdown_max_lines_between_paragraphs            = 1
+ij_markdown_min_lines_around_block_elements         = 0
+ij_markdown_min_lines_around_header                 = 0
+ij_markdown_min_lines_between_paragraphs            = 0
+ij_markdown_wrap_text_if_long                       = false
+ij_markdown_wrap_text_inside_blockquotes            = true
