@@ -4,7 +4,7 @@ namespace NeerCore.Data.Abstractions;
 ///   Defines an entity with the required <see cref="DateTime">Nullable&lt;DateTime&gt;</see>
 ///   when entity was last <see cref="Updated"/>.
 /// </summary>
-public interface IUpdatableEntity
+public interface IUpdatableEntity : IEntity
 {
     /// <summary>
     ///   Gets the <see cref="DateTime"/> the entity was last updated

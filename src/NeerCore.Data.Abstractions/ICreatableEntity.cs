@@ -3,7 +3,7 @@ namespace NeerCore.Data.Abstractions;
 /// <summary>
 ///   Defines an entity with the required <see cref="DateTime"/> when it was <see cref="Created"/>.
 /// </summary>
-public interface ICreatableEntity
+public interface ICreatableEntity : IEntity
 {
     /// <summary>
     ///   Gets the <see cref="DateTime"/> when entity was created.
