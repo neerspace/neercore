@@ -20,13 +20,13 @@ jobs:
         project:
           - NeerCore
           - NeerCore.Api
-#          - NeerCore.Application.MediatR
+          - NeerCore.Application.MediatR
           - NeerCore.Data
           - NeerCore.Data.Abstractions
           - NeerCore.Data.EntityFramework
-#          - NeerCore.DependencyInjection
-#          - NeerCore.Logging.NLog
-#          - NeerCore.Mapping.Mapster
+          - NeerCore.DependencyInjection
+          - NeerCore.Logging.NLog
+          - NeerCore.Mapping.Mapster
           - NeerCore.Typeids
           - NeerCore.Typeids.Api
           - NeerCore.Typeids.Api.Hashids
@@ -43,7 +43,7 @@ jobs:
 
       - name: Build
         run: dotnet build ./src/${{matrix.project}}/${{matrix.project}}.csproj -c Release
-      
+
       # - name: Test
       #   run: dotnet test -c Release --no-build
 

@@ -223,7 +223,7 @@ resharper_align_linq_query                                               = false
 resharper_csharp_empty_block_style                                       = together_same_line
 resharper_csharp_stick_comment                                           = false
 resharper_keep_existing_embedded_arrangement                             = false
-resharper_keep_existing_initializer_arrangement                          = false # new() { A = 123 }
+resharper_keep_existing_initializer_arrangement                          = true # new() { A = 123 }
 resharper_keep_existing_switch_expression_arrangement                    = false
 resharper_max_array_initializer_elements_on_line                         = 10
 resharper_place_accessorholder_attribute_on_same_line                    = false

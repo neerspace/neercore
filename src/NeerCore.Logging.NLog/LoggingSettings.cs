@@ -22,19 +22,32 @@ public sealed class LoggingSettings
     public SharedLoggerSettings Shared { get; set; } = new();
 
     /// <summary>
-    ///   Configuration for predefined console logger.
+    ///   Configuration for any predefined logging target.
     /// </summary>
-    public SingleLoggerSettings ConsoleLogger { get; set; } = new() { ShortLoggerNames = true };
+    public TargetsSettings Targets { get; set; } = new();
+}
+
+public sealed class TargetsSettings
+{
+    /// <summary>
+    ///   Defines a configuration for predefined console logger.
+    /// </summary>
+    public LoggerTargetSettings Console { get; set; } = new() { ShortLoggerNames = true };
 
     /// <summary>
-    ///   Configuration for predefined file logger for all log levels.
+    ///   Defines a configuration for predefined file logger for all log levels.
     /// </summary>
-    public SingleLoggerSettings FullFileLogger { get; set; } = new() { FilePath = "${shortdate}.log" };
+    public LoggerTargetSettings ErrorFile { get; set; } = new() { FilePath = "${shortdate}.log" };
 
     /// <summary>
-    ///   Configuration for predefined file logger for warnings and errors.
+    ///   Defines a configuration for predefined file logger for warnings and errors.
     /// </summary>
-    public SingleLoggerSettings ErrorFileLogger { get; set; } = new() { FilePath = "${shortdate}-error.log" };
+    public LoggerTargetSettings FullFile { get; set; } = new() { FilePath = "${shortdate}-error.log" };
+
+    /// <summary>
+    ///   Defines a configuration for predefined JSON file logger for all log levels.
+    /// </summary>
+    public LoggerTargetSettings JsonFile { get; set; } = new() { Enabled = false, FilePath = "${shortdate}.json" };
 }
 
 public sealed class SharedLoggerSettings
@@ -45,7 +58,7 @@ public sealed class SharedLoggerSettings
     public string LogsDirectoryPath { get; set; } = "~/logs/";
 }
 
-public sealed class SingleLoggerSettings
+public sealed class LoggerTargetSettings
 {
     /// <summary>
     ///   Disables specific logger if <b>false</b> or enables if <b>true</b>
