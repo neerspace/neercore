@@ -16,8 +16,8 @@ public sealed class TypeidsDocumentFilter : IDocumentFilter
             .Where(s => identifierNames.Any(name => name.Equals(s.Key, StringComparison.OrdinalIgnoreCase)));
         foreach (var identifierSchema in identifierSchemas)
         {
-            var identifierValueSchema = identifierSchema.Value.Properties
-                .First(prop => prop.Key.Equals("Value", StringComparison.OrdinalIgnoreCase)).Value;
+            var identifierValueSchema = identifierSchema.Value.Properties.First(prop =>
+                prop.Key.Equals("Value", StringComparison.OrdinalIgnoreCase)).Value;
 
             var referencedSchemaProps = swaggerDoc.Components.Schemas
                 .SelectMany(s => s.Value.Properties)

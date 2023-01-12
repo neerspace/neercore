@@ -12,25 +12,23 @@ public static partial class ServiceCollectionExtensions
     /// <param name="configureOptions"></param>
     /// <param name="assembly">Services implementations assembly.</param>
     /// <exception cref="ArgumentOutOfRangeException">If invalid injection type provided.</exception>
-    public static IServiceCollection AddServicesFromAssembly(this IServiceCollection services, Assembly assembly, Action<InjectionOptions>? configureOptions = null)
-    {
-        return services.AddServicesFromAssemblies(new[] { assembly }, configureOptions);
-    }
+    public static IServiceCollection AddServicesFromAssembly(this IServiceCollection services, Assembly assembly,
+        Action<InjectionOptions>? configureOptions = null) =>
+        services.AddServicesFromAssemblies(new[] { assembly }, configureOptions);
 
     /// <inheritdoc cref="AddServicesFromAssembly(IServiceCollection,Assembly,Action{InjectionOptions}?)"/>
-    public static IServiceCollection AddServicesFromAssembly(this IServiceCollection services, string assemblyName, Action<InjectionOptions>? configureOptions = null)
-    {
-        return services.AddServicesFromAssembly(Assembly.Load(assemblyName), configureOptions);
-    }
+    public static IServiceCollection AddServicesFromAssembly(this IServiceCollection services, string assemblyName,
+        Action<InjectionOptions>? configureOptions = null) =>
+        services.AddServicesFromAssembly(Assembly.Load(assemblyName), configureOptions);
 
     /// <inheritdoc cref="AddServicesFromAssembly(IServiceCollection,Assembly,Action{InjectionOptions}?)"/>
-    public static IServiceCollection AddServicesFromAssemblies(this IServiceCollection services, IEnumerable<string> assemblyNames, Action<InjectionOptions>? configureOptions = null)
-    {
-        return services.AddServicesFromAssemblies(assemblyNames.Select(Assembly.Load), configureOptions);
-    }
+    public static IServiceCollection AddServicesFromAssemblies(this IServiceCollection services, IEnumerable<string> assemblyNames,
+        Action<InjectionOptions>? configureOptions = null) =>
+        services.AddServicesFromAssemblies(assemblyNames.Select(Assembly.Load), configureOptions);
 
     /// <inheritdoc cref="AddServicesFromAssembly(IServiceCollection,Assembly,Action{InjectionOptions}?)"/>
-    public static IServiceCollection AddServicesFromAssemblies(this IServiceCollection services, IEnumerable<Assembly> assemblies, Action<InjectionOptions>? configureOptions = null)
+    public static IServiceCollection AddServicesFromAssemblies(this IServiceCollection services, IEnumerable<Assembly> assemblies,
+        Action<InjectionOptions>? configureOptions = null)
     {
         var options = new InjectionOptions();
         configureOptions?.Invoke(options);
@@ -56,26 +54,24 @@ public static partial class ServiceCollectionExtensions
         string? env = options.Environment ?? environment?.EnvironmentName;
 
         options.ServiceAssemblies ??= AssemblyProvider.ApplicationAssemblies;
-        IEnumerable<Type> serviceTypes = options.ServiceAssemblies.SelectMany(sa => sa.GetTypes());
+        var serviceTypes = options.ServiceAssemblies.SelectMany(sa => sa.GetTypes());
         if (!options.ResolveInternalImplementations)
             serviceTypes = serviceTypes.Where(st => st.IsPublic);
 
         var serviceWithAttributes = serviceTypes
-            .SelectMany(st => st.GetCustomAttributes<ServiceAttribute>()
-                .Select(attr => (Service: st, Attribute: attr)))
-            .OrderBy(st => st.Attribute.Priority);
-        foreach (var servInfo in serviceWithAttributes)
+                                    .SelectMany(st => st.GetCustomAttributes<ServiceAttribute>()
+                                                        .Select(attr => (Service: st, Attribute: attr)))
+                                    .OrderBy(st => st.Attribute.Priority);
+        foreach (var (serviceType, attribute) in serviceWithAttributes)
         {
-            ServiceAttribute attr = servInfo.Attribute;
-
-            if (attr.InjectionType is InjectionType.Default)
-                attr.InjectionType = options.DefaultInjectionType;
-            if (attr.Lifetime.HasFlag(Lifetime.Default))
-                attr.Lifetime = options.DefaultLifetime.ToInstanceLifetime();
+            if (attribute.InjectionType is InjectionType.Default)
+                attribute.InjectionType = options.DefaultInjectionType;
+            if (attribute.Lifetime.HasFlag(Lifetime.Default))
+                attribute.Lifetime = options.DefaultLifetime.ToInstanceLifetime();
 
             // Ignore service if environment is required and current env IS NOT EQUALS service env
-            if (IsCurrentEnvironment(attr.Environment, env))
-                services.InjectDependency(attr, servInfo.Service);
+            if (IsCurrentEnvironment(attribute.Environment, env))
+                services.InjectDependency(attribute, serviceType);
         }
 
         return services;

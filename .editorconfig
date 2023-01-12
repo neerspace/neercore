@@ -23,7 +23,6 @@ ij_continuation_indent_size = 2
 ij_smart_tabs               = false
 ij_visual_guides            = 140 # right guideline position in your code (none – to disable)
 ij_wrap_on_typing           = false
-file_header_template        = Copyright 2022 @jurilents\n\nLicensed under the Apache License, Version 2.0 (the "License").\nyou may not use this file except in compliance with the License.\nYou may obtain a copy of the License at\nhttps://github.com/NeerSpace/NeerCore/blob/master/LICENSE
 
 
 ###############################
@@ -82,33 +81,36 @@ csharp_prefer_simple_default_expression                                  = true:
 # Style Definitions
 dotnet_naming_style.pascal_case_style.capitalization                     = pascal_case
 
+dotnet_naming_style.camel_case_underscore_style.required_prefix          = _
+dotnet_naming_style.camel_case_underscore_style.capitalization           = camel_case
+
+dotnet_naming_style.camel_case_static_style.required_prefix              = s_
+dotnet_naming_style.camel_case_static_style.capitalization               = camel_case
+
+dotnet_naming_style.upper_camel_case_style.capitalization                = all_upper
+
 # Use PascalCase for constant fields
-dotnet_naming_rule.constant_fields_should_be_pascal_case.severity        = suggestion
+dotnet_naming_rule.constant_fields_should_be_pascal_case.severity        = warning
 dotnet_naming_rule.constant_fields_should_be_pascal_case.symbols         = constant_fields
 dotnet_naming_rule.constant_fields_should_be_pascal_case.style           = pascal_case_style
 dotnet_naming_symbols.constant_fields.applicable_kinds                   = field
 dotnet_naming_symbols.constant_fields.applicable_accessibilities         = *
 dotnet_naming_symbols.constant_fields.required_modifiers                 = const
-dotnet_naming_style.pascal_case_style.capitalization                     = pascal_case
 
 # static fields should have s_ prefix
-dotnet_naming_rule.static_fields_should_have_prefix.severity             = suggestion
+dotnet_naming_rule.static_fields_should_have_prefix.severity             = warning
 dotnet_naming_rule.static_fields_should_have_prefix.symbols              = static_fields
-dotnet_naming_rule.static_fields_should_have_prefix.style                = static_prefix_style
+dotnet_naming_rule.static_fields_should_have_prefix.style                = camel_case_static_style
 dotnet_naming_symbols.static_fields.applicable_kinds                     = field
 dotnet_naming_symbols.static_fields.required_modifiers                   = static
-dotnet_naming_symbols.static_fields.applicable_accessibilities           = private, internal, private_protected
-dotnet_naming_style.static_prefix_style.required_prefix                  = s_
-dotnet_naming_style.static_prefix_style.capitalization                   = camel_case
+dotnet_naming_symbols.static_fields.applicable_accessibilities           = private, private_protected
 
-# internal and private fields should be _camelCase
-dotnet_naming_rule.camel_case_for_private_internal_fields.severity       = suggestion
+# private fields should be _camelCase
+dotnet_naming_rule.camel_case_for_private_internal_fields.severity       = warning
 dotnet_naming_rule.camel_case_for_private_internal_fields.symbols        = private_internal_fields
 dotnet_naming_rule.camel_case_for_private_internal_fields.style          = camel_case_underscore_style
+dotnet_naming_symbols.private_internal_fields.applicable_accessibilities = private
 dotnet_naming_symbols.private_internal_fields.applicable_kinds           = field
-dotnet_naming_symbols.private_internal_fields.applicable_accessibilities = private, internal
-dotnet_naming_style.camel_case_underscore_style.required_prefix          = _
-dotnet_naming_style.camel_case_underscore_style.capitalization           = camel_case
 
 ###############################
 # C# Coding Conventions       #
@@ -126,6 +128,7 @@ csharp_prefer_braces                                                     = false
 csharp_prefer_static_local_function                                      = false:suggestion
 csharp_prefer_simple_using_statement                                     = true:suggestion
 csharp_style_prefer_switch_expression                                    = true:suggestion
+csharp_preferred_modifier_order                                          = public, private, protected, internal, file, new, static, abstract, virtual, sealed, readonly, override, extern, unsafe, volatile, async, required:suggestion
 
 # Expression-bodied members
 csharp_style_expression_bodied_methods                                   = true:hint
@@ -173,35 +176,21 @@ csharp_indent_switch_labels                                              = true
 csharp_indent_labels                                                     = one_less_than_current
 
 # Space preferences
-csharp_space_after_cast                                                  = true
-csharp_space_after_colon_in_inheritance_clause                           = true
-csharp_space_after_comma                                                 = true
-csharp_space_after_dot                                                   = false
+csharp_space_after_cast                                                  = false
 csharp_space_after_keywords_in_control_flow_statements                   = true
-csharp_space_after_semicolon_in_for_statement                            = true
 csharp_space_between_method_call_parameter_list_parentheses              = false
 csharp_space_between_method_declaration_parameter_list_parentheses       = false
-csharp_space_between_parentheses                                         = false
-csharp_space_before_comma                                                = false
-csharp_space_before_dot                                                  = false
-csharp_space_before_open_square_brackets                                 = false
-csharp_space_before_semicolon_in_for_statement                           = false
-csharp_space_between_empty_square_brackets                               = false
-csharp_space_around_declaration_statements                               = do_not_ignore
 csharp_space_before_colon_in_inheritance_clause                          = true
 csharp_space_after_colon_in_inheritance_clause                           = true
 csharp_space_around_binary_operators                                     = before_and_after
 csharp_space_between_method_declaration_empty_parameter_list_parentheses = false
 csharp_space_between_method_call_name_and_opening_parenthesis            = false
 csharp_space_between_method_call_empty_parameter_list_parentheses        = false
-csharp_space_between_method_declaration_name_and_open_parenthesis        = false
-csharp_space_between_square_brackets                                     = false
-
 # Wrapping preferences
 csharp_preserve_single_line_statements                                   = true
 csharp_preserve_single_line_blocks                                       = true
 
-# License header
+# Do prefer or do not prefer
 csharp_style_namespace_declarations                                      = file_scoped:suggestion
 csharp_style_prefer_null_check_over_type_check                           = true:suggestion
 csharp_style_prefer_local_over_anonymous_function                        = true:suggestion
@@ -215,31 +204,50 @@ csharp_style_prefer_extended_property_pattern                            = true:
 csharp_style_prefer_parameter_null_checking                              = true:suggestion
 csharp_style_prefer_method_group_conversion                              = true:suggestion
 
-# Resharper
-csharp_int_align_switch_sections                                         = true
-csharp_int_align_switch_expressions                                      = true
-csharp_place_simple_initializer_on_single_line                           = true:silent
-# csharp_max_initializer_elements_on_line = 2
-csharp_wrap_object_and_collection_initializer_style                      = chop_if_long
-csharp_wrap_parameters_style                                             = wrap_if_long
-csharp_max_formal_parameters_on_line                                     = 4
-csharp_wrap_after_declaration_lpar                                       = true
+# ReSharper
+resharper_int_align_switch_expressions                                   = true
+resharper_int_align_switch_sections                                      = true
+resharper_place_simple_initializer_on_single_line                        = true
+resharper_max_enum_members_on_line                                       = 1
+resharper_max_initializer_elements_on_line                               = 1
+resharper_wrap_object_and_collection_initializer_style                   = chop_if_long
+resharper_wrap_parameters_style                                          = wrap_if_long
+resharper_max_formal_parameters_on_line                                  = 4
+resharper_wrap_after_declaration_lpar                                    = true
 
-# Resharper highlightings
+resharper_csharp_align_multiline_calls_chain                             = false
+resharper_csharp_outdent_dots                                            = false
+resharper_csharp_indent_anonymous_method_block                           = false
+resharper_align_linq_query                                               = false
+
+resharper_csharp_empty_block_style                                       = together_same_line
+resharper_csharp_stick_comment                                           = false
+resharper_keep_existing_embedded_arrangement                             = false
+resharper_keep_existing_initializer_arrangement                          = false # new() { A = 123 }
+resharper_keep_existing_switch_expression_arrangement                    = false
+resharper_max_array_initializer_elements_on_line                         = 10
+resharper_place_accessorholder_attribute_on_same_line                    = false
+resharper_place_accessor_attribute_on_same_line                          = true
+resharper_place_linq_into_on_new_line                                    = false
+resharper_place_simple_case_statement_on_same_line                       = if_owner_is_single_line
+resharper_place_simple_embedded_statement_on_same_line                   = false
+resharper_use_continuous_indent_inside_parens                            = false
+resharper_wrap_chained_binary_expressions                                = chop_if_long
+resharper_wrap_for_stmt_header_style                                     = wrap_if_long
+
+# ReSharper inspection severities
+resharper_arrange_redundant_parentheses_highlighting                     = hint
+resharper_arrange_this_qualifier_highlighting                            = hint
+resharper_arrange_type_member_modifiers_highlighting                     = hint
+resharper_arrange_type_modifiers_highlighting                            = hint
+resharper_built_in_type_reference_style_for_member_access_highlighting   = suggestion
+resharper_built_in_type_reference_style_highlighting                     = suggestion
+resharper_redundant_base_qualifier_highlighting                          = warning
 
 # Resharper recommends to use 'abstract class' where it's possible,
 # but almost we use reflection to create instances,
 # so this highlighting is redundant for us
 resharper_class_never_instantiated_global_highlighting                   = none
-
-
-# Microsoft .NET properties
-csharp_space_between_parentheses                                         = false
-csharp_space_between_square_brackets                                     = false
-
-# ReSharper properties
-resharper_csharp_align_multiline_calls_chain                             = false
-resharper_csharp_outdent_dots                                            = true
 
 
 # ###############################

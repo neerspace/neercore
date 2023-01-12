@@ -27,7 +27,7 @@ internal static class IdentifierFactory
         ilGenerator.Emit(OpCodes.Ldarg_0);
         ilGenerator.Emit(OpCodes.Call, ctor);
         ilGenerator.Emit(OpCodes.Ret);
-        var constructorInvoker = (GeneralConstructor)ctorMethod.CreateDelegate(typeof(GeneralConstructor));
+        var constructorInvoker = (GeneralConstructor) ctorMethod.CreateDelegate(typeof(GeneralConstructor));
         return constructorInvoker;
     }
 }

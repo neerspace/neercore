@@ -12,14 +12,16 @@ public sealed class InternalServerException : HttpException
     public override string ErrorType => "InternalServerError";
 
 
-    public InternalServerException(string message, bool addTraceDetails = false) : base(message)
+    public InternalServerException(string message) : base(message) { }
+
+    public InternalServerException(string message, Exception innerException) : base(message)
     {
-        if (addTraceDetails)
+        if (innerException is null) throw new ArgumentNullException(nameof(innerException));
+
+        Details = new ErrorDetails[]
         {
-            Details = new ErrorDetails[]
-            {
-                new("Trace", ToString())
-            };
-        }
+            new("Exception", innerException.Message),
+            new("Trace", innerException.StackTrace ?? innerException.ToString())
+        };
     }
 }

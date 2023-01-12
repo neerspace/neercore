@@ -14,14 +14,12 @@ public static class EnumExtensions
             yield return ServiceLifetime.Transient;
     }
 
-    public static Lifetime ToInstanceLifetime(this ServiceLifetime serviceLifetime)
-    {
-        return serviceLifetime switch
+    public static Lifetime ToInstanceLifetime(this ServiceLifetime serviceLifetime) =>
+        serviceLifetime switch
         {
             ServiceLifetime.Singleton => Lifetime.Singleton,
             ServiceLifetime.Scoped    => Lifetime.Scoped,
             ServiceLifetime.Transient => Lifetime.Transient,
             _                         => throw new ArgumentOutOfRangeException(nameof(serviceLifetime), serviceLifetime, null)
         };
-    }
 }

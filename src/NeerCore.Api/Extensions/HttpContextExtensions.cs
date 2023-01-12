@@ -62,7 +62,7 @@ public static class HttpContextExtensions
     public static async Task Write500ErrorAsync(this HttpResponse context, Exception exception, bool extended = false)
     {
         var message = extended ? exception.Message : "Server Error.";
-        var error = new InternalServerException(message, addTraceDetails: extended).CreateError();
+        var error = new InternalServerException(message, exception).CreateError();
 
         await context.WriteJsonAsync(HttpStatusCode.InternalServerError, error);
     }
