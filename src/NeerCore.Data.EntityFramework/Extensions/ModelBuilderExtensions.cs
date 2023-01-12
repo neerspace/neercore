@@ -14,7 +14,7 @@ namespace NeerCore.Data.EntityFramework.Extensions;
 public static class ModelBuilderExtensions
 {
     /// <summary>
-    ///   
+    /// Configure entities
     /// </summary>
     /// <param name="builder"></param>
     /// <param name="configureOptions"></param>
@@ -43,7 +43,7 @@ public static class ModelBuilderExtensions
     }
 
     /// <summary>
-    ///   
+    ///
     /// </summary>
     /// <param name="builder"></param>
     /// <param name="options"></param>
@@ -85,7 +85,7 @@ public static class ModelBuilderExtensions
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     /// <param name="builder"></param>
     /// <param name="assembly"></param>
@@ -96,7 +96,7 @@ public static class ModelBuilderExtensions
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     /// <param name="builder"></param>
     /// <param name="assembly"></param>
@@ -124,7 +124,7 @@ public static class ModelBuilderExtensions
     }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     /// <param name="builder"></param>
     /// <param name="configureOptions"></param>

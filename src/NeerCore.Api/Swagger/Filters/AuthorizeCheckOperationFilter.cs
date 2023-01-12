@@ -7,14 +7,16 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace NeerCore.Api.Swagger.Filters;
 
+/// <summary>
+///
+/// </summary>
 public sealed class AuthorizeCheckOperationFilter : IOperationFilter
 {
     private readonly SwaggerSecurityOptions _securityOptions;
 
-    public AuthorizeCheckOperationFilter(IOptions<SwaggerConfigurationOptions> optionsAccessor)
-    {
+    public AuthorizeCheckOperationFilter(IOptions<SwaggerConfigurationOptions> optionsAccessor) =>
         _securityOptions = optionsAccessor.Value.Security;
-    }
+
 
     public void Apply(OpenApiOperation operation, OperationFilterContext context)
     {
@@ -23,7 +25,7 @@ public sealed class AuthorizeCheckOperationFilter : IOperationFilter
         if (methodInfo == null)
             return;
 
-        var hasAuthorizeAttribute = false;
+        bool hasAuthorizeAttribute = false;
 
         if (methodInfo.MemberType == MemberTypes.Method)
         {
@@ -46,7 +48,7 @@ public sealed class AuthorizeCheckOperationFilter : IOperationFilter
         if (operation.Responses.All(r => r.Key != StatusCodes.Status403Forbidden.ToString()))
             operation.Responses.Add(StatusCodes.Status403Forbidden.ToString(), new OpenApiResponse { Description = "Forbidden" });
 
-        // NOTE: This adds the "Padlock" icon to the endpoint in swagger, 
+        // NOTE: This adds the "Padlock" icon to the endpoint in swagger,
         //       we can also pass through the names of the policies in the string[]
         //       which will indicate which permission you require.
         operation.Security = new List<OpenApiSecurityRequirement>

@@ -14,8 +14,8 @@ public static class AssemblyProvider
 {
     public static string ProjectRootNamespace { get; private set; } = Assembly.GetEntryAssembly()?.FullName?.Split('.')[0] ?? "";
 
-    private static List<Assembly>? applicationAssemblies;
-    private static List<Assembly>? allAssemblies;
+    private static List<Assembly>? s_applicationAssemblies;
+    private static List<Assembly>? s_allAssemblies;
 
     /// <summary>
     ///   Returns a list of types only from your assemblies.
@@ -24,12 +24,12 @@ public static class AssemblyProvider
     ///   Please use naming style like 'MyApp.Application', 'MyApp.Data.Sqlite',
     ///   if you want to work with this method in correct way :)
     /// </remarks>
-    public static IList<Assembly> ApplicationAssemblies => applicationAssemblies ??= AllAssemblies.Where(IsApplicationAssembly).ToList();
+    public static IList<Assembly> ApplicationAssemblies => s_applicationAssemblies ??= AllAssemblies.Where(IsApplicationAssembly).ToList();
 
     /// <summary>
     ///   Returns a list of types from all available assemblies.
     /// </summary>
-    public static IList<Assembly> AllAssemblies => allAssemblies ??= LoadAllAssemblies().ToList();
+    public static IList<Assembly> AllAssemblies => s_allAssemblies ??= LoadAllAssemblies().ToList();
 
     /// <summary>
     ///   The way how to determinate that a assembly is source of your app.
@@ -60,7 +60,8 @@ public static class AssemblyProvider
     /// <inheritdoc cref="GetImplementationsOf{TBase}"/>
     public static IEnumerable<Type> GetImplementationsFromAssembly(Type baseType, Assembly assembly)
     {
-        if (assembly is null) throw new ArgumentNullException(nameof(assembly));
+        if (assembly is null)
+            throw new ArgumentNullException(nameof(assembly));
         return assembly.GetTypes()
             .Where(t => t.InheritsFrom(baseType));
     }

@@ -11,37 +11,44 @@ namespace NeerCore.Logging;
 
 internal static class DefaultLoggerInstaller
 {
-    private static readonly LoggingSettings Settings = new();
+    private static readonly LoggingSettings s_settings = new();
 
     private const string DateTimeRegExp = @"\[(2[0-3]|[01]?[0-9]):([0-5]?[0-9]):([0-5]?[0-9])\.\d\d\d\d\]";
 
     internal static void Configure(Action<LoggingSettings>? configureOptions = null)
     {
-        configureOptions?.Invoke(Settings);
-        if (!Settings.LogLevel.ContainsKey("*"))
-            Settings.LogLevel.Add("*", "Warning");
+        configureOptions?.Invoke(s_settings);
+        if (!s_settings.LogLevel.ContainsKey("*"))
+            s_settings.LogLevel.Add("*", "Warning");
 
         var configuration = new LoggingConfiguration();
 
-        if (Settings.ConsoleLogger is { Enabled: true })
+        if (s_settings.Targets.Console is { Enabled: true })
         {
-            ColoredConsoleTarget logConsole = CreateConsoleLogTarget();
-            configuration.AddTarget(nameof(logConsole), logConsole!);
-            ApplyLogLevelsFromSettings(configuration, logConsole!);
+            ColoredConsoleTarget logConsole = CreateConsoleLogTarget(s_settings.Targets.Console);
+            configuration.AddTarget(nameof(logConsole), logConsole);
+            ApplyLogLevelsFromSettings(configuration, logConsole);
         }
 
-        if (Settings.FullFileLogger is { Enabled: true })
+        if (s_settings.Targets.ErrorFile is { Enabled: true })
         {
-            FileTarget logFile = CreateFullFileLogTarget();
+            FileTarget logErrorsFile = CreateErrorFileLogTarget(s_settings.Targets.ErrorFile);
+            configuration.AddTarget(nameof(logErrorsFile), logErrorsFile);
+            configuration.LoggingRules.Add(new LoggingRule("*", LogLevel.Warn, logErrorsFile));
+        }
+
+        if (s_settings.Targets.FullFile is { Enabled: true })
+        {
+            FileTarget logFile = CreateFullFileLogTarget(s_settings.Targets.FullFile);
             configuration.AddTarget(nameof(logFile), logFile);
             ApplyLogLevelsFromSettings(configuration, logFile);
         }
 
-        if (Settings.ErrorFileLogger is { Enabled: true })
+        if (s_settings.Targets.JsonFile is { Enabled: true })
         {
-            FileTarget logErrorsFile = CreateErrorFileLogTarget();
-            configuration.AddTarget(nameof(logErrorsFile), logErrorsFile);
-            configuration.LoggingRules.Add(new LoggingRule("*", LogLevel.Warn, logErrorsFile));
+            FileTarget logFile = CreateFullJsonLogTarget(s_settings.Targets.JsonFile);
+            configuration.AddTarget(nameof(logFile), logFile);
+            ApplyLogLevelsFromSettings(configuration, logFile);
         }
 
         ConfigurationItemFactory.Default.RegisterItemsFromAssembly(Assembly.Load("NLog.Extensions.Logging"));
@@ -53,7 +60,7 @@ internal static class DefaultLoggerInstaller
     {
         // string applicationNamespace = Assembly.GetEntryAssembly()!.GetBaseNamespace();
 
-        foreach (var logLevel in Settings.LogLevel)
+        foreach (var logLevel in s_settings.LogLevel)
         {
             // TODO: Explore more about final rules
             bool isFinal = false; // logLevel.Key != "*" && !logLevel.Key.StartsWith(applicationNamespace);
@@ -63,14 +70,14 @@ internal static class DefaultLoggerInstaller
 
     private static LogLevel ParseLogLevel(string logLevelValue) => logLevelValue switch
     {
-        "Trace" => LogLevel.Trace,
-        "Debug" => LogLevel.Debug,
+        "Trace"                 => LogLevel.Trace,
+        "Debug"                 => LogLevel.Debug,
         "Information" or "Info" => LogLevel.Info,
-        "Warning" or "Warn" => LogLevel.Warn,
-        "Error" => LogLevel.Error,
-        "Critical" or "Fatal" => LogLevel.Fatal,
-        "None" or "Off" => LogLevel.Off,
-        _ => throw new InvalidLogLevelException(logLevelValue)
+        "Warning" or "Warn"     => LogLevel.Warn,
+        "Error"                 => LogLevel.Error,
+        "Critical" or "Fatal"   => LogLevel.Fatal,
+        "None" or "Off"         => LogLevel.Off,
+        _                       => throw new InvalidLogLevelException(logLevelValue)
     };
 
     private static string BuildLogFilePath(string? fileName)
@@ -78,7 +85,7 @@ internal static class DefaultLoggerInstaller
         if (string.IsNullOrEmpty(fileName))
             throw new ArgumentNullException(nameof(fileName), "File name is not invalid.");
 
-        string path = Settings.Shared.LogsDirectoryPath + fileName;
+        string path = s_settings.Shared.LogsDirectoryPath + fileName;
 
         if (path.Contains('~'))
         {
@@ -99,29 +106,50 @@ internal static class DefaultLoggerInstaller
         return path;
     }
 
-    private static FileTarget CreateErrorFileLogTarget()
+    private static FileTarget CreateErrorFileLogTarget(LoggerTargetSettings targetSettings)
     {
         return new FileTarget("logErrorsFile")
         {
-            FileName = BuildLogFilePath(Settings.ErrorFileLogger.FilePath),
-            Layout = FormatLayout(LoggerLayouts.FileLayout, Settings.ErrorFileLogger)
+            FileName = BuildLogFilePath(targetSettings.FilePath),
+            Layout = FormatLayout(LoggerLayouts.FileLayout, targetSettings)
         };
     }
 
-    private static FileTarget CreateFullFileLogTarget()
+    private static FileTarget CreateFullFileLogTarget(LoggerTargetSettings targetSettings)
     {
         return new FileTarget("logFile")
         {
-            FileName = BuildLogFilePath(Settings.FullFileLogger.FilePath),
-            Layout = FormatLayout(LoggerLayouts.FileLayout, Settings.FullFileLogger)
+            FileName = BuildLogFilePath(targetSettings.FilePath),
+            Layout = FormatLayout(LoggerLayouts.FileLayout, targetSettings)
         };
     }
 
-    private static ColoredConsoleTarget CreateConsoleLogTarget()
+    private static FileTarget CreateFullJsonLogTarget(LoggerTargetSettings targetSettings)
+    {
+        return new FileTarget("logJsonFile")
+        {
+            FileName = BuildLogFilePath(targetSettings.FilePath),
+            Layout = new JsonLayout
+            {
+                Attributes =
+                {
+                    new JsonAttribute("datetime", "${longdate}"),
+                    new JsonAttribute("level", "${level:uppercase=true}"),
+                    new JsonAttribute("logger", targetSettings.ShortLoggerNames
+                        ? "${logger:shortname=true}"
+                        : "${logger}"),
+                    new JsonAttribute("message", "${message}"),
+                    new JsonAttribute("exception", "${exception:format=ToString}"),
+                }
+            }
+        };
+    }
+
+    private static ColoredConsoleTarget CreateConsoleLogTarget(LoggerTargetSettings settings)
     {
         return new ColoredConsoleTarget("logConsole")
         {
-            Layout = FormatLayout(LoggerLayouts.ConsoleLayout, Settings.ConsoleLogger),
+            Layout = FormatLayout(LoggerLayouts.ConsoleLayout, settings),
             UseDefaultRowHighlightingRules = true,
             RowHighlightingRules =
             {
@@ -148,33 +176,38 @@ internal static class DefaultLoggerInstaller
         };
     }
 
-    private static Layout FormatLayout(string layout, SingleLoggerSettings loggerSettings)
+
+    private static Layout FormatLayout(string layout, LoggerTargetSettings loggerTargetSettings)
     {
-        return loggerSettings.ShortLoggerNames
+        return loggerTargetSettings.ShortLoggerNames
             ? layout.Replace("${logger}", "${logger:shortname=true:padding=20}")
             : layout.Replace("${logger}", "${logger:padding=30}");
     }
 
-    private static ConsoleRowHighlightingRule ConsoleRowHighlightingRule(string condition,
+    private static ConsoleRowHighlightingRule ConsoleRowHighlightingRule(
+        string condition,
         ConsoleOutputColor foregroundColor, ConsoleOutputColor backgroundColor = ConsoleOutputColor.NoChange)
     {
         return new ConsoleRowHighlightingRule(ConditionParser.ParseExpression(condition), foregroundColor, backgroundColor);
     }
 
-    private static ConsoleWordHighlightingRule ConsoleWordHighlightingRule(string word,
+    private static ConsoleWordHighlightingRule ConsoleWordHighlightingRule(
+        string word,
         ConsoleOutputColor foregroundColor, ConsoleOutputColor backgroundColor = ConsoleOutputColor.NoChange)
     {
         return new ConsoleWordHighlightingRule(word, foregroundColor, backgroundColor);
     }
 
-    private static ConsoleWordHighlightingRule ConsoleWordsSetHighlightingRule(string[] words,
+    private static ConsoleWordHighlightingRule ConsoleWordsSetHighlightingRule(
+        string[] words,
         ConsoleOutputColor foregroundColor, ConsoleOutputColor backgroundColor = ConsoleOutputColor.NoChange)
     {
         string wordsPattern = string.Join('|', words);
         return ConsoleWordHighlightingRegexRule($@"(?:^|\W)({wordsPattern})(?:$|\W)", foregroundColor, backgroundColor);
     }
 
-    private static ConsoleWordHighlightingRule ConsoleWordHighlightingRegexRule(string regex,
+    private static ConsoleWordHighlightingRule ConsoleWordHighlightingRegexRule(
+        string regex,
         ConsoleOutputColor foregroundColor, ConsoleOutputColor backgroundColor = ConsoleOutputColor.NoChange)
     {
         return new ConsoleWordHighlightingRule()
