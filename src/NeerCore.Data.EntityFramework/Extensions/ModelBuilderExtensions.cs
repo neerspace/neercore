@@ -30,7 +30,8 @@ public static class ModelBuilderExtensions
 
         foreach (Assembly? dataAssembly in options.DataAssemblies)
         {
-            if (dataAssembly is null) continue;
+            if (dataAssembly is null)
+                continue;
 
             builder.AddLocalizedStrings(dataAssembly);
             if (options.ApplyEntityTypeConfigurations)
@@ -102,6 +103,8 @@ public static class ModelBuilderExtensions
     /// <param name="assembly"></param>
     public static ModelBuilder AddLocalizedStrings(this ModelBuilder builder, Assembly? assembly = null)
     {
+        assembly ??= Assembly.GetCallingAssembly();
+
         var valueComparer = new ValueComparer<LocalizedString>(
             (ls1, ls2) => ls1.Equals(ls2),
             ls => ls.GetHashCode(),
@@ -141,15 +144,16 @@ public static class ModelBuilderExtensions
         string defaultValueSql = options.EngineStrategy switch
         {
             DbEngineStrategy.SqlServer => utc ? "SYSUTCDATETIME()" : "SYSDATETIME()",
-            DbEngineStrategy.Sqlite    => utc ? "DATETIME('now')" : "DATETIME()",
-            DbEngineStrategy.Postgres  => utc ? "TIMEZONE('utc', NOW())" : "NOW()",
-            _                          => throw new ArgumentException($"{nameof(DbEngineStrategy)} of {options.EngineStrategy} is not currently supported.")
+            DbEngineStrategy.Sqlite => utc ? "DATETIME('now')" : "DATETIME()",
+            DbEngineStrategy.Postgres => utc ? "TIMEZONE('utc', NOW())" : "NOW()",
+            _ => throw new ArgumentException($"{nameof(DbEngineStrategy)} of {options.EngineStrategy} is not currently supported.")
         };
 
         options.DataAssemblies ??= new[] { Assembly.GetCallingAssembly() };
         foreach (var assembly in options.DataAssemblies)
         {
-            if (assembly is null) continue;
+            if (assembly is null)
+                continue;
 
             foreach (Type creatableEntityType in AssemblyProvider.GetImplementationsFromAssembly<ICreatableEntity>(assembly))
             {

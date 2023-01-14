@@ -58,6 +58,7 @@ public class LocalizationDictionary : IDictionary<string, string>
     /// </param>
     /// <exception cref="InvalidLanguageCodeException">If localization already exists in the dictionary.</exception>
     public void Add(KeyValuePair<string, string> localization) => Add(localization.Key, localization.Value);
+
     public void Clear() => _dict.Clear();
     public bool Contains(KeyValuePair<string, string> localization) => _dict.Contains(localization);
     public bool ContainsKey(string languageCode) => IsValidLanguageCode(languageCode) && _dict.ContainsKey(languageCode);
@@ -65,7 +66,8 @@ public class LocalizationDictionary : IDictionary<string, string>
     public void CopyTo(KeyValuePair<string, string>[] array, int arrayIndex)
     {
         if (array.Length - arrayIndex < _dict.Count)
-            throw new ArgumentException($"Not enough length of the array to copy there. (Array length is {array.Length - arrayIndex} at index {arrayIndex})");
+            throw new ArgumentException(
+                $"Not enough length of the array to copy there. (Array length is {array.Length - arrayIndex} at index {arrayIndex})");
 
         foreach (var localization in _dict)
         {
