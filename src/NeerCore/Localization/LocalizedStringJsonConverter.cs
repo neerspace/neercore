@@ -1,7 +1,7 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
-namespace NeerCore.Data;
+namespace NeerCore.Localization;
 
 /// <summary>
 ///   Custom <b>System.Text.Json</b> JSON converter for <see cref="LocalizedString"/>.

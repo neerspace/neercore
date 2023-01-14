@@ -1,5 +1,5 @@
 using Mapster;
-using NeerCore.Data;
+using NeerCore.Localization;
 
 namespace NeerCore.Mapping.DefaultMappers;
 

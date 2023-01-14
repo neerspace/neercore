@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Text.Json;
 using NeerCore.Exceptions;
 
-namespace NeerCore.Data;
+namespace NeerCore.Localization;
 
 /// <summary>
 ///

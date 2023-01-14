@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using NeerCore.Data;
+using NeerCore.Localization;
 
 namespace NeerCoreTestingSuite.WebApp.Dto.Teas;
 

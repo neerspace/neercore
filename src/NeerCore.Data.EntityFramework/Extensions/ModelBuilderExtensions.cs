@@ -6,6 +6,7 @@ using NeerCore.Data.Abstractions;
 using NeerCore.Data.EntityFramework.Abstractions;
 using NeerCore.Data.EntityFramework.Design;
 using NeerCore.DependencyInjection;
+using NeerCore.Localization;
 
 namespace NeerCore.Data.EntityFramework.Extensions;
 

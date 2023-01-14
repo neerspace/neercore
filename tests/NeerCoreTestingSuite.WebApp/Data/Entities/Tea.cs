@@ -1,6 +1,6 @@
-﻿using NeerCore.Data;
-using NeerCore.Data.Abstractions;
+﻿using NeerCore.Data.Abstractions;
 using NeerCore.Data.EntityFramework.Attributes;
+using NeerCore.Localization;
 
 namespace NeerCoreTestingSuite.WebApp.Data.Entities;
 

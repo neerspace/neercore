@@ -4,7 +4,6 @@ using NeerCore.Api;
 using NeerCore.Api.Extensions;
 using NeerCore.Api.Swagger.Extensions;
 using NeerCore.Application.Extensions;
-using NeerCore.Data;
 using NeerCore.Data.EntityFramework.Abstractions;
 using NeerCore.Data.EntityFramework.Extensions;
 using NeerCore.DependencyInjection.Extensions;
@@ -46,8 +45,7 @@ static void ConfigureBuilder(WebApplicationBuilder builder)
     builder.Services.AddAllMappers();
 
     builder.Services.AddNeerApiServices();
-    builder.Services.AddNeerControllers()
-        .AddJsonOptions(json => json.JsonSerializerOptions.Converters.Add(new LocalizedStringJsonConverter()));
+    builder.Services.AddNeerControllers();
 }
 
 static WebApplication ConfigureWebApp(WebApplication app)

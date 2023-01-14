@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Diagnostics.CodeAnalysis;
-using NeerCore.Data.Exceptions;
+using NeerCore.Localization.Exceptions;
 
-namespace NeerCore.Data;
+namespace NeerCore.Localization;
 
 /// <summary>Dictionary wrapper for localization system.</summary>
 public class LocalizationDictionary : IDictionary<string, string>
