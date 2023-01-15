@@ -24,16 +24,16 @@ public abstract class HttpException : Exception
     ///   It is often necessary to provide additional information,
     ///   such as which fields have which list of errors.
     /// </summary>
-    public IReadOnlyList<ErrorDetails>? Details { get; set; }
+    public IReadOnlyDictionary<string, object>? Details { get; set; }
 
 
-    protected HttpException(string message, IReadOnlyList<ErrorDetails>? details = null) : base(message)
+    protected HttpException(string message, IReadOnlyDictionary<string, object>? details = null) : base(message)
     {
         Details = details;
     }
 
     protected HttpException(string field, string message) : base(message)
     {
-        Details = new[] { new ErrorDetails(field, message) };
+        Details = new Dictionary<string, object> { { field, message } };
     }
 }

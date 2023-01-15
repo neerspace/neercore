@@ -12,6 +12,14 @@ public sealed class ValidationFailedException : HttpException
     public override string ErrorType => "ValidationFailed";
 
 
-    public ValidationFailedException(string message, IReadOnlyList<ErrorDetails>? details = null) : base(message, details) { }
+    /// <summary>
+    ///   Creates an instance of the <see cref="ValidationFailedException"/> with additional params.
+    /// </summary>
+    public ValidationFailedException(string message, IReadOnlyDictionary<string, object>? details = null) : base(message, details) { }
+
+    /// <summary>
+    ///   Creates an instance of the <see cref="ValidationFailedException"/>.
+    ///   Useful when you need to throw this exception for single property.
+    /// </summary>
     public ValidationFailedException(string field, string message) : base(field, message) { }
 }

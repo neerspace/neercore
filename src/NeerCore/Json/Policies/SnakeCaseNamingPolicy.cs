@@ -13,5 +13,6 @@ public sealed class SnakeCaseNamingPolicy : JsonNamingPolicy
     /// </summary>
     public static SnakeCaseNamingPolicy Instance { get; } = new();
 
+    /// <inheritdoc cref="JsonNamingPolicy.ConvertName"/>
     public override string ConvertName(string name) => name.ToSnakeCase();
 }

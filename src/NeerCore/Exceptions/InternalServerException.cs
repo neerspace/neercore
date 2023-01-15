@@ -8,7 +8,10 @@ namespace NeerCore.Exceptions;
 /// </summary>
 public sealed class InternalServerException : HttpException
 {
+    /// <inheritdoc cref="HttpException.StatusCode"/>
     public override HttpStatusCode StatusCode => HttpStatusCode.InternalServerError;
+
+    /// <inheritdoc cref="HttpException.ErrorType"/>
     public override string ErrorType => "InternalServerError";
 
 
@@ -16,12 +19,13 @@ public sealed class InternalServerException : HttpException
 
     public InternalServerException(string message, Exception innerException) : base(message)
     {
-        if (innerException is null) throw new ArgumentNullException(nameof(innerException));
+        if (innerException is null)
+            throw new ArgumentNullException(nameof(innerException));
 
-        Details = new ErrorDetails[]
+        Details = new Dictionary<string, object>
         {
-            new("Exception", innerException.Message),
-            new("Trace", innerException.StackTrace ?? innerException.ToString())
+            { "exception", innerException.Message },
+            { "trace", (innerException.StackTrace ?? innerException.ToString()).Split('\n').Select(x => x.Trim()) }
         };
     }
 }
