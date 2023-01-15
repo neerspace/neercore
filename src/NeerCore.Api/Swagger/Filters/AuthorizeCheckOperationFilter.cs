@@ -7,6 +7,8 @@ using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace NeerCore.Api.Swagger.Filters;
 
+// TODO: add base class attributes detection here
+
 /// <summary>
 ///
 /// </summary>
@@ -14,10 +16,15 @@ public sealed class AuthorizeCheckOperationFilter : IOperationFilter
 {
     private readonly SwaggerSecurityOptions _securityOptions;
 
+    /// <summary>
+    ///
+    /// </summary>
+    /// <param name="optionsAccessor"></param>
     public AuthorizeCheckOperationFilter(IOptions<SwaggerConfigurationOptions> optionsAccessor) =>
         _securityOptions = optionsAccessor.Value.Security;
 
 
+    /// <inheritdoc cref="IOperationFilter.Apply"/>
     public void Apply(OpenApiOperation operation, OperationFilterContext context)
     {
         context.ApiDescription.TryGetMethodInfo(out var methodInfo);

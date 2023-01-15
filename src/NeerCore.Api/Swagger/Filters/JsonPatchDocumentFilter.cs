@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.JsonPatch.Operations;
 using Microsoft.OpenApi.Any;
 using Microsoft.OpenApi.Models;
+using NeerCore.Api.Swagger.Internal;
 using Newtonsoft.Json.Serialization;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using OperationType = Microsoft.AspNetCore.JsonPatch.Operations.OperationType;
@@ -14,6 +15,7 @@ namespace NeerCore.Api.Swagger.Filters;
 /// </summary>
 public sealed class JsonPatchDocumentFilter : IDocumentFilter
 {
+    /// <inheritdoc cref="IDocumentFilter.Apply"/>
     public void Apply(OpenApiDocument swaggerDoc, DocumentFilterContext context)
     {
         // Remove default JsonPatchDocument schemas
@@ -76,28 +78,28 @@ public sealed class JsonPatchDocumentFilter : IDocumentFilter
                     {
                         "op", new OpenApiSchema
                         {
-                            Type = SchemaTypes.String,
+                            Type = SwaggerSchemaTypes.String,
                             Enum = OperationNameEnum
                         }
                     },
                     {
                         "path", new OpenApiSchema
                         {
-                            Type = SchemaTypes.String,
+                            Type = SwaggerSchemaTypes.String,
                             Enum = basePropertyNames
                         }
                     },
                     {
                         "from", new OpenApiSchema
                         {
-                            Type = SchemaTypes.String,
+                            Type = SwaggerSchemaTypes.String,
                             Enum = basePropertyNames
                         }
                     },
                     {
                         "value", new OpenApiSchema
                         {
-                            Type = SchemaTypes.String,
+                            Type = SwaggerSchemaTypes.String,
                             Example = new OpenApiString("new value")
                         }
                     },
@@ -110,28 +112,28 @@ public sealed class JsonPatchDocumentFilter : IDocumentFilter
                     {
                         "op", new OpenApiSchema
                         {
-                            Type = SchemaTypes.String,
+                            Type = SwaggerSchemaTypes.String,
                             Enum = OperationNameEnum
                         }
                     },
                     {
                         "path", new OpenApiSchema
                         {
-                            Type = SchemaTypes.String,
+                            Type = SwaggerSchemaTypes.String,
                             Example = new OpenApiString("/path/to/property")
                         }
                     },
                     {
                         "from", new OpenApiSchema
                         {
-                            Type = SchemaTypes.String,
+                            Type = SwaggerSchemaTypes.String,
                             Example = new OpenApiString("/path/to/property")
                         }
                     },
                     {
                         "value", new OpenApiSchema
                         {
-                            Type = SchemaTypes.String,
+                            Type = SwaggerSchemaTypes.String,
                             Example = new OpenApiString("new value")
                         }
                     },
@@ -151,7 +153,7 @@ public sealed class JsonPatchDocumentFilter : IDocumentFilter
             {
                 ["operations"] = new()
                 {
-                    Type = SchemaTypes.Array,
+                    Type = SwaggerSchemaTypes.Array,
                     Description = "Array of operations to perform.",
                     Items = new OpenApiSchema
                     {
@@ -176,11 +178,4 @@ public sealed class JsonPatchDocumentFilter : IDocumentFilter
         new OpenApiString("test"),
         new OpenApiString("invalid"),
     };
-
-    private static class SchemaTypes
-    {
-        public const string Object = "object";
-        public const string Array = "array";
-        public const string String = "string";
-    }
 }

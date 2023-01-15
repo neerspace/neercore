@@ -37,6 +37,7 @@ internal sealed class SwaggerConfiguration : IConfigureNamedOptions<SwaggerGenOp
 
         options.DocumentFilter<XLogoDocumentFilter>();
         options.DocumentFilter<JsonPatchDocumentFilter>();
+        options.DocumentFilter<LocalizedStringDocumentFilter>();
 
         if (_config.Security.Enabled)
         {
