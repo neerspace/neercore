@@ -65,90 +65,93 @@ public sealed class JsonPatchDocumentFilter : IDocumentFilter
 
         swaggerDoc.Components.Schemas.Remove(nameof(OperationType));
         var operationSchemas = swaggerDoc.Components.Schemas.Where(item => item.Key.EndsWith(nameof(Operation)));
-        foreach (var operationSchema in operationSchemas)
+        foreach ((string? operationName, var operationSchema) in operationSchemas)
         {
-            string baseName = operationSchema.Key.Replace(nameof(Operation), "");
+            string baseName = operationName.Replace(nameof(Operation), "");
             if (swaggerDoc.Components.Schemas.ContainsKey(baseName))
             {
                 var baseSchema = swaggerDoc.Components.Schemas[baseName];
                 var basePropertyNames = baseSchema.Properties.SelectMany(p => OperationPathFilter("/" + p.Key, p.Value)).ToArray();
 
-                operationSchema.Value.Properties = new Dictionary<string, OpenApiSchema>
-                {
-                    {
-                        "op", new OpenApiSchema
-                        {
-                            Type = SwaggerSchemaTypes.String,
-                            Enum = OperationNameEnum
-                        }
-                    },
-                    {
-                        "path", new OpenApiSchema
-                        {
-                            Type = SwaggerSchemaTypes.String,
-                            Enum = basePropertyNames
-                        }
-                    },
-                    {
-                        "from", new OpenApiSchema
-                        {
-                            Type = SwaggerSchemaTypes.String,
-                            Enum = basePropertyNames
-                        }
-                    },
-                    {
-                        "value", new OpenApiSchema
-                        {
-                            Type = SwaggerSchemaTypes.String,
-                            Example = new OpenApiString("new value")
-                        }
-                    },
-                };
+                operationSchema.Properties = BuildOperationSchemaProperties(basePropertyNames);
             }
             else
             {
-                operationSchema.Value.Properties = new Dictionary<string, OpenApiSchema>
-                {
-                    {
-                        "op", new OpenApiSchema
-                        {
-                            Type = SwaggerSchemaTypes.String,
-                            Enum = OperationNameEnum
-                        }
-                    },
-                    {
-                        "path", new OpenApiSchema
-                        {
-                            Type = SwaggerSchemaTypes.String,
-                            Example = new OpenApiString("/path/to/property")
-                        }
-                    },
-                    {
-                        "from", new OpenApiSchema
-                        {
-                            Type = SwaggerSchemaTypes.String,
-                            Example = new OpenApiString("/path/to/property")
-                        }
-                    },
-                    {
-                        "value", new OpenApiSchema
-                        {
-                            Type = SwaggerSchemaTypes.String,
-                            Example = new OpenApiString("new value")
-                        }
-                    },
-                };
+                operationSchema.Properties = BuildDefaultOperationSchemaProperties();
             }
         }
     }
 
+    private static Dictionary<string, OpenApiSchema> BuildOperationSchemaProperties(IList<IOpenApiAny> basePropertyNames) => new()
+    {
+        {
+            "op", new OpenApiSchema
+            {
+                Type = SwaggerSchemaTypes.String,
+                Enum = OperationNameEnum
+            }
+        },
+        {
+            "path", new OpenApiSchema
+            {
+                Type = SwaggerSchemaTypes.String,
+                Enum = basePropertyNames
+            }
+        },
+        {
+            "from", new OpenApiSchema
+            {
+                Type = SwaggerSchemaTypes.String,
+                Enum = basePropertyNames
+            }
+        },
+        {
+            "value", new OpenApiSchema
+            {
+                Type = SwaggerSchemaTypes.String,
+                Example = new OpenApiString("new value")
+            }
+        },
+    };
+
+    private static Dictionary<string, OpenApiSchema> BuildDefaultOperationSchemaProperties() => new()
+    {
+        {
+            "op", new OpenApiSchema
+            {
+                Type = SwaggerSchemaTypes.String,
+                Enum = OperationNameEnum
+            }
+        },
+        {
+            "path", new OpenApiSchema
+            {
+                Type = SwaggerSchemaTypes.String,
+                Example = new OpenApiString("/path/to/property")
+            }
+        },
+        {
+            "from", new OpenApiSchema
+            {
+                Type = SwaggerSchemaTypes.String,
+                Example = new OpenApiString("/path/to/property")
+            }
+        },
+        {
+            "value", new OpenApiSchema
+            {
+                Type = SwaggerSchemaTypes.String,
+                Example = new OpenApiString("new value")
+            }
+        },
+    };
+
     private static void FixJsonPatchDocumentSchemas(OpenApiDocument swaggerDoc)
     {
         var jsonPatchDocSchemas = swaggerDoc.Components.Schemas.Where(item => item.Key.EndsWith(nameof(JsonPatchDocument)));
-        foreach (var jsonPatchDocSchema in jsonPatchDocSchemas)
+        foreach ((string? schemaName, var schema) in jsonPatchDocSchemas)
         {
-            string baseName = jsonPatchDocSchema.Key.Replace(nameof(JsonPatchDocument), "");
-            var schema = jsonPatchDocSchema.Value;
+            string baseName = schemaName.Replace(nameof(JsonPatchDocument), "");
             schema.Properties = new Dictionary<string, OpenApiSchema>
             {
                 ["operations"] = new()
