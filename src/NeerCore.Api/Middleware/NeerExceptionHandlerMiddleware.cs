@@ -18,12 +18,14 @@ public sealed class NeerExceptionHandlerMiddleware : IMiddleware
     private readonly ILogger _logger;
     private readonly ExceptionHandlerOptions _options;
 
+    /// <inheritdoc cref="NeerExceptionHandlerMiddleware"/>
     public NeerExceptionHandlerMiddleware(ILoggerFactory loggerFactory, IOptions<ExceptionHandlerOptions> optionsAccessor)
     {
         _logger = loggerFactory.CreateLogger(GetType());
         _options = optionsAccessor.Value;
     }
 
+    /// <inheritdoc cref="IMiddleware.InvokeAsync"/>
     public async Task InvokeAsync(HttpContext context, RequestDelegate next)
     {
         try

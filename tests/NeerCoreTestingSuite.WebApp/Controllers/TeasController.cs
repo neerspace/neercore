@@ -52,7 +52,8 @@ public class TeasController : ApiController
     /// Test remark
     /// </remarks>
     [HttpPut("{id:guid}")]
-    [Authorize]
+    [AllowAnonymous]
+    // [Authorize]
     public async Task<NoContentResult> Put([FromRoute] Guid id, [FromBody] TeaUpdate dto)
     {
         var entity = (dto with { Id = id }).Adapt<Data.Entities.Tea>();

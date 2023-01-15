@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 using NeerCore.Api.Swagger.Extensions;
 using NeerCore.DependencyInjection.Extensions;
+using NeerCore.Localization;
 
 namespace NeerCore.Api.Extensions;
 
@@ -29,7 +30,8 @@ public static class ServiceCollectionExtensions
         return services.AddNeerApiServices(assemblies, configureInfo: null);
     }
 
-    public static IServiceCollection AddNeerApiServices(this IServiceCollection services, IEnumerable<Assembly> assemblies, Func<ApiVersionDescription, OpenApiInfo>? configureInfo)
+    public static IServiceCollection AddNeerApiServices(
+        this IServiceCollection services, IEnumerable<Assembly> assemblies, Func<ApiVersionDescription, OpenApiInfo>? configureInfo)
     {
         services.AddServicesFromAssemblies(assemblies);
 
@@ -52,6 +54,10 @@ public static class ServiceCollectionExtensions
     public static IMvcBuilder AddNeerControllers(this IServiceCollection services)
     {
         return services.AddControllers(KebabCaseNamingConvention.Use)
-            .AddJsonOptions(options => options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
+            .AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.Converters.Insert(0, new LocalizedStringJsonConverter());
+                options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+            });
     }
 }

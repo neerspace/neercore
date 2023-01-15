@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using NeerCore.Localization;
 
 namespace NeerCore.Data.EntityFramework.Converters;
 

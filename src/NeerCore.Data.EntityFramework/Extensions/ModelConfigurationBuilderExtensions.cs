@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using NeerCore.Data.EntityFramework.Comparers;
 using NeerCore.Data.EntityFramework.Converters;
+using NeerCore.Localization;
 
 namespace NeerCore.Data.EntityFramework.Extensions;
 

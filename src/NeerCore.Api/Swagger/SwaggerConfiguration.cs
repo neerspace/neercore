@@ -4,6 +4,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Microsoft.OpenApi.Models;
 using NeerCore.Api.Swagger.Filters;
+using NeerCore.Api.Swagger.Internal;
+using NeerCore.Localization;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace NeerCore.Api.Swagger;
@@ -32,11 +34,13 @@ internal sealed class SwaggerConfiguration : IConfigureNamedOptions<SwaggerGenOp
     public void Configure(SwaggerGenOptions options)
     {
         // add swagger document for every API version discovered
-        foreach (ApiVersionDescription description in _provider.ApiVersionDescriptions)
+        foreach (var description in _provider.ApiVersionDescriptions)
             options.SwaggerDoc(description.GroupName.ToLower(), CreateVersionInfo(description));
 
         options.DocumentFilter<XLogoDocumentFilter>();
         options.DocumentFilter<JsonPatchDocumentFilter>();
+
+        options.MapType(typeof(LocalizedString), () => new OpenApiSchema { Type = SwaggerSchemaTypes.String });
 
         if (_config.Security.Enabled)
         {

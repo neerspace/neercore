@@ -1,4 +1,6 @@
-﻿namespace NeerCoreTestingSuite.WebApp.Dto.Teas;
+﻿using NeerCore.Localization;
+
+namespace NeerCoreTestingSuite.WebApp.Dto.Teas;
 
 /// <remarks>
 /// Available filters: id, price, updated, created
@@ -8,7 +10,7 @@ public class Tea
     public Guid Id { get; init; }
 
     /// <example>Black tea</example>
-    public string Name { get; init; } = default!;
+    public LocalizedString Name { get; init; } = default!;
 
     /// <example>0.000663</example>
     public decimal PriceBTC { get; init; }

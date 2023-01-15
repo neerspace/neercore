@@ -55,10 +55,10 @@ static WebApplication ConfigureWebApp(WebApplication app)
     {
         var db = scope.ServiceProvider.GetRequiredService<IDatabase>();
         var teas = db.Set<Tea>()
-                     .AsNoTracking()
-                     .Where(e => e.Price > 10)
-                     .Select(e => new { e.Id, e.Price, e.Name })
-                     .ToList();
+            .AsNoTracking()
+            .Where(e => e.Price > 10)
+            .Select(e => new { e.Id, e.Price, e.Name })
+            .ToList();
 
         var settings = scope.ServiceProvider.GetRequiredService<IOptions<TestSettings>>();
         Console.WriteLine(settings.Value.Message);

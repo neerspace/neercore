@@ -1,8 +1,12 @@
+using System.Net.Mime;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using NeerCore.Api;
 
 namespace NeerCoreTestingSuite.WebApp.Controllers;
 
+[AllowAnonymous]
 [ApiController]
 [Route(DefaultRoutes.VersionedRoute)]
-public class ApiController : ControllerBase { }
+// [Consumes(MediaTypeNames.Application.Json)]
+public abstract class ApiController : ControllerBase { }
