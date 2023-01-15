@@ -8,5 +8,5 @@ namespace NeerCoreTestingSuite.WebApp.Controllers;
 [AllowAnonymous]
 [ApiController]
 [Route(DefaultRoutes.VersionedRoute)]
-[Consumes(MediaTypeNames.Application.Json)]
-public class ApiController : ControllerBase { }
+// [Consumes(MediaTypeNames.Application.Json)]
+public abstract class ApiController : ControllerBase { }

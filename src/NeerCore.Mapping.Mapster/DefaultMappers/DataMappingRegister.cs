@@ -8,7 +8,7 @@ public class DataMappingRegister : IRegister
     public void Register(TypeAdapterConfig config)
     {
         config.NewConfig<LocalizedString, string>()
-            .MapWith(localized => localized.GetCurrentLocalization());
+            .MapWith(localized => localized.GetLocalizedValue());
 
         config.NewConfig<string, LocalizedString>()
             .MapWith(rawString => new LocalizedString(rawString));

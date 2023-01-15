@@ -31,7 +31,7 @@ public class Test
         var allTeas = await _dbContext.Set<Tea>().ToListAsync();
         foreach (Tea tea in allTeas)
         {
-            _testOutputHelper.WriteLine(tea.Id + " – " + tea.Name.GetCurrentLocalization());
+            _testOutputHelper.WriteLine(tea.Id + " – " + tea.Name.GetLocalizedValue());
         }
     }
 }

@@ -12,7 +12,7 @@ function createTitle(text) {
 
 function main() {
     initDescription();
-    initParamsHiding();
+    //initParamsHiding();
 }
 
 

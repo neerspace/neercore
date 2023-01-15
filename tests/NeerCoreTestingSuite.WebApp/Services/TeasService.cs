@@ -48,6 +48,8 @@ public class TeasService
 
     public async Task UpdateAsync(Tea tea)
     {
+        if (!await _database.Set<Tea>().AnyAsync(t => t.Id == tea.Id))
+            throw new NotFoundException("Tea with given guid not found");
         _database.Set<Tea>().Update(tea);
         await _database.SaveChangesAsync();
     }

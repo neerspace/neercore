@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Text.Json;
 using NeerCore.Exceptions;
@@ -47,6 +48,11 @@ public readonly struct LocalizedString : IEnumerable<LocalizedValue>, IEquatable
         _localizations = localizations;
     }
 
+    /// <summary>
+    ///   Returns dictionary of the all backing stored localizations.
+    /// </summary>
+    public IReadOnlyDictionary<string, string> AsDictionary() => new ReadOnlyDictionary<string, string>(_localizations);
+
 
     /// <summary>
     ///   Total count of stored localizations.
@@ -56,7 +62,7 @@ public readonly struct LocalizedString : IEnumerable<LocalizedValue>, IEquatable
     /// <summary></summary>
     /// <param name="localizedValue"></param>
     /// <returns></returns>
-    public bool Contains(string localizedValue) => _localizations.Any(loc => loc.Value == localizedValue);
+    public bool ContainsValue(string localizedValue) => _localizations.Any(loc => loc.Value == localizedValue);
 
     /// <summary>Determines whether the <see cref="LocalizedString"/> includes an localization with the specified <paramref name="languageCode"/>.</summary>
     /// <param name="languageCode">Two letter ISO language code.</param>
@@ -67,7 +73,7 @@ public readonly struct LocalizedString : IEnumerable<LocalizedValue>, IEquatable
     /// <param name="languageCode"></param>
     /// <returns></returns>
     /// <exception cref="ValidationFailedException"></exception>
-    public string GetLocalization(string languageCode)
+    public string Get(string languageCode)
     {
         if (_localizations.TryGetValue(languageCode, out string? localizedValue))
             return localizedValue;
@@ -76,25 +82,18 @@ public readonly struct LocalizedString : IEnumerable<LocalizedValue>, IEquatable
     }
 
     /// <summary></summary>
-    /// <returns></returns>
-    public string GetCurrentLocalization()
-    {
-        return GetLocalization(CultureInfo.CurrentCulture.TwoLetterISOLanguageName);
-    }
+    public string GetLocalizedValue() => Get(CultureInfo.CurrentCulture.TwoLetterISOLanguageName);
 
     /// <summary></summary>
     /// <param name="culture"></param>
     /// <returns></returns>
-    public string GetLocalization(CultureInfo culture)
-    {
-        return GetLocalization(culture.TwoLetterISOLanguageName);
-    }
+    public string Get(CultureInfo culture) => Get(culture.TwoLetterISOLanguageName);
 
     /// <summary></summary>
     /// <param name="languageCode"></param>
     /// <param name="value"></param>
     /// <exception cref="InternalServerException"></exception>
-    public void SetLocalization(string languageCode, string value)
+    public void Set(string languageCode, string value)
     {
         if (languageCode is { Length: 2 })
             _localizations.Add(languageCode, value);
@@ -102,10 +101,12 @@ public readonly struct LocalizedString : IEnumerable<LocalizedValue>, IEquatable
         throw new InternalServerException("Invalid localization code provided.");
     }
 
-    public void SetLocalization(CultureInfo culture, string value)
-    {
-        SetLocalization(culture.TwoLetterISOLanguageName, value);
-    }
+    /// <summary>
+    ///
+    /// </summary>
+    /// <param name="culture"></param>
+    /// <param name="value"></param>
+    public void Set(CultureInfo culture, string value) => Set(culture.TwoLetterISOLanguageName, value);
 
 
     IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();

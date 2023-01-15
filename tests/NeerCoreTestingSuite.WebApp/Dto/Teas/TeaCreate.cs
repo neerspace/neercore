@@ -16,7 +16,7 @@ public class TeaCreateValidator : AbstractValidator<TeaCreate>
 {
     public TeaCreateValidator()
     {
-        // RuleFor(o => o.Name).NotEmpty().Length(2, 64);
+        RuleFor(o => o.Name).ForEachValue().MaximumLength(60);
         RuleFor(o => o.Price).GreaterThan(0m);
     }
 }

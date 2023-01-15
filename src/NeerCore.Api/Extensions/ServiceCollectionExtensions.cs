@@ -56,8 +56,8 @@ public static class ServiceCollectionExtensions
         return services.AddControllers(KebabCaseNamingConvention.Use)
             .AddJsonOptions(options =>
             {
+                options.JsonSerializerOptions.Converters.Insert(0, new LocalizedStringJsonConverter());
                 options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
-                options.JsonSerializerOptions.Converters.Add(new LocalizedStringJsonConverter());
             });
     }
 }

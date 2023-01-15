@@ -13,6 +13,11 @@ public class LocalizedStringJsonConverter : JsonConverter<LocalizedString>
     /// </summary>
     public override LocalizedString Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
+        // Parse as String
+        if (reader.TokenType == JsonTokenType.String)
+            return new LocalizedString(reader.GetString());
+
+        // Parse as Object
         if (reader.TokenType != JsonTokenType.StartObject)
             throw new JsonException("Expected StartObject token");
 
