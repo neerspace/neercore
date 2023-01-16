@@ -1,5 +1,5 @@
 using System.Net.Mime;
-using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
 using NeerCore.Api;
 using NeerCore.Localization;
@@ -13,6 +13,9 @@ public record LocaModel
 
     /// <example>LoremIpsum</example>
     public LocalizedString Text { get; init; } = default!;
+
+    public required string Plain { get; set; }
+    public string? PlainNullableSt { get; set; }
 };
 
 [ApiController]
@@ -20,13 +23,16 @@ public record LocaModel
 [Consumes(MediaTypeNames.Application.Json)]
 public abstract class BaseLApi : ControllerBase { }
 
-[Authorize]
 public class LocalizationController : BaseLApi
 {
-    [HttpPost("from-nothing")]
-    public IActionResult PutPlain(LocaModel model) => Ok(model);
+    [HttpPatch("from-patch")]
+    public IActionResult PutPlain(JsonPatchDocument<LocaModel> document)
+    {
+        var model = new LocaModel { Plain = "test" };
+        document.ApplyTo(model);
+        return Ok(model);
+    }
 
-    [AllowAnonymous]
     [HttpPut("from-body/{id:int}")]
     public async Task<IActionResult> PutFromBody([FromRoute] int id, [FromBody] LocaModel model) =>
         Ok(model with { Index = id });

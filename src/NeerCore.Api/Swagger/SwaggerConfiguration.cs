@@ -38,9 +38,15 @@ internal sealed class SwaggerConfiguration : IConfigureNamedOptions<SwaggerGenOp
             options.SwaggerDoc(description.GroupName.ToLower(), CreateVersionInfo(description));
 
         options.DocumentFilter<XLogoDocumentFilter>();
-        options.DocumentFilter<JsonPatchDocumentFilter>();
 
-        options.MapType(typeof(LocalizedString), () => new OpenApiSchema { Type = SwaggerSchemaTypes.String });
+        if (_config.JsonPatchSupport)
+            options.DocumentFilter<JsonPatchDocumentFilter>();
+
+        if (_config.NullableRefTypesSupport)
+            options.DocumentFilter<NullableStringDocumentFilter>();
+
+        if (_config.LocalizedStringSupport)
+            options.MapType(typeof(LocalizedString), () => new OpenApiSchema { Type = SwaggerSchemaTypes.String });
 
         if (_config.Security.Enabled)
         {
@@ -61,7 +67,7 @@ internal sealed class SwaggerConfiguration : IConfigureNamedOptions<SwaggerGenOp
             options.IncludeXmlComments(xmlPath, includeControllerXmlComments: true);
     }
 
-    public void Configure(string name, SwaggerGenOptions options) => Configure(options);
+    public void Configure(string? name, SwaggerGenOptions options) => Configure(options);
 
 
     private OpenApiInfo CreateVersionInfo(ApiVersionDescription versionDescription)
