@@ -58,7 +58,7 @@ public static class ServiceCollectionExtensions
         return services.AddControllers(mvc =>
             {
                 mvc.Conventions.Add(new RouteTokenTransformerConvention(new KebabCaseNamingConvention()));
-                mvc.AddFromBodyOrRouteModelBinder();
+                mvc.AddFromBodyOrRouteModelBinder(services);
             })
             .AddJsonOptions(options =>
             {

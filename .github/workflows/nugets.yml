@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        version: [ '2.0.0-alpha8' ]
+        version: [ '2.0.0-alpha9' ]
         project:
           - NeerCore
           - NeerCore.Api
