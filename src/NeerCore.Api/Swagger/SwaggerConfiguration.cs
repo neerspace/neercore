@@ -38,12 +38,13 @@ internal sealed class SwaggerConfiguration : IConfigureNamedOptions<SwaggerGenOp
             options.SwaggerDoc(description.GroupName.ToLower(), CreateVersionInfo(description));
 
         options.DocumentFilter<XLogoDocumentFilter>();
+        options.SchemaFilter<BodyOrRouteSchemaFilter>();
 
         if (_config.JsonPatchSupport)
             options.DocumentFilter<JsonPatchDocumentFilter>();
 
         if (_config.NullableRefTypesSupport)
-            options.DocumentFilter<NullableStringDocumentFilter>();
+            options.SupportNonNullableReferenceTypes();
 
         if (_config.LocalizedStringSupport)
             options.MapType(typeof(LocalizedString), () => new OpenApiSchema { Type = SwaggerSchemaTypes.String });
@@ -52,15 +53,16 @@ internal sealed class SwaggerConfiguration : IConfigureNamedOptions<SwaggerGenOp
         {
             options.OperationFilter<AuthorizeCheckOperationFilter>();
 
-            options.AddSecurityDefinition(_config.Security.Scheme, new OpenApiSecurityScheme
-            {
-                Description = _config.Security.Description,
-                Name = _config.Security.ParameterName,
-                In = _config.Security.ParameterLocation,
-                Type = _config.Security.SchemeType,
-                BearerFormat = _config.Security.BearerFormat,
-                Scheme = _config.Security.Scheme
-            });
+            options.AddSecurityDefinition(_config.Security.Scheme,
+                new OpenApiSecurityScheme
+                {
+                    Description = _config.Security.Description,
+                    Name = _config.Security.ParameterName,
+                    In = _config.Security.ParameterLocation,
+                    Type = _config.Security.SchemeType,
+                    BearerFormat = _config.Security.BearerFormat,
+                    Scheme = _config.Security.Scheme
+                });
         }
 
         foreach (string xmlPath in GetXmlComments())

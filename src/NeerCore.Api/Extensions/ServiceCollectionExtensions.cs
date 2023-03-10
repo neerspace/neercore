@@ -1,8 +1,10 @@
 ﻿using System.Reflection;
 using System.Text.Json.Serialization;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
+using Microsoft.AspNetCore.Mvc.ApplicationModels;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
+using NeerCore.Api.ModelBinding;
 using NeerCore.Api.Swagger.Extensions;
 using NeerCore.DependencyInjection.Extensions;
 using NeerCore.Localization;
@@ -53,7 +55,11 @@ public static class ServiceCollectionExtensions
     /// <param name="services">The services available in the application.</param>
     public static IMvcBuilder AddNeerControllers(this IServiceCollection services)
     {
-        return services.AddControllers(KebabCaseNamingConvention.Use)
+        return services.AddControllers(mvc =>
+            {
+                mvc.Conventions.Add(new RouteTokenTransformerConvention(new KebabCaseNamingConvention()));
+                mvc.AddFromBodyOrRouteModelBinder();
+            })
             .AddJsonOptions(options =>
             {
                 options.JsonSerializerOptions.Converters.Insert(0, new LocalizedStringJsonConverter());
