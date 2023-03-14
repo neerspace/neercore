@@ -59,7 +59,8 @@ public class BodyOrRouteModelBinder : BodyModelBinder, IModelBinder
             }
             catch (Exception)
             {
-                context.ModelState.AddModelError(routeKey, $"The value '{routeValue}' is not valid.");
+                var interpStr = $"The value '{routeValue}' is not valid.";
+                context.ModelState.AddModelError(routeKey, interpStr);
             }
         }
     }

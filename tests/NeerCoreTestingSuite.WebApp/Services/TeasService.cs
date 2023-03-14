@@ -6,7 +6,7 @@ using NeerCoreTestingSuite.WebApp.Data.Entities;
 
 namespace NeerCoreTestingSuite.WebApp.Services;
 
-[Service]
+// [Service]
 public class TeasService
 {
     private readonly IDatabase _database;

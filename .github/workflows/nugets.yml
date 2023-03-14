@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        version: [ '2.0.0-alpha9' ]
+        version: [ '2.0.0-alpha10' ]
         project:
           - NeerCore
           - NeerCore.Api
@@ -27,10 +27,10 @@ jobs:
           - NeerCore.DependencyInjection
           - NeerCore.Logging.NLog
           - NeerCore.Mapping.Mapster
-          - NeerCore.Typeids
-          - NeerCore.Typeids.Api
-          - NeerCore.Typeids.Api.Hashids
-          - NeerCore.Typeids.Data.EntityFramework
+#          - NeerCore.Typeids
+#          - NeerCore.Typeids.Api
+#          - NeerCore.Typeids.Api.Hashids
+#          - NeerCore.Typeids.Data.EntityFramework
 
     runs-on: ubuntu-latest
 

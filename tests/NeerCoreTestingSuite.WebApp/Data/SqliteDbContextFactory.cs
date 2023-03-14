@@ -8,6 +8,8 @@ public class SqliteDbContextFactory : DbContextFactoryBase<SqliteDbContext>
     // public override string SelectedConnectionName => "Sqlite";
     public override string SelectedConnectionName => "SqlServer";
 
+    public override string[] SettingsPaths => new[] { "invalid.path.json", "appsettings.Development.json" };
+
 
     public override SqliteDbContext CreateDbContext(string[] args) => new(CreateContextOptions());
 

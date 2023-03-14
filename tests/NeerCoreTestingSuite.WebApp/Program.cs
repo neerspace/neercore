@@ -40,9 +40,9 @@ static void ConfigureBuilder(WebApplicationBuilder builder)
     builder.Logging.ConfigureNLogAsDefault();
 
     builder.Services.AddDatabase<SqliteDbContext, SqliteDbContextFactory>();
-    builder.Services.AddMediatorApplication();
-    builder.Services.ConfigureAllOptions();
-    builder.Services.AddAllMappers();
+    // builder.Services.AddMediatorApplication();
+    // builder.Services.ConfigureAllOptions();
+    // builder.Services.AddAllMappers();
 
     builder.Services.AddNeerApiServices();
     builder.Services.AddNeerControllers();
