@@ -1,6 +1,7 @@
 ﻿using System.Reflection;
 using Microsoft.Extensions.Configuration;
 using NeerCore.DependencyInjection.Extensions;
+using NeerCore.Logging.Settings;
 using NLog;
 using NLog.Extensions.Logging;
 using NLog.Web;

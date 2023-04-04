@@ -60,6 +60,12 @@ static WebApplication ConfigureWebApp(WebApplication app)
             .Select(e => new { e.Id, e.Price, e.Name })
             .ToList();
 
+        // var logs = db.Set<ServerLog>().ToList();
+        // foreach (var log in logs)
+        // {
+        //     Console.WriteLine("LOG: " + log.Message);
+        // }
+
         var settings = scope.ServiceProvider.GetRequiredService<IOptions<TestSettings>>();
         Console.WriteLine(settings.Value.Message);
     }

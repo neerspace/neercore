@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using NeerCore.Exceptions;
 
 namespace NeerCoreTestingSuite.WebApp.Controllers;
 
@@ -23,5 +24,30 @@ public class MultisourceController : ApiController
     public BeModel Post([FromBody] BeModel model)
     {
         return model;
+    }
+
+    [HttpGet("test-error-1")]
+    public IActionResult Err1()
+    {
+        throw new ValidationFailedException("Validation err");
+    }
+
+
+    [HttpGet("test-error-2")]
+    public IActionResult Err2()
+    {
+        throw new Exception("Server err");
+    }
+
+
+    [HttpGet("SimpleGet/{id}")]
+    public IActionResult GetSmth([FromRoute] int id = 10, string other = "hi")
+    {
+        return Ok(new
+        {
+            Id = id,
+            Other = other,
+            Timestamp = DateTimeOffset.Now,
+        });
     }
 }

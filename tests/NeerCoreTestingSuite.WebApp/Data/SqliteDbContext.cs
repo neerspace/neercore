@@ -3,6 +3,7 @@ using NeerCore.Data.EntityFramework.Abstractions;
 using NeerCore.Data.EntityFramework.Design;
 using NeerCore.Data.EntityFramework.Extensions;
 using NeerCore.DependencyInjection;
+using NeerCoreTestingSuite.WebApp.Data.Entities;
 
 namespace NeerCoreTestingSuite.WebApp.Data;
 
@@ -19,6 +20,8 @@ public sealed class SqliteDbContext : DbContext, IDatabase
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
+        // builder.Entity<ServerLog>().ToTable("ServerLog");
+
         builder.ConfigureEntities(options =>
         {
             options.DateTimeKind = DateTimeKind.Utc;

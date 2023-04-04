@@ -62,7 +62,7 @@ public abstract class DbContextFactoryBase<TContext> : IDesignTimeDbContextFacto
         get
         {
             _cachedConnectionString ??= GetSelectedConnectionStringFromPaths();
-            LogWriter?.Write("Selected connection string: " + _cachedConnectionString + "\n");
+            LogWriter?.Write($"Selected connection string: {_cachedConnectionString}\n");
             return _cachedConnectionString;
         }
     }
@@ -95,7 +95,7 @@ public abstract class DbContextFactoryBase<TContext> : IDesignTimeDbContextFacto
     /// </summary>
     public virtual DbContextOptions<TContext> CreateContextOptions()
     {
-        LogWriter?.Write("Database connection used: " + SelectedConnectionName);
+        LogWriter?.Write($"Database connection used: {SelectedConnectionName}\n");
 
         var optionsBuilder = new DbContextOptionsBuilder<TContext>();
         ConfigureContextOptions(optionsBuilder);
@@ -160,7 +160,7 @@ public abstract class DbContextFactoryBase<TContext> : IDesignTimeDbContextFacto
                 absPath = Path.Combine(Directory.GetCurrentDirectory(), absPath);
                 if (!File.Exists(absPath))
                 {
-                    LogWriter?.Write($"Configuration file not found: '{absPath}'");
+                    LogWriter?.Write($"Configuration file not found: '{absPath}'\n");
                     continue;
                 }
             }
@@ -180,11 +180,11 @@ public abstract class DbContextFactoryBase<TContext> : IDesignTimeDbContextFacto
             catch (Exception)
             {
                 LogWriter?.Write($"Configuration file '{absPath}' successfully found, "
-                    + $"but no connection string found there by path: '{ConnectionStringsSectionPath}'.");
+                    + $"but no connection string found there by path: '{ConnectionStringsSectionPath}'.\n");
             }
         }
 
-        throw new NotFoundException($"No connection string found in '{nameof(SettingsPaths)}'.\n"
-            + $"(Expected the JSON file and '{ConnectionStringsSectionPath}' section with key '{SelectedConnectionName}' within)");
+        throw new NotFoundException($"No connection string found in '{GetType().Name}.{nameof(SettingsPaths)}'.\n"
+            + $"(Expected the JSON file and '{ConnectionStringsSectionPath}' section with key '{SelectedConnectionName}' within)\n");
     }
 }
