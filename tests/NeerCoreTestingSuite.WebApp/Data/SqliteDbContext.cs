@@ -3,7 +3,6 @@ using NeerCore.Data.EntityFramework.Abstractions;
 using NeerCore.Data.EntityFramework.Design;
 using NeerCore.Data.EntityFramework.Extensions;
 using NeerCore.DependencyInjection;
-using NeerCoreTestingSuite.WebApp.Data.Entities;
 
 namespace NeerCoreTestingSuite.WebApp.Data;
 

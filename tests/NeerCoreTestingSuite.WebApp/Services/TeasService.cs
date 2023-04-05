@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NeerCore.Data.EntityFramework.Abstractions;
-using NeerCore.DependencyInjection;
 using NeerCore.Exceptions;
 using NeerCoreTestingSuite.WebApp.Data.Entities;
 

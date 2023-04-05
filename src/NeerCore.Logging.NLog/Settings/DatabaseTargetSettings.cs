@@ -97,9 +97,9 @@ public sealed class DatabaseTargetSettings
     public CommandType CommandType { get; set; } = CommandType.Text;
 
     /// <summary>
-    ///   If <b>true</b> it will make sure that DB and table exist.
+    ///   If <b>true</b> it will make sure that logs table exist in provided DB.
     /// </summary>
-    public bool EnsureCreated { get; set; } = true;
+    public bool EnsureTableCreated { get; set; } = true;
 
     /// <summary>
     ///   If <b>true</b> it will add some extra rows to DB with ASP.NET specific data.

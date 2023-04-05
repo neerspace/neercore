@@ -1,4 +1,3 @@
-using System.Text.RegularExpressions;
 using NeerCore.Logging.Exceptions;
 using NeerCore.Logging.Settings;
 using NLog;
@@ -19,12 +18,9 @@ public abstract class TargetBuilderBase
 
     protected void ApplyLogLevelsFromSettings(LoggingConfiguration configuration, Target target)
     {
-        // string applicationNamespace = Assembly.GetEntryAssembly()!.GetBaseNamespace();
-
         foreach (var logLevel in Settings.LogLevel)
         {
-            // TODO: Explore more about final rules
-            bool isFinal = false; // logLevel.Key != "*" && !logLevel.Key.StartsWith(applicationNamespace);
+            bool isFinal = logLevel.Key != "*";
             configuration.AddRule(ParseLogLevel(logLevel.Value), LogLevel.Fatal, target, logLevel.Key, final: isFinal);
         }
     }
