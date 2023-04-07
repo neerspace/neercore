@@ -1,4 +1,3 @@
-using NLog.Config;
 using NLog.Targets;
 
 namespace NeerCore.Logging.Infrastructure;
@@ -17,11 +16,5 @@ public class FullFileTargetBuilder : FileTargetBuilderBase
             FileName = BuildLogFilePath(targetSettings.FilePath),
             Layout = FormatLayout(FileLayout, targetSettings)
         };
-    }
-
-    public override void Configure(LoggingConfiguration configuration, Target target)
-    {
-        configuration.AddTarget(target.Name, target);
-        ApplyLogLevelsFromSettings(configuration, target);
     }
 }

@@ -7,9 +7,23 @@
 public interface IDateableEntity : ICreatableEntity, IUpdatableEntity { }
 
 /// <summary>
+///   Defines an entity with the required <see cref="DateTimeOffset">Nullable&lt;DateTime&gt;</see> when entity was
+///   last <see cref="IUpdatableOffsetEntity.Updated"/> and <see cref="DateTimeOffset"/> when it was <see cref="ICreatableOffsetEntity.Created"/>.
+/// </summary>
+public interface IDateableOffsetEntity : ICreatableOffsetEntity, IUpdatableOffsetEntity { }
+
+/// <summary>
 ///   Defines an entity with the required primary key <see cref="IEntity{TKey}.Id"/> property,
 ///   <see cref="DateTime">Nullable&lt;DateTime&gt;</see> when entity was last
 ///   <see cref="IUpdatableEntity.Updated"/> and <see cref="DateTime"/> when it was <see cref="ICreatableEntity.Created"/>.
 /// </summary>
 /// <typeparam name="TKey"><see cref="IEntity{TKey}.Id"/> type.</typeparam>
 public interface IDateableEntity<out TKey> : IDateableEntity, ICreatableEntity<TKey>, IUpdatableEntity<TKey> { }
+
+/// <summary>
+///   Defines an entity with the required primary key <see cref="IEntity{TKey}.Id"/> property,
+///   <see cref="DateTimeOffset">Nullable&lt;DateTime&gt;</see> when entity was last
+///   <see cref="IUpdatableOffsetEntity.Updated"/> and <see cref="DateTimeOffset"/> when it was <see cref="ICreatableOffsetEntity.Created"/>.
+/// </summary>
+/// <typeparam name="TKey"><see cref="IEntity{TKey}.Id"/> type.</typeparam>
+public interface IDateableOffsetEntity<out TKey> : IDateableOffsetEntity, ICreatableOffsetEntity<TKey>, IUpdatableOffsetEntity<TKey> { }

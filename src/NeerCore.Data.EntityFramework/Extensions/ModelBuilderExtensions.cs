@@ -26,8 +26,11 @@ public static class ModelBuilderExtensions
         options.DataAssemblies ??= new[] { Assembly.GetCallingAssembly() };
 
         // builder.AddAllEntities();
-        builder.ApplyEntityIds(options);
-        builder.ApplyEntityDating(options);
+
+        if (options.ApplyEntityIds)
+            builder.ApplyEntityIds(options);
+        if (options.ApplyEntityDating)
+            builder.ApplyEntityDating(options);
 
         foreach (Assembly? dataAssembly in options.DataAssemblies)
         {
@@ -64,7 +67,9 @@ public static class ModelBuilderExtensions
             if (entityIdType == typeof(Guid))
             {
                 if (options is { PreferSqlSideDefaultValues: true, EngineStrategy: DbEngineStrategy.SqlServer })
-                    idPropertyBuilder.HasDefaultValueSql(options.SequentialGuids ? "NEWSEQUENTIALID()" : "NEWID()").ValueGeneratedOnAdd();
+                    idPropertyBuilder.HasDefaultValueSql(options.SequentialGuids
+                        ? "NEWSEQUENTIALID()"
+                        : "NEWID()").ValueGeneratedOnAdd();
                 else
                     idPropertyBuilder.HasDefaultValue(Guid.NewGuid()).ValueGeneratedOnAdd();
             }
@@ -77,6 +82,11 @@ public static class ModelBuilderExtensions
         return builder;
     }
 
+    /// <summary>
+    ///
+    /// </summary>
+    /// <param name="builder"></param>
+    /// <param name="assembly"></param>
     public static IEnumerable<EntityTypeBuilder> GetAllEntities(this ModelBuilder builder, Assembly? assembly = null)
     {
         assembly ??= Assembly.GetCallingAssembly();
@@ -144,9 +154,15 @@ public static class ModelBuilderExtensions
         bool utc = options.DateTimeKind is DateTimeKind.Utc;
         string defaultValueSql = options.EngineStrategy switch
         {
-            DbEngineStrategy.SqlServer => utc ? "SYSUTCDATETIME()" : "SYSDATETIME()",
-            DbEngineStrategy.Sqlite => utc ? "DATETIME('now')" : "DATETIME()",
-            DbEngineStrategy.Postgres => utc ? "TIMEZONE('utc', NOW())" : "NOW()",
+            DbEngineStrategy.SqlServer => utc
+                ? "SYSUTCDATETIME()"
+                : "SYSDATETIME()",
+            DbEngineStrategy.Sqlite => utc
+                ? "DATETIME('now')"
+                : "DATETIME()",
+            DbEngineStrategy.Postgres => utc
+                ? "TIMEZONE('utc', NOW())"
+                : "NOW()",
             _ => throw new ArgumentException($"{nameof(DbEngineStrategy)} of {options.EngineStrategy} is not currently supported.")
         };
 
@@ -164,12 +180,28 @@ public static class ModelBuilderExtensions
                     .ValueGeneratedOnAdd();
             }
 
+            foreach (Type creatableOffsetEntityType in AssemblyProvider.GetImplementationsFromAssembly<ICreatableOffsetEntity>(assembly))
+            {
+                builder.Entity(creatableOffsetEntityType)
+                    .Property(nameof(ICreatableOffsetEntity.Created))
+                    .HasDefaultValueSql(defaultValueSql)
+                    .ValueGeneratedOnAdd();
+            }
+
             foreach (Type updatableEntityType in AssemblyProvider.GetImplementationsFromAssembly<IUpdatableEntity>(assembly))
             {
                 builder.Entity(updatableEntityType)
                     .Property(nameof(IUpdatableEntity.Updated))
                     .HasDefaultValueSql(defaultValueSql)
                     .ValueGeneratedOnUpdate();
+            }
+
+            foreach (Type updateableOffsetEntityType in AssemblyProvider.GetImplementationsFromAssembly<IUpdatableOffsetEntity>(assembly))
+            {
+                builder.Entity(updateableOffsetEntityType)
+                    .Property(nameof(IUpdatableOffsetEntity.Updated))
+                    .HasDefaultValueSql(defaultValueSql)
+                    .ValueGeneratedOnAdd();
             }
         }
 

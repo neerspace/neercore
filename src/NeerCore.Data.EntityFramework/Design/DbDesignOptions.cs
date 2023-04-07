@@ -17,7 +17,7 @@ public class DbDesignOptions
 
     /// <summary>
     ///   If <b>true</b>, whenever possible, it is preferable to generate the value on
-    ///   the database side, otherwise it is preferable to generate on the code side. 
+    ///   the database side, otherwise it is preferable to generate on the code side.
     /// </summary>
     public bool PreferSqlSideDefaultValues { get; set; } = true;
 
@@ -36,6 +36,16 @@ public class DbDesignOptions
     public DateTimeKind DateTimeKind { get; set; } = DateTimeKind.Local;
 
     /// <summary>
+    ///
+    /// </summary>
+    public bool ApplyEntityIds { get; set; }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    public bool ApplyEntityDating { get; set; }
+
+    /// <summary>
     ///   Gets or sets value that enables (<b>true</b>) or disables
     ///   (<b>false</b>) entities configuring with <see cref="IEntityTypeConfiguration{TEntity}" /> interface.
     /// </summary>
@@ -51,7 +61,7 @@ public class DbDesignOptions
     public bool ApplyDataSeeders { get; set; } = true;
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public Assembly?[]? DataAssemblies { get; set; }
 }

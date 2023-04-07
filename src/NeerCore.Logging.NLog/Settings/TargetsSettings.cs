@@ -5,7 +5,7 @@ public class TargetsSettings
     /// <summary>
     ///   NLog internal logger.
     /// </summary>
-    public LoggerTargetSettings NLogInternal { get; set; } = new() { Enabled = false, FilePath = "logs/nlog-internal.log" };
+    public LoggerTargetSettings NLogInternal { get; set; } = new() { Enabled = false, FilePath = "./logs/nlog-internal.log" };
 
     /// <summary>
     ///   Defines a configuration for predefined console logger.

@@ -7,6 +7,7 @@ namespace NeerCore.Logging.Infrastructure;
 public class ErrorFileTargetBuilder : FileTargetBuilderBase
 {
     public override bool Enabled => Settings.Targets.FullFile.Enabled;
+    public override bool UseAsSeparateTarget => true;
 
 
     public override Target Build()

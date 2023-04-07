@@ -1,4 +1,3 @@
-using NLog.Config;
 using NLog.Targets;
 
 namespace NeerCore.Logging.Infrastructure;
@@ -39,16 +38,9 @@ public class DatabaseTargetBuilder : TargetBuilderBase
             target.Parameters.Add(new DatabaseParameterInfo("@useragent", "${aspnet-request-useragent}"));
         }
 
-        return target;
-    }
-
-    public override void Configure(LoggingConfiguration configuration, Target target)
-    {
-        configuration.AddTarget(target.Name, target);
-        ApplyLogLevelsFromSettings(configuration, target);
-
-        var targetSettings = Settings.Targets.Database;
         if (targetSettings.EnsureTableCreated)
-            DatabaseHelper.EnsureDbCreated((DatabaseTarget)target, targetSettings);
+            DatabaseHelper.EnsureDbCreated(target, targetSettings);
+
+        return target;
     }
 }

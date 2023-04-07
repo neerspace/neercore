@@ -1,4 +1,3 @@
-using NLog.Config;
 using NLog.Layouts;
 using NLog.Targets;
 
@@ -37,11 +36,5 @@ public class JsonFileTargetBuilder : FileTargetBuilderBase
             FileName = BuildLogFilePath(targetSettings.FilePath),
             Layout = layout,
         };
-    }
-
-    public override void Configure(LoggingConfiguration configuration, Target target)
-    {
-        configuration.AddTarget(target.Name, target);
-        ApplyLogLevelsFromSettings(configuration, target);
     }
 }

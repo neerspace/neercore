@@ -1,5 +1,4 @@
 using NLog.Conditions;
-using NLog.Config;
 using NLog.Targets;
 
 namespace NeerCore.Logging.Infrastructure;
@@ -45,12 +44,6 @@ public class ConsoleTargetBuilder : TargetBuilderBase
                 ConsoleWordHighlightingRegexRule(DateTimeRegExp, ConsoleOutputColor.Gray)
             }
         };
-    }
-
-    public override void Configure(LoggingConfiguration configuration, Target target)
-    {
-        configuration.AddTarget(target.Name, target);
-        ApplyLogLevelsFromSettings(configuration, target);
     }
 
 

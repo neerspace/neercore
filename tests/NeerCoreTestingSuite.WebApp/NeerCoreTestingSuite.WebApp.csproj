@@ -38,7 +38,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="bin\Debug\net6.0\logs" />
+	  <DocFileItem Remove="bin\Debug\NeerCoreTestingSuite.WebApp.xml" />
 	</ItemGroup>
 
 </Project>
