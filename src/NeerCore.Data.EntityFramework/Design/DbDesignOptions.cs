@@ -41,9 +41,14 @@ public class DbDesignOptions
     public bool ApplyEntityIds { get; set; }
 
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public bool ApplyEntityDating { get; set; }
+
+    /// <summary>
+    ///
+    /// </summary>
+    public bool ApplyLocalizedStrings { get; set; }
 
     /// <summary>
     ///   Gets or sets value that enables (<b>true</b>) or disables

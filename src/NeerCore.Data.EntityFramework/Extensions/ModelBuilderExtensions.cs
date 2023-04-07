@@ -37,7 +37,8 @@ public static class ModelBuilderExtensions
             if (dataAssembly is null)
                 continue;
 
-            builder.AddLocalizedStrings(dataAssembly);
+            if (options.ApplyLocalizedStrings)
+                builder.AddLocalizedStrings(dataAssembly);
             if (options.ApplyEntityTypeConfigurations)
                 builder.ApplyConfigurationsFromAssembly(dataAssembly);
             if (options.ApplyDataSeeders)
