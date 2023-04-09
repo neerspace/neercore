@@ -62,15 +62,17 @@ public static class AssemblyProvider
     {
         if (assembly is null)
             throw new ArgumentNullException(nameof(assembly));
-        return assembly.GetTypes()
+        return assembly.TryGetTypes()
             .Where(t => t.InheritsFrom(baseType));
     }
 
     /// <inheritdoc cref="GetImplementationsOf{TBase}"/>
     public static IEnumerable<Type> GetImplementationsOf(Type baseType, Func<Assembly, bool>? assemblySelector = null)
     {
-        var assemblies = assemblySelector is null ? ApplicationAssemblies : AllAssemblies.Where(assemblySelector);
-        return assemblies.SelectMany(a => a.GetTypes())
+        var assemblies = assemblySelector is null
+            ? ApplicationAssemblies
+            : AllAssemblies.Where(assemblySelector);
+        return assemblies.SelectMany(a => a.TryGetTypes())
             .Where(t => t.InheritsFrom(baseType));
     }
 
@@ -142,5 +144,17 @@ public static class AssemblyProvider
         if (string.IsNullOrEmpty(ns))
             throw new ArgumentNullException(nameof(ns));
         ProjectRootNamespace = ns.Split('.')[0];
+    }
+
+    public static Type[] TryGetTypes(this Assembly assembly)
+    {
+        try
+        {
+            return assembly.GetTypes();
+        }
+        catch (Exception)
+        {
+            return Type.EmptyTypes;
+        }
     }
 }

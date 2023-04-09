@@ -202,7 +202,7 @@ public static class ModelBuilderExtensions
                 builder.Entity(updateableOffsetEntityType)
                     .Property(nameof(IUpdatableOffsetEntity.Updated))
                     .HasDefaultValueSql(defaultValueSql)
-                    .ValueGeneratedOnAdd();
+                    .ValueGeneratedOnUpdate();
             }
         }
 
