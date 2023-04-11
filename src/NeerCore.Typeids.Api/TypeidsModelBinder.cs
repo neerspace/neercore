@@ -5,7 +5,7 @@ namespace NeerCore.Typeids.Api;
 
 public class TypeidsModelBinder : IModelBinder
 {
-    private static ITypeidsProcessor? _idsProcessor;
+    private static ITypeidsProcessor? idsProcessor;
 
     public Task BindModelAsync(ModelBindingContext bindingContext)
     {
@@ -13,7 +13,7 @@ public class TypeidsModelBinder : IModelBinder
             throw new ArgumentNullException(nameof(bindingContext));
 
         string? sourceValue = bindingContext.ValueProvider.GetValue(bindingContext.FieldName).FirstValue;
-        var idsProcessor = _idsProcessor ??= bindingContext.HttpContext.RequestServices.GetRequiredService<ITypeidsProcessor>();
+        idsProcessor ??= bindingContext.HttpContext.RequestServices.GetRequiredService<ITypeidsProcessor>();
 
         object? identifier = idsProcessor.DeserializeIdentifier(sourceValue, bindingContext.ModelType);
         bindingContext.Result = ModelBindingResult.Success(identifier);

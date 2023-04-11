@@ -3,6 +3,8 @@ namespace NeerCore.Typeids.Abstractions;
 public interface ITypeIdentifier<out TValue>
 {
     TValue Value { get; }
+
+    string ToString() => Value?.ToString() ?? "null";
 }
 
 public interface IGuidIdentifier : ITypeIdentifier<Guid> { }

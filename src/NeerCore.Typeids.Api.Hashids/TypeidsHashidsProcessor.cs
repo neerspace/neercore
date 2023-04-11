@@ -4,7 +4,6 @@ using NeerCore.Typeids.Internal;
 
 namespace NeerCore.Typeids.Api.Hashids;
 
-[Service(Lifetime = Lifetime.Singleton)]
 public class TypeidsHashidsProcessor : TypeidsProcessorBase
 {
     private readonly IHashids _hashids;

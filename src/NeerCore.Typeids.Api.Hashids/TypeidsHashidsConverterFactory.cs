@@ -5,12 +5,14 @@ using NeerCore.DependencyInjection.Extensions;
 using NeerCore.Typeids.Abstractions;
 using NeerCore.Typeids.Internal;
 
-namespace NeerCore.Typeids.Api;
+namespace NeerCore.Typeids.Api.Hashids;
 
-public class TypeidsConverterFactory : JsonConverterFactory
+// TODO: Refactor copy-pasted
+
+public class TypeidsHashidsConverterFactory : JsonConverterFactory
 {
     private static readonly Type customIdBaseType = typeof(ITypeIdentifier<>);
-    private static readonly Type converterGenericType = typeof(TypeidsJsonConverter<,>);
+    private static readonly Type converterGenericType = typeof(TypeidsHashidsJsonConverter<,>);
     private static readonly ConcurrentDictionary<Type, JsonConverter> cachedConverters = new();
 
     public override bool CanConvert(Type typeToConvert)

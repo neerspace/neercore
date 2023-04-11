@@ -5,14 +5,14 @@ using NeerCore.Typeids.Abstractions;
 
 namespace NeerCore.Typeids.Api.Hashids;
 
-public class TypeidsHasidsJsonConverter<TIdentifier, TValue> : TypeidsJsonConverter<TIdentifier, TValue>
+public class TypeidsHashidsJsonConverter<TIdentifier, TValue> : TypeidsJsonConverter<TIdentifier, TValue>
     where TIdentifier : ITypeIdentifier<TValue>
     where TValue : new()
 {
     public override TIdentifier Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
         if (reader.TokenType == JsonTokenType.String)
-            return GetCustomIdsProcessor(options).DeserializeIdentifier<TIdentifier, TValue>(reader.GetString());
+            return GetCustomIdsProcessor(options).DeserializeIdentifier<TIdentifier, TValue>(reader.GetString())!;
 
         if (reader.TokenType != JsonTokenType.Number)
             throw new JsonException();

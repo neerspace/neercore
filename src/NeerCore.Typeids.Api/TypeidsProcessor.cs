@@ -3,7 +3,6 @@ using NeerCore.Typeids.Internal;
 
 namespace NeerCore.Typeids.Api;
 
-[Service(Lifetime = Lifetime.Singleton)]
 public class TypeidsProcessor : TypeidsProcessorBase
 {
     protected override string? Serialize<T>(T? identifier)

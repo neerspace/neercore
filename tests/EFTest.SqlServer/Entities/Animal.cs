@@ -5,10 +5,12 @@ using NeerCore.Data.Abstractions;
 namespace EFTest.SqlServer.Entities;
 
 [Table("Animals")]
-public sealed class Animal : IEntity<AnimalId>
+public class Animal : IEntity<AnimalId>
 {
     [Key]
     public AnimalId Id { get; set; }
+
+    public OtherNotId? OtherValue { get; set; }
 
     [Required]
     [StringLength(100)]

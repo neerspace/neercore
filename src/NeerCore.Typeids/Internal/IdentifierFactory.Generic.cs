@@ -8,8 +8,8 @@ internal static class IdentifierFactory<TIdentifier, TValue>
     where TIdentifier : ITypeIdentifier<TValue>
     where TValue : new()
 {
-    private static Func<TValue, TIdentifier>? _identifierConstructor;
-    private static Func<TValue, TIdentifier> IdentifierConstructor => _identifierConstructor ??= GenerateConstructorInvoker();
+    private static Func<TValue, TIdentifier>? identifierConstructor;
+    private static Func<TValue, TIdentifier> IdentifierConstructor => identifierConstructor ??= GenerateConstructorInvoker();
 
     public static TIdentifier CreateUnsafe<T>(T value)
     {

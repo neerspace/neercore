@@ -10,11 +10,13 @@ public sealed class AnimalSeeder : IEntityDataSeeder<Animal>
         new Animal
         {
             Id = new AnimalId(1),
+            OtherValue = new OtherNotId(212),
             Species = "Cat"
         },
         new Animal
         {
             Id = new AnimalId(2),
+            OtherValue = new OtherNotId(410),
             Species = "Dog"
         },
         new Animal

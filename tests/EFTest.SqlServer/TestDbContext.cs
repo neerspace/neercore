@@ -21,7 +21,7 @@ public sealed class TestDbContext : DbContext, IDatabase
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        const string connection = "Server=localhost,1433;Database=NeerCore_EFTest;User=sa;Password=MyPassword1234";
+        const string connection = "Server=localhost,1433;Database=NeerCore_EFTest;User=sa;Password=MyPassword1234;TrustServerCertificate=true";
         optionsBuilder.UseSqlServer(connection);
         optionsBuilder.EnableDetailedErrors();
     }

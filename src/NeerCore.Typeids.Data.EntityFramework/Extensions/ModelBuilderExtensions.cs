@@ -14,9 +14,9 @@ namespace NeerCore.Typeids.Data.EntityFramework.Extensions;
 
 public static class ModelBuilderExtensions
 {
-    private static readonly Type s_customIdBaseType = typeof(ITypeIdentifier<>);
-    private static readonly ConcurrentDictionary<Type, ValueConverter> s_converters = new();
-    private static readonly Type[] s_numericType = { typeof(byte), typeof(short), typeof(int), typeof(long) };
+    private static readonly Type customIdBaseType = typeof(ITypeIdentifier<>);
+    private static readonly ConcurrentDictionary<Type, ValueConverter> converters = new();
+    private static readonly Type[] numericType = { typeof(byte), typeof(short), typeof(int), typeof(long) };
 
 
     public static void ApplyTypedIdsFromAssembly(this ModelBuilder modelBuilder, Action<TypeidsOptions>? configureOptions = null)
@@ -30,10 +30,10 @@ public static class ModelBuilderExtensions
         {
             var underlyingType = Nullable.GetUnderlyingType(property.PropertyType);
 
-            if (underlyingType is not null && underlyingType.InheritsFrom(s_customIdBaseType)
-                || property.PropertyType.InheritsFrom(s_customIdBaseType))
+            if (underlyingType is not null && underlyingType.InheritsFrom(customIdBaseType)
+                || property.PropertyType.InheritsFrom(customIdBaseType))
             {
-                var converter = s_converters.GetOrAdd(property.PropertyType,
+                var converter = converters.GetOrAdd(property.PropertyType,
                     identifierType =>
                     {
                         var underlyingIdType = Nullable.GetUnderlyingType(identifierType);
@@ -53,7 +53,7 @@ public static class ModelBuilderExtensions
                     .Property(property.Name)
                     .HasConversion(converter);
 
-                if (property.Name.ToLower() == "id" && s_numericType.Contains(property.PropertyType.GetProperty("Value")!.PropertyType))
+                if (property.Name.ToLower() == "id" && numericType.Contains(property.PropertyType.GetProperty("Value")!.PropertyType))
                     propBuilder.ValueGeneratedOnAdd();
             }
         }
