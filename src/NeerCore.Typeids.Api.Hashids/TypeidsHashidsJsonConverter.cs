@@ -12,7 +12,7 @@ public class TypeidsHashidsJsonConverter<TIdentifier, TValue> : TypeidsJsonConve
     public override TIdentifier Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
         if (reader.TokenType == JsonTokenType.String)
-            return GetCustomIdsProcessor(options).DeserializeIdentifier<TIdentifier, TValue>(reader.GetString())!;
+            return GetTypeidsProcessor(options).DeserializeIdentifier<TIdentifier, TValue>(reader.GetString())!;
 
         if (reader.TokenType != JsonTokenType.Number)
             throw new JsonException();
@@ -20,16 +20,18 @@ public class TypeidsHashidsJsonConverter<TIdentifier, TValue> : TypeidsJsonConve
         if (GetHashidsOptions(options).AcceptNonHashedIds)
             return CreateIdentifier(reader.GetInt32());
 
-        throw new JsonException("Element is decorated with HashidsJsonConverter \nbut is reading a non hashed id." +
-                                "To allow deserialize numbers set AcceptNonHashedIds to true.");
+        throw new JsonException("Element is decorated with HashidsJsonConverter \nbut is reading a non hashed id."
+            + "To allow deserialize numbers set AcceptNonHashedIds to true.");
     }
 
 
     public override void Write(Utf8JsonWriter writer, TIdentifier value, JsonSerializerOptions options)
     {
-        string? serializedValue = GetCustomIdsProcessor(options).SerializeString<TIdentifier, TValue>(value);
+        var idsProcessor = GetTypeidsProcessor(options);
+        string? serializedValue = idsProcessor.SerializeString<TIdentifier, TValue>(value);
         writer.WriteStringValue(serializedValue);
     }
 
-    private static HashidsOptions GetHashidsOptions(JsonSerializerOptions options) => options.GetServiceProvider().GetRequiredService<HashidsOptions>();
+    private static HashidsOptions GetHashidsOptions(JsonSerializerOptions options) =>
+        options.GetServiceProvider().GetRequiredService<HashidsOptions>();
 }
