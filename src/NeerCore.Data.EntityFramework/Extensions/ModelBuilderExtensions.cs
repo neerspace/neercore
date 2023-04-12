@@ -193,7 +193,6 @@ public static class ModelBuilderExtensions
             {
                 builder.Entity(updatableEntityType)
                     .Property(nameof(IUpdatableEntity.Updated))
-                    .HasDefaultValueSql(defaultValueSql)
                     .ValueGeneratedOnUpdate();
             }
 
@@ -201,7 +200,6 @@ public static class ModelBuilderExtensions
             {
                 builder.Entity(updateableOffsetEntityType)
                     .Property(nameof(IUpdatableOffsetEntity.Updated))
-                    .HasDefaultValueSql(defaultValueSql)
                     .ValueGeneratedOnUpdate();
             }
         }
