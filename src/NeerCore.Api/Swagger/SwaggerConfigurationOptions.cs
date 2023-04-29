@@ -1,4 +1,6 @@
-﻿using Microsoft.OpenApi.Models;
+﻿using Microsoft.AspNetCore.JsonPatch;
+using Microsoft.OpenApi.Models;
+using NeerCore.Localization;
 
 namespace NeerCore.Api.Swagger;
 
@@ -18,59 +20,59 @@ public sealed class SwaggerConfigurationOptions
     public bool ApiDocs { get; set; } = true;
 
     /// <summary>
-    ///
+    ///   Enables or disables ReDoc
     /// </summary>
     public bool ExtendedDocs { get; set; } = false;
 
     /// <summary>
     ///
     /// </summary>
-    public bool RestResponses { get; set; } = false;
+    // public bool RestResponses { get; set; } = false;
 
     /// <summary>
-    ///
+    ///   Enables or disables nullable reference types
     /// </summary>
     public bool NullableRefTypesSupport { get; set; } = true;
 
     /// <summary>
-    ///
+    ///   Enables or disables custom models for <see cref="JsonPatchDocument"/>
     /// </summary>
     public bool JsonPatchSupport { get; set; } = true;
 
     /// <summary>
-    ///
+    ///   Enables or disables support for NeerCore <see cref="LocalizedString"/>
     /// </summary>
     public bool LocalizedStringSupport { get; set; } = true;
 
     /// <summary>
-    ///
+    ///   Base swagger docs URL
     /// </summary>
     public string SwaggerUrl { get; set; } = "swagger";
 
     /// <summary>
-    ///
+    ///   Base URL for ReDoc
     /// </summary>
     public string ApiDocsUrl { get; set; } = "docs-{version}";
 
     /// <summary>
-    ///
+    ///   ReDoc docs header content
     /// </summary>
     public string ApiDocsHeadContent { get; set; } = "";
 
     /// <summary>
-    ///
+    ///   Swagger built-in security options
     /// </summary>
     public SwaggerSecurityOptions Security { get; set; } = new();
 
     /// <summary>
-    ///
+    ///   Custom Swagger Docs title 
     /// </summary>
     public string? Title { get; set; }
 
     /// <summary>
-    ///
+    ///   Path to the text or markdown file with app documentation to display it in Swagger 
     /// </summary>
-    public string? DescriptionFilePath { get; set; }
+    // public string? DescriptionFilePath { get; set; }
 
     /// <summary>
     ///

@@ -62,6 +62,10 @@ public sealed class NeerExceptionHandlerMiddleware : IMiddleware
                 await ProcessCommonExceptionAsync(context, e);
             }
         }
+        catch (TaskCanceledException)
+        {
+            _logger.LogInformation("Request {Path} was canceled", context.Request.Path.Value);
+        }
         catch (Exception e)
         {
             await ProcessCommonExceptionAsync(context, e);

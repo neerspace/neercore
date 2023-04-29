@@ -18,6 +18,8 @@ public record BeModel
     public required string Email { get; set; }
 }
 
+[ApiVersion("3.0")]
+[ApiVersion("3.1")]
 public class MultisourceController : ApiController
 {
     [HttpPost("PostTest/{IDX:alpha}/{size:int}")]

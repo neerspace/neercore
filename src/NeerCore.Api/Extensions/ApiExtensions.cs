@@ -21,9 +21,13 @@ public static class ApiExtensions
     /// </summary>
     /// <param name="services">The services available in the application.</param>
     /// <param name="apiVersionParameterSource">Configures the source for defining API version parameters.</param>
-    public static IServiceCollection AddNeerApiVersioning(this IServiceCollection services, IApiVersionReader? apiVersionParameterSource = null)
+    public static IServiceCollection AddNeerApiVersioning(
+        this IServiceCollection services, IApiVersionReader? apiVersionParameterSource = null)
     {
-        services.AddApiVersioning();
+        services.AddApiVersioning(options =>
+        {
+            options.Conventions.Add(new VersionByBaseControllerConvention());
+        });
 
         return services.AddVersionedApiExplorer(options =>
         {
