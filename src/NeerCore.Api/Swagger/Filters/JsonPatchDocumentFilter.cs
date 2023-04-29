@@ -64,14 +64,17 @@ public sealed class JsonPatchDocumentFilter : IDocumentFilter
         }
 
         swaggerDoc.Components.Schemas.Remove(nameof(OperationType));
-        var operationSchemas = swaggerDoc.Components.Schemas.Where(item => item.Key.EndsWith(nameof(Operation)));
+        var operationSchemas = swaggerDoc.Components.Schemas
+            .Where(item => item.Key.EndsWith(nameof(Operation)));
+
         foreach ((string? operationName, var operationSchema) in operationSchemas)
         {
             string baseName = operationName.Replace(nameof(Operation), "");
-            if (swaggerDoc.Components.Schemas.ContainsKey(baseName))
+            if (swaggerDoc.Components.Schemas.TryGetValue(baseName, out var schema))
             {
-                var baseSchema = swaggerDoc.Components.Schemas[baseName];
-                var basePropertyNames = baseSchema.Properties.SelectMany(p => OperationPathFilter("/" + p.Key, p.Value)).ToArray();
+                var basePropertyNames = schema.Properties
+                    .SelectMany(p => OperationPathFilter("/" + p.Key, p.Value))
+                    .ToArray();
 
                 operationSchema.Properties = BuildOperationSchemaProperties(basePropertyNames);
             }
@@ -148,7 +151,11 @@ public sealed class JsonPatchDocumentFilter : IDocumentFilter
 
     private static void FixJsonPatchDocumentSchemas(OpenApiDocument swaggerDoc)
     {
-        var jsonPatchDocSchemas = swaggerDoc.Components.Schemas.Where(item => item.Key.EndsWith(nameof(JsonPatchDocument)));
+        var jsonPatchDocSchemas = swaggerDoc.Components.Schemas
+            .Where(item => item.Key.EndsWith(nameof(JsonPatchDocument))
+                || item.Value?.Properties != null
+                && item.Value.Properties.Any(p => p.Value?.Reference?.Id == nameof(IContractResolver)));
+
         foreach ((string? schemaName, var schema) in jsonPatchDocSchemas)
         {
             string baseName = schemaName.Replace(nameof(JsonPatchDocument), "");
