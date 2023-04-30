@@ -36,86 +36,19 @@ public sealed class JsonPatchDocumentFilter : IDocumentFilter
 
     private static void FixOperationSchemas(OpenApiDocument swaggerDoc)
     {
-        IEnumerable<IOpenApiAny> OperationPathFilter(string pathName, OpenApiSchema pathSchema, int arrayDepth = 0)
-        {
-            yield return new OpenApiString(pathName);
-
-            // pathSchema.Type == SchemaTypes.Object
-            if (pathSchema.Reference is not null)
-            {
-                var properties = pathSchema.Properties.Count == 0
-                    ? swaggerDoc.Components.Schemas[pathSchema.Reference.Id].Properties
-                    : pathSchema.Properties;
-
-                foreach (var pathSchemaProperty in properties)
-                {
-                    string nextPathName = $"{pathName}/{pathSchemaProperty.Key}";
-                    foreach (var operationItem in OperationPathFilter(nextPathName, pathSchemaProperty.Value))
-                        yield return operationItem;
-                }
-            }
-            // pathSchema.Type == SchemaTypes.Array
-            else if (pathSchema.Items is not null)
-            {
-                string nextPathName = $"{pathName}/{{{arrayDepth}}}";
-                foreach (var operationItem in OperationPathFilter(nextPathName, pathSchema.Items, arrayDepth + 1))
-                    yield return operationItem;
-            }
-        }
-
         swaggerDoc.Components.Schemas.Remove(nameof(OperationType));
         var operationSchemas = swaggerDoc.Components.Schemas
-            .Where(item => item.Key.EndsWith(nameof(Operation)));
+            .Select(x => x.Key)
+            .Where(key => key.EndsWith(nameof(Operation)));
+        foreach (var operationName in operationSchemas)
+            swaggerDoc.Components.Schemas.Remove(operationName);
 
-        foreach ((string? operationName, var operationSchema) in operationSchemas)
+        swaggerDoc.Components.Schemas.Add("PatchOperation", new OpenApiSchema
         {
-            string baseName = operationName.Replace(nameof(Operation), "");
-            if (swaggerDoc.Components.Schemas.TryGetValue(baseName, out var schema))
-            {
-                var basePropertyNames = schema.Properties
-                    .SelectMany(p => OperationPathFilter("/" + p.Key, p.Value))
-                    .ToArray();
-
-                operationSchema.Properties = BuildOperationSchemaProperties(basePropertyNames);
-            }
-            else
-            {
-                operationSchema.Properties = BuildDefaultOperationSchemaProperties();
-            }
-        }
+            Properties = BuildDefaultOperationSchemaProperties()
+        });
     }
 
-    private static Dictionary<string, OpenApiSchema> BuildOperationSchemaProperties(IList<IOpenApiAny> basePropertyNames) => new()
-    {
-        {
-            "op", new OpenApiSchema
-            {
-                Type = SwaggerSchemaTypes.String,
-                Enum = OperationNameEnum
-            }
-        },
-        {
-            "path", new OpenApiSchema
-            {
-                Type = SwaggerSchemaTypes.String,
-                Enum = basePropertyNames
-            }
-        },
-        {
-            "from", new OpenApiSchema
-            {
-                Type = SwaggerSchemaTypes.String,
-                Enum = basePropertyNames
-            }
-        },
-        {
-            "value", new OpenApiSchema
-            {
-                Type = SwaggerSchemaTypes.String,
-                Example = new OpenApiString("new value")
-            }
-        },
-    };
 
     private static Dictionary<string, OpenApiSchema> BuildDefaultOperationSchemaProperties() => new()
     {
@@ -123,7 +56,16 @@ public sealed class JsonPatchDocumentFilter : IDocumentFilter
             "op", new OpenApiSchema
             {
                 Type = SwaggerSchemaTypes.String,
-                Enum = OperationNameEnum
+                Enum = new List<IOpenApiAny>
+                {
+                    new OpenApiString("add"),
+                    new OpenApiString("copy"),
+                    new OpenApiString("move"),
+                    new OpenApiString("remove"),
+                    new OpenApiString("replace"),
+                    new OpenApiString("test"),
+                    new OpenApiString("invalid"),
+                }
             }
         },
         {
@@ -152,24 +94,24 @@ public sealed class JsonPatchDocumentFilter : IDocumentFilter
     private static void FixJsonPatchDocumentSchemas(OpenApiDocument swaggerDoc)
     {
         var jsonPatchDocSchemas = swaggerDoc.Components.Schemas
-            .Where(item => item.Key.EndsWith(nameof(JsonPatchDocument))
-                || item.Value?.Properties != null
-                && item.Value.Properties.Any(p => p.Value?.Reference?.Id == nameof(IContractResolver)));
+            .Where(x => x.Key.EndsWith(nameof(JsonPatchDocument))
+                || x.Value?.Properties != null
+                && x.Value.Properties.Any(p => p.Value?.Reference?.Id == nameof(IContractResolver)))
+            .Select(x => x.Value);
 
-        foreach ((string? schemaName, var schema) in jsonPatchDocSchemas)
+        foreach (var schema in jsonPatchDocSchemas)
         {
-            string baseName = schemaName.Replace(nameof(JsonPatchDocument), "");
             schema.Properties = new Dictionary<string, OpenApiSchema>
             {
                 ["operations"] = new()
                 {
                     Type = SwaggerSchemaTypes.Array,
-                    Description = "Array of operations to perform.",
+                    Description = "Array of operations to perform",
                     Items = new OpenApiSchema
                     {
                         Reference = new OpenApiReference
                         {
-                            Id = baseName + nameof(Operation),
+                            Id = "PatchOperation",
                             Type = ReferenceType.Schema,
                         }
                     }
@@ -177,15 +119,4 @@ public sealed class JsonPatchDocumentFilter : IDocumentFilter
             };
         }
     }
-
-    private static List<IOpenApiAny> OperationNameEnum => new()
-    {
-        new OpenApiString("add"),
-        new OpenApiString("copy"),
-        new OpenApiString("move"),
-        new OpenApiString("remove"),
-        new OpenApiString("replace"),
-        new OpenApiString("test"),
-        new OpenApiString("invalid"),
-    };
 }

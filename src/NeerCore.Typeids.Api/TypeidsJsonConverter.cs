@@ -9,7 +9,6 @@ namespace NeerCore.Typeids.Api;
 
 public class TypeidsJsonConverter<TIdentifier, TValue> : JsonConverter<TIdentifier?>
     where TIdentifier : ITypeIdentifier<TValue>
-    where TValue : new()
 {
     public override TIdentifier? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
     {
@@ -19,18 +18,25 @@ public class TypeidsJsonConverter<TIdentifier, TValue> : JsonConverter<TIdentifi
         if (reader.TokenType != JsonTokenType.Number)
             throw new JsonException();
 
-        throw new JsonException("Element is decorated with HashidsJsonConverter \nbut is reading a non hashed id. " +
-                                "To allow deserialize numbers set AcceptNonHashedIds to true.");
+        throw new JsonException("Element is decorated with HashidsJsonConverter \nbut is reading a non hashed id. "
+            + "To allow deserialize numbers set AcceptNonHashedIds to true.");
     }
 
-    public override void Write(Utf8JsonWriter writer, TIdentifier value, JsonSerializerOptions options)
+    public override void Write(Utf8JsonWriter writer, TIdentifier? value, JsonSerializerOptions options)
     {
-        string serializedValue = GetTypeidsProcessor(options).SerializeString<TIdentifier, TValue>(value);
+        if (value == null)
+        {
+            writer.WriteStringValue("");
+            return;
+        }
+
+        var serializedValue = GetTypeidsProcessor(options).SerializeString<TIdentifier, TValue>(value);
         writer.WriteStringValue(serializedValue);
     }
 
 
     protected static TIdentifier CreateIdentifier<T>(T value) => IdentifierFactory<TIdentifier, TValue>.CreateUnsafe(value);
 
-    protected static ITypeidsProcessor GetTypeidsProcessor(JsonSerializerOptions options) => options.GetServiceProvider().GetRequiredService<ITypeidsProcessor>();
+    protected static ITypeidsProcessor GetTypeidsProcessor(JsonSerializerOptions options) =>
+        options.GetServiceProvider().GetRequiredService<ITypeidsProcessor>();
 }

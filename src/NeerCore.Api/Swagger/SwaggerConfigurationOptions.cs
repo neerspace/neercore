@@ -50,6 +50,11 @@ public sealed class SwaggerConfigurationOptions
     public string SwaggerUrl { get; set; } = "swagger";
 
     /// <summary>
+    /// Allowed values: <c>["json", "yaml"]</c>.
+    /// </summary>
+    public string[]? OpenapiFormats { get; set; }
+
+    /// <summary>
     ///   Base URL for ReDoc
     /// </summary>
     public string ApiDocsUrl { get; set; } = "docs-{version}";

@@ -2,7 +2,7 @@ name: Publish NuGet Packages
 
 on:
   push:
-    branches: [ master, 'v2.0.0' ]
+    branches: [ master ]
 #  pull_request:
 #    branches: master
 
@@ -16,7 +16,7 @@ jobs:
 
     strategy:
       matrix:
-        version: [ '2.0.0' ]
+        version: [ '2.0.1' ]
         project:
           - NeerCore
           - NeerCore.Api

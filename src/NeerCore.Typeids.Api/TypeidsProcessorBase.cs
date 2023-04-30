@@ -15,7 +15,6 @@ public abstract class TypeidsProcessorBase : ITypeidsProcessor
 
     public string? SerializeString<TIdentifier, TValue>(TIdentifier identifier)
         where TIdentifier : ITypeIdentifier<TValue>
-        where TValue : new()
     {
         return Serialize(identifier);
     }
@@ -27,7 +26,6 @@ public abstract class TypeidsProcessorBase : ITypeidsProcessor
 
     public TIdentifier? DeserializeIdentifier<TIdentifier, TValue>(string? stringValue)
         where TIdentifier : ITypeIdentifier<TValue>
-        where TValue : new()
     {
         return (TIdentifier?)Deserialize(stringValue, typeof(TIdentifier));
     }
